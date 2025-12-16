@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellUSBDevice.json",
+    "$ref": "#/definitions/DellUSBDevice",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellUSBDevice": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellUSBDevice.v1_0_0.json#/definitions/DellUSBDevice"
+                }
+            ],
+            "deletable": false,
+            "description": "DellUSBDeviceView provides USB Device specific data.",
+            "insertable": false,
+            "longDescription": "DellUSBDeviceView provides USB Device specific data.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellUSBDevices/{USBDeviceId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellUSBDevice.DellUSBDevice"
+}

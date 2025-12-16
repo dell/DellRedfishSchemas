@@ -1,0 +1,29 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOpaqueManagementData.json",
+    "$ref": "#/definitions/DellOpaqueManagementData",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellOpaqueManagementData": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOpaqueManagementData.v1_0_0.json#/definitions/DellOpaqueManagementData"
+                }
+            ],
+            "deletable": false,
+            "description": "DCIM_OpaqueManagementData is a derivation of CIM_OpaqueManagementData and represents a partition on a storage device such as the vFlash.",
+            "insertable": false,
+            "longDescription": "DCIM_OpaqueManagementData is a derivation of CIM_OpaqueManagementData and represents a partition on a storage device such as the vFlash.",
+            "updatable": false,
+            "uris": [],
+            "urisDeprecated": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellOpaqueManagementData/{OpaqueManagementDataId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellOpaqueManagementData.DellOpaqueManagementData"
+}

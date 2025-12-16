@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellChassis.json",
+    "$ref": "#/definitions/DellChassis",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellChassis": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellChassis.v1_0_0.json#/definitions/DellChassis"
+                }
+            ],
+            "deletable": false,
+            "description": "This resource shall provide information about the enclosure or chassis the system is in.",
+            "insertable": false,
+            "longDescription": "This resource shall provide information about the enclosure or chassis the system is in.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellChassis/{ChassisId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellChassis.DellChassis"
+}

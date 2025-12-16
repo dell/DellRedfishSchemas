@@ -1,0 +1,44 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSecureBoot.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellSecureBoot": {
+            "additionalProperties": false,
+            "description": "This resource contains the Dell specific Redfish implementation for SecureBoot.",
+            "longDescription": "This resource contains the Dell specific Redfish implementation for SecureBoot.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Certificates": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificateStoreCollection.json#/definitions/DellCertificateStoreCollection",
+                    "description": "A reference to the collection of SecureBoot Certificates associated with this system.",
+                    "longDescription": "The value of this property shall be a link to a collection of type SecureBoot Certificates.",
+                    "readonly": true
+                },
+                "FirmwareImageHashes": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFirmwareImageHashCollection.json#/definitions/DellFirmwareImageHashCollection",
+                    "description": "A reference to the collection of FirmwareImageHash associated with this system.",
+                    "longDescription": "The value of this property shall be a link to a collection of FirmwareImageHash.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellSecureBoot.v1_1_0"
+}

@@ -1,0 +1,36 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkAdapter.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "ControllerLinks": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkAdapter.v1_3_0.json#/definitions/ControllerLinks"
+                }
+            ],
+            "description": "This is the complex property is for the additional OEM Links realted to the DMTF NetworkAdapter Controller.",
+            "longDescription": "This is the complex property is for the additional OEM Links realted to the DMTF NetworkAdapter Controller."
+        },
+        "DellNetworkAdapter": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkAdapter.v1_3_0.json#/definitions/DellNetworkAdapter"
+                }
+            ],
+            "description": "This property shall represent the Oem properties for a NetworkAdapter resource.",
+            "longDescription": "This property shall represent the Oem properties for a NetworkAdapter resource."
+        },
+        "SetPowerSavingMode": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkAdapter.v1_3_0.json#/definitions/SetPowerSavingMode"
+                }
+            ],
+            "description": "This action is used to set the PowerSavingMode for a NetworkAdapter.",
+            "longDescription": "This action is used to set the PowerSavingMode for a NetworkAdapter. It enables or disables the power save mode on the NetworkAdapter."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellNetworkAdapter"
+}

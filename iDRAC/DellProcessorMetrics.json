@@ -1,0 +1,18 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessorMetrics.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellProcessorMetrics": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessorMetrics.v1_1_0.json#/definitions/DellProcessorMetrics"
+                }
+            ],
+            "description": "This property shall represent the Oem properties for a ProcessorMetrics resource.",
+            "longDescription": "This property shall represent the Oem properties for a ProcessorMetrics resource."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellProcessorMetrics"
+}

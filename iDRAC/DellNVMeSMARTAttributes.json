@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNVMeSMARTAttributes.json",
+    "$ref": "#/definitions/DellNVMeSMARTAttributes",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellNVMeSMARTAttributes": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNVMeSMARTAttributes.v1_1_0.json#/definitions/DellNVMeSMARTAttributes"
+                }
+            ],
+            "deletable": false,
+            "description": "An instance of DellNVMeSMARTAttributes will have NVMe SMARTAttributes specific data.",
+            "insertable": false,
+            "longDescription": "An instance of DellNVMeSMARTAttributes will have NVMe SMARTAttributes specific data.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Drives/{DriveId}/Oem/Dell/DellNVMeSMARTAttributes"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellNVMeSMARTAttributes.DellNVMeSMARTAttributes"
+}

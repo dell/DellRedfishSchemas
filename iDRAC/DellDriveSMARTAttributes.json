@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellDriveSMARTAttributes.json",
+    "$ref": "#/definitions/DellDriveSMARTAttributes",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellDriveSMARTAttributes": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDriveSMARTAttributes.v1_0_0.json#/definitions/DellDriveSMARTAttributes"
+                }
+            ],
+            "deletable": false,
+            "description": "An instance of DellDriveSMARTAttributes will have SAS/SATA SSDs SMARTAttributes specific data.",
+            "insertable": false,
+            "longDescription": "An instance of DellDriveSMARTAttributes will have SAS/SATA SSDs SMAAttributes specific data.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Drives/{DriveId}/Oem/Dell/DellDriveSMARTAttributes"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellDriveSMARTAttributes.DellDriveSMARTAttributes"
+}

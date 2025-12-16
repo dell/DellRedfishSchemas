@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFanBoard.json",
+    "$ref": "#/definitions/DellFanBoard",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellFanBoard": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFanBoard.v1_0_0.json#/definitions/DellFanBoard"
+                }
+            ],
+            "deletable": false,
+            "description": "This resource shall be used to represent an FanBoard information.",
+            "insertable": false,
+            "longDescription": "This resource shall be used to represent an FanBoard information.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Chassis/{ChassisId}/ThermalSubsystem/Oem/Dell/DellFanBoards/{DellFanBoardId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellFanBoard.DellFanBoard"
+}

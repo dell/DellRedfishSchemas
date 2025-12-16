@@ -1,0 +1,428 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemSensor.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#DellOemSensor.GetHistoricalSensorReadings": {
+                    "$ref": "#/definitions/GetHistoricalSensorReadings"
+                }
+            },
+            "type": "object"
+        },
+        "AggregatedReading": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "AveragingIntervalAchieved": {
+                    "description": "Set to true if the averaging interval has been achieved.",
+                    "longDescription": "Set to true if the averaging interval has been achieved. This property is only present if the reading is an average.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Reading": {
+                    "description": "The value of the reading.",
+                    "longDescription": "The value of the reading. The unit is the same as the ReadingUnits.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ReadingTime": {
+                    "description": "The time of the reading.",
+                    "format": "date-time",
+                    "longDescription": "The time of the reading. It is not applicable if the reading is an average.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "AggregatedReadings": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "LastDay": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReading"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Aggregated reading for the last day.",
+                    "longDescription": "Aggregated reading for the last day.",
+                    "versionAdded": "v1_1_0"
+                },
+                "LastHour": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReading"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Aggregated reading for the last hour.",
+                    "longDescription": "Aggregated reading for the last hour.",
+                    "versionAdded": "v1_1_0"
+                },
+                "LastMonth": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReading"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Aggregated reading for the last month.",
+                    "longDescription": "Aggregated reading for the last month.",
+                    "versionAdded": "v1_1_0"
+                },
+                "LastWeek": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReading"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Aggregated reading for the last week.",
+                    "longDescription": "Aggregated reading for the last week.",
+                    "versionAdded": "v1_1_0"
+                },
+                "LastYear": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReading"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Aggregated reading for the last year.",
+                    "longDescription": "Aggregated reading for the last year.",
+                    "versionAdded": "v1_1_0"
+                },
+                "Lifetime": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReading"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Aggregated reading for the lifetime.",
+                    "longDescription": "Aggregated reading for the lifetime.",
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "DellOemSensor": {
+            "additionalProperties": false,
+            "description": "This is the complex property for the additional OEM properties to complement DMTF Sensor Schema.",
+            "longDescription": "This is the complex property for the additional OEM properties to complement DMTF Sensor Schema. This shall be used to represent an OEM Sensor for a Redfish implementation.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "AverageReadings": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReadings"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "An aggregation of averages of readings.",
+                    "longDescription": "An aggregation of averages of readings.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "CurrentState": {
+                    "description": "The current state indicated by the Sensor. This value is always one of the PossibleStates.",
+                    "longDescription": "The current state indicated by the Sensor. This value is always one of the PossibleStates.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "DeviceID": {
+                    "description": "An address or other identifying information to uniquely name the LogicalDevice.",
+                    "longDescription": "An address or other identifying information to uniquely name the LogicalDevice.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "DurationInCriticalThresholdPercent": {
+                    "description": "The duration spent beyond the critical thresholds in percent.",
+                    "longDescription": "The duration spent beyond the critical thresholds in percent.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "DurationInWarningThresholdPercent": {
+                    "description": "The duration spent beyond the warning thresholds in percent.",
+                    "longDescription": "The duration spent beyond the warning thresholds in percent.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "HistoricalReadings": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellHistoricalSensorReadings.json#/definitions/DellHistoricalSensorReadings",
+                    "description": "A resource representation of HistoricalReadings.",
+                    "longDescription": "A resource representation of HistoricalReadings.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "LowestReadings": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReadings"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "An aggregation of readings with the lowest value.",
+                    "longDescription": "An aggregation of readings with the lowest value.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "PeakReadings": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AggregatedReadings"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "An aggregation of readings with the highest value.",
+                    "longDescription": "An aggregation of readings with the highest value.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "PossibleStates": {
+                    "description": "PossibleStates enumerates the string outputs of the Sensor. For example, a \"Switch\" Sensor may output the states \"On\", or \"Off\". Another implementation of the Switch may output the states \"Open\", and \"Close\". Another example is a NumericSensor that supports thresholds. This sensor can report states such as \"Normal\", \"Upper Fatal\", \"Lower Non-Critical\", and so on. A NumericSensor that does not publish readings and thresholds, but stores this data internally, can still report its states.",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "PossibleStates enumerates the string outputs of the Sensor. For example, a \"Switch\" Sensor may output the states \"On\", or \"Off\". Another implementation of the Switch may output the states \"Open\", and \"Close\". Another example is a NumericSensor that supports thresholds. This sensor can report states such as \"Normal\", \"Upper Fatal\", \"Lower Non-Critical\", and so on. A NumericSensor that does not publish readings and thresholds, but stores this data internally, can still report its states.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "RequestedState": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/RequestedState"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "RequestedState is an integer enumeration that indicates the last requested or desired state for the element, irrespective of the mechanism through which it was requested.",
+                    "longDescription": "RequestedState is an integer enumeration that indicates the last requested or desired state for the element, irrespective of the mechanism through which it was requested.",
+                    "readonly": true
+                },
+                "TotalOperationalDuration": {
+                    "description": "The duration of Operational days.",
+                    "longDescription": "The duration of total Operational days.",
+                    "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?$",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "GetHistoricalSensorReadings": {
+            "actionResponse": {
+                "$ref": "#/definitions/GetHistoricalSensorReadingsResponse"
+            },
+            "additionalProperties": false,
+            "description": "An action to retrieve historical readings of the sensor.",
+            "longDescription": "An action to retrieve historical readings of the sensor. The action shall accept a parameter ReadingHistoryPeriod to specify the period for which the readings shall be returned.",
+            "parameters": {
+                "ReadingHistoryPeriod": {
+                    "$ref": "#/definitions/ReadingHistoryPeriod",
+                    "description": "The parameter for specifying the reading history period.",
+                    "longDescription": "The parameter for specifying the reading history period. Valid values are LastHour, LastDay and LastWeek."
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_2_0"
+        },
+        "GetHistoricalSensorReadingsResponse": {
+            "additionalProperties": false,
+            "description": "The response payload for the GetHistoricalSensorReadings action.",
+            "longDescription": "The response payload for the GetHistoricalSensorReadings action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ReadingHistoryPeriod": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ReadingHistoryPeriod"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The reading history period.",
+                    "longDescription": "The reading history period.",
+                    "versionAdded": "v1_2_0"
+                },
+                "Readings": {
+                    "description": "List of historical readings.",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "List of historical readings.",
+                    "type": "array",
+                    "versionAdded": "v1_2_0"
+                }
+            },
+            "type": "object"
+        },
+        "ReadingHistoryPeriod": {
+            "enum": [
+                "LastHour",
+                "LastDay",
+                "LastWeek"
+            ],
+            "enumDescriptions": {
+                "LastDay": "Historical readings for the last day.",
+                "LastHour": "Historical readings for the last hour.",
+                "LastWeek": "Historical readings for the last week."
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellOemSensor.v1_2_0"
+}

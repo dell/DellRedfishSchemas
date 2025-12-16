@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellJob.json",
+    "$ref": "#/definitions/DellJob",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellJob": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellJob.v1_6_0.json#/definitions/DellJob"
+                }
+            ],
+            "deletable": true,
+            "description": "This resource contains information about a specific configuration Job scheduled by or being executed by a Redfish service's Job Service.",
+            "insertable": false,
+            "longDescription": "This resource shall be used to represent a Job for a Redfish implementation.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/Jobs/{DellJobId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellJob.DellJob"
+}

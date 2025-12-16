@@ -1,0 +1,52 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosurePowerSupply.json",
+    "$ref": "#/definitions/DellEnclosurePowerSupply",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellEnclosurePowerSupply": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosurePowerSupply.v1_0_0.json#/definitions/DellEnclosurePowerSupply"
+                }
+            ],
+            "deletable": false,
+            "description": "An instance of DellEnclosurePowerSupply will have Storage Enclosure power supply unit specific data.",
+            "insertable": false,
+            "longDescription": "An instance of DellEnclosurePowerSupply will have Storage Enclosure power supply unit specific data.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellEnclosurePowerSupply/{EnclosurePowerSupplyId}"
+            ],
+            "urisDeprecated": [
+                "/redfish/v1/Chassis/{EnclosureId}/Power/Oem/Dell/DellEnclosurePowerSupply/{EnclosurePowerSupplyId}"
+            ]
+        },
+        "PrimaryStatus": {
+            "enum": [
+                "Degraded",
+                "Error",
+                "OK",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Degraded": "Degraded",
+                "Error": "Error",
+                "OK": "OK",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Degraded": "Degraded",
+                "Error": "Error",
+                "OK": "OK",
+                "Unknown": "Unknown"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellEnclosurePowerSupply.DellEnclosurePowerSupply"
+}

@@ -1,0 +1,204 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessorMetrics.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellProcessorMetrics": {
+            "additionalProperties": false,
+            "description": "This property shall represent the Oem properties for a ProcessorMetrics resource.",
+            "longDescription": "This property shall represent the Oem properties for a ProcessorMetrics resource.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CurrentPCIeLinkSpeed": {
+                    "description": "The version of the PCIe specification in use by this device.",
+                    "longDescription": "This property shall contain the negotiated PCIe interface version in use by this device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "DRAMUtilizationPercent": {
+                    "description": "The memory Bandwidth utilization. DRAM usage as a percentage.",
+                    "longDescription": "The memory Bandwidth utilization. DRAM usage as a percentage (relative to maximum theoretical bandwidth)",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%"
+                },
+                "GPUResetRecommendedState": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ResetRecommendedState"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The GPU ResetRecommendedState is shown.",
+                    "longDescription": "This property shall contain the GPU Reset RecommendedState.",
+                    "readonly": true,
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "MaxSupportedPCIeLinkSpeed": {
+                    "description": "The highest version of the PCIe specification supported by this device.",
+                    "longDescription": "This property shall contain the maximum PCIe specification that this device supports.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "NVLinkRuntimeError": {
+                    "description": "The NVLinkRuntimeError in Which  each bit represents training error.",
+                    "longDescription": "This property shall contain the NVLinkRuntimeError in hexadecimal string when converted to binary, each bit represents NVLink error status. If it is 0 menas no error and if it is 1 means error exist for the respective link.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinkRxThroughput": {
+                    "description": "The NVLinkRxThroughput in KB.",
+                    "longDescription": "This property shall contain the NVLinkRxThroughput in KB.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinkStatusFlag": {
+                    "description": "The NVLinkStatusFlag represents flag status.",
+                    "longDescription": "This property shall contain the NVLinkStatusFlag in hexadecimal string when converted to binary, each bit represents NVLink flag status of recpective link. If bit is 0 then link is down ,if it is 1 then link is up.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinkTrainingError": {
+                    "description": "The NVLinkTrainingError in Which  each bit represents training error.",
+                    "longDescription": "This property shall contain the NVLinkTrainingError in hexadecimal string when converted to binary, each bit represents NVLinkerror status. If it is 0 menas no error and if it is 1 means error exist for the respective link.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinkTxThroughput": {
+                    "description": "The NVLinkTxThroughput in KB.",
+                    "longDescription": "This property shall contain the NVLinkTxThroughput in KB.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinksCount": {
+                    "description": "The NVLinksCount is count of current devices.",
+                    "longDescription": "This property shall contain the NVLinksCount is count of NVLinks for the current device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "PCIeRxThroughput": {
+                    "description": "The PCIeRxThroughput shows Granularity in KB.",
+                    "longDescription": "This property shall contain the PCIeRxThroughput Granularity in KB.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "PCIeTxThroughput": {
+                    "description": "The PCIeTxThroughput shows Granularity in KB.",
+                    "longDescription": "This property shall contain the PCIeTxThroughput Granularity in KB.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "PowerViolationDuration": {
+                    "description": "The Power Violation Duration in nano seconds.",
+                    "longDescription": "This property shall contain the Power Violation Duration in nano seconds.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "SWViolationDuration": {
+                    "description": "The SWViolation Duration in nano seconds.",
+                    "longDescription": "This property shall contain the SWViolation Duration in nano seconds.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "ThermalViolationDuration": {
+                    "description": "The Thermal Violation Duration in nano seconds.",
+                    "longDescription": "This property shall contain the Thermal Violation Duration in nano seconds.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "ResetRecommendedState": {
+            "enum": [
+                "Reset is recommended",
+                "Reset is not recommended"
+            ],
+            "enumDescriptions": {
+                "Reset is not recommended": "Reset is not recommended for the GPU",
+                "Reset is recommended": "Reset is recommended for the GPU"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellProcessorMetrics.v1_1_0"
+}

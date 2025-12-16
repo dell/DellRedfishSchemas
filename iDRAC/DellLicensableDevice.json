@@ -1,0 +1,103 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellLicensableDevice.json",
+    "$ref": "#/definitions/DellLicensableDevice",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellLicensableDevice": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicensableDevice.v1_0_0.json#/definitions/DellLicensableDevice"
+                }
+            ],
+            "deletable": false,
+            "description": "DellLicensableDevice represents a device in the system that has registered with the License Manager.",
+            "insertable": false,
+            "longDescription": "DellLicensableDevice represents a device in the system that has registered with the License Manager.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellLicensableDevices/{LicensableDeviceId}"
+            ]
+        },
+        "DevicePrimaryStatus": {
+            "enum": [
+                "Degraded",
+                "Error",
+                "OK",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Degraded": "Degraded",
+                "Error": "Error",
+                "OK": "OK",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Degraded": "Degraded",
+                "Error": "Error",
+                "OK": "OK",
+                "Unknown": "Unknown"
+            },
+            "type": "string"
+        },
+        "DeviceState": {
+            "enum": [
+                "DeviceNotReady",
+                "DevicePresent"
+            ],
+            "enumDescriptions": {
+                "DeviceNotReady": "DeviceNotReady",
+                "DevicePresent": "DevicePresent"
+            },
+            "enumLongDescriptions": {
+                "DeviceNotReady": "DeviceNotReady",
+                "DevicePresent": "DevicePresent"
+            },
+            "type": "string"
+        },
+        "DeviceType": {
+            "enum": [
+                "External",
+                "Internal",
+                "Virtual"
+            ],
+            "enumDescriptions": {
+                "External": "External",
+                "Internal": "Internal",
+                "Virtual": "Virtual"
+            },
+            "enumLongDescriptions": {
+                "External": "External",
+                "Internal": "Internal",
+                "Virtual": "Virtual"
+            },
+            "type": "string"
+        },
+        "RollupStatus": {
+            "enum": [
+                "Degraded",
+                "Error",
+                "OK",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Degraded": "Degraded",
+                "Error": "Error",
+                "OK": "OK",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Degraded": "Degraded",
+                "Error": "Error",
+                "OK": "OK",
+                "Unknown": "Unknown"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellLicensableDevice.DellLicensableDevice"
+}

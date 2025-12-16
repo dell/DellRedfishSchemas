@@ -1,0 +1,42 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellManagerNetworkProtocol.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "BinaryEnum": {
+            "enum": [
+                "Enabled",
+                "Disabled"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Associated functionality is disabled.",
+                "Enabled": "Associated functionality is enabled."
+            },
+            "type": "string"
+        },
+        "ClientCertificateTypes": {
+            "enum": [
+                "CustomLDEVID",
+                "DefaultIDEVID",
+                "SigningLDEVID"
+            ],
+            "enumDescriptions": {
+                "CustomLDEVID": "The Certificate(s) located under the Certificate Collection at ClientCertificates shall be used for Port-based Network Access Control.",
+                "DefaultIDEVID": "The Certificate located at InitialDeviceIDCertificate shall be used for Port-based Network Access Control.",
+                "SigningLDEVID": "The Certificate(s) located under the Certificate Collection at ClientCertificates shall be used for Port-based Network Access Control."
+            },
+            "type": "string"
+        },
+        "DellManagerNetworkProtocol": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManagerNetworkProtocol.v1_0_1.json#/definitions/DellManagerNetworkProtocol"
+                }
+            ],
+            "description": "Oem data related to the ManagerNetworkProtocol Instance.",
+            "longDescription": "Oem data related to the ManagerNetworkProtocol Instance."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellManagerNetworkProtocol"
+}
