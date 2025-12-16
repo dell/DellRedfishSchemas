@@ -1,0 +1,46 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellJobService.json",
+    "$ref": "#/definitions/DellJobService",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellJobService": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellJobService.v1_2_1.json#/definitions/DellJobService"
+                }
+            ],
+            "deletable": false,
+            "description": "The DellJobService resource provides some actions to support Job management functionality.",
+            "insertable": false,
+            "longDescription": "The DellJobService resource provides some actions to support Job management functionality.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellJobService"
+            ]
+        },
+        "RebootJobType": {
+            "enum": [
+                "GracefulRebootWithForcedShutdown",
+                "GracefulRebootWithoutForcedShutdown",
+                "PowerCycle"
+            ],
+            "enumDescriptions": {
+                "GracefulRebootWithForcedShutdown": "Graceful Reboot with forced shutdown",
+                "GracefulRebootWithoutForcedShutdown": "Graceful Reboot without forced shutdown",
+                "PowerCycle": "PowerCycle"
+            },
+            "enumVersionAdded": {
+                "GracefulRebootWithForcedShutdown": "v1_2_0",
+                "GracefulRebootWithoutForcedShutdown": "v1_2_0",
+                "PowerCycle": "v1_2_0"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellJobService.DellJobService"
+}

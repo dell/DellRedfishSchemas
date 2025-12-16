@@ -1,0 +1,25 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellAttributeRegistry.json",
+    "$ref": "#/definitions/DellAttributeRegistry",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellAttributeRegistry": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAttributeRegistry.v1_2_0.json#/definitions/DellAttributeRegistry"
+                }
+            ],
+            "deletable": false,
+            "description": "The DellAttributeRegistry schema contains a set of key-value pairs that represents the structure of a Registry. It includes mechanisms for building user interfaces (menus), allowing consistent navigation of the contents. The Attribute Registry is specific to a particular implementation or product. The attributes and property names are not standardized.",
+            "insertable": false,
+            "longDescription": "This resource shall be used to represent an Attribute registry for a Redfish implementation.",
+            "updatable": false
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellAttributeRegistry.DellAttributeRegistry"
+}

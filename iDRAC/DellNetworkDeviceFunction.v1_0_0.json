@@ -1,0 +1,204 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkDeviceFunction.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellNetworkDeviceFunction": {
+            "additionalProperties": false,
+            "description": "This property shall represent the Oem properties for a DellNetworkDeviceFunction resource.",
+            "longDescription": "This property shall represent the Oem properties for a DellNetworkDeviceFunction resource.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DellFC": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.json#/definitions/DellFC"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellFC.",
+                    "longDescription": "A resource representation of DellFC.",
+                    "readonly": true
+                },
+                "DellFCCapabilities": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCCapabilities.json#/definitions/DellFCCapabilities"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellFCCapabilities.",
+                    "longDescription": "A resource representation of DellFCCapabilities.",
+                    "readonly": true
+                },
+                "DellFCPortMetrics": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCPortMetrics.json#/definitions/DellFCPortMetrics"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellFCPortMetrics.",
+                    "longDescription": "A resource representation of DellFCPortMetrics.",
+                    "readonly": true
+                },
+                "DellInfiniBand": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/DellInfiniBand"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellInfiniBand.",
+                    "longDescription": "A resource representation of DellInfiniBand.",
+                    "readonly": true
+                },
+                "DellInfiniBandCapabilities": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/DellInfiniBandCapabilities"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellInfiniBandCapabilities.",
+                    "longDescription": "A resource representation of DellInfiniBandCapabilities.",
+                    "readonly": true
+                },
+                "DellInfiniBandPortMetrics": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandPortMetrics.json#/definitions/DellInfiniBandPortMetrics"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellInfiniBandPortMetrics.",
+                    "longDescription": "A resource representation of DellInfiniBandPortMetrics.",
+                    "readonly": true
+                },
+                "DellNIC": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/DellNIC"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellNIC.",
+                    "longDescription": "A resource representation of DellNIC.",
+                    "readonly": true
+                },
+                "DellNICCapabilities": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/DellNICCapabilities"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellNICCapabilities.",
+                    "longDescription": "A resource representation of DellNICCapabilities.",
+                    "readonly": true
+                },
+                "DellNICPortMetrics": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.json#/definitions/DellNICPortMetrics"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellNICPortMetrics.",
+                    "longDescription": "A resource representation of DellNICPortMetrics.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "DellNetworkDeviceFunctionLinks": {
+            "additionalProperties": false,
+            "description": "This version was added to add new Oem resources and Links.",
+            "longDescription": "This version was added to add new Oem resources and Links.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CPUAffinity": {
+                    "description": "A reference to a Processor resource indicating CPU Affinity of the resource.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Processor.json#/definitions/Processor"
+                    },
+                    "longDescription": "A reference to a Processor resource indicating CPU Affinity of the resource.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "CPUAffinity@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
+                },
+                "DellNetworkAttributes": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAttributes.json#/definitions/DellAttributes"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A resource representation of DellNetworkAttributes.",
+                    "longDescription": "A resource representation of DellNetworkAttributes.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellNetworkDeviceFunction.v1_0_0"
+}

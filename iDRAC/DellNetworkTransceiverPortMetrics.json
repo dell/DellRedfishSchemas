@@ -1,0 +1,122 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.json",
+    "$ref": "#/definitions/DellNetworkTransceiverPortMetrics",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellNetworkTransceiverPortMetrics": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.v1_0_0.json#/definitions/DellNetworkTransceiverPortMetrics"
+                }
+            ],
+            "deletable": false,
+            "description": "The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver.",
+            "insertable": false,
+            "longDescription": "The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}"
+            ],
+            "urisDeprecated": [
+                "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}",
+                "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/{NetworkPortId}/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}"
+            ]
+        },
+        "RXInputPowerStatus": {
+            "enum": [
+                "Critical",
+                "Ok",
+                "Warning"
+            ],
+            "enumDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "enumLongDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "type": "string"
+        },
+        "TXBiasCurrentStatus": {
+            "enum": [
+                "Critical",
+                "Ok",
+                "Warning"
+            ],
+            "enumDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "enumLongDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "type": "string"
+        },
+        "TXOutputPowerStatus": {
+            "enum": [
+                "Critical",
+                "Ok",
+                "Warning"
+            ],
+            "enumDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "enumLongDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "type": "string"
+        },
+        "TemperatureStatus": {
+            "enum": [
+                "Critical",
+                "Ok",
+                "Warning"
+            ],
+            "enumDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "enumLongDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "type": "string"
+        },
+        "VoltageStatus": {
+            "enum": [
+                "Critical",
+                "Ok",
+                "Warning"
+            ],
+            "enumDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "enumLongDescriptions": {
+                "Critical": "Critical",
+                "Ok": "Ok",
+                "Warning": "Warning"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellNetworkTransceiverPortMetrics.DellNetworkTransceiverPortMetrics"
+}

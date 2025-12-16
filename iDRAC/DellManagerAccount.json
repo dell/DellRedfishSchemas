@@ -1,0 +1,18 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellManagerAccount.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellManagerAccount": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManagerAccount.v1_0_0.json#/definitions/DellManagerAccount"
+                }
+            ],
+            "description": "This is the complex property is for the additional OEM properties to complement DMTF ManagerAccount Schema.",
+            "longDescription": "This is the complex property is for the additional OEM properties to complement DMTF ManagerAccount Schema."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellManagerAccount"
+}

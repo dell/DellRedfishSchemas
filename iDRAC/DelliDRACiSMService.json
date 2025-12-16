@@ -1,0 +1,29 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACiSMService.json",
+    "$ref": "#/definitions/DelliDRACiSMService",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DelliDRACiSMService": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACiSMService.v1_1_0.json#/definitions/DelliDRACiSMService"
+                }
+            ],
+            "deletable": false,
+            "description": "The DelliDRACiSMService resource provides some actions and properties to support communication between iDRAC and iSM.",
+            "insertable": false,
+            "longDescription": "The DelliDRACiSMService resource provides some actions and properties to support communication between iDRAC and iSM.",
+            "updatable": true,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DelliDRACiSMService",
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DelliDRACiSMService/Requests"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DelliDRACiSMService.DelliDRACiSMService"
+}

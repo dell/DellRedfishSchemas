@@ -1,0 +1,49 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellRollupStatus.json",
+    "$ref": "#/definitions/DellRollupStatus",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellRollupStatus": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellRollupStatus.v1_0_0.json#/definitions/DellRollupStatus"
+                }
+            ],
+            "deletable": false,
+            "description": "Represents the subcomponent roll-up statuses.",
+            "insertable": false,
+            "longDescription": "Represents the subcomponent roll-up statuses.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellRollupStatus/{RollupStatusId}"
+            ]
+        },
+        "RollupStatus": {
+            "enum": [
+                "Degraded",
+                "Error",
+                "Ok",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Degraded": "Degraded",
+                "Error": "Error",
+                "Ok": "Ok",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Degraded": "Degraded",
+                "Error": "Error",
+                "Ok": "Ok",
+                "Unknown": "Unknown"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellRollupStatus.DellRollupStatus"
+}

@@ -1,0 +1,293 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#Switch.GetLaneErrorInjectionInfo": {
+                    "$ref": "#/definitions/GetLaneErrorInjectionInfo"
+                },
+                "#Switch.GetTagSBTimeout": {
+                    "$ref": "#/definitions/GetTagSBTimeout"
+                },
+                "#Switch.GetTraceSeverity": {
+                    "$ref": "#/definitions/GetTraceSeverity"
+                },
+                "#Switch.SetLaneErrorInjection": {
+                    "$ref": "#/definitions/SetLaneErrorInjection"
+                },
+                "#Switch.SetTraceSeverity": {
+                    "$ref": "#/definitions/SetTraceSeverity"
+                }
+            },
+            "type": "object"
+        },
+        "GetLaneErrorInjectionInfo": {
+            "actionResponse": {
+                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/GetLaneErrorInjectionInfoResponse"
+            },
+            "additionalProperties": false,
+            "description": "This action is used to get the error injection info on a Lane",
+            "longDescription": "This action is used to get the error injection info on a Lane",
+            "parameters": {
+                "LaneNum": {
+                    "description": "This parameter specifies the lane number.",
+                    "longDescription": "This parameter specifies the lane number.",
+                    "requiredParameter": true,
+                    "type": "integer"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "GetTagSBTimeout": {
+            "actionResponse": {
+                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/GetTagSBTimeoutResponse"
+            },
+            "additionalProperties": false,
+            "description": "This action is used to read the Tag ScoreBoard timeout value for the given station",
+            "longDescription": "This action is used to tead the Tag ScoreBoard timeout value for the given station",
+            "parameters": {
+                "QueryMode": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/QueryMode",
+                    "description": "This parameter shall contain the query mode",
+                    "longDescription": "This parameter shall contain the query mode",
+                    "requiredParameter": true
+                },
+                "StationNumber": {
+                    "description": "This parameter shall contain the station number. The possible values are 0 to 8",
+                    "longDescription": "This parameter shall contain the station number. The possible values are 0 to 8",
+                    "type": "integer"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "GetTraceSeverity": {
+            "actionResponse": {
+                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/GetTraceSeverityResponse"
+            },
+            "additionalProperties": false,
+            "description": "This action is used to get the Broadcom Switch health config trace log options",
+            "longDescription": "This action is used to get the Broadcom Switch health config trace log options",
+            "parameters": {
+                "DebugType": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/DebugType",
+                    "description": "This parameter shall contain the debug type required",
+                    "longDescription": "This parameter shall contain the debug type required",
+                    "requiredParameter": true
+                },
+                "SubSystemType": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/SubSystemType",
+                    "description": "This parameter shall contain the SubSystemType",
+                    "longDescription": "This parameter shall contain the SubSystemType"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "SetLaneErrorInjection": {
+            "additionalProperties": false,
+            "description": "This action is used to Perform the error injection on a Lane",
+            "longDescription": "This action is used to Perform the error injection on a Lane",
+            "parameters": {
+                "Enable": {
+                    "description": "This parameter specifies whether to enable or disable the lane injection",
+                    "longDescription": "This parameter specifies whether to enable or disable the lane injection",
+                    "requiredParameter": true,
+                    "type": "boolean"
+                },
+                "Frequency": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/InjFrequency",
+                    "description": "This parameter specifies the error injection frequency.",
+                    "longDescription": "This parameter specifies Error injection control value.",
+                    "requiredParameter": true
+                },
+                "LaneNum": {
+                    "description": "This parameter specifies the lane number.",
+                    "longDescription": "This parameter specifies the lane number.",
+                    "requiredParameter": true,
+                    "type": "integer"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "SetTraceSeverity": {
+            "additionalProperties": false,
+            "description": "This action is used to set the Broadcom Switch trace severity log options",
+            "longDescription": "This action is used to set the Broadcom Switch trace severity log options",
+            "parameters": {
+                "DebugType": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/DebugType",
+                    "description": "This parameter shall contain the debug type required",
+                    "longDescription": "This parameter shall contain the debug type required",
+                    "requiredParameter": true
+                },
+                "SubSystemType": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/SubSystemType",
+                    "description": "This parameter shall contain the SubSystemType",
+                    "longDescription": "This parameter shall contain the SubSystemType"
+                },
+                "TraceMask": {
+                    "description": "This parameter shall contain the TraceMask",
+                    "longDescription": "Please provide the TraceMask from the Broadcom ScrutinySwitch Healthconfig document when setting the SubSystemType level log. E.g. value 0x00000001",
+                    "type": "string"
+                },
+                "TraceSeverity": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/TraceSeverity",
+                    "description": "This parameter shall contain the TraceSeverity",
+                    "longDescription": "This parameter shall contain the TraceSeverity"
+                },
+                "UpdateType": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/UpdateType",
+                    "description": "This parameter shall contain the update type required",
+                    "longDescription": "This parameter shall contain the update type required"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellSwitch.v1_1_0"
+}

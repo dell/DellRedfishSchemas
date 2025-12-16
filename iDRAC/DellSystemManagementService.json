@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSystemManagementService.json",
+    "$ref": "#/definitions/DellSystemManagementService",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellSystemManagementService": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystemManagementService.v1_1_0.json#/definitions/DellSystemManagementService"
+                }
+            ],
+            "deletable": false,
+            "description": "DellSystemManagementService provides actions to support System Management functionalities.",
+            "insertable": false,
+            "longDescription": "DellSystemManagementService provides actions to support System Management functionalities.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellSystemManagementService"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellSystemManagementService.DellSystemManagementService"
+}

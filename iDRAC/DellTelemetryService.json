@@ -1,0 +1,36 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellTelemetryService.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellTelemetryService": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellTelemetryService.v1_2_0.json#/definitions/DellTelemetryService"
+                }
+            ],
+            "description": "This is telemetryservice oem property schemas.",
+            "longDescription": "This is telemetryservice oem property schemas"
+        },
+        "MetricValue": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellTelemetryService.v1_2_0.json#/definitions/MetricValue"
+                }
+            ],
+            "description": "This is Metric Value.",
+            "longDescription": "This is Metric Value"
+        },
+        "SubmitMetricValue": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellTelemetryService.v1_2_0.json#/definitions/SubmitMetricValue"
+                }
+            ],
+            "description": "This is telemetryservice Action oem property schemas",
+            "longDescription": "This is telemetryservice Action oem property schemas"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellTelemetryService"
+}

@@ -1,0 +1,171 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemAssembly.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellOemAssemblyLinks": {
+            "additionalProperties": false,
+            "description": "This version was added to add new Oem resources and Links.",
+            "longDescription": "This version was added to add new Oem resources and Links.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "BayId": {
+                    "description": "The Bay Identifier provided by the FRU.",
+                    "longDescription": "This property shall contain the Bay Id.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "DellAssembly": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAssembly.json#/definitions/DellAssembly",
+                    "autoExpand": true,
+                    "description": "A resource representation of DellAssembly.",
+                    "longDescription": "A resource representation of DellAssembly.",
+                    "readonly": true
+                },
+                "DellFRUAssembly": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFRUAssembly.json#/definitions/DellFRUAssemblyInfo"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Oem properties for representing FRU properties.",
+                    "longDescription": "Oem properties for representing FRU properties.",
+                    "versionAdded": "v1_1_0"
+                },
+                "EndpointCount": {
+                    "description": "The EndpointCount of the FRU.",
+                    "longDescription": "The EndpointCount of the FRU.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "FirmwareMajor": {
+                    "description": "The FirmwareMajor of the FRU.",
+                    "longDescription": "The FirmwareMajor of the FRU.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "FirmwareMinor": {
+                    "description": "The FirmwareMinor of the FRU.",
+                    "longDescription": "The FirmwareMinor of the FRU.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "FirmwareVersion": {
+                    "description": "The firmware version provided by the FRU.",
+                    "longDescription": "The firmware version provided by the FRU.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "FormFactor": {
+                    "description": "The FormFactor provided by the FRU.",
+                    "longDescription": "The FormFactor provided by the FRU.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "HardwareId": {
+                    "description": "The HardwareId of FRU.",
+                    "longDescription": "The HardwareId of FRU.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Location": {
+                    "description": "The Location of the FRU in the system.",
+                    "longDescription": "The Location of the FRU in the system.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ModuleClass": {
+                    "description": "The ModuleClass of the FRU.",
+                    "longDescription": "The ModuleClass of the FRU.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "PICPowerIndex": {
+                    "description": "The PIC Power Index connected to the FRU.",
+                    "longDescription": "The PIC Power Index connected to the FRU.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SlotCount": {
+                    "description": "The SlotCount location the hardware is in.",
+                    "longDescription": "The SlotCount location the hardware is in.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Type": {
+                    "description": "The type of the FRU.",
+                    "longDescription": "The type of the FRU.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellOemAssembly.v1_1_0"
+}

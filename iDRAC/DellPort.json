@@ -1,0 +1,764 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "ActionType": {
+            "enum": [
+                "Enable",
+                "Disable"
+            ],
+            "enumDescriptions": {
+                "Disable": "Disable",
+                "Enable": "Enable"
+            },
+            "enumLongDescriptions": {
+                "Disable": "Disable",
+                "Enable": "Enable"
+            },
+            "type": "string"
+        },
+        "ConditionType": {
+            "enum": [
+                "None",
+                "EgressCreditTimeout"
+            ],
+            "enumDescriptions": {
+                "EgressCreditTimeout": "EgressCreditTimeout",
+                "None": "None"
+            },
+            "enumLongDescriptions": {
+                "EgressCreditTimeout": "EgressCreditTimeout",
+                "None": "None"
+            },
+            "type": "string"
+        },
+        "ConfigureTLPRoundTripTime": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/ConfigureTLPRoundTripTime"
+                }
+            ],
+            "description": "This action is used to Configure the TLP round-trip time",
+            "longDescription": "This action is used to Configure the TLP round-trip time"
+        },
+        "ErrInjType": {
+            "enum": [
+                "TLP",
+                "DLLP"
+            ],
+            "enumDescriptions": {
+                "DLLP": "Data Link Layer Packet",
+                "TLP": "Transaction Layer Packet"
+            },
+            "enumLongDescriptions": {
+                "DLLP": "Data Link Layer Packet",
+                "TLP": "Transaction Layer Packet"
+            },
+            "type": "string",
+            "versionAdded": "v1_1_0"
+        },
+        "ErrorInjCtrl": {
+            "enum": [
+                "Disabled",
+                "1us",
+                "1ms",
+                "NextDLLP",
+                "NextTLP",
+                "128th-TLP",
+                "8192th-TLP",
+                "Unable to Recognize"
+            ],
+            "enumDescriptions": {
+                "128th-TLP": "Inject error in every 128th TLP",
+                "1ms": "Inject error in every 1ms",
+                "1us": "Inject error in every 1us",
+                "8192th-TLP": "Inject error in every 8192th TLP",
+                "Disabled": "Disable the injection",
+                "NextDLLP": "Inject error next DLLP",
+                "NextTLP": "Inject error next TLP",
+                "Unable to Recognize": "Unable to recognize the error injection control"
+            },
+            "enumLongDescriptions": {
+                "128th-TLP": "Inject error in every 128th TLP",
+                "1ms": "Inject error in every 1ms",
+                "1us": "Inject error in every 1us",
+                "8192th-TLP": "Inject error in every 8192th TLP",
+                "Disabled": "Disable the injection",
+                "NextDLLP": "Inject error next DLLP",
+                "NextTLP": "Inject error next TLP",
+                "Unable to Recognize": "Unable to recognize the error injection control"
+            },
+            "type": "string",
+            "versionAdded": "v1_1_0"
+        },
+        "ExportLTSSMTriggerLog": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/ExportLTSSMTriggerLog"
+                }
+            ],
+            "description": "This ExportLTSSMTriggerLog is used to collect the LTSSM port logs after trigger condition executed.",
+            "longDescription": "This ExportLTSSMTriggerLog is used to collect the LTSSM port logs after trigger condition executed."
+        },
+        "GetCreditCapture": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/GetCreditCapture"
+                }
+            ],
+            "description": "This action is used to get the credit information",
+            "longDescription": "This action is used to get the credit information"
+        },
+        "GetCreditCaptureResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the GetCreditCapture action.",
+            "longDescription": "This type shall contain the properties found in the response body for the GetCreditCapture action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "LiveDataCredits": {
+                    "description": "This property states information about Data credits",
+                    "longDescription": "This property states information about header credits of the given Packet Type",
+                    "type": "integer"
+                },
+                "LiveHeaderCredits": {
+                    "description": "This property states information about header credits",
+                    "longDescription": "This property states information about header credits of the given Packet Type",
+                    "type": "integer"
+                },
+                "PacketType": {
+                    "$ref": "#/definitions/PacketType",
+                    "description": "This property states the type of packet for which credits are captured.",
+                    "longDescription": "This property states the type of packet for which credits are captured."
+                },
+                "TimeStamp": {
+                    "description": "This property states the timestamp of the credits",
+                    "longDescription": "This property states the timestamp of the credits",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "GetErrorInjectionInfo": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/GetErrorInjectionInfo"
+                }
+            ],
+            "description": "This action is used to read the error injection info for a port",
+            "longDescription": "This action is used to read the error injection info for a port"
+        },
+        "GetErrorInjectionInfoResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the GetErrorInjectionInfo action.",
+            "longDescription": "This type shall contain the properties found in the response body for the GetErrorInjectionInfo action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ErrorInjCtrl": {
+                    "$ref": "#/definitions/ErrorInjCtrl",
+                    "description": "This property states the type of ErrorInjCtrl.",
+                    "longDescription": "This property states the type of ErrorInjCtrl."
+                },
+                "InjectionStatus": {
+                    "description": "This property states if error injection is running or not running.",
+                    "longDescription": "This property states if error injection is running or not running.",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "GetLinkDownConditionStatus": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/GetLinkDownConditionStatus"
+                }
+            ],
+            "description": "The GetLinkDownConditionStatus gives the condition and time to get the link down ",
+            "longDescription": "The GetLinkDownConditionStatus gives the condition and time to get the link down "
+        },
+        "GetLinkDownConditionStatusResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the GetLinkDownConditionStatus action.",
+            "longDescription": "This type shall contain the properties found in the response body for the GetLinkDownConditionStatus action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ConditionTriggered": {
+                    "description": "This property states whether the condition is triggered or not.",
+                    "longDescription": "This property states whether the condition is triggered or not.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "TriggerStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TriggerStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property states the trigger status",
+                    "longDescription": "This property states the trigger status"
+                }
+            },
+            "type": "object"
+        },
+        "IsLTSSMTriggered": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/IsLTSSMTriggered"
+                }
+            ],
+            "description": "The IsLTSSMTriggered gives the whether the set condition is triggred or not.",
+            "longDescription": "The IsLTSSMTriggered gives the whether the set condition is triggred or not."
+        },
+        "IsLTSSMTriggeredResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the IsLTSSMTriggeredResponse action.",
+            "longDescription": "This type shall contain the properties found in the response body for the IsLTSSMTriggeredResponse action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "IsTriggered": {
+                    "description": "This property states whether the condition is triggered or not.",
+                    "longDescription": "This property states whether the condition is triggered or not.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "Opcode": {
+            "enum": [
+                "Start",
+                "Stop"
+            ],
+            "enumDescriptions": {
+                "Start": "Start credit capture",
+                "Stop": "Stop credit capture"
+            },
+            "enumLongDescriptions": {
+                "Start": "Start credit capture",
+                "Stop": "Stop credit capture"
+            },
+            "type": "string",
+            "versionAdded": "v1_1_0"
+        },
+        "PacketType": {
+            "enum": [
+                "NearEndPosted",
+                "NearEndNonPosted",
+                "NearEndCompletion",
+                "FarEndPosted",
+                "FarEndNonPosted",
+                "FarEndCompletion"
+            ],
+            "enumDescriptions": {
+                "FarEndCompletion": "Far end completion",
+                "FarEndNonPosted": "Far end non posted",
+                "FarEndPosted": "Far end posted",
+                "NearEndCompletion": "Near end completion",
+                "NearEndNonPosted": "Near end non posted",
+                "NearEndPosted": "Near end posted"
+            },
+            "enumLongDescriptions": {
+                "FarEndCompletion": "Far end completion",
+                "FarEndNonPosted": "Far end non posted",
+                "FarEndPosted": "Far end posted",
+                "NearEndCompletion": "Near end completion",
+                "NearEndNonPosted": "Near end non posted",
+                "NearEndPosted": "Near end posted"
+            },
+            "type": "string",
+            "versionAdded": "v1_1_0"
+        },
+        "ReadTLPRoundTripTime": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/ReadTLPRoundTripTime"
+                }
+            ],
+            "description": "This action is used to read the TLP round-trip time in nanoseconds",
+            "longDescription": "This action is used to read the TLP round-trip time in nanoseconds"
+        },
+        "ReadTLPRoundTripTimeResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the ReadTLPRoundTripTime action.",
+            "longDescription": "This type shall contain the properties found in the response body for the ReadTLPRoundTripTime action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "MaxTLPRoundTripTime ": {
+                    "description": "This property states the maximum TLP Round trip time on a port.",
+                    "longDescription": "This property states the maximum TLP Round trip time on a port.",
+                    "type": "integer"
+                },
+                "MinTLPRoundTripTime ": {
+                    "description": "This property states the minimum TLP Round trip time on a port.",
+                    "longDescription": "This property states the minimum TLP Round trip time on a port.",
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "SetCreditCapture": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/SetCreditCapture"
+                }
+            ],
+            "description": "This action is used to start or stop credit capture for specific packet types",
+            "longDescription": "This action is used to start or stop credit capture for specific packet types"
+        },
+        "SetErrorInjection": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/SetErrorInjection"
+                }
+            ],
+            "description": "This action is used to perform the error injection on a port",
+            "longDescription": "This action is used to perform the error injection on a port"
+        },
+        "SetLinkDownConditionStatus": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/SetLinkDownConditionStatus"
+                }
+            ],
+            "description": "This action is used to set the link down condition to the downlink port.",
+            "longDescription": "This action is used to set the link down condition to the downlink port."
+        },
+        "SetupLTSSMTrigger": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/SetupLTSSMTrigger"
+                }
+            ],
+            "description": "This action is used to set the trigger condition.",
+            "longDescription": "This action is used to set the trigger condition."
+        },
+        "TriggerCondition": {
+            "enum": [
+                "DetectQuiet",
+                "DetectActive",
+                "DetectRate",
+                "DetectWait12ms",
+                "DetectP1Req",
+                "DetectDoneST",
+                "DetectP0Req",
+                "DetectRateOk",
+                "DetectSPCOP",
+                "DetectDetWaitP1ST",
+                "DetectDetWaitRateST",
+                "PollingIdle",
+                "PollingP0Req",
+                "PollingActive",
+                "PollingDone",
+                "PollingConfig",
+                "PollingTXEIOS",
+                "PollingCompliance",
+                "PollingEIdle",
+                "PollingSpeed",
+                "ConfigIdle",
+                "ConfigLWStartDn",
+                "ConfigLNWaitDn",
+                "ConfigLWAcceptDn",
+                "ConfigTxIdle",
+                "ConfigLNAcceptDn",
+                "ConfigCompleteDn",
+                "ConfigLNWaitUp",
+                "ConfigLNAcceptUp",
+                "ConfigDoneST",
+                "ConfigTxCtlskip",
+                "ConfigLwStartUp",
+                "ConfigXLINKARBWON",
+                "ConfigComplete",
+                "ConfigTXSDSM",
+                "ConfigLWAcceptUp",
+                "ConfigCompleteUp",
+                "RecoveryIdle",
+                "RecoveryRcvrLock",
+                "RecoveryTXEIOS",
+                "RecoveryRcvrCfg",
+                "RecoveryEQPH1Dn",
+                "RecoverySpeed",
+                "RecoveryTXEIEOS",
+                "RecoveryReset",
+                "RecoveryDisable",
+                "RecoveryTxIdle",
+                "RecoveryErrCfg",
+                "RecoveryTXSDSM",
+                "RecoveryErrDet",
+                "RecoveryLoopback",
+                "RecoveryEQPH3Up",
+                "RecoveryEQPH0Up",
+                "RecoveryEQPH2Dn",
+                "RecoveryEQPH3Dn",
+                "RecoveryEQPH2Up",
+                "RecoveryEQPH1Up",
+                "RecoveryTxCtlSkp",
+                "RecoveryMYEQPHASE",
+                "L0Idle",
+                "L0",
+                "L0L0s",
+                "L0TXEIOS",
+                "LinkDown",
+                "LdWait",
+                "L1",
+                "L0Recovery",
+                "L2",
+                "ACTREC",
+                "HrIdle",
+                "HrDir",
+                "HrRcv",
+                "HrTx",
+                "HrTXEIOS1",
+                "HrTXEIEOS",
+                "HrRcvWait",
+                "HrTXEIOS",
+                "LbIdle",
+                "LbEntry",
+                "LbSlvEntry",
+                "LbTXEIOS",
+                "LbACTMST",
+                "LbACTSLV",
+                "LbExitST",
+                "LbSpeed",
+                "LbEIdle",
+                "LpL0sEntry",
+                "LpL0sIdle",
+                "LpL0STXEIE",
+                "LpL0STXFTS",
+                "LpL0STXSKP",
+                "LpL0STXSDSM",
+                "LpL1RXEIOS",
+                "LpL1Idle",
+                "LpL2RXEIOS",
+                "LpL2Idle",
+                "LpL2Rate",
+                "LpL2RateOk",
+                "LpIdle1",
+                "LpIdle2",
+                "LpIdle3",
+                "DisableIdle",
+                "DisableTXEIEOS",
+                "DisableTXTS1",
+                "DisableTXEIOS",
+                "DisableWaitEIos",
+                "DisableRate",
+                "DisableRateOk",
+                "DisableP1Req",
+                "DisableDone"
+            ],
+            "enumDescriptions": {
+                "ACTREC": "SWITCH_LTSSM_TRIG_ACTREC",
+                "ConfigComplete": "SWITCH_LTSSM_TRIG_CONFIG_COMPLETE",
+                "ConfigCompleteDn": "SWITCH_LTSSM_TRIG_CONFIG_COMPLETE_DN",
+                "ConfigCompleteUp": "SWITCH_LTSSM_TRIG_CONFIG_COMPLETE_UP",
+                "ConfigDoneST": "SWITCH_LTSSM_TRIG_CONFIG_DONE_ST",
+                "ConfigIdle": "SWITCH_LTSSM_TRIG_CONFIG_IDLE",
+                "ConfigLNAcceptDn": "SWITCH_LTSSM_TRIG_CONFIG_LN_ACCEPT_DN",
+                "ConfigLNAcceptUp": "SWITCH_LTSSM_TRIG_CONFIG_LN_ACCEPT_UP",
+                "ConfigLNWaitDn": "SWITCH_LTSSM_TRIG_CONFIG_LN_WAIT_DN",
+                "ConfigLNWaitUp": "SWITCH_LTSSM_TRIG_CONFIG_LN_WAIT_UP",
+                "ConfigLWAcceptDn": "SWITCH_LTSSM_TRIG_CONFIG_LW_ACCEPT_DN",
+                "ConfigLWAcceptUp": "SWITCH_LTSSM_TRIG_CONFIG_LW_ACCEPT_UP",
+                "ConfigLWStartDn": "SWITCH_LTSSM_TRIG_CONFIG_LW_START_DN",
+                "ConfigLwStartUp": "SWITCH_LTSSM_TRIG_CONFIG_LW_START_UP",
+                "ConfigTXSDSM": "SWITCH_LTSSM_TRIG_CONFIG_TXSDSM",
+                "ConfigTxCtlskip": "SWITCH_LTSSM_TRIG_CONFIG_TXCTLSKIP",
+                "ConfigTxIdle": "SWITCH_LTSSM_TRIG_CONFIG_TXIDLE",
+                "ConfigXLINKARBWON": "SWITCH_LTSSM_TRIG_CONFIG_XLINKARB_WON",
+                "DetectActive": "SWITCH_LTSSM_TRIG_DETECT_ACTIVE",
+                "DetectDetWaitP1ST": "SWITCH_LTSSM_TRIG_DETECT_DET_WAIT_P1_ST",
+                "DetectDetWaitRateST": "SWITCH_LTSSM_TRIG_DETECT_DET_WAIT_RATE_ST",
+                "DetectDoneST": "SWITCH_LTSSM_TRIG_DETECT_DONEST",
+                "DetectP0Req": "SWITCH_LTSSM_TRIG_DETECT_P0_REQ",
+                "DetectP1Req": "SWITCH_LTSSM_TRIG_DETECT_P1_REQ",
+                "DetectQuiet": "SWITCH_LTSSM_TRIG_DETECT_QUIET",
+                "DetectRate": "SWITCH_LTSSM_TRIG_DETECT_RATE",
+                "DetectRateOk": "SWITCH_LTSSM_TRIG_DETECT_RATEOK",
+                "DetectSPCOP": "SWITCH_LTSSM_TRIG_DETECT_SPCOP",
+                "DetectWait12ms": "SWITCH_LTSSM_TRIG_DETECT_WAIT12MS",
+                "DisableDone": "SWITCH_LTSSM_TRIG_DISABLE_DONE",
+                "DisableIdle": "SWITCH_LTSSM_TRIG_DISABLE_IDLE",
+                "DisableP1Req": "SWITCH_LTSSM_TRIG_DISABLE_P1_REQ",
+                "DisableRate": "SWITCH_LTSSM_TRIG_DISABLE_RATE",
+                "DisableRateOk": "SWITCH_LTSSM_TRIG_DISABLE_RATEOK",
+                "DisableTXEIEOS": "SWITCH_LTSSM_TRIG_DISABLE_TXEIEOS",
+                "DisableTXEIOS": "SWITCH_LTSSM_TRIG_DISABLE_TXEIOS",
+                "DisableTXTS1": "SWITCH_LTSSM_TRIG_DISABLE_TXTS1",
+                "DisableWaitEIos": "SWITCH_LTSSM_TRIG_DISABLE_WAITEIOS",
+                "HrDir": "SWITCH_LTSSM_TRIG_HR_DIR",
+                "HrIdle": "SWITCH_LTSSM_TRIG_HR_IDLE",
+                "HrRcv": "SWITCH_LTSSM_TRIG_HR_RCV",
+                "HrRcvWait": "SWITCH_LTSSM_TRIG_HR_RCVWAIT",
+                "HrTXEIEOS": "SWITCH_LTSSM_TRIG_HR_TXEIEOS",
+                "HrTXEIOS": "SWITCH_LTSSM_TRIG_HR_TXEIOS",
+                "HrTXEIOS1": "SWITCH_LTSSM_TRIG_HR_TXEIOS_1",
+                "HrTx": "SWITCH_LTSSM_TRIG_HR_TX",
+                "L0": "SWITCH_LTSSM_TRIG_L0",
+                "L0Idle": "SWITCH_LTSSM_TRIG_L0_IDLE",
+                "L0L0s": "SWITCH_LTSSM_TRIG_L0_L0S",
+                "L0Recovery": "SWITCH_LTSSM_TRIG_L0_RECOVERY",
+                "L0TXEIOS": "SWITCH_LTSSM_TRIG_L0_TXEIOS",
+                "L1": "SWITCH_LTSSM_TRIG_L1",
+                "L2": "SWITCH_LTSSM_TRIG_L2",
+                "LbACTMST": "SWITCH_LTSSM_TRIG_LB_ACTMST",
+                "LbACTSLV": "SWITCH_LTSSM_TRIG_LB_ACTSLV",
+                "LbEIdle": "SWITCH_LTSSM_TRIG_LB_EIDLE",
+                "LbEntry": "SWITCH_LTSSM_TRIG_LB_ENTRY",
+                "LbExitST": "SWITCH_LTSSM_TRIG_LB_EXITST",
+                "LbIdle": "SWITCH_LTSSM_TRIG_LB_IDLE",
+                "LbSlvEntry": "SWITCH_LTSSM_TRIG_LB_SLVENTRY",
+                "LbSpeed": "SWITCH_LTSSM_TRIG_LB_SPEED",
+                "LbTXEIOS": "SWITCH_LTSSM_TRIG_LB_TXEIOS",
+                "LdWait": "SWITCH_LTSSM_TRIG_LDWAIT",
+                "LinkDown": "SWITCH_LTSSM_TRIG_LINKDOWN",
+                "LpIdle1": "SWITCH_LTSSM_TRIG_LP_IDLE_1",
+                "LpIdle2": "SWITCH_LTSSM_TRIG_LP_IDLE_2",
+                "LpIdle3": "SWITCH_LTSSM_TRIG_LP_IDLE_3",
+                "LpL0STXEIE": "SWITCH_LTSSM_TRIG_LP_L0STXEIE",
+                "LpL0STXFTS": "SWITCH_LTSSM_TRIG_LP_L0STXFTS",
+                "LpL0STXSDSM": "SWITCH_LTSSM_TRIG_LP_L0STXSDSM",
+                "LpL0STXSKP": "SWITCH_LTSSM_TRIG_LP_L0STXSKP",
+                "LpL0sEntry": "SWITCH_LTSSM_TRIG_LP_L0SENTRY",
+                "LpL0sIdle": "SWITCH_LTSSM_TRIG_LP_L0SIDLE",
+                "LpL1Idle": "SWITCH_LTSSM_TRIG_LP_L1IDLE",
+                "LpL1RXEIOS": "SWITCH_LTSSM_TRIG_LP_L1RXEIOS",
+                "LpL2Idle": "SWITCH_LTSSM_TRIG_LP_L2IDLE",
+                "LpL2RXEIOS": "SWITCH_LTSSM_TRIG_LP_L2RXEIOS",
+                "LpL2Rate": "SWITCH_LTSSM_TRIG_LP_L2RATE",
+                "LpL2RateOk": "SWITCH_LTSSM_TRIG_LP_L2RATEOK",
+                "PollingActive": "SWITCH_LTSSM_TRIG_POLLING_ACTIVE",
+                "PollingCompliance": "SWITCH_LTSSM_TRIG_POLLING_COMPLIANCE",
+                "PollingConfig": "SWITCH_LTSSM_TRIG_POLLING_CONFIG",
+                "PollingDone": "SWITCH_LTSSM_TRIG_POLLING_DONE",
+                "PollingEIdle": "SWITCH_LTSSM_TRIG_POLLING_EIDLE",
+                "PollingIdle": "SWITCH_LTSSM_TRIG_POLLING_IDLE",
+                "PollingP0Req": "SWITCH_LTSSM_TRIG_POLLING_P0_REQ",
+                "PollingSpeed": "SWITCH_LTSSM_TRIG_POLLING_SPEED",
+                "PollingTXEIOS": "SWITCH_LTSSM_TRIG_POLLING_TXEIOS",
+                "RecoveryDisable": "SWITCH_LTSSM_TRIG_RECOVERY_DISABLE",
+                "RecoveryEQPH0Up": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH0_UP",
+                "RecoveryEQPH1Dn": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH1_DN",
+                "RecoveryEQPH1Up": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH1_UP",
+                "RecoveryEQPH2Dn": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH2_DN",
+                "RecoveryEQPH2Up": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH2_UP",
+                "RecoveryEQPH3Dn": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH3_DN",
+                "RecoveryEQPH3Up": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH3_UP",
+                "RecoveryErrCfg": "SWITCH_LTSSM_TRIG_RECOVERY_ERRCFG",
+                "RecoveryErrDet": "SWITCH_LTSSM_TRIG_RECOVERY_ERRDET",
+                "RecoveryIdle": "SWITCH_LTSSM_TRIG_RECOVERY_IDLE",
+                "RecoveryLoopback": "SWITCH_LTSSM_TRIG_RECOVERY_LOOPBACK",
+                "RecoveryMYEQPHASE": "SWITCH_LTSSM_TRIG_RECOVERY_MYEQPHASE",
+                "RecoveryRcvrCfg": "SWITCH_LTSSM_TRIG_RECOVERY_RCVRCFG",
+                "RecoveryRcvrLock": "SWITCH_LTSSM_TRIG_RECOVERY_RCVRLOCK",
+                "RecoveryReset": "SWITCH_LTSSM_TRIG_RECOVERY_RESET",
+                "RecoverySpeed": "SWITCH_LTSSM_TRIG_RECOVERY_SPEED",
+                "RecoveryTXEIEOS": "SWITCH_LTSSM_TRIG_RECOVERY_TXEIEOS",
+                "RecoveryTXEIOS": "SWITCH_LTSSM_TRIG_RECOVERY_TXEIOS",
+                "RecoveryTXSDSM": "SWITCH_LTSSM_TRIG_RECOVERY_TXSDSM",
+                "RecoveryTxCtlSkp": "SWITCH_LTSSM_TRIG_RECOVERY_TXCTLSKP",
+                "RecoveryTxIdle": "SWITCH_LTSSM_TRIG_RECOVERY_TXIDLE"
+            },
+            "enumLongDescriptions": {
+                "ACTREC": "SWITCH_LTSSM_TRIG_ACTREC",
+                "ConfigComplete": "SWITCH_LTSSM_TRIG_CONFIG_COMPLETE",
+                "ConfigCompleteDn": "SWITCH_LTSSM_TRIG_CONFIG_COMPLETE_DN",
+                "ConfigCompleteUp": "SWITCH_LTSSM_TRIG_CONFIG_COMPLETE_UP",
+                "ConfigDoneST": "SWITCH_LTSSM_TRIG_CONFIG_DONE_ST",
+                "ConfigIdle": "SWITCH_LTSSM_TRIG_CONFIG_IDLE",
+                "ConfigLNAcceptDn": "SWITCH_LTSSM_TRIG_CONFIG_LN_ACCEPT_DN",
+                "ConfigLNAcceptUp": "SWITCH_LTSSM_TRIG_CONFIG_LN_ACCEPT_UP",
+                "ConfigLNWaitDn": "SWITCH_LTSSM_TRIG_CONFIG_LN_WAIT_DN",
+                "ConfigLNWaitUp": "SWITCH_LTSSM_TRIG_CONFIG_LN_WAIT_UP",
+                "ConfigLWAcceptDn": "SWITCH_LTSSM_TRIG_CONFIG_LW_ACCEPT_DN",
+                "ConfigLWAcceptUp": "SWITCH_LTSSM_TRIG_CONFIG_LW_ACCEPT_UP",
+                "ConfigLWStartDn": "SWITCH_LTSSM_TRIG_CONFIG_LW_START_DN",
+                "ConfigLwStartUp": "SWITCH_LTSSM_TRIG_CONFIG_LW_START_UP",
+                "ConfigTXSDSM": "SWITCH_LTSSM_TRIG_CONFIG_TXSDSM",
+                "ConfigTxCtlskip": "SWITCH_LTSSM_TRIG_CONFIG_TXCTLSKIP",
+                "ConfigTxIdle": "SWITCH_LTSSM_TRIG_CONFIG_TXIDLE",
+                "ConfigXLINKARBWON": "SWITCH_LTSSM_TRIG_CONFIG_XLINKARB_WON",
+                "DetectActive": "SWITCH_LTSSM_TRIG_DETECT_ACTIVE",
+                "DetectDetWaitP1ST": "SWITCH_LTSSM_TRIG_DETECT_DET_WAIT_P1_ST",
+                "DetectDetWaitRateST": "SWITCH_LTSSM_TRIG_DETECT_DET_WAIT_RATE_ST",
+                "DetectDoneST": "SWITCH_LTSSM_TRIG_DETECT_DONEST",
+                "DetectP0Req": "SWITCH_LTSSM_TRIG_DETECT_P0_REQ",
+                "DetectP1Req": "SWITCH_LTSSM_TRIG_DETECT_P1_REQ",
+                "DetectQuiet": "SWITCH_LTSSM_TRIG_DETECT_QUIET",
+                "DetectRate": "SWITCH_LTSSM_TRIG_DETECT_RATE",
+                "DetectRateOk": "SWITCH_LTSSM_TRIG_DETECT_RATEOK",
+                "DetectSPCOP": "SWITCH_LTSSM_TRIG_DETECT_SPCOP",
+                "DetectWait12ms": "SWITCH_LTSSM_TRIG_DETECT_WAIT12MS",
+                "DisableDone": "SWITCH_LTSSM_TRIG_DISABLE_DONE",
+                "DisableIdle": "SWITCH_LTSSM_TRIG_DISABLE_IDLE",
+                "DisableP1Req": "SWITCH_LTSSM_TRIG_DISABLE_P1_REQ",
+                "DisableRate": "SWITCH_LTSSM_TRIG_DISABLE_RATE",
+                "DisableRateOk": "SWITCH_LTSSM_TRIG_DISABLE_RATEOK",
+                "DisableTXEIEOS": "SWITCH_LTSSM_TRIG_DISABLE_TXEIEOS",
+                "DisableTXEIOS": "SWITCH_LTSSM_TRIG_DISABLE_TXEIOS",
+                "DisableTXTS1": "SWITCH_LTSSM_TRIG_DISABLE_TXTS1",
+                "DisableWaitEIos": "SWITCH_LTSSM_TRIG_DISABLE_WAITEIOS",
+                "HrDir": "SWITCH_LTSSM_TRIG_HR_DIR",
+                "HrIdle": "SWITCH_LTSSM_TRIG_HR_IDLE",
+                "HrRcv": "SWITCH_LTSSM_TRIG_HR_RCV",
+                "HrRcvWait": "SWITCH_LTSSM_TRIG_HR_RCVWAIT",
+                "HrTXEIEOS": "SWITCH_LTSSM_TRIG_HR_TXEIEOS",
+                "HrTXEIOS": "SWITCH_LTSSM_TRIG_HR_TXEIOS",
+                "HrTXEIOS1": "SWITCH_LTSSM_TRIG_HR_TXEIOS_1",
+                "HrTx": "SWITCH_LTSSM_TRIG_HR_TX",
+                "L0": "SWITCH_LTSSM_TRIG_L0",
+                "L0Idle": "SWITCH_LTSSM_TRIG_L0_IDLE",
+                "L0L0s": "SWITCH_LTSSM_TRIG_L0_L0S",
+                "L0Recovery": "SWITCH_LTSSM_TRIG_L0_RECOVERY",
+                "L0TXEIOS": "SWITCH_LTSSM_TRIG_L0_TXEIOS",
+                "L1": "SWITCH_LTSSM_TRIG_L1",
+                "L2": "SWITCH_LTSSM_TRIG_L2",
+                "LbACTMST": "SWITCH_LTSSM_TRIG_LB_ACTMST",
+                "LbACTSLV": "SWITCH_LTSSM_TRIG_LB_ACTSLV",
+                "LbEIdle": "SWITCH_LTSSM_TRIG_LB_EIDLE",
+                "LbEntry": "SWITCH_LTSSM_TRIG_LB_ENTRY",
+                "LbExitST": "SWITCH_LTSSM_TRIG_LB_EXITST",
+                "LbIdle": "SWITCH_LTSSM_TRIG_LB_IDLE",
+                "LbSlvEntry": "SWITCH_LTSSM_TRIG_LB_SLVENTRY",
+                "LbSpeed": "SWITCH_LTSSM_TRIG_LB_SPEED",
+                "LbTXEIOS": "SWITCH_LTSSM_TRIG_LB_TXEIOS",
+                "LdWait": "SWITCH_LTSSM_TRIG_LDWAIT",
+                "LinkDown": "SWITCH_LTSSM_TRIG_LINKDOWN",
+                "LpIdle1": "SWITCH_LTSSM_TRIG_LP_IDLE_1",
+                "LpIdle2": "SWITCH_LTSSM_TRIG_LP_IDLE_2",
+                "LpIdle3": "SWITCH_LTSSM_TRIG_LP_IDLE_3",
+                "LpL0STXEIE": "SWITCH_LTSSM_TRIG_LP_L0STXEIE",
+                "LpL0STXFTS": "SWITCH_LTSSM_TRIG_LP_L0STXFTS",
+                "LpL0STXSDSM": "SWITCH_LTSSM_TRIG_LP_L0STXSDSM",
+                "LpL0STXSKP": "SWITCH_LTSSM_TRIG_LP_L0STXSKP",
+                "LpL0sEntry": "SWITCH_LTSSM_TRIG_LP_L0SENTRY",
+                "LpL0sIdle": "SWITCH_LTSSM_TRIG_LP_L0SIDLE",
+                "LpL1Idle": "SWITCH_LTSSM_TRIG_LP_L1IDLE",
+                "LpL1RXEIOS": "SWITCH_LTSSM_TRIG_LP_L1RXEIOS",
+                "LpL2Idle": "SWITCH_LTSSM_TRIG_LP_L2IDLE",
+                "LpL2RXEIOS": "SWITCH_LTSSM_TRIG_LP_L2RXEIOS",
+                "LpL2Rate": "SWITCH_LTSSM_TRIG_LP_L2RATE",
+                "LpL2RateOk": "SWITCH_LTSSM_TRIG_LP_L2RATEOK",
+                "PollingActive": "SWITCH_LTSSM_TRIG_POLLING_ACTIVE",
+                "PollingCompliance": "SWITCH_LTSSM_TRIG_POLLING_COMPLIANCE",
+                "PollingConfig": "SWITCH_LTSSM_TRIG_POLLING_CONFIG",
+                "PollingDone": "SWITCH_LTSSM_TRIG_POLLING_DONE",
+                "PollingEIdle": "SWITCH_LTSSM_TRIG_POLLING_EIDLE",
+                "PollingIdle": "SWITCH_LTSSM_TRIG_POLLING_IDLE",
+                "PollingP0Req": "SWITCH_LTSSM_TRIG_POLLING_P0_REQ",
+                "PollingSpeed": "SWITCH_LTSSM_TRIG_POLLING_SPEED",
+                "PollingTXEIOS": "SWITCH_LTSSM_TRIG_POLLING_TXEIOS",
+                "RecoveryDisable": "SWITCH_LTSSM_TRIG_RECOVERY_DISABLE",
+                "RecoveryEQPH0Up": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH0_UP",
+                "RecoveryEQPH1Dn": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH1_DN",
+                "RecoveryEQPH1Up": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH1_UP",
+                "RecoveryEQPH2Dn": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH2_DN",
+                "RecoveryEQPH2Up": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH2_UP",
+                "RecoveryEQPH3Dn": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH3_DN",
+                "RecoveryEQPH3Up": "SWITCH_LTSSM_TRIG_RECOVERY_EQPH3_UP",
+                "RecoveryErrCfg": "SWITCH_LTSSM_TRIG_RECOVERY_ERRCFG",
+                "RecoveryErrDet": "SWITCH_LTSSM_TRIG_RECOVERY_ERRDET",
+                "RecoveryIdle": "SWITCH_LTSSM_TRIG_RECOVERY_IDLE",
+                "RecoveryLoopback": "SWITCH_LTSSM_TRIG_RECOVERY_LOOPBACK",
+                "RecoveryMYEQPHASE": "SWITCH_LTSSM_TRIG_RECOVERY_MYEQPHASE",
+                "RecoveryRcvrCfg": "SWITCH_LTSSM_TRIG_RECOVERY_RCVRCFG",
+                "RecoveryRcvrLock": "SWITCH_LTSSM_TRIG_RECOVERY_RCVRLOCK",
+                "RecoveryReset": "SWITCH_LTSSM_TRIG_RECOVERY_RESET",
+                "RecoverySpeed": "SWITCH_LTSSM_TRIG_RECOVERY_SPEED",
+                "RecoveryTXEIEOS": "SWITCH_LTSSM_TRIG_RECOVERY_TXEIEOS",
+                "RecoveryTXEIOS": "SWITCH_LTSSM_TRIG_RECOVERY_TXEIOS",
+                "RecoveryTXSDSM": "SWITCH_LTSSM_TRIG_RECOVERY_TXSDSM",
+                "RecoveryTxCtlSkp": "SWITCH_LTSSM_TRIG_RECOVERY_TXCTLSKP",
+                "RecoveryTxIdle": "SWITCH_LTSSM_TRIG_RECOVERY_TXIDLE"
+            },
+            "type": "string"
+        },
+        "TriggerStatus": {
+            "enum": [
+                "Posted"
+            ],
+            "enumDescriptions": {
+                "Posted": "The will be Posted only when the ConditionTriggered is True."
+            },
+            "enumLongDescriptions": {
+                "Posted": "The will be Posted only when the ConditionTriggered is True."
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellPort"
+}

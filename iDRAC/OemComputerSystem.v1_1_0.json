@@ -1,0 +1,312 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/OemComputerSystem.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#OemComputerSystem.SetWatchdog": {
+                    "$ref": "#/definitions/SetWatchdog"
+                }
+            },
+            "type": "object"
+        },
+        "ComputerSystem": {
+            "additionalProperties": false,
+            "description": "This version was introduced to add Oem properties in ComputerSystems resource.",
+            "longDescription": "This version was introduced to add Oem properties in ComputerSystems resource.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DellSystem": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/DellSystem",
+                    "autoExpand": true,
+                    "description": "A resource representation of DellSystem.",
+                    "longDescription": "A resource representation of DellSystem.",
+                    "readonly": true
+                },
+                "WatchdogState": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/WatchdogState"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The watchdog state.",
+                    "longDescription": "The current state of the watchdog.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "Links": {
+            "additionalProperties": false,
+            "description": "This version was introduced to add Oem Links in ComputerSystems resource.",
+            "longDescription": "This version was introduced to add Oem Links in ComputerSystems resource.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DellAcceleratorCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAcceleratorCollection.json#/definitions/DellAcceleratorCollection",
+                    "description": "A reference to a DellAcceleratorCollection resource.",
+                    "longDescription": "A reference to a DellAcceleratorCollection resource.",
+                    "readonly": true
+                },
+                "DellBIOSService": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBIOSService.json#/definitions/DellBIOSService",
+                    "description": "A reference to a DellBIOSService resource.",
+                    "longDescription": "A reference to a DellBIOSService resource.",
+                    "readonly": true
+                },
+                "DellBootSources": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBootSources.json#/definitions/DellBootSources",
+                    "description": "A reference to a DellBootSources resource.",
+                    "longDescription": "A reference to a DellBootSources resource.",
+                    "readonly": true
+                },
+                "DellChassisCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellChassisCollection.json#/definitions/DellChassisCollection",
+                    "description": "A reference to a DellChassisCollection resource.",
+                    "longDescription": "A reference to a DellChassisCollection resource.",
+                    "readonly": true
+                },
+                "DellControllerCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellControllerCollection.json#/definitions/DellControllerCollection",
+                    "description": "A reference to a DellControllerCollection resource.",
+                    "longDescription": "A reference to a DellControllerCollection resource.",
+                    "readonly": true
+                },
+                "DellGPUSensorCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensorCollection.json#/definitions/DellGPUSensorCollection",
+                    "description": "A reference to a DellGPUSensorCollection resource.",
+                    "longDescription": "A reference to a DellGPUSensorCollection resource.",
+                    "readonly": true
+                },
+                "DellMemoryCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMemoryCollection.json#/definitions/DellMemoryCollection",
+                    "description": "A reference to a DellMemoryCollection resource.",
+                    "longDescription": "A reference to a DellMemoryCollection resource.",
+                    "readonly": true
+                },
+                "DellMetricService": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.json#/definitions/DellMetricService",
+                    "description": "A reference to a DellMetricService resource.",
+                    "longDescription": "A reference to a DellMetricService resource.",
+                    "readonly": true
+                },
+                "DellNumericSensorCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensorCollection.json#/definitions/DellNumericSensorCollection",
+                    "description": "A reference to a DellNumericSensorCollection resource.",
+                    "longDescription": "A reference to a DellNumericSensorCollection resource.",
+                    "readonly": true
+                },
+                "DellOSDeploymentService": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/DellOSDeploymentService",
+                    "description": "A reference to a DellOSDeploymentService resource.",
+                    "longDescription": "A reference to a DellOSDeploymentService resource.",
+                    "readonly": true
+                },
+                "DellPCIeSSDCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSDCollection.json#/definitions/DellPCIeSSDCollection",
+                    "description": "A reference to a DellPCIeSSDCollection resource.",
+                    "longDescription": "A reference to a DellPCIeSSDCollection resource.",
+                    "readonly": true
+                },
+                "DellPCIeSSDExtenderCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSDExtenderCollection.json#/definitions/DellPCIeSSDExtenderCollection",
+                    "description": "A reference to a DellPCIeSSDExtenderCollection resource.",
+                    "longDescription": "A reference to a DellPCIeSSDExtenderCollection resource.",
+                    "readonly": true
+                },
+                "DellPSNumericSensorCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensorCollection.json#/definitions/DellPSNumericSensorCollection",
+                    "description": "A reference to a DellPSNumericSensorCollection resource.",
+                    "longDescription": "A reference to a DellPSNumericSensorCollection resource.",
+                    "readonly": true
+                },
+                "DellPhysicalDiskCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDiskCollection.json#/definitions/DellPhysicalDiskCollection",
+                    "description": "A reference to a DellPhysicalDiskCollection resource.",
+                    "longDescription": "A reference to a DellPhysicalDiskCollection resource.",
+                    "readonly": true
+                },
+                "DellPresenceAndStatusSensorCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPresenceAndStatusSensorCollection.json#/definitions/DellPresenceAndStatusSensorCollection",
+                    "description": "A reference to a DellPresenceAndStatusSensorCollection resource.",
+                    "longDescription": "A reference to a DellPresenceAndStatusSensorCollection resource.",
+                    "readonly": true
+                },
+                "DellProcessorCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessorCollection.json#/definitions/DellProcessorCollection",
+                    "description": "A reference to a DellProcessorCollection resource.",
+                    "longDescription": "A reference to a DellProcessorCollection resource.",
+                    "readonly": true
+                },
+                "DellRaidService": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellRaidService.json#/definitions/DellRaidService",
+                    "description": "A reference to a DellRaidService resource.",
+                    "longDescription": "A reference to a DellRaidService resource.",
+                    "readonly": true
+                },
+                "DellRollupStatusCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellRollupStatusCollection.json#/definitions/DellRollupStatusCollection",
+                    "description": "A reference to a DellRollupStatusCollection resource.",
+                    "longDescription": "A reference to a DellRollupStatusCollection resource.",
+                    "readonly": true
+                },
+                "DellSensorCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSensorCollection.json#/definitions/DellSensorCollection",
+                    "description": "A reference to a DellSensorCollection resource.",
+                    "longDescription": "A reference to a DellSensorCollection resource.",
+                    "readonly": true
+                },
+                "DellSlotCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSlotCollection.json#/definitions/DellSlotCollection",
+                    "description": "A reference to a DellSlotCollection resource.",
+                    "longDescription": "A reference to a DellSlotCollection resource.",
+                    "readonly": true
+                },
+                "DellSoftwareInstallationService": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSoftwareInstallationService.json#/definitions/DellSoftwareInstallationService",
+                    "description": "A reference to a DellSoftwareInstallationService resource.",
+                    "longDescription": "A reference to a DellSoftwareInstallationService resource.",
+                    "readonly": true
+                },
+                "DellSwitchConnectionCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitchConnectionCollection.json#/definitions/DellSwitchConnectionCollection",
+                    "description": "A reference to a DellSwitchConnectionCollection resource.",
+                    "longDescription": "A reference to a DellSwitchConnectionCollection resource.",
+                    "readonly": true
+                },
+                "DellSwitchConnectionService": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitchConnectionService.json#/definitions/DellSwitchConnectionService",
+                    "description": "A reference to a DellSwitchConnectionService resource.",
+                    "longDescription": "A reference to a DellSwitchConnectionService resource.",
+                    "readonly": true
+                },
+                "DellSystemManagementService": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystemManagementService.json#/definitions/DellSystemManagementService",
+                    "description": "A reference to a DellSystemManagementService resource.",
+                    "longDescription": "A reference to a DellSystemManagementService resource.",
+                    "readonly": true
+                },
+                "DellVideoCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideoCollection.json#/definitions/DellVideoCollection",
+                    "description": "A reference to a DellVideoCollection resource.",
+                    "longDescription": "A reference to a DellVideoCollection resource.",
+                    "readonly": true
+                },
+                "DellVideoNetworkCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideoNetworkCollection.json#/definitions/DellVideoNetworkCollection",
+                    "description": "A reference to a DellVideoNetworkCollection resource.",
+                    "longDescription": "A reference to a DellVideoNetworkCollection resource.",
+                    "readonly": true
+                },
+                "DellVirtualDiskCollection": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDiskCollection.json#/definitions/DellVirtualDiskCollection",
+                    "description": "A reference to a DellVirtualDiskCollection resource.",
+                    "longDescription": "A reference to a DellVirtualDiskCollection resource.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "SetWatchdog": {
+            "additionalProperties": false,
+            "description": "This action is used to set the watchdog timeout interval.",
+            "longDescription": "This action shall set the watchdog timeout interval. The watchdog state will reset to its factory default setting of disabled upon reset to defaults.",
+            "parameters": {
+                "TimeoutInterval": {
+                    "description": "The watchdog timeout interval to be set.",
+                    "longDescription": "The watchdog timeout interval to be set in minutes with a supported range of 0 to 5. If the value is non-zero, the watchdog will be enabled with the specified timeout interval, if zero, it will be disabled.",
+                    "maximum": 5,
+                    "minimum": 0,
+                    "requiredParameter": true,
+                    "type": "integer"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "WatchdogState": {
+            "enum": [
+                "Running",
+                "NotRunning"
+            ],
+            "enumDescriptions": {
+                "NotRunning": "Watchdog is not running.",
+                "Running": "Watchdog is running."
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#OemComputerSystem.v1_1_0"
+}

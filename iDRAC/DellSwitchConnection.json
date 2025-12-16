@@ -1,0 +1,50 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitchConnection.json",
+    "$ref": "#/definitions/DellSwitchConnection",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellSwitchConnection": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitchConnection.v1_1_0.json#/definitions/DellSwitchConnection"
+                }
+            ],
+            "deletable": false,
+            "description": "An instance of DellSwitchConnection will have the switch connection view information of all the ports.",
+            "insertable": false,
+            "longDescription": "An instance of DellSwitchConnection will have the switch connection view information of all the ports.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellSwitchConnections/{SwitchConnectionId}"
+            ],
+            "urisDeprecated": [
+                "/redfish/v1/Systems/{ComputerSystemId}/NetworkPorts/Oem/Dell/DellSwitchConnections/{SwitchConnectionId}"
+            ]
+        },
+        "StaleData": {
+            "enum": [
+                "NotStale",
+                "Stale"
+            ],
+            "enumDescriptions": {
+                "NotStale": "NotStale",
+                "Stale": "Stale"
+            },
+            "enumLongDescriptions": {
+                "NotStale": "NotStale",
+                "Stale": "Stale"
+            },
+            "enumVersionAdded": {
+                "NotStale": "v1_1_0",
+                "Stale": "v1_1_0"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellSwitchConnection.DellSwitchConnection"
+}

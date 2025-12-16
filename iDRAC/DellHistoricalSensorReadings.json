@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellHistoricalSensorReadings.json",
+    "$ref": "#/definitions/DellHistoricalSensorReadings",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellHistoricalSensorReadings": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellHistoricalSensorReadings.v1_0_0.json#/definitions/DellHistoricalSensorReadings"
+                }
+            ],
+            "deletable": false,
+            "description": "A resource to represent historical trends for the Sensor",
+            "insertable": false,
+            "longDescription": "A resource to represent historical trends for the Sensor",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Chassis/{ChasisId}/Sensors/{SensorId}/Oem/Dell/HistoricalReadings"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellHistoricalSensorReadings.DellHistoricalSensorReadings"
+}

@@ -1,0 +1,29 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricValue.json",
+    "$ref": "#/definitions/DellAggregationMetricValue",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellAggregationMetricValue": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricValue.v1_0_0.json#/definitions/DellAggregationMetricValue"
+                }
+            ],
+            "deletable": false,
+            "description": "DellAggregationMetricValue represents the instance value of a metric defined by an instance of DellAggregationMetricDefinition.",
+            "insertable": false,
+            "longDescription": "DellAggregationMetricValue represents the instance value of a metric defined by an instance of DellAggregationMetricDefinition.",
+            "updatable": false,
+            "uris": [],
+            "urisDeprecated": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellAggregationMetricValues/{AggregationMetricValueId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellAggregationMetricValue.DellAggregationMetricValue"
+}

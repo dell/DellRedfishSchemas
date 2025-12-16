@@ -1,0 +1,18 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellComponentIntegrity.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "SPDM": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellComponentIntegrity.v1_0_0.json#/definitions/SPDM"
+                }
+            ],
+            "description": "An Oem extension to represent SPDM related properties.",
+            "longDescription": "An Oem extension to represent SPDM related properties."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellComponentIntegrity"
+}
