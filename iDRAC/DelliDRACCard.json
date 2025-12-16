@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCard.json",
+    "$ref": "#/definitions/DelliDRACCard",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DelliDRACCard": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCard.v1_1_0.json#/definitions/DelliDRACCard"
+                }
+            ],
+            "deletable": false,
+            "description": "An instance of DelliDRACCard will have data specific to the Integrated Dell Remote Access Controller (iDRAC) in the managed system.",
+            "insertable": false,
+            "longDescription": "An instance of DelliDRACCard will have data specific to the Integrated Dell Remote Access Controller (iDRAC) in the managed system.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DelliDRACCard/{iDRACCardId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DelliDRACCard.DelliDRACCard"
+}

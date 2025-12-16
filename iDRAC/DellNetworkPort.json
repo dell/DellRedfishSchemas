@@ -1,0 +1,18 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkPort.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellNetworkPort": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkPort.v1_0_0.json#/definitions/DellNetworkPort"
+                }
+            ],
+            "description": "This property shall represent the Oem properties for a DellNetworkPort resource.",
+            "longDescription": "This property shall represent the Oem properties for a DellNetworkPort resource."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellNetworkPort"
+}

@@ -1,0 +1,65 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "ClearPending": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.v1_6_0.json#/definitions/ClearPending"
+                }
+            ],
+            "description": "This action is used to clear all the pending values.",
+            "longDescription": "This action shall perform a clear pending values."
+        },
+        "DellManager": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.v1_6_0.json#/definitions/DellManager"
+                }
+            ],
+            "description": "Oem data related to DellManager.",
+            "longDescription": "Oem data related to DellManager."
+        },
+        "DellManagerLinks": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.v1_6_0.json#/definitions/DellManagerLinks"
+                }
+            ],
+            "description": "This is the complex property is for the additional OEM Links realted to the DMTF Manager Schema.",
+            "longDescription": "This is the complex property is for the additional OEM Links realted to the DMTF Manager Schema."
+        },
+        "PortOwner": {
+            "enum": [
+                "Host",
+                "BMC"
+            ],
+            "enumDescriptions": {
+                "BMC": "The Baseboard Management Controller (BMC) owns and manages the front/rear USB ports.",
+                "Host": "The host system owns and manages the front/rear USB ports."
+            },
+            "type": "string"
+        },
+        "ResetToDefaults": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.v1_6_0.json#/definitions/ResetToDefaults"
+                }
+            ],
+            "description": "This action is used to reset the Dell attributes to default.",
+            "longDescription": "This action shall perform reset of the Dell attributes to their default values."
+        },
+        "SetCustomDefaults": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.v1_6_0.json#/definitions/SetCustomDefaults"
+                }
+            ],
+            "description": "This action is used to set the custom defaults to be used during Reset.",
+            "longDescription": "This action is used to set the custom defaults to be used during Reset."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellManager"
+}

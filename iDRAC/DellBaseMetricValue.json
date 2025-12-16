@@ -1,0 +1,29 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricValue.json",
+    "$ref": "#/definitions/DellBaseMetricValue",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellBaseMetricValue": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricValue.v1_0_0.json#/definitions/DellBaseMetricValue"
+                }
+            ],
+            "deletable": false,
+            "description": "DellBaseMetricValue represents the instance value of a metric.",
+            "insertable": false,
+            "longDescription": "DellBaseMetricValue represents the instance value of a metric.",
+            "updatable": false,
+            "uris": [],
+            "urisDeprecated": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellBaseMetricValues/{BaseMetricValueId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellBaseMetricValue.DellBaseMetricValue"
+}

@@ -1,0 +1,286 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DebugType": {
+            "enum": [
+                "TraceSeverity",
+                "SubSystem"
+            ],
+            "enumDescriptions": {
+                "SubSystem": "SubSystem",
+                "TraceSeverity": "TraceSeverity"
+            },
+            "enumLongDescriptions": {
+                "SubSystem": "SubSystem",
+                "TraceSeverity": "TraceSeverity"
+            },
+            "type": "string"
+        },
+        "GetLaneErrorInjectionInfo": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetLaneErrorInjectionInfo"
+                }
+            ],
+            "description": "This action is used to get the error injection info on a Lane",
+            "longDescription": "This action is used to get the error injection info on a Lane"
+        },
+        "GetLaneErrorInjectionInfoResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the GetLaneErrorInjectionInfo action.",
+            "longDescription": "This type shall contain the properties found in the response body for the GetLaneErrorInjectionInfo action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "InjectionStatus": {
+                    "description": "This property states if error injection is running or not.",
+                    "longDescription": "This property states if error injection is running or not.",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "GetTagSBTimeout": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetTagSBTimeout"
+                }
+            ],
+            "description": "This action is used to read the Tag ScoreBoard timeout value for the given station",
+            "longDescription": "This action is used to tead the Tag ScoreBoard timeout value for the given station"
+        },
+        "GetTagSBTimeoutResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the GetTagSBTimeout action.",
+            "longDescription": "This type shall contain the properties found in the response body for the GetTagSBTimeout action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "StationNumber": {
+                    "description": "This property states the station number.",
+                    "longDescription": "This property states the station number for which ScoreBoard timeout value is captured.",
+                    "type": "integer"
+                },
+                "TagSBTimeoutValue": {
+                    "description": "This property states the timeout value.",
+                    "longDescription": "This property states Tag ScoreBoard timeout value for the given station.",
+                    "type": "string"
+                },
+                "TimeoutMode": {
+                    "description": "This property states about Timeout mode.",
+                    "longDescription": "This property states about Timeout mode.",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        },
+        "GetTraceSeverity": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetTraceSeverity"
+                }
+            ],
+            "description": "This action is used to get the Broadcom Switch health config trace log options",
+            "longDescription": "This action is used to get the Broadcom Switch health config trace log options"
+        },
+        "GetTraceSeverityResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the GetTraceSeverity action.",
+            "longDescription": "This type shall contain the properties found in the response body for the GetTraceSeverity action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "TraceMask": {
+                    "description": "This property states the TraceMask",
+                    "longDescription": "This property states the TraceMask, only this property will be show if we select DebugType as SubSystemType in GetTraceSeverity ",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "TraceSeverity": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TraceSeverity"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property states the trigger status",
+                    "longDescription": "This property states the trigger status, only this property will be show if we select DebugType as TraceSeverity in GetTraceSeverity"
+                }
+            },
+            "type": "object"
+        },
+        "InjFrequency": {
+            "enum": [
+                "1US",
+                "16US",
+                "1MS"
+            ],
+            "enumDescriptions": {
+                "16US": "Inject error every 16us ",
+                "1MS": "Inject error every 1ms ",
+                "1US": "Inject error every 1us "
+            },
+            "enumLongDescriptions": {
+                "16US": "Data Link Layer Packet",
+                "1MS": "Inject error every 1ms",
+                "1US": "Transaction Layer Packet"
+            },
+            "type": "string",
+            "versionAdded": "v1_1_0"
+        },
+        "QueryMode": {
+            "enum": [
+                "Runtime",
+                "Flash"
+            ],
+            "enumDescriptions": {
+                "Flash": "Query data stored in the flash",
+                "Runtime": "Query data stored in the current session"
+            },
+            "enumLongDescriptions": {
+                "Flash": "Query data stored in the flash ",
+                "Runtime": "Query data stored in the current session"
+            },
+            "type": "string",
+            "versionAdded": "v1_1_0"
+        },
+        "SetLaneErrorInjection": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/SetLaneErrorInjection"
+                }
+            ],
+            "description": "This action is used to Perform the error injection on a Lane",
+            "longDescription": "This action is used to Perform the error injection on a Lane"
+        },
+        "SetTraceSeverity": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/SetTraceSeverity"
+                }
+            ],
+            "description": "This action is used to set the Broadcom Switch trace severity log options",
+            "longDescription": "This action is used to set the Broadcom Switch trace severity log options"
+        },
+        "SubSystemType": {
+            "enum": [
+                "HALI",
+                "FWCORE",
+                "SES",
+                "PMG",
+                "OEM",
+                "BPL",
+                "OOB",
+                "SPI",
+                "SEC",
+                "SMM"
+            ],
+            "enumDescriptions": {
+                "BPL": "BPL",
+                "FWCORE": "FWCORE",
+                "HALI": "HALI",
+                "OEM": "OEM",
+                "OOB": "OOB",
+                "PMG": "PMG",
+                "SEC": "SEC",
+                "SES": "SES",
+                "SMM": "SMM",
+                "SPI": "SPI"
+            },
+            "enumLongDescriptions": {
+                "BPL": "BPL",
+                "FWCORE": "FWCORE",
+                "HALI": "HALI",
+                "OEM": "OEM",
+                "OOB": "OOB",
+                "PMG": "PMG",
+                "SEC": "SEC",
+                "SES": "SES",
+                "SMM": "SMM",
+                "SPI": "SPI"
+            },
+            "type": "string"
+        },
+        "TraceSeverity": {
+            "enum": [
+                "Debug",
+                "Info",
+                "Warning",
+                "Error"
+            ],
+            "enumDescriptions": {
+                "Debug": "Debug",
+                "Error": "Error",
+                "Info": "Info",
+                "Warning": "Warning"
+            },
+            "enumLongDescriptions": {
+                "Debug": "Debug",
+                "Error": "Error",
+                "Info": "Info",
+                "Warning": "Warning"
+            },
+            "type": "string"
+        },
+        "UpdateType": {
+            "enum": [
+                "Runtime",
+                "Persistent"
+            ],
+            "enumDescriptions": {
+                "Persistent": "Persistent",
+                "Runtime": "Runtime"
+            },
+            "enumLongDescriptions": {
+                "Persistent": "Persistent",
+                "Runtime": "Runtime"
+            },
+            "type": "string"
+        }
+    },
+    "title": "#DellSwitch"
+}

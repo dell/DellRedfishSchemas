@@ -1,0 +1,29 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificate.json",
+    "$ref": "#/definitions/DellCertificate",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellCertificate": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificate.v1_0_1.json#/definitions/DellCertificate"
+                }
+            ],
+            "deletable": true,
+            "description": "This resource contains information about a SecureBoot Certificate.",
+            "insertable": false,
+            "longDescription": "This resource shall be used to represent a SecureBoot Certificate.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Systems/{ComputerSystemId}/SecureBoot/Oem/Dell/Certificates/{CertificateStoreId}/{CertificateId}",
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/HWCertificates/{CertificateId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellCertificate.DellCertificate"
+}

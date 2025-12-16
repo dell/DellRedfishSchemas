@@ -1,0 +1,18 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificateLocations.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellCertificateLocationLinks": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificateLocations.v1_0_0.json#/definitions/DellCertificateLocationLinks"
+                }
+            ],
+            "description": "This resource defines links to certificates.",
+            "longDescription": "This resource defines links to certificates."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellCertificateLocations"
+}

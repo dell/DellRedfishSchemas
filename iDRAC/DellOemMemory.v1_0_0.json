@@ -1,0 +1,72 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemMemory.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellMemory": {
+            "additionalProperties": false,
+            "description": "This version was added to add new Oem resources and Links.",
+            "longDescription": "This version was added to add new Oem resources and Links.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DellMemory": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMemory.json#/definitions/DellMemory",
+                    "autoExpand": true,
+                    "description": "A resource representation of DellMemory.",
+                    "longDescription": "A resource representation of DellMemory.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "DellMemoryLinks": {
+            "additionalProperties": false,
+            "description": "This version was added to add new Oem resources and Links.",
+            "longDescription": "This version was added to add new Oem resources and Links.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CPUAffinity": {
+                    "description": "A reference to a Processor resource indicating CPU Affinity of the resource.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Processor.json#/definitions/Processor"
+                    },
+                    "longDescription": "A reference to a Processor resource indicating CPU Affinity of the resource.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "CPUAffinity@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellOemMemory.v1_0_0"
+}

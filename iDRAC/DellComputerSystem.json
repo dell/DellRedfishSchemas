@@ -1,0 +1,26 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellComputerSystem.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellComputerSystem": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellComputerSystem.v1_2_0.json#/definitions/DellComputerSystem"
+                }
+            ],
+            "description": "This resource contains the Dell specific Redfish implementation for ComputerSystem.",
+            "longDescription": "This resource contains the Dell specific Redfish implementation for ComputerSystem."
+        },
+        "SecureWipeDPU": {
+            "anyOf": [
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellComputerSystem.v1_2_0.json#/definitions/SecureWipeDPU"
+                }
+            ],
+            "description": "This action is used to erase the DPU.",
+            "longDescription": "This action shall perform a secure wipe on DPU.It will not turn off the system."
+        }
+    },
+    "title": "#DellComputerSystem"
+}

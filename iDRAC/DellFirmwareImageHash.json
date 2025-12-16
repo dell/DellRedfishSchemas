@@ -1,0 +1,28 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFirmwareImageHash.json",
+    "$ref": "#/definitions/DellFirmwareImageHash",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellFirmwareImageHash": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFirmwareImageHash.v1_0_0.json#/definitions/DellFirmwareImageHash"
+                }
+            ],
+            "deletable": false,
+            "description": "This resource contains information about a FirmwareImageHash Instance.",
+            "insertable": false,
+            "longDescription": "This resource represents a FirmwareImageHash Instance with its details.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Systems/{ComputerSystemId}/SecureBoot/Oem/Dell/FirmwareImageHashes/{FirmwareImageHashId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellFirmwareImageHash.DellFirmwareImageHash"
+}

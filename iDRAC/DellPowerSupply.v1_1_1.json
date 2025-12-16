@@ -1,0 +1,114 @@
+{
+    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.v1_1_1.json",
+    "$ref": "#/definitions/DellPowerSupply",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellPowerSupply": {
+            "additionalProperties": true,
+            "description": "An instance of DellPowerSupply will have data specific to the Power Supply devices in the managed system.",
+            "longDescription": "An instance of DellPowerSupply will have data specific to the Power Supply devices in the managed system.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "IsSwitchingSupply": {
+                    "description": "Boolean indicating that the PowerSupply is a switching (instead of linear) supply.",
+                    "longDescription": "Boolean indicating that the PowerSupply is a switching (instead of linear) supply.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "Links": {
+                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/Links",
+                    "description": "Contains references to other resources that are related to this resource.",
+                    "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "OperationalStatus": {
+                    "description": "Indicates the operational status of the resource represented.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/OperationalStatus"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "Indicates the operational status of the resource represented.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "RequestedState": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/RequestedState"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property is an integer enumeration that indicates the last requested or desired state for the element, irrespective of the mechanism through which it was requested. The actual state of the element is represented by EnabledState. This property is provided to compare the last requested and current enabled or disabled states.",
+                    "longDescription": "This property is an integer enumeration that indicates the last requested or desired state for the element, irrespective of the mechanism through which it was requested. The actual state of the element is represented by EnabledState. This property is provided to compare the last requested and current enabled or disabled states.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellPowerSupply.v1_1_1.DellPowerSupply"
+}
