@@ -1,0 +1,56 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCiDRACCardService.json",
+    "$ref": "#/definitions/DelliDRACCardService",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Algorithm": {
+            "enum": [
+                "AES128CBC",
+                "AES_256_GCM"
+            ],
+            "enumDescriptions": {
+                "AES128CBC": "AES128CBC",
+                "AES_256_GCM": "AES_256_GCM"
+            },
+            "enumVersionAdded": {
+                "AES128CBC": "v1_0_0",
+                "AES_256_GCM": "v1_11_0"
+            },
+            "type": "string"
+        },
+        "DelliDRACCardService": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCiDRACCardService.v1_0_0.json#/definitions/DelliDRACCardService"
+                }
+            ],
+            "deletable": false,
+            "description": "The DelliDRACCardService resource provides some actions to support iDRAC configurations.",
+            "insertable": false,
+            "longDescription": "The DelliDRACCardService resource provides some actions to support iDRAC configurations.",
+            "updatable": false,
+            "uris": []
+        },
+        "KeyDerivationFunction": {
+            "enum": [
+                "DellSHA256",
+                "HKDF_SHA384"
+            ],
+            "enumDescriptions": {
+                "DellSHA256": "DellSHA256",
+                "HKDF_SHA384": "HKDF_SHA384"
+            },
+            "enumVersionAdded": {
+                "DellSHA256": "v1_0_0",
+                "HKDF_SHA384": "v1_11_0"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DelliDRACCardService.DelliDRACCardService"
+}

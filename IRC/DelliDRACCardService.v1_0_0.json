@@ -1,0 +1,196 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCiDRACCardService.v1_0_0.json",
+    "$ref": "#/definitions/DelliDRACCardService",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#DelliDRACCardService.VerifyHWProofOfPossession": {
+                    "$ref": "#/definitions/VerifyHWProofOfPossession"
+                }
+            },
+            "type": "object"
+        },
+        "DelliDRACCardService": {
+            "additionalProperties": false,
+            "description": "The DelliDRACCardService resource provides some actions to support iDRAC configurations.",
+            "longDescription": "The DelliDRACCardService resource provides some actions to support iDRAC configurations.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                }
+            },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
+            "type": "object"
+        },
+        "VerifyHWProofOfPossession": {
+            "actionResponse": {
+                "$ref": "#/definitions/VerifyHWProofOfPossessionResponse"
+            },
+            "additionalProperties": false,
+            "description": "This method is used to verify hardware identity certificate (Factory certificate).",
+            "longDescription": "This URL is used to verify hardware proof of possession. This method is for factory users only, and not recommended for use by end-users.",
+            "parameters": {
+                "Algorithm": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCiDRACCardService.json#/definitions/Algorithm",
+                    "description": "The algorithm used to encrypt EncryptedChallenge.",
+                    "longDescription": "The algorithm used to encrypt EncryptedChallenge.",
+                    "requiredParameter": true
+                },
+                "EncryptedChallenge": {
+                    "description": "A string encrypted with the public key of the certificate.",
+                    "longDescription": "A string encrypted with the public key of the certificate.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "HMAC": {
+                    "description": "The Hash-based Message Authentication Code for the EncryptedChallenge.",
+                    "longDescription": "The Hash-based Message Authentication Code for the EncryptedChallenge.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "InitialVector": {
+                    "description": "A hexidecimal representation of the initial vector used for the EncryptedChallenge.",
+                    "longDescription": "A hexidecimal representation of the initial vector used for the EncryptedChallenge.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "KeyDerivationFunction": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCiDRACCardService.json#/definitions/KeyDerivationFunction",
+                    "description": "The key derivation function used.",
+                    "longDescription": "The key derivation function used.",
+                    "requiredParameter": true
+                },
+                "PublicKey": {
+                    "description": "A hexidecimal representation of the public key used to encrypt the EncryptedChallenge.",
+                    "longDescription": "A hexidecimal representation of the public key used to encrypt the EncryptedChallenge.",
+                    "requiredParameter": true,
+                    "type": "string"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_0_0"
+        },
+        "VerifyHWProofOfPossessionResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the VerifyHWProofOfPossession action.",
+            "longDescription": "This type shall contain the properties found in the response body for the VerifyHWProofOfPossession action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "EncryptedResponse": {
+                    "description": "A base64 encoded string encrypted with the private key of the certificate.",
+                    "longDescription": "A base64 encoded string encrypted with the private key of the certificate.",
+                    "readonly": true,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EncryptedResponse"
+            ],
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DelliDRACCardService.v1_0_0.DelliDRACCardService"
+}

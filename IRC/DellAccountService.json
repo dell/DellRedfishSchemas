@@ -1,0 +1,18 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCAccountService.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellAccountService": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCAccountService.v1_0_0.json#/definitions/DellAccountService"
+                }
+            ],
+            "description": "Oem data related to DellAccountService.",
+            "longDescription": "Oem data related to DellAccountService."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellAccountService"
+}
