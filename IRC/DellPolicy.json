@@ -1,0 +1,28 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCPolicy.json",
+    "$ref": "#/definitions/DellPolicy",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellPolicy": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCPolicy.v1_0_0.json#/definitions/DellPolicy"
+                }
+            ],
+            "deletable": false,
+            "description": "An instance of DellPolicy will represent a leak policy.",
+            "insertable": false,
+            "longDescription": "An instance of DellPolicy will represent a leak policy.",
+            "updatable": true,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellPolicies/{PolicyId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellPolicy.DellPolicy"
+}

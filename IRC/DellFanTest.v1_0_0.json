@@ -1,0 +1,308 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCFanTest.v1_0_0.json",
+    "$ref": "#/definitions/DellFanTest",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "description": "The available actions for this resource.",
+            "longDescription": "This type shall contain the available actions for this resource.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#DellFanTest.RunFanTest": {
+                    "$ref": "#/definitions/RunFanTest"
+                }
+            },
+            "type": "object"
+        },
+        "DellFanTest": {
+            "additionalProperties": false,
+            "description": "An instance of DellFanTest will represent a fan test.",
+            "longDescription": "An instance of DellFanTest will represent a fan test.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
+                "Actions": {
+                    "$ref": "#/definitions/Actions",
+                    "description": "The available actions for this resource.",
+                    "longDescription": "The Actions property shall contain the available actions for this resource."
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Percent": {
+                    "description": "The percent complete of the fan test run.",
+                    "longDescription": "The percent complete of the fan test run.",
+                    "readonly": false,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "Results": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/DellFanTestResults"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The results of the fan test run.",
+                    "longDescription": "The results of the fan test run.",
+                    "readonly": true
+                },
+                "Status": {
+                    "description": "The current status of the fan test.",
+                    "longDescription": "The current status of the fan test.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
+            "type": "object"
+        },
+        "DellFanTestResult": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "FanId": {
+                    "description": "The fan id for the result.",
+                    "longDescription": "The fan id for the result",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HighReadingRotor_1": {
+                    "description": "The high reading for rotor 1 for the specified fan id.",
+                    "longDescription": "The high reading for rotor 1 for the specified fan id.",
+                    "readonly": false,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "LowReadingRotor_1": {
+                    "description": "The low reading for rotor 1 for the specified fan id.",
+                    "longDescription": "The low reading for rotor 1 for the specified fan id.",
+                    "readonly": false,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "Result": {
+                    "description": "The result for the specified fan id.",
+                    "longDescription": "The result for the specified fan id.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "DellFanTestResults": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "FanTestResults": {
+                    "description": "The collection of results for the fans tested.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/DellFanTestResult"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "The collection of results for the fans tested.",
+                    "readonly": false,
+                    "type": "array"
+                },
+                "Summary": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/DellFanTestResultsSummary"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": ".",
+                    "longDescription": ".",
+                    "readonly": false
+                }
+            },
+            "type": "object"
+        },
+        "DellFanTestResultsSummary": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Overall": {
+                    "description": "The overall summary of the fan test result.",
+                    "longDescription": "The overall summary of the fan test result.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "RunFanTest": {
+            "additionalProperties": false,
+            "description": "Action to run the fan test for the eRDHx.",
+            "longDescription": "Action to run the fan test for the eRDHx.",
+            "parameters": {
+                "MaxSpeedPercent": {
+                    "description": "The max speed percentage to run the fan at during the test.",
+                    "longDescription": "The max speed percentage to run the fan at during the test.",
+                    "type": "integer"
+                },
+                "MinSpeedPercent": {
+                    "description": "The min speed percentage to run the fan at during the test.",
+                    "longDescription": "The mim speed percentage to run the fan at during the test.",
+                    "type": "integer"
+                },
+                "RpmChangeThresholdPercent": {
+                    "description": "The RPM change threshold percentage to be applied during the test.",
+                    "longDescription": "The RPM change threshold percentage to be applied during the test.",
+                    "type": "integer"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellFanTest.v1_0_0.DellFanTest"
+}

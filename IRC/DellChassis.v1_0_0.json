@@ -1,0 +1,78 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCChassis.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellChassis": {
+            "additionalProperties": false,
+            "description": "Oem data related to DellChassis.",
+            "longDescription": "Oem data related to DellChassis.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "FanTest": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCFanTest.json#/definitions/DellFanTest"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A reference to the fan test for this chassis.",
+                    "longDescription": "The value of this property shall be a reference to the resource that represents the chassis fan test.",
+                    "readonly": true
+                },
+                "LeakIndicatorActive": {
+                    "description": "Signifies active status of the Leak Indicator LED.",
+                    "longDescription": "Signifies active status of the Leak Indicator LED.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "PowerRestorePolicy": {
+                    "$ref": "#/definitions/PowerRestorePolicyTypes",
+                    "description": "The desired power state of the eRDHx when power is restored after a power loss.",
+                    "readonly": false
+                },
+                "ResetIndicatorActive": {
+                    "description": "Signifies active status of the Reset Indicator LED.",
+                    "longDescription": "Signifies active status of the Reset Indicator LED.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PowerRestorePolicyTypes": {
+            "enum": [
+                "AlwaysOn",
+                "AlwaysOff",
+                "LastState"
+            ],
+            "enumDescriptions": {
+                "AlwaysOff": "Power state of the eRDHx when power is restored will be OFF",
+                "AlwaysOn": "Power state of the eRDHx when power is restored will be ON",
+                "LastState": "Power state of the eRDHx when power is restored will be same as LastState"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellChassis.v1_0_0"
+}

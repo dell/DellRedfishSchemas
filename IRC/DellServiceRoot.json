@@ -1,0 +1,18 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCServiceRoot.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellServiceRoot": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCServiceRoot.v1_0_0.json#/definitions/DellServiceRoot"
+                }
+            ],
+            "description": "This is the complex property is for the additional OEM properties to complement DMTF ServiceRoot Schema.",
+            "longDescription": "This is the complex property is for the additional OEM properties to complement DMTF ServiceRoot Schema. This shall be used to represent an OEM Service Root for a Redfish implementation."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellServiceRoot"
+}

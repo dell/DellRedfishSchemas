@@ -1,0 +1,28 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCBuildInformation.json",
+    "$ref": "#/definitions/DellBuildInformation",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellBuildInformation": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCBuildInformation.v1_0_0.json#/definitions/DellBuildInformation"
+                }
+            ],
+            "deletable": false,
+            "description": "Oem data build information.",
+            "insertable": false,
+            "longDescription": "Oem data related to build information.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellBuildInformation"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellBuildInformation.DellBuildInformation"
+}
