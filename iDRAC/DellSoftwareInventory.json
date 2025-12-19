@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSoftwareInventory.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSoftwareInventory.json",
     "$ref": "#/definitions/DellSoftwareInventory",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Classifications": {
             "enum": [
@@ -77,7 +77,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSoftwareInventory.v1_4_0.json#/definitions/DellSoftwareInventory"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSoftwareInventory.v1_2_0.json#/definitions/DellSoftwareInventory"
                 }
             ],
             "deletable": false,
@@ -86,9 +86,6 @@
             "longDescription": "The DellSoftwareInventory resource is a representation of an available device firmware in the managed system.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/UpdateService/Oem/Dell/DellSoftwareInventory/{SoftwareInventoryId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/UpdateService/FirmwareInventory/Oem/Dell/DellSoftwareInventory/{SoftwareInventoryId}",
                 "/redfish/v1/UpdateService/FirmwareInventory/{InventoryId}/Oem/Dell/DellSoftwareInventory/{SoftwareInventoryId}"
             ]

@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFCPortMetrics.v1_1_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.v1_1_1.json",
     "$ref": "#/definitions/DellFCPortMetrics",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellFCPortMetrics": {
             "additionalProperties": false,
@@ -138,7 +138,7 @@
                 "OSDriverState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCPortMetrics.json#/definitions/OSDriverState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.json#/definitions/OSDriverState"
                         },
                         {
                             "type": "null"
@@ -156,7 +156,7 @@
                 "PortStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCPortMetrics.json#/definitions/PortStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.json#/definitions/PortStatus"
                         },
                         {
                             "type": "null"
@@ -165,6 +165,144 @@
                     "description": "This property represents port status.",
                     "longDescription": "This property represents port status.",
                     "readonly": true
+                },
+                "RXInputPowerStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.json#/definitions/RXInputPowerStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "deprecated": "This property has been deprecated in favor of RXInputPowerStatus under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the status of Rx Input Power value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the status of Rx Input Power value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0",
+                    "versionDeprecated": "v1_1_1"
+                },
+                "RXInputPowermW": {
+                    "deprecated": "This property has been deprecated in favor of RXInputPower under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the RX input power value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the RX input power value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionDeprecated": "v1_1_1"
+                },
+                "TXBiasCurrentStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.json#/definitions/TXBiasCurrentStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "deprecated": "This property has been deprecated in favor of TXBiasCurrentStatus under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the status of Tx Bias Current value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the status of Tx Bias Current value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0",
+                    "versionDeprecated": "v1_1_1"
+                },
+                "TXBiasCurrentmA": {
+                    "deprecated": "This property has been deprecated in favor of TXBiasCurrent under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the TX Bias current value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the TX Bias current value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mA",
+                    "versionDeprecated": "v1_1_1"
+                },
+                "TXOutputPowerStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.json#/definitions/TXOutputPowerStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "deprecated": "This property has been deprecated in favor of TXOutputPowerStatus under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the status of Tx Output Power value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the status of Tx Output Power value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0",
+                    "versionDeprecated": "v1_1_1"
+                },
+                "TXOutputPowermW": {
+                    "deprecated": "This property has been deprecated in favor of TXOutputPower under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the TX output power value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the TX output power value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionDeprecated": "v1_1_1"
+                },
+                "TemperatureCelsius": {
+                    "deprecated": "This property has been deprecated in favor of Temperature under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the temperature value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the temperature value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Cel",
+                    "versionDeprecated": "v1_1_1"
+                },
+                "TemperatureStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.json#/definitions/TemperatureStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "deprecated": "This property has been deprecated in favor of TemperatureStatus under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the status of Temperature value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the status of Temperature value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "versionDeprecated": "v1_1_1"
+                },
+                "VoltageStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.json#/definitions/VoltageStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "deprecated": "This property has been deprecated in favor of VoltageStatus under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the status of voltage value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the status of voltage value limits. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "versionDeprecated": "v1_1_1"
+                },
+                "VoltageValueVolts": {
+                    "deprecated": "This property has been deprecated in favor of VoltageValue under NetworkTransceiverPortMetrics.",
+                    "description": "Indicates the voltage value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "Indicates the voltage value of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Volts",
+                    "versionDeprecated": "v1_1_1"
                 }
             },
             "required": [

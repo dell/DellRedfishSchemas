@@ -1,100 +1,19 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnvironmentMetrics.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellEnvironmentMetrics": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.v1_2_0.json#/definitions/DellEnvironmentMetrics"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnvironmentMetrics.v1_0_0.json#/definitions/DellEnvironmentMetrics"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnvironmentMetrics.v1_1_0.json#/definitions/DellEnvironmentMetrics"
                 }
             ],
             "description": "This property shall represent the Oem properties for a EnvironmentMetrics resource.",
             "longDescription": "This property shall represent the Oem properties for a EnvironmentMetrics resource."
-        },
-        "PowerLimitActionType": {
-            "enum": [
-                "Reserved",
-                "ThrottleViaPROCHOT",
-                "ThrottleViaSoftwareMechanism"
-            ],
-            "enumDescriptions": {
-                "Reserved": "No action is taken, this value is a placeholder.",
-                "ThrottleViaPROCHOT": "Throttling via PROCHOT (Processor Hot) is a hardware-based mechanism that ensures immediate response to thermal events, providing a reliable way to manage power and thermal conditions.",
-                "ThrottleViaSoftwareMechanism": "Throttling via software mechanisms like NM (Node Manager) or APML (Advanced Platform Management Link) allows for more flexible and granular control over power management."
-            },
-            "enumLongDescriptions": {
-                "Reserved": "This value is reserved and does not correspond to any specific power capping mechanism. It is essentially a placeholder and should not be used for actual power capping actions",
-                "ThrottleViaPROCHOT": "Throttling via PROCHOT (Processor Hot) is a hardware-based mechanism that ensures immediate response to thermal events, providing a reliable way to manage power and thermal conditions",
-                "ThrottleViaSoftwareMechanism": "Software-based mechanisms like NM (Node Manager) or APML (Advanced Platform Management Link) provide dynamic and flexible control over power consumption, allowing for more sophisticated power management strategies."
-            },
-            "type": "string"
-        },
-        "PowerLimitEmergencyActionType": {
-            "enum": [
-                "DoNothing",
-                "ThrottleViaPROCHOT",
-                "ThrottleViaSoftwareMechanism",
-                "PowerOff",
-                "FollowChassisPolicy"
-            ],
-            "enumDescriptions": {
-                "DoNothing": "Specifies that no action is taken for emergency power capping at the chassis level.",
-                "FollowChassisPolicy": "Follow chassis policy.",
-                "PowerOff": "Power Off.",
-                "ThrottleViaPROCHOT": "Throttle via PROCHOT (Processor Hot).",
-                "ThrottleViaSoftwareMechanism": "Throttle via software mechanism NM (Node Manager)."
-            },
-            "enumLongDescriptions": {
-                "DoNothing": "Specifies that no action is taken for emergency power capping at the chassis level.",
-                "FollowChassisPolicy": "Specifies that the sled will follow the emergency power capping actions defined at the chassis level.",
-                "PowerOff": "Specifies that the system will be powered off to reduce power consumption during emergency power capping at the chassis level.",
-                "ThrottleViaPROCHOT": "Specifies that the processor will be throttled using the PROCHOT (Processor Hot) signal to reduce power consumption during emergency power capping at the chassis level.",
-                "ThrottleViaSoftwareMechanism": "Specifies that the processor will be throttled using a software mechanism, such as Node Manager NM (Node Manager), to reduce power consumption during emergency power capping at the chassis level."
-            },
-            "type": "string"
-        },
-        "PowerLimitExceptionType": {
-            "enum": [
-                "Reserved",
-                "FollowSledLevelPowerCapping",
-                "FollowChassisLevelPowerCapping"
-            ],
-            "enumDescriptions": {
-                "FollowChassisLevelPowerCapping": "Follow chassis-level power capping.",
-                "FollowSledLevelPowerCapping": "Follow its own sled-level power capping.",
-                "Reserved": "No action is taken, this value is a placeholder."
-            },
-            "enumLongDescriptions": {
-                "FollowChassisLevelPowerCapping": "When this value is set, the sled will adhere to the power capping rules and limits defined at the chassis level. This means that the power capping settings applied to the entire chassis will also apply to each sled within it, ensuring uniform power management across all sleds.",
-                "FollowSledLevelPowerCapping": "When this value is set, the sled will follow its own power capping rules and limits independently of the chassis-level power capping. This means that each sled within the chassis can have its own power capping settings, allowing for more granular control over power consumption at the sled level.",
-                "Reserved": "This value is reserved and does not correspond to any specific power capping mechanism. It is essentially a placeholder and should not be used for actual power capping actions."
-            },
-            "type": "string"
-        },
-        "PowerLimitStatusType": {
-            "enum": [
-                "Disabled",
-                "Enabled"
-            ],
-            "enumDescriptions": {
-                "Disabled": "Power capping is disabled (default).",
-                "Enabled": "Power capping is enabled."
-            },
-            "enumLongDescriptions": {
-                "Disabled": "Power capping is disabled (default).",
-                "Enabled": "Power capping is enabled."
-            },
-            "type": "string"
-        },
-        "SetPowerCappingConfigurations": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.v1_2_0.json#/definitions/SetPowerCappingConfigurations"
-                }
-            ],
-            "description": "This action set the Power Limiting value for standalone servers, where a user may enter a Power Limiting value of the chassis.",
-            "longDescription": "This action sets the Power Limiting value for standalone servers, where a user may enter a Power Limiting value of the chassis. This command includes Chassis-level Power Capping, Sled-level Power Capping, and Emergency Power Capping"
         }
     },
     "owningEntity": "Dell",

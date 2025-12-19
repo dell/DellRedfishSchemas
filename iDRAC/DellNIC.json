@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNIC.json",
     "$ref": "#/definitions/DellNIC",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DataBusWidth": {
             "enum": [
@@ -77,7 +77,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.v1_9_0.json#/definitions/DellNIC"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNIC.v1_7_0.json#/definitions/DellNIC"
                 }
             ],
             "deletable": false,
@@ -86,9 +86,6 @@
             "longDescription": "An instance of DellNIC will have NIC device specific data.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellNIC/{NICId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/Oem/Dell/DellNIC/{NICId}",
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceId}/Oem/Dell/DellNIC/{NICId}"
             ]
@@ -261,10 +258,6 @@
                 "MCA",
                 "NuBus",
                 "Other",
-                "EDSFFE1.S/E1.L",
-                "EDSFFE3",
-                "M.2Socket3",
-                "OCPNIC3.0SmallFormFactor",
                 "PC-98/C20",
                 "PC-98/C24",
                 "PC-98/Card",
@@ -317,15 +310,11 @@
                 "AGP2X": "AGP 2X",
                 "AGP4X": "AGP 4X",
                 "AGP8X": "AGP 8X",
-                "EDSFFE1.S/E1.L": "EDSFFE1.S/E1.L",
-                "EDSFFE3": "EDSFF E3",
                 "EISA": "EISA",
                 "I/ORiserCardSlot": "I/O Riser Card Slot",
                 "ISA": "ISA",
-                "M.2Socket3": "M.2 socket 3",
                 "MCA": "MCA",
                 "NuBus": "NuBus",
-                "OCPNIC3.0SmallFormFactor": "OCP NIC 3.0 Small Form Factor",
                 "Other": "Other",
                 "PC-98/C20": "PC-98/C20",
                 "PC-98/C24": "PC-98/C24",
@@ -379,15 +368,11 @@
                 "AGP2X": "AGP 2X",
                 "AGP4X": "AGP 4X",
                 "AGP8X": "AGP 8X",
-                "EDSFFE1.S/E1.L": "EDSFFE1.S/E1.L",
-                "EDSFFE3": "EDSFF E3",
                 "EISA": "EISA",
                 "I/ORiserCardSlot": "I/O Riser Card Slot",
                 "ISA": "ISA",
-                "M.2Socket3": "M.2 socket 3",
                 "MCA": "MCA",
                 "NuBus": "NuBus",
-                "OCPNIC3.0SmallFormFactor": "OCP NIC 3.0 Small Form Factor",
                 "Other": "Other",
                 "PC-98/C20": "PC-98/C20",
                 "PC-98/C24": "PC-98/C24",
@@ -441,15 +426,11 @@
                 "AGP2X": "v1_1_0",
                 "AGP4X": "v1_1_0",
                 "AGP8X": "v1_1_0",
-                "EDSFFE1.S/E1.L": "v1_9_0",
-                "EDSFFE3": "v1_9_0",
                 "EISA": "v1_1_0",
                 "I/ORiserCardSlot": "v1_1_0",
                 "ISA": "v1_1_0",
-                "M.2Socket3": "v1_9_0",
                 "MCA": "v1_1_0",
                 "NuBus": "v1_1_0",
-                "OCPNIC3.0SmallFormFactor": "v1_9_0",
                 "Other": "v1_1_0",
                 "PC-98/C20": "v1_1_0",
                 "PC-98/C24": "v1_1_0",

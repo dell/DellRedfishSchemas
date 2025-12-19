@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiver.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiver.json",
     "$ref": "#/definitions/DellNetworkTransceiver",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellNetworkTransceiver": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiver.v1_1_0.json#/definitions/DellNetworkTransceiver"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiver.v1_1_0.json#/definitions/DellNetworkTransceiver"
                 }
             ],
             "deletable": false,
@@ -19,9 +19,6 @@
             "longDescription": "DellNetworkTransceiver represents a Network Transceiver device in the managed system. Instantiating this class represents the specific managed objects and its properties for the number of managed devices present in the system.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellNetworkTransceivers/{NetworkTransceiverId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/Oem/Dell/DellNetworkTransceivers/{NetworkTransceiverId}",
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/{NetworkPortId}/Oem/Dell/DellNetworkTransceivers/{NetworkTransceiverId}"
             ]

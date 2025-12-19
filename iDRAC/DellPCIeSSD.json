@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json",
     "$ref": "#/definitions/DellPCIeSSD",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "BusProtocol": {
             "enum": [
@@ -76,7 +76,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.v1_10_0.json#/definitions/DellPCIeSSD"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.v1_9_0.json#/definitions/DellPCIeSSD"
                 }
             ],
             "deletable": false,
@@ -85,9 +85,6 @@
             "longDescription": "An instance of DellPCIeSSD will have PCIe Solid State Drive specific data.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellPCIeSSDs/{PCIeSSDId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Drives/Oem/Dell/DellPCIeSSDs/{PCIeSSDId}",
                 "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Drives/{DriveId}/Oem/Dell/DellPCIeSSDs/{PCIeSSDId}"
             ]
@@ -102,7 +99,6 @@
                 "E3.L.2T",
                 "E3.S",
                 "E3.S2T",
-                "E1.S",
                 "EDSFF-E1.L",
                 "M.2",
                 "Unknown"
@@ -112,7 +108,6 @@
                 "2.5Inch": "2.5 inch",
                 "3.5Inch": "3.5 inch",
                 "AddInCard": "Add-in card",
-                "E1.S": "E1.S",
                 "E3.L": "E3.L",
                 "E3.L.2T": "E3.L.2T",
                 "E3.S": "E3.S",
@@ -126,7 +121,6 @@
                 "2.5Inch": "2.5 inch",
                 "3.5Inch": "3.5 inch",
                 "AddInCard": "Add-in card",
-                "E1.S": "E1.S",
                 "E3.L": "E3.L",
                 "E3.L.2T": "E3.L.2T",
                 "E3.S": "E3.S",
@@ -136,7 +130,6 @@
                 "Unknown": "Unknown"
             },
             "enumVersionAdded": {
-                "E1.S": "v1_10_0",
                 "E3.L": "v1_7_0",
                 "E3.L.2T": "v1_7_0",
                 "E3.S": "v1_7_0",

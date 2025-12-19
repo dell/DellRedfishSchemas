@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICPortMetrics.json",
     "$ref": "#/definitions/DellNICPortMetrics",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellNICPortMetrics": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.v1_2_0.json#/definitions/DellNICPortMetrics"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICPortMetrics.v1_1_1.json#/definitions/DellNICPortMetrics"
                 }
             ],
             "deletable": false,
@@ -19,10 +19,8 @@
             "longDescription": "Represents the statistics of the NIC, NIC port, or partition.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellNICPortMetrics/{NICPortMetricsId}"
-            ],
-            "urisDeprecated": [
-                "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/NetworkDeviceFunctions/Oem/Dell/DellNICPortMetrics/{NICPortMetricsId}"
+                "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/Oem/Dell/DellNICPortMetrics/{NICPortMetricsId}",
+                "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceId}/Oem/Dell/DellNICPortMetrics/{NICPortMetricsId}"
             ]
         },
         "OSDriverState": {

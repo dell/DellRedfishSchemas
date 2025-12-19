@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellLicensableDevice.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACLicensableDevice.v1_0_0.json",
     "$ref": "#/definitions/DellLicensableDevice",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellLicensableDevice": {
             "additionalProperties": false,
@@ -58,7 +58,7 @@
                 "DevicePrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicensableDevice.json#/definitions/DevicePrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACLicensableDevice.json#/definitions/DevicePrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -71,7 +71,7 @@
                 "DeviceState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicensableDevice.json#/definitions/DeviceState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACLicensableDevice.json#/definitions/DeviceState"
                         },
                         {
                             "type": "null"
@@ -102,7 +102,7 @@
                 "DeviceType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicensableDevice.json#/definitions/DeviceType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACLicensableDevice.json#/definitions/DeviceType"
                         },
                         {
                             "type": "null"
@@ -158,7 +158,7 @@
                 "RollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicensableDevice.json#/definitions/RollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACLicensableDevice.json#/definitions/RollupStatus"
                         },
                         {
                             "type": "null"

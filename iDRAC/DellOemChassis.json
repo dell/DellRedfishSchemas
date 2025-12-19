@@ -1,70 +1,22 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemChassis.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemChassis.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellOemChassis": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemChassis.v1_5_0.json#/definitions/DellOemChassis"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemChassis.v1_0_0.json#/definitions/DellOemChassis"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemChassis.v1_1_0.json#/definitions/DellOemChassis"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemChassis.v1_2_0.json#/definitions/DellOemChassis"
                 }
             ],
             "description": "Oem data related to DellOemChassis.",
             "longDescription": "Oem data related to DellOemChassis."
-        },
-        "DellOemChassisLinks": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemChassis.v1_5_0.json#/definitions/DellOemChassisLinks"
-                }
-            ],
-            "description": "This is the complex property for the additional OEM Links.",
-            "longDescription": "This is the complex property for the additional OEM Links."
-        },
-        "ExtendedReset": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemChassis.v1_5_0.json#/definitions/ExtendedReset"
-                }
-            ],
-            "description": "This action performs an extended chassis reset action.",
-            "longDescription": "This action performs a chassis reset. It let's the user set the targeted power state after the reset is completed."
-        },
-        "ResetFilterLife": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemChassis.v1_5_0.json#/definitions/ResetFilterLife"
-                }
-            ],
-            "description": "This action is used to reset Bezel air filter.",
-            "longDescription": "This action shall perform reset of Bezel air filter."
-        },
-        "ResetSensorMetrics": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemChassis.v1_5_0.json#/definitions/ResetSensorMetrics"
-                }
-            ],
-            "description": "This action performs an extended chassis reset action.",
-            "longDescription": "This action performs a chassis reset. It let's the user set the targeted power state after the reset is completed."
-        },
-        "SetLEDStatus": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemChassis.v1_5_0.json#/definitions/SetLEDStatus"
-                }
-            ],
-            "description": "This action performs an extended Set Chassis LED Status.",
-            "longDescription": "This action performs a Set Chassis LED Status."
-        },
-        "SetPSUConfiguration": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemChassis.v1_5_0.json#/definitions/SetPSUConfiguration"
-                }
-            ],
-            "description": "This action performs an extended chassis Set PSUConfiguration.",
-            "longDescription": "This action performs a chassis Set PSUConfiguration."
         }
     },
     "owningEntity": "Dell",

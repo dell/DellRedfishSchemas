@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellBIOSService.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACBIOSService.v1_0_0.json",
     "$ref": "#/definitions/DellBIOSService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -83,6 +83,11 @@
                 "Name": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
                     "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 }
             },
             "required": [
@@ -99,7 +104,7 @@
             "longDescription": "The DeviceRecovery() method is used to perform recovery of the component provided in the Device parameter. If the Device is BIOS, a successful invocation of this command will result in shutdown of the host and initiation of the BIOS recovery sequence.",
             "parameters": {
                 "Device": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBIOSService.json#/definitions/Device",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACBIOSService.json#/definitions/Device",
                     "description": "Type of the device to be recovered",
                     "longDescription": "Type of the device to be recovered",
                     "requiredParameter": true
@@ -123,6 +128,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },

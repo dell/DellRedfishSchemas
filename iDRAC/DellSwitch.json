@@ -1,7 +1,7 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DebugType": {
             "enum": [
@@ -17,15 +17,6 @@
                 "TraceSeverity": "TraceSeverity"
             },
             "type": "string"
-        },
-        "GetLaneErrorInjectionInfo": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetLaneErrorInjectionInfo"
-                }
-            ],
-            "description": "This action is used to get the error injection info on a Lane",
-            "longDescription": "This action is used to get the error injection info on a Lane"
         },
         "GetLaneErrorInjectionInfoResponse": {
             "additionalProperties": false,
@@ -54,15 +45,6 @@
             },
             "type": "object",
             "versionAdded": "v1_1_0"
-        },
-        "GetTagSBTimeout": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetTagSBTimeout"
-                }
-            ],
-            "description": "This action is used to read the Tag ScoreBoard timeout value for the given station",
-            "longDescription": "This action is used to tead the Tag ScoreBoard timeout value for the given station"
         },
         "GetTagSBTimeoutResponse": {
             "additionalProperties": false,
@@ -101,15 +83,6 @@
             },
             "type": "object",
             "versionAdded": "v1_1_0"
-        },
-        "GetTraceSeverity": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetTraceSeverity"
-                }
-            ],
-            "description": "This action is used to get the Broadcom Switch health config trace log options",
-            "longDescription": "This action is used to get the Broadcom Switch health config trace log options"
         },
         "GetTraceSeverityResponse": {
             "additionalProperties": false,
@@ -187,24 +160,6 @@
             },
             "type": "string",
             "versionAdded": "v1_1_0"
-        },
-        "SetLaneErrorInjection": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/SetLaneErrorInjection"
-                }
-            ],
-            "description": "This action is used to Perform the error injection on a Lane",
-            "longDescription": "This action is used to Perform the error injection on a Lane"
-        },
-        "SetTraceSeverity": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/SetTraceSeverity"
-                }
-            ],
-            "description": "This action is used to set the Broadcom Switch trace severity log options",
-            "longDescription": "This action is used to set the Broadcom Switch trace severity log options"
         },
         "SubSystemType": {
             "enum": [

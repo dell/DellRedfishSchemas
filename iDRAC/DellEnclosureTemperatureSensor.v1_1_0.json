@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureTemperatureSensor.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosureTemperatureSensor.v1_1_0.json",
     "$ref": "#/definitions/DellEnclosureTemperatureSensor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellEnclosureTemperatureSensor": {
             "additionalProperties": false,
@@ -121,7 +121,7 @@
                 "PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureTemperatureSensor.json#/definitions/PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosureTemperatureSensor.json#/definitions/PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -135,7 +135,7 @@
                 "RateUnits": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureTemperatureSensor.json#/definitions/RateUnits"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosureTemperatureSensor.json#/definitions/RateUnits"
                         },
                         {
                             "type": "null"
@@ -149,7 +149,7 @@
                 "ReadingUnits": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureTemperatureSensor.json#/definitions/BaseUnits"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosureTemperatureSensor.json#/definitions/BaseUnits"
                         },
                         {
                             "type": "null"
@@ -163,7 +163,7 @@
                 "SensorType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureTemperatureSensor.json#/definitions/SensorType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosureTemperatureSensor.json#/definitions/SensorType"
                         },
                         {
                             "type": "null"
@@ -177,7 +177,7 @@
                 "State": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureTemperatureSensor.json#/definitions/State"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosureTemperatureSensor.json#/definitions/State"
                         },
                         {
                             "type": "null"

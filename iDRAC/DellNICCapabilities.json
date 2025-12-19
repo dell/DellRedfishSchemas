@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json",
     "$ref": "#/definitions/DellNICCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "BPESupport": {
             "enum": [
@@ -79,7 +79,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.v1_2_0.json#/definitions/DellNICCapabilities"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.v1_2_0.json#/definitions/DellNICCapabilities"
                 }
             ],
             "deletable": false,
@@ -88,9 +88,6 @@
             "longDescription": "An instance of DellNICCapabilities will have data specific to NIC and its port and partitions capabilities.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellNICCapabilities/{NICCapabilitiesId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/Oem/Dell/DellNICCapabilities/{NICCapabilitiesId}",
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceId}/Oem/Dell/DellNICCapabilities/{NICCapabilitiesId}"
             ]

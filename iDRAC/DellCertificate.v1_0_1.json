@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificate.v1_0_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACCertificate.v1_0_1.json",
     "$ref": "#/definitions/DellCertificate",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellCertificate": {
             "additionalProperties": false,
@@ -51,8 +51,7 @@
                     "description": "A string providing the Cryptographic Hash value of SHA-256, SHA-384, SHA-512.",
                     "longDescription": "A string providing the Cryptographic Hash value of SHA-256, SHA-384, SHA-512.",
                     "readonly": false,
-                    "type": "string",
-                    "writeOnly": true
+                    "type": "string"
                 },
                 "Description": {
                     "anyOf": [

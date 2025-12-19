@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricValue.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAggregationMetricValue.v1_0_0.json",
     "$ref": "#/definitions/DellAggregationMetricValue",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellAggregationMetricValue": {
             "additionalProperties": false,
@@ -38,7 +38,7 @@
                 "AggregationDuration": {
                     "description": "AggregationDuration represents the time duration over which the aggregation is computed. The start of a monitoring interval, over which the aggregation function is applied, is determined by subtracting the AggregationDuration from the AggregationTimestamp.",
                     "longDescription": "AggregationDuration represents the time duration over which the aggregation is computed. The start of a monitoring interval, over which the aggregation function is applied, is determined by subtracting the AggregationDuration from the AggregationTimestamp.",
-                    "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?$",
+                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
                     "readonly": true,
                     "type": [
                         "string",

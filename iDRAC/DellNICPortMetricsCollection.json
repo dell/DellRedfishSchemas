@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetricsCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICPortMetricsCollection.json",
     "$ref": "#/definitions/DellNICPortMetricsCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellNICPortMetricsCollection": {
             "anyOf": [
@@ -55,7 +55,7 @@
                             "autoExpand": true,
                             "description": "Contains the members of this collection.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.json#/definitions/DellNICPortMetrics"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICPortMetrics.json#/definitions/DellNICPortMetrics"
                             },
                             "longDescription": "Contains the members of this collection.",
                             "readonly": true,
@@ -89,9 +89,6 @@
             "insertable": false,
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellNICPortMetrics"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/NetworkDeviceFunctions/Oem/Dell/DellNICPortMetrics"
             ]
         }

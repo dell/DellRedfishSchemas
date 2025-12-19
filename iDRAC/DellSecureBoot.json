@@ -1,12 +1,15 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSecureBoot.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSecureBoot.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellSecureBoot": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSecureBoot.v1_1_0.json#/definitions/DellSecureBoot"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSecureBoot.v1_0_0.json#/definitions/DellSecureBoot"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSecureBoot.v1_1_0.json#/definitions/DellSecureBoot"
                 }
             ],
             "description": "This resource contains the Dell specific Redfish implementation for SecureBoot.",

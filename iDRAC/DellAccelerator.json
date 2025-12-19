@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellAccelerator.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAccelerator.json",
     "$ref": "#/definitions/DellAccelerator",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellAccelerator": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAccelerator.v1_0_0.json#/definitions/DellAccelerator"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAccelerator.v1_0_0.json#/definitions/DellAccelerator"
                 }
             ],
             "deletable": false,
@@ -19,9 +19,6 @@
             "longDescription": "DellAccelerator is a representation of the FPGA Accelerator devices in the managed system.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellAccelerators/{AcceleratorId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/Processors/Oem/Dell/DellAccelerators/{AcceleratorId}",
                 "/redfish/v1/Systems/{ComputerSystemId}/Processors/{ProcessorId}/FPGA/Oem/Dell/DellAccelerators/{AcceleratorId}"
             ]

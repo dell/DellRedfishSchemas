@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPersistentStorageService.json",
     "$ref": "#/definitions/DellPersistentStorageService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "AccessType": {
             "enum": [
@@ -25,7 +25,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.v1_1_0.json#/definitions/DellPersistentStorageService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPersistentStorageService.v1_1_0.json#/definitions/DellPersistentStorageService"
                 }
             ],
             "deletable": false,
@@ -33,8 +33,7 @@
             "insertable": false,
             "longDescription": "The DellPersistentStorageService resource provides some actions to support VFlash functionality.",
             "updatable": false,
-            "uris": [],
-            "urisDeprecated": [
+            "uris": [
                 "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellPersistentStorageService"
             ]
         },

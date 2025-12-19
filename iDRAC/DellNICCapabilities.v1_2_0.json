@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.v1_2_0.json",
     "$ref": "#/definitions/DellNICCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellNICCapabilities": {
             "additionalProperties": false,
@@ -38,7 +38,7 @@
                 "BPESupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/BPESupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/BPESupport"
                         },
                         {
                             "type": "null"
@@ -52,7 +52,7 @@
                 "CongestionNotification": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/CongestionNotification"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/CongestionNotification"
                         },
                         {
                             "type": "null"
@@ -66,7 +66,7 @@
                 "DCBExchangeProtocol": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/DCBExchangeProtocol"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/DCBExchangeProtocol"
                         },
                         {
                             "type": "null"
@@ -91,7 +91,7 @@
                 "ETS": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/ETS"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/ETS"
                         },
                         {
                             "type": "null"
@@ -105,7 +105,7 @@
                 "EVBModesSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/EVBModesSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/EVBModesSupport"
                         },
                         {
                             "type": "null"
@@ -119,7 +119,7 @@
                 "FCoEBootSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/FCoEBootSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/FCoEBootSupport"
                         },
                         {
                             "type": "null"
@@ -192,7 +192,7 @@
                 "FCoEOffloadSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/FCoEOffloadSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/FCoEOffloadSupport"
                         },
                         {
                             "type": "null"
@@ -205,7 +205,7 @@
                 "FeatureLicensingSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/FeatureLicensingSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/FeatureLicensingSupport"
                         },
                         {
                             "type": "null"
@@ -219,7 +219,7 @@
                 "FlexAddressingSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/FlexAddressingSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/FlexAddressingSupport"
                         },
                         {
                             "type": "null"
@@ -232,7 +232,7 @@
                 "IPSecOffloadSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/IPSecOffloadSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/IPSecOffloadSupport"
                         },
                         {
                             "type": "null"
@@ -250,7 +250,7 @@
                 "MACSecSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/MACSecSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/MACSecSupport"
                         },
                         {
                             "type": "null"
@@ -264,7 +264,7 @@
                 "NWManagementPassThrough": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/NWManagementPassThrough"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/NWManagementPassThrough"
                         },
                         {
                             "type": "null"
@@ -282,7 +282,7 @@
                 "NicPartitioningSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/NicPartitioningSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/NicPartitioningSupport"
                         },
                         {
                             "type": "null"
@@ -296,7 +296,7 @@
                 "OSBMCManagementPassThrough": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/OSBMCManagementPassThrough"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/OSBMCManagementPassThrough"
                         },
                         {
                             "type": "null"
@@ -315,7 +315,7 @@
                 "OnChipThermalSensor": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/OnChipThermalSensor"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/OnChipThermalSensor"
                         },
                         {
                             "type": "null"
@@ -329,7 +329,7 @@
                 "OpenFlowSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/OpenFlowSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/OpenFlowSupport"
                         },
                         {
                             "type": "null"
@@ -343,7 +343,7 @@
                 "PXEBootSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/PXEBootSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/PXEBootSupport"
                         },
                         {
                             "type": "null"
@@ -356,7 +356,7 @@
                 "PartitionWOLSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/PartitionWOLSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/PartitionWOLSupport"
                         },
                         {
                             "type": "null"
@@ -370,7 +370,7 @@
                 "PersistencePolicySupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/PersistencePolicySupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/PersistencePolicySupport"
                         },
                         {
                             "type": "null"
@@ -384,7 +384,7 @@
                 "PriorityFlowControl": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/PriorityFlowControl"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/PriorityFlowControl"
                         },
                         {
                             "type": "null"
@@ -398,7 +398,7 @@
                 "RDMASupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/RDMASupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/RDMASupport"
                         },
                         {
                             "type": "null"
@@ -412,7 +412,7 @@
                 "RemotePHY": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/RemotePHY"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/RemotePHY"
                         },
                         {
                             "type": "null"
@@ -426,7 +426,7 @@
                 "TCPChimneySupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/TCPChimneySupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/TCPChimneySupport"
                         },
                         {
                             "type": "null"
@@ -440,7 +440,7 @@
                 "TCPOffloadEngineSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/TCPOffloadEngineSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/TCPOffloadEngineSupport"
                         },
                         {
                             "type": "null"
@@ -454,7 +454,7 @@
                 "VEB": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/VEB"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/VEB"
                         },
                         {
                             "type": "null"
@@ -468,7 +468,7 @@
                 "VEBVEPAMultiChannel": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/VEBVEPAMultiChannel"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/VEBVEPAMultiChannel"
                         },
                         {
                             "type": "null"
@@ -482,7 +482,7 @@
                 "VEBVEPASingleChannel": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/VEBVEPASingleChannel"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/VEBVEPASingleChannel"
                         },
                         {
                             "type": "null"
@@ -496,7 +496,7 @@
                 "VirtualLinkControl": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/VirtualLinkControl"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/VirtualLinkControl"
                         },
                         {
                             "type": "null"
@@ -510,7 +510,7 @@
                 "iSCSIBootSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/iSCSIBootSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/iSCSIBootSupport"
                         },
                         {
                             "type": "null"
@@ -523,7 +523,7 @@
                 "iSCSIOffloadSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/iSCSIOffloadSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/iSCSIOffloadSupport"
                         },
                         {
                             "type": "null"
@@ -536,7 +536,7 @@
                 "uEFISupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/uEFISupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/uEFISupport"
                         },
                         {
                             "type": "null"

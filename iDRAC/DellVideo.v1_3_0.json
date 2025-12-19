@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellVideo.v1_3_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVideo.v1_3_0.json",
     "$ref": "#/definitions/DellVideo",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellVideo": {
             "additionalProperties": false,
@@ -65,7 +65,7 @@
                 "DataBusWidth": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideo.json#/definitions/DataBusWidth"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVideo.json#/definitions/DataBusWidth"
                         },
                         {
                             "type": "null"
@@ -134,7 +134,7 @@
                 "GPUHealth": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideo.json#/definitions/GPUHealth"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVideo.json#/definitions/GPUHealth"
                         },
                         {
                             "type": "null"
@@ -156,7 +156,7 @@
                 "GPUState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideo.json#/definitions/GPUState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVideo.json#/definitions/GPUState"
                         },
                         {
                             "type": "null"
@@ -230,6 +230,11 @@
                         "null"
                     ]
                 },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
+                },
                 "PCIDeviceID": {
                     "description": "This property contains a value assigned by the device manufacturer used to identify the type of device.",
                     "longDescription": "This property contains a value assigned by the device manufacturer used to identify the type of device.",
@@ -278,7 +283,7 @@
                 "SlotLength": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideo.json#/definitions/SlotLength"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVideo.json#/definitions/SlotLength"
                         },
                         {
                             "type": "null"
@@ -291,7 +296,7 @@
                 "SlotType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideo.json#/definitions/SlotType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVideo.json#/definitions/SlotType"
                         },
                         {
                             "type": "null"

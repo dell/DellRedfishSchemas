@@ -1,7 +1,7 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.v1_1_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -20,19 +20,19 @@
                 }
             },
             "properties": {
-                "#Switch.GetLaneErrorInjectionInfo": {
+                "#DellSwitch.GetLaneErrorInjectionInfo": {
                     "$ref": "#/definitions/GetLaneErrorInjectionInfo"
                 },
-                "#Switch.GetTagSBTimeout": {
+                "#DellSwitch.GetTagSBTimeout": {
                     "$ref": "#/definitions/GetTagSBTimeout"
                 },
-                "#Switch.GetTraceSeverity": {
+                "#DellSwitch.GetTraceSeverity": {
                     "$ref": "#/definitions/GetTraceSeverity"
                 },
-                "#Switch.SetLaneErrorInjection": {
+                "#DellSwitch.SetLaneErrorInjection": {
                     "$ref": "#/definitions/SetLaneErrorInjection"
                 },
-                "#Switch.SetTraceSeverity": {
+                "#DellSwitch.SetTraceSeverity": {
                     "$ref": "#/definitions/SetTraceSeverity"
                 }
             },
@@ -40,7 +40,7 @@
         },
         "GetLaneErrorInjectionInfo": {
             "actionResponse": {
-                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/GetLaneErrorInjectionInfoResponse"
+                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/GetLaneErrorInjectionInfoResponse"
             },
             "additionalProperties": false,
             "description": "This action is used to get the error injection info on a Lane",
@@ -83,14 +83,14 @@
         },
         "GetTagSBTimeout": {
             "actionResponse": {
-                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/GetTagSBTimeoutResponse"
+                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/GetTagSBTimeoutResponse"
             },
             "additionalProperties": false,
             "description": "This action is used to read the Tag ScoreBoard timeout value for the given station",
             "longDescription": "This action is used to tead the Tag ScoreBoard timeout value for the given station",
             "parameters": {
                 "QueryMode": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/QueryMode",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/QueryMode",
                     "description": "This parameter shall contain the query mode",
                     "longDescription": "This parameter shall contain the query mode",
                     "requiredParameter": true
@@ -131,20 +131,20 @@
         },
         "GetTraceSeverity": {
             "actionResponse": {
-                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/GetTraceSeverityResponse"
+                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/GetTraceSeverityResponse"
             },
             "additionalProperties": false,
             "description": "This action is used to get the Broadcom Switch health config trace log options",
             "longDescription": "This action is used to get the Broadcom Switch health config trace log options",
             "parameters": {
                 "DebugType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/DebugType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/DebugType",
                     "description": "This parameter shall contain the debug type required",
                     "longDescription": "This parameter shall contain the debug type required",
                     "requiredParameter": true
                 },
                 "SubSystemType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/SubSystemType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/SubSystemType",
                     "description": "This parameter shall contain the SubSystemType",
                     "longDescription": "This parameter shall contain the SubSystemType"
                 }
@@ -188,7 +188,7 @@
                     "type": "boolean"
                 },
                 "Frequency": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/InjFrequency",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/InjFrequency",
                     "description": "This parameter specifies the error injection frequency.",
                     "longDescription": "This parameter specifies Error injection control value.",
                     "requiredParameter": true
@@ -234,13 +234,13 @@
             "longDescription": "This action is used to set the Broadcom Switch trace severity log options",
             "parameters": {
                 "DebugType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/DebugType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/DebugType",
                     "description": "This parameter shall contain the debug type required",
                     "longDescription": "This parameter shall contain the debug type required",
                     "requiredParameter": true
                 },
                 "SubSystemType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/SubSystemType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/SubSystemType",
                     "description": "This parameter shall contain the SubSystemType",
                     "longDescription": "This parameter shall contain the SubSystemType"
                 },
@@ -250,14 +250,15 @@
                     "type": "string"
                 },
                 "TraceSeverity": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/TraceSeverity",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/TraceSeverity",
                     "description": "This parameter shall contain the TraceSeverity",
                     "longDescription": "This parameter shall contain the TraceSeverity"
                 },
                 "UpdateType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json#/definitions/UpdateType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSwitch.json#/definitions/UpdateType",
                     "description": "This parameter shall contain the update type required",
-                    "longDescription": "This parameter shall contain the update type required"
+                    "longDescription": "This parameter shall contain the update type required",
+                    "requiredParameter": true
                 }
             },
             "patternProperties": {

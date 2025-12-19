@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACLCService.json",
     "$ref": "#/definitions/DellLCService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Component": {
             "enum": [
@@ -58,7 +58,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.v1_12_0.json#/definitions/DellLCService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACLCService.v1_8_1.json#/definitions/DellLCService"
                 }
             ],
             "deletable": false,
@@ -146,16 +146,11 @@
         "GetRemoteServicesAPIStatusResponseRTStatus": {
             "enum": [
                 "NotReady",
-                "Ready",
-                "NotApplicable"
+                "Ready"
             ],
             "enumDescriptions": {
-                "NotApplicable": "Not Applicable",
                 "NotReady": "Not Ready",
                 "Ready": "Ready"
-            },
-            "enumVersionAdded": {
-                "NotApplicable": "v1_12_0"
             },
             "type": "string"
         },
@@ -361,22 +356,19 @@
                 "OSAppData",
                 "TTYLogs",
                 "TelemetryReports",
-                "GPULogs",
-                "StorageLogs"
+                "GPULogs"
             ],
             "enumDescriptions": {
                 "DebugLogs": "Debug Logs",
                 "GPULogs": "GPU Logs",
                 "HWData": "HW Data",
                 "OSAppData": "OSApp Data",
-                "StorageLogs": "Storage Logs",
                 "TTYLogs": "TTY Logs",
                 "TelemetryReports": "Telemetry Reports"
             },
             "enumVersionAdded": {
                 "DebugLogs": "v1_1_0",
                 "GPULogs": "v1_8_0",
-                "StorageLogs": "v1_8_0",
                 "TelemetryReports": "v1_2_0"
             },
             "type": "string"
@@ -472,26 +464,12 @@
             "enum": [
                 "CIM-XML",
                 "JSON",
-                "Simple",
-                "CIM-eXML"
+                "Simple"
             ],
-            "enumDeprecated": {
-                "CIM-eXML": "This action has been deprecated"
-            },
             "enumDescriptions": {
                 "CIM-XML": "CIM-XML",
-                "CIM-eXML": "CIM-eXML",
                 "JSON": "JSON",
                 "Simple": "Simple"
-            },
-            "enumLongDescriptions": {
-                "CIM-XML": "CIM-XML representation of hardware inventory. Default value.",
-                "CIM-eXML": "Extended CIM-XML representation of hardware inventory.",
-                "JSON": "JSON representation of hardware inventory.",
-                "Simple": "XML representation of hardware inventory."
-            },
-            "enumVersionDeprecated": {
-                "CIM-eXML": "v1_11_0"
             },
             "type": "string"
         }

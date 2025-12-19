@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.v1_2_0.json",
     "$ref": "#/definitions/DellOSDeploymentService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -29,6 +29,9 @@
                 "#DellOSDeploymentService.BootToHD": {
                     "$ref": "#/definitions/BootToHD"
                 },
+                "#DellOSDeploymentService.BootToISOFromVFlash": {
+                    "$ref": "#/definitions/BootToISOFromVFlash"
+                },
                 "#DellOSDeploymentService.BootToNetworkISO": {
                     "$ref": "#/definitions/BootToNetworkISO"
                 },
@@ -38,17 +41,26 @@
                 "#DellOSDeploymentService.ConnectNetworkISOImage": {
                     "$ref": "#/definitions/ConnectNetworkISOImage"
                 },
+                "#DellOSDeploymentService.DeleteISOFromVFlash": {
+                    "$ref": "#/definitions/DeleteISOFromVFlash"
+                },
                 "#DellOSDeploymentService.DetachBootstrapImage": {
                     "$ref": "#/definitions/DetachBootstrapImage"
                 },
                 "#DellOSDeploymentService.DetachDrivers": {
                     "$ref": "#/definitions/DetachDrivers"
                 },
+                "#DellOSDeploymentService.DetachISOFromVFlash": {
+                    "$ref": "#/definitions/DetachISOFromVFlash"
+                },
                 "#DellOSDeploymentService.DetachISOImage": {
                     "$ref": "#/definitions/DetachISOImage"
                 },
                 "#DellOSDeploymentService.DisconnectNetworkISOImage": {
                     "$ref": "#/definitions/DisconnectNetworkISOImage"
+                },
+                "#DellOSDeploymentService.DownloadISOToVFlash": {
+                    "$ref": "#/definitions/DownloadISOToVFlash"
                 },
                 "#DellOSDeploymentService.GetAttachStatus": {
                     "$ref": "#/definitions/GetAttachStatus"
@@ -75,13 +87,7 @@
             "additionalProperties": false,
             "description": "The BootToBootstrapImage() method is used to boot to the bootstrap image to collect GPU diagnostic information.",
             "longDescription": "The BootToBootstrapImage() method is used to boot to the bootstrap image to collect GPU diagnostic information.",
-            "parameters": {
-                "ImageName": {
-                    "description": "The name of the bootstrap image to boot to.",
-                    "longDescription": "The name of the bootstrap image to boot to.",
-                    "type": "string"
-                }
-            },
+            "parameters": {},
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
@@ -100,6 +106,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },
@@ -128,6 +138,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },
@@ -189,7 +203,7 @@
                     "type": "string"
                 },
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/HashType",
                     "description": "Type of hash algorithm used to compute checksum.",
                     "longDescription": "Type of hash algorithm used to compute checksum."
                 },
@@ -222,7 +236,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -257,6 +271,10 @@
                     "description": "Link to invoke action",
                     "format": "uri-reference",
                     "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -273,7 +291,7 @@
                     "type": "string"
                 },
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/HashType",
                     "description": "Type of hash algorithm used to compute checksum.",
                     "longDescription": "Type of hash algorithm used to compute checksum."
                 },
@@ -300,7 +318,7 @@
                     "type": "string"
                 },
                 "ResetType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ResetType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/ResetType",
                     "description": "Specifies if the host system needs to be immediately forced to cold/warm reset in order to boot to the ISO Image.",
                     "longDescription": "Specifies if the host system needs to be immediately forced to cold/warm reset in order to boot to the ISO Image.",
                     "requiredParameter": true
@@ -312,7 +330,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -347,6 +365,10 @@
                     "description": "Link to invoke action",
                     "format": "uri-reference",
                     "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -357,7 +379,7 @@
             "longDescription": "The ConnectNetworkISOImage() method is used to connect to the ISO present on the network share and expose the ISO as a local USB CD-ROM device to the host system. This method will connect to the ISO located on an NFS/CIFS share and expose it as a virtual CDROM device to the host server. Even though the successful method execution shall not change the boot order of that device, the host shall always boot to the virtual CDROM. Also note that after the ISO is exposed to the host server, Lifecycle Controller shall be locked and no other jobs like configuration/update etc shall be performed until the ISO is detached using the DisconnectNetworkISOImage() method. The successful exection of the DisconnectNetworkISOImage() shall revert the host system to the regular boot list. NOTE: The recommended methodology for connecting to an ISO image is by using the ConnectRFSISOImage()  method that utilizes the remote file system (RFS).",
             "parameters": {
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/HashType",
                     "description": "Type of hash algorithm used to compute checksum.",
                     "longDescription": "Type of hash algorithm used to compute checksum."
                 },
@@ -390,7 +412,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -424,6 +446,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },
@@ -515,6 +541,11 @@
                 "Name": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
                     "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 }
             },
             "required": [
@@ -529,13 +560,7 @@
             "additionalProperties": false,
             "description": "The DetachBootstrapImage() method is used to detach the bootstrap image.",
             "longDescription": "The DetachBootstrapImage() method is used to detach the bootstrap image.",
-            "parameters": {
-                "ImageName": {
-                    "description": "The name of the bootstrap image to detach.",
-                    "longDescription": "The name of the bootstrap image to detach.",
-                    "type": "string"
-                }
-            },
+            "parameters": {},
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
@@ -554,6 +579,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },
@@ -582,6 +611,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },
@@ -643,6 +676,10 @@
                     "description": "Link to invoke action",
                     "format": "uri-reference",
                     "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -671,6 +708,10 @@
                     "description": "Link to invoke action",
                     "format": "uri-reference",
                     "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -681,7 +722,7 @@
             "longDescription": "The DownloadISOToVFlash() method downloads the pre-operating system ISO Image to the vFlash SD card. The following table lists the return values for DownloadISOToVFlash() method, where the method-execution behavior matches the return-code description.Note: This method will not be supported in Poweredge systems with model YX5X and iDRAC firmware version 4.00.00.00 or later.",
             "parameters": {
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/HashType",
                     "description": "Type of hash algorithm used to compute checksum.",
                     "longDescription": "Type of hash algorithm used to compute checksum."
                 },
@@ -719,7 +760,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -789,6 +830,10 @@
                     "description": "Link to invoke action",
                     "format": "uri-reference",
                     "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -813,13 +858,13 @@
             },
             "properties": {
                 "DriversAttachStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetAttachStatusResponseDriversAttachStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/GetAttachStatusResponseDriversAttachStatus",
                     "description": "Driver attach status.",
                     "longDescription": "Driver attach status.",
                     "readonly": true
                 },
                 "ISOAttachStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetAttachStatusResponseISOAttachStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/GetAttachStatusResponseISOAttachStatus",
                     "description": "ISO attached state.",
                     "longDescription": "ISO attached state.",
                     "readonly": true
@@ -857,6 +902,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },
@@ -930,6 +979,10 @@
                     "description": "Link to invoke action",
                     "format": "uri-reference",
                     "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -954,13 +1007,13 @@
             },
             "properties": {
                 "HostAttachedStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseHostAttachedStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseHostAttachedStatus",
                     "description": "Indicates whether the ISO is attached to the host server.",
                     "longDescription": "Indicates whether the ISO is attached to the host server.",
                     "readonly": true
                 },
                 "HostBootedFromISO": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseHostBootedFromISO",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseHostBootedFromISO",
                     "description": "Indicates whether the host has booted to the ISO image at least once.",
                     "longDescription": "Indicates whether the host has booted to the ISO image at least once.",
                     "readonly": true
@@ -972,7 +1025,7 @@
                     "type": "string"
                 },
                 "ISOConnectionStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseISOConnectionStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseISOConnectionStatus",
                     "description": "Indicates whether the ISO is still accessible.",
                     "longDescription": "Indicates whether the ISO is still accessible.",
                     "readonly": true
@@ -1038,6 +1091,10 @@
                     "description": "Link to invoke action",
                     "format": "uri-reference",
                     "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object",
@@ -1080,6 +1137,10 @@
                     "description": "Link to invoke action",
                     "format": "uri-reference",
                     "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -1118,7 +1179,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -1152,6 +1213,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },

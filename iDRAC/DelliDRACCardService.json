@@ -1,21 +1,18 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACiDRACCardService.json",
     "$ref": "#/definitions/DelliDRACCardService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Algorithm": {
             "enum": [
-                "AES128CBC",
-                "AES_256_GCM"
+                "AES128CBC"
             ],
             "enumDescriptions": {
-                "AES128CBC": "AES128CBC",
-                "AES_256_GCM": "AES_256_GCM"
+                "AES128CBC": "AES128CBC"
             },
             "enumVersionAdded": {
-                "AES128CBC": "v1_2_0",
-                "AES_256_GCM": "v1_11_0"
+                "AES128CBC": "v1_2_0"
             },
             "type": "string"
         },
@@ -38,9 +35,7 @@
                 "SMARTCARD_USER_CERT",
                 "DCM_DA_CERT1",
                 "DCM_DA_CERT2",
-                "OIDC_CERT",
-                "Server",
-                "TPM_FACTORY_CERT"
+                "Server"
             ],
             "enumDescriptions": {
                 "CA": "CA",
@@ -52,7 +47,6 @@
                 "IEEE8021xCSC": "Base64 encoded PKCS12 IEEE 8021.x Custom Signing Certificate",
                 "IEEE8021xClient": "Base64 encoded PKCS12 Certificate for IEEE 8021.x Client",
                 "KMS_SERVER_CA": "KMS_SERVER_CA",
-                "OIDC_CERT": "Used for OpenID Connect Certificates",
                 "RSA_CA_CERT": "RSA_CA_CERT",
                 "RSYSLOG_SERVER_CA": "RSYSLOG_SERVER_CA",
                 "SCEP_CA_CERT": "SCEP_CA_CERT",
@@ -61,8 +55,7 @@
                 "SEKM_SSL_CERT": "SEKM_SSL_CERT",
                 "SMARTCARD_CA_CERT": "SMARTCARD_CA_CERT",
                 "SMARTCARD_USER_CERT": "SMARTCARD_USER_CERT",
-                "Server": "Server",
-                "TPM_FACTORY_CERT": "TPM_FACTORY_CERT"
+                "Server": "Server"
             },
             "enumVersionAdded": {
                 "CustomCertificate": "v1_5_0",
@@ -70,14 +63,12 @@
                 "DCM_DA_CERT2": "v1_10_0",
                 "IEEE8021xCSC": "v1_6_0",
                 "IEEE8021xClient": "v1_6_0",
-                "OIDC_CERT": "v1_13_0",
                 "RSA_CA_CERT": "v1_7_0",
                 "SCEP_CA_CERT": "v1_7_0",
                 "SEKM_CUSTOM_CERT": "v1_7_1",
                 "SEKM_CUSTOM_PEM_CERT": "v1_8_0",
                 "SMARTCARD_CA_CERT": "v1_7_0",
-                "SMARTCARD_USER_CERT": "v1_7_0",
-                "TPM_FACTORY_CERT": "v1_12_0"
+                "SMARTCARD_USER_CERT": "v1_7_0"
             },
             "type": "string"
         },
@@ -114,7 +105,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.v1_13_0.json#/definitions/DelliDRACCardService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACiDRACCardService.v1_10_0.json#/definitions/DelliDRACCardService"
                 }
             ],
             "deletable": false,
@@ -139,16 +130,13 @@
         },
         "KeyDerivationFunction": {
             "enum": [
-                "DellSHA256",
-                "HKDF_SHA384"
+                "DellSHA256"
             ],
             "enumDescriptions": {
-                "DellSHA256": "DellSHA256",
-                "HKDF_SHA384": "HKDF_SHA384"
+                "DellSHA256": "DellSHA256"
             },
             "enumVersionAdded": {
-                "DellSHA256": "v1_2_0",
-                "HKDF_SHA384": "v1_11_0"
+                "DellSHA256": "v1_2_0"
             },
             "type": "string"
         },

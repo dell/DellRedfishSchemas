@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCollection.json",
     "$ref": "#/definitions/DellNICCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellNICCollection": {
             "anyOf": [
@@ -55,7 +55,7 @@
                             "autoExpand": true,
                             "description": "Contains the members of this collection.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/DellNIC"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNIC.json#/definitions/DellNIC"
                             },
                             "longDescription": "Contains the members of this collection.",
                             "readonly": true,
@@ -89,9 +89,6 @@
             "insertable": false,
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellNIC"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/NetworkDeviceFunctions/Oem/Dell/DellNIC"
             ]
         }

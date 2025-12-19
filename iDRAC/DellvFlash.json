@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellvFlash.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACvFlash.json",
     "$ref": "#/definitions/DellvFlash",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellvFlash": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellvFlash.v1_1_0.json#/definitions/DellvFlash"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACvFlash.v1_1_0.json#/definitions/DellvFlash"
                 }
             ],
             "deletable": false,
@@ -18,8 +18,7 @@
             "insertable": false,
             "longDescription": "An instance of DellvFlash will have VFlash specific data.",
             "updatable": false,
-            "uris": [],
-            "urisDeprecated": [
+            "uris": [
                 "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellvFlash/{vFlashId}"
             ]
         }

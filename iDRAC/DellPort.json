@@ -1,7 +1,7 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ActionType": {
             "enum": [
@@ -32,15 +32,6 @@
                 "None": "None"
             },
             "type": "string"
-        },
-        "ConfigureTLPRoundTripTime": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/ConfigureTLPRoundTripTime"
-                }
-            ],
-            "description": "This action is used to Configure the TLP round-trip time",
-            "longDescription": "This action is used to Configure the TLP round-trip time"
         },
         "ErrInjType": {
             "enum": [
@@ -92,24 +83,6 @@
             "type": "string",
             "versionAdded": "v1_1_0"
         },
-        "ExportLTSSMTriggerLog": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/ExportLTSSMTriggerLog"
-                }
-            ],
-            "description": "This ExportLTSSMTriggerLog is used to collect the LTSSM port logs after trigger condition executed.",
-            "longDescription": "This ExportLTSSMTriggerLog is used to collect the LTSSM port logs after trigger condition executed."
-        },
-        "GetCreditCapture": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/GetCreditCapture"
-                }
-            ],
-            "description": "This action is used to get the credit information",
-            "longDescription": "This action is used to get the credit information"
-        },
         "GetCreditCaptureResponse": {
             "additionalProperties": false,
             "description": "The response body for the GetCreditCapture action.",
@@ -153,15 +126,6 @@
             "type": "object",
             "versionAdded": "v1_1_0"
         },
-        "GetErrorInjectionInfo": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/GetErrorInjectionInfo"
-                }
-            ],
-            "description": "This action is used to read the error injection info for a port",
-            "longDescription": "This action is used to read the error injection info for a port"
-        },
         "GetErrorInjectionInfoResponse": {
             "additionalProperties": false,
             "description": "The response body for the GetErrorInjectionInfo action.",
@@ -194,15 +158,6 @@
             },
             "type": "object",
             "versionAdded": "v1_1_0"
-        },
-        "GetLinkDownConditionStatus": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/GetLinkDownConditionStatus"
-                }
-            ],
-            "description": "The GetLinkDownConditionStatus gives the condition and time to get the link down ",
-            "longDescription": "The GetLinkDownConditionStatus gives the condition and time to get the link down "
         },
         "GetLinkDownConditionStatusResponse": {
             "additionalProperties": false,
@@ -245,15 +200,6 @@
                 }
             },
             "type": "object"
-        },
-        "IsLTSSMTriggered": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/IsLTSSMTriggered"
-                }
-            ],
-            "description": "The IsLTSSMTriggered gives the whether the set condition is triggred or not.",
-            "longDescription": "The IsLTSSMTriggered gives the whether the set condition is triggred or not."
         },
         "IsLTSSMTriggeredResponse": {
             "additionalProperties": false,
@@ -329,15 +275,6 @@
             "type": "string",
             "versionAdded": "v1_1_0"
         },
-        "ReadTLPRoundTripTime": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/ReadTLPRoundTripTime"
-                }
-            ],
-            "description": "This action is used to read the TLP round-trip time in nanoseconds",
-            "longDescription": "This action is used to read the TLP round-trip time in nanoseconds"
-        },
         "ReadTLPRoundTripTimeResponse": {
             "additionalProperties": false,
             "description": "The response body for the ReadTLPRoundTripTime action.",
@@ -370,42 +307,6 @@
             },
             "type": "object",
             "versionAdded": "v1_1_0"
-        },
-        "SetCreditCapture": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/SetCreditCapture"
-                }
-            ],
-            "description": "This action is used to start or stop credit capture for specific packet types",
-            "longDescription": "This action is used to start or stop credit capture for specific packet types"
-        },
-        "SetErrorInjection": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/SetErrorInjection"
-                }
-            ],
-            "description": "This action is used to perform the error injection on a port",
-            "longDescription": "This action is used to perform the error injection on a port"
-        },
-        "SetLinkDownConditionStatus": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/SetLinkDownConditionStatus"
-                }
-            ],
-            "description": "This action is used to set the link down condition to the downlink port.",
-            "longDescription": "This action is used to set the link down condition to the downlink port."
-        },
-        "SetupLTSSMTrigger": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json#/definitions/SetupLTSSMTrigger"
-                }
-            ],
-            "description": "This action is used to set the trigger condition.",
-            "longDescription": "This action is used to set the trigger condition."
         },
         "TriggerCondition": {
             "enum": [

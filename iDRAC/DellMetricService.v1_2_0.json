@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACMetricService.v1_2_0.json",
     "$ref": "#/definitions/DellMetricService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -23,6 +23,9 @@
                 }
             },
             "properties": {
+                "#DellMetricService.ControlMetrics": {
+                    "$ref": "#/definitions/ControlMetrics"
+                },
                 "#DellMetricService.ExportThermalHistory": {
                     "$ref": "#/definitions/ExportThermalHistory"
                 }
@@ -35,7 +38,7 @@
             "longDescription": "The ControlMetrics action provides the ability to reset the metric collection for a particular metric or metrics.",
             "parameters": {
                 "MetricCollectionEnabled": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.json#/definitions/MetricCollectionEnabled",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACMetricService.json#/definitions/MetricCollectionEnabled",
                     "description": "The MetricCollectionEnabled parameter indicates the desired operation to perform on the metrics. The parameter value is 4 (Reset).",
                     "longDescription": "The MetricCollectionEnabled parameter indicates the desired operation to perform on the metrics. The parameter value is 4 (Reset).",
                     "requiredParameter": true
@@ -129,6 +132,11 @@
                 "Name": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
                     "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 }
             },
             "required": [
@@ -150,7 +158,7 @@
                     "type": "string"
                 },
                 "FileType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.json#/definitions/FileType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACMetricService.json#/definitions/FileType",
                     "description": "Type of exported file.",
                     "longDescription": "Type of exported file.",
                     "requiredParameter": true
@@ -171,7 +179,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACMetricService.json#/definitions/ShareType",
                     "description": "Type of the network Share.",
                     "longDescription": "Type of the network Share.",
                     "requiredParameter": true
@@ -205,6 +213,10 @@
                 "target": {
                     "description": "Link to invoke action",
                     "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
                     "type": "string"
                 }
             },

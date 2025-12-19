@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureEMM.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosureEMM.json",
     "$ref": "#/definitions/DellEnclosureEMM",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellEnclosureEMM": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureEMM.v1_1_0.json#/definitions/DellEnclosureEMM"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosureEMM.v1_1_0.json#/definitions/DellEnclosureEMM"
                 }
             ],
             "deletable": false,
@@ -19,10 +19,8 @@
             "longDescription": "An instance of DellEnclosureEMM will have  Enclosure Management Module specific data.",
             "updatable": false,
             "uris": [
+                "/redfish/v1/Chassis/Oem/Dell/DellEnclosureEMM/{EnclosureEMMId}",
                 "/redfish/v1/Chassis/{EnclosureId}/Oem/Dell/DellEnclosureEMM/{EnclosureEMMId}"
-            ],
-            "urisDeprecated": [
-                "/redfish/v1/Chassis/Oem/Dell/DellEnclosureEMM/{EnclosureEMMId}"
             ]
         },
         "Links": {
@@ -47,7 +45,7 @@
                 "DellEnclosureCollection": {
                     "description": "Contains references to other resources that are related to this resource.",
                     "items": {
-                        "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosure.json#/definitions/DellEnclosure"
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosure.json#/definitions/DellEnclosure"
                     },
                     "longDescription": "Contains references to other resources that are related to this resource.",
                     "readonly": true,
