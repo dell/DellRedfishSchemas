@@ -1,12 +1,12 @@
 {
-    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCManager.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellManager.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellManager": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCManager.v1_0_0.json#/definitions/DellManager"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellManager.v1_0_0.json#/definitions/DellManager"
                 }
             ],
             "description": "Oem data related to DellManager.",
@@ -15,7 +15,7 @@
         "EndWatchdog": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCManager.v1_0_0.json#/definitions/EndWatchdog"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellManager.v1_0_0.json#/definitions/EndWatchdog"
                 }
             ],
             "description": "Action to end watchdog",
@@ -24,7 +24,7 @@
         "PetWatchdog": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCManager.v1_0_0.json#/definitions/PetWatchdog"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellManager.v1_0_0.json#/definitions/PetWatchdog"
                 }
             ],
             "description": "Oem data related to DellManager.",
@@ -33,7 +33,7 @@
         "SupportAssistCollect": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCManager.v1_0_0.json#/definitions/SupportAssistCollect"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellManager.v1_0_0.json#/definitions/SupportAssistCollect"
                 }
             ],
             "description": "The action is used for triggering a SupportAssist collection and, optionally, send the collection to a network share.",

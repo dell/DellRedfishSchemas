@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCBuildInformation.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellBuildInformation.v1_0_0.json",
     "$ref": "#/definitions/DellBuildInformation",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -35,6 +35,12 @@
                 "@odata.type": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
                 },
+                "BuildNumber": {
+                    "description": "The build number of the system's firmware.",
+                    "longDescription": "The build number of the system's firmware.",
+                    "readonly": true,
+                    "type": "string"
+                },
                 "Description": {
                     "anyOf": [
                         {
@@ -45,6 +51,12 @@
                         }
                     ],
                     "readonly": true
+                },
+                "FirmwareVersion": {
+                    "description": "The version of the system's firmware.",
+                    "longDescription": "The version of the system's firmware.",
+                    "readonly": true,
+                    "type": "string"
                 },
                 "Id": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
