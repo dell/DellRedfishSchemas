@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCManager.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellManager.v1_0_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -63,7 +63,7 @@
                 "BuildInformation": {
                     "anyOf": [
                         {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/v1/DellBuildInformation.json#/definitions/DellBuildInformation"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellBuildInformation.json#/definitions/DellBuildInformation"
                         },
                         {
                             "type": "null"
@@ -76,7 +76,7 @@
                 "DellPolicies": {
                     "anyOf": [
                         {
-                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCPolicyCollection.json#/definitions/DellPolicyCollection"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellPolicyCollection.json#/definitions/DellPolicyCollection"
                         },
                         {
                             "type": "null"
@@ -166,34 +166,6 @@
             },
             "type": "string"
         },
-        "ExportTypeOptions": {
-            "additionalProperties": false,
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
-                    "description": "This property shall specify a valid odata or Redfish property.",
-                    "type": [
-                        "array",
-                        "boolean",
-                        "integer",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ]
-                }
-            },
-            "properties": {
-                "URI": {
-                    "description": "The URI (or protocol) to specify for upload.",
-                    "longDescription": "This property shall indicate the URI to where data is uploaded.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "type": "object"
-        },
         "Filter": {
             "enum": [
                 "PII",
@@ -277,11 +249,6 @@
                     "description": "The properties in this object shall contain settings for how to export data.",
                     "longDescription": "The properties in this object shall contain settings for how to export data.",
                     "requiredParameter": true
-                },
-                "ExportTypeOptions": {
-                    "$ref": "#/definitions/ExportTypeOptions",
-                    "description": "The options for the export type.",
-                    "longDescription": "The options for the export type."
                 },
                 "Filter": {
                     "$ref": "#/definitions/Filter",

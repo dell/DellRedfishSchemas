@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCiDRACCardService.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DelliDRACCardService.v1_0_0.json",
     "$ref": "#/definitions/DelliDRACCardService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -95,7 +95,7 @@
             "longDescription": "This URL is used to verify hardware proof of possession. This method is for factory users only, and not recommended for use by end-users.",
             "parameters": {
                 "Algorithm": {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCiDRACCardService.json#/definitions/Algorithm",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DelliDRACCardService.json#/definitions/Algorithm",
                     "description": "The algorithm used to encrypt EncryptedChallenge.",
                     "longDescription": "The algorithm used to encrypt EncryptedChallenge.",
                     "requiredParameter": true
@@ -119,7 +119,7 @@
                     "type": "string"
                 },
                 "KeyDerivationFunction": {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCiDRACCardService.json#/definitions/KeyDerivationFunction",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DelliDRACCardService.json#/definitions/KeyDerivationFunction",
                     "description": "The key derivation function used.",
                     "longDescription": "The key derivation function used.",
                     "requiredParameter": true

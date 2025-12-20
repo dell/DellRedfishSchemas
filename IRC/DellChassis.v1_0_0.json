@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCChassis.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellChassis.v1_0_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -25,7 +25,7 @@
                 "FanTest": {
                     "anyOf": [
                         {
-                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCFanTest.json#/definitions/DellFanTest"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellFanTest.json#/definitions/DellFanTest"
                         },
                         {
                             "type": "null"

@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCPolicyCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellPolicyCollection.json",
     "$ref": "#/definitions/DellPolicyCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -55,7 +55,7 @@
                             "autoExpand": true,
                             "description": "Contains the members of this collection.",
                             "items": {
-                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRCPolicy.json#/definitions/DellPolicy"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellPolicy.json#/definitions/DellPolicy"
                             },
                             "longDescription": "Contains the members of this collection.",
                             "readonly": true,
