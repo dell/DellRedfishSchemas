@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.v1_8_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.v1_8_0.json",
     "$ref": "#/definitions/DellPhysicalDisk",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -49,7 +49,7 @@
                 "Certified": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/Certified"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/Certified"
                         },
                         {
                             "type": "null"
@@ -72,7 +72,7 @@
                 "CryptographicEraseCapable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/CryptographicEraseCapable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/CryptographicEraseCapable"
                         },
                         {
                             "type": "null"
@@ -117,7 +117,7 @@
                 "DriveFormFactor": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/DriveFormFactor"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/DriveFormFactor"
                         },
                         {
                             "type": "null"
@@ -130,7 +130,7 @@
                 "EncryptionProtocol": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/EncryptionProtocol"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/EncryptionProtocol"
                         },
                         {
                             "type": "null"
@@ -154,7 +154,7 @@
                 "ErrorRecoverable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/ErrorRecoverable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/ErrorRecoverable"
                         },
                         {
                             "type": "null"
@@ -245,7 +245,7 @@
                 "NonRAIDDiskCachePolicy": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/NonRAIDDiskCachePolicy"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/NonRAIDDiskCachePolicy"
                         },
                         {
                             "type": "null"
@@ -309,7 +309,7 @@
                 "PowerStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/PowerStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/PowerStatus"
                         },
                         {
                             "type": "null"
@@ -323,7 +323,7 @@
                 "PredictiveFailureState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/PredictiveFailureState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/PredictiveFailureState"
                         },
                         {
                             "type": "null"
@@ -346,7 +346,7 @@
                 "RAIDType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/RAIDType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/RAIDType"
                         },
                         {
                             "type": "null"
@@ -360,7 +360,7 @@
                 "RaidStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/RaidStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/RaidStatus"
                         },
                         {
                             "type": "null"
@@ -391,7 +391,7 @@
                 "SystemEraseCapability": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/SystemEraseCapability"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/SystemEraseCapability"
                         },
                         {
                             "type": "null"
@@ -405,7 +405,7 @@
                 "T10PICapability": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/T10PICapability"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.json#/definitions/T10PICapability"
                         },
                         {
                             "type": "null"

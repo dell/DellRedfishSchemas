@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.v1_6_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_6_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -126,7 +126,7 @@
                     "versionAdded": "v1_4_0"
                 },
                 "DelliDRACCard": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCard.json#/definitions/DelliDRACCard",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCard.json#/definitions/DelliDRACCard",
                     "autoExpand": true,
                     "description": "A resource representation of DelliDRACCard.",
                     "longDescription": "A resource representation of DelliDRACCard.",
@@ -149,7 +149,7 @@
                 "FrontUSBPortOwner": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.json#/definitions/PortOwner"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.json#/definitions/PortOwner"
                         },
                         {
                             "type": "null"
@@ -165,7 +165,7 @@
                 "Jobs": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellJobCollection.json#/definitions/DellJobCollection"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellJobCollection.json#/definitions/DellJobCollection"
                         },
                         {
                             "type": "null"
@@ -179,7 +179,7 @@
                 "RearUSBPortOwner": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManager.json#/definitions/PortOwner"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.json#/definitions/PortOwner"
                         },
                         {
                             "type": "null"
@@ -223,7 +223,7 @@
                 "DellAttributes": {
                     "description": "A reference to a DellAttributes resource.",
                     "items": {
-                        "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAttributes.json#/definitions/DellAttributes"
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAttributes.json#/definitions/DellAttributes"
                     },
                     "longDescription": "A reference to a DellAttributes resource.",
                     "readonly": true,
@@ -234,63 +234,63 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "DellJobService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellJobService.json#/definitions/DellJobService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellJobService.json#/definitions/DellJobService",
                     "description": "A reference to a DellJobService resource.",
                     "longDescription": "A reference to a Processor resource.",
                     "readonly": true,
                     "versionAdded": "v1_5_0"
                 },
                 "DellLCService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/DellLCService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCService.json#/definitions/DellLCService",
                     "description": "A reference to a DellLCService resource.",
                     "longDescription": "A reference to a Processor resource.",
                     "readonly": true,
                     "versionAdded": "v1_5_0"
                 },
                 "DellLicensableDeviceCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicensableDeviceCollection.json#/definitions/DellLicensableDeviceCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicensableDeviceCollection.json#/definitions/DellLicensableDeviceCollection",
                     "description": "A reference to a DellLicensableDeviceCollection resource.",
                     "longDescription": "A reference to a DellLicensableDeviceCollection resource.",
                     "readonly": true,
                     "versionAdded": "v1_5_0"
                 },
                 "DellLicenseCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseCollection.json#/definitions/DellLicenseCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseCollection.json#/definitions/DellLicenseCollection",
                     "description": "A reference to a DellLicenseCollection resource.",
                     "longDescription": "A reference to a DellLicenseCollection resource.",
                     "readonly": true,
                     "versionAdded": "v1_5_0"
                 },
                 "DellLicenseManagementService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/DellLicenseManagementService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.json#/definitions/DellLicenseManagementService",
                     "description": "A reference to a DellLicenseManagementService resource.",
                     "longDescription": "A reference to a DellLicenseManagementService resource.",
                     "readonly": true,
                     "versionAdded": "v1_5_0"
                 },
                 "DellSystemQuickSyncCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystemQuickSyncCollection.json#/definitions/DellSystemQuickSyncCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystemQuickSyncCollection.json#/definitions/DellSystemQuickSyncCollection",
                     "description": "A reference to a DellSystemQuickSyncCollection resource.",
                     "longDescription": "A reference to a DellSystemQuickSyncCollection resource.",
                     "readonly": true,
                     "versionAdded": "v1_5_0"
                 },
                 "DellTimeService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellTimeService.json#/definitions/DellTimeService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTimeService.json#/definitions/DellTimeService",
                     "description": "A reference to a DellTimeService resource.",
                     "longDescription": "A reference to a DellTimeService resource.",
                     "readonly": true,
                     "versionAdded": "v1_5_0"
                 },
                 "DellUSBDeviceCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellUSBDeviceCollection.json#/definitions/DellUSBDeviceCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUSBDeviceCollection.json#/definitions/DellUSBDeviceCollection",
                     "description": "A reference to a DellUSBDeviceCollection resource.",
                     "longDescription": "A reference to a DellUSBDeviceCollection resource.",
                     "readonly": true,
                     "versionAdded": "v1_5_0"
                 },
                 "DelliDRACCardService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/DelliDRACCardService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/DelliDRACCardService",
                     "description": "A reference to a DelliDRACCardService resource.",
                     "longDescription": "A reference to a DelliDRACCardService resource.",
                     "readonly": true,

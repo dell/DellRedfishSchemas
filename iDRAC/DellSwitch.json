@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -21,7 +21,7 @@
         "GetLaneErrorInjectionInfo": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetLaneErrorInjectionInfo"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_1_0.json#/definitions/GetLaneErrorInjectionInfo"
                 }
             ],
             "description": "This action is used to get the error injection info on a Lane",
@@ -58,7 +58,7 @@
         "GetTagSBTimeout": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetTagSBTimeout"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_1_0.json#/definitions/GetTagSBTimeout"
                 }
             ],
             "description": "This action is used to read the Tag ScoreBoard timeout value for the given station",
@@ -105,7 +105,7 @@
         "GetTraceSeverity": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/GetTraceSeverity"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_1_0.json#/definitions/GetTraceSeverity"
                 }
             ],
             "description": "This action is used to get the Broadcom Switch health config trace log options",
@@ -191,7 +191,7 @@
         "SetLaneErrorInjection": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/SetLaneErrorInjection"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_1_0.json#/definitions/SetLaneErrorInjection"
                 }
             ],
             "description": "This action is used to Perform the error injection on a Lane",
@@ -200,7 +200,7 @@
         "SetTraceSeverity": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitch.v1_1_0.json#/definitions/SetTraceSeverity"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_1_0.json#/definitions/SetTraceSeverity"
                 }
             ],
             "description": "This action is used to set the Broadcom Switch trace severity log options",

@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.v1_2_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -235,7 +235,7 @@
                 "EmergencyPowerLimitAction": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitEmergencyActionType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitEmergencyActionType"
                         },
                         {
                             "type": "null"
@@ -249,7 +249,7 @@
                 "EmergencyPowerLimitActionSled": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitEmergencyActionType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitEmergencyActionType"
                         },
                         {
                             "type": "null"
@@ -263,7 +263,7 @@
                 "PowerLimitAction": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitActionType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitActionType"
                         },
                         {
                             "type": "null"
@@ -277,7 +277,7 @@
                 "PowerLimitException": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitExceptionType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitExceptionType"
                         },
                         {
                             "type": "null"
@@ -291,7 +291,7 @@
                 "PowerLimitStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitStatusType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitStatusType"
                         },
                         {
                             "type": "null"
@@ -311,31 +311,31 @@
             "longDescription": "This action sets the Power Limiting value for standalone servers, where a user may enter a Power Limiting value of the chassis. This command includes Chassis-level Power Capping, Sled-level Power Capping, and Emergency Power Capping",
             "parameters": {
                 "EmergencyPowerLimitAction": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitEmergencyActionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitEmergencyActionType",
                     "description": "This parameter specifies the emergency action policy for chassis power capping.",
                     "longDescription": "This parameter specifies the emergency action policy for chassis power capping, such as doing nothing, throttling via PROCHOT, throttling via software, or powering off.",
                     "requiredParameter": true
                 },
                 "EmergencyPowerLimitActionSled": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitEmergencyActionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitEmergencyActionType",
                     "description": "This parameter defines the emergency action policy for sled power capping.",
                     "longDescription": "This parameter defines the emergency action policy for sled power capping, indicating whether to follow chassis policy, throttle via PROCHOT, throttle via software, or power off.",
                     "requiredParameter": true
                 },
                 "PowerLimitAction": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitActionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitActionType",
                     "description": "This parameter specifies the action to take when the power limit is reached.",
                     "longDescription": "This parameter specifies the action to take when the power limit is reached, such as throttling via PROCHOT or software mechanisms.",
                     "requiredParameter": true
                 },
                 "PowerLimitException": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitExceptionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitExceptionType",
                     "description": "This parameter defines the sled-level power capping exception.",
                     "longDescription": "This parameter defines the exception policy for sled-level power capping, indicating whether to follow its own sled-level power capping or chassis-level power capping.",
                     "requiredParameter": true
                 },
                 "PowerLimitStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnvironmentMetrics.json#/definitions/PowerLimitStatusType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.json#/definitions/PowerLimitStatusType",
                     "description": "This parameter defines the power limiting status for the chassis enclosure.",
                     "longDescription": "This parameter defines the power limiting status for the chassis enclosure.",
                     "requiredParameter": true

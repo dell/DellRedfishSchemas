@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellTelemetryService.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTelemetryService.v1_2_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -46,7 +46,7 @@
             },
             "properties": {
                 "D4D": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellD4D.json#/definitions/DellD4D",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellD4D.json#/definitions/DellD4D",
                     "description": "The link to the d4d service.",
                     "longDescription": "This property shall contain a link to the d4d service.",
                     "readonly": true,
@@ -145,7 +145,7 @@
                 "MetricValues": {
                     "description": "This is Metric Values of the complex type .",
                     "items": {
-                        "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellTelemetryService.json#/definitions/MetricValue"
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTelemetryService.json#/definitions/MetricValue"
                     },
                     "longDescription": "This is Metric Values of the complex type.",
                     "requiredParameter": true,

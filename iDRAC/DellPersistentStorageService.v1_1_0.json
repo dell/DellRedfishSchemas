@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.v1_1_0.json",
     "$ref": "#/definitions/DellPersistentStorageService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -110,7 +110,7 @@
                     "type": "integer"
                 },
                 "PartitionType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/PartitionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/PartitionType",
                     "description": "The Partition Type.",
                     "longDescription": "The Partition Type.",
                     "requiredParameter": true
@@ -122,7 +122,7 @@
                     "type": "integer"
                 },
                 "SizeUnit": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/SizeUnit",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/SizeUnit",
                     "description": "The value is 1(MB) or 2(GB).",
                     "longDescription": "The value is 1(MB) or 2(GB).",
                     "requiredParameter": true
@@ -158,7 +158,7 @@
             "longDescription": "The CreatePartitionUsingImage() method is used to create a partition using an image provided by the user. Image may reside on (T)FTP or HTTP server, or on a CIFS or NFS share. Upon successful invocation of the CreatePartitionUsingImage() method, the image is downloaded and provisioned as a partition on a VFlash.Upon successful invocation of the CreatePartitionUsingImage() method, a new instance of DellOpaqueManagementData is created with the PartitionIndex property equal to the PartitionIndex parameter, the Size property in MB equal to the size of the remote image, the PartitionType property equal to the string representation of PartitionType parameter value map, and the Name property equal to the OSVolumeLabel parameter.",
             "parameters": {
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/HashType",
                     "description": "The value is 1 (MD5) or 2 (SHA1).",
                     "longDescription": "The value is 1 (MD5) or 2 (SHA1)."
                 },
@@ -191,7 +191,7 @@
                     "type": "integer"
                 },
                 "PartitionType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/PartitionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/PartitionType",
                     "description": "The Partition Type.",
                     "longDescription": "The Partition Type.",
                     "requiredParameter": true
@@ -212,7 +212,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/ShareType",
                     "description": "The parameter specifies the type of network share.",
                     "longDescription": "The parameter specifies the type of network share.",
                     "requiredParameter": true
@@ -433,7 +433,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/ShareType",
                     "description": "The parameter specifies the type of network share.",
                     "longDescription": "The parameter specifies the type of network share.",
                     "requiredParameter": true
@@ -479,7 +479,7 @@
             "longDescription": "The FormatPartition() method is used for formatting a partition on a vFlash. Note: This method allows formatting the partitions with AccessType as Read-Only.",
             "parameters": {
                 "FormatType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/FormatType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/FormatType",
                     "description": "The list of types to format to.",
                     "longDescription": "The list of types to format to.",
                     "requiredParameter": true
@@ -549,7 +549,7 @@
             "longDescription": "The ModifyPartition() method is used for modifying a partition on a vFlash. Upon the successful execution of the ModifyPartition() method, the partition, represented by the DellOpaqueManagementData instance with the PartitionIndex property equal to the PartitionIndex parameter, is modified to the access type specified in the AccessType parameter.",
             "parameters": {
                 "AccessType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/AccessType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/AccessType",
                     "description": "Type of access level.",
                     "longDescription": "Type of access level.",
                     "requiredParameter": true
@@ -591,7 +591,7 @@
             "longDescription": "The VFlashStateChange() method is used to enable or disable the virtual flash media device.Upon successful invocation of the VFlashStateChange() method with RequestedState 1(Enable), the DellVFlashView. VFlashEnabledState property value changes to TRUE. Upon successful invocation of the VFlashStateChange() method with RequestedState 2 (Disable), the DellVFlashView. VFlashEnabledState property value changes to FALSE.",
             "parameters": {
                 "RequestedState": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPersistentStorageService.json#/definitions/RequestedState",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.json#/definitions/RequestedState",
                     "description": "The state to set to.",
                     "longDescription": "The state to set to.",
                     "requiredParameter": true

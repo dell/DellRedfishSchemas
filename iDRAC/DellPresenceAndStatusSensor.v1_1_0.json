@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPresenceAndStatusSensor.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPresenceAndStatusSensor.v1_1_0.json",
     "$ref": "#/definitions/DellPresenceAndStatusSensor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -84,7 +84,7 @@
                 "PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPresenceAndStatusSensor.json#/definitions/PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPresenceAndStatusSensor.json#/definitions/PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -98,7 +98,7 @@
                 "SensorType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPresenceAndStatusSensor.json#/definitions/SensorType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPresenceAndStatusSensor.json#/definitions/SensorType"
                         },
                         {
                             "type": "null"
