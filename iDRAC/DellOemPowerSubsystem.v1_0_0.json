@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemPowerSubsystem.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemPowerSubsystem.v1_0_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -23,19 +23,19 @@
             },
             "properties": {
                 "DellControllerBatteryCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellControllerBatteryCollection.json#/definitions/DellControllerBatteryCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACControllerBatteryCollection.json#/definitions/DellControllerBatteryCollection",
                     "description": "A reference to a DellControllerBatteryCollection resource.",
                     "longDescription": "A reference to a DellControllerBatteryCollection resource.",
                     "readonly": true
                 },
                 "DellPowerSupplyCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyCollection.json#/definitions/DellPowerSupplyCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPowerSupplyCollection.json#/definitions/DellPowerSupplyCollection",
                     "description": "A reference to a DellPowerSupplyCollection resource.",
                     "longDescription": "A reference to a DellPowerSupplyCollection resource.",
                     "readonly": true
                 },
                 "DellPowerSupplyViewCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyViewCollection.json#/definitions/DellPowerSupplyViewCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPowerSupplyViewCollection.json#/definitions/DellPowerSupplyViewCollection",
                     "description": "A reference to a DellPowerSupplyViewCollection resource.",
                     "longDescription": "A reference to a DellPowerSupplyViewCollection resource.",
                     "readonly": true

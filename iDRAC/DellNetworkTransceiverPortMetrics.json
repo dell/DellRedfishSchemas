@@ -1,16 +1,79 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json",
     "$ref": "#/definitions/DellNetworkTransceiverPortMetrics",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
+        "DataPathHostLane": {
+            "enum": [
+                "StateHostLane1",
+                "StateHostLane2",
+                "StateHostLane3",
+                "StateHostLane4",
+                "StateHostLane5",
+                "StateHostLane6",
+                "StateHostLane7",
+                "StateHostLane8"
+            ],
+            "enumDescriptions": {
+                "StateHostLane1": "Indicates the state of Host Lane 1 for data path operations.",
+                "StateHostLane2": "Indicates the state of Host Lane 2 for data path operations.",
+                "StateHostLane3": "Indicates the state of Host Lane 3 for data path operations.",
+                "StateHostLane4": "Indicates the state of Host Lane 4 for data path operations.",
+                "StateHostLane5": "Indicates the state of Host Lane 5 for data path operations.",
+                "StateHostLane6": "Indicates the state of Host Lane 6 for data path operations.",
+                "StateHostLane7": "Indicates the state of Host Lane 7 for data path operations.",
+                "StateHostLane8": "Indicates the state of Host Lane 8 for data path operations."
+            },
+            "enumLongDescriptions": {
+                "StateHostLane1": "Indicates the state of Host Lane 1 for data path operations.",
+                "StateHostLane2": "Indicates the state of Host Lane 2 for data path operations.",
+                "StateHostLane3": "Indicates the state of Host Lane 3 for data path operations.",
+                "StateHostLane4": "Indicates the state of Host Lane 4 for data path operations.",
+                "StateHostLane5": "Indicates the state of Host Lane 5 for data path operations.",
+                "StateHostLane6": "Indicates the state of Host Lane 6 for data path operations.",
+                "StateHostLane7": "Indicates the state of Host Lane 7 for data path operations.",
+                "StateHostLane8": "Indicates the state of Host Lane 8 for data path operations."
+            },
+            "type": "string"
+        },
+        "DataPathLaneState": {
+            "enum": [
+                "Deactivated",
+                "Init",
+                "Deinit",
+                "Activated",
+                "TxTurnOn",
+                "TxTurnOff",
+                "Initialized"
+            ],
+            "enumDescriptions": {
+                "Activated": "Data path is activated.",
+                "Deactivated": "Data path is deactivated or the lane is unused.",
+                "Deinit": "Data path is in de-initialization state.",
+                "Init": "Data path is in initialization state.",
+                "Initialized": "Data path has been initialized.",
+                "TxTurnOff": "Transmit path is turning off.",
+                "TxTurnOn": "Transmit path is turning on."
+            },
+            "enumLongDescriptions": {
+                "Activated": "This state indicates that the data path for the lane is fully active and operational.",
+                "Deactivated": "This state indicates that the data path for the specified lane is not active. The lane may be unused or intentionally disabled.",
+                "Deinit": "This state indicates that the data path is being de-initialized, shutting down or resetting the lane from an active state.",
+                "Init": "This state indicates that the data path is undergoing initialization procedures, preparing the lane for activation.",
+                "Initialized": "This state indicates that the data path initialization process has completed successfully, but the lane may not yet be fully activated.",
+                "TxTurnOff": "This state indicates that the transmit portion of the data path is in the process of being disabled.",
+                "TxTurnOn": "This state indicates that the transmit portion of the data path is in the process of being enabled."
+            },
+            "type": "string"
+        },
         "DellNetworkTransceiverPortMetrics": {
             "anyOf": [
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.v1_0_0.json#/definitions/DellNetworkTransceiverPortMetrics"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.v1_1_0.json#/definitions/DellNetworkTransceiverPortMetrics"
                 }
             ],
             "deletable": false,
@@ -25,6 +88,122 @@
                 "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}",
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/{NetworkPortId}/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}"
             ]
+        },
+        "DiagnosticReportingCapabilities": {
+            "enum": [
+                "MediaSideFEC",
+                "HostSideFEC",
+                "MediaSideInputSNRMeasurement",
+                "HostSideInputSNRMeasurement",
+                "BitsAndErrorsCountingSupported",
+                "BitErrorRatioResultsSupported"
+            ],
+            "enumDescriptions": {
+                "BitErrorRatioResultsSupported": "Indicates support for reporting Bit Error Ratio (BER) results.",
+                "BitsAndErrorsCountingSupported": "Indicates support for counting bits and errors during diagnostics.",
+                "HostSideFEC": "Indicates support for reporting Forward Error Correction (FEC) status on the host side.",
+                "HostSideInputSNRMeasurement": "Indicates support for measuring input Signal-to-Noise Ratio (SNR) on the host side.",
+                "MediaSideFEC": "Indicates support for reporting Forward Error Correction (FEC) status on the media side.",
+                "MediaSideInputSNRMeasurement": "Indicates support for measuring input Signal-to-Noise Ratio (SNR) on the media side."
+            },
+            "enumLongDescriptions": {
+                "BitErrorRatioResultsSupported": "This capability enables the device to calculate and report BER results as part of diagnostic measurements.",
+                "BitsAndErrorsCountingSupported": "This capability allows the device to count transmitted bits and errors for diagnostic analysis and performance monitoring.",
+                "HostSideFEC": "This capability allows the device to report FEC status and related diagnostic information for the host side.",
+                "HostSideInputSNRMeasurement": "This capability enables the device to measure and report input SNR values for the host side for diagnostic purposes.",
+                "MediaSideFEC": "This capability allows the device to report FEC status and related diagnostic information for the media side.",
+                "MediaSideInputSNRMeasurement": "This capability enables the device to measure and report input SNR values for the media side for diagnostic purposes."
+            },
+            "type": "string"
+        },
+        "GatingSupportAccuracy": {
+            "enum": [
+                "NotSupported",
+                "LessThanOrEqual2ms",
+                "LessThanOrEqual20ms",
+                "GreaterThan20ms"
+            ],
+            "enumDescriptions": {
+                "GreaterThan20ms": "Gating support accuracy is greater than 20 milliseconds.",
+                "LessThanOrEqual20ms": "Gating support accuracy is less than or equal to 20 milliseconds.",
+                "LessThanOrEqual2ms": "Gating support accuracy is less than or equal to 2 milliseconds.",
+                "NotSupported": "Gating support accuracy is not supported."
+            },
+            "type": "string"
+        },
+        "LoopbackCapability": {
+            "enum": [
+                "SimultaneousHostAndMediaSideLoopbacks",
+                "PerLaneMediaSideLoopbacks",
+                "PerLaneHostSideLoopbacks",
+                "HostSideInputLoopback",
+                "HostSideOutputLoopback",
+                "MediaSideInputLoopback",
+                "MediaSideOutputLoopback"
+            ],
+            "enumDescriptions": {
+                "HostSideInputLoopback": "Enables input signal loopback on the host side.",
+                "HostSideOutputLoopback": "Enables output signal loopback on the host side.",
+                "MediaSideInputLoopback": "Enables input signal loopback on the media side.",
+                "MediaSideOutputLoopback": "Enables output signal loopback on the media side.",
+                "PerLaneHostSideLoopbacks": "Supports loopback functionality for individual lanes on the host side.",
+                "PerLaneMediaSideLoopbacks": "Supports loopback functionality for individual lanes on the media side.",
+                "SimultaneousHostAndMediaSideLoopbacks": "Allows simultaneous loopback operations on both host and media sides."
+            },
+            "enumLongDescriptions": {
+                "HostSideInputLoopback": "Enables input signal loopback on the host side.",
+                "HostSideOutputLoopback": "Enables output signal loopback on the host side.",
+                "MediaSideInputLoopback": "Enables input signal loopback on the media side.",
+                "MediaSideOutputLoopback": "Enables output signal loopback on the media side.",
+                "PerLaneHostSideLoopbacks": "Supports loopback functionality for individual lanes on the host side.",
+                "PerLaneMediaSideLoopbacks": "Supports loopback functionality for individual lanes on the media side.",
+                "SimultaneousHostAndMediaSideLoopbacks": "Allows simultaneous loopback operations on both host and media sides."
+            },
+            "type": "string"
+        },
+        "MemoryModel": {
+            "enum": [
+                "PagedMemory",
+                "FlatMemory"
+            ],
+            "enumDescriptions": {
+                "FlatMemory": "Indicates that memory is organized as a single flat address space without paging.",
+                "PagedMemory": "Indicates that memory is organized in pages and requires page selection for access."
+            },
+            "type": "string"
+        },
+        "PatternGeneratorAndCheckingLocation": {
+            "enum": [
+                "PRBSGeneratorMediaSidePreFEC",
+                "PRBSGeneratorMediaSidePostFEC",
+                "PRBSCheckerMediaSidePreFEC",
+                "PRBSCheckerMediaSidePostFEC",
+                "PRBSGeneratorHostSidePreFEC",
+                "PRBSGeneratorHostSidePostFEC",
+                "PRBSCheckerHostSidePreFEC",
+                "PRBSCheckerHostSidePostFEC"
+            ],
+            "enumDescriptions": {
+                "PRBSCheckerHostSidePostFEC": "Indicates support for PRBS checking on the host side after FEC.",
+                "PRBSCheckerHostSidePreFEC": "Indicates support for PRBS checking on the host side before FEC.",
+                "PRBSCheckerMediaSidePostFEC": "Indicates support for PRBS checking on the media side after FEC.",
+                "PRBSCheckerMediaSidePreFEC": "Indicates support for PRBS checking on the media side before FEC.",
+                "PRBSGeneratorHostSidePostFEC": "Indicates support for PRBS generation on the host side after FEC.",
+                "PRBSGeneratorHostSidePreFEC": "Indicates support for PRBS generation on the host side before FEC.",
+                "PRBSGeneratorMediaSidePostFEC": "Indicates support for PRBS generation on the media side after FEC.",
+                "PRBSGeneratorMediaSidePreFEC": "Indicates support for PRBS generation on the media side before FEC."
+            },
+            "enumLongDescriptions": {
+                "PRBSCheckerHostSidePostFEC": "This capability allows the device to check PRBS patterns on the host side after Forward Error Correction for error detection and diagnostics.",
+                "PRBSCheckerHostSidePreFEC": "This capability allows the device to check PRBS patterns on the host side prior to Forward Error Correction for error detection and diagnostics.",
+                "PRBSCheckerMediaSidePostFEC": "This capability allows the device to check PRBS patterns on the media side after Forward Error Correction for error detection and diagnostics.",
+                "PRBSCheckerMediaSidePreFEC": "This capability allows the device to check PRBS patterns on the media side prior to Forward Error Correction for error detection and diagnostics.",
+                "PRBSGeneratorHostSidePostFEC": "This capability allows the device to generate PRBS patterns on the host side after Forward Error Correction for diagnostic purposes.",
+                "PRBSGeneratorHostSidePreFEC": "This capability allows the device to generate PRBS patterns on the host side prior to Forward Error Correction for diagnostic purposes.",
+                "PRBSGeneratorMediaSidePostFEC": "This capability allows the device to generate PRBS patterns on the media side after Forward Error Correction for diagnostic purposes.",
+                "PRBSGeneratorMediaSidePreFEC": "This capability allows the device to generate PRBS patterns on the media side prior to Forward Error Correction for diagnostic purposes."
+            },
+            "type": "string"
         },
         "RXInputPowerStatus": {
             "enum": [

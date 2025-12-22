@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandPortMetrics.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACInfiniBandPortMetrics.v1_1_0.json",
     "$ref": "#/definitions/DellInfiniBandPortMetrics",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -71,7 +71,7 @@
                 "LinkSpeed": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandPortMetrics.json#/definitions/LinkSpeed"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACInfiniBandPortMetrics.json#/definitions/LinkSpeed"
                         },
                         {
                             "type": "null"
@@ -84,7 +84,7 @@
                 "LinkWidth": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandPortMetrics.json#/definitions/LinkWidth"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACInfiniBandPortMetrics.json#/definitions/LinkWidth"
                         },
                         {
                             "type": "null"
@@ -106,7 +106,7 @@
                 "PartitionLinkStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandPortMetrics.json#/definitions/PartitionLinkStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACInfiniBandPortMetrics.json#/definitions/PartitionLinkStatus"
                         },
                         {
                             "type": "null"
@@ -119,7 +119,7 @@
                 "PartitionOSDriverState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandPortMetrics.json#/definitions/PartitionOSDriverState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACInfiniBandPortMetrics.json#/definitions/PartitionOSDriverState"
                         },
                         {
                             "type": "null"

@@ -1,12 +1,12 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPluginInventory.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPluginInventory.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellPluginInventory": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPluginInventory.v1_0_0.json#/definitions/DellPluginInventory"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPluginInventory.v1_0_0.json#/definitions/DellPluginInventory"
                 }
             ],
             "description": "The DellPluginInventory schema describes the plugin inventory and the properties for the plugin service itself.",
@@ -15,7 +15,7 @@
         "Restart": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPluginInventory.v1_0_0.json#/definitions/Restart"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPluginInventory.v1_0_0.json#/definitions/Restart"
                 }
             ],
             "description": "The Restart operation shall restart plugin instance present in SoftwareInventory.",
@@ -24,7 +24,7 @@
         "Uninstall": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPluginInventory.v1_0_0.json#/definitions/Uninstall"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPluginInventory.v1_0_0.json#/definitions/Uninstall"
                 }
             ],
             "description": "The Uninstall operation shall remove plugin instance present in SoftwareInventory.",

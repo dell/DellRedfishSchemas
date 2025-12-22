@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.v1_10_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.v1_10_0.json",
     "$ref": "#/definitions/DellPCIeSSD",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -59,7 +59,7 @@
                 "BusProtocol": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/BusProtocol"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/BusProtocol"
                         },
                         {
                             "type": "null"
@@ -73,7 +73,7 @@
                 "CryptographicEraseCapable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/CryptographicEraseCapable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/CryptographicEraseCapable"
                         },
                         {
                             "type": "null"
@@ -128,7 +128,7 @@
                 "DriveFormFactor": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/DriveFormFactor"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/DriveFormFactor"
                         },
                         {
                             "type": "null"
@@ -141,7 +141,7 @@
                 "DriveState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/DriveState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/DriveState"
                         },
                         {
                             "type": "null"
@@ -155,7 +155,7 @@
                 "EncryptionProtocol": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/EncryptionProtocol"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/EncryptionProtocol"
                         },
                         {
                             "type": "null"
@@ -179,7 +179,7 @@
                 "ErrorRecoverable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/ErrorRecoverable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/ErrorRecoverable"
                         },
                         {
                             "type": "null"
@@ -214,7 +214,7 @@
                 "HotSpareStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/HotSpareStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/HotSpareStatus"
                         },
                         {
                             "type": "null"
@@ -232,7 +232,7 @@
                 "MediaType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/MediaType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/MediaType"
                         },
                         {
                             "type": "null"
@@ -280,7 +280,7 @@
                 "RAIDType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/RAIDType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/RAIDType"
                         },
                         {
                             "type": "null"
@@ -294,7 +294,7 @@
                 "RaidStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/RaidStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/RaidStatus"
                         },
                         {
                             "type": "null"
@@ -318,7 +318,7 @@
                 "SystemEraseCapability": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/SystemEraseCapability"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/SystemEraseCapability"
                         },
                         {
                             "type": "null"

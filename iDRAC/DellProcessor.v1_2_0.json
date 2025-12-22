@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.v1_2_0.json",
     "$ref": "#/definitions/DellProcessor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -38,7 +38,7 @@
                 "CPUFamily": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/CPUFamily"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/CPUFamily"
                         },
                         {
                             "type": "null"
@@ -52,7 +52,7 @@
                 "CPUStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/CPUStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/CPUStatus"
                         },
                         {
                             "type": "null"
@@ -66,7 +66,7 @@
                 "Cache1Associativity": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache1Associativity"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache1Associativity"
                         },
                         {
                             "type": "null"
@@ -80,7 +80,7 @@
                 "Cache1ErrorMethodology": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache1ErrorMethodology"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache1ErrorMethodology"
                         },
                         {
                             "type": "null"
@@ -105,7 +105,7 @@
                 "Cache1Level": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache1Level"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache1Level"
                         },
                         {
                             "type": "null"
@@ -119,7 +119,7 @@
                 "Cache1Location": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache1Location"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache1Location"
                         },
                         {
                             "type": "null"
@@ -133,7 +133,7 @@
                 "Cache1PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache1PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache1PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -147,7 +147,7 @@
                 "Cache1SRAMType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache1SRAMType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache1SRAMType"
                         },
                         {
                             "type": "null"
@@ -172,7 +172,7 @@
                 "Cache1Type": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache1Type"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache1Type"
                         },
                         {
                             "type": "null"
@@ -186,7 +186,7 @@
                 "Cache1WritePolicy": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache1WritePolicy"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache1WritePolicy"
                         },
                         {
                             "type": "null"
@@ -200,7 +200,7 @@
                 "Cache2Associativity": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache2Associativity"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache2Associativity"
                         },
                         {
                             "type": "null"
@@ -214,7 +214,7 @@
                 "Cache2ErrorMethodology": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache2ErrorMethodology"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache2ErrorMethodology"
                         },
                         {
                             "type": "null"
@@ -239,7 +239,7 @@
                 "Cache2Level": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache2Level"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache2Level"
                         },
                         {
                             "type": "null"
@@ -253,7 +253,7 @@
                 "Cache2Location": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache2Location"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache2Location"
                         },
                         {
                             "type": "null"
@@ -267,7 +267,7 @@
                 "Cache2PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache2PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache2PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -281,7 +281,7 @@
                 "Cache2SRAMType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache2SRAMType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache2SRAMType"
                         },
                         {
                             "type": "null"
@@ -306,7 +306,7 @@
                 "Cache2Type": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache2Type"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache2Type"
                         },
                         {
                             "type": "null"
@@ -320,7 +320,7 @@
                 "Cache2WritePolicy": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache2WritePolicy"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache2WritePolicy"
                         },
                         {
                             "type": "null"
@@ -334,7 +334,7 @@
                 "Cache3Associativity": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache3Associativity"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache3Associativity"
                         },
                         {
                             "type": "null"
@@ -348,7 +348,7 @@
                 "Cache3ErrorMethodology": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache3ErrorMethodology"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache3ErrorMethodology"
                         },
                         {
                             "type": "null"
@@ -373,7 +373,7 @@
                 "Cache3Level": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache3Level"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache3Level"
                         },
                         {
                             "type": "null"
@@ -387,7 +387,7 @@
                 "Cache3Location": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache3Location"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache3Location"
                         },
                         {
                             "type": "null"
@@ -401,7 +401,7 @@
                 "Cache3PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache3PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache3PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -415,7 +415,7 @@
                 "Cache3SRAMType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache3SRAMType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache3SRAMType"
                         },
                         {
                             "type": "null"
@@ -440,7 +440,7 @@
                 "Cache3Type": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache3Type"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache3Type"
                         },
                         {
                             "type": "null"
@@ -454,7 +454,7 @@
                 "Cache3WritePolicy": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/Cache3WritePolicy"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/Cache3WritePolicy"
                         },
                         {
                             "type": "null"
@@ -489,7 +489,7 @@
                 "ExecuteDisabledCapable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/ExecuteDisabledCapable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/ExecuteDisabledCapable"
                         },
                         {
                             "type": "null"
@@ -503,7 +503,7 @@
                 "ExecuteDisabledEnabled": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/ExecuteDisabledEnabled"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/ExecuteDisabledEnabled"
                         },
                         {
                             "type": "null"
@@ -528,7 +528,7 @@
                 "HyperThreadingCapable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/HyperThreadingCapable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/HyperThreadingCapable"
                         },
                         {
                             "type": "null"
@@ -541,7 +541,7 @@
                 "HyperThreadingEnabled": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/HyperThreadingEnabled"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/HyperThreadingEnabled"
                         },
                         {
                             "type": "null"
@@ -584,7 +584,7 @@
                 "PackageMemoryErrorCorrection": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/PackageMemoryErrorCorrection"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/PackageMemoryErrorCorrection"
                         },
                         {
                             "type": "null"
@@ -598,7 +598,7 @@
                 "PackageMemoryLocation": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/PackageMemoryLocation"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/PackageMemoryLocation"
                         },
                         {
                             "type": "null"
@@ -623,7 +623,7 @@
                 "TurboModeCapable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/TurboModeCapable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/TurboModeCapable"
                         },
                         {
                             "type": "null"
@@ -636,7 +636,7 @@
                 "TurboModeEnabled": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/TurboModeEnabled"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/TurboModeEnabled"
                         },
                         {
                             "type": "null"
@@ -649,7 +649,7 @@
                 "VirtualizationTechnologyCapable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/VirtualizationTechnologyCapable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/VirtualizationTechnologyCapable"
                         },
                         {
                             "type": "null"
@@ -662,7 +662,7 @@
                 "VirtualizationTechnologyEnabled": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessor.json#/definitions/VirtualizationTechnologyEnabled"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACProcessor.json#/definitions/VirtualizationTechnologyEnabled"
                         },
                         {
                             "type": "null"

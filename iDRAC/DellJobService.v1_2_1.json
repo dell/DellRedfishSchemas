@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellJobService.v1_2_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACJobService.v1_2_1.json",
     "$ref": "#/definitions/DellJobService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -44,7 +44,7 @@
             "longDescription": "The CreateRebootJob action is used for creating a reboot job.",
             "parameters": {
                 "RebootJobType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellJobService.json#/definitions/RebootJobType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACJobService.json#/definitions/RebootJobType",
                     "description": "RebootJobType indicates the requested reboot type.",
                     "longDescription": "RebootJobType indicates the requested reboot type.",
                     "requiredParameter": true

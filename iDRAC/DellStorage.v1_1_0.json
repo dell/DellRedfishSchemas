@@ -1,0 +1,95 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACStorage.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#Storage.ControllerDrivesDecommission": {
+                    "$ref": "#/definitions/ControllerDrivesDecommission"
+                }
+            },
+            "type": "object"
+        },
+        "ControllerDrivesDecommission": {
+            "additionalProperties": false,
+            "description": "This action is used to decommission the drives attached to the storage controller.",
+            "longDescription": "This action is used to decommission the drives attached to the storage controller.",
+            "parameters": {
+                "DisableControllerSecurity": {
+                    "description": "This parameter specifies whether to disable security on the controller.",
+                    "longDescription": "This parameter specifies whether to disable security on the controller.",
+                    "type": "boolean"
+                },
+                "DisableSEKMiLKM": {
+                    "description": "This parameter specifies whether to disable SEKM and iLKM on the iDRAC.",
+                    "longDescription": "This parameter specifies whether to disable SEKM and iLKM on the iDRAC.",
+                    "type": "boolean",
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "DellStorage": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {},
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellStorage.v1_1_0"
+}

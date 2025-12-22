@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificateCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACCertificateCollection.json",
     "$ref": "#/definitions/DellCertificateCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -44,7 +44,7 @@
                             "deprecated": "This property has been deprecated in favor of using the property 'Members'.",
                             "description": "Contains the members of type certificates.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificate.json#/definitions/DellCertificate"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACCertificate.json#/definitions/DellCertificate"
                             },
                             "readonly": true,
                             "type": "array"
@@ -68,7 +68,7 @@
                             "deprecated": "This property has been deprecated in favor of using the property 'Members'.",
                             "description": "Contains the members of type Hash.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificate.json#/definitions/DellCertificate"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACCertificate.json#/definitions/DellCertificate"
                             },
                             "readonly": true,
                             "type": "array"
@@ -80,7 +80,7 @@
                             "autoExpand": true,
                             "description": "Contains the members of type Ceriticates and Hash.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificate.json#/definitions/DellCertificate"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACCertificate.json#/definitions/DellCertificate"
                             },
                             "readonly": true,
                             "type": "array"

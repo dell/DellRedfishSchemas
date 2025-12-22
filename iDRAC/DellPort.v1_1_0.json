@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.v1_1_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -108,7 +108,7 @@
             "longDescription": "This ExportLTSSMTriggerLog is used to collect the LTSSM port logs after trigger condition executed.",
             "parameters": {
                 "TriggerCondition": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/TriggerCondition",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/TriggerCondition",
                     "description": "This parameter shall contain the TriggerCondition values.",
                     "longDescription": "This parameter shall contain the TriggerCondition values.",
                     "requiredParameter": true
@@ -143,7 +143,7 @@
         },
         "GetCreditCapture": {
             "actionResponse": {
-                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/GetCreditCaptureResponse"
+                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/GetCreditCaptureResponse"
             },
             "additionalProperties": false,
             "description": "This action is used to get the credit information",
@@ -179,14 +179,14 @@
         },
         "GetErrorInjectionInfo": {
             "actionResponse": {
-                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/GetErrorInjectionInfoResponse"
+                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/GetErrorInjectionInfoResponse"
             },
             "additionalProperties": false,
             "description": "This action is used to read the error injection info for a port",
             "longDescription": "This action is used to read the error injection info for a port",
             "parameters": {
                 "ErrInjType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/ErrInjType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/ErrInjType",
                     "description": "This parameter shall contain injection type.",
                     "longDescription": "This parameter shall contain injection type.",
                     "requiredParameter": true
@@ -222,7 +222,7 @@
         },
         "GetLinkDownConditionStatus": {
             "actionResponse": {
-                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/GetLinkDownConditionStatusResponse"
+                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/GetLinkDownConditionStatusResponse"
             },
             "additionalProperties": false,
             "description": "The GetLinkDownConditionStatus gives the condition and time to get the link down ",
@@ -257,7 +257,7 @@
         },
         "IsLTSSMTriggered": {
             "actionResponse": {
-                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/IsLTSSMTriggeredResponse"
+                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/IsLTSSMTriggeredResponse"
             },
             "additionalProperties": false,
             "description": "The IsLTSSMTriggered gives the whether the set condition is triggred or not.",
@@ -292,7 +292,7 @@
         },
         "ReadTLPRoundTripTime": {
             "actionResponse": {
-                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/ReadTLPRoundTripTimeResponse"
+                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/ReadTLPRoundTripTimeResponse"
             },
             "additionalProperties": false,
             "description": "This action is used to read the TLP round-trip time in nanoseconds",
@@ -332,13 +332,13 @@
             "longDescription": "This action is used to start or stop credit capture for specific packet types",
             "parameters": {
                 "Opcode": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/Opcode",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/Opcode",
                     "description": "This parameter shall contain the Operation code to start or stop the capture",
                     "longDescription": "This parameter shall contain the Operation code to start or stop the capture",
                     "requiredParameter": true
                 },
                 "PacketType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/PacketType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/PacketType",
                     "description": "This parameter specifies the type of packet to monitor",
                     "longDescription": "This parameter specifies the type of packet to monitor",
                     "requiredParameter": true
@@ -378,13 +378,13 @@
             "longDescription": "This action is used to perform the error injection on a port",
             "parameters": {
                 "ErrInjType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/ErrInjType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/ErrInjType",
                     "description": "This parameter shall contain injection type.",
                     "longDescription": "This parameter shall contain injection type.",
                     "requiredParameter": true
                 },
                 "ErrorInjCtrl": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/ErrorInjCtrl",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/ErrorInjCtrl",
                     "description": "This parameter specifies error injection control value.",
                     "longDescription": "This parameter specifies error injection control value. If ErrInjType is DLLP then Disabled,1us,1ms,NextDLLP are the valid members. If ErrInjType is TLP then Disabled,NextTLP,128th-TLP,8192th-TLP are the valid members",
                     "requiredParameter": true
@@ -424,13 +424,13 @@
             "longDescription": "This action is used to set the link down condition to the downlink port.",
             "parameters": {
                 "Action": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/ActionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/ActionType",
                     "description": "This parameter shall contain the Action",
                     "longDescription": "This parameter shall contain the Action",
                     "requiredParameter": true
                 },
                 "ConditionType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/ConditionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/ConditionType",
                     "description": "This parameter shall contain the ConditionType.",
                     "longDescription": "This parameter shall contain the ConditionType.",
                     "requiredParameter": true
@@ -474,7 +474,7 @@
             "longDescription": "This action is used to set the trigger condition.",
             "parameters": {
                 "TriggerCondition": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPort.json#/definitions/TriggerCondition",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPort.json#/definitions/TriggerCondition",
                     "description": "This parameter shall contain the TriggerCondition values.",
                     "longDescription": "This parameter shall contain the TriggerCondition values.",
                     "requiredParameter": true

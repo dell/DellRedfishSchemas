@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricDefinition.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAggregationMetricDefinition.v1_0_0.json",
     "$ref": "#/definitions/DellAggregationMetricDefinition",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -38,7 +38,7 @@
                 "ChangeType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricDefinition.json#/definitions/ChangeType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAggregationMetricDefinition.json#/definitions/ChangeType"
                         },
                         {
                             "type": "null"
@@ -51,7 +51,7 @@
                 "DataType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricDefinition.json#/definitions/DataType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAggregationMetricDefinition.json#/definitions/DataType"
                         },
                         {
                             "type": "null"
@@ -84,7 +84,7 @@
                 "GatheringType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricDefinition.json#/definitions/GatheringType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAggregationMetricDefinition.json#/definitions/GatheringType"
                         },
                         {
                             "type": "null"
@@ -138,7 +138,7 @@
                 "SimpleFunction": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricDefinition.json#/definitions/SimpleFunction"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAggregationMetricDefinition.json#/definitions/SimpleFunction"
                         },
                         {
                             "type": "null"
@@ -151,7 +151,7 @@
                 "TimeScope": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAggregationMetricDefinition.json#/definitions/TimeScope"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAggregationMetricDefinition.json#/definitions/TimeScope"
                         },
                         {
                             "type": "null"

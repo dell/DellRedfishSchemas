@@ -1,12 +1,12 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkAdapter.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkAdapter.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ControllerLinks": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkAdapter.v1_3_0.json#/definitions/ControllerLinks"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkAdapter.v1_4_0.json#/definitions/ControllerLinks"
                 }
             ],
             "description": "This is the complex property is for the additional OEM Links realted to the DMTF NetworkAdapter Controller.",
@@ -15,16 +15,25 @@
         "DellNetworkAdapter": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkAdapter.v1_3_0.json#/definitions/DellNetworkAdapter"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkAdapter.v1_4_0.json#/definitions/DellNetworkAdapter"
                 }
             ],
             "description": "This property shall represent the Oem properties for a NetworkAdapter resource.",
             "longDescription": "This property shall represent the Oem properties for a NetworkAdapter resource."
         },
+        "ExportTriggerLog": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkAdapter.v1_4_0.json#/definitions/ExportTriggerLog"
+                }
+            ],
+            "description": "This action exports the trigger log to a specified server",
+            "longDescription": "This action exports the trigger log to a specified server using the provided credentials and share information"
+        },
         "SetPowerSavingMode": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkAdapter.v1_3_0.json#/definitions/SetPowerSavingMode"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkAdapter.v1_4_0.json#/definitions/SetPowerSavingMode"
                 }
             ],
             "description": "This action is used to set the PowerSavingMode for a NetworkAdapter.",

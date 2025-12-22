@@ -1,0 +1,18 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSessionService.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellSessionService": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACSessionService.v1_0_0.json#/definitions/DellSessionService"
+                }
+            ],
+            "description": "OEM extension to represent Dell Session Service related properties.",
+            "longDescription": "OEM extension to represent Dell Session Service related properties."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellSessionService"
+}

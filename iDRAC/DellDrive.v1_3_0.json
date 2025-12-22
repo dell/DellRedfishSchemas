@@ -1,0 +1,486 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.v1_3_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#DellDrive.ExportNVMeDeviceLogs": {
+                    "$ref": "#/definitions/ExportNVMeDeviceLogs"
+                }
+            },
+            "type": "object"
+        },
+        "DellDrive": {
+            "additionalProperties": false,
+            "description": "Oem data related to DellDrive.",
+            "longDescription": "Oem data related to DellDrive.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DellDriveSMARTAttributes": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDriveSMARTAttributes.json#/definitions/DellDriveSMARTAttributes"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A resource representation of DellDriveSMARTAttributes.",
+                    "longDescription": "A resource representation of DellDriveSMARTAttributes.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "DellNVMeSMARTAttributes": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNVMeSMARTAttributes.json#/definitions/DellNVMeSMARTAttributes"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A resource representation of DellNVMeSMARTAttributes.",
+                    "longDescription": "A resource representation of DellNVMeSMARTAttributes.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "DellPCIeSSD": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json#/definitions/DellPCIeSSD",
+                    "autoExpand": true,
+                    "description": "A resource representation of DellPCIeSSD.",
+                    "longDescription": "A resource representation of DellPCIeSSD.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "DellPhysicalDisk": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPhysicalDisk.json#/definitions/DellPhysicalDisk",
+                    "autoExpand": true,
+                    "description": "A resource representation of DellPhysicalDisk.",
+                    "longDescription": "A resource representation of DellPhysicalDisk.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "FIPS140ComplianceDescriptor": {
+                    "$ref": "#/definitions/FIPS140ComplianceDescriptor",
+                    "description": "A resource representation of DellOem FIPS.",
+                    "longDescription": "A resource representation of DellOem FIPS.",
+                    "versionAdded": "v1_1_0"
+                },
+                "RekeyReport": {
+                    "$ref": "#/definitions/RekeyReport",
+                    "description": "This property represents Rekey operataion report.",
+                    "longDescription": "This property represents Rekey operataion report.",
+                    "versionAdded": "v1_3_0"
+                }
+            },
+            "type": "object"
+        },
+        "DellDriveLinks": {
+            "additionalProperties": false,
+            "description": "A complex property for the additional Oem resources realted to Drive.",
+            "longDescription": "A complex property for the additional Oem resources realted to Drive.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CPUAffinity": {
+                    "description": "A reference to a Processor resource indicating CPU Affinity of the resource.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Processor.json#/definitions/Processor"
+                    },
+                    "longDescription": "A reference to a Processor resource indicating CPU Affinity of the resource.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_2_0"
+                },
+                "CPUAffinity@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
+                }
+            },
+            "type": "object"
+        },
+        "ExportNVMeDeviceLogs": {
+            "additionalProperties": false,
+            "description": "The ExportNVMeDeviceLogs operation shall be used to export the storage device logs.",
+            "longDescription": "The ExportNVMeDeviceLogs operation shall be used to export the storage device logs.",
+            "parameters": {
+                "FileName": {
+                    "description": "The target output file name.",
+                    "longDescription": "The target output file name.",
+                    "pattern": "^[^/]+$",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "IPAddress": {
+                    "description": "IP address of the network share.",
+                    "longDescription": "IP address of the network share.",
+                    "type": "string"
+                },
+                "IgnoreCertificateWarning": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.json#/definitions/IgnoreCertificateWarning",
+                    "description": "Ignore Certificate Warning.",
+                    "readonly": true
+                },
+                "IncludeInExport": {
+                    "description": "IncludeInExport to select the logs type.",
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.json#/definitions/LogTypes"
+                    },
+                    "longDescription": "IncludeInExport to select the logs type.",
+                    "requiredParameter": true,
+                    "type": "array"
+                },
+                "Password": {
+                    "description": "Password of the account to access the share.",
+                    "longDescription": "Password of the account to access the share.",
+                    "type": "string"
+                },
+                "ProxyPassword": {
+                    "description": "Proxy Server Password.",
+                    "readonly": true,
+                    "type": "string"
+                },
+                "ProxyPort": {
+                    "description": "Proxy Port address.",
+                    "readonly": true,
+                    "type": "integer"
+                },
+                "ProxyServer": {
+                    "description": "Proxy Server address.",
+                    "readonly": true,
+                    "type": "string"
+                },
+                "ProxySupport": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.json#/definitions/ProxySupport",
+                    "description": "Proxy Support to be Enabled or Disabled.",
+                    "readonly": true
+                },
+                "ProxyType": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.json#/definitions/ProxyType",
+                    "description": "Type of Proxy HTTP or SOCKS4.",
+                    "readonly": true
+                },
+                "ProxyUserName": {
+                    "description": "Proxy Server User Name.",
+                    "readonly": true,
+                    "type": "string"
+                },
+                "ShareName": {
+                    "description": "Name of the share.",
+                    "longDescription": "Name of the share.",
+                    "type": "string"
+                },
+                "ShareType": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.json#/definitions/ShareType",
+                    "description": "Type of the network share.",
+                    "longDescription": "Type of the network share.",
+                    "requiredParameter": true
+                },
+                "UserName": {
+                    "description": "UserName of the account to access the share.",
+                    "longDescription": "UserName of the account to access the share.",
+                    "type": "string"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "FIPS140ComplianceDescriptor": {
+            "additionalProperties": false,
+            "description": "FIPS140 compliance properties for VOSS drives.",
+            "longDescription": "FIPS140 compliance properties for VOSS drives.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ComplianceDescriptorModuleName": {
+                    "description": "A string that contains compliance descriptor modulename of VOSS drives.",
+                    "longDescription": "A string that contains compliance descriptor modulename of VOSS drives.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ComplianceDescriptorType": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.json#/definitions/ComplianceDescriptorType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property will describe compliance descriptor type.",
+                    "longDescription": "This property will describe compliance descriptor type.",
+                    "readonly": false,
+                    "versionAdded": "v1_1_0"
+                },
+                "ComplianceDescriptorVersion": {
+                    "description": "A string that contains compliance descriptor version of VOSS drives.",
+                    "longDescription": "A string that contains compliance descriptor version of VOSS drives.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ComplianceHardwareVersion": {
+                    "description": "A string that contains compliance hardware version of VOSS drives.",
+                    "longDescription": "A string that contains compliance hardware version of VOSS drives.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ComplianceOverallSecurityLevel": {
+                    "description": "A string that contains compliance overall security level of VOSS drives.",
+                    "longDescription": "A string that contains compliance overall security level of VOSS drives.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ComplianceRelatedStandard": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.json#/definitions/ComplianceRelatedStandard"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property will describe compliance related standard.",
+                    "longDescription": "This property will describe compliance related standard.",
+                    "readonly": false,
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "Message": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Message": {
+                    "description": "The human-readable message for this condition.",
+                    "longDescription": "This property shall contain a human-readable message describing this condition.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "MessageId": {
+                    "description": "The identifier for the message.",
+                    "longDescription": "This property shall contain a `MessageId`, as defined in the 'MessageId format' clause of the Redfish Specification.",
+                    "readonly": true,
+                    "type": "string",
+                    "versionAdded": "v1_3_0"
+                }
+            },
+            "required": [
+                "MessageId"
+            ],
+            "type": "object"
+        },
+        "RekeyReport": {
+            "additionalProperties": false,
+            "description": "This property represents Rekey operataion report.",
+            "longDescription": "This property represents Rekey operataion report.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "EncryptionKeyId": {
+                    "description": "This property will describe Encryption Key Id of Rekey Report.",
+                    "longDescription": "This property will describe Encryption Key Id of Rekey Report.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "EndTime": {
+                    "description": "This property will describe End Time of Rekey Report.",
+                    "format": "date-time",
+                    "longDescription": "This property will describe End Time of Rekey Report.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "Messages": {
+                    "description": "This property will describe Messages of Rekey Report.",
+                    "items": {
+                        "$ref": "#/definitions/Message"
+                    },
+                    "longDescription": "This property will describe Messages of Rekey Report.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "StartTime": {
+                    "description": "This property will describe Start Time of Rekey Report.",
+                    "format": "date-time",
+                    "longDescription": "This property will describe Start Time of Rekey Report.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "Status": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/RekeyStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property will describe Status of Rekey Report.",
+                    "longDescription": "This property will describe Status of Rekey Report.",
+                    "readonly": true,
+                    "versionAdded": "v1_3_0"
+                }
+            },
+            "type": "object"
+        },
+        "RekeyStatus": {
+            "description": "This property will describe Status of Rekey operation.",
+            "enum": [
+                "NotInitiated",
+                "InProgress",
+                "Completed",
+                "Failed"
+            ],
+            "enumDescriptions": {
+                "Completed": "Rekey operation is completed.",
+                "Failed": "Rekey operation is failed.",
+                "InProgress": "Rekey operation is in progress.",
+                "NotInitiated": "Rekey operation is not initiated."
+            },
+            "enumLongDescriptions": {
+                "Completed": "Rekey operation is completed.",
+                "Failed": "Rekey operation is failed.",
+                "InProgress": "Rekey operation is in progress.",
+                "NotInitiated": "Rekey operation is not initiated."
+            },
+            "longDescription": "This property will describe Status of Rekey operation.",
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellDrive.v1_3_0"
+}

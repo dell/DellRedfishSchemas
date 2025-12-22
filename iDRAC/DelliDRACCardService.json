@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACiDRACCardService.json",
     "$ref": "#/definitions/DelliDRACCardService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -40,7 +40,8 @@
                 "DCM_DA_CERT2",
                 "OIDC_CERT",
                 "Server",
-                "TPM_FACTORY_CERT"
+                "TPM_FACTORY_CERT",
+                "SCV_CERT"
             ],
             "enumDescriptions": {
                 "CA": "CA",
@@ -56,6 +57,7 @@
                 "RSA_CA_CERT": "RSA_CA_CERT",
                 "RSYSLOG_SERVER_CA": "RSYSLOG_SERVER_CA",
                 "SCEP_CA_CERT": "SCEP_CA_CERT",
+                "SCV_CERT": "SCV_CERT",
                 "SEKM_CUSTOM_CERT": "SEKM_CUSTOM_CERT",
                 "SEKM_CUSTOM_PEM_CERT": "SEKM_CUSTOM_PEM_CERT",
                 "SEKM_SSL_CERT": "SEKM_SSL_CERT",
@@ -73,6 +75,7 @@
                 "OIDC_CERT": "v1_13_0",
                 "RSA_CA_CERT": "v1_7_0",
                 "SCEP_CA_CERT": "v1_7_0",
+                "SCV_CERT": "v1_15_0",
                 "SEKM_CUSTOM_CERT": "v1_7_1",
                 "SEKM_CUSTOM_PEM_CERT": "v1_8_0",
                 "SMARTCARD_CA_CERT": "v1_7_0",
@@ -114,7 +117,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.v1_13_0.json#/definitions/DelliDRACCardService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACiDRACCardService.v1_15_0.json#/definitions/DelliDRACCardService"
                 }
             ],
             "deletable": false,

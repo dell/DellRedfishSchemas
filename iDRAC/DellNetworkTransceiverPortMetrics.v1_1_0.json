@@ -1,0 +1,741 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.v1_1_0.json",
+    "$ref": "#/definitions/DellNetworkTransceiverPortMetrics",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DataPathState": {
+            "additionalProperties": false,
+            "description": "Represents the state of a specific host lane in the data path.",
+            "longDescription": "Each entry provides the host lane identifier and its current data path state.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "HostLane": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/DataPathHostLane",
+                    "description": "The identifier of the host lane (e.g., HostLane1 to HostLane8).",
+                    "longDescription": "This property shall represent the identifier of the host lane within the data path. The identifier is a descriptive string such as HostLane1 through HostLane8, which corresponds to the physical or logical lane positions in the host interface.",
+                    "versionAdded": "v1_1_0"
+                },
+                "State": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/DataPathLaneState",
+                    "description": "The current state of the data path for this host lane.",
+                    "longDescription": "This property shall represent the current operational state of the data path for the specified host lane",
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "DellNetworkTransceiverPortMetrics": {
+            "additionalProperties": false,
+            "description": "The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver.",
+            "longDescription": "The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
+                "CmisRevision": {
+                    "description": "Indicates the version of the CMIS implemented by the device.",
+                    "longDescription": "Indicates the version of the CMIS implemented by the device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "DataPathState": {
+                    "description": "Represents the state of a specific host lane in the data path.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/DataPathState"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "DiagnosticMeasurementCapabilities": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/DiagnosticMeasurementCapabilities"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Represents diagnostic measurement capabilities supported by the device.",
+                    "longDescription": "This complex type provides details about diagnostic measurement capabilities, including gating support accuracy and additional features such as periodic updates, per-lane timers, and auto-restart control.",
+                    "versionAdded": "v1_1_0"
+                },
+                "DiagnosticReportingCapabilities": {
+                    "description": "Indicates the diagnostic reporting capabilities of the device.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/DiagnosticReportingCapabilities"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "Indicates the diagnostic reporting capabilities supported by the device. The list reflects all enabled diagnostic reporting functions available for the transceiver port.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "FQDD": {
+                    "description": "A string that contains the Fully Qualified Device Description (FQDD), which is a user-friendly name for the object.",
+                    "longDescription": "A string that contains the Fully Qualified Device Description (FQDD), which is a user-friendly name for the object.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HostSidePatternGenerationCapabilities": {
+                    "description": "Each boolean in the array represents a supported host-side test pattern: Bit 0 = HostSideGeneratorSupportsPattern0, Bit 1 = HostSideGeneratorSupportsPattern1 \u2026 Bit 15 = HostSideGeneratorSupportsPattern15. A value of true indicates Supported, and false indicates Not Supported.",
+                    "items": {
+                        "type": [
+                            "boolean",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Each boolean in the array represents support for a specific test pattern on the host side. Bit 0 corresponds to HostSideGeneratorSupportsPattern0, Bit 1 to HostSideGeneratorSupportsPattern1, and so on up to Bit 15 for HostSideGeneratorSupportsPattern15. A value of true indicates Supported, and false indicates Not Supported.",
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "LoopbackCapabilities": {
+                    "description": "Indicates the supported loopback capabilities based on bit settings.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/LoopbackCapability"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property lists all loopback capabilities supported by the device. Each capability corresponds to a specific bit in the capability field.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "MediaSidePatternGenerationCapabilities": {
+                    "description": "Each boolean in the array represents a supported host-side test pattern: Bit 0 = MediaSideGeneratorSupportsPattern0, Bit 1 = MediaSideGeneratorSupportsPattern1 \u2026 Bit 15 = MediaSideGeneratorSupportsPattern15. A value of true indicates Supported, and false indicates Not Supported.",
+                    "items": {
+                        "type": [
+                            "boolean",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Each boolean in the array represents support for a specific test pattern on the media side. Bit 0 corresponds to MediaSideGeneratorSupportsPattern0, Bit 1 to MediaSideGeneratorSupportsPattern1, and so on up to Bit 15 for MediaSideGeneratorSupportsPattern15. A value of true indicates Supported, and false indicates Not Supported.",
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "MemoryModel": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/MemoryModel"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates the memory model of the device.",
+                    "longDescription": "Indicates the memory model of the device.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
+                },
+                "PatternGeneratorAndCheckingLocation": {
+                    "description": "Indicates the location of pattern generation and checking capabilities.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/PatternGeneratorAndCheckingLocation"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "Indicates the location of pattern generation and checking capabilities.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "RXInputPowerStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/RXInputPowerStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates the status of Rx Input Power value limits.",
+                    "longDescription": "Indicates the status of Rx Input Power value limits.",
+                    "readonly": true
+                },
+                "RXInputPowermW": {
+                    "description": "Indicates the RX input power value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "longDescription": "Indicates the RX input power value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW"
+                },
+                "RxLaneOutputStatus": {
+                    "description": "Each boolean in the array indicates the validity of an Rx lane: Bit 0 = OutputStatusRx1, Bit 1 = OutputStatusRx2, \u2026 Bit 7 = OutputStatusRx8. A value of true indicates Valid, and false indicates Invalid.",
+                    "items": {
+                        "type": [
+                            "boolean",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Each boolean in the array corresponds to a validity of an Rx lane: Bit 0 represents OutputStatusRx1, Bit 1 represents OutputStatusRx2, and so on up to Bit 7 for OutputStatusRx8. A value of true indicates Valid, and false indicates Invalid.",
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "RxPowerHighAlarmThreshold": {
+                    "description": "Indicates the high alarm threshold for receive (Rx) optical power.",
+                    "longDescription": "Indicates the high alarm threshold for receive (Rx) optical power.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionAdded": "v1_1_0"
+                },
+                "RxPowerHighWarnThreshold": {
+                    "description": "Indicates the high warning threshold for receive (Rx) optical power.",
+                    "longDescription": "Indicates the high warning threshold for receive (Rx) optical power.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionAdded": "v1_1_0"
+                },
+                "RxPowerLowAlarmThreshold": {
+                    "description": "Indicates the low alarm threshold for receive (Rx) optical power.",
+                    "longDescription": "Indicates the low alarm threshold for receive (Rx) optical power.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionAdded": "v1_1_0"
+                },
+                "RxPowerLowWarnThreshold": {
+                    "description": "Indicates the low warning threshold for receive (Rx) optical power.",
+                    "longDescription": "Indicates the low warning threshold for receive (Rx) optical power.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionAdded": "v1_1_0"
+                },
+                "SupportedPages": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/SupportedPages"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates supported diagnostic and configuration pages.",
+                    "longDescription": "Details about supported diagnostic and configuration pages on the transceiver.",
+                    "versionAdded": "v1_1_0"
+                },
+                "TXBiasCurrentStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/TXBiasCurrentStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates the status of Tx Bias Current value limits.",
+                    "longDescription": "Indicates the status of Tx Bias Current value limits.",
+                    "readonly": true
+                },
+                "TXBiasCurrentmA": {
+                    "description": "Indicates the TX Bias current value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "longDescription": "Indicates the TX Bias current value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mA"
+                },
+                "TXOutputPowerStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/TXOutputPowerStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates the status of Tx Output Power value limits.",
+                    "longDescription": "Indicates the status of Tx Output Power value limits.",
+                    "readonly": true
+                },
+                "TXOutputPowermW": {
+                    "description": "Indicates the TX output power value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "longDescription": "Indicates the TX output power value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW"
+                },
+                "TempLowAlarmThreshold": {
+                    "description": "Indicates the low alarm threshold value for Temperature.",
+                    "longDescription": "Indicates the low alarm threshold value for Temperature.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Cel",
+                    "versionAdded": "v1_1_0"
+                },
+                "TempLowWarningThreshold": {
+                    "description": "Indicates the low warning threshold value for Temperature.",
+                    "longDescription": "Indicates the low warning threshold value for Temperature.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Cel",
+                    "versionAdded": "v1_1_0"
+                },
+                "TemperatureCelsius": {
+                    "description": "Indicates the temperature value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "longDescription": "Indicates the temperature value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Cel"
+                },
+                "TemperatureStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/TemperatureStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates the status of Temperature value limits.",
+                    "longDescription": "Indicates the status of Temperature value limits.",
+                    "readonly": true
+                },
+                "TxBiasHighAlarmThreshold": {
+                    "description": "Indicates the high alarm threshold for transmit (Tx) bias current.",
+                    "longDescription": "Indicates the high alarm threshold for transmit (Tx) bias current.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mA",
+                    "versionAdded": "v1_1_0"
+                },
+                "TxBiasHighWarnThreshold": {
+                    "description": "Indicates the high warning threshold for transmit (Tx) bias current.",
+                    "longDescription": "Indicates the high warning threshold for transmit (Tx) bias current.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mA",
+                    "versionAdded": "v1_1_0"
+                },
+                "TxBiasLowAlarmThreshold": {
+                    "description": "Indicates the low alarm threshold for transmit (Tx) bias current.",
+                    "longDescription": "Indicates the low alarm threshold for transmit (Tx) bias current.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mA",
+                    "versionAdded": "v1_1_0"
+                },
+                "TxBiasLowWarnThreshold": {
+                    "description": "Indicates the low warning threshold for transmit (Tx) bias current.",
+                    "longDescription": "Indicates the low warning threshold for transmit (Tx) bias current.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mA",
+                    "versionAdded": "v1_1_0"
+                },
+                "TxLaneOutputStatus": {
+                    "description": "Each boolean in the array indicates Tx lane validity: Bit 0 = OutputStatusTx1, Bit 1 = OutputStatusTx2 \u2026 Bit 7 = OutputStatusTx8. A value of true indicates Valid, and false indicates Invalid.",
+                    "items": {
+                        "type": [
+                            "boolean",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Each boolean in the array corresponds to a validity of a Tx lane: Bit 0 represents OutputStatusTx1, Bit 1 represents OutputStatusTx2, and so on up to Bit 7 for OutputStatusTx8. A value of true indicates Valid, and false indicates Invalid.",
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "TxPowerHighAlarmThreshold": {
+                    "description": "Indicates the high alarm threshold for transmit (Tx) optical power.",
+                    "longDescription": "Indicates the high alarm threshold for transmit (Tx) optical power.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionAdded": "v1_1_0"
+                },
+                "TxPowerHighWarnThreshold": {
+                    "description": "Indicates the high warning threshold for transmit (Tx) optical power.",
+                    "longDescription": "Indicates the high warning threshold for transmit (Tx) optical power.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionAdded": "v1_1_0"
+                },
+                "TxPowerLowAlarmThreshold": {
+                    "description": "Indicates the low alarm threshold for transmit (Tx) optical power.",
+                    "longDescription": "Indicates the low alarm threshold for transmit (Tx) optical power.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionAdded": "v1_1_0"
+                },
+                "TxPowerLowWarnThreshold": {
+                    "description": "Indicates the low warning threshold for transmit (Tx) optical power.",
+                    "longDescription": "Indicates the low warning threshold for transmit (Tx) optical power.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "mW",
+                    "versionAdded": "v1_1_0"
+                },
+                "VccHighAlarmThreshold": {
+                    "description": "Indicates the high alarm threshold value for Vcc.",
+                    "longDescription": "Indicates the high alarm threshold value for Vcc.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "V",
+                    "versionAdded": "v1_1_0"
+                },
+                "VccHighWarnThreshold": {
+                    "description": "Indicates the high warn threshold value for Vcc.",
+                    "longDescription": "Indicates the high warn threshold value for Vcc.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "V",
+                    "versionAdded": "v1_1_0"
+                },
+                "VccLowAlarmThreshold": {
+                    "description": "Indicates the low alarm threshold value for Vcc.",
+                    "longDescription": "Indicates the low alarm threshold value for Vcc.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "V",
+                    "versionAdded": "v1_1_0"
+                },
+                "VccLowWarnThreshold": {
+                    "description": "Indicates the low warn threshold value for Vcc.",
+                    "longDescription": "Indicates the low warn threshold value for Vcc.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "V",
+                    "versionAdded": "v1_1_0"
+                },
+                "VoltageStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/VoltageStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates the status of voltage value limits.",
+                    "longDescription": "Indicates the status of voltage value limits.",
+                    "readonly": true
+                },
+                "VoltageValueVolts": {
+                    "description": "Indicates the voltage value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "longDescription": "Indicates the voltage value of Small Form Factor pluggable(SFP) Transceiver.",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Volts"
+                }
+            },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
+            "type": "object"
+        },
+        "DiagnosticMeasurementCapabilities": {
+            "additionalProperties": false,
+            "description": "Represents diagnostic measurement capabilities supported by the device.",
+            "longDescription": "This complex type provides details about diagnostic measurement capabilities, including gating support accuracy and additional features such as periodic updates, per-lane timers, and auto-restart control.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "AutoRestartGatingSupported": {
+                    "description": "Indicates whether auto-restart gating control is supported.",
+                    "longDescription": "Derived from bit 1. If true, the device supports automatic restart of gating control after completion.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "GatingResultsSupported": {
+                    "description": "Indicates whether gating results statistics are supported.",
+                    "longDescription": "Indicates whether gating results statistics are supported.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "GatingSupportAccuracy": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkTransceiverPortMetrics.json#/definitions/GatingSupportAccuracy"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates the accuracy level of gating support.",
+                    "longDescription": "Indicates the accuracy level of gating support.",
+                    "versionAdded": "v1_1_0"
+                },
+                "PerLaneGatingTimersSupported": {
+                    "description": "Indicates whether per-lane gating timers are supported.",
+                    "longDescription": "Derived from bit 2. If true, the device supports individual gating timers for each lane.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "PeriodicUpdatesSupported": {
+                    "description": "Indicates whether periodic updates during measurement are supported.",
+                    "longDescription": "Indicates whether periodic updates during measurement are supported.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "SupportedPages": {
+            "additionalProperties": false,
+            "description": "Represents the set of diagnostic and configuration pages supported by the device.",
+            "longDescription": "This complex type provides details about which optional diagnostic and configuration pages are supported by the device. It includes information such as supported banks for extended pages and flags indicating support for specific page types like Page03h, VDM pages, and network path pages.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "BanksSupported": {
+                    "description": "List of supported bank indices for Pages 10h-1Fh.",
+                    "items": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Indicates which banks (0-3) are supported for Pages 10h-1Fh. Each bank typically represents 8 lanes.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
+                },
+                "DiagnosticPagesSupported": {
+                    "description": "Indicates whether diagnostic pages are supported.",
+                    "longDescription": "This property shall indicate whether the device supports diagnostic pages for reporting detailed status and measurements.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "NetworkPathPagesSupported": {
+                    "description": "Indicates whether network path pages are supported.",
+                    "longDescription": "This property shall indicate whether the device supports network path pages for reporting connectivity and path details.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Page03hSupported": {
+                    "description": "Indicates whether Page 03h is supported.",
+                    "longDescription": "This flag indicates support for Page 03h.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "VDMPagesSupported": {
+                    "description": "Indicates whether VDM pages are supported.",
+                    "longDescription": "This property reflects support for Vendor Defined Messaging (VDM) pages, typically used for advanced diagnostics and vendor-specific features.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellNetworkTransceiverPortMetrics.v1_1_0.DellNetworkTransceiverPortMetrics"
+}
