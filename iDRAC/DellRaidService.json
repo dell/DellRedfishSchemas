@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellRaidService.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellRaidService.json",
     "$ref": "#/definitions/DellRaidService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "BlockSizeInBytes": {
             "enum": [
@@ -23,7 +23,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellRaidService.v1_7_0.json#/definitions/DellRaidService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellRaidService.v1_5_1.json#/definitions/DellRaidService"
                 }
             ],
             "deletable": false,
@@ -125,12 +125,19 @@
         },
         "Mode": {
             "enum": [
+                "DKM",
+                "LKM",
+                "LKM_TO_SEKM",
                 "SEKM"
             ],
             "enumDescriptions": {
+                "DKM": "DKM",
+                "LKM": "LKM",
+                "LKM_TO_SEKM": "LKM_TO_SEKM",
                 "SEKM": "SEKM"
             },
             "enumVersionAdded": {
+                "LKM_TO_SEKM": "v1_4_0",
                 "SEKM": "v1_3_0"
             },
             "type": "string"

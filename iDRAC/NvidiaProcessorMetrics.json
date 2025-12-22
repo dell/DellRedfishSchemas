@@ -1,0 +1,8 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/NvidiaProcessorMetrics.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2021-2025 Nvidia For the full Nvidia copyright policy, see LICENSE.md",
+    "definitions": {},
+    "owningEntity": "NVIDIA",
+    "title": "#NvidiaProcessorMetrics"
+}

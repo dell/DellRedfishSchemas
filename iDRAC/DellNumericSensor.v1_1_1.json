@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.v1_1_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.v1_1_1.json",
     "$ref": "#/definitions/DellNumericSensor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellNumericSensor": {
             "additionalProperties": true,
@@ -86,7 +86,7 @@
                 "EnabledDefault": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/EnabledDefault"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/EnabledDefault"
                         },
                         {
                             "type": "null"
@@ -100,7 +100,7 @@
                 "EnabledState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/EnabledState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/EnabledState"
                         },
                         {
                             "type": "null"
@@ -113,7 +113,7 @@
                 "HealthState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/HealthState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/HealthState"
                         },
                         {
                             "type": "null"
@@ -128,7 +128,7 @@
                     "readonly": true
                 },
                 "Links": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/Links",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/Links",
                     "description": "Contains references to other resources that are related to this resource.",
                     "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
                 },
@@ -166,7 +166,7 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/OperationalStatus"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/OperationalStatus"
                             },
                             {
                                 "type": "null"
@@ -204,7 +204,7 @@
                 "PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -218,7 +218,7 @@
                 "RateUnits": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/RateUnits"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/RateUnits"
                         },
                         {
                             "type": "null"
@@ -232,7 +232,7 @@
                 "ReadingUnits": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/BaseUnits"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/BaseUnits"
                         },
                         {
                             "type": "null"
@@ -246,7 +246,7 @@
                 "RequestedState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/RequestedState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/RequestedState"
                         },
                         {
                             "type": "null"
@@ -260,7 +260,7 @@
                 "SensorType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/SensorType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/SensorType"
                         },
                         {
                             "type": "null"
@@ -283,7 +283,7 @@
                 "TransitioningToState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/TransitioningToState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNumericSensor.json#/definitions/TransitioningToState"
                         },
                         {
                             "type": "null"

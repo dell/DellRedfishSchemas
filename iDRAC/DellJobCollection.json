@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellJobCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellJobCollection.json",
     "$ref": "#/definitions/DellJobCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellJobCollection": {
             "anyOf": [
@@ -53,7 +53,7 @@
                         "Members": {
                             "description": "Contains the members of this collection.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellJob.json#/definitions/DellJob"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellJob.json#/definitions/DellJob"
                             },
                             "readonly": true,
                             "type": "array"

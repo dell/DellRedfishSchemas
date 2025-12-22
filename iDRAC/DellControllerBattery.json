@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellControllerBattery.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellControllerBattery.json",
     "$ref": "#/definitions/DellControllerBattery",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellControllerBattery": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellControllerBattery.v1_0_0.json#/definitions/DellControllerBattery"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellControllerBattery.v1_0_0.json#/definitions/DellControllerBattery"
                 }
             ],
             "deletable": false,
@@ -19,9 +19,6 @@
             "longDescription": "An instance of DellController will have RAID Controller specific data.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/PowerSubsystem/Oem/Dell/DellControllerBattery/{ControllerBatteryId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellControllerBattery/{ControllerBatteryId}",
                 "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Oem/Dell/DellControllerBattery/{ControllerBatteryId}"
             ]

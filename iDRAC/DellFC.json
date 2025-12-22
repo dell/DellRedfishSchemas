@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFC.json",
     "$ref": "#/definitions/DellFC",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellFC": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.v1_4_0.json#/definitions/DellFC"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFC.v1_4_0.json#/definitions/DellFC"
                 }
             ],
             "deletable": false,
@@ -19,9 +19,6 @@
             "longDescription": "An instance of DellFC will have Fiber Channel device specific data.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellFC/{FCId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/Oem/Dell/DellFC/{FCId}",
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceId}/Oem/Dell/DellFC/{FCId}"
             ]

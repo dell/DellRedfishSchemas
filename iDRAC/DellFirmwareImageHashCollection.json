@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFirmwareImageHashCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFirmwareImageHashCollection.json",
     "$ref": "#/definitions/DellFirmwareImageHashCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellFirmwareImageHashCollection": {
             "anyOf": [
@@ -53,7 +53,7 @@
                         "Members": {
                             "description": "Contains navigation links to each of FirmwareImageHash instances.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFirmwareImageHash.json#/definitions/DellFirmwareImageHash"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFirmwareImageHash.json#/definitions/DellFirmwareImageHash"
                             },
                             "readonly": true,
                             "type": "array"

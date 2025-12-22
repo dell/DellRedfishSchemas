@@ -1,25 +1,16 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemSensor.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellOemSensor.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellOemSensor": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemSensor.v1_2_0.json#/definitions/DellOemSensor"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellOemSensor.v1_0_0.json#/definitions/DellOemSensor"
                 }
             ],
             "description": "This is the complex property for the additional OEM properties to complement DMTF Sensor Schema.",
             "longDescription": "This is the complex property for the additional OEM properties to complement DMTF Sensor Schema. This shall be used to represent an OEM Sensor for a Redfish implementation."
-        },
-        "GetHistoricalSensorReadings": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemSensor.v1_2_0.json#/definitions/GetHistoricalSensorReadings"
-                }
-            ],
-            "description": "An action to retrieve historical readings of the sensor.",
-            "longDescription": "An action to retrieve historical readings of the sensor. The action shall accept a parameter ReadingHistoryPeriod to specify the period for which the readings shall be returned."
         }
     },
     "owningEntity": "Dell",

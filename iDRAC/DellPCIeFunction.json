@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeFunction.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellPCIeFunction.json",
     "$ref": "#/definitions/DellPCIeFunction",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DataBusWidth": {
             "enum": [
@@ -61,7 +61,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeFunction.v1_7_0.json#/definitions/DellPCIeFunction"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellPCIeFunction.v1_6_0.json#/definitions/DellPCIeFunction"
                 }
             ],
             "deletable": false,
@@ -70,9 +70,6 @@
             "longDescription": "An instance of DellPCIeFunction will have PCI device specific data.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellPCIeFunctions/{PCIeFunctionId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellPCIeFunctions/{PCIeFunctionId}",
                 "/redfish/v1/Systems/{ComputerSystemId}/PCIeDevices/{PCIeDeviceId}/PCIeFunctions/{PCIeFunctionId}/Oem/Dell/DellPCIeFunctions/{PCIeFunctionId}"
             ]
@@ -171,9 +168,7 @@
                 "Proprietary",
                 "ProprietaryMemoryCardSlot",
                 "Unknown",
-                "VL-VESA",
-                "M.2Socket3",
-                "OCPNIC3.0SmallFormFactor"
+                "VL-VESA"
             ],
             "enumDescriptions": {
                 "AGP": "AGP",
@@ -185,10 +180,8 @@
                 "EISA": "EISA",
                 "I/ORiserCardSlot": "I/O Riser Card Slot",
                 "ISA": "ISA",
-                "M.2Socket3": "M.2 Socket 3",
                 "MCA": "MCA",
                 "NuBus": "NuBus",
-                "OCPNIC3.0SmallFormFactor": "OCP NIC 3.0 Small Form Factor",
                 "Other": "Other",
                 "PC-98/C20": "PC-98/C20",
                 "PC-98/C24": "PC-98/C24",
@@ -247,10 +240,8 @@
                 "EISA": "EISA",
                 "I/ORiserCardSlot": "I/O Riser Card Slot",
                 "ISA": "ISA",
-                "M.2Socket3": "M.2 Socket 3",
                 "MCA": "MCA",
                 "NuBus": "NuBus",
-                "OCPNIC3.0SmallFormFactor": "OCP NIC 3.0 Small Form Factor",
                 "Other": "Other",
                 "PC-98/C20": "PC-98/C20",
                 "PC-98/C24": "PC-98/C24",
@@ -302,8 +293,6 @@
             "enumVersionAdded": {
                 "EDSFFE1.S/E1.L": "v1_3_0",
                 "EDSFFE3": "v1_5_0",
-                "M.2Socket3": "v1_7_0",
-                "OCPNIC3.0SmallFormFactor": "v1_7_0",
                 "PCIExpressGen4SFF-8639": "v1_2_0",
                 "PCIExpressGen5": "v1_4_0",
                 "PCIExpressGen5SFF-8639": "v1_2_0",

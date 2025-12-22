@@ -1,0 +1,238 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/IntelProcessor.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved",
+    "definitions": {
+        "IntelProcessor": {
+            "additionalProperties": false,
+            "description": "This version is added to represent Intel Oem Processor.",
+            "longDescription": "This version is added to represent Intel Oem Processor.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CurrentPublicKeyHashIndex": {
+                    "description": "Current public key hash index",
+                    "longDescription": "Current public key hash index",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "CurrentSVN": {
+                    "description": "Current software version number",
+                    "longDescription": "Current software version number",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "DevicePDRRepositoryVersion": {
+                    "description": "The version of the Device PDR Repository",
+                    "longDescription": "The version of the Device PDR Repository",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "EthernetPortsStateBitmap": {
+                    "description": "This Property respresnts EthernetPortsStateBitmap.",
+                    "longDescription": "This property shall represent the EthernetPortsStateBitmap as int type  to enable/disable the ports for the Intel Oem Processor. For Example if user gives 43690 input the EthernetPortsStateBitmap value will be '0000_0000_1100_1101_1111_1111_1111_1111'. Here, 0 is Disabled state and 1 is Enabled state.",
+                    "readonly": false,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                },
+                "FirmwareImageSource": {
+                    "description": "This property shall represent the the firmware image source",
+                    "longDescription": "This property shall represent the firmware image source",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "FirmwareUpdateError": {
+                    "description": "Firmware Update Error.",
+                    "longDescription": "This property shall represent the Firmware Update Error of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "FirmwareUpdateState": {
+                    "description": "Firmware Update State.",
+                    "longDescription": "This property shall represent the Firmware Update State of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "InBandFirmwareUpdateCapability": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/IntelProcessor.json#/definitions/InBandFirmwareUpdateCapability"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Firmware Update Lock Status.",
+                    "longDescription": "This property shall represent the Firmware Update Capability for the processor.",
+                    "readonly": false,
+                    "versionAdded": "v1_1_0"
+                },
+                "KMDVersion": {
+                    "description": "The version of the KMD",
+                    "longDescription": "The version of the KMD",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Key1RevocationStatus": {
+                    "description": "Revocation status of key 1",
+                    "longDescription": "Revocation status of key 1",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Key2RevocationStatus": {
+                    "description": "Revocation status of key 2",
+                    "longDescription": "Revocation status of key 2",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Key3RevocationStatus": {
+                    "description": "Revocation status of key 3",
+                    "longDescription": "Revocation status of key 3",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Key4RevocationStatus": {
+                    "description": "Revocation status of key 4",
+                    "longDescription": "Revocation status of key 4",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Key5RevocationStatus": {
+                    "description": "Revocation status of key 5",
+                    "longDescription": "Revocation status of key 5",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ManagementFirmwareVersion": {
+                    "description": "The version of the management firmware",
+                    "longDescription": "The version of the management firmware",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "MemoryCleanupStatus": {
+                    "description": "Memory cleanup status",
+                    "longDescription": "Memory cleanup status",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "MinimalSVN": {
+                    "description": "Minimal software version number",
+                    "longDescription": "Minimal software version number",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "PermanentSecuredStatus": {
+                    "description": "Permanent secured status",
+                    "longDescription": "Permanent secured status",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "RDMADriverVersion": {
+                    "description": "The version of the RDMA driver",
+                    "longDescription": "The version of the RDMA driver",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "SPIWriteProtectStatus": {
+                    "description": "SPI write protect status",
+                    "longDescription": "SPI write protect status",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SecurityErrorState": {
+                    "description": "Security Error State.",
+                    "longDescription": "This property shall represent the Security Error State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Intel",
+    "title": "#IntelProcessor.v1_2_0"
+}

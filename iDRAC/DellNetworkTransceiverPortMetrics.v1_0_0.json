@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNetworkTransceiverPortMetrics.v1_0_0.json",
     "$ref": "#/definitions/DellNetworkTransceiverPortMetrics",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellNetworkTransceiverPortMetrics": {
             "additionalProperties": false,
@@ -71,7 +71,7 @@
                 "RXInputPowerStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.json#/definitions/RXInputPowerStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNetworkTransceiverPortMetrics.json#/definitions/RXInputPowerStatus"
                         },
                         {
                             "type": "null"
@@ -94,7 +94,7 @@
                 "TXBiasCurrentStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.json#/definitions/TXBiasCurrentStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNetworkTransceiverPortMetrics.json#/definitions/TXBiasCurrentStatus"
                         },
                         {
                             "type": "null"
@@ -117,7 +117,7 @@
                 "TXOutputPowerStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.json#/definitions/TXOutputPowerStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNetworkTransceiverPortMetrics.json#/definitions/TXOutputPowerStatus"
                         },
                         {
                             "type": "null"
@@ -150,7 +150,7 @@
                 "TemperatureStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.json#/definitions/TemperatureStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNetworkTransceiverPortMetrics.json#/definitions/TemperatureStatus"
                         },
                         {
                             "type": "null"
@@ -163,7 +163,7 @@
                 "VoltageStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkTransceiverPortMetrics.json#/definitions/VoltageStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNetworkTransceiverPortMetrics.json#/definitions/VoltageStatus"
                         },
                         {
                             "type": "null"

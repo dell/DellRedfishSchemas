@@ -1,12 +1,15 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricReportDefinition.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellMetricReportDefinition.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellMetricReportDefinition": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricReportDefinition.v1_1_0.json#/definitions/DellMetricReportDefinition"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellMetricReportDefinition.v1_0_0.json#/definitions/DellMetricReportDefinition"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellMetricReportDefinition.v1_1_0.json#/definitions/DellMetricReportDefinition"
                 }
             ],
             "description": "The DellMetricReportDefinition schema describes Dell metric metadata used for collecting and reporting metric data within the Redfish Service.",

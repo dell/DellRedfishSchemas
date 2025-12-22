@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellInfiniBandCapabilities.json",
     "$ref": "#/definitions/DellInfiniBandCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "BPESupport": {
             "enum": [
@@ -64,7 +64,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.v1_0_0.json#/definitions/DellInfiniBandCapabilities"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellInfiniBandCapabilities.v1_0_0.json#/definitions/DellInfiniBandCapabilities"
                 }
             ],
             "deletable": false,
@@ -73,9 +73,6 @@
             "longDescription": "An instance of DellInfiniBandCapabilities will have data specific to InfiniBand and its port and partitions capabilities.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellInfiniBandCapabilities/{InfiniBandCapabilitiesId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/Oem/Dell/DellInfiniBandCapabilities/{InfiniBandCapabilitiesId}",
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceId}/Oem/Dell/DellInfiniBandCapabilities/{InfiniBandCapabilitiesId}"
             ]

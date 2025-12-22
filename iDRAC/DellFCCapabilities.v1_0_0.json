@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFCCapabilities.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFCCapabilities.v1_0_0.json",
     "$ref": "#/definitions/DellFCCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellFCCapabilities": {
             "additionalProperties": false,
@@ -67,7 +67,7 @@
                 "FeatureLicensingSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCCapabilities.json#/definitions/FeatureLicensingSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFCCapabilities.json#/definitions/FeatureLicensingSupport"
                         },
                         {
                             "type": "null"
@@ -80,7 +80,7 @@
                 "FlexAddressingSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCCapabilities.json#/definitions/FlexAddressingSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFCCapabilities.json#/definitions/FlexAddressingSupport"
                         },
                         {
                             "type": "null"
@@ -106,7 +106,7 @@
                 "OnChipThermalSensor": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCCapabilities.json#/definitions/OnChipThermalSensor"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFCCapabilities.json#/definitions/OnChipThermalSensor"
                         },
                         {
                             "type": "null"
@@ -119,7 +119,7 @@
                 "PersistencePolicySupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCCapabilities.json#/definitions/PersistencePolicySupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFCCapabilities.json#/definitions/PersistencePolicySupport"
                         },
                         {
                             "type": "null"
@@ -132,7 +132,7 @@
                 "uEFISupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCCapabilities.json#/definitions/uEFISupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFCCapabilities.json#/definitions/uEFISupport"
                         },
                         {
                             "type": "null"

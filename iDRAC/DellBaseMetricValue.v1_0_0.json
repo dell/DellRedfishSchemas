@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricValue.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBaseMetricValue.v1_0_0.json",
     "$ref": "#/definitions/DellBaseMetricValue",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellBaseMetricValue": {
             "additionalProperties": false,
@@ -49,7 +49,7 @@
                 "Duration": {
                     "description": "The Duration property is in W3C representation in WS-CIM with the corresponding value equal to current timestamp minus start time of the metric. Duration can be null for power related metrics.",
                     "longDescription": "The Duration property is in W3C representation in WS-CIM with the corresponding value equal to current timestamp minus start time of the metric. Duration can be null for power related metrics.",
-                    "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?$",
+                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
                     "readonly": true,
                     "type": [
                         "string",

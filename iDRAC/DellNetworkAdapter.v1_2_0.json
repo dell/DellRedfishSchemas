@@ -1,0 +1,225 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellNetworkAdapter.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#DellNetworkAdapter.SetPowerSavingMode": {
+                    "$ref": "#/definitions/SetPowerSavingMode"
+                }
+            },
+            "type": "object"
+        },
+        "DMFunctionality": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DCPowerState": {
+                    "description": "This property signal is used for reading the state of the Power feed.",
+                    "longDescription": "This property signal is used for reading the state of the Power feed. When the signal is high there is correct power feed applied, when low there is problem with power feed functionality.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "FlashBankCSControl": {
+                    "description": "This property is used to control the Flash Bank Chip Select of the SoC.",
+                    "longDescription": "This property is used for control the Flash Bank Chip Select of the SoC.",
+                    "readonly": false,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "FlashBankMuxControl": {
+                    "description": "This property is used to control the mux that selects the active flash bank on the dual bank design.",
+                    "longDescription": "This property is used to control the mux that selects the active flash bank on the dual bank design.",
+                    "readonly": false,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "NextBootFlashBank": {
+                    "description": "This property shows the Next Boot flash bank of the SoC.",
+                    "longDescription": "This property shows the Next Boot flash bank of the SoC.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "DellNetworkAdapter": {
+            "additionalProperties": false,
+            "description": "This property shall represent the Oem properties for a NetworkAdapter resource.",
+            "longDescription": "This property shall represent the Oem properties for a NetworkAdapter resource.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DMFunctionality": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/DMFunctionality"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property shall contain the read and Write the device management functionality.",
+                    "longDescription": "This property shall contain the read and Write the device management functionality.",
+                    "versionAdded": "v1_1_0"
+                },
+                "PLDMMonitoringEnabled": {
+                    "description": "An indication of whether monitoring and controling for PLDM device is enabled for NetworkAdapter.",
+                    "longDescription": "This property shall indicate whether monitoring and controling for pldm device is enabled for NetworkAdapter.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "Mode": {
+            "enum": [
+                "On",
+                "Off"
+            ],
+            "enumDescriptions": {
+                "Off": "A value indicating that the Power Save Mode on the SoC is disabled. When set to this value, the SoC will not enter the Power Save Mode.",
+                "On": "A value indicating that the Power Save Mode on the SoC is enabled. When set to this value, the SoC will enter the Power Save Mode and reduce its power consumption."
+            },
+            "enumLongDescriptions": {
+                "Off": "This value shall be used to disable the Power Save Mode on the SoC. When set to this value, the SoC will not enter the Power Save Mode and will not reduce its power consumption.",
+                "On": "This value shall be used to enable the Power Save Mode on the SoC. When set to this value, the SoC will enter the Power Save Mode and reduce its power consumption to save energy."
+            },
+            "type": "string"
+        },
+        "SetPowerSavingMode": {
+            "additionalProperties": false,
+            "description": "This action is used to set the PowerSavingMode for a NetworkAdapter.",
+            "longDescription": "This action is used to set the PowerSavingMode for a NetworkAdapter. It enables or disables the power save mode on the NetworkAdapter.",
+            "parameters": {
+                "Mode": {
+                    "$ref": "#/definitions/Mode",
+                    "description": "The type of Power Save Mode.",
+                    "longDescription": "This parameter shall contain the type of Power Save Mode.",
+                    "requiredParameter": true
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_2_0"
+        },
+        "StateSensors": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DeviceName": {
+                    "description": "The name of the state sensor.",
+                    "longDescription": "This property shall represent the name of the state sensor.",
+                    "readonly": true,
+                    "type": "string",
+                    "versionAdded": "v1_2_0"
+                },
+                "State": {
+                    "description": "The state of the state sensor.",
+                    "longDescription": "This property shall represent the state of the state sensor.",
+                    "readonly": true,
+                    "type": "string",
+                    "versionAdded": "v1_2_0"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellNetworkAdapter.v1_2_0"
+}

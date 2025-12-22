@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyViewCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellPowerSupplyViewCollection.json",
     "$ref": "#/definitions/DellPowerSupplyViewCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellPowerSupplyViewCollection": {
             "anyOf": [
@@ -55,7 +55,7 @@
                             "autoExpand": true,
                             "description": "Contains the members of this collection.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.json#/definitions/DellPowerSupplyView"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellPowerSupplyView.json#/definitions/DellPowerSupplyView"
                             },
                             "longDescription": "Contains the members of this collection.",
                             "readonly": true,
@@ -89,9 +89,6 @@
             "insertable": false,
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/PowerSubsystem/Oem/Dell/DellPowerSupplyInventory"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Chassis/{ComputerSystemId}/Power/Oem/Dell/DellPowerSupplyInventory"
             ]
         }

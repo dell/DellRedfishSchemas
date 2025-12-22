@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricDefinition.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBaseMetricDefinition.v1_0_0.json",
     "$ref": "#/definitions/DellBaseMetricDefinition",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellBaseMetricDefinition": {
             "additionalProperties": false,
@@ -38,7 +38,7 @@
                 "ChangeType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricDefinition.json#/definitions/ChangeType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBaseMetricDefinition.json#/definitions/ChangeType"
                         },
                         {
                             "type": "null"
@@ -51,7 +51,7 @@
                 "DataType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricDefinition.json#/definitions/DataType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBaseMetricDefinition.json#/definitions/DataType"
                         },
                         {
                             "type": "null"
@@ -84,7 +84,7 @@
                 "GatheringType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricDefinition.json#/definitions/GatheringType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBaseMetricDefinition.json#/definitions/GatheringType"
                         },
                         {
                             "type": "null"
@@ -128,7 +128,7 @@
                 "SampleInterval": {
                     "description": "SampleInterval provides the sample interval so that client applications can determine the minimum time interval to retrieve new statistics. The property value is in W3C representation in WS-CIM with the corresponding value equal to CIM datetime.",
                     "longDescription": "SampleInterval provides the sample interval so that client applications can determine the minimum time interval to retrieve new statistics. The property value is in W3C representation in WS-CIM with the corresponding value equal to CIM datetime.",
-                    "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?$",
+                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
                     "readonly": true,
                     "type": [
                         "string",
@@ -138,7 +138,7 @@
                 "TimeScope": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricDefinition.json#/definitions/TimeScope"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBaseMetricDefinition.json#/definitions/TimeScope"
                         },
                         {
                             "type": "null"

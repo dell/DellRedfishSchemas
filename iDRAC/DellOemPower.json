@@ -1,12 +1,12 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemPower.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellOemPower.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellOemPower": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemPower.v1_1_0.json#/definitions/DellOemPower"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellOemPower.v1_0_0.json#/definitions/DellOemPower"
                 }
             ],
             "description": "Oem data related to the PowerSupply.",
