@@ -1,27 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificateService.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellCertificateService.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
-    "definitions": {
-        "GenerateCSRAndImport": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificateService.v1_1_0.json#/definitions/GenerateCSRAndImport"
-                }
-            ],
-            "description": "This action generates Certificate Singing Request(CSR), signs and imports the singed certificate.",
-            "longDescription": "This action will generate a Certificate Singing Request(CSR), sign the certificate using the uploaded Custom Signing Certificate(CSC) and will import the singed certificate."
-        },
-        "GetLastGeneratedCSR": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificateService.v1_1_0.json#/definitions/GetLastGeneratedCSR"
-                }
-            ],
-            "description": "This action returns last generated CSR.",
-            "longDescription": "This action returns last generated CSR. The response will contain a signing request that a certificate authority (CA) will sign."
-        }
-    },
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {},
     "owningEntity": "Dell",
     "title": "#DellCertificateService"
 }

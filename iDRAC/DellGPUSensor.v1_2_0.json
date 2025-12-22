@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellGPUSensor.v1_2_0.json",
     "$ref": "#/definitions/DellGPUSensor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellGPUSensor": {
             "additionalProperties": false,
@@ -38,7 +38,7 @@
                 "BoardPowerSupplyStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.json#/definitions/BoardPowerSupplyStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellGPUSensor.json#/definitions/BoardPowerSupplyStatus"
                         },
                         {
                             "type": "null"
@@ -57,6 +57,17 @@
                         "null"
                     ],
                     "units": "Cel"
+                },
+                "CurrentPowerCapLimitMilliWatts": {
+                    "description": "Indicates  CurrentPowerCapLimit in milli Watts.",
+                    "longDescription": "Indicates CurrentPowerCapLimit in milli Watts.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "Milliwatts",
+                    "versionAdded": "v1_2_0"
                 },
                 "Description": {
                     "anyOf": [
@@ -168,10 +179,15 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
                     "readonly": true
                 },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
+                },
                 "PowerBrakeStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.json#/definitions/PowerBrakeStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellGPUSensor.json#/definitions/PowerBrakeStatus"
                         },
                         {
                             "type": "null"
@@ -194,7 +210,7 @@
                 "PowerSupplyStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.json#/definitions/PowerSupplyStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellGPUSensor.json#/definitions/PowerSupplyStatus"
                         },
                         {
                             "type": "null"
@@ -227,7 +243,7 @@
                 "ThermalAlertStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.json#/definitions/ThermalAlertStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellGPUSensor.json#/definitions/ThermalAlertStatus"
                         },
                         {
                             "type": "null"

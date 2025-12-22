@@ -1,27 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSerialInterface.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellSerialInterface.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
-    "definitions": {
-        "SerialDataClear": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSerialInterface.v1_0_0.json#/definitions/SerialDataClear"
-                }
-            ],
-            "description": "This action is used to clear Serial Interface data.",
-            "longDescription": "This action shall perform a clear of Serial Interface data."
-        },
-        "SerialDataExport": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSerialInterface.v1_0_0.json#/definitions/SerialDataExport"
-                }
-            ],
-            "description": "This action is used to export Serial Interface data.",
-            "longDescription": "This action shall perform an export of Serial Interface data."
-        }
-    },
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {},
     "owningEntity": "Dell",
     "title": "#DellSerialInterface"
 }

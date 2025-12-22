@@ -1,0 +1,43 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/IntelProcessor.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved",
+    "definitions": {
+        "InBandFirmwareUpdateCapability": {
+            "enum": [
+                "Locked",
+                "UnLocked",
+                "LockedOut"
+            ],
+            "enumDescriptions": {
+                "Locked": "Locked.",
+                "LockedOut": "LockedOut.",
+                "UnLocked": "UnLocked."
+            },
+            "enumLongDescriptions": {
+                "Locked": "The entity is in a locked state.",
+                "LockedOut": "The entity is in a state in which the lock cannot be unlocked in a normal manner.",
+                "UnLocked": "The entity is not in a locked state."
+            },
+            "type": "string",
+            "versionAdded": "v1_1_0"
+        },
+        "IntelProcessor": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/IntelProcessor.v1_0_0.json#/definitions/IntelProcessor"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/IntelProcessor.v1_1_0.json#/definitions/IntelProcessor"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/IntelProcessor.v1_2_0.json#/definitions/IntelProcessor"
+                }
+            ],
+            "description": "This version is added to represent Intel Oem Processor.",
+            "longDescription": "This version is added to represent Intel Oem Processor."
+        }
+    },
+    "owningEntity": "Intel",
+    "title": "#IntelProcessor"
+}

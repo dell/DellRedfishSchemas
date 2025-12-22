@@ -1,0 +1,202 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/IntelPCIeDevice.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#IntelPCIeDevice.PCIeMarginTest": {
+                    "$ref": "#/definitions/PCIeMarginTest"
+                }
+            },
+            "type": "object"
+        },
+        "IntelPCIeDevice": {
+            "additionalProperties": false,
+            "description": "This resource shall be used to represent Intel PCIe Device",
+            "longDescription": "This resource shall be used to represent Intel PCIe Device",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "HDRLog0": {
+                    "description": "The value of the HDRLog0 field of the PCIe device.",
+                    "longDescription": "The value of the HDRLog0 field of the PCIe device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HDRLog1": {
+                    "description": "The value of the HDRLog1 field of the PCIe device.",
+                    "longDescription": "The value of the HDRLog1 field of the PCIe device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HDRLog2": {
+                    "description": "The value of the HDRLog2 field of the PCIe device.",
+                    "longDescription": "The value of the HDRLog2 field of the PCIe device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HDRLog3": {
+                    "description": "The value of the HDRLog3 field of the PCIe device.",
+                    "longDescription": "The value of the HDRLog3 field of the PCIe device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PCIeMarginTestStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/IntelPCIeDevice.json#/definitions/PCIeMarginTestStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The status of the PCIe Margin Test.",
+                    "longDescription": "The status of the PCIe Margin Test.",
+                    "readonly": true
+                },
+                "ReplayBufferNumRollover": {
+                    "description": "The number of replay buffer rollovers.",
+                    "longDescription": "The number of replay buffer rollovers.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "ReplayTimerTimeout": {
+                    "description": "The replay timer timeout.",
+                    "longDescription": "The replay timer timeout.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "RxMemoryReadCount": {
+                    "description": "The number of read memory transactions received by the device.",
+                    "longDescription": "The number of read memory transactions received by the device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "RxMemoryWriteCount": {
+                    "description": "The number of write memory transactions received by the device.",
+                    "longDescription": "The number of write memory transactions received by the device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "StateSensors": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/IntelPCIeDevice.json#/definitions/StateSensors"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The State Sensors.",
+                    "longDescription": "The State Sensors.",
+                    "readonly": true
+                },
+                "TxMemoryReadCount": {
+                    "description": "The number of read memory transactions transmitted by the device.",
+                    "longDescription": "The number of read memory transactions transmitted by the device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "TxMemoryWriteCount": {
+                    "description": "The number of write memory transactions transmitted by the device.",
+                    "longDescription": "The number of write memory transactions transmitted by the device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PCIeMarginTest": {
+            "additionalProperties": false,
+            "description": "This action start a PCIe Margin Test.",
+            "longDescription": "This action start a PCIe Margin Test.",
+            "parameters": {},
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Intel",
+    "title": "#IntelPCIeDevice.v1_0_0"
+}

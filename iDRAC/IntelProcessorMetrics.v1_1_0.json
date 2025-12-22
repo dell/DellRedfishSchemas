@@ -1,0 +1,943 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/IntelProcessorMetrics.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved",
+    "definitions": {
+        "Alert": {
+            "additionalProperties": false,
+            "description": "Alerts.",
+            "longDescription": "This property shall represent the alerts of the processor.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Checksum": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Checksum"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Checksum.",
+                    "readonly": true
+                },
+                "ChecksumRMA": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ChecksumRMA"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Checksum RMA.",
+                    "longDescription": "This property shall represent the Checksum RMA.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "D2D": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/D2D"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "D2D.",
+                    "readonly": true
+                },
+                "PLL": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PLL"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "PLL.",
+                    "readonly": true
+                },
+                "RMA": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/RMA"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "RMA.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "Security": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Security"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Security.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "SecurityAgent": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/SecurityAgent"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Security Agent.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "SecuritySPI": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/SecuritySPI"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Security SPI.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "Voltage": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Voltage"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Voltage.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "Watchdog": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Watchdog"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Watchdog.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "Checksum": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "EEPROM": {
+                    "description": "EEPROM.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PpBootPrimary": {
+                    "description": "PpBootPrimary.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PpBootSecondary": {
+                    "description": "PpBootSecondary.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PreBootPrimaryStatus": {
+                    "description": "PreBootPrimaryStatus.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PreBootSecondaryStatus": {
+                    "description": "PreBootSecondaryStatus.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "RecoveryImage": {
+                    "description": "Recovery Image.",
+                    "longDescription": "This property shall represent the Recovery Image checksum error state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "ChecksumRMA": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "HBMECCStatus": {
+                    "description": "HBM ECC.",
+                    "longDescription": "This property shall represent the HBM ECC status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "HBMLaneRepairStatus": {
+                    "description": "HBM Lane Repair.",
+                    "longDescription": "This property shall represent the HBM Lane Repair status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "HBMParityStatus": {
+                    "description": "HBM Parity.",
+                    "longDescription": "This property shall represent the HBM Parity status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "HBMRowReplacementStatus": {
+                    "description": "HBM Row Replacement.",
+                    "longDescription": "This property shall represent the HBM Row Replacement status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "HBMSpareRowAvailabilityStatus": {
+                    "description": "HBM Spare Row Availability.",
+                    "longDescription": "This property shall represent the HBM Spare Row Availability status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "RMACauseFailureStatus": {
+                    "description": "RMA Cause Failure.",
+                    "longDescription": "This property shall represent the RMA Cause Failure status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SRAMECCStatus": {
+                    "description": "SRAM Parity ECC.",
+                    "longDescription": "This property shall represent the SRAM ECC status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "D2D": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "D2DCoreIndex": {
+                    "description": "D2D failure Core Index.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "D2DErrorCount": {
+                    "description": "D2D Error Count.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "D2DErrorState": {
+                    "description": "D2D Error State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "D2DMACIndex": {
+                    "description": "D2D failure MAC Index.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "IntelProcessorMetrics": {
+            "additionalProperties": false,
+            "description": "This version is added to represent Intel Processor Metrics.",
+            "longDescription": "This version is added to represent Intel Processor Metrics.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Alert": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Alert"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Alerts.",
+                    "longDescription": "This property shall represent the alerts of the processor.",
+                    "readonly": true
+                },
+                "BootStage": {
+                    "description": "Boot Stage.",
+                    "longDescription": "This property shall represent the Boot Stage of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ChecksumErrorState": {
+                    "description": "Checksum Error State.",
+                    "longDescription": "This property shall represent the Checksum Error State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ChipStatus": {
+                    "description": "This property shall represent the chip status.",
+                    "longDescription": "This property shall represent the chip status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ClockThrottlingPowerCaused": {
+                    "description": "Clock Throttling caused due to high Power.",
+                    "longDescription": "This property shall represent the state of the Clock Throttling caused due to high Power.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "ClockThrottlingThermalCaused": {
+                    "description": "Clock Throttling caused by Thermal.",
+                    "longDescription": "This property shall represent the state of the Clock Throttling caused due to Thermal threshold crossing.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "DeviceActivityCounter": {
+                    "description": "Device Activity Counter.",
+                    "longDescription": "This property shall represent the Device Activity Counter of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "DeviceActivityState": {
+                    "description": "This property shall represent the device activity state.",
+                    "longDescription": "This property shall represent the device activity state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "EmergencyBreakState": {
+                    "description": "Emergency Break State.",
+                    "longDescription": "This property shall represent the Emergency Break state of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "GlobalTimeFromReset": {
+                    "description": "Global Time from Reset in Seconds.",
+                    "longDescription": "This property shall represent the Global Time in Seconds from Reset of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBMThrottling": {
+                    "description": "HBM Throttling.",
+                    "longDescription": "This property shall represent the HBM Throttling state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "HealthState": {
+                    "description": "Main Health Status.",
+                    "longDescription": "Main Health Status.",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "InternalInterconnectErrors": {
+                    "description": "Internal Interconnect Errors.",
+                    "longDescription": "This property shall represent the Internal Interconnect Errors of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "LastClockThrottlingDuration": {
+                    "description": "Last Clock Throttling Duration.",
+                    "longDescription": "This property shall represent the Last Clock Throttling Duration of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "LastPowerBreakDuration": {
+                    "description": "Last Power Break Duration.",
+                    "longDescription": "This property shall represent the Last Power Break Duration of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "LastPowerReductionDuration": {
+                    "description": "Last Power Reduction Duration.",
+                    "longDescription": "This property shall represent the Last Power Reduction Duration of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "PowerBreakState": {
+                    "description": "Power Break State.",
+                    "longDescription": "This property shall represent the Power Break State of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "PowerErrorState": {
+                    "description": "Power Error State.",
+                    "longDescription": "This property shall represent the Power Error State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "PowerReductionState": {
+                    "description": "Power Reduction State.",
+                    "longDescription": "This property shall represent the Power Reduction State of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "PowerState": {
+                    "description": "Power State.",
+                    "longDescription": "This property shall represent the Power State of the processor.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "TemperatureRiseTimeErrorState": {
+                    "description": "Temperature Rise Time Error State.",
+                    "longDescription": "This property shall represent the Temperature Rise Time Error State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "TemperatureThresholdState": {
+                    "description": "Temperature Threshold State.",
+                    "longDescription": "This property shall represent the Temperature Threshold State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "VoltageThresholdState": {
+                    "description": "Voltage ThresholdState.",
+                    "longDescription": "This property shall represent the Voltage Threshold State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "WatchdogErrorState": {
+                    "description": "Watchdog Error State.",
+                    "longDescription": "This property shall represent the Watchdog Error State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "PLL": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "FirstPLLLockIndex": {
+                    "description": "First PLL Lock Index.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "RMA": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "D2DFatalReplayState": {
+                    "description": "This property shall represent the D2D Fatal Replay state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "D2DFatalTrainingState": {
+                    "description": "This property shall represent the D2D Fatal Training state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SPIGWFatalReplayState": {
+                    "description": "This property shall represent the SPI GW Fatal Replay state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "Security": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "PermissionAccessErrorState": {
+                    "description": "Permission Access Error.",
+                    "longDescription": "This property shall represent the Permission Access Error state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "SecurityAgent": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ManagementFirmwareState": {
+                    "description": "Management Firmware.",
+                    "longDescription": "This property shall represent the Management Firmware failure state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "RevokedPublicKeyState": {
+                    "description": "Revoked Public Key.",
+                    "longDescription": "This property shall represent the Revoked Public Key state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SVNState": {
+                    "description": "SVN.",
+                    "longDescription": "This property shall represent the SVN failure state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SignatureState": {
+                    "description": "Signature.",
+                    "longDescription": "This property shall represent the Signature failure state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "SecuritySPI": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "RevokedPublicKeyState": {
+                    "description": "Revoked Public Key.",
+                    "longDescription": "This property shall represent the Revoked Public Key state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SVNState": {
+                    "description": "SVN.",
+                    "longDescription": "This property shall represent the SVN failure state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SignatureState": {
+                    "description": "Signature.",
+                    "longDescription": "This property shall represent the Signature failure state.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "Voltage": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "VoltageChannelIndex": {
+                    "description": "Voltage Channel Index.",
+                    "longDescription": "This property shall represent the failure Voltage Channel Index.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "VoltageMonitorIndex": {
+                    "description": "Voltage Monitor Index.",
+                    "longDescription": "This property shall represent the failure Voltage Monitor Index.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "VoltageState": {
+                    "description": "Voltage State.",
+                    "longDescription": "This property shall represent the Voltage State.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        },
+        "Watchdog": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "HardwareStatus": {
+                    "description": "Hardware status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "Heartbeat": {
+                    "description": "Heartbeat status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "TDRStatus": {
+                    "description": "TDR status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Intel",
+    "title": "#IntelProcessorMetrics.v1_1_0"
+}

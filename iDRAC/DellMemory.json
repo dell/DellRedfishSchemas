@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellMemory.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellMemory.json",
     "$ref": "#/definitions/DellMemory",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellMemory": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMemory.v1_1_0.json#/definitions/DellMemory"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellMemory.v1_1_0.json#/definitions/DellMemory"
                 }
             ],
             "deletable": false,
@@ -19,9 +19,6 @@
             "longDescription": "An instance of DellMemory will have Memory Device specific data.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellMemory/{MemoryId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/Memory/Oem/Dell/DellMemory/{MemoryId}",
                 "/redfish/v1/Systems/{ComputerSystemId}/Memory/{MemoryId}/Oem/Dell/DellMemory/{MemoryId}"
             ]

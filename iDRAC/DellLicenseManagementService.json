@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellLicenseManagementService.json",
     "$ref": "#/definitions/DellLicenseManagementService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DeleteOptions": {
             "enum": [
@@ -23,7 +23,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.v1_1_0.json#/definitions/DellLicenseManagementService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellLicenseManagementService.v1_1_0.json#/definitions/DellLicenseManagementService"
                 }
             ],
             "deletable": false,
@@ -32,9 +32,6 @@
             "longDescription": "The DellLicenseManagementService resource provides some actions to support License Management functionality.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellLicenseManagementService"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellLicenseManagementService"
             ]
         },

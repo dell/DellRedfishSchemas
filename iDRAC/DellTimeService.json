@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellTimeService.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellTimeService.json",
     "$ref": "#/definitions/DellTimeService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellTimeService": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellTimeService.v1_0_1.json#/definitions/DellTimeService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellTimeService.v1_0_1.json#/definitions/DellTimeService"
                 }
             ],
             "deletable": false,
@@ -19,9 +19,6 @@
             "longDescription": "DellTimeService provides actions to manage time (retrieve or set time) for the service processor.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellTimeService"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellTimeService"
             ]
         }

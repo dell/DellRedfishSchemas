@@ -1,18 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellBios.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBios.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
-    "definitions": {
-        "RunBIOSLiveScanning": {
-            "anyOf": [
-                {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBios.v1_0_1.json#/definitions/RunBIOSLiveScanning"
-                }
-            ],
-            "description": "Real time BIOS scanning verifies the integrity and authenticity of the BIOS image in the Primary ROM when the host is powered ON, but not in the POST. This feature is available only with iDRAC Datacenter license and user need to have the Debug privilege to perform this operation",
-            "longDescription": "Real time BIOS scanning verifies the integrity and authenticity of the BIOS image in the Primary ROM when the host is powered ON, but not in the POST. This feature is available only with iDRAC Datacenter license and user need to have the Debug privilege to perform this operation"
-        }
-    },
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {},
     "owningEntity": "Dell",
     "title": "#DellBios"
 }

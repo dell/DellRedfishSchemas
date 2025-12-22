@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellLicense.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellLicense.v1_2_0.json",
     "$ref": "#/definitions/DellLicense",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellLicense": {
             "additionalProperties": false,
@@ -145,7 +145,7 @@
                 "LicenseAttributes": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicense.json#/definitions/LicenseAttributes"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellLicense.json#/definitions/LicenseAttributes"
                         },
                         {
                             "type": "null"
@@ -201,7 +201,7 @@
                 "LicensePrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicense.json#/definitions/LicensePrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellLicense.json#/definitions/LicensePrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -254,7 +254,7 @@
                 "LicenseType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicense.json#/definitions/LicenseType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellLicense.json#/definitions/LicenseType"
                         },
                         {
                             "type": "null"

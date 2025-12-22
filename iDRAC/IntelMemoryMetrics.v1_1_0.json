@@ -1,0 +1,293 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/IntelMemoryMetrics.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved",
+    "definitions": {
+        "IntelMemoryMetrics": {
+            "additionalProperties": false,
+            "description": "This resource shall be used to represent Intel Memory Metrics",
+            "longDescription": "This resource shall be used to represent Intel Memory Metrics",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "BISTControllerFailCount": {
+                    "description": "The number of BIST controller failures.",
+                    "longDescription": "The number of BIST controller failures.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "DoubleECCErrorsCount": {
+                    "description": "The number of double ECC errors.",
+                    "longDescription": "The number of double ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "FatalECCErrorEventCount": {
+                    "description": "The number of fatal ECC errors event counter.",
+                    "longDescription": "The number of fatal ECC errors event counter.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "FatalECCLocationCount": {
+                    "description": "The number of fatal ECC location counter errors.",
+                    "longDescription": "The number of fatal ECC location counter errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "FatalParityErrorsCount": {
+                    "description": "The number of fatal parity errors.",
+                    "longDescription": "The number of fatal parity errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "FirstSRAMBISTFailControllerReadId": {
+                    "description": "The first SRAM BIST controller read ID.",
+                    "longDescription": "The first SRAM BIST controller read ID.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM0GlobalECCErrorsCount": {
+                    "description": "The number of HBM0 global ECC errors.",
+                    "longDescription": "The number of HBM0 global ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM0LanesRepairedCount": {
+                    "description": "The number of repaired HBM0 lanes.",
+                    "longDescription": "The number of repaired HBM0 lanes.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM1GlobalECCErrorsCount": {
+                    "description": "The number of HBM1 global ECC errors.",
+                    "longDescription": "The number of HBM1 global ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM1LanesRepairedCount": {
+                    "description": "The number of repaired HBM1 lanes.",
+                    "longDescription": "The number of repaired HBM1 lanes.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM2GlobalECCErrorsCount": {
+                    "description": "The number of HBM2 global ECC errors.",
+                    "longDescription": "The number of HBM2 global ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM2LanesRepairedCount": {
+                    "description": "The number of repaired HBM2 lanes.",
+                    "longDescription": "The number of repaired HBM2 lanes.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM3GlobalECCErrorsCount": {
+                    "description": "The number of HBM3 global ECC errors.",
+                    "longDescription": "The number of HBM3 global ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM3LanesRepairedCount": {
+                    "description": "The number of repaired HBM3 lanes.",
+                    "longDescription": "The number of repaired HBM3 lanes.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM4GlobalECCErrorsCount": {
+                    "description": "The number of HBM4 global ECC errors.",
+                    "longDescription": "The number of HBM4 global ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM4LanesRepairedCount": {
+                    "description": "The number of repaired HBM4 lanes.",
+                    "longDescription": "The number of repaired HBM4 lanes.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM5GlobalECCErrorsCount": {
+                    "description": "The number of HBM5 global ECC errors.",
+                    "longDescription": "The number of HBM5 global ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM5LanesRepairedCount": {
+                    "description": "The number of repaired HBM5 lanes.",
+                    "longDescription": "The number of repaired HBM5 lanes.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM6GlobalECCErrorsCount": {
+                    "description": "The number of HBM6 global ECC errors.",
+                    "longDescription": "The number of HBM6 global ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM6LanesRepairedCount": {
+                    "description": "The number of repaired HBM6 lanes.",
+                    "longDescription": "The number of repaired HBM6 lanes.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM7GlobalECCErrorsCount": {
+                    "description": "The number of HBM7 global ECC errors.",
+                    "longDescription": "The number of HBM7 global ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBM7LanesRepairedCount": {
+                    "description": "The number of repaired HBM7 lanes.",
+                    "longDescription": "The number of repaired HBM7 lanes.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "HBMCATTRIPStatus": {
+                    "description": "The number of HBM CTRIP status.",
+                    "longDescription": "The number of HBM CTRIP status.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SecondSRAMBISTFailControllerFailMask": {
+                    "description": "The second SRAM BIST controller fail mask.",
+                    "longDescription": "The second SRAM BIST controller fail mask.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "SecondSRAMBISTFailControllerReadId": {
+                    "description": "The second SRAM BIST controller read ID.",
+                    "longDescription": "The second SRAM BIST controller read ID.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "SingleECCBurstErrorCount": {
+                    "description": "The number of single ECC burst errors.",
+                    "longDescription": "The number of single ECC burst errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "SingleECCErrorsPerSecond": {
+                    "description": "The number of single ECC errors per second.",
+                    "longDescription": "The number of single ECC errors per second.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "TotalDoubleECCErrorCount": {
+                    "description": "The total number of double ECC errors.",
+                    "longDescription": "The total number of double ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "TotalSingleECCErrorCount": {
+                    "description": "The total number of single ECC errors.",
+                    "longDescription": "The total number of single ECC errors.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Intel",
+    "title": "#IntelMemoryMetrics.v1_1_0"
+}

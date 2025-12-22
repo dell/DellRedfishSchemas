@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.v1_4_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFC.v1_4_0.json",
     "$ref": "#/definitions/DellFC",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellFC": {
             "additionalProperties": false,
@@ -44,6 +44,19 @@
                         "null"
                     ],
                     "versionAdded": "v1_1_0"
+                },
+                "CableLengthMetres": {
+                    "deprecated": "This property has been deprecated. Property is preserved to support backward comapatibilty. This property has no significance.",
+                    "description": "This property represents the cable length of Small Form Factor pluggable(SFP) Transceiver.Note: This property will be deprecated in Poweredge systems with model YX5X and iDRAC firmware version 4.20.20.20 or later.",
+                    "longDescription": "This property represents the cable length of Small Form Factor pluggable(SFP) Transceiver.Note: This property will be deprecated in Poweredge systems with model YX5X and iDRAC firmware version 4.20.20.20 or later.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "Metres",
+                    "versionAdded": "v1_1_0",
+                    "versionDeprecated": "v1_1_1"
                 },
                 "ChipType": {
                     "description": "This property represents the chip type.",
@@ -119,7 +132,7 @@
                 "FCTapeEnable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.json#/definitions/FCTapeEnable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFC.json#/definitions/FCTapeEnable"
                         },
                         {
                             "type": "null"
@@ -202,7 +215,7 @@
                 "HardZoneEnable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.json#/definitions/HardZoneEnable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFC.json#/definitions/HardZoneEnable"
                         },
                         {
                             "type": "null"
@@ -226,6 +239,22 @@
                 "Id": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
                     "readonly": true
+                },
+                "IdentifierType": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellFC.json#/definitions/IdentifierType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "deprecated": "This property has been deprecated in favor of IdentifierType under DellNetworkTransceiver.",
+                    "description": "This property represents the type of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "This property represents the type of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0",
+                    "versionDeprecated": "v1_3_0"
                 },
                 "LANDriverVersion": {
                     "description": "This property represents the LAN Driver version.",
@@ -336,6 +365,18 @@
                     ],
                     "versionAdded": "v1_4_0"
                 },
+                "Revision": {
+                    "deprecated": "This property has been deprecated in favor of Revision under DellNetworkTransceiver.",
+                    "description": "This property represents the revision number of the Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "This property represents the revision number of the Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0",
+                    "versionDeprecated": "v1_3_0"
+                },
                 "SecondFCTargetLUN": {
                     "description": "This property represents the Second FC Target LUN.",
                     "longDescription": "This property represents the Second FC Target LUN.",
@@ -365,6 +406,42 @@
                         "null"
                     ],
                     "versionAdded": "v1_1_0"
+                },
+                "TransceiverPartNumber": {
+                    "deprecated": "This property has been deprecated in favor of PartNumber under DellNetworkTransceiver.",
+                    "description": "The part number assigned by the organization that is responsible for producing or manufacturing the Small Form Factor pluggable(SFP) Transceivers. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "The part number assigned by the organization that is responsible for producing or manufacturing the Small Form Factor pluggable(SFP) Transceivers. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0",
+                    "versionDeprecated": "v1_3_0"
+                },
+                "TransceiverSerialNumber": {
+                    "deprecated": "This property has been deprecated in favor of SerialNumber under DellNetworkTransceiver.",
+                    "description": "A manufacturer-allocated number used to identify the Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "A manufacturer-allocated number used to identify the Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0",
+                    "versionDeprecated": "v1_3_0"
+                },
+                "TransceiverVendorName": {
+                    "deprecated": "This property has been deprecated in favor of VendorName under DellNetworkTransceiver.",
+                    "description": "This property represents the vendor name of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "longDescription": "This property represents the vendor name of Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated and not supported in iDRAC firmware version 4.40.00.00 or later versions.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0",
+                    "versionDeprecated": "v1_3_0"
                 },
                 "VendorName": {
                     "description": "This property represents the Vendor Name.",

@@ -1,34 +1,9 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellAttributes.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellAttributes.v1_0_0.json",
     "$ref": "#/definitions/DellAttributes",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
-        "Actions": {
-            "additionalProperties": false,
-            "description": "The available actions for this resource.",
-            "longDescription": "This type shall contain the available actions for this resource.",
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
-                    "description": "This property shall specify a valid odata or Redfish property.",
-                    "type": [
-                        "array",
-                        "boolean",
-                        "integer",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ]
-                }
-            },
-            "properties": {
-                "#DellManager.ClearPending": {
-                    "$ref": "#/definitions/ClearPending"
-                }
-            },
-            "type": "object"
-        },
         "Attributes": {
             "additionalProperties": false,
             "patternProperties": {
@@ -56,36 +31,8 @@
             "properties": {},
             "type": "object"
         },
-        "ClearPending": {
-            "additionalProperties": false,
-            "description": "This action is used to clear all the pending values.",
-            "longDescription": "This action shall perform a clear pending values.",
-            "parameters": {},
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
-                    "description": "This property shall specify a valid odata or Redfish property.",
-                    "type": [
-                        "array",
-                        "boolean",
-                        "integer",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ]
-                }
-            },
-            "properties": {
-                "target": {
-                    "description": "Link to invoke action",
-                    "format": "uri-reference",
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
         "DellAttributes": {
-            "additionalProperties": false,
+            "additionalProperties": true,
             "description": "DellAttributes contains properties of additional properties to complement the Attribute Registry DMTF schema. It contains attributes surrounding attribute registry and Actions needed to perform changes to settings, which typically doesn't require a manager reset to apply.",
             "longDescription": "This resource shall be used to represent Oem attributes for a Redfish implementation.",
             "patternProperties": {
@@ -114,11 +61,6 @@
                 },
                 "@odata.type": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
-                },
-                "Actions": {
-                    "$ref": "#/definitions/Actions",
-                    "description": "The available actions for this resource.",
-                    "longDescription": "The actions property shall contain the available actions for this resource."
                 },
                 "AttributeRegistry": {
                     "description": "The Resource ID of the Attribute Registry for the manager Attributes resource.",
@@ -151,6 +93,11 @@
                 "Name": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
                     "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 }
             },
             "required": [

@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellVirtualDisk.json",
     "$ref": "#/definitions/DellVirtualDisk",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "BusProtocol": {
             "enum": [
@@ -61,7 +61,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.v1_2_0.json#/definitions/DellVirtualDisk"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellVirtualDisk.v1_2_0.json#/definitions/DellVirtualDisk"
                 }
             ],
             "deletable": false,
@@ -70,9 +70,6 @@
             "longDescription": "An instance of DellVirtualDisk will have data specific to the Virtual Disks in the system.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellVolumes/{VirtualDiskId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/Oem/Dell/DellVolumes/{VirtualDiskId}",
                 "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/{VolumeId}/Oem/Dell/DellVolumes/{VirtualDiskId}"
             ]

@@ -1,0 +1,277 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/IntelPCIeDevice.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved",
+    "definitions": {
+        "IntelPCIeDevice": {
+            "additionalProperties": false,
+            "description": "The resource shall be used to represents an Intel PCIe Device.",
+            "longDescription": "The resource shall be used to represents an Intel PCIe Device.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "HDRLog0": {
+                    "description": "The value of the HDRLog0 field of the PCIe device.",
+                    "longDescription": "The value of the HDRLog0 field of the PCIe device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HDRLog1": {
+                    "description": "The value of the HDRLog1 field of the PCIe device.",
+                    "longDescription": "The value of the HDRLog1 field of the PCIe device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HDRLog2": {
+                    "description": "The value of the HDRLog2 field of the PCIe device.",
+                    "longDescription": "The value of the HDRLog2 field of the PCIe device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HDRLog3": {
+                    "description": "The value of the HDRLog3 field of the PCIe device.",
+                    "longDescription": "The value of the HDRLog3 field of the PCIe device.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PCIeMarginTestStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PCIeMarginTestStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The status of the PCIe Margin Test.",
+                    "longDescription": "The status of the PCIe Margin Test.",
+                    "readonly": true
+                },
+                "ReplayBufferNumRollover": {
+                    "description": "The number of replay buffer rollovers.",
+                    "longDescription": "The number of replay buffer rollovers.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "ReplayTimerTimeout": {
+                    "description": "The replay timer timeout.",
+                    "longDescription": "The replay timer timeout.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "RxMemoryReadCount": {
+                    "description": "The number of read memory transactions received by the device.",
+                    "longDescription": "The number of read memory transactions received by the device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "RxMemoryWriteCount": {
+                    "description": "The number of write memory transactions received by the device.",
+                    "longDescription": "The number of write memory transactions received by the device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "StateSensors": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/StateSensors"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The State Sensors.",
+                    "longDescription": "The State Sensors.",
+                    "readonly": true
+                },
+                "TxMemoryReadCount": {
+                    "description": "The number of read memory transactions transmitted by the device.",
+                    "longDescription": "The number of read memory transactions transmitted by the device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "TxMemoryWriteCount": {
+                    "description": "The number of write memory transactions transmitted by the device.",
+                    "longDescription": "The number of write memory transactions transmitted by the device.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PCIeMarginTestStatus": {
+            "enum": [
+                "Starting",
+                "Stopping",
+                "Stopped",
+                "InService",
+                "Aborted",
+                "Dormant",
+                "Invalid"
+            ],
+            "enumDescriptions": {
+                "Aborted": "The PCIe Margin Test was aborted",
+                "Dormant": "The PCIe Margin Test is dormant",
+                "InService": "The PCIe Margin Test is in service",
+                "Invalid": "The PCIe Margin Test is invalid",
+                "Starting": "The PCIe Margin Test is starting",
+                "Stopped": "The PCIe Margin Test has stopped",
+                "Stopping": "The PCIe Margin Test is stopping"
+            },
+            "enumLongDescriptions": {
+                "Aborted": "The PCIe Margin Test was aborted",
+                "Dormant": "The PCIe Margin Test is dormant",
+                "InService": "The PCIe Margin Test is in service",
+                "Invalid": "The PCIe Margin Test is invalid",
+                "Starting": "The PCIe Margin Test is starting",
+                "Stopped": "The PCIe Margin Test has stopped",
+                "Stopping": "The PCIe Margin Test is stopping"
+            },
+            "type": "string"
+        },
+        "StateSensors": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CompletionTimeoutStatus": {
+                    "description": "The status of the PCIe completion timeout",
+                    "longDescription": "The status of the PCIe completion timeout",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "DLProtocolErorStatus": {
+                    "description": "The status of the PCIe data link protocol error",
+                    "longDescription": "The status of the PCIe data link protocol error",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ECRCErrorStatus": {
+                    "description": "The status of the PCIe ECRC error",
+                    "longDescription": "The status of the PCIe ECRC error",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "FlowControlProtocolErrorStatus": {
+                    "description": "The status of the PCIe flow control protocol error",
+                    "longDescription": "The status of the PCIe flow control protocol error",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "MalformedTLPErrorStatus": {
+                    "description": "The status of the PCIe malformed transaction layer packet error",
+                    "longDescription": "The status of the PCIe malformed transaction layer packet error",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PCIeReceiverStatus": {
+                    "description": "The status of the PCIe receiver",
+                    "longDescription": "The status of the PCIe receiver",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PCIeReplayTimerTimeoutStatus": {
+                    "description": "The status of the PCIe replay timer timeout",
+                    "longDescription": "The status of the PCIe replay timer timeout",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ReceiverOverFlowErrorStatus": {
+                    "description": "The status of the PCIe receiver overflow error",
+                    "longDescription": "The status of the PCIe receiver overflow error",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "SurpriseLinkDownErrorStatus": {
+                    "description": "The status of the PCIe surprise link down error",
+                    "longDescription": "The status of the PCIe surprise link down error",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "UncorrectableInternalErrorStatus": {
+                    "description": "The status of the PCIe uncorrectable internal error",
+                    "longDescription": "The status of the PCIe uncorrectable internal error",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Intel",
+    "title": "#IntelPCIeDevice"
+}

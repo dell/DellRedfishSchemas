@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellPowerSupplyView.json",
     "$ref": "#/definitions/DellPowerSupplyView",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellPowerSupplyView": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.v1_4_0.json#/definitions/DellPowerSupplyView"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellPowerSupplyView.v1_3_1.json#/definitions/DellPowerSupplyView"
                 }
             ],
             "deletable": false,
@@ -19,9 +19,6 @@
             "longDescription": "An instance of DellPowerSupplyView will have data specific to the Power Supply devices in the managed system.",
             "updatable": false,
             "uris": [
-                "/redfish/v1/Chassis/{ComputerSystemId}/PowerSubsystem/Oem/Dell/DellPowerSupplyInventory/{PowerSupplyViewId}"
-            ],
-            "urisDeprecated": [
                 "/redfish/v1/Chassis/{ComputerSystemId}/Power/Oem/Dell/DellPowerSupplyInventory/{PowerSupplyViewId}"
             ]
         },
@@ -90,14 +87,12 @@
                 "OverallFailure",
                 "RedundancyLost",
                 "Unknown",
-                "NA",
-                "NotRedundant"
+                "NA"
             ],
             "enumDescriptions": {
                 "DegradedRedundancy": "Degraded Redundancy",
                 "FullyRedundant": "Fully Redundant",
                 "NA": "Unknown",
-                "NotRedundant": "Not Redundant",
                 "OverallFailure": "Overall Failure",
                 "RedundancyLost": "Redundancy Lost",
                 "Unknown": "Unknown"
@@ -106,7 +101,6 @@
                 "DegradedRedundancy": "Degraded Redundancy",
                 "FullyRedundant": "Fully Redundant",
                 "NA": "Unknown",
-                "NotRedundant": "Not Redundant",
                 "OverallFailure": "Overall Failure",
                 "RedundancyLost": "Redundancy Lost",
                 "Unknown": "Unknown"
@@ -115,7 +109,6 @@
                 "DegradedRedundancy": "v1_3_0",
                 "FullyRedundant": "v1_3_0",
                 "NA": "v1_3_1",
-                "NotRedundant": "v1_4_0",
                 "OverallFailure": "v1_3_0",
                 "RedundancyLost": "v1_3_0",
                 "Unknown": "v1_3_0"

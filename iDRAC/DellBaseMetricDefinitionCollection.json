@@ -1,8 +1,8 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricDefinitionCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBaseMetricDefinitionCollection.json",
     "$ref": "#/definitions/DellBaseMetricDefinitionCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellBaseMetricDefinitionCollection": {
             "anyOf": [
@@ -55,7 +55,7 @@
                             "autoExpand": true,
                             "description": "Contains the members of this collection.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBaseMetricDefinition.json#/definitions/DellBaseMetricDefinition"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBaseMetricDefinition.json#/definitions/DellBaseMetricDefinition"
                             },
                             "longDescription": "Contains the members of this collection.",
                             "readonly": true,
@@ -88,8 +88,7 @@
             "deletable": false,
             "insertable": false,
             "updatable": false,
-            "uris": [],
-            "urisDeprecated": [
+            "uris": [
                 "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellBaseMetricDefinitions"
             ]
         }

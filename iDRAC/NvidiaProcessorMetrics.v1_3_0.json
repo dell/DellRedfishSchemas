@@ -1,0 +1,523 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/v1/NvidiaProcessorMetrics.v1_3_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright (C) 2021-2025 Nvidia For the full Nvidia copyright policy, see LICENSE.md",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#NvidiaProcessorMetrics.ClearAccumulatedUtilizationCounters": {
+                    "$ref": "#/definitions/ClearAccumulatedUtilizationCounters"
+                }
+            },
+            "type": "object"
+        },
+        "ClearAccumulatedUtilizationCounters": {
+            "additionalProperties": false,
+            "description": "The action sets the values of AccumulatedGPUContextUtilizationDuration and AccumulatedSMUtilizationDuration properties to zero.",
+            "longDescription": "This action sets the values of AccumulatedGPUContextUtilizationDuration and AccumulatedSMUtilizationDuration properties to zero.",
+            "parameters": {},
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "EDPViolationStateType": {
+            "enum": [
+                "Normal",
+                "OutOfRange"
+            ],
+            "enumDescriptions": {
+                "Normal": "The value is within the range",
+                "OutOfRange": "The value is outside the range"
+            },
+            "type": "string"
+        },
+        "NvidiaProcessorMetrics": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "AccumulatedGPUContextUtilizationDuration": {
+                    "description": "The duration of the accumulated GPU context utilization.",
+                    "longDescription": "This property shall contain the duration of the accumulated GPU context utilization.  This value can accumulate only with the driver loaded, and is reset when an SBR reset, a fundamental reset, or after a ClearAccumulatedUtilizationCounters action.  This property reports utilization duration up to approximately 49 days of activity and will roll over to zero.",
+                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "AccumulatedSMUtilizationDuration": {
+                    "description": "The duration of the accumulated SM utilization.",
+                    "longDescription": "This property shall contain the duration of the accumulated SM utilization.  This value can accumulate only with the driver loaded, and is reset when an SBR reset, a fundamental reset, or after a ClearAccumulatedUtilizationCounters action.  This property reports utilization duration up to approximately 49 days of activity and will roll over to zero.",
+                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "DMMAUtilizationPercent": {
+                    "description": "DMMA utilization as a percentage.",
+                    "longDescription": "This property shall contain DMMA utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "EDPViolationState": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/EDPViolationStateType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The EDP violation state",
+                    "longDescription": "This property shall contain the EDP violation state for this resource.",
+                    "readonly": true,
+                    "versionAdded": "v1_2_0"
+                },
+                "FP16ActivityPercent": {
+                    "description": "FP16 activity as a percentage.",
+                    "longDescription": "This property shall contain FP16 activity as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "FP32ActivityPercent": {
+                    "description": "FP32 activity as a percentage.",
+                    "longDescription": "This property shall contain FP32 activity as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "FP64ActivityPercent": {
+                    "description": "FP64 activity as a percentage.",
+                    "longDescription": "This property shall contain FP64 activity as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "GlobalSoftwareViolationThrottleDuration": {
+                    "description": "The total duration of throttling caused by global software violation of the processor since reset.",
+                    "longDescription": "This property shall contain the total duration of throttling caused by global software violation of the processor since reset.",
+                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "GraphicsEngineActivityPercent": {
+                    "description": "Graphics engine activity as a percentage.",
+                    "longDescription": "This property shall contain graphics engine activity as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "HMMAUtilizationPercent": {
+                    "description": "HMMA utilization as a percentage.",
+                    "longDescription": "This property shall contain HMMA utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "HardwareViolationThrottleDuration": {
+                    "description": "The total duration of throttling caused by hardware violation of the processor since reset.",
+                    "longDescription": "This property shall contain the total duration of throttling caused by hardware violation of the processor since reset.",
+                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "IMMAUtilizationPercent": {
+                    "description": "IMMA utilization as a percentage.",
+                    "longDescription": "This property shall contain IMMA utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "IntergerActivityUtilizationPercent": {
+                    "description": "Interger activity utilization as a percentage.",
+                    "longDescription": "This property shall contain Integer activity utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "MemoryPageRetirementCount": {
+                    "description": "The memory page retirement count.",
+                    "longDescription": "This property shall contain memory page retirement count.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                },
+                "MemorySpareChannelPresence": {
+                    "description": "The memory spare channel presence state.",
+                    "longDescription": "This property shall indicate memory spare channel is presence for this processor.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                },
+                "NVDecInstanceUtilizationPercent": {
+                    "description": "An array of NvDEC instance utilization as a percentage.",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "This property shall contain an array of NvDEC instance utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": "array",
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVDecUtilizationPercent": {
+                    "description": "NvDec utilization as a percentage.",
+                    "longDescription": "This property shall contain NvDec utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVJpgInstanceUtilizationPercent": {
+                    "description": "An array of NvJPG instance utilization as a percentage.",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "This property shall contain an array of NvJPG instance utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": "array",
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVJpgUtilizationPercent": {
+                    "description": "NvJPG utilization as a percentage.",
+                    "longDescription": "This property shall contain NvJPG utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinkDataRxBandwidthGbps": {
+                    "description": "The current bandwidth received on NVLink without protocol overhead.",
+                    "longDescription": "This property shall contain the current bandwidth received on NVLink without protocol overhead in gigabit per second (Gbit/s).",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Gbit/s",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinkDataTxBandwidthGbps": {
+                    "description": "The current bandwidth transferred on NVLink without protocol overhead.",
+                    "longDescription": "This property shall contain the current bandwidth transferred on NVLink without protocol overhead in gigabit per second (Gbit/s).",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Gbit/s",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinkRawRxBandwidthGbps": {
+                    "description": "The current bandwidth received on NVLink with protocol overhead.",
+                    "longDescription": "This property shall contain the current bandwidth received on NVLink with protocol overhead in gigabit per second (Gbit/s).",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Gbit/s",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVLinkRawTxBandwidthGbps": {
+                    "description": "The current bandwidth transferred on NVLink with protocol overhead.",
+                    "longDescription": "This property shall contain the current bandwidth transferred on NVLink with protocol overhead in gigabit per second (Gbit/s).",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Gbit/s",
+                    "versionAdded": "v1_1_0"
+                },
+                "NVOfaUtilizationPercent": {
+                    "description": "NvOFA utilization as a percentage.",
+                    "longDescription": "This property shall contain NvOFA utilization as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "PCIeRXBytes": {
+                    "description": "The total number of bytes received by the PCIe receiver.",
+                    "longDescription": "This property shall contain the total number of bytes received by the PCIe receiver.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "PCIeRawRxBandwidthGbps": {
+                    "description": "The current bandwidth received on PCIe with protocol overhead.",
+                    "longDescription": "This property shall contain the current bandwidth received on PCIe with protocol overhead in gigabit per second (Gbit/s).",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Gbit/s",
+                    "versionAdded": "v1_1_0"
+                },
+                "PCIeRawTxBandwidthGbps": {
+                    "description": "The current bandwidth transferred on PCIe with protocol overhead.",
+                    "longDescription": "This property shall contain the current bandwidth transferred on PCIe with protocol overhead in gigabit per second (Gbit/s).",
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "Gbit/s",
+                    "versionAdded": "v1_1_0"
+                },
+                "PCIeTXBytes": {
+                    "description": "The total number of bytes sent by the PCIe transmitter.",
+                    "longDescription": "This property shall contain the total number of bytes sent by the PCIe transmitter.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "By",
+                    "versionAdded": "v1_1_0"
+                },
+                "PerformanceState": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PerformanceStateType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The performance state",
+                    "longDescription": "This property shall contain the performance state value for this resource.",
+                    "readonly": true,
+                    "versionAdded": "v1_2_0"
+                },
+                "PowerBreakPerformanceState": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/PerformanceStateType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The power break performance state",
+                    "longDescription": "This property shall contain the power break performance state value for this resource.",
+                    "readonly": true,
+                    "versionAdded": "v1_2_0"
+                },
+                "SMActivityPercent": {
+                    "description": "SM activity as a percentage.",
+                    "longDescription": "This property shall contain SM activity as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "SMOccupancyPercent": {
+                    "description": "SM occupancy as a percentage.",
+                    "longDescription": "This property shall contain SM occupancy as a percentage, which is calculated by dividing the warps by the maximum warps.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "SMUtilizationPercent": {
+                    "description": "The SM utilization utilization as a percentage.",
+                    "longDescription": "This property shall contain the SM utilization of the processor as a percentage.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_3_0"
+                },
+                "TensorCoreActivityPercent": {
+                    "description": "Tensor core activity as a percentage.",
+                    "longDescription": "This property shall contain tensor core activity as a percentage, which is calculated by dividing the active cycles by the total cycles.",
+                    "minimum": 0,
+                    "readonly": true,
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "%",
+                    "versionAdded": "v1_1_0"
+                },
+                "ThrottleReasons": {
+                    "description": "The throttle reasons for this processor.",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "The property shall contain a list of throttle reasons for this processor.",
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "PerformanceStateType": {
+            "enum": [
+                "Normal",
+                "Throttled",
+                "Degraded"
+            ],
+            "enumDescriptions": {
+                "Degraded": "The entity is operating at a degraded functional level",
+                "Normal": "The entity is operating at a full functional level at full speed",
+                "Throttled": "The entity is operating at a full functional level at reduced speed"
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "NVIDIA",
+    "title": "#NvidiaProcessorMetrics.v1_3_0"
+}
