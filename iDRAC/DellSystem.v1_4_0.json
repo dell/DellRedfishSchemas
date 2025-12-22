@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.v1_4_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.v1_4_0.json",
     "$ref": "#/definitions/DellSystem",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -56,7 +56,7 @@
                 "BatteryRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/BatteryRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/BatteryRollupStatus"
                         },
                         {
                             "type": "null"
@@ -69,7 +69,7 @@
                 "BladeGeometry": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/BladeGeometry"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/BladeGeometry"
                         },
                         {
                             "type": "null"
@@ -82,7 +82,7 @@
                 "CPURollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/CPURollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/CPURollupStatus"
                         },
                         {
                             "type": "null"
@@ -135,7 +135,7 @@
                 "CoolingRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/CoolingRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/CoolingRollupStatus"
                         },
                         {
                             "type": "null"
@@ -149,7 +149,7 @@
                 "CurrentRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/CurrentRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/CurrentRollupStatus"
                         },
                         {
                             "type": "null"
@@ -205,7 +205,7 @@
                 "FanRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/FanRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/FanRollupStatus"
                         },
                         {
                             "type": "null"
@@ -222,7 +222,7 @@
                 "IntrusionRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/IntrusionRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/IntrusionRollupStatus"
                         },
                         {
                             "type": "null"
@@ -235,7 +235,7 @@
                 "IsOEMBranded": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/IsOEMBranded"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/IsOEMBranded"
                         },
                         {
                             "type": "null"
@@ -271,7 +271,7 @@
                 "LicensingRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/LicensingRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/LicensingRollupStatus"
                         },
                         {
                             "type": "null"
@@ -361,7 +361,7 @@
                 "PSRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/PSRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/PSRollupStatus"
                         },
                         {
                             "type": "null"
@@ -404,7 +404,7 @@
                 "PowerCapEnabledState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/PowerCapEnabledState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/PowerCapEnabledState"
                         },
                         {
                             "type": "null"
@@ -417,7 +417,7 @@
                 "SDCardRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/SDCardRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/SDCardRollupStatus"
                         },
                         {
                             "type": "null"
@@ -431,7 +431,7 @@
                 "SELRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/SELRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/SELRollupStatus"
                         },
                         {
                             "type": "null"
@@ -456,7 +456,7 @@
                 "StorageRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/StorageRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/StorageRollupStatus"
                         },
                         {
                             "type": "null"
@@ -469,7 +469,7 @@
                 "SysMemErrorMethodology": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/SysMemErrorMethodology"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/SysMemErrorMethodology"
                         },
                         {
                             "type": "null"
@@ -493,7 +493,7 @@
                 "SysMemLocation": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/SysMemLocation"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/SysMemLocation"
                         },
                         {
                             "type": "null"
@@ -507,7 +507,7 @@
                 "SysMemPrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/SysMemPrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/SysMemPrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -529,7 +529,7 @@
                 "SystemHealthRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/SystemHealthRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/SystemHealthRollupStatus"
                         },
                         {
                             "type": "null"
@@ -552,7 +552,7 @@
                 "SystemRevision": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/SystemRevision"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/SystemRevision"
                         },
                         {
                             "type": "null"
@@ -566,7 +566,7 @@
                 "TempRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/TempRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/TempRollupStatus"
                         },
                         {
                             "type": "null"
@@ -579,7 +579,7 @@
                 "TempStatisticsRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/TempStatisticsRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/TempStatisticsRollupStatus"
                         },
                         {
                             "type": "null"
@@ -602,7 +602,7 @@
                 "VoltRollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/VoltRollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.json#/definitions/VoltRollupStatus"
                         },
                         {
                             "type": "null"

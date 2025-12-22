@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.v1_13_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.v1_13_0.json",
     "$ref": "#/definitions/DelliDRACCardService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -104,7 +104,7 @@
             "longDescription": "This method is used to delete the certificate from iDRAC, on the basis of input parameter Type.",
             "parameters": {
                 "CertificateType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/CertificateType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/CertificateType",
                     "description": "The type of the certificate to be deleted.",
                     "longDescription": "The type of the certificate to be deleted.",
                     "requiredParameter": true
@@ -186,7 +186,7 @@
             "longDescription": "This method is used to delete the Custom Signing Certificate(CSC) from iDRAC, on the basis of input parameter Type. Reset iDRAC to complete the delete action of the certificate.",
             "parameters": {
                 "CertificateType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/CertificateType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/CertificateType",
                     "description": "The type of the certificate to be deleted.",
                     "longDescription": "The type of the certificate to be deleted.",
                     "requiredParameter": true
@@ -418,7 +418,7 @@
             "longDescription": "This method is used to export the certificate from the idrac, based on input parameter CertificateType. ExportCertificate returns the certificate file path.",
             "parameters": {
                 "CertificateType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/CertificateType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/CertificateType",
                     "description": "The type of the certificate to be exported.",
                     "longDescription": "The type of the certificate to be exported.",
                     "requiredParameter": true
@@ -461,7 +461,7 @@
             "longDescription": "This method is used to export the ssl certificate from the idrac, based on input parameter Type. ExportSSLCertificate returns the certificate.",
             "parameters": {
                 "SSLCertType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/SSLCertType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/SSLCertType",
                     "description": "The type of the certificate to be exported.",
                     "longDescription": "The type of the certificate to be exported.",
                     "requiredParameter": true
@@ -782,7 +782,7 @@
                     "type": "string"
                 },
                 "CertificateType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/CertificateType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/CertificateType",
                     "description": "Type of the certificate to be imported.",
                     "longDescription": "Type of the certificate to be imported.",
                     "requiredParameter": true
@@ -827,7 +827,7 @@
             "longDescription": "This method is used to import the ssl certificate to iDRAC, on the basis of input parameter Type. After importing the certificate, the iDRAC will automatically restart.",
             "parameters": {
                 "CertificateType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/CertificateType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/CertificateType",
                     "description": "Type of the certificate to be imported.",
                     "longDescription": "Type of the certificate to be imported.",
                     "requiredParameter": true
@@ -874,7 +874,7 @@
             "longDescription": "The method is used join an existing group providing the GroupPasscode.",
             "parameters": {
                 "CloneConfiguration": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/CloneConfiguration",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/CloneConfiguration",
                     "description": "Clones email alert configuration from the group once joined.0-Disable, 1-Enable.",
                     "longDescription": "Clones email alert configuration from the group once joined.0-Disable, 1-Enable.",
                     "requiredParameter": true
@@ -961,7 +961,7 @@
             "longDescription": "This method is used to Rekey all the secure capable devices in iDRAC.",
             "parameters": {
                 "Mode": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/Mode",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/Mode",
                     "description": "Specifies the security mode of iDRAC : 1 - iDrac Local Key Management (iLKM), 2 - Secure Enterprise Key Manager(SEKM).",
                     "longDescription": "Specifies the security mode of iDRAC : 1 - iDrac Local Key Management (iLKM), 2 - Secure Enterprise Key Manager(SEKM)."
                 },
@@ -1160,7 +1160,7 @@
             "longDescription": "This method is used to test server connection.",
             "parameters": {
                 "ConnectionType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/ConnectionType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/ConnectionType",
                     "description": "Type of the connection to test..",
                     "longDescription": "Type of the connection to test..",
                     "requiredParameter": true
@@ -1202,7 +1202,7 @@
                     "type": "integer"
                 },
                 "ServerType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/ServerType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/ServerType",
                     "description": "specifies the SEKM server type.",
                     "longDescription": "specifies the SEKM server type.",
                     "requiredParameter": true
@@ -1277,7 +1277,7 @@
             "longDescription": "This method is used to verify hardware identity certificate (Factory certificate).",
             "parameters": {
                 "Algorithm": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/Algorithm",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/Algorithm",
                     "description": "The algorithm used to encrypt EncryptedChallenge.",
                     "longDescription": "The algorithm used to encrypt EncryptedChallenge.",
                     "requiredParameter": true
@@ -1301,7 +1301,7 @@
                     "type": "string"
                 },
                 "KeyDerivationFunction": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/KeyDerivationFunction",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/KeyDerivationFunction",
                     "description": "The key derivation function used.",
                     "longDescription": "The key derivation function used.",
                     "requiredParameter": true
@@ -1375,7 +1375,7 @@
             "longDescription": "This method is used to reset iDRAC .",
             "parameters": {
                 "Force": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/Force",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/Force",
                     "description": "This option is used to reset the iDRAC by force or gracefully.",
                     "longDescription": "This option is used to reset the iDRAC by force or gracefully."
                 }
@@ -1409,12 +1409,12 @@
             "longDescription": "This method is used to reset the iDRAC to factory default configurations.",
             "parameters": {
                 "Force": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/Force",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/Force",
                     "description": "This option is used to reset the iDRAC to factory defaults by force or gracefully.",
                     "longDescription": "This option is used to reset the iDRAC to factory defaults by force or gracefully."
                 },
                 "Preserve": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DelliDRACCardService.json#/definitions/Preserve",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json#/definitions/Preserve",
                     "description": "Preserve= 0 (Default)-reset all configuration to default except network and users. Preserve=1 (All)-reset all configuration to default including network and users. Preserve=2 (ResetAllWithRootDefaults)  - reset all configuration to default including network preserve default user as root calvin.",
                     "longDescription": "Preserve= 0 (Default)-reset all configuration to default except network and users. Preserve=1 (All)-reset all configuration to default including network and users. Preserve=2 (ResetAllWithRootDefaults)  - reset all configuration to default including network preserve default user as root calvin."
                 }

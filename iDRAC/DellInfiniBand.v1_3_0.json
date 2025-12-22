@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.v1_3_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.v1_3_0.json",
     "$ref": "#/definitions/DellInfiniBand",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -47,7 +47,7 @@
                 "ConnectFirstTarget": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/ConnectFirstTarget"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/ConnectFirstTarget"
                         },
                         {
                             "type": "null"
@@ -69,7 +69,7 @@
                 "DataBusWidth": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/DataBusWidth"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/DataBusWidth"
                         },
                         {
                             "type": "null"
@@ -343,7 +343,7 @@
                 "PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -383,7 +383,7 @@
                 "SNAPIState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/SNAPIState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/SNAPIState"
                         },
                         {
                             "type": "null"
@@ -396,7 +396,7 @@
                 "SNAPISupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/SNAPISupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/SNAPISupport"
                         },
                         {
                             "type": "null"
@@ -409,7 +409,7 @@
                 "SlotLength": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/SlotLength"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/SlotLength"
                         },
                         {
                             "type": "null"
@@ -422,7 +422,7 @@
                 "SlotType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/SlotType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/SlotType"
                         },
                         {
                             "type": "null"
@@ -435,7 +435,7 @@
                 "UpdateLockdownCapable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/UpdateLockdownCapable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/UpdateLockdownCapable"
                         },
                         {
                             "type": "null"
@@ -448,7 +448,7 @@
                 "UpdateLockdownState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/UpdateLockdownState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/UpdateLockdownState"
                         },
                         {
                             "type": "null"
@@ -461,7 +461,7 @@
                 "VPISupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/VPISupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json#/definitions/VPISupport"
                         },
                         {
                             "type": "null"

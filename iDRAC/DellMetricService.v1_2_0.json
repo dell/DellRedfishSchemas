@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricService.v1_2_0.json",
     "$ref": "#/definitions/DellMetricService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -35,7 +35,7 @@
             "longDescription": "The ControlMetrics action provides the ability to reset the metric collection for a particular metric or metrics.",
             "parameters": {
                 "MetricCollectionEnabled": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.json#/definitions/MetricCollectionEnabled",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricService.json#/definitions/MetricCollectionEnabled",
                     "description": "The MetricCollectionEnabled parameter indicates the desired operation to perform on the metrics. The parameter value is 4 (Reset).",
                     "longDescription": "The MetricCollectionEnabled parameter indicates the desired operation to perform on the metrics. The parameter value is 4 (Reset).",
                     "requiredParameter": true
@@ -150,7 +150,7 @@
                     "type": "string"
                 },
                 "FileType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.json#/definitions/FileType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricService.json#/definitions/FileType",
                     "description": "Type of exported file.",
                     "longDescription": "Type of exported file.",
                     "requiredParameter": true
@@ -171,7 +171,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricService.json#/definitions/ShareType",
                     "description": "Type of the network Share.",
                     "longDescription": "Type of the network Share.",
                     "requiredParameter": true

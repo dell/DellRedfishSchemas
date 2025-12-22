@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSecureBoot.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSecureBoot.v1_1_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -23,13 +23,13 @@
             },
             "properties": {
                 "Certificates": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellCertificateStoreCollection.json#/definitions/DellCertificateStoreCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateStoreCollection.json#/definitions/DellCertificateStoreCollection",
                     "description": "A reference to the collection of SecureBoot Certificates associated with this system.",
                     "longDescription": "The value of this property shall be a link to a collection of type SecureBoot Certificates.",
                     "readonly": true
                 },
                 "FirmwareImageHashes": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFirmwareImageHashCollection.json#/definitions/DellFirmwareImageHashCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFirmwareImageHashCollection.json#/definitions/DellFirmwareImageHashCollection",
                     "description": "A reference to the collection of FirmwareImageHash associated with this system.",
                     "longDescription": "The value of this property shall be a link to a collection of FirmwareImageHash.",
                     "readonly": true,

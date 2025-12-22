@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.v1_4_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFC.v1_4_0.json",
     "$ref": "#/definitions/DellFC",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -119,7 +119,7 @@
                 "FCTapeEnable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.json#/definitions/FCTapeEnable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFC.json#/definitions/FCTapeEnable"
                         },
                         {
                             "type": "null"
@@ -202,7 +202,7 @@
                 "HardZoneEnable": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.json#/definitions/HardZoneEnable"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFC.json#/definitions/HardZoneEnable"
                         },
                         {
                             "type": "null"

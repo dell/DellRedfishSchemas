@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.v1_9_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.v1_9_0.json",
     "$ref": "#/definitions/DellNIC",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -70,7 +70,7 @@
                 "DataBusWidth": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/DataBusWidth"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/DataBusWidth"
                         },
                         {
                             "type": "null"
@@ -135,7 +135,7 @@
                 "FCoEOffloadMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/FCoEOffloadMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/FCoEOffloadMode"
                         },
                         {
                             "type": "null"
@@ -202,7 +202,7 @@
                 "IdentifierType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/IdentifierType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/IdentifierType"
                         },
                         {
                             "type": "null"
@@ -260,7 +260,7 @@
                 "LinkDuplex": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/LinkDuplex"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/LinkDuplex"
                         },
                         {
                             "type": "null"
@@ -309,7 +309,7 @@
                 "NicMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/NicMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/NicMode"
                         },
                         {
                             "type": "null"
@@ -486,7 +486,7 @@
                 "SNAPIState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/SNAPIState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/SNAPIState"
                         },
                         {
                             "type": "null"
@@ -500,7 +500,7 @@
                 "SNAPISupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/SNAPISupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/SNAPISupport"
                         },
                         {
                             "type": "null"
@@ -524,7 +524,7 @@
                 "SlotLength": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/SlotLength"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/SlotLength"
                         },
                         {
                             "type": "null"
@@ -538,7 +538,7 @@
                 "SlotType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/SlotType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/SlotType"
                         },
                         {
                             "type": "null"
@@ -588,7 +588,7 @@
                 "VPISupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/VPISupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/VPISupport"
                         },
                         {
                             "type": "null"
@@ -632,7 +632,7 @@
                 "iScsiOffloadMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/iScsiOffloadMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json#/definitions/iScsiOffloadMode"
                         },
                         {
                             "type": "null"

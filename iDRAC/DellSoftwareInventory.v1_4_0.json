@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellSoftwareInventory.v1_4_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInventory.v1_4_0.json",
     "$ref": "#/definitions/DellSoftwareInventory",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -50,7 +50,7 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSoftwareInventory.json#/definitions/Classifications"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInventory.json#/definitions/Classifications"
                             },
                             {
                                 "type": "null"
@@ -254,7 +254,7 @@
                 "Status": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSoftwareInventory.json#/definitions/Status"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInventory.json#/definitions/Status"
                         },
                         {
                             "type": "null"

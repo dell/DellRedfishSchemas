@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICPortMetrics.v1_2_0.json",
     "$ref": "#/definitions/DellNICPortMetrics",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -147,7 +147,7 @@
                 "OSDriverState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.json#/definitions/OSDriverState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICPortMetrics.json#/definitions/OSDriverState"
                         },
                         {
                             "type": "null"
@@ -160,7 +160,7 @@
                 "PartitionLinkStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.json#/definitions/PartitionLinkStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICPortMetrics.json#/definitions/PartitionLinkStatus"
                         },
                         {
                             "type": "null"
@@ -173,7 +173,7 @@
                 "PartitionOSDriverState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.json#/definitions/PartitionOSDriverState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICPortMetrics.json#/definitions/PartitionOSDriverState"
                         },
                         {
                             "type": "null"
