@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.v1_2_0.json",
     "$ref": "#/definitions/DellOSDeploymentService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -189,7 +189,7 @@
                     "type": "string"
                 },
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/HashType",
                     "description": "Type of hash algorithm used to compute checksum.",
                     "longDescription": "Type of hash algorithm used to compute checksum."
                 },
@@ -222,7 +222,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -273,7 +273,7 @@
                     "type": "string"
                 },
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/HashType",
                     "description": "Type of hash algorithm used to compute checksum.",
                     "longDescription": "Type of hash algorithm used to compute checksum."
                 },
@@ -300,7 +300,7 @@
                     "type": "string"
                 },
                 "ResetType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ResetType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/ResetType",
                     "description": "Specifies if the host system needs to be immediately forced to cold/warm reset in order to boot to the ISO Image.",
                     "longDescription": "Specifies if the host system needs to be immediately forced to cold/warm reset in order to boot to the ISO Image.",
                     "requiredParameter": true
@@ -312,7 +312,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -357,7 +357,7 @@
             "longDescription": "The ConnectNetworkISOImage() method is used to connect to the ISO present on the network share and expose the ISO as a local USB CD-ROM device to the host system. This method will connect to the ISO located on an NFS/CIFS share and expose it as a virtual CDROM device to the host server. Even though the successful method execution shall not change the boot order of that device, the host shall always boot to the virtual CDROM. Also note that after the ISO is exposed to the host server, Lifecycle Controller shall be locked and no other jobs like configuration/update etc shall be performed until the ISO is detached using the DisconnectNetworkISOImage() method. The successful exection of the DisconnectNetworkISOImage() shall revert the host system to the regular boot list. NOTE: The recommended methodology for connecting to an ISO image is by using the ConnectRFSISOImage()  method that utilizes the remote file system (RFS).",
             "parameters": {
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/HashType",
                     "description": "Type of hash algorithm used to compute checksum.",
                     "longDescription": "Type of hash algorithm used to compute checksum."
                 },
@@ -390,7 +390,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -681,7 +681,7 @@
             "longDescription": "The DownloadISOToVFlash() method downloads the pre-operating system ISO Image to the vFlash SD card. The following table lists the return values for DownloadISOToVFlash() method, where the method-execution behavior matches the return-code description.Note: This method will not be supported in Poweredge systems with model YX5X and iDRAC firmware version 4.00.00.00 or later.",
             "parameters": {
                 "HashType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/HashType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/HashType",
                     "description": "Type of hash algorithm used to compute checksum.",
                     "longDescription": "Type of hash algorithm used to compute checksum."
                 },
@@ -719,7 +719,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -813,13 +813,13 @@
             },
             "properties": {
                 "DriversAttachStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetAttachStatusResponseDriversAttachStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/GetAttachStatusResponseDriversAttachStatus",
                     "description": "Driver attach status.",
                     "longDescription": "Driver attach status.",
                     "readonly": true
                 },
                 "ISOAttachStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetAttachStatusResponseISOAttachStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/GetAttachStatusResponseISOAttachStatus",
                     "description": "ISO attached state.",
                     "longDescription": "ISO attached state.",
                     "readonly": true
@@ -954,13 +954,13 @@
             },
             "properties": {
                 "HostAttachedStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseHostAttachedStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseHostAttachedStatus",
                     "description": "Indicates whether the ISO is attached to the host server.",
                     "longDescription": "Indicates whether the ISO is attached to the host server.",
                     "readonly": true
                 },
                 "HostBootedFromISO": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseHostBootedFromISO",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseHostBootedFromISO",
                     "description": "Indicates whether the host has booted to the ISO image at least once.",
                     "longDescription": "Indicates whether the host has booted to the ISO image at least once.",
                     "readonly": true
@@ -972,7 +972,7 @@
                     "type": "string"
                 },
                 "ISOConnectionStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseISOConnectionStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/GetNetworkISOImageConnectionInfoResponseISOConnectionStatus",
                     "description": "Indicates whether the ISO is still accessible.",
                     "longDescription": "Indicates whether the ISO is still accessible.",
                     "readonly": true
@@ -1118,7 +1118,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true

@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemEnclosureChassis.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemEnclosureChassis.v1_2_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -150,7 +150,7 @@
                     ]
                 },
                 "BackplaneType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemEnclosureChassis.json#/definitions/BackplaneType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemEnclosureChassis.json#/definitions/BackplaneType",
                     "description": "The property shall represent universal mode or non shared mode of backplane.",
                     "longDescription": "The property shall represent universal mode or non shared mode of backplane.",
                     "readonly": true
@@ -185,14 +185,14 @@
                     ]
                 },
                 "Links": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosure.json#/definitions/Links",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellEnclosure.json#/definitions/Links",
                     "description": "Contains references to other resources that are related to this resource.",
                     "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
                 },
                 "RAIDEnclosureConfigMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemEnclosureChassis.json#/definitions/RAIDEnclosureConfigMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemEnclosureChassis.json#/definitions/RAIDEnclosureConfigMode"
                         },
                         {
                             "type": "null"
@@ -203,7 +203,7 @@
                     "readonly": false
                 },
                 "RAIDMultipath": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemEnclosureChassis.json#/definitions/RAIDMultipath",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemEnclosureChassis.json#/definitions/RAIDMultipath",
                     "description": "The property shall represent whether the adapter has multiple paths to reach the enclosure.",
                     "longDescription": "The property shall represent whether the adapter has multiple paths to reach the enclosure.",
                     "readonly": true
@@ -290,7 +290,7 @@
                     "versionAdded": "v1_2_0"
                 },
                 "DellChassis": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellChassis.json#/definitions/DellChassis",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellChassis.json#/definitions/DellChassis",
                     "autoExpand": true,
                     "description": "A resource representation of DellChassis.",
                     "longDescription": "A resource representation of DellChassis.",
@@ -312,7 +312,7 @@
                 "DellEnclosure": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosure.json#/definitions/DellEnclosure"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellEnclosure.json#/definitions/DellEnclosure"
                         },
                         {
                             "type": "null"
@@ -326,7 +326,7 @@
                 "DellPCIeSSDBackPlane": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSDBackPlane.json#/definitions/DellPCIeSSDBackPlane"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeSSDBackPlane.json#/definitions/DellPCIeSSDBackPlane"
                         },
                         {
                             "type": "null"

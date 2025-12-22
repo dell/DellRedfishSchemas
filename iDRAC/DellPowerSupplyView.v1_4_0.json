@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.v1_4_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupplyView.v1_4_0.json",
     "$ref": "#/definitions/DellPowerSupplyView",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -98,7 +98,7 @@
                 "PMBusMonitoring": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.json#/definitions/PMBusMonitoring"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupplyView.json#/definitions/PMBusMonitoring"
                         },
                         {
                             "type": "null"
@@ -134,7 +134,7 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.json#/definitions/RedTypeOfSet"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupplyView.json#/definitions/RedTypeOfSet"
                             },
                             {
                                 "type": "null"
@@ -149,7 +149,7 @@
                 "RedundancyStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.json#/definitions/RedundancyStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupplyView.json#/definitions/RedundancyStatus"
                         },
                         {
                             "type": "null"

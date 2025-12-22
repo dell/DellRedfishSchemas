@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellD4D.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellD4D.v1_0_0.json",
     "$ref": "#/definitions/DellD4D",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -71,7 +71,7 @@
                     "readonly": true
                 },
                 "Reports": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellD4DReportCollection.json#/definitions/DellD4DReportCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellD4DReportCollection.json#/definitions/DellD4DReportCollection",
                     "description": "The link to the collection of d4d reports.",
                     "longDescription": "This property shall contain a link to a resource collection of type DellD4DReportCollection.",
                     "readonly": true

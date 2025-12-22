@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemSensor.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemSensor.v1_2_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -247,7 +247,7 @@
                     "versionAdded": "v1_1_0"
                 },
                 "HistoricalReadings": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellHistoricalSensorReadings.json#/definitions/DellHistoricalSensorReadings",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellHistoricalSensorReadings.json#/definitions/DellHistoricalSensorReadings",
                     "description": "A resource representation of HistoricalReadings.",
                     "longDescription": "A resource representation of HistoricalReadings.",
                     "readonly": true,
@@ -296,7 +296,7 @@
                 "RequestedState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensor.json#/definitions/RequestedState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellNumericSensor.json#/definitions/RequestedState"
                         },
                         {
                             "type": "null"

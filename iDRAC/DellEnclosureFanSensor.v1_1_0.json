@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureFanSensor.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellEnclosureFanSensor.v1_1_0.json",
     "$ref": "#/definitions/DellEnclosureFanSensor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -121,7 +121,7 @@
                 "PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureFanSensor.json#/definitions/PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellEnclosureFanSensor.json#/definitions/PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -135,7 +135,7 @@
                 "RateUnits": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureFanSensor.json#/definitions/RateUnits"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellEnclosureFanSensor.json#/definitions/RateUnits"
                         },
                         {
                             "type": "null"
@@ -149,7 +149,7 @@
                 "ReadingUnits": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureFanSensor.json#/definitions/BaseUnits"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellEnclosureFanSensor.json#/definitions/BaseUnits"
                         },
                         {
                             "type": "null"
@@ -163,7 +163,7 @@
                 "State": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosureFanSensor.json#/definitions/State"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellEnclosureFanSensor.json#/definitions/State"
                         },
                         {
                             "type": "null"

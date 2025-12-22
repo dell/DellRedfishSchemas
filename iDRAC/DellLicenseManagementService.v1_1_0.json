@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.v1_1_0.json",
     "$ref": "#/definitions/DellLicenseManagementService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -56,7 +56,7 @@
             "longDescription": "A method used to delete assigned licenses. The DeleteLicense() method deletes a specific license from all devices it is assigned to if only the EntitlementID parameter is present, all licenses from a specific device if only the FQDD parameter is present, or a specific license from a specific device if both the EntitlementID and FQDD parameters are present. Either the EntitlementID or FQDD parameter shall be present.",
             "parameters": {
                 "DeleteOptions": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/DeleteOptions",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/DeleteOptions",
                     "description": "Flag used to force delete or delete license from all like devices.",
                     "longDescription": "Flag used to force delete or delete license from all like devices.",
                     "requiredParameter": true
@@ -306,7 +306,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -399,7 +399,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning is to be ignored when HTTPS is specified. If IgnoreCertWarning is on:certificate will be ignored. Default is 1 (Off).",
                     "longDescription": "Specifies if certificate warning is to be ignored when HTTPS is specified. If IgnoreCertWarning is on:certificate will be ignored. Default is 1 (Off)."
                 },
@@ -424,12 +424,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy is to be used or not. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy is to be used or not. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -444,7 +444,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true
@@ -495,7 +495,7 @@
                     "type": "string"
                 },
                 "ImportOptions": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ImportOptions",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ImportOptions",
                     "description": "Flag to force or install for all like devices.",
                     "longDescription": "Flag to force or install for all like devices.",
                     "requiredParameter": true
@@ -548,12 +548,12 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning is to be ignored when HTTPS is specified. If IgnoreCertWarning is on:certificate will be ignored. Default is 1 (Off).",
                     "longDescription": "Specifies if certificate warning is to be ignored when HTTPS is specified. If IgnoreCertWarning is on:certificate will be ignored. Default is 1 (Off)."
                 },
                 "ImportOptions": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ImportOptions",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ImportOptions",
                     "description": "Flag to force or install for all like devices.",
                     "longDescription": "Flag to force or install for all like devices.",
                     "requiredParameter": true
@@ -585,12 +585,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy is to be used or not. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy is to be used or not. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -605,7 +605,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLicenseManagementService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLicenseManagementService.json#/definitions/ShareType",
                     "description": "Type of the Network Share.",
                     "longDescription": "Type of the Network Share.",
                     "requiredParameter": true

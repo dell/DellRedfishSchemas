@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -33,7 +33,7 @@
         "DellDrive": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.v1_2_1.json#/definitions/DellDrive"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.v1_2_1.json#/definitions/DellDrive"
                 }
             ],
             "description": "Oem data related to DellDrive.",
@@ -42,7 +42,7 @@
         "DellDriveLinks": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.v1_2_1.json#/definitions/DellDriveLinks"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.v1_2_1.json#/definitions/DellDriveLinks"
                 }
             ],
             "description": "A complex property for the additional Oem resources realted to Drive.",
@@ -51,7 +51,7 @@
         "ExportNVMeDeviceLogs": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.v1_2_1.json#/definitions/ExportNVMeDeviceLogs"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.v1_2_1.json#/definitions/ExportNVMeDeviceLogs"
                 }
             ],
             "description": "The ExportNVMeDeviceLogs operation shall be used to export the storage device logs.",

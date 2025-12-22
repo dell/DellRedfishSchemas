@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellUpdateService.v1_4_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellUpdateService.v1_4_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -49,7 +49,7 @@
             },
             "properties": {
                 "DellSoftwareInventoryCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSoftwareInventoryCollection.json#/definitions/DellSoftwareInventoryCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellSoftwareInventoryCollection.json#/definitions/DellSoftwareInventoryCollection",
                     "description": "A reference to a DellSoftwareInventoryCollection resource.",
                     "longDescription": "A reference to a DellSoftwareInventoryCollection resource.",
                     "readonly": true,

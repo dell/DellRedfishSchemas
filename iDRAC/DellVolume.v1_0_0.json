@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellVolume.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVolume.v1_0_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -23,7 +23,7 @@
             },
             "properties": {
                 "DellVirtualDisk": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/DellVirtualDisk",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/DellVirtualDisk",
                     "autoExpand": true,
                     "description": "A resource representation of DellVirtualDisk.",
                     "longDescription": "A resource representation of DellVirtualDisk.",
@@ -64,7 +64,7 @@
                 "BusProtocol": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/BusProtocol"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/BusProtocol"
                         },
                         {
                             "type": "null"
@@ -77,7 +77,7 @@
                 "Cachecade": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/Cachecade"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/Cachecade"
                         },
                         {
                             "type": "null"
@@ -90,7 +90,7 @@
                 "DiskCachePolicy": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/DiskCachePolicy"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/DiskCachePolicy"
                         },
                         {
                             "type": "null"
@@ -123,7 +123,7 @@
                 "LockStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/LockStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/LockStatus"
                         },
                         {
                             "type": "null"
@@ -136,7 +136,7 @@
                 "MediaType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/MediaType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/MediaType"
                         },
                         {
                             "type": "null"
@@ -149,7 +149,7 @@
                 "ObjectStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/ObjectStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/ObjectStatus"
                         },
                         {
                             "type": "null"
@@ -180,7 +180,7 @@
                 "PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -193,7 +193,7 @@
                 "RaidStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/RaidStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/RaidStatus"
                         },
                         {
                             "type": "null"
@@ -242,7 +242,7 @@
                 "StripeSize": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/StripeSize"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/StripeSize"
                         },
                         {
                             "type": "null"
@@ -255,7 +255,7 @@
                 "T10PIStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json#/definitions/T10PIStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDisk.json#/definitions/T10PIStatus"
                         },
                         {
                             "type": "null"

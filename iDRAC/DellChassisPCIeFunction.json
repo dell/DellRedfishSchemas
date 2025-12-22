@@ -1,12 +1,12 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellChassisPCIeFunction.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellChassisPCIeFunction.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellPCIeFunction": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellChassisPCIeFunction.v1_1_0.json#/definitions/DellPCIeFunction"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellChassisPCIeFunction.v1_1_0.json#/definitions/DellPCIeFunction"
                 }
             ],
             "description": "An instance of DellPCIeFunction will have PCI device specific data.",

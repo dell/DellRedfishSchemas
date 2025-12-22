@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.v1_12_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.v1_12_0.json",
     "$ref": "#/definitions/DellLCService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -344,7 +344,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On).",
                     "longDescription": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On)."
                 },
@@ -374,12 +374,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy should be used. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy should be used. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -394,7 +394,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -450,7 +450,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On).",
                     "longDescription": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On)."
                 },
@@ -475,12 +475,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy should be used. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy should be used. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -495,7 +495,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -551,7 +551,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On).",
                     "longDescription": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On)."
                 },
@@ -582,12 +582,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy should be used. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy should be used. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -602,7 +602,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -618,7 +618,7 @@
                     "type": "string"
                 },
                 "XMLSchema": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/XMLSchema",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/XMLSchema",
                     "description": "Type of XML output format. Default is CIM-XML.",
                     "longDescription": "Type of XML output format. Default is CIM-XML."
                 }
@@ -662,7 +662,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On).",
                     "longDescription": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On)."
                 },
@@ -692,12 +692,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy should be used. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy should be used. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -712,7 +712,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -757,7 +757,7 @@
             "longDescription": "This method is used for exporting the SVG file from the iDRAC.",
             "parameters": {
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -796,7 +796,7 @@
             "longDescription": "The ExportServerScreenShot() method is used for exporting preview page of server or server screen shot file from the iDRAC to management application local store in encoded base64 format.",
             "parameters": {
                 "FileType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/FileType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/FileType",
                     "description": "Type of screen shot required.",
                     "longDescription": "Type of screen shot required.",
                     "requiredParameter": true
@@ -867,7 +867,7 @@
                 "DataSelectorArrayIn": {
                     "description": "DataSelectorArrayIn to select the data.",
                     "items": {
-                        "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ExportTechSupportReportDataSelectorArrayIn"
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ExportTechSupportReportDataSelectorArrayIn"
                     },
                     "longDescription": "DataSelectorArrayIn to select the data.",
                     "type": "array"
@@ -890,7 +890,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -931,13 +931,13 @@
             "longDescription": "This method is used to export the bootcapture or crashcapture from iDRAC to a local folder. The ExportVideoLog() method is used to export the bootcapture or crashcapture from iDRAC to a local folder.",
             "parameters": {
                 "FileType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/FileType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/FileType",
                     "description": "FileType is used to select the bootcapture or crashcapture.",
                     "longDescription": "FileType is used to select the bootcapture or crashcapture.",
                     "requiredParameter": true
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -983,7 +983,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On).",
                     "longDescription": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On)."
                 },
@@ -1008,12 +1008,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy should be used. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy should be used. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -1028,7 +1028,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -1209,44 +1209,44 @@
             },
             "properties": {
                 "LCStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseLCStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseLCStatus",
                     "description": "The Lifecycle Controller status that includes the Data Manager status.",
                     "longDescription": "The Lifecycle Controller status that includes the Data Manager status.",
                     "readonly": true
                 },
                 "RTStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseRTStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseRTStatus",
                     "description": "The RealTime Status of the host server.",
                     "longDescription": "The RealTime Status of the host server.",
                     "readonly": true
                 },
                 "RedfishStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseTelemetryServiceStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseTelemetryServiceStatus",
                     "description": "The status of Redfish Service.",
                     "longDescription": "The status of Redfish Service.",
                     "readonly": true,
                     "versionAdded": "v1_10_0"
                 },
                 "SEKMServiceStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseSEKMServiceStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseSEKMServiceStatus",
                     "description": "The status of Secure Enterprise Key Manager (SEKM) service.",
                     "longDescription": "The status of Secure Enterprise Key Manager (SEKM) service.",
                     "readonly": true
                 },
                 "ServerStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseServerStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseServerStatus",
                     "description": "Status of the host server.",
                     "longDescription": "Status of the host server.",
                     "readonly": true
                 },
                 "Status": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseStatus",
                     "description": "The overall status of the Remote Services API.",
                     "longDescription": "The overall status of the Remote Services API.",
                     "readonly": true
                 },
                 "TelemetryServiceStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseTelemetryServiceStatus",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/GetRemoteServicesAPIStatusResponseTelemetryServiceStatus",
                     "description": "The status of TelemetryService.",
                     "longDescription": "The status of TelemetryService.",
                     "readonly": true
@@ -1369,7 +1369,7 @@
                     "type": "string"
                 },
                 "PerformAutoDiscovery": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/PerformAutoDiscovery",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/PerformAutoDiscovery",
                     "description": "Specifies the auto discovery mode. \"Off\": Disables auto discovery, \"Now\": Enables and initiates auto discovery immediately, \"NextBoot\": Delays reconfiguration and discovery till next power cycle.",
                     "longDescription": "Specifies the auto discovery mode. \"Off\": Disables auto discovery, \"Now\": Enables and initiates auto discovery immediately, \"NextBoot\": Delays reconfiguration and discovery till next power cycle.",
                     "requiredParameter": true
@@ -1411,7 +1411,7 @@
             "longDescription": "The ReInitiateDHS() method is used for reinitiating the provisioning server discovery and handshake.",
             "parameters": {
                 "PerformAutoDiscovery": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/PerformAutoDiscovery",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/PerformAutoDiscovery",
                     "description": "A value of \"Off = 1\" disables auto discovery. A value of \"Now = 2\" enables and initiates auto discovery immediately. A value of  \"NextBoot = 3\" delays reconfiguration and auto discovery until next AC power cycle. Note: If NextBoot has a value of 3, then upon successful execution, the Discovery Factory Defaults attribute is set to \"On\".",
                     "longDescription": "A value of \"Off = 1\" disables auto discovery. A value of \"Now = 2\" enables and initiates auto discovery immediately. A value of  \"NextBoot = 3\" delays reconfiguration and auto discovery until next AC power cycle. Note: If NextBoot has a value of 3, then upon successful execution, the Discovery Factory Defaults attribute is set to \"On\".",
                     "requiredParameter": true
@@ -1458,13 +1458,13 @@
             "longDescription": "The method is used for running the diagnostics based on the runmode switch and save the report in the Maser partition (MAS002). The diagnostics can be run in either Express or Extended mode or as a long run that encompasses all tests.",
             "parameters": {
                 "RebootJobType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/RebootJobType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/RebootJobType",
                     "description": "The value contains the requested reboot type.",
                     "longDescription": "The value contains the requested reboot type.",
                     "requiredParameter": true
                 },
                 "RunMode": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/RunMode",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/RunMode",
                     "description": "RunMode to run the diagnostics.",
                     "longDescription": "RunMode to run the diagnostics."
                 },
@@ -1573,13 +1573,13 @@
                 "DataSelectorArrayIn": {
                     "description": "This property allows to select the different type of logs in the collection. Default value for this parameter is HW Data and MUT logs are part of every collection.",
                     "items": {
-                        "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/SupportAssistCollectionDataSelectorArrayIn"
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/SupportAssistCollectionDataSelectorArrayIn"
                     },
                     "longDescription": "This property allows to select the different type of logs in the collection. Default value for this parameter is HW Data and MUT logs are part of every collection.",
                     "type": "array"
                 },
                 "Filter": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/Filter",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/Filter",
                     "description": "This property specifies whether the collection should be filtered for PII (Personal Identification Information). Filter = 1 indicates that the collection is filtered for PII and excludes all debug logs and storage logs. When this parameter is not passed, default value is 0 (No filtering).",
                     "longDescription": "This property specifies whether the collection should be filtered for PII (Personal Identification Information). Filter = 1 indicates that the collection is filtered for PII and excludes all debug logs and storage logs. When this parameter is not passed, default value is 0 (No filtering)."
                 },
@@ -1589,7 +1589,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On).",
                     "longDescription": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On)."
                 },
@@ -1624,12 +1624,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy should be used. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy should be used. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -1644,12 +1644,12 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share. Default value is based on iDRAC.Embedded.1#SupportAssist.1#DefaultProtocol attribute, when this parameter is not passed.",
                     "longDescription": "Type of the network share. Default value is based on iDRAC.Embedded.1#SupportAssist.1#DefaultProtocol attribute, when this parameter is not passed."
                 },
                 "Transmit": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/Transmit",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/Transmit",
                     "description": "This property specifies if collection should be transmitted to Dell. Default value is 0 (No).",
                     "longDescription": "This property specifies if collection should be transmitted to Dell. Default value is 0 (No)."
                 },
@@ -1699,7 +1699,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On).",
                     "longDescription": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On)."
                 },
@@ -1734,12 +1734,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy should be used. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy should be used. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -1754,7 +1754,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share."
                 },
@@ -1858,7 +1858,7 @@
                     "versionAdded": "v1_1_0"
                 },
                 "Recurrence": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/SupportAssistGetAutoCollectScheduleResponseRecurrence",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/SupportAssistGetAutoCollectScheduleResponseRecurrence",
                     "description": "This represents periodicity of collections.",
                     "longDescription": "This represents periodicity of collections.",
                     "readonly": true,
@@ -1948,14 +1948,14 @@
             },
             "properties": {
                 "Interface": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/SupportAssistGetEULAStatusResponseInterface",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/SupportAssistGetEULAStatusResponseInterface",
                     "description": "Interface used to accept EULA.",
                     "longDescription": "Interface used to accept EULA.",
                     "readonly": true,
                     "versionAdded": "v1_1_0"
                 },
                 "IsRegistered": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/SupportAssistGetEULAStatusResponseIsRegistered",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/SupportAssistGetEULAStatusResponseIsRegistered",
                     "description": "This parameter indicates if iDRAC is registered for SupportAssist.",
                     "longDescription": "This parameter indicates if iDRAC is registered for SupportAssist.",
                     "readonly": true,
@@ -2149,7 +2149,7 @@
                     "type": "string"
                 },
                 "Recurrence": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/Recurrence",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/Recurrence",
                     "description": "Specifies the collection recurrence. If recurrence is Monthly or Quarterly, then either 1. DayofMonth or 2. WeekOfMonth and DayOfWeek must be passed.",
                     "longDescription": "Specifies the collection recurrence. If recurrence is Monthly or Quarterly, then either 1. DayofMonth or 2. WeekOfMonth and DayOfWeek must be passed.",
                     "requiredParameter": true
@@ -2235,7 +2235,7 @@
                 "Component": {
                     "description": "Array to select the components to be erased. The System Components are: BIOS , DIAG, AllApps, DrvPack, LCData, IDRAC. The Storage Components are: PERCNVCache, vFlash, CryptographicErasePD, OverwritePD, NonVolatileMemory, DPU, ReinstallFW. The parameters Component and ComponentBitmap are mutually exclusive. ( Note: SecureErasePD has been renamed to CryptographicErasePD, however, for backwards compatibility SecureErasePD will still work)",
                     "items": {
-                        "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/Component"
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/Component"
                     },
                     "longDescription": "Array to select the components to be erased. The System Components are: BIOS , DIAG, AllApps, DrvPack, LCData, IDRAC. The Storage Components are: PERCNVCache, vFlash, CryptographicErasePD, OverwritePD, NonVolatileMemory, DPU, ReinstallFW. The parameters Component and ComponentBitmap are mutually exclusive. ( Note: SecureErasePD has been renamed to CryptographicErasePD, however, for backwards compatibility SecureErasePD will still work)",
                     "type": "array"
@@ -2281,7 +2281,7 @@
                     "type": "string"
                 },
                 "IgnoreCertWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/IgnoreCertWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/IgnoreCertWarning",
                     "description": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On).",
                     "longDescription": "Specifies if certificate warning should be ignored when HTTPS is specified. If IgnoreCertWarning is On, warnings are ignored. Default is 2 (On)."
                 },
@@ -2311,12 +2311,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxySupport",
                     "description": "Specifies if proxy should be used. Default is 1 (Off).",
                     "longDescription": "Specifies if proxy should be used. Default is 1 (Off)."
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ProxyType",
                     "description": "The proxy type of the proxy server. Default is 0 (HTTP).",
                     "longDescription": "The proxy type of the proxy server. Default is 0 (HTTP)."
                 },
@@ -2331,7 +2331,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/ShareType",
                     "description": "Type of the network share. Default is NFS, when this parameter is not passed.",
                     "longDescription": "Type of the network share. Default is NFS, when this parameter is not passed."
                 },
@@ -2371,7 +2371,7 @@
             "longDescription": "This method is used for getting the latest OSAppHealth data based on the input parameter UpdateType.",
             "parameters": {
                 "UpdateType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellLCService.json#/definitions/UpdateType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellLCService.json#/definitions/UpdateType",
                     "description": "UpdateType parameter is used for selecting the OSAppHealthData update type.",
                     "longDescription": "UpdateType parameter is used for selecting the OSAppHealthData update type."
                 }

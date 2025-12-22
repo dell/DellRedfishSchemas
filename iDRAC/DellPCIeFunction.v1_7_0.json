@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeFunction.v1_7_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeFunction.v1_7_0.json",
     "$ref": "#/definitions/DellPCIeFunction",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -38,7 +38,7 @@
                 "DataBusWidth": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeFunction.json#/definitions/DataBusWidth"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeFunction.json#/definitions/DataBusWidth"
                         },
                         {
                             "type": "null"
@@ -92,7 +92,7 @@
                 "SlotLength": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeFunction.json#/definitions/SlotLength"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeFunction.json#/definitions/SlotLength"
                         },
                         {
                             "type": "null"
@@ -106,7 +106,7 @@
                 "SlotType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeFunction.json#/definitions/SlotType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeFunction.json#/definitions/SlotType"
                         },
                         {
                             "type": "null"

@@ -1,12 +1,12 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSlots.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeSlots.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellPCIeSlotLinks": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSlots.v1_1_0.json#/definitions/DellPCIeSlotLinks"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeSlots.v1_1_0.json#/definitions/DellPCIeSlotLinks"
                 }
             ],
             "description": "This is the complex property is for the additional OEM Links realted to the DMTF PCIeSlots Schema.",
@@ -15,7 +15,7 @@
         "DellPCIeSlots": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSlots.v1_1_0.json#/definitions/DellPCIeSlots"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeSlots.v1_1_0.json#/definitions/DellPCIeSlots"
                 }
             ],
             "description": "This is the complex property is for the additional OEM properties to complement DMTF PCIeSlots Schema.",

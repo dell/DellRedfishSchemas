@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.v1_0_0.json",
     "$ref": "#/definitions/DellInfiniBandCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -38,7 +38,7 @@
                 "BPESupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/BPESupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/BPESupport"
                         },
                         {
                             "type": "null"
@@ -51,7 +51,7 @@
                 "CongestionNotification": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/CongestionNotification"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/CongestionNotification"
                         },
                         {
                             "type": "null"
@@ -64,7 +64,7 @@
                 "DCBExchangeProtocol": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/DCBExchangeProtocol"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/DCBExchangeProtocol"
                         },
                         {
                             "type": "null"
@@ -88,7 +88,7 @@
                 "ETS": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/ETS"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/ETS"
                         },
                         {
                             "type": "null"
@@ -101,7 +101,7 @@
                 "EVBModesSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/EVBModesSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/EVBModesSupport"
                         },
                         {
                             "type": "null"
@@ -114,7 +114,7 @@
                 "EnergyEfficientEthernet": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/EnergyEfficientEthernet"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/EnergyEfficientEthernet"
                         },
                         {
                             "type": "null"
@@ -127,7 +127,7 @@
                 "FeatureLicensingSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/FeatureLicensingSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/FeatureLicensingSupport"
                         },
                         {
                             "type": "null"
@@ -140,7 +140,7 @@
                 "FlexAddressingSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/FlexAddressingSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/FlexAddressingSupport"
                         },
                         {
                             "type": "null"
@@ -153,7 +153,7 @@
                 "IPSecOffloadSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/IPSecOffloadSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/IPSecOffloadSupport"
                         },
                         {
                             "type": "null"
@@ -188,7 +188,7 @@
                 "MACSecSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/MACSecSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/MACSecSupport"
                         },
                         {
                             "type": "null"
@@ -201,7 +201,7 @@
                 "NWManagementPassThrough": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/NWManagementPassThrough"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/NWManagementPassThrough"
                         },
                         {
                             "type": "null"
@@ -218,7 +218,7 @@
                 "NicPartitioningSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/NicPartitioningSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/NicPartitioningSupport"
                         },
                         {
                             "type": "null"
@@ -231,7 +231,7 @@
                 "OSBMCManagementPassThrough": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/OSBMCManagementPassThrough"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/OSBMCManagementPassThrough"
                         },
                         {
                             "type": "null"
@@ -249,7 +249,7 @@
                 "OnChipThermalSensor": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/OnChipThermalSensor"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/OnChipThermalSensor"
                         },
                         {
                             "type": "null"
@@ -262,7 +262,7 @@
                 "OpenFlowSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/OpenFlowSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/OpenFlowSupport"
                         },
                         {
                             "type": "null"
@@ -275,7 +275,7 @@
                 "PXEBootSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/PXEBootSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/PXEBootSupport"
                         },
                         {
                             "type": "null"
@@ -288,7 +288,7 @@
                 "PartitionWOLSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/PartitionWOLSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/PartitionWOLSupport"
                         },
                         {
                             "type": "null"
@@ -301,7 +301,7 @@
                 "PersistencePolicySupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/PersistencePolicySupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/PersistencePolicySupport"
                         },
                         {
                             "type": "null"
@@ -314,7 +314,7 @@
                 "PriorityFlowControl": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/PriorityFlowControl"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/PriorityFlowControl"
                         },
                         {
                             "type": "null"
@@ -327,7 +327,7 @@
                 "RDMASupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/RDMASupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/RDMASupport"
                         },
                         {
                             "type": "null"
@@ -340,7 +340,7 @@
                 "RXFlowControl": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/RXFlowControl"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/RXFlowControl"
                         },
                         {
                             "type": "null"
@@ -353,7 +353,7 @@
                 "RemotePHY": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/RemotePHY"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/RemotePHY"
                         },
                         {
                             "type": "null"
@@ -366,7 +366,7 @@
                 "TCPChimneySupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/TCPChimneySupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/TCPChimneySupport"
                         },
                         {
                             "type": "null"
@@ -379,7 +379,7 @@
                 "TXBandwidthControlMaximum": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/TXBandwidthControlMaximum"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/TXBandwidthControlMaximum"
                         },
                         {
                             "type": "null"
@@ -392,7 +392,7 @@
                 "TXBandwidthControlMinimum": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/TXBandwidthControlMinimum"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/TXBandwidthControlMinimum"
                         },
                         {
                             "type": "null"
@@ -405,7 +405,7 @@
                 "TXFlowControl": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/TXFlowControl"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/TXFlowControl"
                         },
                         {
                             "type": "null"
@@ -418,7 +418,7 @@
                 "VEB": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/VEB"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/VEB"
                         },
                         {
                             "type": "null"
@@ -431,7 +431,7 @@
                 "VEBVEPAMultiChannel": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/VEBVEPAMultiChannel"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/VEBVEPAMultiChannel"
                         },
                         {
                             "type": "null"
@@ -444,7 +444,7 @@
                 "VEBVEPASingleChannel": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/VEBVEPASingleChannel"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/VEBVEPASingleChannel"
                         },
                         {
                             "type": "null"
@@ -457,7 +457,7 @@
                 "VFSRIOVSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/VFSRIOVSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/VFSRIOVSupport"
                         },
                         {
                             "type": "null"
@@ -470,7 +470,7 @@
                 "VirtualLinkControl": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/VirtualLinkControl"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/VirtualLinkControl"
                         },
                         {
                             "type": "null"
@@ -483,7 +483,7 @@
                 "WOLSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/WOLSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/WOLSupport"
                         },
                         {
                             "type": "null"
@@ -496,7 +496,7 @@
                 "iSCSIBootSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/iSCSIBootSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/iSCSIBootSupport"
                         },
                         {
                             "type": "null"
@@ -509,7 +509,7 @@
                 "iSCSIOffloadSupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/iSCSIOffloadSupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/iSCSIOffloadSupport"
                         },
                         {
                             "type": "null"
@@ -522,7 +522,7 @@
                 "uEFISupport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/uEFISupport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellInfiniBandCapabilities.json#/definitions/uEFISupport"
                         },
                         {
                             "type": "null"

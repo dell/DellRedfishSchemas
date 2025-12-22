@@ -1,12 +1,12 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOAuthConfig.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOAuthConfig.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "OAuthConfig": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOAuthConfig.v1_0_0.json#/definitions/OAuthConfig"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOAuthConfig.v1_0_0.json#/definitions/OAuthConfig"
                 }
             ],
             "description": "OAuth Authentication configurations for both online and offline modes.",
@@ -15,7 +15,7 @@
         "SubmitTestToken": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOAuthConfig.v1_0_0.json#/definitions/SubmitTestToken"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOAuthConfig.v1_0_0.json#/definitions/SubmitTestToken"
                 }
             ],
             "description": "The SubmitTestToken operation shall test the supplied Token against the OAuth Configurations present in OAuthConfig.",

@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellGPUSensor.v1_2_0.json",
     "$ref": "#/definitions/DellGPUSensor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -38,7 +38,7 @@
                 "BoardPowerSupplyStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.json#/definitions/BoardPowerSupplyStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellGPUSensor.json#/definitions/BoardPowerSupplyStatus"
                         },
                         {
                             "type": "null"
@@ -171,7 +171,7 @@
                 "PowerBrakeStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.json#/definitions/PowerBrakeStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellGPUSensor.json#/definitions/PowerBrakeStatus"
                         },
                         {
                             "type": "null"
@@ -194,7 +194,7 @@
                 "PowerSupplyStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.json#/definitions/PowerSupplyStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellGPUSensor.json#/definitions/PowerSupplyStatus"
                         },
                         {
                             "type": "null"
@@ -227,7 +227,7 @@
                 "ThermalAlertStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensor.json#/definitions/ThermalAlertStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellGPUSensor.json#/definitions/ThermalAlertStatus"
                         },
                         {
                             "type": "null"

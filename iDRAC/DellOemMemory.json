@@ -1,12 +1,12 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemMemory.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemMemory.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellMemory": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemMemory.v1_0_0.json#/definitions/DellMemory"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemMemory.v1_0_0.json#/definitions/DellMemory"
                 }
             ],
             "description": "This is the complex property is for the additional OEM properties related to the Memory.",
@@ -15,7 +15,7 @@
         "DellMemoryLinks": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemMemory.v1_0_0.json#/definitions/DellMemoryLinks"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemMemory.v1_0_0.json#/definitions/DellMemoryLinks"
                 }
             ],
             "description": "This is the complex property is for the additional OEM Links related to the Memory.",

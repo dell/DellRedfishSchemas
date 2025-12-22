@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemPower.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemPower.v1_1_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -41,7 +41,7 @@
                 "PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellEnclosurePowerSupply.json#/definitions/PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellEnclosurePowerSupply.json#/definitions/PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -132,7 +132,7 @@
                 "ActiveInputVoltage": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/ActiveInputVoltage"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupply.json#/definitions/ActiveInputVoltage"
                         },
                         {
                             "type": "null"
@@ -156,7 +156,7 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/OperationalStatus"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupply.json#/definitions/OperationalStatus"
                             },
                             {
                                 "type": "null"
@@ -170,7 +170,7 @@
                 "RequestedState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/RequestedState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupply.json#/definitions/RequestedState"
                         },
                         {
                             "type": "null"
@@ -251,7 +251,7 @@
                 "PMBusMonitoring": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.json#/definitions/PMBusMonitoring"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupplyView.json#/definitions/PMBusMonitoring"
                         },
                         {
                             "type": "null"
@@ -285,7 +285,7 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.json#/definitions/RedTypeOfSet"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupplyView.json#/definitions/RedTypeOfSet"
                             },
                             {
                                 "type": "null"
@@ -299,7 +299,7 @@
                 "RedundancyStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupplyView.json#/definitions/RedundancyStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupplyView.json#/definitions/RedundancyStatus"
                         },
                         {
                             "type": "null"

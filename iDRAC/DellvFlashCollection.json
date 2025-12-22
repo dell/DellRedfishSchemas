@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellvFlashCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellvFlashCollection.json",
     "$ref": "#/definitions/DellvFlashCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -55,7 +55,7 @@
                             "autoExpand": true,
                             "description": "Contains the members of this collection.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellvFlash.json#/definitions/DellvFlash"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellvFlash.json#/definitions/DellvFlash"
                             },
                             "longDescription": "Contains the members of this collection.",
                             "readonly": true,

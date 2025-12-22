@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellFCPortMetrics.v1_1_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellFCPortMetrics.v1_1_1.json",
     "$ref": "#/definitions/DellFCPortMetrics",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -138,7 +138,7 @@
                 "OSDriverState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCPortMetrics.json#/definitions/OSDriverState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellFCPortMetrics.json#/definitions/OSDriverState"
                         },
                         {
                             "type": "null"
@@ -156,7 +156,7 @@
                 "PortStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCPortMetrics.json#/definitions/PortStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellFCPortMetrics.json#/definitions/PortStatus"
                         },
                         {
                             "type": "null"

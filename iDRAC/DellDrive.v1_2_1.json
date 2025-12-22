@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.v1_2_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.v1_2_1.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -48,7 +48,7 @@
                 "DellDriveSMARTAttributes": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDriveSMARTAttributes.json#/definitions/DellDriveSMARTAttributes"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDriveSMARTAttributes.json#/definitions/DellDriveSMARTAttributes"
                         },
                         {
                             "type": "null"
@@ -62,7 +62,7 @@
                 "DellNVMeSMARTAttributes": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNVMeSMARTAttributes.json#/definitions/DellNVMeSMARTAttributes"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellNVMeSMARTAttributes.json#/definitions/DellNVMeSMARTAttributes"
                         },
                         {
                             "type": "null"
@@ -74,7 +74,7 @@
                     "versionAdded": "v1_1_0"
                 },
                 "DellPCIeSSD": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json#/definitions/DellPCIeSSD",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeSSD.json#/definitions/DellPCIeSSD",
                     "autoExpand": true,
                     "description": "A resource representation of DellPCIeSSD.",
                     "longDescription": "A resource representation of DellPCIeSSD.",
@@ -82,7 +82,7 @@
                     "versionAdded": "v1_1_0"
                 },
                 "DellPhysicalDisk": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDisk.json#/definitions/DellPhysicalDisk",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPhysicalDisk.json#/definitions/DellPhysicalDisk",
                     "autoExpand": true,
                     "description": "A resource representation of DellPhysicalDisk.",
                     "longDescription": "A resource representation of DellPhysicalDisk.",
@@ -151,14 +151,14 @@
                     "type": "string"
                 },
                 "IgnoreCertificateWarning": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json#/definitions/IgnoreCertificateWarning",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.json#/definitions/IgnoreCertificateWarning",
                     "description": "Ignore Certificate Warning.",
                     "readonly": true
                 },
                 "IncludeInExport": {
                     "description": "IncludeInExport to select the logs type.",
                     "items": {
-                        "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json#/definitions/LogTypes"
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.json#/definitions/LogTypes"
                     },
                     "longDescription": "IncludeInExport to select the logs type.",
                     "requiredParameter": true,
@@ -185,12 +185,12 @@
                     "type": "string"
                 },
                 "ProxySupport": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json#/definitions/ProxySupport",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.json#/definitions/ProxySupport",
                     "description": "Proxy Support to be Enabled or Disabled.",
                     "readonly": true
                 },
                 "ProxyType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json#/definitions/ProxyType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.json#/definitions/ProxyType",
                     "description": "Type of Proxy HTTP or SOCKS4.",
                     "readonly": true
                 },
@@ -205,7 +205,7 @@
                     "type": "string"
                 },
                 "ShareType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json#/definitions/ShareType",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.json#/definitions/ShareType",
                     "description": "Type of the network share.",
                     "longDescription": "Type of the network share.",
                     "requiredParameter": true
@@ -275,7 +275,7 @@
                 "ComplianceDescriptorType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json#/definitions/ComplianceDescriptorType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.json#/definitions/ComplianceDescriptorType"
                         },
                         {
                             "type": "null"
@@ -319,7 +319,7 @@
                 "ComplianceRelatedStandard": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json#/definitions/ComplianceRelatedStandard"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellDrive.json#/definitions/ComplianceRelatedStandard"
                         },
                         {
                             "type": "null"

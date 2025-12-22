@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.v1_1_0.json",
     "$ref": "#/definitions/DellPSNumericSensor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -76,7 +76,7 @@
                 "EnabledDefault": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/EnabledDefault"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/EnabledDefault"
                         },
                         {
                             "type": "null"
@@ -90,7 +90,7 @@
                 "EnabledState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/EnabledState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/EnabledState"
                         },
                         {
                             "type": "null"
@@ -103,7 +103,7 @@
                 "HealthState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/HealthState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/HealthState"
                         },
                         {
                             "type": "null"
@@ -118,7 +118,7 @@
                     "readonly": true
                 },
                 "Links": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/Links",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/Links",
                     "description": "Contains references to other resources that are related to this resource.",
                     "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
                 },
@@ -151,7 +151,7 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/OperationalStatus"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/OperationalStatus"
                             },
                             {
                                 "type": "null"
@@ -179,7 +179,7 @@
                 "PrimaryStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/PrimaryStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/PrimaryStatus"
                         },
                         {
                             "type": "null"
@@ -193,7 +193,7 @@
                 "RateUnits": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/RateUnits"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/RateUnits"
                         },
                         {
                             "type": "null"
@@ -207,7 +207,7 @@
                 "ReadingUnits": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/BaseUnits"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/BaseUnits"
                         },
                         {
                             "type": "null"
@@ -220,7 +220,7 @@
                 "RequestedState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/RequestedState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/RequestedState"
                         },
                         {
                             "type": "null"
@@ -244,7 +244,7 @@
                 "SensorType": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/SensorType"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/SensorType"
                         },
                         {
                             "type": "null"
@@ -267,7 +267,7 @@
                 "TransitioningToState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json#/definitions/TransitioningToState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensor.json#/definitions/TransitioningToState"
                         },
                         {
                             "type": "null"

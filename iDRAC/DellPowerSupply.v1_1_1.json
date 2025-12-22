@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.v1_1_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupply.v1_1_1.json",
     "$ref": "#/definitions/DellPowerSupply",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -60,7 +60,7 @@
                     ]
                 },
                 "Links": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/Links",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupply.json#/definitions/Links",
                     "description": "Contains references to other resources that are related to this resource.",
                     "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
                 },
@@ -73,7 +73,7 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/OperationalStatus"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupply.json#/definitions/OperationalStatus"
                             },
                             {
                                 "type": "null"
@@ -88,7 +88,7 @@
                 "RequestedState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/RequestedState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPowerSupply.json#/definitions/RequestedState"
                         },
                         {
                             "type": "null"

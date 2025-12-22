@@ -46,7 +46,7 @@
             },
             "properties": {
                 "DellSystem": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystem.json#/definitions/DellSystem",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellSystem.json#/definitions/DellSystem",
                     "autoExpand": true,
                     "description": "A resource representation of DellSystem.",
                     "longDescription": "A resource representation of DellSystem.",
@@ -89,163 +89,163 @@
             },
             "properties": {
                 "DellAcceleratorCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAcceleratorCollection.json#/definitions/DellAcceleratorCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellAcceleratorCollection.json#/definitions/DellAcceleratorCollection",
                     "description": "A reference to a DellAcceleratorCollection resource.",
                     "longDescription": "A reference to a DellAcceleratorCollection resource.",
                     "readonly": true
                 },
                 "DellBIOSService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBIOSService.json#/definitions/DellBIOSService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellBIOSService.json#/definitions/DellBIOSService",
                     "description": "A reference to a DellBIOSService resource.",
                     "longDescription": "A reference to a DellBIOSService resource.",
                     "readonly": true
                 },
                 "DellBootSources": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellBootSources.json#/definitions/DellBootSources",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellBootSources.json#/definitions/DellBootSources",
                     "description": "A reference to a DellBootSources resource.",
                     "longDescription": "A reference to a DellBootSources resource.",
                     "readonly": true
                 },
                 "DellChassisCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellChassisCollection.json#/definitions/DellChassisCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellChassisCollection.json#/definitions/DellChassisCollection",
                     "description": "A reference to a DellChassisCollection resource.",
                     "longDescription": "A reference to a DellChassisCollection resource.",
                     "readonly": true
                 },
                 "DellControllerCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellControllerCollection.json#/definitions/DellControllerCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellControllerCollection.json#/definitions/DellControllerCollection",
                     "description": "A reference to a DellControllerCollection resource.",
                     "longDescription": "A reference to a DellControllerCollection resource.",
                     "readonly": true
                 },
                 "DellGPUSensorCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellGPUSensorCollection.json#/definitions/DellGPUSensorCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellGPUSensorCollection.json#/definitions/DellGPUSensorCollection",
                     "description": "A reference to a DellGPUSensorCollection resource.",
                     "longDescription": "A reference to a DellGPUSensorCollection resource.",
                     "readonly": true
                 },
                 "DellMemoryCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMemoryCollection.json#/definitions/DellMemoryCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellMemoryCollection.json#/definitions/DellMemoryCollection",
                     "description": "A reference to a DellMemoryCollection resource.",
                     "longDescription": "A reference to a DellMemoryCollection resource.",
                     "readonly": true
                 },
                 "DellMetricService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellMetricService.json#/definitions/DellMetricService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellMetricService.json#/definitions/DellMetricService",
                     "description": "A reference to a DellMetricService resource.",
                     "longDescription": "A reference to a DellMetricService resource.",
                     "readonly": true
                 },
                 "DellNumericSensorCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNumericSensorCollection.json#/definitions/DellNumericSensorCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellNumericSensorCollection.json#/definitions/DellNumericSensorCollection",
                     "description": "A reference to a DellNumericSensorCollection resource.",
                     "longDescription": "A reference to a DellNumericSensorCollection resource.",
                     "readonly": true
                 },
                 "DellOSDeploymentService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOSDeploymentService.json#/definitions/DellOSDeploymentService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOSDeploymentService.json#/definitions/DellOSDeploymentService",
                     "description": "A reference to a DellOSDeploymentService resource.",
                     "longDescription": "A reference to a DellOSDeploymentService resource.",
                     "readonly": true
                 },
                 "DellPCIeSSDCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSDCollection.json#/definitions/DellPCIeSSDCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeSSDCollection.json#/definitions/DellPCIeSSDCollection",
                     "description": "A reference to a DellPCIeSSDCollection resource.",
                     "longDescription": "A reference to a DellPCIeSSDCollection resource.",
                     "readonly": true
                 },
                 "DellPCIeSSDExtenderCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSDExtenderCollection.json#/definitions/DellPCIeSSDExtenderCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPCIeSSDExtenderCollection.json#/definitions/DellPCIeSSDExtenderCollection",
                     "description": "A reference to a DellPCIeSSDExtenderCollection resource.",
                     "longDescription": "A reference to a DellPCIeSSDExtenderCollection resource.",
                     "readonly": true
                 },
                 "DellPSNumericSensorCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensorCollection.json#/definitions/DellPSNumericSensorCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPSNumericSensorCollection.json#/definitions/DellPSNumericSensorCollection",
                     "description": "A reference to a DellPSNumericSensorCollection resource.",
                     "longDescription": "A reference to a DellPSNumericSensorCollection resource.",
                     "readonly": true
                 },
                 "DellPhysicalDiskCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPhysicalDiskCollection.json#/definitions/DellPhysicalDiskCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPhysicalDiskCollection.json#/definitions/DellPhysicalDiskCollection",
                     "description": "A reference to a DellPhysicalDiskCollection resource.",
                     "longDescription": "A reference to a DellPhysicalDiskCollection resource.",
                     "readonly": true
                 },
                 "DellPresenceAndStatusSensorCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPresenceAndStatusSensorCollection.json#/definitions/DellPresenceAndStatusSensorCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellPresenceAndStatusSensorCollection.json#/definitions/DellPresenceAndStatusSensorCollection",
                     "description": "A reference to a DellPresenceAndStatusSensorCollection resource.",
                     "longDescription": "A reference to a DellPresenceAndStatusSensorCollection resource.",
                     "readonly": true
                 },
                 "DellProcessorCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellProcessorCollection.json#/definitions/DellProcessorCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellProcessorCollection.json#/definitions/DellProcessorCollection",
                     "description": "A reference to a DellProcessorCollection resource.",
                     "longDescription": "A reference to a DellProcessorCollection resource.",
                     "readonly": true
                 },
                 "DellRaidService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellRaidService.json#/definitions/DellRaidService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellRaidService.json#/definitions/DellRaidService",
                     "description": "A reference to a DellRaidService resource.",
                     "longDescription": "A reference to a DellRaidService resource.",
                     "readonly": true
                 },
                 "DellRollupStatusCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellRollupStatusCollection.json#/definitions/DellRollupStatusCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellRollupStatusCollection.json#/definitions/DellRollupStatusCollection",
                     "description": "A reference to a DellRollupStatusCollection resource.",
                     "longDescription": "A reference to a DellRollupStatusCollection resource.",
                     "readonly": true
                 },
                 "DellSensorCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSensorCollection.json#/definitions/DellSensorCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellSensorCollection.json#/definitions/DellSensorCollection",
                     "description": "A reference to a DellSensorCollection resource.",
                     "longDescription": "A reference to a DellSensorCollection resource.",
                     "readonly": true
                 },
                 "DellSlotCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSlotCollection.json#/definitions/DellSlotCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellSlotCollection.json#/definitions/DellSlotCollection",
                     "description": "A reference to a DellSlotCollection resource.",
                     "longDescription": "A reference to a DellSlotCollection resource.",
                     "readonly": true
                 },
                 "DellSoftwareInstallationService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSoftwareInstallationService.json#/definitions/DellSoftwareInstallationService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellSoftwareInstallationService.json#/definitions/DellSoftwareInstallationService",
                     "description": "A reference to a DellSoftwareInstallationService resource.",
                     "longDescription": "A reference to a DellSoftwareInstallationService resource.",
                     "readonly": true
                 },
                 "DellSwitchConnectionCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitchConnectionCollection.json#/definitions/DellSwitchConnectionCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellSwitchConnectionCollection.json#/definitions/DellSwitchConnectionCollection",
                     "description": "A reference to a DellSwitchConnectionCollection resource.",
                     "longDescription": "A reference to a DellSwitchConnectionCollection resource.",
                     "readonly": true
                 },
                 "DellSwitchConnectionService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSwitchConnectionService.json#/definitions/DellSwitchConnectionService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellSwitchConnectionService.json#/definitions/DellSwitchConnectionService",
                     "description": "A reference to a DellSwitchConnectionService resource.",
                     "longDescription": "A reference to a DellSwitchConnectionService resource.",
                     "readonly": true
                 },
                 "DellSystemManagementService": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellSystemManagementService.json#/definitions/DellSystemManagementService",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellSystemManagementService.json#/definitions/DellSystemManagementService",
                     "description": "A reference to a DellSystemManagementService resource.",
                     "longDescription": "A reference to a DellSystemManagementService resource.",
                     "readonly": true
                 },
                 "DellVideoCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideoCollection.json#/definitions/DellVideoCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVideoCollection.json#/definitions/DellVideoCollection",
                     "description": "A reference to a DellVideoCollection resource.",
                     "longDescription": "A reference to a DellVideoCollection resource.",
                     "readonly": true
                 },
                 "DellVideoNetworkCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVideoNetworkCollection.json#/definitions/DellVideoNetworkCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVideoNetworkCollection.json#/definitions/DellVideoNetworkCollection",
                     "description": "A reference to a DellVideoNetworkCollection resource.",
                     "longDescription": "A reference to a DellVideoNetworkCollection resource.",
                     "readonly": true
                 },
                 "DellVirtualDiskCollection": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDiskCollection.json#/definitions/DellVirtualDiskCollection",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellVirtualDiskCollection.json#/definitions/DellVirtualDiskCollection",
                     "description": "A reference to a DellVirtualDiskCollection resource.",
                     "longDescription": "A reference to a DellVirtualDiskCollection resource.",
                     "readonly": true

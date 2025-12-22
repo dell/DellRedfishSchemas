@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.v1_0_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.v1_0_1.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -23,7 +23,7 @@
             },
             "properties": {
                 "DellController": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/DellController",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/DellController",
                     "autoExpand": true,
                     "description": "A resource representation of DellController.",
                     "longDescription": "A resource representation of DellController.",
@@ -64,7 +64,7 @@
                 "AlarmState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/AlarmState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/AlarmState"
                         },
                         {
                             "type": "null"
@@ -77,7 +77,7 @@
                 "AutoConfigBehavior": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/AutoConfigBehavior"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/AutoConfigBehavior"
                         },
                         {
                             "type": "null"
@@ -101,7 +101,7 @@
                 "BatteryLearnMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/BatteryLearnMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/BatteryLearnMode"
                         },
                         {
                             "type": "null"
@@ -133,7 +133,7 @@
                 "CachecadeCapability": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/CachecadeCapability"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/CachecadeCapability"
                         },
                         {
                             "type": "null"
@@ -146,7 +146,7 @@
                 "CheckConsistencyMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/CheckConsistencyMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/CheckConsistencyMode"
                         },
                         {
                             "type": "null"
@@ -168,7 +168,7 @@
                 "ControllerBootMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/ControllerBootMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/ControllerBootMode"
                         },
                         {
                             "type": "null"
@@ -190,7 +190,7 @@
                 "ControllerMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/ControllerMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/ControllerMode"
                         },
                         {
                             "type": "null"
@@ -203,7 +203,7 @@
                 "CopybackMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/CopybackMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/CopybackMode"
                         },
                         {
                             "type": "null"
@@ -216,7 +216,7 @@
                 "CurrentControllerMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/CurrentControllerMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/CurrentControllerMode"
                         },
                         {
                             "type": "null"
@@ -247,7 +247,7 @@
                 "DeviceCardSlotLength": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/DeviceCardSlotLength"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/DeviceCardSlotLength"
                         },
                         {
                             "type": "null"
@@ -278,7 +278,7 @@
                 "EncryptionCapability": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/EncryptionCapability"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/EncryptionCapability"
                         },
                         {
                             "type": "null"
@@ -291,7 +291,7 @@
                 "EncryptionMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/EncryptionMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/EncryptionMode"
                         },
                         {
                             "type": "null"
@@ -304,7 +304,7 @@
                 "EnhancedAutoImportForeignConfigurationMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/EnhancedAutoImportForeignConfigurationMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/EnhancedAutoImportForeignConfigurationMode"
                         },
                         {
                             "type": "null"
@@ -346,7 +346,7 @@
                 "LoadBalanceMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/LoadBalanceMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/LoadBalanceMode"
                         },
                         {
                             "type": "null"
@@ -422,7 +422,7 @@
                 "PatrolReadMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/PatrolReadMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/PatrolReadMode"
                         },
                         {
                             "type": "null"
@@ -446,7 +446,7 @@
                 "PatrolReadState": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/PatrolReadState"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/PatrolReadState"
                         },
                         {
                             "type": "null"
@@ -459,7 +459,7 @@
                 "PatrolReadUnconfiguredAreaMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/PatrolReadUnconfiguredAreaMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/PatrolReadUnconfiguredAreaMode"
                         },
                         {
                             "type": "null"
@@ -472,7 +472,7 @@
                 "PersistentHotspare": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/PersistentHotspare"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/PersistentHotspare"
                         },
                         {
                             "type": "null"
@@ -485,7 +485,7 @@
                 "PersistentHotspareMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/PersistentHotspareMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/PersistentHotspareMode"
                         },
                         {
                             "type": "null"
@@ -498,7 +498,7 @@
                 "RAIDMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/RAIDMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/RAIDMode"
                         },
                         {
                             "type": "null"
@@ -511,7 +511,7 @@
                 "RealtimeCapability": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/RealtimeCapability"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/RealtimeCapability"
                         },
                         {
                             "type": "null"
@@ -535,7 +535,7 @@
                 "RollupStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/RollupStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/RollupStatus"
                         },
                         {
                             "type": "null"
@@ -557,7 +557,7 @@
                 "SecurityStatus": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/SecurityStatus"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/SecurityStatus"
                         },
                         {
                             "type": "null"
@@ -570,7 +570,7 @@
                 "SharedSlotAssignmentAllowed": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/SharedSlotAssignmentAllowed"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/SharedSlotAssignmentAllowed"
                         },
                         {
                             "type": "null"
@@ -583,7 +583,7 @@
                 "SlicedVDCapability": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/SlicedVDCapability"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/SlicedVDCapability"
                         },
                         {
                             "type": "null"
@@ -605,7 +605,7 @@
                 "SupportControllerBootMode": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/SupportControllerBootMode"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/SupportControllerBootMode"
                         },
                         {
                             "type": "null"
@@ -618,7 +618,7 @@
                 "SupportEnhancedAutoForeignImport": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/SupportEnhancedAutoForeignImport"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/SupportEnhancedAutoForeignImport"
                         },
                         {
                             "type": "null"
@@ -631,7 +631,7 @@
                 "SupportRAID10UnevenSpans": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/SupportRAID10UnevenSpans"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/SupportRAID10UnevenSpans"
                         },
                         {
                             "type": "null"
@@ -646,7 +646,7 @@
                     "items": {
                         "anyOf": [
                             {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorageController.json#/definitions/SupportedInitializationTypes"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellOemStorageController.json#/definitions/SupportedInitializationTypes"
                             },
                             {
                                 "type": "null"
@@ -660,7 +660,7 @@
                 "SupportsLKMtoSEKMTransition": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/SupportsLKMtoSEKMTransition"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/SupportsLKMtoSEKMTransition"
                         },
                         {
                             "type": "null"
@@ -673,7 +673,7 @@
                 "T10PICapability": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellController.json#/definitions/T10PICapability"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/DellController.json#/definitions/T10PICapability"
                         },
                         {
                             "type": "null"
