@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBootSources.json",
     "$ref": "#/definitions/DellBootSources",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellBootSources": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBootSources.v1_1_0.json#/definitions/DellBootSources"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellBootSources.v1_2_0.json#/definitions/DellBootSources"
                 }
             ],
             "deletable": false,

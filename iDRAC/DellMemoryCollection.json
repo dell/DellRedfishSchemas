@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellMemoryCollection.json",
     "$ref": "#/definitions/DellMemoryCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellMemoryCollection": {
             "anyOf": [
