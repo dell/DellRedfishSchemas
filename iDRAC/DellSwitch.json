@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DellSwitch.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DebugType": {
             "enum": [
@@ -17,34 +17,6 @@
                 "TraceSeverity": "TraceSeverity"
             },
             "type": "string"
-        },
-        "GetLaneErrorInjectionInfoResponse": {
-            "additionalProperties": false,
-            "description": "The response body for the GetLaneErrorInjectionInfo action.",
-            "longDescription": "This type shall contain the properties found in the response body for the GetLaneErrorInjectionInfo action.",
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
-                    "description": "This property shall specify a valid odata or Redfish property.",
-                    "type": [
-                        "array",
-                        "boolean",
-                        "integer",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ]
-                }
-            },
-            "properties": {
-                "InjectionStatus": {
-                    "description": "This property states if error injection is running or not.",
-                    "longDescription": "This property states if error injection is running or not.",
-                    "type": "string"
-                }
-            },
-            "type": "object",
-            "versionAdded": "v1_1_0"
         },
         "GetTagSBTimeoutResponse": {
             "additionalProperties": false,

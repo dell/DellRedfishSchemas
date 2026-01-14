@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DelliDRACCardService.json",
     "$ref": "#/definitions/DelliDRACCardService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright (C) 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright (C) 2014-2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Algorithm": {
             "enum": [
@@ -16,12 +16,8 @@
             },
             "type": "string"
         },
-        "CertificateType": {
+        "CertType": {
             "enum": [
-                "CA",
-                "CSC",
-                "ClientTrustCertificate",
-                "CustomCertificate",
                 "IEEE8021xCSC",
                 "IEEE8021xClient",
                 "KMS_SERVER_CA",
@@ -35,13 +31,9 @@
                 "SMARTCARD_USER_CERT",
                 "DCM_DA_CERT1",
                 "DCM_DA_CERT2",
-                "Server"
+                "SCV_CERT"
             ],
             "enumDescriptions": {
-                "CA": "CA",
-                "CSC": "CSC",
-                "ClientTrustCertificate": "Client Trust Certificate",
-                "CustomCertificate": "Custom Certificate",
                 "DCM_DA_CERT1": "DCM_DA_CERT1",
                 "DCM_DA_CERT2": "DCM_DA_CERT2",
                 "IEEE8021xCSC": "Base64 encoded PKCS12 IEEE 8021.x Custom Signing Certificate",
@@ -50,15 +42,14 @@
                 "RSA_CA_CERT": "RSA_CA_CERT",
                 "RSYSLOG_SERVER_CA": "RSYSLOG_SERVER_CA",
                 "SCEP_CA_CERT": "SCEP_CA_CERT",
+                "SCV_CERT": "SCV_CERT",
                 "SEKM_CUSTOM_CERT": "SEKM_CUSTOM_CERT",
                 "SEKM_CUSTOM_PEM_CERT": "SEKM_CUSTOM_PEM_CERT",
                 "SEKM_SSL_CERT": "SEKM_SSL_CERT",
                 "SMARTCARD_CA_CERT": "SMARTCARD_CA_CERT",
-                "SMARTCARD_USER_CERT": "SMARTCARD_USER_CERT",
-                "Server": "Server"
+                "SMARTCARD_USER_CERT": "SMARTCARD_USER_CERT"
             },
             "enumVersionAdded": {
-                "CustomCertificate": "v1_5_0",
                 "DCM_DA_CERT1": "v1_10_0",
                 "DCM_DA_CERT2": "v1_10_0",
                 "IEEE8021xCSC": "v1_6_0",
@@ -105,7 +96,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DelliDRACCardService.v1_10_0.json#/definitions/DelliDRACCardService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/iDRAC9/iDRAC/DelliDRACCardService.v1_11_0.json#/definitions/DelliDRACCardService"
                 }
             ],
             "deletable": false,
