@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemAssembly.v1_1_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemAssembly.v1_1_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -33,7 +33,7 @@
                     "versionAdded": "v1_1_0"
                 },
                 "DellAssembly": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAssembly.json#/definitions/DellAssembly",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAssembly.json#/definitions/DellAssembly",
                     "autoExpand": true,
                     "description": "A resource representation of DellAssembly.",
                     "longDescription": "A resource representation of DellAssembly.",
@@ -42,7 +42,7 @@
                 "DellFRUAssembly": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFRUAssembly.json#/definitions/DellFRUAssemblyInfo"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFRUAssembly.json#/definitions/DellFRUAssemblyInfo"
                         },
                         {
                             "type": "null"

@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellAttributeRegistry.v1_2_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAttributeRegistry.v1_2_0.json",
     "$ref": "#/definitions/DellAttributeRegistry",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",

@@ -1,9 +1,60 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json",
     "$ref": "#/definitions/DellVirtualDisk",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
+        "AllowedOperations": {
+            "additionalProperties": false,
+            "description": "The allowed operations for the virtual disk.",
+            "longDescription": "This type shall contain the allowed operations that can be performed on the virtual disk.",
+            "patternProperties": {
+                "[A-Za-z0-9]+": {
+                    "type": "boolean"
+                },
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {},
+            "type": "object"
+        },
+        "AvailableCachePolicies": {
+            "enum": [
+                "WriteThrough",
+                "WriteBack",
+                "WriteBackForce",
+                "NoReadAhead",
+                "ReadAhead",
+                "AdaptiveReadAhead"
+            ],
+            "enumDescriptions": {
+                "AdaptiveReadAhead": "The adaptive read ahead cache policy is available for the virtual disk.",
+                "NoReadAhead": "The no read ahead cache policy is available for the virtual disk.",
+                "ReadAhead": "The read ahead cache policy is available for the virtual disk.",
+                "WriteBack": "The write back cache policy is available for the virtual disk.",
+                "WriteBackForce": "The force write back cache policy is available for the virtual disk.",
+                "WriteThrough": "The write through cache policy is available for the virtual disk."
+            },
+            "enumLongDescriptions": {
+                "AdaptiveReadAhead": "The adaptive read ahead cache policy is available for the virtual disk.",
+                "NoReadAhead": "The no read ahead cache policy is available for the virtual disk.",
+                "ReadAhead": "The read ahead cache policy is available for the virtual disk.",
+                "WriteBack": "The write back cache policy is available for the virtual disk.",
+                "WriteBackForce": "The force write back cache policy is available for the virtual disk.",
+                "WriteThrough": "The write through cache policy is available for the virtual disk."
+            },
+            "type": "string"
+        },
         "BusProtocol": {
             "enum": [
                 "FIBRE",
@@ -61,7 +112,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellVirtualDisk.v1_2_0.json#/definitions/DellVirtualDisk"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.v1_3_0.json#/definitions/DellVirtualDisk"
                 }
             ],
             "deletable": false,
@@ -158,6 +209,147 @@
             },
             "type": "string"
         },
+        "OperationalStates": {
+            "enum": [
+                "BackgroundInitialization",
+                "CheckConsistency",
+                "Initialize",
+                "Reconstruct",
+                "Rebuild",
+                "Clear",
+                "Copyback",
+                "Learn",
+                "TTYExport"
+            ],
+            "enumDescriptions": {
+                "BackgroundInitialization": "A background initialization operation is in progress.",
+                "CheckConsistency": "A check consistency operation is in progress.",
+                "Clear": "A data erase operation is in progress on a physical disk.",
+                "Copyback": "A copyback operation is in progress from a hot spare to a replacement physical disk.",
+                "Initialize": "An initialization operation is in progress.",
+                "Learn": "A battery reconditioning cycle is in progress.",
+                "Rebuild": "A rebuild operation is in progress on a failed disk.",
+                "Reconstruct": "A virtual disk reconstruction operation is in progress.",
+                "TTYExport": "A log export operation is in progress."
+            },
+            "enumLongDescriptions": {
+                "BackgroundInitialization": "A background initialization operation is in progress.",
+                "CheckConsistency": "A check consistency operation is in progress.",
+                "Clear": "A data erase operation is in progress on a physical disk.",
+                "Copyback": "A copyback operation is in progress from a hot spare to a replacement physical disk.",
+                "Initialize": "An initialization operation is in progress.",
+                "Learn": "A battery reconditioning cycle is in progress.",
+                "Rebuild": "A rebuild operation is in progress on a failed disk.",
+                "Reconstruct": "A virtual disk reconstruction operation is in progress.",
+                "TTYExport": "A log export operation is in progress."
+            },
+            "type": "string"
+        },
+        "PendingChanges": {
+            "enum": [
+                "RAIDLevel",
+                "RAIDLevelQualifier",
+                "Size",
+                "StripeSize",
+                "CachePolicy",
+                "ReadPolicy",
+                "WritePolicy",
+                "AccessPolicy",
+                "DiskCachePolicy",
+                "SpanRedundancyLevel",
+                "Operations",
+                "Name",
+                "T10PIStatus",
+                "UnmapState"
+            ],
+            "enumDescriptions": {
+                "AccessPolicy": "A change to the access policy is pending.",
+                "CachePolicy": "A change to the cache policy is pending.",
+                "DiskCachePolicy": "A change to the disk cache policy is pending.",
+                "Name": "A change to the virtual disk name is pending.",
+                "Operations": "Virtual disk operations are pending.",
+                "RAIDLevel": "A change to the RAID level is pending.",
+                "RAIDLevelQualifier": "A change to the RAID level qualifier is pending.",
+                "ReadPolicy": "A change to the read policy is pending.",
+                "Size": "A change to the virtual disk size is pending.",
+                "SpanRedundancyLevel": "A change to the span redundancy level is pending.",
+                "StripeSize": "A change to the stripe size is pending.",
+                "T10PIStatus": "A change to the T10 Protection Information status is pending.",
+                "UnmapState": "A change to the virtual disk unmap state is pending.",
+                "WritePolicy": "A change to the write policy is pending."
+            },
+            "enumLongDescriptions": {
+                "AccessPolicy": "A change to the access policy is pending.",
+                "CachePolicy": "A change to the cache policy is pending.",
+                "DiskCachePolicy": "A change to the disk cache policy is pending.",
+                "Name": "A change to the virtual disk name is pending.",
+                "Operations": "Virtual disk operations are pending.",
+                "RAIDLevel": "A change to the RAID level is pending.",
+                "RAIDLevelQualifier": "A change to the RAID level qualifier is pending.",
+                "ReadPolicy": "A change to the read policy is pending.",
+                "Size": "A change to the virtual disk size is pending.",
+                "SpanRedundancyLevel": "A change to the span redundancy level is pending.",
+                "StripeSize": "A change to the stripe size is pending.",
+                "T10PIStatus": "A change to the T10 Protection Information status is pending.",
+                "UnmapState": "A change to the virtual disk unmap state is pending.",
+                "WritePolicy": "A change to the write policy is pending."
+            },
+            "type": "string"
+        },
+        "PendingConfigurationStatus": {
+            "enum": [
+                "Current",
+                "Pending",
+                "CurrentPendingDelete",
+                "PendingCreate"
+            ],
+            "enumDescriptions": {
+                "Current": "The virtual disk configuration is current with no pending changes.",
+                "CurrentPendingDelete": "The virtual disk is current but has a pending delete operation.",
+                "Pending": "Configuration changes are pending for the virtual disk.",
+                "PendingCreate": "The virtual disk has a pending create operation."
+            },
+            "enumLongDescriptions": {
+                "Current": "The virtual disk configuration is current with no pending changes.",
+                "CurrentPendingDelete": "The virtual disk is current but has a pending delete operation.",
+                "Pending": "Configuration changes are pending for the virtual disk.",
+                "PendingCreate": "The virtual disk has a pending create operation."
+            },
+            "type": "string"
+        },
+        "PendingOperations": {
+            "enum": [
+                "None",
+                "FastInitialize",
+                "FullInitialize",
+                "CheckConsistency",
+                "CancelCheckConsistency",
+                "AbortInitialize",
+                "EncryptVirtualDisk",
+                "CancelBackgroundInitialization"
+            ],
+            "enumDescriptions": {
+                "AbortInitialize": "An abort initialization operation is pending.",
+                "CancelBackgroundInitialization": "A cancel background initialization operation is pending.",
+                "CancelCheckConsistency": "A cancel check consistency operation is pending.",
+                "CheckConsistency": "A check consistency operation is pending.",
+                "EncryptVirtualDisk": "A virtual disk encryption operation is pending.",
+                "FastInitialize": "A fast initialization operation is pending.",
+                "FullInitialize": "A full initialization operation is pending.",
+                "None": "No operations are pending."
+            },
+            "enumLongDescriptions": {
+                "AbortInitialize": "An abort initialization operation is pending.",
+                "CancelBackgroundInitialization": "A cancel background initialization operation is pending.",
+                "CancelCheckConsistency": "A cancel check consistency operation is pending.",
+                "CheckConsistency": "A check consistency operation is pending.",
+                "EncryptVirtualDisk": "A virtual disk encryption operation is pending.",
+                "FastInitialize": "A fast initialization operation is pending.",
+                "FullInitialize": "A full initialization operation is pending.",
+                "None": "No operations are pending."
+            },
+            "type": "string"
+        },
         "PrimaryStatus": {
             "enum": [
                 "Degraded",
@@ -246,6 +438,63 @@
                 "NoReadAhead": "No Read Ahead",
                 "ReadAhead": "Read Ahead",
                 "Unknown": "Unknown"
+            },
+            "type": "string"
+        },
+        "StorageCapabilities": {
+            "enum": [
+                "FullDiskEncryption",
+                "DataIntegrityField",
+                "SolidStateDrive",
+                "HardDiskDrive",
+                "SATAProtocol",
+                "SASProtocol",
+                "BadBlocksPresent",
+                "SecondaryCache",
+                "NVMeProtocol",
+                "RealTimePartialInventory",
+                "EPDPassthrough",
+                "UnmapCapable",
+                "BlinkUnblinkNotCapable",
+                "OnlineCapacityExpansionWithDisk",
+                "OnlineCapacityExpansionWithinArray",
+                "OnlineCapacityExpansionValid"
+            ],
+            "enumDescriptions": {
+                "BadBlocksPresent": "The virtual disk has bad blocks present.",
+                "BlinkUnblinkNotCapable": "The virtual disk does not support blink and unblink operations.",
+                "DataIntegrityField": "The virtual disk supports data integrity field protection.",
+                "EPDPassthrough": "The virtual disk supports Emergency Power Down passthrough.",
+                "FullDiskEncryption": "The virtual disk supports full disk encryption.",
+                "HardDiskDrive": "The virtual disk is composed of hard disk drives.",
+                "NVMeProtocol": "The virtual disk uses the NVMe protocol.",
+                "OnlineCapacityExpansionValid": "The online capacity expansion capability fields are valid.",
+                "OnlineCapacityExpansionWithDisk": "The virtual disk supports online capacity expansion with additional disk addition.",
+                "OnlineCapacityExpansionWithinArray": "The virtual disk supports online capacity expansion within the existing array.",
+                "RealTimePartialInventory": "The virtual disk supports real-time partial inventory.",
+                "SASProtocol": "The virtual disk uses the SAS protocol.",
+                "SATAProtocol": "The virtual disk uses the SATA protocol.",
+                "SecondaryCache": "The virtual disk supports secondary cache.",
+                "SolidStateDrive": "The virtual disk is composed of solid state drives.",
+                "UnmapCapable": "The virtual disk supports unmap operations."
+            },
+            "enumLongDescriptions": {
+                "BadBlocksPresent": "The virtual disk has bad blocks present.",
+                "BlinkUnblinkNotCapable": "The virtual disk does not support blink and unblink operations.",
+                "DataIntegrityField": "The virtual disk supports data integrity field protection.",
+                "EPDPassthrough": "The virtual disk supports Emergency Power Down passthrough.",
+                "FullDiskEncryption": "The virtual disk supports full disk encryption.",
+                "HardDiskDrive": "The virtual disk is composed of hard disk drives.",
+                "NVMeProtocol": "The virtual disk uses the NVMe protocol.",
+                "OnlineCapacityExpansionValid": "The online capacity expansion capability fields are valid.",
+                "OnlineCapacityExpansionWithDisk": "The virtual disk supports online capacity expansion with additional disk addition.",
+                "OnlineCapacityExpansionWithinArray": "The virtual disk supports online capacity expansion within the existing array.",
+                "RealTimePartialInventory": "The virtual disk supports real-time partial inventory.",
+                "SASProtocol": "The virtual disk uses the SAS protocol.",
+                "SATAProtocol": "The virtual disk uses the SATA protocol.",
+                "SecondaryCache": "The virtual disk supports secondary cache.",
+                "SolidStateDrive": "The virtual disk is composed of solid state drives.",
+                "UnmapCapable": "The virtual disk supports unmap operations."
             },
             "type": "string"
         },
@@ -344,6 +593,25 @@
             "enumVersionAdded": {
                 "Disabled": "v1_1_0",
                 "Enabled": "v1_1_0"
+            },
+            "type": "string"
+        },
+        "VirtualDiskEpdPassthrough": {
+            "enum": [
+                "Enabled",
+                "Disabled"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled"
+            },
+            "enumVersionAdded": {
+                "Disabled": "v1_4_0",
+                "Enabled": "v1_4_0"
             },
             "type": "string"
         },

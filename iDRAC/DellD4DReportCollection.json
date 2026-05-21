@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellD4DReportCollection.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACD4DReportCollection.json",
     "$ref": "#/definitions/DellD4DReportCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -54,7 +54,7 @@
                         "Members": {
                             "description": "The members of this collection.",
                             "items": {
-                                "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellD4DReport.json#/definitions/DellD4DReport"
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACD4DReport.json#/definitions/DellD4DReport"
                             },
                             "longDescription": "This property shall contain an array of links to the members of this collection.",
                             "readonly": true,

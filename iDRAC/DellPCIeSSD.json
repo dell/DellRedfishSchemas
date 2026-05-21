@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.json",
     "$ref": "#/definitions/DellPCIeSSD",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -51,6 +51,29 @@
             },
             "type": "string"
         },
+        "Certified": {
+            "enum": [
+                "No",
+                "NotApplicable",
+                "Yes"
+            ],
+            "enumDescriptions": {
+                "No": "No",
+                "NotApplicable": "NotApplicable",
+                "Yes": "Yes"
+            },
+            "enumLongDescriptions": {
+                "No": "No",
+                "NotApplicable": "NotApplicable",
+                "Yes": "Yes"
+            },
+            "enumVersionAdded": {
+                "No": "v1_11_0",
+                "NotApplicable": "v1_11_0",
+                "Yes": "v1_11_0"
+            },
+            "type": "string"
+        },
         "CryptographicEraseCapable": {
             "enum": [
                 "Capable",
@@ -76,7 +99,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPCIeSSD.v1_10_0.json#/definitions/DellPCIeSSD"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSD.v1_11_0.json#/definitions/DellPCIeSSD"
                 }
             ],
             "deletable": false,
@@ -308,6 +331,56 @@
             },
             "type": "string"
         },
+        "NonRAIDDiskCachePolicy": {
+            "enum": [
+                "Default",
+                "Disabled",
+                "Enabled",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Default": "Default",
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Default": "Default",
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "Default": "v1_11_0",
+                "Disabled": "v1_11_0",
+                "Enabled": "v1_11_0",
+                "Unknown": "v1_11_0"
+            },
+            "type": "string"
+        },
+        "PowerStatus": {
+            "enum": [
+                "On",
+                "Spun-Down",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "On": "On",
+                "Spun-Down": "Spun-Down",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "On": "On",
+                "Spun-Down": "Spun-Down",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "On": "v1_11_0",
+                "Spun-Down": "v1_11_0",
+                "Unknown": "v1_11_0"
+            },
+            "type": "string"
+        },
         "RAIDType": {
             "enum": [
                 "HardwareRAID",
@@ -406,6 +479,25 @@
                 "CryptographicErasePD": "v1_1_0",
                 "NotSupported": "v1_1_0",
                 "OverwritePD": "v1_1_0"
+            },
+            "type": "string"
+        },
+        "T10PICapability": {
+            "enum": [
+                "NotSupported",
+                "Supported"
+            ],
+            "enumDescriptions": {
+                "NotSupported": "Not supported",
+                "Supported": "Supported"
+            },
+            "enumLongDescriptions": {
+                "NotSupported": "Not supported",
+                "Supported": "Supported"
+            },
+            "enumVersionAdded": {
+                "NotSupported": "v1_11_0",
+                "Supported": "v1_11_0"
             },
             "type": "string"
         }

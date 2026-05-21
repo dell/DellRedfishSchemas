@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellNetworkDeviceFunction.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNetworkDeviceFunction.v1_0_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -25,7 +25,7 @@
                 "DellFC": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFC.json#/definitions/DellFC"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFC.json#/definitions/DellFC"
                         },
                         {
                             "type": "null"
@@ -39,7 +39,7 @@
                 "DellFCCapabilities": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCCapabilities.json#/definitions/DellFCCapabilities"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCCapabilities.json#/definitions/DellFCCapabilities"
                         },
                         {
                             "type": "null"
@@ -53,7 +53,7 @@
                 "DellFCPortMetrics": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellFCPortMetrics.json#/definitions/DellFCPortMetrics"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACFCPortMetrics.json#/definitions/DellFCPortMetrics"
                         },
                         {
                             "type": "null"
@@ -67,7 +67,7 @@
                 "DellInfiniBand": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBand.json#/definitions/DellInfiniBand"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACInfiniBand.json#/definitions/DellInfiniBand"
                         },
                         {
                             "type": "null"
@@ -81,7 +81,7 @@
                 "DellInfiniBandCapabilities": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandCapabilities.json#/definitions/DellInfiniBandCapabilities"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACInfiniBandCapabilities.json#/definitions/DellInfiniBandCapabilities"
                         },
                         {
                             "type": "null"
@@ -95,7 +95,7 @@
                 "DellInfiniBandPortMetrics": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellInfiniBandPortMetrics.json#/definitions/DellInfiniBandPortMetrics"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACInfiniBandPortMetrics.json#/definitions/DellInfiniBandPortMetrics"
                         },
                         {
                             "type": "null"
@@ -109,7 +109,7 @@
                 "DellNIC": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNIC.json#/definitions/DellNIC"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNIC.json#/definitions/DellNIC"
                         },
                         {
                             "type": "null"
@@ -123,7 +123,7 @@
                 "DellNICCapabilities": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICCapabilities.json#/definitions/DellNICCapabilities"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICCapabilities.json#/definitions/DellNICCapabilities"
                         },
                         {
                             "type": "null"
@@ -137,7 +137,7 @@
                 "DellNICPortMetrics": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellNICPortMetrics.json#/definitions/DellNICPortMetrics"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACNICPortMetrics.json#/definitions/DellNICPortMetrics"
                         },
                         {
                             "type": "null"
@@ -185,7 +185,7 @@
                 "DellNetworkAttributes": {
                     "anyOf": [
                         {
-                            "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellAttributes.json#/definitions/DellAttributes"
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACAttributes.json#/definitions/DellAttributes"
                         },
                         {
                             "type": "null"

@@ -1,0 +1,231 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACComponentIntegrity.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#ComponentIntegrity.TPMGetSignedTCGEventLog": {
+                    "$ref": "#/definitions/TPMGetSignedTCGEventLog"
+                }
+            },
+            "type": "object"
+        },
+        "SPDM": {
+            "additionalProperties": false,
+            "description": "An Oem extension to represent SPDM related properties.",
+            "longDescription": "An Oem extension to represent SPDM related properties.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "SPDM": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/SPDMObject"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Oem properties for representing SPDM properties.",
+                    "longDescription": "Oem properties for representing SPDM properties."
+                }
+            },
+            "type": "object"
+        },
+        "SPDMObject": {
+            "additionalProperties": false,
+            "description": "An Oem extension to represent SPDM related properties.",
+            "longDescription": "An Oem extension to represent SPDM related properties.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ChallengeAuthResponseSupport": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Support"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent support for challenge auth response.",
+                    "longDescription": "The property shall represent support for challenge auth response.",
+                    "readonly": true
+                },
+                "DeviceChallengeStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Status"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the device challenge status.",
+                    "longDescription": "The property shall represent the device challenge status.",
+                    "readonly": true
+                },
+                "DigestAndCertificateSupport": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Support"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the support for digest.",
+                    "longDescription": "The property shall represent the support for digest.",
+                    "readonly": true
+                },
+                "EncryptionSupport": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Support"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the support for encryption.",
+                    "longDescription": "The property shall represent the support for encryption.",
+                    "readonly": true
+                },
+                "MeasurementsSupport": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Support"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the support for measurement.",
+                    "longDescription": "The property shall represent the support for measurement.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "Status": {
+            "enum": [
+                "Failed",
+                "Success"
+            ],
+            "enumDescriptions": {
+                "Failed": "Failed",
+                "Success": "Success"
+            },
+            "enumLongDescriptions": {
+                "Failed": "Failed",
+                "Success": "Success"
+            },
+            "type": "string"
+        },
+        "Support": {
+            "enum": [
+                "Disabled",
+                "Enabled"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled"
+            },
+            "type": "string"
+        },
+        "TPMGetSignedTCGEventLog": {
+            "additionalProperties": false,
+            "description": "This action retrieves a signed TCG event log from the TPM for the specified reboot index.",
+            "longDescription": "This action shall retrieve a signed TCG event log from the TPM for the specified reboot index. On success, a TaskMonitor URI is returned to track the progress of the operation.",
+            "parameters": {
+                "Nonce": {
+                    "description": "A hex-encoded nonce string used to sign the TCG event log request.",
+                    "longDescription": "This parameter shall contain a hex-encoded nonce string used to sign the TCG event log request. The value should be unique.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "RebootIndex": {
+                    "description": "The reboot index for which to retrieve the TCG event log. Valid range is 0 to 3.",
+                    "longDescription": "This parameter shall contain the reboot index for which to retrieve the TCG event log. The value must be within the range 0 to 3 inclusive.",
+                    "maximum": 3,
+                    "minimum": 0,
+                    "requiredParameter": true,
+                    "type": "integer"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_1_0"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellComponentIntegrity.v1_1_0"
+}

@@ -1,0 +1,556 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.v1_3_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "ChassisManagerConfigType": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ChassisID": {
+                    "description": "The property used to identify different chassis configurations within a system.",
+                    "longDescription": "The property used to identify different chassis configurations within a system,        ensuring proper configuration and management",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                },
+                "FTREnabled": {
+                    "description": "This property enables or disables the FaultTolerantRedundancy setting.",
+                    "longDescription": "This property enables or disables the FaultTolerantRedundancy setting.  It takes effect immediately when set, without requiring a Chassis Manager (CM) reset.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                },
+                "FaultLEDStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/LedStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the Chassis Fault LED .",
+                    "longDescription": "The property shall represent the Chassis Fault LED.",
+                    "readonly": false,
+                    "versionAdded": "v1_2_0"
+                },
+                "IdentificationLEDStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/LedStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the Chassis Identification LED.",
+                    "longDescription": "The property shall represent the Chassis Identification LED.",
+                    "readonly": false,
+                    "versionAdded": "v1_2_0"
+                },
+                "LEDSupportStatus": {
+                    "description": "The LED Support on Chassis Indicates the support status of LEDs on the chassis.",
+                    "longDescription": "The LED Support on Chassis property indicates whether certain LEDs are supported and controlled by the System Controller (SC)",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                },
+                "RackID": {
+                    "description": "The property used to identify different racks within a system.",
+                    "longDescription": "The property help in managing and identifying racks within a system, ensuring proper configuration and management.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                },
+                "ServiceTag": {
+                    "description": "The property shall represent the service tag of the chassis.",
+                    "longDescription": "The property shall represent the service tag of the chassis.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                },
+                "SledConfiguration": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/SledConfigurationType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property SledConfig used to identify the physical configuration of sleds in a chassis.",
+                    "longDescription": "These configurations help in managing and identifying sleds within a chassis, ensuring proper thermal and physical management",
+                    "readonly": true,
+                    "versionAdded": "v1_2_0"
+                },
+                "SledID": {
+                    "description": "The property The SledID value used to identify different sled configurations within a chassis.",
+                    "longDescription": "The property The SledID value used to identify different sled configurations within a chassis.       These IDs help in managing and identifying sleds within a chassis, ensuring proper configuration and management",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_2_0"
+                }
+            },
+            "type": "object"
+        },
+        "DellChassisEnclosureInfo": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "AssetName": {
+                    "description": "This property contains up to 32 ASCII alpha-numeric characters. Updated with ReadWrite permissions.",
+                    "longDescription": "This property contains up to 32 ASCII alpha-numeric characters.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "BackplaneType": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/BackplaneType",
+                    "deprecated": "This property has been deprecated in favor of the EnclosureMode property.",
+                    "description": "The property shall represent universal mode or non shared mode of backplane.",
+                    "longDescription": "The property shall represent universal mode or non shared mode of backplane.",
+                    "readonly": true,
+                    "versionDeprecated": "v1_3_0"
+                },
+                "Connector": {
+                    "description": "The property shall represent the enclosure port connection.",
+                    "longDescription": "The property shall represent the enclosure port connection.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "EnclosureCfgMode": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/EnclosureCfgMode"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The current operating mode of the enclosure.",
+                    "longDescription": "This property shall indicate the current enclosure operating mode, such as Unified or Split.",
+                    "readonly": false,
+                    "versionAdded": "v1_3_0"
+                },
+                "EnclosureGeneration": {
+                    "description": "Hardware generation of the enclosure.",
+                    "longDescription": "Represents the hardware generation of the enclosure (for example Gen11, Gen12). Displayed in advanced properties.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "EnclosureMode": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/EnclosureMode"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent universal mode or non shared mode of enclosure.",
+                    "longDescription": "The property shall represent universal mode or non shared mode of enclosure.",
+                    "readonly": true,
+                    "versionAdded": "v1_3_0"
+                },
+                "EnclosurePosition": {
+                    "description": "The position of the enclosure in a chain or rack.",
+                    "longDescription": "This property shall indicate the enclosure position or connection sequence relative to the controller port.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "EnclosureState": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/EnclosureState"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Current mode state of the enclosure.",
+                    "longDescription": "Represents the current enclosure mode state (Ready, Online, ResetPowerCycle, Offline, or NvmFail).",
+                    "readonly": true,
+                    "versionAdded": "v1_3_0"
+                },
+                "FormFactor": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/FormFactor"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The form factor of the enclosure.",
+                    "longDescription": "This property shall indicate the form factor of the enclosure.",
+                    "readonly": true,
+                    "versionAdded": "v1_3_0"
+                },
+                "LastSystemInventoryTime": {
+                    "description": "This property provides the time when System Inventory Collection On Reboot (CSIOR) was last performed or the object was last updated on iDRAC. The value is represented as yyyymmddHHMMSS.",
+                    "format": "date-time",
+                    "longDescription": "This property provides the time when System Inventory Collection On Reboot (CSIOR) was last performed or the object was last updated on iDRAC. The value is represented as yyyymmddHHMMSS.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "LastUpdateTime": {
+                    "description": "This property provides the time when the data was last updated. The value is represented as yyyymmddHHMMSS.",
+                    "format": "date-time",
+                    "longDescription": "This property provides the time when the data was last updated. The value is represented as yyyymmddHHMMSS.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Links": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosure.json#/definitions/Links",
+                    "description": "Contains references to other resources that are related to this resource.",
+                    "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
+                },
+                "ObjAttributes": {
+                    "description": "The object attributes for the enclosure.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/ObjAttribute"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain the object attributes defining enclosure capabilities.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "PendingChanges": {
+                    "description": "The pending changes for the enclosure configuration.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/PendingChange"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain the pending changes that have been configured for the enclosure but have not yet been applied.",
+                    "readonly": false,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "RAIDEnclosureConfigMode": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/RAIDEnclosureConfigMode"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the configuration mode for the enclosure.",
+                    "longDescription": "The property shall represent the configuration mode for the enclosure.",
+                    "readonly": false
+                },
+                "RAIDMultipath": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/RAIDMultipath",
+                    "description": "The property shall represent whether the adapter has multiple paths to reach the enclosure.",
+                    "longDescription": "The property shall represent whether the adapter has multiple paths to reach the enclosure.",
+                    "readonly": true
+                },
+                "SASAddress": {
+                    "description": "SAS address of the enclosure.",
+                    "longDescription": "The SAS address string associated with the enclosure; shown in advanced properties.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "ServiceTag": {
+                    "description": "The property shall represent the service tag of the enclosure. Updated with ReadWrite permissions.",
+                    "longDescription": "The property shall represent the service tag of the enclosure.",
+                    "readonly": false,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "SlotAccessInfo": {
+                    "description": "The slot access information for the enclosure.",
+                    "longDescription": "This property shall contain the slot access information for the enclosure, useful for backplanes in split mode.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "SlotCount": {
+                    "description": "The property shall represent the number of drive slots in the enclosure.",
+                    "longDescription": "The property shall represent the number of drive slots in the enclosure.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "SplitModeCapable": {
+                    "description": "Indicates whether the enclosure supports split mode.",
+                    "longDescription": "True if the enclosure hardware supports operating in split mode; surfaced in advanced properties.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "SupportedProtocols": {
+                    "description": "The protocols supported by the enclosure.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemEnclosureChassis.json#/definitions/SupportedProtocol"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain the protocols supported by the enclosure.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "TempProbeCount": {
+                    "description": "This property represents the number of temperature probes present.",
+                    "longDescription": "This property represents the number of temperature probes present.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "Version": {
+                    "description": "The property shall represent the EMM or Backplane version.",
+                    "longDescription": "The property shall represent the EMM or Backplane version.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "WiredOrder": {
+                    "description": "For JBOD this property shall represent the enclosure position or connection sequence in a daisy chain of enclosures in the relation to the controller port. For internal backplane, the wiredorder is same as BayID.",
+                    "longDescription": "For JBOD this property shall represent the enclosure position or connection sequence in a daisy chain of enclosures in the relation to the controller port. For internal backplane, the wiredorder is same as BayID.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "DellOemEnclosureChassis": {
+            "additionalProperties": false,
+            "description": "Oem data related to the Storage Enclosure Chassis.",
+            "longDescription": "Oem data related to the Storage Enclosure Chassis.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ChassisManagerConfig": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ChassisManagerConfigType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This Property helps in managing and identifying sleds within a chassis, ensuring proper power and physical management.",
+                    "longDescription": "This Property helps in managing and identifying sleds within a chassis, ensuring proper power and physical management.",
+                    "readonly": false,
+                    "versionAdded": "v1_2_0"
+                },
+                "DellChassis": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACChassis.json#/definitions/DellChassis",
+                    "autoExpand": true,
+                    "description": "A resource representation of DellChassis.",
+                    "longDescription": "A resource representation of DellChassis.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "DellChassisEnclosure": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/DellChassisEnclosureInfo"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Oem data related to the DellChassisEnclosure.",
+                    "longDescription": "Oem data related to the DellChassisEnclosure."
+                },
+                "DellEnclosure": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACEnclosure.json#/definitions/DellEnclosure"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellEnclosure.",
+                    "longDescription": "A resource representation of DellEnclosure.",
+                    "readonly": true
+                },
+                "DellPCIeSSDBackPlane": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPCIeSSDBackPlane.json#/definitions/DellPCIeSSDBackPlane"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellPCIeSSDBackPlane.",
+                    "longDescription": "A resource representation of DellPCIeSSDBackPlane.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "EnclosureState": {
+            "enum": [
+                "Unknown",
+                "Ready",
+                "Online",
+                "Foreign",
+                "Offline",
+                "Blocked",
+                "Failed",
+                "Missing",
+                "Degraded"
+            ],
+            "enumDescriptions": {
+                "Blocked": "Enclosure is blocked.",
+                "Degraded": "Enclosure is degraded.",
+                "Failed": "Enclosure has failed.",
+                "Foreign": "Enclosure is in foreign state.",
+                "Missing": "Enclosure is missing.",
+                "Offline": "Enclosure is offline.",
+                "Online": "Enclosure is online.",
+                "Ready": "Enclosure is ready.",
+                "Unknown": "Enclosure state is unknown."
+            },
+            "type": "string"
+        },
+        "LedStatus": {
+            "enum": [
+                "Off",
+                "Lit",
+                "Blinking"
+            ],
+            "enumDescriptions": {
+                "Blinking": "This value shall represent the Indicator LED is in a blinking state where the LED is being turned on and off in repetition",
+                "Lit": "This value shall represent the Indicator LED is in a solid on state.",
+                "Off": "This value shall represent the Indicator LED is in a solid off state."
+            },
+            "type": "string"
+        },
+        "SledConfigurationType": {
+            "enum": [
+                "FullWidth",
+                "HalfWidth",
+                "ThirdWidth"
+            ],
+            "enumDescriptions": {
+                "FullWidth": "This value shall represents a sled that spans the entire width of the chassis (5GU for G5).",
+                "HalfWidth": "This value shall represents a sled that occupies half the width of the chassis (5GU for G5).",
+                "ThirdWidth": "This value shall represents a sled that occupies one-third of the width of the chassis (6GU for G5)."
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellOemEnclosureChassis.v1_3_0"
+}

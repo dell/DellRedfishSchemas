@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellManagerNetworkProtocol.v1_0_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACManagerNetworkProtocol.v1_0_1.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -48,7 +48,7 @@
             },
             "properties": {
                 "AuthenticationServerCertificateValidationStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManagerNetworkProtocol.json#/definitions/BinaryEnum",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACManagerNetworkProtocol.json#/definitions/BinaryEnum",
                     "description": "Validate Authentication Server Certificate.",
                     "longDescription": "This property defines validation status of Authentication Server Certificate. The default value is Disabled. To Enable this property the ServerCACertificates must contain a valid certificate.",
                     "readonly": false
@@ -60,7 +60,7 @@
                     "readonly": true
                 },
                 "ClientCertificateType": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManagerNetworkProtocol.json#/definitions/ClientCertificateTypes",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACManagerNetworkProtocol.json#/definitions/ClientCertificateTypes",
                     "description": "The type of client certificate the BMC will use.",
                     "longDescription": "This property defines the type of client certificate the BMC will use.",
                     "readonly": false
@@ -90,7 +90,7 @@
                     "readonly": true
                 },
                 "ServiceStatus": {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellManagerNetworkProtocol.json#/definitions/BinaryEnum",
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACManagerNetworkProtocol.json#/definitions/BinaryEnum",
                     "description": "Port-based Network Access Control service status.",
                     "longDescription": "This property defines Port-based Network Access Control service status. The default value is Enabled.",
                     "readonly": false

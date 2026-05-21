@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPSNumericSensor.json",
     "$ref": "#/definitions/DellPSNumericSensor",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
@@ -220,7 +220,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPSNumericSensor.v1_1_0.json#/definitions/DellPSNumericSensor"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPSNumericSensor.v1_1_0.json#/definitions/DellPSNumericSensor"
                 }
             ],
             "deletable": false,
@@ -374,7 +374,7 @@
                 "DellPowerSupplyCollection": {
                     "description": "Contains references to other resources that are related to this resource.",
                     "items": {
-                        "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellPowerSupply.json#/definitions/DellPowerSupply"
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACPowerSupply.json#/definitions/DellPowerSupply"
                     },
                     "longDescription": "Contains references to other resources that are related to this resource.",
                     "readonly": true,

@@ -1,12 +1,12 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorage.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemStorage.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellOemStorageLinks": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorage.v1_0_0.json#/definitions/DellOemStorageLinks"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemStorage.v1_0_0.json#/definitions/DellOemStorageLinks"
                 }
             ],
             "description": "A complex property for the additional Oem Links realted to StorageController.",
@@ -15,7 +15,7 @@
         "DellOemStorageResources": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellOemStorage.v1_0_0.json#/definitions/DellOemStorageResources"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACOemStorage.v1_0_0.json#/definitions/DellOemStorageResources"
                 }
             ],
             "description": "A complex property for the additional Oem resources realted to StorageController.",

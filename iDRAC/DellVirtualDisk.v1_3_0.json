@@ -1,0 +1,475 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.v1_3_0.json",
+    "$ref": "#/definitions/DellVirtualDisk",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellVirtualDisk": {
+            "additionalProperties": false,
+            "description": "An instance of DellVirtualDisk will have data specific to the Virtual Disks in the system.",
+            "longDescription": "An instance of DellVirtualDisk will have data specific to the Virtual Disks in the system.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
+                "AllowedOperations": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/AllowedOperations",
+                    "description": "The allowed operations for the virtual disk.",
+                    "longDescription": "This property shall contain the allowed operations that can be performed on the virtual disk.",
+                    "readonly": true,
+                    "versionAdded": "v1_3_0"
+                },
+                "AvailableCachePolicies": {
+                    "description": "The cache policies available for the virtual disk.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/AvailableCachePolicies"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain a collection of cache policies supported by the virtual disk, as reported by the storage controller.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "BadBlocksFound": {
+                    "description": "An indication of whether bad blocks have been detected on the virtual disk.",
+                    "longDescription": "This property shall indicate whether bad blocks have been detected on the virtual disk.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "BusProtocol": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/BusProtocol"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the bus protocol.",
+                    "longDescription": "The property shall represent the bus protocol.",
+                    "readonly": true
+                },
+                "Cachecade": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/Cachecade"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the Cachecade property can have following values and shall be one of the following values:0-Not a cachecade Virtual Disk,  1-Cachecade Virtual Disk.",
+                    "longDescription": "The property shall represent the Cachecade property can have following values and shall be one of the following values:0-Not a cachecade Virtual Disk,  1-Cachecade Virtual Disk.",
+                    "readonly": true
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "DiskCachePolicy": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/DiskCachePolicy"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the policy for physical disks included in the virtual disk.",
+                    "longDescription": "The property shall represent the policy for physical disks included in the virtual disk.",
+                    "readonly": true
+                },
+                "Encrypted": {
+                    "description": "An indication of whether the virtual disk is protected through encryption.",
+                    "longDescription": "This property shall indicate whether the virtual disk is currently protected through encryption.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "EnhancedCacheEnabled": {
+                    "description": "An indication of whether enhanced cache is enabled for the virtual disk.",
+                    "longDescription": "This property shall indicate whether enhanced cache is enabled for the virtual disk.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "LastSystemInventoryTime": {
+                    "description": "This property provides the time when System Inventory Collection On Reboot (CSIOR) was last performed or the object was last updated on iDRAC. The value is represented as yyyymmddHHMMSS.",
+                    "format": "date-time",
+                    "longDescription": "This property provides the time when System Inventory Collection On Reboot (CSIOR) was last performed or the object was last updated on iDRAC. The value is represented as yyyymmddHHMMSS.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "LastUpdateTime": {
+                    "description": "This property provides the time when the data was last updated. The value is represented as yyyymmddHHMMSS.",
+                    "format": "date-time",
+                    "longDescription": "This property provides the time when the data was last updated. The value is represented as yyyymmddHHMMSS.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "LockStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/LockStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent if this Virtual Disk is locked.",
+                    "longDescription": "The property shall represent if this Virtual Disk is locked.",
+                    "readonly": true
+                },
+                "MediaType": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/MediaType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the drive media type.",
+                    "longDescription": "The property shall represent the drive media type.",
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "ObjectStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/ObjectStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property represents the virtual disk configuration state.",
+                    "longDescription": "This property represents the virtual disk configuration state.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "OperationName": {
+                    "description": "This property represents the operation that is running on a virtual disk in background. If no operation is running, the value is \"None\".",
+                    "longDescription": "This property represents the operation that is running on a virtual disk in background. If no operation is running, the value is \"None\".",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "OperationPercentComplete": {
+                    "description": "This property represents the percentage of completion of the operation that is represented by the OperationName property.",
+                    "longDescription": "This property represents the percentage of completion of the operation that is represented by the OperationName property.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "OperationalStates": {
+                    "description": "The current operational states of the virtual disk.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/OperationalStates"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain a collection of values representing the current operational states of an active or recent virtual disk operation.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "PendingChanges": {
+                    "description": "The configuration changes that are pending for the virtual disk.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/PendingChanges"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain a collection of configuration updates that have been requested but not yet applied to the virtual disk.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "PendingConfigurationStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/PendingConfigurationStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The status of pending configuration changes on the virtual disk.",
+                    "longDescription": "This property shall contain a value indicating the status associated with any pending operations or configuration changes on the virtual disk.",
+                    "readonly": true,
+                    "versionAdded": "v1_3_0"
+                },
+                "PendingOperations": {
+                    "description": "The operations that are scheduled but not yet completed for the virtual disk.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/PendingOperations"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain a collection of operations that are scheduled for the virtual disk but have not yet been completed.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "PrimaryStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/PrimaryStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property represents the status of the device.",
+                    "longDescription": "This property represents the status of the device.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "ProgressPercent": {
+                    "description": "The completion percentage of an ongoing operation on the virtual disk.",
+                    "longDescription": "This property shall contain the completion percentage of an ongoing operation on the virtual disk. A value of 0 indicates no operation is in progress.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "RaidStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/RaidStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property represents the RAID specific status.",
+                    "longDescription": "This property represents the RAID specific status.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "ReadCachePolicy": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/ReadCachePolicy"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the current read policy.",
+                    "longDescription": "The property shall represent the current read policy.",
+                    "readonly": true
+                },
+                "RemainingRedundancy": {
+                    "description": "This property provides information about the remaining redundancy of the virtual disk.",
+                    "longDescription": "This property provides information about the remaining redundancy of the virtual disk.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "SpanDepth": {
+                    "description": "The property shall represent the number of spans in virtual disk.",
+                    "longDescription": "The property shall represent the number of spans in virtual disk.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "SpanLength": {
+                    "description": "The property shall represent the number of physical disks per span.",
+                    "longDescription": "The property shall represent the number of physical disks per span.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "StartingLBAinBlocks": {
+                    "description": "This property represents the starting logical block address in blocks for virtual disk.",
+                    "longDescription": "This property represents the starting logical block address in blocks for virtual disk.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                },
+                "StorageCapabilities": {
+                    "description": "The functional capabilities supported by the virtual disk.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/StorageCapabilities"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain a collection of functional features and attributes supported by the virtual disk.",
+                    "readonly": true,
+                    "type": "array",
+                    "versionAdded": "v1_3_0"
+                },
+                "StripeSize": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/StripeSize"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "This property represents the current strip size.",
+                    "longDescription": "This property represents the current strip size.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "T10PIStatus": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/T10PIStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "T10PIStatus indicates whether T10 Protection Information is enabled on the virtual disk.",
+                    "longDescription": "T10PIStatus indicates whether T10 Protection Information is enabled on the virtual disk.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
+                },
+                "VirtualDiskEPDPassthroughSupported": {
+                    "description": "An indication of whether Emergency Power Down passthrough is supported for the virtual disk.",
+                    "longDescription": "This property shall indicate whether Emergency Power Down (EPD) passthrough is supported for the virtual disk.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_3_0"
+                },
+                "VirtualDiskTargetID": {
+                    "description": "The property shall represent the virtual disk target number.",
+                    "longDescription": "The property shall represent the virtual disk target number.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "WriteCachePolicy": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACVirtualDisk.json#/definitions/WriteCachePolicy"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The property shall represent the current write policy.",
+                    "longDescription": "The property shall represent the current write policy.",
+                    "readonly": true
+                }
+            },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellVirtualDisk.v1_3_0.DellVirtualDisk"
+}

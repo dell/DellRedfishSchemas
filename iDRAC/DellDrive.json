@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -33,7 +33,7 @@
         "DellDrive": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.v1_2_1.json#/definitions/DellDrive"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.v1_4_0.json#/definitions/DellDrive"
                 }
             ],
             "description": "Oem data related to DellDrive.",
@@ -42,7 +42,7 @@
         "DellDriveLinks": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.v1_2_1.json#/definitions/DellDriveLinks"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.v1_4_0.json#/definitions/DellDriveLinks"
                 }
             ],
             "description": "A complex property for the additional Oem resources realted to Drive.",
@@ -51,7 +51,7 @@
         "ExportNVMeDeviceLogs": {
             "anyOf": [
                 {
-                    "$ref": "https://downloads.dell.com/redfish/bmc/schemas/DellDrive.v1_2_1.json#/definitions/ExportNVMeDeviceLogs"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACDrive.v1_4_0.json#/definitions/ExportNVMeDeviceLogs"
                 }
             ],
             "description": "The ExportNVMeDeviceLogs operation shall be used to export the storage device logs.",
@@ -75,6 +75,56 @@
             "enumDescriptions": {
                 "PEL": "PEL"
             },
+            "type": "string"
+        },
+        "OperationalState": {
+            "description": "The operational state of the physical disk.",
+            "enum": [
+                "BackgroundInitialization",
+                "CheckConsistency",
+                "Initialize",
+                "Reconstruct",
+                "Rebuild",
+                "Clear",
+                "Copyback",
+                "Learn",
+                "TTYExport"
+            ],
+            "enumDescriptions": {
+                "BackgroundInitialization": "The physical disk is undergoing background initialization.",
+                "CheckConsistency": "The physical disk is undergoing a check consistency operation.",
+                "Clear": "The data on the physical disk is being erased.",
+                "Copyback": "The data is being copied back from a hot spare to a replacement physical disk.",
+                "Initialize": "The physical disk or logical disk is being initialized.",
+                "Learn": "The battery is undergoing a reconditioning cycle.",
+                "Rebuild": "The physical disk is being rebuilt after a failure.",
+                "Reconstruct": "The virtual disk associated with the physical disk is being reconstructed.",
+                "TTYExport": "The log is being exported from the TTY interface."
+            },
+            "longDescription": "This type shall contain the operational state of the physical disk as reported by the RAID controller.",
+            "type": "string"
+        },
+        "PendingChange": {
+            "description": "The type of pending change for the physical disk.",
+            "enum": [
+                "HotSpare",
+                "State",
+                "Operations",
+                "RebuildPhysicalDisk",
+                "CancelRebuildPhysicalDisk",
+                "SecureErase",
+                "SecureErasePSID"
+            ],
+            "enumDescriptions": {
+                "CancelRebuildPhysicalDisk": "A cancel rebuild operation is pending.",
+                "HotSpare": "A hot spare assignment change is pending.",
+                "Operations": "An operations change is pending.",
+                "RebuildPhysicalDisk": "A rebuild operation is pending.",
+                "SecureErase": "A secure erase operation is pending.",
+                "SecureErasePSID": "A secure erase PSID operation is pending.",
+                "State": "A state change is pending."
+            },
+            "longDescription": "This type shall contain the types of pending changes for the physical disk configuration.",
             "type": "string"
         },
         "ProxySupport": {
@@ -101,6 +151,91 @@
             },
             "type": "string"
         },
+        "RaidStatus": {
+            "description": "The RAID specific status.",
+            "enum": [
+                "Blocked",
+                "Degraded",
+                "Failed",
+                "Foreign",
+                "Missing",
+                "NonRAID",
+                "Offline",
+                "Online",
+                "Ready",
+                "Unknown",
+                "ReadOnly",
+                "PhysicalLayerFailure",
+                "TransPortLayerFailure",
+                "ProtocolCommandFailure",
+                "SanitizeInProgress",
+                "SanitizeFailed",
+                "Unusable"
+            ],
+            "enumDescriptions": {
+                "Blocked": "Blocked",
+                "Degraded": "Degraded",
+                "Failed": "Failed",
+                "Foreign": "Foreign",
+                "Missing": "Missing",
+                "NonRAID": "Non-RAID",
+                "Offline": "Offline",
+                "Online": "Online",
+                "PhysicalLayerFailure": "Physical Layer Failure",
+                "ProtocolCommandFailure": "Protocol Command Failure",
+                "ReadOnly": "Read Only",
+                "Ready": "Ready",
+                "SanitizeFailed": "Sanitize failed",
+                "SanitizeInProgress": "Sanitize In Progress",
+                "TransPortLayerFailure": "Transport Layer Failure",
+                "Unknown": "Unknown",
+                "Unusable": "Unusable"
+            },
+            "enumLongDescriptions": {
+                "Blocked": "Blocked",
+                "Degraded": "Degraded",
+                "Failed": "Failed",
+                "Foreign": "Foreign",
+                "Missing": "Missing",
+                "NonRAID": "Non-RAID",
+                "Offline": "Offline",
+                "Online": "Online",
+                "PhysicalLayerFailure": "Physical Layer Failure",
+                "ProtocolCommandFailure": "Protocol Command Failure",
+                "ReadOnly": "Read Only",
+                "Ready": "Ready",
+                "SanitizeFailed": "Sanitize failed",
+                "SanitizeInProgress": "Sanitize In Progress",
+                "TransPortLayerFailure": "Transport Layer Failure",
+                "Unknown": "Unknown",
+                "Unusable": "Unusable"
+            },
+            "longDescription": "This type shall contain the RAID specific status as reported by the RAID controller.",
+            "type": "string"
+        },
+        "SecurityStatus": {
+            "description": "The security status of the physical disk.",
+            "enum": [
+                "Unsecured",
+                "Secured",
+                "Locked",
+                "Foreign",
+                "Vulnerable",
+                "ForeignSecured",
+                "ForeignLocked"
+            ],
+            "enumDescriptions": {
+                "Foreign": "The physical disk contains a foreign security configuration.",
+                "ForeignLocked": "The physical disk is foreign and locked.",
+                "ForeignSecured": "The physical disk is foreign and secured.",
+                "Locked": "The physical disk is locked.",
+                "Secured": "The physical disk is secured.",
+                "Unsecured": "The physical disk is unsecured or encryption capable.",
+                "Vulnerable": "The physical disk is in a vulnerable state."
+            },
+            "longDescription": "This type shall contain the security status of the physical disk.",
+            "type": "string"
+        },
         "ShareType": {
             "enum": [
                 "CIFS",
@@ -116,6 +251,69 @@
                 "Local": "Share type is Local.",
                 "NFS": "Share type is NFS."
             },
+            "type": "string"
+        },
+        "StorageCapability": {
+            "description": "The drive attribute capabilities of the physical disk.",
+            "enum": [
+                "SmartAlert",
+                "SSD",
+                "FDECapable",
+                "SecureEraseCapable",
+                "DIF",
+                "ALTA",
+                "PDClearCapable",
+                "RTPartialInventory",
+                "PassthruEPD",
+                "SEKMLocked",
+                "EnhanceUpdateLockdownCapable",
+                "EnhanceConfigLockdownCapable",
+                "PDUnmapCapable",
+                "PDUnmapCapableForVDConfig",
+                "Certified",
+                "BlinkUnblinkCapable",
+                "PrepareToRemoveCapable",
+                "PassthruHostPD",
+                "PassthruAdvHostPD",
+                "SupportPELCollection",
+                "VOSS",
+                "UnknownMediaType",
+                "SupportTelemetryCollection",
+                "PostProcessingFlag",
+                "HDDFarmLogSupported",
+                "NVMeCryptoSanitize",
+                "NVMeBlockSanitize"
+            ],
+            "enumDescriptions": {
+                "ALTA": "The drive is behind an ALTA bridge.",
+                "BlinkUnblinkCapable": "The drive supports blink and unblink operations.",
+                "Certified": "The drive is certified.",
+                "DIF": "The drive supports Data Integrity Field.",
+                "EnhanceConfigLockdownCapable": "The drive supports enhanced config lockdown.",
+                "EnhanceUpdateLockdownCapable": "The drive supports enhanced update lockdown.",
+                "FDECapable": "The drive is Full Disk Encryption capable.",
+                "HDDFarmLogSupported": "The HDD drive supports FARM log.",
+                "NVMeBlockSanitize": "The NVMe drive supports block sanitize.",
+                "NVMeCryptoSanitize": "The NVMe drive supports crypto sanitize.",
+                "PDClearCapable": "The drive supports PD clear operation.",
+                "PDUnmapCapable": "The drive supports PD unmap operation.",
+                "PDUnmapCapableForVDConfig": "The drive supports PD unmap for virtual disk configuration.",
+                "PassthruAdvHostPD": "The drive is an advanced passthrough host physical disk.",
+                "PassthruEPD": "The PERC drive is ePD-PT.",
+                "PassthruHostPD": "The drive is a passthrough host physical disk.",
+                "PostProcessingFlag": "The drive has a post processing flag set.",
+                "PrepareToRemoveCapable": "The drive supports prepare to remove operation.",
+                "RTPartialInventory": "Real-time partial drive inventory is supported.",
+                "SEKMLocked": "The drive is locked by Secure Enterprise Key Management (SEKM) key.",
+                "SSD": "The media type of the drive is Solid State.",
+                "SecureEraseCapable": "The drive is Secure Erase capable.",
+                "SmartAlert": "The drive has a SMART alert present.",
+                "SupportPELCollection": "The drive supports PEL collection.",
+                "SupportTelemetryCollection": "The drive supports telemetry collection.",
+                "UnknownMediaType": "The drive has an unknown media type.",
+                "VOSS": "The drive is a VOSS drive."
+            },
+            "longDescription": "This type shall contain the drive attribute capabilities of the physical disk.",
             "type": "string"
         }
     },

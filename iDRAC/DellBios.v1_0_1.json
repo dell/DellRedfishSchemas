@@ -1,5 +1,5 @@
 {
-    "$id": "https://downloads.dell.com/redfish/bmc/schemas/DellBios.v1_0_1.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRACBios.v1_0_1.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -20,6 +20,9 @@
                 }
             },
             "properties": {
+                "#Bios.SetBiosTime": {
+                    "$ref": "#/definitions/SetBiosTime"
+                },
                 "#DellBios.RunBIOSLiveScanning": {
                     "$ref": "#/definitions/RunBIOSLiveScanning"
                 }
@@ -31,6 +34,50 @@
             "description": "Real time BIOS scanning verifies the integrity and authenticity of the BIOS image in the Primary ROM when the host is powered ON, but not in the POST. This feature is available only with iDRAC Datacenter license and user need to have the Debug privilege to perform this operation",
             "longDescription": "Real time BIOS scanning verifies the integrity and authenticity of the BIOS image in the Primary ROM when the host is powered ON, but not in the POST. This feature is available only with iDRAC Datacenter license and user need to have the Debug privilege to perform this operation",
             "parameters": {},
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "SetBiosTime": {
+            "additionalProperties": false,
+            "description": "Sets the BIOS time to a specified value. This action allows the user to configure the system clock and ensure that the BIOS is synchronized with the current time. If @Redfish.OperationApplyTime is not passed, by default it will be set to OnReset",
+            "longDescription": "Sets the BIOS time to a specified value. This action allows the user to configure the system clock and ensure that the BIOS is synchronized with the current time. If @Redfish.OperationApplyTime is not passed, by default it will be set to OnReset",
+            "parameters": {
+                "BiosDateTime": {
+                    "description": "This property specifies the BIOS time that needs to be set. The BIOS time is the time that is stored in the computer's Basic Input/Output System (BIOS) and is used to keep track of the current time and date. The BIOS time is set in the format YYYY-MM-DDTHH:MM:SS+-HH:MM",
+                    "format": "date-time",
+                    "longDescription": "This property specifies the BIOS time that needs to be set. The BIOS time is the time that is stored in the computer's Basic Input/Output System (BIOS) and is used to keep track of the current time and date. The BIOS time is set in the format YYYY-MM-DDTHH:MM:SS+-HH:MM",
+                    "type": "string"
+                },
+                "DaylightSavingsEnabled": {
+                    "description": "This property specifies whether Daylight Saving Time (DST) is enabled or not. DST is the practice of temporarily advancing clocks during the summer months by one hour so that people can make the most of the sunlight during their waking hours.",
+                    "longDescription": "This property specifies whether Daylight Saving Time (DST) is enabled or not. DST is the practice of temporarily advancing clocks during the summer months by one hour so that people can make the most of the sunlight during their waking hours.",
+                    "type": "boolean"
+                }
+            },
             "patternProperties": {
                 "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
