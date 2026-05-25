@@ -6,11 +6,20 @@
         "SPDM": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellComponentIntegrity.v1_0_0.json#/definitions/SPDM"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellComponentIntegrity.v1_1_0.json#/definitions/SPDM"
                 }
             ],
             "description": "An Oem extension to represent SPDM related properties.",
             "longDescription": "An Oem extension to represent SPDM related properties."
+        },
+        "TPMGetSignedTCGEventLog": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellComponentIntegrity.v1_1_0.json#/definitions/TPMGetSignedTCGEventLog"
+                }
+            ],
+            "description": "This action retrieves a signed TCG event log from the TPM for the specified reboot index.",
+            "longDescription": "This action shall retrieve a signed TCG event log from the TPM for the specified reboot index. On success, a TaskMonitor URI is returned to track the progress of the operation."
         }
     },
     "owningEntity": "Dell",

@@ -6,7 +6,7 @@
         "DellOemPower_PowerSupplies": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemPower_PowerSupplies.v1_0_0.json#/definitions/DellOemPower_PowerSupplies"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemPower_PowerSupplies.v1_1_0.json#/definitions/DellOemPower_PowerSupplies"
                 }
             ],
             "description": "Oem data related to the Power_PowerSupply.",

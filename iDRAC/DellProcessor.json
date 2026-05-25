@@ -71,6 +71,7 @@
                 "AMDZ-SeriesProcessor",
                 "AMDZenProcessorFamily",
                 "ARM",
+                "ARMv9",
                 "AS400Family",
                 "Alpha21064",
                 "Alpha21066",
@@ -286,6 +287,7 @@
                 "AMDZ-SeriesProcessor": "AMD Z-Series Processor",
                 "AMDZenProcessorFamily": "AMD Zen Processor Family",
                 "ARM": "ARM",
+                "ARMv9": "ARMv9",
                 "AS400Family": "AS400 Family",
                 "Alpha21064": "Alpha 21064",
                 "Alpha21066": "Alpha 21066",
@@ -501,6 +503,7 @@
                 "AMDZ-SeriesProcessor": "AMD Z-Series Processor",
                 "AMDZenProcessorFamily": "AMD Zen Processor Family",
                 "ARM": "ARM",
+                "ARMv9": "ARMv9",
                 "AS400Family": "AS400 Family",
                 "Alpha21064": "Alpha 21064",
                 "Alpha21066": "Alpha 21066",
@@ -716,6 +719,7 @@
                 "AMDZ-SeriesProcessor": "v1_1_0",
                 "AMDZenProcessorFamily": "v1_1_0",
                 "ARM": "v1_1_0",
+                "ARMv9": "v1_3_0",
                 "AS400Family": "v1_1_0",
                 "Alpha21064": "v1_1_0",
                 "Alpha21066": "v1_1_0",
@@ -1796,7 +1800,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.v1_2_0.json#/definitions/DellProcessor"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.v1_3_0.json#/definitions/DellProcessor"
                 }
             ],
             "deletable": false,

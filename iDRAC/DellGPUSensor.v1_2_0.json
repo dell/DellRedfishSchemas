@@ -58,6 +58,17 @@
                     ],
                     "units": "Cel"
                 },
+                "CurrentPowerCapLimitMilliWatts": {
+                    "description": "Indicates  CurrentPowerCapLimit in milli Watts.",
+                    "longDescription": "Indicates CurrentPowerCapLimit in milli Watts.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "units": "Milliwatts",
+                    "versionAdded": "v1_2_0"
+                },
                 "Description": {
                     "anyOf": [
                         {

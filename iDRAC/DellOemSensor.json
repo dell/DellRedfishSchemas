@@ -6,7 +6,7 @@
         "DellOemSensor": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.v1_2_0.json#/definitions/DellOemSensor"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.v1_3_0.json#/definitions/DellOemSensor"
                 }
             ],
             "description": "This is the complex property for the additional OEM properties to complement DMTF Sensor Schema.",
@@ -15,11 +15,203 @@
         "GetHistoricalSensorReadings": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.v1_2_0.json#/definitions/GetHistoricalSensorReadings"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.v1_3_0.json#/definitions/GetHistoricalSensorReadings"
                 }
             ],
             "description": "An action to retrieve historical readings of the sensor.",
             "longDescription": "An action to retrieve historical readings of the sensor. The action shall accept a parameter ReadingHistoryPeriod to specify the period for which the readings shall be returned."
+        },
+        "GetHistoricalSensorReadingsResponse": {
+            "additionalProperties": false,
+            "description": "The response payload for the GetHistoricalSensorReadings action.",
+            "longDescription": "The response payload for the GetHistoricalSensorReadings action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ReadingHistoryPeriod": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ReadingHistoryPeriod"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The reading history period.",
+                    "longDescription": "The reading history period."
+                },
+                "Readings": {
+                    "description": "List of historical readings.",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "List of historical readings.",
+                    "type": "array"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_2_0"
+        },
+        "GetHistoricalThermalReadings": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.v1_3_0.json#/definitions/GetHistoricalThermalReadings"
+                }
+            ],
+            "description": "An action to retrieve historical readings of the thermal Sensor.",
+            "longDescription": "An action to retrieve historical readings of the thermal sensor. The action shall accept a parameter ReadingHistoryPeriod to specify the period for which the readings shall be returned."
+        },
+        "GetHistoricalThermalReadingsResponse": {
+            "additionalProperties": false,
+            "description": "The response payload for the GetHistoricalThermalReadings action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CriticalThreshold": {
+                    "description": "The reading history period.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "PercentageAboveCriticalThreshold": {
+                    "description": "The reading history period.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "PercentageAboveWarningThreshold": {
+                    "description": "The reading history period.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "Readings": {
+                    "description": "List of historical readings.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/HistoricalThermalReadings"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                },
+                "TotalOperationalDays": {
+                    "description": "The reading history period.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_3_0"
+        },
+        "HistoricalThermalReadings": {
+            "additionalProperties": false,
+            "description": "The defenintion of Reading object in the GetHistoricalThermalReadingsResponse complex type.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "AverageReading": {
+                    "description": "The average reading.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "PeakReading": {
+                    "description": "The peak reading.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "ReadingTime": {
+                    "description": "The time at which the data is recorded.",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "WarningThreshold": {
+                    "description": "The reading history period.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_3_0"
+        },
+        "ReadingHistoryPeriod": {
+            "enum": [
+                "LastHour",
+                "LastDay",
+                "LastWeek",
+                "LastMonth",
+                "LastYear"
+            ],
+            "enumDescriptions": {
+                "LastDay": "Historical readings for the last day.",
+                "LastHour": "Historical readings for the last hour.",
+                "LastMonth": "Historical readings for the last month.",
+                "LastWeek": "Historical readings for the last week.",
+                "LastYear": "Historical readings for the last year."
+            },
+            "enumVersionAdded": {
+                "LastMonth": "v1_3_0",
+                "LastYear": "v1_3_0"
+            },
+            "type": "string",
+            "versionAdded": "v1_2_0"
         }
     },
     "owningEntity": "Dell",

@@ -18,9 +18,7 @@
             "insertable": false,
             "longDescription": "DellTimeService provides actions to manage time (retrieve or set time) for the service processor.",
             "updatable": false,
-            "uris": [
-                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellTimeService"
-            ],
+            "uris": [],
             "urisDeprecated": [
                 "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellTimeService"
             ]

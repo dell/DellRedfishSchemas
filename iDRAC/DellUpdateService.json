@@ -3,6 +3,15 @@
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
+        "ConfigureCX8WriteProtect": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_4_0.json#/definitions/ConfigureCX8WriteProtect"
+                }
+            ],
+            "description": "This action supports for PCIe CX-8 in band updates only, and users will need to manually disable #WP before the update and enable #WP after the update is completed.",
+            "longDescription": "This action supports for PCIe CX-8 in band updates only, and users will need to manually disable #WP before the update and enable #WP after the update is completed."
+        },
         "DellOemUpdateService": {
             "anyOf": [
                 {
@@ -29,6 +38,21 @@
             ],
             "description": "This action shall recover BOSS controller firmware in case of root of trust (RoT) failure.",
             "longDescription": "This action shall recover BOSS controller firmware in case of root of trust (RoT) failure."
+        },
+        "RequestType": {
+            "enum": [
+                "Enable",
+                "Disable"
+            ],
+            "enumDescriptions": {
+                "Disable": "nvcore will immediately disable #WP.",
+                "Enable": "nvcore will immediately enable #WP."
+            },
+            "enumLongDescriptions": {
+                "Disable": "nvcore will immediately disable #WP.",
+                "Enable": "nvcore will immediately enable #WP."
+            },
+            "type": "string"
         }
     },
     "title": "#DellUpdateService"

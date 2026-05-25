@@ -21,11 +21,110 @@
         "DellOemEnclosureChassis": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.v1_2_0.json#/definitions/DellOemEnclosureChassis"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.v1_3_0.json#/definitions/DellOemEnclosureChassis"
                 }
             ],
             "description": "Oem data related to the Storage Enclosure Chassis.",
             "longDescription": "Oem data related to the Storage Enclosure Chassis."
+        },
+        "EnclosureCfgMode": {
+            "description": "The configuration mode of the enclosure.",
+            "enum": [
+                "Joint",
+                "Split12_12",
+                "Split4_20",
+                "Split8_16",
+                "Split16_8",
+                "Split20_4",
+                "Split6_6_6_6"
+            ],
+            "enumDescriptions": {
+                "Joint": "The enclosure is in joint mode.",
+                "Split12_12": "The enclosure is in split mode with a 12:12 configuration.",
+                "Split16_8": "The enclosure is in split mode with a 16:8 configuration.",
+                "Split20_4": "The enclosure is in split mode with a 20:4 configuration.",
+                "Split4_20": "The enclosure is in split mode with a 4:20 configuration.",
+                "Split6_6_6_6": "The enclosure is in split mode with a 6:6:6:6 configuration.",
+                "Split8_16": "The enclosure is in split mode with an 8:16 configuration."
+            },
+            "longDescription": "This type shall contain the configuration mode of the enclosure.",
+            "type": "string"
+        },
+        "EnclosureMode": {
+            "enum": [
+                "SharedPrimary",
+                "SharedSecondary",
+                "NotShared"
+            ],
+            "enumDescriptions": {
+                "NotShared": "Non shared mode.",
+                "SharedPrimary": "Universal Primary mode.",
+                "SharedSecondary": "Universal Secondary mode."
+            },
+            "type": "string"
+        },
+        "FormFactor": {
+            "description": "The form factor of the enclosure.",
+            "enum": [
+                "Unknown",
+                "1.8Inch",
+                "2.5Inch",
+                "3.5Inch",
+                "AddInCard",
+                "M.2",
+                "EDSFF1L",
+                "EDSFFE3",
+                "EDSFFE3.2T",
+                "EDSFFE3L",
+                "EDSFFE3L.2T",
+                "EDSFFE1.S"
+            ],
+            "enumDescriptions": {
+                "1.8Inch": "The enclosure uses 1.8-inch form factor.",
+                "2.5Inch": "The enclosure uses 2.5-inch form factor.",
+                "3.5Inch": "The enclosure uses 3.5-inch form factor.",
+                "AddInCard": "The enclosure uses an add-in card form factor.",
+                "EDSFF1L": "The enclosure uses EDSFF 1L form factor.",
+                "EDSFFE1.S": "The enclosure uses EDSFF E1.S form factor.",
+                "EDSFFE3": "The enclosure uses EDSFF E3 form factor.",
+                "EDSFFE3.2T": "The enclosure uses EDSFF E3 2T form factor.",
+                "EDSFFE3L": "The enclosure uses EDSFF E3L form factor.",
+                "EDSFFE3L.2T": "The enclosure uses EDSFF E3L 2T form factor.",
+                "M.2": "The enclosure uses M.2 form factor.",
+                "Unknown": "The form factor is unknown."
+            },
+            "longDescription": "This type shall contain the form factor of the enclosure.",
+            "type": "string"
+        },
+        "ObjAttribute": {
+            "description": "The object attributes for the enclosure.",
+            "enum": [
+                "Managed",
+                "Configurable"
+            ],
+            "enumDescriptions": {
+                "Configurable": "The enclosure is configurable.",
+                "Managed": "The enclosure is managed."
+            },
+            "longDescription": "This type shall contain the object attributes defining enclosure capabilities.",
+            "type": "string"
+        },
+        "PendingChange": {
+            "description": "The pending change types for the enclosure.",
+            "enum": [
+                "ServiceTag",
+                "AssetTag",
+                "EnclosureCfgMode",
+                "AssetName"
+            ],
+            "enumDescriptions": {
+                "AssetName": "An asset name change is pending.",
+                "AssetTag": "An asset tag change is pending.",
+                "EnclosureCfgMode": "A configuration mode change is pending.",
+                "ServiceTag": "A service tag change is pending."
+            },
+            "longDescription": "This type shall contain the pending change types for the enclosure configuration.",
+            "type": "string"
         },
         "RAIDEnclosureConfigMode": {
             "enum": [
@@ -73,6 +172,35 @@
                 "Off": "Off state.",
                 "On": "On state."
             },
+            "type": "string"
+        },
+        "SupportedProtocol": {
+            "description": "The protocols supported by the enclosure.",
+            "enum": [
+                "Unknown",
+                "SCSI",
+                "PATA",
+                "FibreChannel",
+                "USB",
+                "SATA",
+                "SAS",
+                "PCIe",
+                "NVMe",
+                "NVMeHWRAID"
+            ],
+            "enumDescriptions": {
+                "FibreChannel": "The enclosure supports Fibre Channel protocol.",
+                "NVMe": "The enclosure supports NVMe protocol.",
+                "NVMeHWRAID": "The enclosure supports NVMe hardware RAID protocol.",
+                "PATA": "The enclosure supports PATA protocol.",
+                "PCIe": "The enclosure supports PCIe protocol.",
+                "SAS": "The enclosure supports SAS protocol.",
+                "SATA": "The enclosure supports SATA protocol.",
+                "SCSI": "The enclosure supports SCSI protocol.",
+                "USB": "The enclosure supports USB protocol.",
+                "Unknown": "The protocol is unknown."
+            },
+            "longDescription": "This type shall contain the protocols supported by the enclosure.",
             "type": "string"
         }
     },
