@@ -103,6 +103,14 @@
                 }
             },
             "properties": {
+                "@Redfish.Settings": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Settings.json#/definitions/Settings",
+                    "description": "The link to the settings resource that represents the settings to apply to this resource."
+                },
+                "@Redfish.SettingsApplyTime": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Settings.json#/definitions/PreferredApplyTime",
+                    "description": "The configuration settings for when the values in the settings object are applied to a resource."
+                },
                 "@odata.context": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
                 },

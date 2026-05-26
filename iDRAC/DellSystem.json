@@ -169,7 +169,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.v1_4_0.json#/definitions/DellSystem"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.v1_4_1.json#/definitions/DellSystem"
                 }
             ],
             "deletable": false,

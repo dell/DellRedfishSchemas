@@ -99,7 +99,7 @@
         "DellOemStorageController": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.v1_0_1.json#/definitions/DellOemStorageController"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.v1_1_0.json#/definitions/DellOemStorageController"
                 }
             ],
             "description": "Oem data related to the Storage Controller.",
@@ -168,6 +168,111 @@
             },
             "type": "string"
         },
+        "PendingChange": {
+            "enum": [
+                "SpinDownTime",
+                "PersistentHotSpare",
+                "DrivePowerMode",
+                "EncryptionMode",
+                "UncertifiedHDDMode",
+                "LoadBalanceMode",
+                "BatteryLearnMode",
+                "CheckConsistencyMode",
+                "PatrolReadMode",
+                "CopyBackMode",
+                "RebuildRate",
+                "CheckConsistencyRate",
+                "ReconstructRate",
+                "BackgroundInitializationRate",
+                "PatrolReadRate",
+                "EncryptionKeyID",
+                "PatrolReadUnconfiguredArea",
+                "PatrolReadState",
+                "EnhancedAutoImportMode",
+                "BootMode",
+                "PersonalityMode",
+                "EncryptionKeyDelete",
+                "EncryptionKeyModify",
+                "ResetConfig",
+                "FirmwareMode",
+                "ClearConfig",
+                "ImportConfig",
+                "DiscardCache",
+                "Unlock",
+                "BootVirtualDiskConfig",
+                "PersistentHotSpareMode",
+                "AutoConfigBehavior"
+            ],
+            "enumDescriptions": {
+                "AutoConfigBehavior": "Auto configuration behavior change pending.",
+                "BackgroundInitializationRate": "Background initialization rate configuration change pending.",
+                "BatteryLearnMode": "Battery learn mode configuration change pending.",
+                "BootMode": "Boot mode configuration change pending.",
+                "BootVirtualDiskConfig": "Boot virtual disk configuration change pending.",
+                "CheckConsistencyMode": "Check consistency mode configuration change pending.",
+                "CheckConsistencyRate": "Check consistency rate configuration change pending.",
+                "ClearConfig": "Clear configuration change pending.",
+                "CopyBackMode": "Copy back mode configuration change pending.",
+                "DiscardCache": "Discard cache configuration change pending.",
+                "DrivePowerMode": "Drive power mode configuration change pending.",
+                "EncryptionKeyDelete": "Encryption key deletion configuration change pending.",
+                "EncryptionKeyID": "Encryption key ID configuration change pending.",
+                "EncryptionKeyModify": "Encryption key modification configuration change pending.",
+                "EncryptionMode": "Encryption mode configuration change pending.",
+                "EnhancedAutoImportMode": "Enhanced auto import mode configuration change pending.",
+                "FirmwareMode": "Firmware mode configuration change pending.",
+                "ImportConfig": "Import configuration change pending.",
+                "LoadBalanceMode": "Load balance mode configuration change pending.",
+                "PatrolReadMode": "Patrol read mode configuration change pending.",
+                "PatrolReadRate": "Patrol read rate configuration change pending.",
+                "PatrolReadState": "Patrol read state configuration change pending.",
+                "PatrolReadUnconfiguredArea": "Patrol read unconfigured area configuration change pending.",
+                "PersistentHotSpare": "Persistent hot spare configuration change pending.",
+                "PersistentHotSpareMode": "Persistent hot spare mode configuration change pending.",
+                "PersonalityMode": "Personality mode configuration change pending.",
+                "RebuildRate": "Rebuild rate configuration change pending.",
+                "ReconstructRate": "Reconstruct rate configuration change pending.",
+                "ResetConfig": "Reset configuration change pending.",
+                "SpinDownTime": "Spin down time configuration change pending.",
+                "UncertifiedHDDMode": "Uncertified HDD mode configuration change pending.",
+                "Unlock": "Unlock configuration change pending."
+            },
+            "enumLongDescriptions": {
+                "AutoConfigBehavior": "A change to the auto configuration behavior is pending and requires a reboot to take effect.",
+                "BackgroundInitializationRate": "A change to the background initialization rate configuration is pending and requires a reboot to take effect.",
+                "BatteryLearnMode": "A change to the battery learn mode configuration is pending and requires a reboot to take effect.",
+                "BootMode": "A change to the boot mode configuration is pending and requires a reboot to take effect.",
+                "BootVirtualDiskConfig": "A change to the boot virtual disk configuration is pending and requires a reboot to take effect.",
+                "CheckConsistencyMode": "A change to the check consistency mode configuration is pending and requires a reboot to take effect.",
+                "CheckConsistencyRate": "A change to the check consistency rate configuration is pending and requires a reboot to take effect.",
+                "ClearConfig": "A clear configuration change is pending and requires a reboot to take effect.",
+                "CopyBackMode": "A change to the copy back mode configuration is pending and requires a reboot to take effect.",
+                "DiscardCache": "A discard cache configuration change is pending and requires a reboot to take effect.",
+                "DrivePowerMode": "A change to the drive power mode configuration is pending and requires a reboot to take effect.",
+                "EncryptionKeyDelete": "A change to delete the encryption key is pending and requires a reboot to take effect.",
+                "EncryptionKeyID": "A change to the encryption key ID configuration is pending and requires a reboot to take effect.",
+                "EncryptionKeyModify": "A change to modify the encryption key is pending and requires a reboot to take effect.",
+                "EncryptionMode": "A change to the encryption mode configuration is pending and requires a reboot to take effect.",
+                "EnhancedAutoImportMode": "A change to the enhanced auto import mode configuration is pending and requires a reboot to take effect.",
+                "FirmwareMode": "A change to the firmware mode configuration is pending and requires a reboot to take effect.",
+                "ImportConfig": "An import configuration change is pending and requires a reboot to take effect.",
+                "LoadBalanceMode": "A change to the load balance mode configuration is pending and requires a reboot to take effect.",
+                "PatrolReadMode": "A change to the patrol read mode configuration is pending and requires a reboot to take effect.",
+                "PatrolReadRate": "A change to the patrol read rate configuration is pending and requires a reboot to take effect.",
+                "PatrolReadState": "A change to the patrol read state configuration is pending and requires a reboot to take effect.",
+                "PatrolReadUnconfiguredArea": "A change to the patrol read unconfigured area configuration is pending and requires a reboot to take effect.",
+                "PersistentHotSpare": "A change to the persistent hot spare configuration is pending and requires a reboot to take effect.",
+                "PersistentHotSpareMode": "A change to the persistent hot spare mode configuration is pending and requires a reboot to take effect.",
+                "PersonalityMode": "A change to the personality mode configuration is pending and requires a reboot to take effect.",
+                "RebuildRate": "A change to the rebuild rate configuration is pending and requires a reboot to take effect.",
+                "ReconstructRate": "A change to the reconstruct rate configuration is pending and requires a reboot to take effect.",
+                "ResetConfig": "A reset configuration change is pending and requires a reboot to take effect.",
+                "SpinDownTime": "A change to the spin down time configuration is pending and requires a reboot to take effect.",
+                "UncertifiedHDDMode": "A change to the uncertified HDD mode configuration is pending and requires a reboot to take effect.",
+                "Unlock": "An unlock configuration change is pending and requires a reboot to take effect."
+            },
+            "type": "string"
+        },
         "PersistentHotspareMode": {
             "enum": [
                 "Disabled",
@@ -180,6 +285,30 @@
             "enumLongDescriptions": {
                 "Disabled": "Persistent hotspare mode is disabled.",
                 "Enabled": "Persistent hotspare mode is enabled."
+            },
+            "type": "string"
+        },
+        "PersonalityMode": {
+            "enum": [
+                "None",
+                "RAID",
+                "HBA",
+                "EnhancedHBA",
+                "Valid"
+            ],
+            "enumDescriptions": {
+                "EnhancedHBA": "Enhanced Host Bus Adapter personality mode.",
+                "HBA": "Host Bus Adapter personality mode.",
+                "None": "No personality mode configured.",
+                "RAID": "RAID personality mode.",
+                "Valid": "Valid personality mode flag."
+            },
+            "enumLongDescriptions": {
+                "EnhancedHBA": "The storage controller is configured in Enhanced HBA mode, providing advanced HBA capabilities with additional features beyond standard HBA functionality.",
+                "HBA": "The storage controller is configured in HBA mode, acting as a simple host bus adapter without RAID capabilities.",
+                "None": "Indicates that no specific personality mode is configured for the storage controller.",
+                "RAID": "The storage controller is configured in RAID mode, providing RAID functionality for attached storage devices.",
+                "Valid": "Indicates that the personality mode configuration is valid and properly set."
             },
             "type": "string"
         },
@@ -202,6 +331,35 @@
                 "None": "Current RAID Mode is None.",
                 "Windows": "Current RAID Mode is Windows."
             },
+            "type": "string"
+        },
+        "SupportedDiskProtocol": {
+            "description": "The disk protocols supported by the controller.",
+            "enum": [
+                "Unknown",
+                "SCSI",
+                "PATA",
+                "Fibre",
+                "USB",
+                "SATA",
+                "SAS",
+                "PCIe",
+                "NVMe",
+                "NVMeHWRAID"
+            ],
+            "enumDescriptions": {
+                "Fibre": "The controller supports Fibre Channel protocol.",
+                "NVMe": "The controller supports NVMe protocol.",
+                "NVMeHWRAID": "The controller supports NVMe behind PERC hardware RAID.",
+                "PATA": "The controller supports PATA protocol.",
+                "PCIe": "The controller supports PCIe protocol.",
+                "SAS": "The controller supports SAS protocol.",
+                "SATA": "The controller supports SATA protocol.",
+                "SCSI": "The controller supports SCSI protocol.",
+                "USB": "The controller supports USB protocol.",
+                "Unknown": "The disk protocol is unknown."
+            },
+            "longDescription": "This type shall contain the disk protocols supported by the controller.",
             "type": "string"
         },
         "SupportedInitializationTypes": {

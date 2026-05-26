@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellBootSourcesRegistry.v1_1_0.json#/definitions/DellBootSourcesRegistry"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellBootSourcesRegistry.v1_2_0.json#/definitions/DellBootSourcesRegistry"
                 }
             ],
             "deletable": false,

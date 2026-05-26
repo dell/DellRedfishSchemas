@@ -18,7 +18,8 @@
                 "OverwritePD",
                 "PERCNVCache",
                 "ReinstallFW",
-                "vFlash"
+                "vFlash",
+                "Sanitize"
             ],
             "enumDescriptions": {
                 "AllApps": "AllApps",
@@ -33,6 +34,7 @@
                 "OverwritePD": "OverwritePD",
                 "PERCNVCache": "PERCNVCache",
                 "ReinstallFW": "ReinstallFW",
+                "Sanitize": "Sanitize - Sanitize option will wipe out all server data so needs to be used with caution and it needs DELL Field Service Debug enabled. Sanitize option should not be combined with other components.",
                 "vFlash": "vFlash"
             },
             "enumVersionAdded": {
@@ -48,6 +50,7 @@
                 "OverwritePD": "v1_1_0",
                 "PERCNVCache": "v1_1_0",
                 "ReinstallFW": "v1_6_0",
+                "Sanitize": "v1_12_2",
                 "vFlash": "v1_1_0"
             },
             "type": "string"
@@ -58,7 +61,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCService.v1_12_0.json#/definitions/DellLCService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCService.v1_12_2.json#/definitions/DellLCService"
                 }
             ],
             "deletable": false,
@@ -279,16 +282,19 @@
             "enum": [
                 "GracefulRebootWithForcedShutdown",
                 "GracefulRebootWithoutForcedShutdown",
-                "PowerCycle"
+                "PowerCycle",
+                "NoReboot"
             ],
             "enumDescriptions": {
                 "GracefulRebootWithForcedShutdown": "Graceful Reboot with forced shutdown",
                 "GracefulRebootWithoutForcedShutdown": "Graceful Reboot without forced shutdown",
+                "NoReboot": "Reboot operation is not required",
                 "PowerCycle": "PowerCycle"
             },
             "enumVersionAdded": {
                 "GracefulRebootWithForcedShutdown": "v1_1_0",
                 "GracefulRebootWithoutForcedShutdown": "v1_1_0",
+                "NoReboot": "v1_12_1",
                 "PowerCycle": "v1_1_0"
             },
             "type": "string"

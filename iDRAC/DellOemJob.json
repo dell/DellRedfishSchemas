@@ -6,7 +6,7 @@
         "DellOemJob": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemJob.v1_0_0.json#/definitions/DellOemJob"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemJob.v1_1_0.json#/definitions/DellOemJob"
                 }
             ],
             "description": "This is the complex property is for the additional OEM extension realted to the DMTF Job.",

@@ -1,12 +1,12 @@
 {
-    "$id": "http://redfish.dmtf.org/schemas/v1/OemComputerSystem.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemComputerSystem.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ComputerSystem": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/OemComputerSystem.v1_1_0.json#/definitions/ComputerSystem"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemComputerSystem.v1_1_0.json#/definitions/ComputerSystem"
                 }
             ],
             "description": "TBD",
@@ -15,7 +15,7 @@
         "Links": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/OemComputerSystem.v1_1_0.json#/definitions/Links"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemComputerSystem.v1_1_0.json#/definitions/Links"
                 }
             ],
             "description": "TBD",
@@ -24,7 +24,7 @@
         "SetWatchdog": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/OemComputerSystem.v1_1_0.json#/definitions/SetWatchdog"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemComputerSystem.v1_1_0.json#/definitions/SetWatchdog"
                 }
             ],
             "description": "This action is used to set the watchdog timeout interval.",

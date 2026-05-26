@@ -1,12 +1,12 @@
 {
-    "$id": "http://redfish.dmtf.org/schemas/v1/OemManager.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ClearPending": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/OemManager.v1_5_1.json#/definitions/ClearPending"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.json#/definitions/ClearPending"
                 }
             ],
             "description": "This action is used to clear the pending values.",
@@ -15,16 +15,25 @@
         "ExportSystemConfiguration": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/OemManager.v1_5_1.json#/definitions/ExportSystemConfiguration"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.json#/definitions/ExportSystemConfiguration"
                 }
             ],
             "description": "This action is used to export System Configuration attributes.",
             "longDescription": "This action shall perform an export System Configuration attributes."
         },
+        "GetRedfishResources": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.json#/definitions/GetRedfishResources"
+                }
+            ],
+            "description": "Retrieve Redfish resources for a set of endpoints, possibly using wildcards.",
+            "longDescription": "This action retrieves the Redfish resources for the specified endpoints. The action may return partial results if the operation exceeds the specified timeout."
+        },
         "ImportSystemConfiguration": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/OemManager.v1_5_1.json#/definitions/ImportSystemConfiguration"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.json#/definitions/ImportSystemConfiguration"
                 }
             ],
             "description": "This action is used to import System Configuration attributes.",
@@ -33,7 +42,7 @@
         "ImportSystemConfigurationPreview": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/OemManager.v1_5_1.json#/definitions/ImportSystemConfigurationPreview"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.json#/definitions/ImportSystemConfigurationPreview"
                 }
             ],
             "description": "This action is used to import System Configuration Preview.",
@@ -42,7 +51,7 @@
         "ResetToDefaults": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/OemManager.v1_5_1.json#/definitions/ResetToDefaults"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.json#/definitions/ResetToDefaults"
                 }
             ],
             "description": "This action is used to reset the Manager attributes to default.",

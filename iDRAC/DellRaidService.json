@@ -4,6 +4,29 @@
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
+        "ApplyTime": {
+            "enum": [
+                "Staged",
+                "Immediate",
+                "OnReset"
+            ],
+            "enumDescriptions": {
+                "Immediate": "Real-time job - applies changes immediately without reboot",
+                "OnReset": "Staged job without automatic reboot",
+                "Staged": "Staged job - requires system reboot to apply changes"
+            },
+            "enumLongDescriptions": {
+                "Immediate": "Configuration changes are applied immediately in real-time without requiring a system reboot.",
+                "OnReset": "Configuration changes are staged but will not trigger an automatic reboot. Changes will be applied on the next manual system reset.",
+                "Staged": "Configuration changes are staged and will be applied on the next system reboot."
+            },
+            "enumVersionAdded": {
+                "Immediate": "v1_10_0",
+                "OnReset": "v1_10_0",
+                "Staged": "v1_10_0"
+            },
+            "type": "string"
+        },
         "BlockSizeInBytes": {
             "enum": [
                 "4096",
@@ -17,13 +40,28 @@
             },
             "type": "string"
         },
+        "CachePolicy": {
+            "enum": [
+                "Default",
+                "CacheMask",
+                "WriteMask",
+                "ReadMask"
+            ],
+            "enumDescriptions": {
+                "CacheMask": "CacheMask",
+                "Default": "DiskMask",
+                "ReadMask": "ReadMask",
+                "WriteMask": "WriteMask"
+            },
+            "type": "string"
+        },
         "DellRaidService": {
             "anyOf": [
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellRaidService.v1_7_0.json#/definitions/DellRaidService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellRaidService.v1_10_0.json#/definitions/DellRaidService"
                 }
             ],
             "deletable": false,
@@ -34,6 +72,33 @@
             "uris": [
                 "/redfish/v1/Systems/{ComputerSystemId}/Oem/Dell/DellRaidService"
             ]
+        },
+        "DiskCachePolicy": {
+            "enum": [
+                "Default",
+                "Disabled",
+                "Enabled",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Default": "Default",
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Default": "Default",
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "Default": "v1_9_0",
+                "Disabled": "v1_9_0",
+                "Enabled": "v1_9_0",
+                "Unknown": "v1_9_0"
+            },
+            "type": "string"
         },
         "DiskEncrypt": {
             "enum": [
@@ -125,12 +190,17 @@
         },
         "Mode": {
             "enum": [
+                "LKM",
+                "LKM_TO_SEKM",
                 "SEKM"
             ],
             "enumDescriptions": {
+                "LKM": "LKM",
+                "LKM_TO_SEKM": "LKM_TO_SEKM",
                 "SEKM": "SEKM"
             },
             "enumVersionAdded": {
+                "LKM_TO_SEKM": "v1_4_0",
                 "SEKM": "v1_3_0"
             },
             "type": "string"
@@ -191,6 +261,33 @@
             },
             "type": "string"
         },
+        "ReadCachePolicy": {
+            "enum": [
+                "AdaptiveReadAhead",
+                "NoReadAhead",
+                "ReadAhead",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "AdaptiveReadAhead": "Adaptive Read Ahead",
+                "NoReadAhead": "No Read Ahead",
+                "ReadAhead": "Read Ahead",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "AdaptiveReadAhead": "Adaptive Read Ahead",
+                "NoReadAhead": "No Read Ahead",
+                "ReadAhead": "Read Ahead",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "AdaptiveReadAhead": "v1_9_0",
+                "NoReadAhead": "v1_9_0",
+                "ReadAhead": "v1_9_0",
+                "Unknown": "v1_9_0"
+            },
+            "type": "string"
+        },
         "State": {
             "enum": [
                 "Offline",
@@ -203,6 +300,85 @@
             "enumVersionAdded": {
                 "Offline": "v1_1_0",
                 "Online": "v1_1_0"
+            },
+            "type": "string"
+        },
+        "StripeSize": {
+            "enum": [
+                "128KB",
+                "16KB",
+                "16MB",
+                "1KB",
+                "1MB",
+                "256KB",
+                "2KB",
+                "2MB",
+                "32KB",
+                "4KB",
+                "4MB",
+                "512B",
+                "512KB",
+                "64KB",
+                "8KB",
+                "8MB",
+                "Default"
+            ],
+            "enumDescriptions": {
+                "128KB": "128KB",
+                "16KB": "16KB",
+                "16MB": "16MB",
+                "1KB": "1KB",
+                "1MB": "1MB",
+                "256KB": "256KB",
+                "2KB": "2KB",
+                "2MB": "2MB",
+                "32KB": "32KB",
+                "4KB": "4KB",
+                "4MB": "4MB",
+                "512B": "512B",
+                "512KB": "512KB",
+                "64KB": "64KB",
+                "8KB": "8KB",
+                "8MB": "8MB",
+                "Default": "Default"
+            },
+            "enumLongDescriptions": {
+                "128KB": "128KB",
+                "16KB": "16KB",
+                "16MB": "16MB",
+                "1KB": "1KB",
+                "1MB": "1MB",
+                "256KB": "256KB",
+                "2KB": "2KB",
+                "2MB": "2MB",
+                "32KB": "32KB",
+                "4KB": "4KB",
+                "4MB": "4MB",
+                "512B": "512B",
+                "512KB": "512KB",
+                "64KB": "64KB",
+                "8KB": "8KB",
+                "8MB": "8MB",
+                "Default": "Default"
+            },
+            "enumVersionAdded": {
+                "128KB": "v1_9_0",
+                "16KB": "v1_9_0",
+                "16MB": "v1_9_0",
+                "1KB": "v1_9_0",
+                "1MB": "v1_9_0",
+                "256KB": "v1_9_0",
+                "2KB": "v1_9_0",
+                "2MB": "v1_9_0",
+                "32KB": "v1_9_0",
+                "4KB": "v1_9_0",
+                "4MB": "v1_9_0",
+                "512B": "v1_9_0",
+                "512KB": "v1_9_0",
+                "64KB": "v1_9_0",
+                "8KB": "v1_9_0",
+                "8MB": "v1_9_0",
+                "Default": "v1_9_0"
             },
             "type": "string"
         },
@@ -235,6 +411,33 @@
                 "SpanLength": "Number of Physical Disks per span",
                 "StartingLBA": "Starting Logical Block Address",
                 "T10PIStatus": "T10PIStatus 0=Disabled, 1=Enabled"
+            },
+            "type": "string"
+        },
+        "WriteCachePolicy": {
+            "enum": [
+                "Unknown",
+                "WriteBack",
+                "WriteBackForce",
+                "WriteThrough"
+            ],
+            "enumDescriptions": {
+                "Unknown": "Unknown",
+                "WriteBack": "Write Back",
+                "WriteBackForce": "Write Back Force",
+                "WriteThrough": "Write Through"
+            },
+            "enumLongDescriptions": {
+                "Unknown": "Unknown",
+                "WriteBack": "Write Back",
+                "WriteBackForce": "Write Back Force",
+                "WriteThrough": "Write Through"
+            },
+            "enumVersionAdded": {
+                "Unknown": "v1_9_0",
+                "WriteBack": "v1_9_0",
+                "WriteBackForce": "v1_9_0",
+                "WriteThrough": "v1_9_0"
             },
             "type": "string"
         }

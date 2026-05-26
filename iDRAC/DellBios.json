@@ -11,6 +11,15 @@
             ],
             "description": "Real time BIOS scanning verifies the integrity and authenticity of the BIOS image in the Primary ROM when the host is powered ON, but not in the POST. This feature is available only with iDRAC Datacenter license and user need to have the Debug privilege to perform this operation",
             "longDescription": "Real time BIOS scanning verifies the integrity and authenticity of the BIOS image in the Primary ROM when the host is powered ON, but not in the POST. This feature is available only with iDRAC Datacenter license and user need to have the Debug privilege to perform this operation"
+        },
+        "SetBiosTime": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellBios.v1_0_1.json#/definitions/SetBiosTime"
+                }
+            ],
+            "description": "Sets the BIOS time to a specified value. This action allows the user to configure the system clock and ensure that the BIOS is synchronized with the current time. If @Redfish.OperationApplyTime is not passed, by default it will be set to OnReset",
+            "longDescription": "Sets the BIOS time to a specified value. This action allows the user to configure the system clock and ensure that the BIOS is synchronized with the current time. If @Redfish.OperationApplyTime is not passed, by default it will be set to OnReset"
         }
     },
     "owningEntity": "Dell",

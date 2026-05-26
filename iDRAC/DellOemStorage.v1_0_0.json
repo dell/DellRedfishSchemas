@@ -62,6 +62,20 @@
                     "description": "A resource representation of DellController.",
                     "longDescription": "A resource representation of DellController.",
                     "readonly": true
+                },
+                "DellControllerBattery": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellControllerBattery.json#/definitions/DellControllerBattery"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "autoExpand": true,
+                    "description": "A resource representation of DellControllerBattery.",
+                    "longDescription": "A resource representation of DellControllerBattery.",
+                    "readonly": true
                 }
             },
             "type": "object"
