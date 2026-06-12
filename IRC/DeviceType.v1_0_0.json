@@ -1,0 +1,41 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DeviceType.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "title": "#DeviceType.v1_0_0.DeviceType",
+    "description": "A registered device type in the Device Management Service.",
+    "definitions": {
+        "DeviceType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "@odata.id": { "type": "string", "format": "uri", "readonly": true },
+                "@odata.type": { "type": "string", "readonly": true },
+                "Id": { "type": "string", "readonly": true },
+                "Name": { "type": "string", "readonly": true },
+                "TypeName": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "The unique name of the device type (e.g., idrac, obmc, ami, cdu)."
+                },
+                "SupportedAuthTypes": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "readonly": true,
+                    "description": "Authentication types supported by this device type."
+                },
+                "RegisteredBy": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "D-Bus sender that registered this device type."
+                },
+                "SupportedDeviceVendors": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "readonly": true,
+                    "description": "Vendor model identifiers supported by this device type. Present only for vendor-managed device types (e.g., CDU, PowerShelf)."
+                }
+            },
+            "required": ["@odata.id", "@odata.type", "Id"]
+        }
+    }
+}

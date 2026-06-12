@@ -1,0 +1,333 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/ConnectedDevice.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "title": "#ConnectedDevice.v1_0_0.ConnectedDevice",
+    "description": "A connected device managed by the Device Management Service.",
+    "definitions": {
+        "ConnectedDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "@odata.id": { "type": "string", "format": "uri", "readonly": true },
+                "@odata.type": { "type": "string", "readonly": true },
+                "Id": { "type": "string", "readonly": true },
+                "Name": { "type": "string", "readonly": true },
+                "DeviceType": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "The type of device (e.g., iDRAC, obmc, ami, cdu)."
+                },
+                "DeviceName": {
+                    "type": "string",
+                    "readonly": false,
+                    "description": "User defined friendly name for the managed node. Allowable characters: alphanumeric (a-z, A-Z, 0-9) and only special characters dash, period and underscore. No spacing in allowed in the string value."
+                },
+                "DeviceAddress": {
+                    "type": "string",
+                    "format": "uri",
+                    "readonly": true,
+                    "description": "The IP address or hostname of the managed node, value must be a valid IPv4 address, IPv6 address, or DNS hostname."
+                },
+                "ConnectionStatus": {
+                    "type": "object",
+                    "readonly": true,
+                    "description": "Connection status of the device.",
+                    "properties": {
+                        "State": {
+                            "type": "string",
+                            "enum": ["Connected", "Connecting", "Disconnected", "StreamFailure", "AuthFailure", "Error"],
+                            "readonly": true,
+                            "description": "Current connection state of the device."
+                        },
+                        "Conditions": {
+                            "type": "array",
+                            "readonly": true,
+                            "description": "Connection-specific conditions that require attention.",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "MessageId": {
+                                        "type": "string",
+                                        "readonly": true,
+                                        "description": "The identifier for the message."
+                                    },
+                                    "Message": {
+                                        "type": "string",
+                                        "readonly": true,
+                                        "description": "The human-readable message for this condition."
+                                    },
+                                    "MessageArgs": {
+                                        "type": "array",
+                                        "items": { "type": "string" },
+                                        "readonly": true,
+                                        "description": "An array of message arguments that are substituted for the arguments in the message when looked up in the message registry."
+                                    },
+                                    "Severity": {
+                                        "type": "string",
+                                        "enum": ["OK", "Warning", "Critical"],
+                                        "readonly": true,
+                                        "description": "The severity of the condition."
+                                    },
+                                    "Timestamp": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "readonly": true,
+                                        "description": "The time the condition occurred."
+                                    },
+                                    "Resolution": {
+                                        "type": "string",
+                                        "readonly": true,
+                                        "description": "Suggestions on how to resolve the condition."
+                                    },
+                                    "OriginOfCondition": {
+                                        "type": "object",
+                                        "properties": {
+                                            "@odata.id": {
+                                                "type": "string",
+                                                "format": "uri",
+                                                "readonly": true,
+                                                "description": "The unique identifier for the resource that originated the condition."
+                                            }
+                                        },
+                                        "description": "A link to the resource or object that originated the condition."
+                                    }
+                                },
+                                "required": ["MessageId"]
+                            }
+                        }
+                    }
+                },
+                "Status": {
+                    "type": "object",
+                    "readonly": true,
+                    "description": "Redfish resource status of the device.",
+                    "properties": {
+                        "State": {
+                            "type": "string",
+                            "enum": ["Enabled"],
+                            "readonly": true,
+                            "description": "Current Redfish state of the ConnectedDevice resource. ConnectedDevice resources are always Enabled; connection/runtime state is exposed separately in ConnectionStatus.State."
+                        },
+                        "Conditions": {
+                            "type": "array",
+                            "readonly": true,
+                            "description": "Conditions in this resource that require attention.",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "MessageId": {
+                                        "type": "string",
+                                        "readonly": true,
+                                        "description": "The identifier for the message."
+                                    },
+                                    "Message": {
+                                        "type": "string",
+                                        "readonly": true,
+                                        "description": "The human-readable message for this condition."
+                                    },
+                                    "MessageArgs": {
+                                        "type": "array",
+                                        "items": { "type": "string" },
+                                        "readonly": true,
+                                        "description": "An array of message arguments that are substituted for the arguments in the message when looked up in the message registry."
+                                    },
+                                    "Severity": {
+                                        "type": "string",
+                                        "enum": ["OK", "Warning", "Critical"],
+                                        "readonly": true,
+                                        "description": "The severity of the condition."
+                                    },
+                                    "Timestamp": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "readonly": true,
+                                        "description": "The time the condition occurred."
+                                    },
+                                    "Resolution": {
+                                        "type": "string",
+                                        "readonly": true,
+                                        "description": "Suggestions on how to resolve the condition."
+                                    },
+                                    "OriginOfCondition": {
+                                        "type": "object",
+                                        "properties": {
+                                            "@odata.id": {
+                                                "type": "string",
+                                                "format": "uri",
+                                                "readonly": true,
+                                                "description": "The unique identifier for the resource that originated the condition."
+                                            }
+                                        },
+                                        "description": "A link to the resource or object that originated the condition."
+                                    }
+                                },
+                                "required": ["MessageId"]
+                            }
+                        },
+                        "Health": {
+                            "type": "string",
+                            "enum": ["OK", "Warning", "Critical"],
+                            "readonly": true,
+                            "description": "Health state of the device."
+                        },
+                        "HealthRollup": {
+                            "type": "string",
+                            "enum": ["OK", "Warning", "Critical"],
+                            "readonly": true,
+                            "description": "Rolled-up health state of the device and its subordinate resources."
+                        }
+                    }
+                },
+                "LeakDetectorState": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Leak detector status from the node leak device."
+                },
+                "ControlEnabled": {
+                    "type": "boolean",
+                    "readonly": false,
+                    "description": "Whether control actions (e.g., shutdown) are enabled for this device."
+                },
+                "RackPosition": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Physical rack position of the device."
+                },
+                "RackLocation": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Rack identifier/name reported by the remote BMC (distinct from RackPosition which is the U-slot position)."
+                },
+                "RemoteRackLocation": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Rack location string reported by the remote BMC for mismatch detection against the local IRC rack location."
+                },
+                "RackLocationAction": {
+                    "type": "string",
+                    "description": "Controls how the connector handles rack location mismatches between IRC and remote BMCs.",
+                    "enum": ["SetRemoteToMatch", "MonitorOnly", "Ignore"],
+                    "enumDescriptions": {
+                        "SetRemoteToMatch": "Actively writes IRC rack location to remote BMCs via Redfish PATCH.",
+                        "MonitorOnly": "Only monitors for mismatches (emits RackLocationMismatch condition), no writes.",
+                        "Ignore": "Ignores rack location entirely."
+                    }
+                },
+                "DeviceModel": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Model name of the connected device."
+                },
+                "AuthType": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Authentication type used for this device (e.g., Basic, OAuth2, XAuth)."
+                },
+                "Authorized": {
+                    "type": "boolean",
+                    "readonly": true,
+                    "description": "Whether the device is currently authorized."
+                },
+                "LastEventTimestamp": {
+                    "type": "integer",
+                    "readonly": true,
+                    "description": "Timestamp of the last event from this device."
+                },
+                "DeviceVendor": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Vendor of the connected device."
+                },
+                "VendorModel": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Vendor model/family of the connected device (e.g. a CDU vendor identifier). Read-only: the value is fixed at device creation. The set of values accepted at creation is published at the device type resource (DeviceTypes/{Id}.SupportedDeviceVendors) and mirrored here via VendorModel@Redfish.AllowableValues for discovery only."
+                },
+                "ServiceTag": {
+                    "type": "string",
+                    "readonly": true,
+                    "description": "Service tag of the connected device."
+                },
+                "Configured": {
+                    "type": "boolean",
+                    "readonly": true,
+                    "description": "Indicates whether the irc-connectors connector has accepted the system as fully configured. True when the connector has finished its onboarding handshake (metadata fetched, SSE stream attempted) and the device record is consistent with the upstream provider; false during initial setup or if the connector has flagged the system as not yet usable. Sourced from the com.dell.imc.ManagedSystem D-Bus interface on the connector side."
+                },
+                "PowerState": {
+                    "type": ["string", "null"],
+                    "readonly": true,
+                    "description": "The current power state of the connected device.",
+                    "enum": ["On", "Off", "PoweringOn", "PoweringOff", null]
+                },
+                "Certificates": {
+                    "description": "Link to the certificate collection for this connected device.",
+                    "type": "object",
+                    "readonly": true,
+                    "properties": {
+                        "@odata.id": { "type": "string", "format": "uri" }
+                    }
+                },
+                "CDUProperties": {
+                    "description": "CDU-specific properties. Present only when DeviceType is CDU.",
+                    "type": ["object", "null"],
+                    "readonly": true
+                },
+                "Sensors": {
+                    "description": "Link to CDU sensor collection. Present only when SystemType is CDU.",
+                    "type": "object",
+                    "readonly": true,
+                    "properties": {
+                        "@odata.id": { "type": "string", "format": "uri" }
+                    }
+                },
+                "Pumps": {
+                    "description": "Link to CDU pump collection. Present only when SystemType is CDU.",
+                    "type": "object",
+                    "readonly": true,
+                    "properties": {
+                        "@odata.id": { "type": "string", "format": "uri" }
+                    }
+                },
+                "EnvironmentMetrics": {
+                    "description": "Link to CDU environment metrics. Present only when SystemType is CDU.",
+                    "type": "object",
+                    "readonly": true,
+                    "properties": {
+                        "@odata.id": { "type": "string", "format": "uri" }
+                    }
+                },
+                "Actions": {
+                    "type": "object",
+                    "description": "Available actions for this connected device. Present only for OAuth2 devices.",
+                    "properties": {
+                        "#ConnectedDevice.Authorize": {
+                            "type": "object",
+                            "description": "Generate an OAuth2 authorization URL for this device.",
+                            "properties": {
+                                "target": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "readonly": true,
+                                    "description": "The URI to POST to invoke the Authorize action."
+                                }
+                            }
+                        },
+                        "#ConnectedDevice.Revoke": {
+                            "type": "object",
+                            "description": "Revoke OAuth2 tokens for this device.",
+                            "properties": {
+                                "target": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "readonly": true,
+                                    "description": "The URI to POST to invoke the Revoke action."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "required": ["@odata.id", "@odata.type", "Id"]
+        }
+    }
+}

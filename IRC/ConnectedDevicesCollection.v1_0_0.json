@@ -1,0 +1,30 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/ConnectedDevicesCollection.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "title": "#ConnectedDevicesCollection.ConnectedDevicesCollection",
+    "description": "Collection of connected devices managed by the Device Management Service.",
+    "definitions": {
+        "ConnectedDevicesCollection": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "@odata.id": { "type": "string", "format": "uri", "readonly": true },
+                "@odata.type": { "type": "string", "readonly": true },
+                "Name": { "type": "string", "readonly": true },
+                "Description": { "type": "string", "readonly": true },
+                "Members": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "@odata.id": { "type": "string", "format": "uri" }
+                        }
+                    },
+                    "readonly": true
+                },
+                "Members@odata.count": { "type": "integer", "readonly": true }
+            },
+            "required": ["@odata.id", "@odata.type", "Name", "Members", "Members@odata.count"]
+        }
+    }
+}

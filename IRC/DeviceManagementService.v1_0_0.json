@@ -1,0 +1,76 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DeviceManagementService.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "title": "#DeviceManagementService.v1_0_0.DeviceManagementService",
+    "description": "Dell OEM Device Management Service resource.",
+    "definitions": {
+        "DeviceManagementService": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "@odata.id": { "type": "string", "format": "uri", "readonly": true },
+                "@odata.type": { "type": "string", "readonly": true },
+                "Id": { "type": "string", "readonly": true },
+                "Name": { "type": "string", "readonly": true },
+                "Description": { "type": "string", "readonly": true },
+                "Status": {
+                    "type": "object",
+                    "readonly": true,
+                    "description": "The status and health of the resource and its subordinate or dependent resources.",
+                    "properties": {
+                        "State": {
+                            "type": "string",
+                            "enum": ["Enabled"],
+                            "readonly": true
+                        },
+                        "Health": {
+                            "type": "string",
+                            "enum": ["OK", "Warning", "Critical"],
+                            "readonly": true
+                        },
+                        "HealthRollup": {
+                            "type": "string",
+                            "enum": ["OK", "Warning", "Critical"],
+                            "readonly": true
+                        }
+                    }
+                },
+                "LeakDetectorState": {
+                    "type": ["string", "null"],
+                    "readonly": true,
+                    "description": "The aggregated leak detector state across all managed connected devices."
+                },
+                "ConnectedDevices": {
+                    "type": "object",
+                    "properties": {
+                        "@odata.id": { "type": "string", "format": "uri" }
+                    },
+                    "readonly": true,
+                    "description": "Link to the ConnectedDevices collection."
+                },
+                "DeviceTypes": {
+                    "type": "object",
+                    "properties": {
+                        "@odata.id": { "type": "string", "format": "uri" }
+                    },
+                    "readonly": true,
+                    "description": "Link to the DeviceTypes collection."
+                },
+                "Actions": {
+                    "type": "object",
+                    "properties": {
+                        "#DeviceManagementService.ProbeSystem": {
+                            "type": "object",
+                            "properties": {
+                                "target": { "type": "string", "format": "uri" }
+                            }
+                        }
+                    },
+                    "readonly": true,
+                    "description": "Available actions for this resource."
+                }
+            },
+            "required": ["@odata.id", "@odata.type", "Id", "Name"]
+        }
+    }
+}
