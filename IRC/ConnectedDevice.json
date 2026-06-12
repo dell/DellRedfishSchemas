@@ -1,0 +1,28 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/ConnectedDevice.json",
+    "$ref": "#/definitions/ConnectedDevice",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "ConnectedDevice": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/ConnectedDevice.v1_0_0.json#/definitions/ConnectedDevice"
+                }
+            ],
+            "deletable": true,
+            "description": "A connected device managed by the Device Management Service.",
+            "insertable": false,
+            "longDescription": "A connected device managed by the Device Management Service.",
+            "updatable": true,
+            "uris": [
+                "/redfish/v1/Oem/Dell/DeviceManagementService/ConnectedDevices/{DeviceId}"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#ConnectedDevice.ConnectedDevice"
+}

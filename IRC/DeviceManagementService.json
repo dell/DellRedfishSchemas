@@ -1,0 +1,28 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DeviceManagementService.json",
+    "$ref": "#/definitions/DeviceManagementService",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DeviceManagementService": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DeviceManagementService.v1_0_0.json#/definitions/DeviceManagementService"
+                }
+            ],
+            "deletable": false,
+            "description": "Dell OEM Device Management Service resource.",
+            "insertable": false,
+            "longDescription": "Dell OEM Device Management Service resource.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Oem/Dell/DeviceManagementService"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DeviceManagementService.DeviceManagementService"
+}

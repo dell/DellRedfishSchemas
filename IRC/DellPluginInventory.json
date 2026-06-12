@@ -1,0 +1,18 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellPluginInventory.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellPluginInventory": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellPluginInventory.v1_0_0.json#/definitions/DellPluginInventory"
+                }
+            ],
+            "description": "Dell OEM extension for Plugin Software Inventory",
+            "longDescription": "Dell OEM extension for Plugin Software Inventory"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellPluginInventory"
+}
