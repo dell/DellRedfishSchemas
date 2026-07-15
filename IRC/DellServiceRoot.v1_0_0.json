@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellServiceRoot.v1_0_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2024 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellServiceRoot": {
             "additionalProperties": false,
@@ -22,37 +22,27 @@
                 }
             },
             "properties": {
-                "IsBranded": {
-                    "description": "Property to represent OEM system as DELL.",
-                    "longDescription": "The value of the property identifies OEM system as DELL.",
+                "DeviceManagementService": {
+                    "additionalProperties": false,
+                    "description": "Link to the Device Management Service resource.",
+                    "longDescription": "The value of this property shall be a link to the Device Management Service resource.",
+                    "properties": {
+                        "@odata.id": {
+                            "type": "string",
+                            "format": "uri",
+                            "readonly": true
+                        }
+                    },
                     "readonly": true,
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "ManagerMACAddress": {
-                    "description": "Property to represent MAC Address of the IMC.",
-                    "longDescription": "The value of the property represents MAC Address of the IMC.",
-                    "readonly": true,
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "ServiceTag": {
-                    "description": "Property to represent ServiceTag of Computer System.",
-                    "longDescription": "The value of the property specifies the system service tag.",
-                    "readonly": true,
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "required": [
+                        "@odata.id"
+                    ],
+                    "type": "object"
                 }
             },
             "type": "object"
         }
     },
     "owningEntity": "Dell",
-    "title": "#DellServiceRoot.v1_0_0"
+    "title": "#DellServiceRoot.v1_0_0.DellServiceRoot"
 }

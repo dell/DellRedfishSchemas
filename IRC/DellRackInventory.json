@@ -1,0 +1,28 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellRackInventory.json",
+    "$ref": "#/definitions/DellRackInventory",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2026 Dell Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellRackInventory": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellRackInventory.v1_0_0.json#/definitions/DellRackInventory"
+                }
+            ],
+            "deletable": false,
+            "description": "Combined rack inventory metadata showing factory and user inventory status.",
+            "insertable": false,
+            "longDescription": "Combined rack inventory resource showing both factory and user inventory status with download actions.",
+            "updatable": false,
+            "uris": [
+                "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellRackInventory"
+            ]
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellRackInventory.DellRackInventory"
+}
