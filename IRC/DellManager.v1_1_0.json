@@ -1,5 +1,5 @@
 {
-    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellManager.v1_0_0.json",
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellManager.v1_1_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
@@ -85,6 +85,20 @@
                     "description": "Contains the members of this collection.",
                     "longDescription": "Contains the members of this collection.",
                     "readonly": true
+                },
+                "DellRackInventory": {
+                    "anyOf": [
+                        {
+                            "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/IRC/DellRackInventory.json#/definitions/DellRackInventory"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Combined rack inventory resource showing both factory and user inventory status.",
+                    "longDescription": "Combined rack inventory resource showing both factory and user inventory status with download actions.",
+                    "readonly": true,
+                    "versionAdded": "v1_1_0"
                 },
                 "DelliDRACCardService": {
                     "additionalProperties": false,
@@ -302,5 +316,5 @@
         }
     },
     "owningEntity": "Dell",
-    "title": "#DellManager.v1_0_0.DellManager"
+    "title": "#DellManager.v1_1_0.DellManager"
 }
