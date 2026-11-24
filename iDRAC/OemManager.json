@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ClearPending": {
             "anyOf": [
@@ -28,7 +28,7 @@
                 }
             ],
             "description": "Retrieve Redfish resources for a set of endpoints, possibly using wildcards.",
-            "longDescription": "This action retrieves the Redfish resources for the specified endpoints. The action may return partial results if the operation exceeds the specified timeout."
+            "longDescription": "This action retrieves the Redfish resources for the specified endpoints. The action supports wildcard expansion and may return partial results if the operation exceeds the specified timeout or MaxURIs limit. Only one GetRedfishResources request can execute at a time; concurrent requests are rejected with HTTP 429."
         },
         "ImportSystemConfiguration": {
             "anyOf": [

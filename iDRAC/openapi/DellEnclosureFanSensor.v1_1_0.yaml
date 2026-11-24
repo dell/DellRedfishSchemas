@@ -1,0 +1,245 @@
+components:
+  schemas:
+    DellEnclosureFanSensor_v1_1_0_DellEnclosureFanSensor:
+      additionalProperties: false
+      description: An instance of DellEnclosureFanSensor will have Storage Enclosure
+        fan fensor specific data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        CurrentReading:
+          description: The current value indicated by the Sensor.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The current value indicated by the Sensor.
+          x-versionAdded: v1_1_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceDescription:
+          description: A string that contains the friendly Fully Qualified Device
+            Description (FQDD), which is a property that describes the device and
+            its location.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the friendly Fully Qualified Device
+            Description (FQDD), which is a property that describes the device and
+            its location.
+          x-versionAdded: v1_1_0
+        ElementName:
+          description: The user-friendly name for this instance.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The user-friendly name for this instance.
+          x-versionAdded: v1_1_0
+        FQDD:
+          description: The property shall represent Fully Qualified Device Description
+            (FQDD).
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent Fully Qualified Device Description
+            (FQDD).
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LowerThresholdCritical:
+          description: The threshold values of the sensor specify the ranges (minimum
+            and maximum values) for determining whether the Sensor is operating under
+            Normal, NonCritical, Critical, or Fatal conditions. If the CurrentReading
+            is between LowerThresholdCritical and LowerThresholdFatal, the CurrentState
+            is Critical.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The threshold values of the sensor specify the ranges
+            (minimum and maximum values) for determining whether the Sensor is operating
+            under Normal, NonCritical, Critical, or Fatal conditions. If the CurrentReading
+            is between LowerThresholdCritical and LowerThresholdFatal, the CurrentState
+            is Critical.
+          x-versionAdded: v1_1_0
+        LowerThresholdNonCritical:
+          description: The threshold values of the sensor specify the ranges (minimum
+            and maximum values) for determining whether the Sensor is operating under
+            Normal, NonCritical, Critical, or Fatal conditions. If Current Reading
+            is between LowerThresholdNonCritical and Upper ThresholdNonCritical, the
+            Sensor is reporting a normal value. If CurrentReading is between LowerThresholdNonCritical
+            and LowerThresholdCritical, the CurrentState is NonCritical.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The threshold values of the sensor specify the ranges
+            (minimum and maximum values) for determining whether the Sensor is operating
+            under Normal, NonCritical, Critical, or Fatal conditions. If Current Reading
+            is between LowerThresholdNonCritical and Upper ThresholdNonCritical, the
+            Sensor is reporting a normal value. If CurrentReading is between LowerThresholdNonCritical
+            and LowerThresholdCritical, the CurrentState is NonCritical.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        PrimaryStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnclosureFanSensor.yaml#/components/schemas/DellEnclosureFanSensor_PrimaryStatus
+          description: PrimaryStatus provides a high-level status of the device.
+          nullable: true
+          readOnly: true
+          x-longDescription: PrimaryStatus provides a high-level status of the device.
+          x-versionAdded: v1_1_0
+        RateUnits:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnclosureFanSensor.yaml#/components/schemas/DellEnclosureFanSensor_RateUnits
+          description: Specifies if the units returned by this Sensor are rate units.
+            All the values returned by this Sensor are represented in the units obtained
+            by (BaseUnits * 10 raised to the power of the UnitModifier). This is true
+            unless this property (RateUnits) has a value other than "None". For example,
+            if BaseUnits is Volts and the UnitModifier is -6, the units of the values
+            returned are MicroVolts. But, if the RateUnits property is set to a value
+            other than "None", the units are further qualified as rate units. In the
+            above example, if RateUnits is set to "Per Second", the values returned
+            by the Sensor are in MicroVolts/Second. The units apply to all numeric
+            properties of the Sensor, unless explicitly overridden by the Units qualifier.
+            Any implementation of CurrentReading must be qualified with either a Counter
+            or a Gauge qualifier, depending on the characteristics of the sensor being
+            modeled. The property is not applicable.
+          nullable: true
+          readOnly: true
+          x-longDescription: Specifies if the units returned by this Sensor are rate
+            units. All the values returned by this Sensor are represented in the units
+            obtained by (BaseUnits * 10 raised to the power of the UnitModifier).
+            This is true unless this property (RateUnits) has a value other than "None".
+            For example, if BaseUnits is Volts and the UnitModifier is -6, the units
+            of the values returned are MicroVolts. But, if the RateUnits property
+            is set to a value other than "None", the units are further qualified as
+            rate units. In the above example, if RateUnits is set to "Per Second",
+            the values returned by the Sensor are in MicroVolts/Second. The units
+            apply to all numeric properties of the Sensor, unless explicitly overridden
+            by the Units qualifier. Any implementation of CurrentReading must be qualified
+            with either a Counter or a Gauge qualifier, depending on the characteristics
+            of the sensor being modeled. The property is not applicable.
+          x-versionAdded: v1_1_0
+        ReadingUnits:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnclosureFanSensor.yaml#/components/schemas/DellEnclosureFanSensor_BaseUnits
+          description: This property represents units of the current reading value,
+            such as Degrees Celsius. This is the base unit of the values returned
+            by this Sensor. All the values returned by this Sensor are represented
+            in the units obtained by (BaseUnits * 10 raised to the power of the UnitModifier).
+            For example, if BaseUnits is Volts and the UnitModifier is -6, the units
+            of the values returned are MicroVolts. However, if the RateUnits property
+            is set to a value other than "None", the units are further qualified as
+            rate units. In the above example, if RateUnits is set to "Per Second",
+            the values returned by the Sensor are in MicroVolts/Second. The units
+            apply to all numeric properties of the Sensor, unless explicitly overridden
+            by the Units qualifier.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents units of the current reading
+            value, such as Degrees Celsius. This is the base unit of the values returned
+            by this Sensor. All the values returned by this Sensor are represented
+            in the units obtained by (BaseUnits * 10 raised to the power of the UnitModifier).
+            For example, if BaseUnits is Volts and the UnitModifier is -6, the units
+            of the values returned are MicroVolts. However, if the RateUnits property
+            is set to a value other than "None", the units are further qualified as
+            rate units. In the above example, if RateUnits is set to "Per Second",
+            the values returned by the Sensor are in MicroVolts/Second. The units
+            apply to all numeric properties of the Sensor, unless explicitly overridden
+            by the Units qualifier.
+          x-versionAdded: v1_1_0
+        State:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnclosureFanSensor.yaml#/components/schemas/DellEnclosureFanSensor_State
+          description: This property displays the current state of the device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property displays the current state of the device.
+          x-versionAdded: v1_1_0
+        UnitModifier:
+          description: The unit multiplier for the values returned by this Sensor.
+            All the values returned by this Sensor are represented in the units obtained
+            by (BaseUnits * 10 raised to the power of the UnitModifier). For example,
+            if BaseUnits is Volts and the Unit Modifier is -6, the units of the values
+            returned are MicroVolts. However, if the RateUnits property is set to
+            a value other than "None", the units are further qualified as rate units.
+            In the above example, if RateUnits is set to "Per Second", the values
+            returned by the Sensor are in MicroVolts/Second. The units apply to all
+            numeric properties of the Sensor, unless explicitly overridden by the
+            Units qualifier.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The unit multiplier for the values returned by this Sensor.
+            All the values returned by this Sensor are represented in the units obtained
+            by (BaseUnits * 10 raised to the power of the UnitModifier). For example,
+            if BaseUnits is Volts and the Unit Modifier is -6, the units of the values
+            returned are MicroVolts. However, if the RateUnits property is set to
+            a value other than "None", the units are further qualified as rate units.
+            In the above example, if RateUnits is set to "Per Second", the values
+            returned by the Sensor are in MicroVolts/Second. The units apply to all
+            numeric properties of the Sensor, unless explicitly overridden by the
+            Units qualifier.
+          x-versionAdded: v1_1_0
+        UpperThresholdCritical:
+          description: The threshold values of the sensor specify the ranges (minimum
+            and maximum values) for determining whether the Sensor is operating under
+            Normal, NonCritical, Critical, or Fatal conditions. If the CurrentReading
+            is between UpperThresholdCritical and UpperThresholdFatal, the CurrentState
+            is Critical.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The threshold values of the sensor specify the ranges
+            (minimum and maximum values) for determining whether the Sensor is operating
+            under Normal, NonCritical, Critical, or Fatal conditions. If the CurrentReading
+            is between UpperThresholdCritical and UpperThresholdFatal, the CurrentState
+            is Critical.
+          x-versionAdded: v1_1_0
+        UpperThresholdNonCritical:
+          description: The threshold values of the sensor specify the ranges (minimum
+            and maximum values) for determining whether the Sensor is operating under
+            Normal, NonCritical, Critical, or Fatal conditions. If the CurrentReading
+            is between LowerThresholdNonCritical and UpperThresholdNonCritical, the
+            Sensor is reporting a normal value. If the CurrentReading is between UpperThresholdNonCritical
+            and UpperThresholdCritical, the CurrentState is NonCritical.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The threshold values of the sensor specify the ranges
+            (minimum and maximum values) for determining whether the Sensor is operating
+            under Normal, NonCritical, Critical, or Fatal conditions. If the CurrentReading
+            is between LowerThresholdNonCritical and UpperThresholdNonCritical, the
+            Sensor is reporting a normal value. If the CurrentReading is between UpperThresholdNonCritical
+            and UpperThresholdCritical, the CurrentState is NonCritical.
+          x-versionAdded: v1_1_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellEnclosureFanSensor will have Storage Enclosure
+        fan fensor specific data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellEnclosureFanSensor.v1_1_0.DellEnclosureFanSensor'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

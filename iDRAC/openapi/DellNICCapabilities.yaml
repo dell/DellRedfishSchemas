@@ -1,0 +1,550 @@
+components:
+  schemas:
+    DellNICCapabilities_BPESupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_CongestionNotification:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_DCBExchangeProtocol:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_2_0
+        Supported: v1_2_0
+        Unknown: v1_2_0
+    DellNICCapabilities_DellNICCapabilities:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICCapabilities.v1_3_0.yaml#/components/schemas/DellNICCapabilities_v1_3_0_DellNICCapabilities
+      description: An instance of DellNICCapabilities will have data specific to NIC
+        and its port and partitions capabilities.
+      urisDeprecated:
+      - /redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/Oem/Dell/DellNICCapabilities/{NICCapabilitiesId}
+      - /redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceId}/Oem/Dell/DellNICCapabilities/{NICCapabilitiesId}
+      x-longDescription: An instance of DellNICCapabilities will have data specific
+        to NIC and its port and partitions capabilities.
+    DellNICCapabilities_ETS:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_EVBModesSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_FCoEBootSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellNICCapabilities_FCoEOffloadSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellNICCapabilities_FeatureLicensingSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_FlexAddressingSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellNICCapabilities_IPSecOffloadSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_MACSecSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_NWManagementPassThrough:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_NicPartitioningSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_2_0
+        Supported: v1_2_0
+        Unknown: v1_2_0
+    DellNICCapabilities_OSBMCManagementPassThrough:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_OnChipThermalSensor:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_OpenFlowSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_PXEBootSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellNICCapabilities_PartitionWOLSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_PersistencePolicySupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_PriorityFlowControl:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_RDMASupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_RemotePHY:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_TCPChimneySupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_TCPOffloadEngineSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_2_0
+        Supported: v1_2_0
+        Unknown: v1_2_0
+    DellNICCapabilities_VEB:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_VEBVEPAMultiChannel:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_VEBVEPASingleChannel:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_VirtualLinkControl:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+    DellNICCapabilities_iSCSIBootSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellNICCapabilities_iSCSIOffloadSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellNICCapabilities_uEFISupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+        Unknown: v1_1_0
+title: '#DellNICCapabilities.DellNICCapabilities'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

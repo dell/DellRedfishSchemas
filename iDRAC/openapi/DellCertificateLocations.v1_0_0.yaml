@@ -1,0 +1,29 @@
+components:
+  schemas:
+    DellCertificateLocations_v1_0_0_DellCertificateLocationLinks:
+      additionalProperties: false
+      description: This resource defines links to certificates.
+      properties:
+        Certificates:
+          description: A reference to a Certificate resource.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: A reference to a Certificate resource.
+        Certificates@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+        HWCertificates:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A link to a resource of type DellCertificateLocations.
+          nullable: true
+          readOnly: true
+          x-longDescription: A link to a resource of type DellCertificateLocations.
+      type: object
+      x-longDescription: This resource defines links to certificates.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellCertificateLocations.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,26 @@
+components:
+  schemas:
+    DellOemSoftwareInventory_DellOemSoftwareInventory:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSoftwareInventory.v1_0_0.yaml#/components/schemas/DellOemSoftwareInventory_v1_0_0_DellOemSoftwareInventory
+      description: This property shall represent the OEM properties for a SoftwareInventory
+        resource.
+      x-longDescription: This complex type provides OEM extensions for the DMTF SoftwareInventory
+        resource, including plugin inventory properties and Dell-specific extensions.
+    DellOemSoftwareInventory_Restart:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSoftwareInventory.v1_0_0.yaml#/components/schemas/DellOemSoftwareInventory_v1_0_0_Restart
+      description: The Restart operation shall restart plugin instance present in
+        SoftwareInventory.
+      x-longDescription: The Restart operation shall restart plugin instance present
+        in SoftwareInventory.
+    DellOemSoftwareInventory_Uninstall:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSoftwareInventory.v1_0_0.yaml#/components/schemas/DellOemSoftwareInventory_v1_0_0_Uninstall
+      description: The Uninstall operation shall remove plugin instance present in
+        SoftwareInventory.
+      x-longDescription: The Uninstall operation shall remove plugin instance present
+        in SoftwareInventory.
+title: '#DellOemSoftwareInventory'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

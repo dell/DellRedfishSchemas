@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellNetworkAdapter v1_2_0-->
+<!--# -->
+<!--# Copyright © 2021-2024 Dell Inc. or its subsidiaries. All Rights Reserved.-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Processor_v1.xml">
+      <edmx:Include Namespace="Processor"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/NetworkAdapter_v1.xml">
+        <edmx:Include Namespace="NetworkAdapter"/>
+        <edmx:Include Namespace="NetworkAdapter.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="DellNetworkAdapter" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellNetworkAdapter" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="This property shall represent the Oem properties for a NetworkAdapter resource."/>
+                <Annotation Term="OData.LongDescription" String="This property shall represent the Oem properties for a NetworkAdapter resource."/>
+            </ComplexType>
+            <ComplexType Name="ControllerLinks" Abstract="true">
+              <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+              <Annotation Term="OData.Description" String="This is the complex property is for the additional OEM Links realted to the DMTF NetworkAdapter Controller."/>
+              <Annotation Term="OData.LongDescription" String="This is the complex property is for the additional OEM Links realted to the DMTF NetworkAdapter Controller."/>
+            </ComplexType>
+            <Action Name="SetPowerSavingMode" IsBound="true">
+                <Annotation Term="OData.Description" String="This action is used to set the PowerSavingMode for a NetworkAdapter."/>
+                <Annotation Term="OData.LongDescription" String="This action is used to set the PowerSavingMode for a NetworkAdapter. It enables or disables the power save mode on the NetworkAdapter."/>
+                <Parameter Name="NetworkAdapter" Type="NetworkAdapter.v1_0_0.OemActions" Nullable="false"/>
+                <Parameter Name="Mode" Type="DellNetworkAdapter.v1_2_0.Mode" Nullable="false">
+                    <Annotation Term="OData.Description" String="The type of Power Save Mode."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the type of Power Save Mode."/>
+                </Parameter>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_2_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+           <Action Name="ExportTriggerLog" IsBound="true">
+                <Parameter Name="NetworkAdapter" Type="NetworkAdapter.v1_3_0.OemActions" Nullable="false"/>
+                <Parameter Name="IPAddress" Type="Edm.String">
+                    <Annotation String="IP address of the network share such as 192.168.10.12. The parameter is required if the ShareType parameter has value of FTP, NFS, CIFS, HTTP, TFTP or HTTPS." Term="OData.Description"/>
+                    <Annotation String="IP address of the network share such as 192.168.10.12. The parameter is required if the ShareType parameter has value of FTP, NFS, CIFS, HTTP, TFTP or HTTPS." Term="OData.LongDescription"/>
+                </Parameter>
+                <Parameter Name="UserName" Type="Edm.String">
+                    <Annotation String="UserName for Network share authentication." Term="OData.Description"/>
+                    <Annotation String="UserName for Network share authentication." Term="OData.LongDescription"/>
+                </Parameter>
+                <Parameter Name="Password" Type="Edm.String">
+                    <Annotation String="Password to access Network Share." Term="OData.Description"/>
+                    <Annotation String="Password to access Network Share." Term="OData.LongDescription"/>
+                </Parameter>
+                <Parameter Name="ShareName" Type="Edm.String" >
+                    <Annotation String="Name of the Network Share." Term="OData.Description"/>
+                    <Annotation String="Name of the Network Share." Term="OData.LongDescription"/>
+                </Parameter>
+                <Parameter Name="ShareType" Type="DellNetworkAdapter.v1_4_0.ShareType" Nullable="false">
+                    <Annotation String="Type of the network share." Term="OData.Description"/>
+                    <Annotation String="Type of the network share." Term="OData.LongDescription"/>
+                </Parameter>
+                <Parameter Name="FileName" Type="Edm.String">
+                    <Annotation String="The target output file name." Term="OData.Description"/>
+                    <Annotation String="The target output file name." Term="OData.LongDescription"/>
+                    <Annotation Term="Validation.Pattern" String="^[^:*?|/\&lt;&gt;]+$"/>
+                </Parameter>
+                <Parameter Name="RequestType" Type="DellNetworkAdapter.v1_4_0.RequestType" Nullable="false">
+                    <Annotation String="Type of log collection requested such as CoreDump or CrashDump." Term="OData.Description"/>
+                    <Annotation String="Type of log collection requested such as CoreDump or CrashDump." Term="OData.LongDescription"/>
+                </Parameter>
+                <Annotation Term="OData.Description" String="This action exports the trigger log to a specified server"/>
+                <Annotation Term="OData.LongDescription" String="This action exports the trigger log to a specified server using the provided credentials and share information"/>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_4_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+        </Schema>
+        <Schema Namespace="DellNetworkAdapter.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellNetworkAdapter" BaseType="DellNetworkAdapter.DellNetworkAdapter">
+                <Property Name="PLDMMonitoringEnabled" Type="Edm.Boolean">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="An indication of whether monitoring and controling for PLDM device is enabled for NetworkAdapter."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate whether monitoring and controling for pldm device is enabled for NetworkAdapter."/>
+                </Property>
+            </ComplexType>
+            <ComplexType Name="ControllerLinks" BaseType="DellNetworkAdapter.ControllerLinks">
+              <Annotation Term="OData.Description" String="This version was added to add new Oem resources and Links."/>
+              <Annotation Term="OData.LongDescription" String="This version was added to add new Oem resources and Links."/>
+              <NavigationProperty Name="CPUAffinity" Type="Collection(Processor.Processor)" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+                <Annotation Term="OData.LongDescription" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+              </NavigationProperty>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellNetworkAdapter.v1_1_0">
+            <Annotation Term="OData.Description" String="This version was created to add support for DMFunctionality"/>
+            <Annotation Term="OData.LongDescription" String="This version was created to add support for DMFunctionality."/>
+            <ComplexType Name="ControllerLinks" BaseType="DellNetworkAdapter.v1_0_0.ControllerLinks"/>
+            <ComplexType Name="DellNetworkAdapter" BaseType="DellNetworkAdapter.v1_0_0.DellNetworkAdapter">
+                <Property Name="DMFunctionality" Type="DellNetworkAdapter.v1_1_0.DMFunctionality">
+                    <Annotation Term="OData.Description" String="This property shall contain the read and Write the device management functionality."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the read and Write the device management functionality."/>
+                </Property>
+            </ComplexType>
+            <ComplexType Name="DMFunctionality">
+                <Property Name="FlashBankMuxControl" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="This property is used to control the mux that selects the active flash bank on the dual bank design."/>
+                    <Annotation Term="OData.LongDescription" String="This property is used to control the mux that selects the active flash bank on the dual bank design."/>
+                </Property>
+                <Property Name="NextBootFlashBank" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property shows the Next Boot flash bank of the SoC."/>
+                    <Annotation Term="OData.LongDescription" String="This property shows the Next Boot flash bank of the SoC."/>
+                </Property>
+                <Property Name="FlashBankCSControl" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="This property is used to control the Flash Bank Chip Select of the SoC."/>
+                    <Annotation Term="OData.LongDescription" String="This property is used for control the Flash Bank Chip Select of the SoC."/>
+                </Property>
+                <Property Name="DCPowerState" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="This property signal is used for reading the state of the Power feed."/>
+                    <Annotation Term="OData.LongDescription" String="This property signal is used for reading the state of the Power feed. When the signal is high there is correct power feed applied, when low there is problem with power feed functionality."/>
+                </Property>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellNetworkAdapter.v1_2_0">
+            <Annotation Term="OData.Description" String="This version was created to add support for new action SetPowerSavingMode and StateSensor "/>
+            <Annotation Term="OData.LongDescription" String="This version was created to add support for new action SetPowerSavingMode and StateSensor."/>
+            <ComplexType Name="ControllerLinks" BaseType="DellNetworkAdapter.v1_1_0.ControllerLinks"/>
+            <ComplexType Name="DellNetworkAdapter" BaseType="DellNetworkAdapter.v1_1_0.DellNetworkAdapter">
+                <Property Name="StateSensors" Type="Collection(DellNetworkAdapter.v1_2_0.StateSensors)" Nullable="false">
+                    <Annotation Term="OData.Description" String="An array that represents the State Sensor Status."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the States for the StateSensor resource. The DeviceName contains the Name of the Sensor and State contains the status of the perticular Sensor."/>
+                </Property>
+            </ComplexType>
+            <EnumType Name="Mode">
+                <Member Name="On">
+                    <Annotation Term="OData.Description" String="A value indicating that the Power Save Mode on the SoC is enabled. When set to this value, the SoC will enter the Power Save Mode and reduce its power consumption."/>
+                    <Annotation Term="OData.LongDescription" String="This value shall be used to enable the Power Save Mode on the SoC. When set to this value, the SoC will enter the Power Save Mode and reduce its power consumption to save energy."/>
+                </Member>
+                <Member Name="Off">
+                    <Annotation Term="OData.Description" String="A value indicating that the Power Save Mode on the SoC is disabled. When set to this value, the SoC will not enter the Power Save Mode."/>
+                    <Annotation Term="OData.LongDescription" String="This value shall be used to disable the Power Save Mode on the SoC. When set to this value, the SoC will not enter the Power Save Mode and will not reduce its power consumption."/>
+                </Member>
+            </EnumType>
+            <ComplexType Name="StateSensors">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The entry represents the State Sensor Status."/>
+                <Annotation Term="OData.LongDescription" String="The entry represents the State Sensor Status."/>
+                <Property Name="DeviceName" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The name of the state sensor."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall represent the name of the state sensor."/>
+                </Property>
+                <Property Name="State" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The state of the state sensor."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall represent the state of the state sensor."/>
+                </Property>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellNetworkAdapter.v1_3_0">
+            <Annotation Term="OData.Description" String="This version was created to add support for new action SetPowerSavingMode "/>
+            <Annotation Term="OData.LongDescription" String="This version was created to add support for new action SetPowerSavingMode"/>
+            <ComplexType Name="ControllerLinks" BaseType="DellNetworkAdapter.v1_2_0.ControllerLinks"/>
+            <ComplexType Name="DellNetworkAdapter" BaseType="DellNetworkAdapter.v1_2_0.DellNetworkAdapter">
+                <Property Name="PowerSaveMode" Type="DellNetworkAdapter.v1_2_0.Mode">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A string that represents the PowerSaveMode status"/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the status of PowerSaveMode [On/Off]."/>
+                </Property>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellNetworkAdapter.v1_4_0">
+            <Annotation Term="OData.Description" String="This version was created to add support for new action ExportTriggerLog "/>
+            <Annotation Term="OData.LongDescription" String="This version was created to add support for new action ExportTriggerLog"/>
+            <ComplexType Name="ControllerLinks" BaseType="DellNetworkAdapter.v1_3_0.ControllerLinks"/>
+            <ComplexType Name="DellNetworkAdapter" BaseType="DellNetworkAdapter.v1_3_0.DellNetworkAdapter"></ComplexType>
+            <EnumType Name="ShareType">
+                <Member Name="CIFS">
+                    <Annotation String="CIFS" Term="OData.Description"/>
+                </Member>
+                <Member Name="HTTP">
+                    <Annotation String="HTTP" Term="OData.Description"/>
+                </Member>
+                <Member Name="HTTPS">
+                    <Annotation String="HTTPS" Term="OData.Description"/>
+                </Member>
+                <Member Name="Local">
+                    <Annotation String="Local" Term="OData.Description"/>
+                </Member>
+                <Member Name="NFS">
+                    <Annotation String="NFS" Term="OData.Description"/>
+                </Member>
+                <Member Name="FTP">
+                    <Annotation String="FTP" Term="OData.Description"/>
+                </Member>
+                <Member Name="TFTP">
+                    <Annotation String="TFTP" Term="OData.Description"/>
+                </Member>
+            </EnumType>
+            <EnumType Name="RequestType">
+                <Member Name="CoreDump">
+                    <Annotation String="CoreDump" Term="OData.Description"/>
+                </Member>
+                <Member Name="CrashDump">
+                    <Annotation String="CrashDump" Term="OData.Description"/>
+                </Member>
+            </EnumType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

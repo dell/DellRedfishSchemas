@@ -1,0 +1,13 @@
+components:
+  schemas:
+    DellvFlash_DellvFlash:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellvFlash.v1_1_0.yaml#/components/schemas/DellvFlash_v1_1_0_DellvFlash
+      description: An instance of DellvFlash will have VFlash specific data.
+      urisDeprecated:
+      - /redfish/v1/Managers/{ManagerId}/Oem/Dell/DellvFlash/{vFlashId}
+      x-longDescription: An instance of DellvFlash will have VFlash specific data.
+title: '#DellvFlash.DellvFlash'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

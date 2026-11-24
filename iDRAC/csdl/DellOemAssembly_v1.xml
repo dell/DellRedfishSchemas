@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellOemAssembly  v1.2.0                                              -->
+<!--# This schema complements to OEM section of DMTF Assembly resource               -->
+<!--# Copyright 2023-2024 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAssembly_v1.xml">
+    <edmx:Include Namespace="DellAssembly"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFRUAssembly_v1.xml">
+    <edmx:Include Namespace="DellFRUAssembly"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemAssembly">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellOemAssemblyLinks" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="This is the complex property is for the additional OEM Links realted to the DMTF Assembly."/>
+        <Annotation Term="OData.LongDescription" String="This is the complex property is for the additional OEM Links realted to the DMTF Assembly."/>
+      </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemAssembly.v1_0_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+    <ComplexType Name="DellOemAssemblyLinks" BaseType="DellOemAssembly.DellOemAssemblyLinks">
+        <Annotation Term="OData.Description" String="This version was added to add new Oem resources and Links."/>
+        <Annotation Term="OData.LongDescription" String="This version was added to add new Oem resources and Links."/>
+		    <NavigationProperty Name="DellAssembly" Type="DellAssembly.DellAssembly" ContainsTarget="true" Nullable="false">
+            <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+            <Annotation Term="OData.Description" String="A resource representation of DellAssembly."/>
+            <Annotation Term="OData.LongDescription" String="A resource representation of DellAssembly."/>
+            <Annotation Term="OData.AutoExpand"/>
+        </NavigationProperty>
+	  </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemAssembly.v1_1_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+    <ComplexType Name="DellOemAssemblyLinks" BaseType="DellOemAssembly.v1_0_0.DellOemAssemblyLinks">
+        <Annotation Term="OData.Description" String="This version was added to add new Oem properties."/>
+        <Annotation Term="OData.LongDescription" String="This version was added to add new Oem properties."/>
+        <Property Name="PICPowerIndex" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The PIC Power Index connected to the FRU." Term="OData.Description"/>
+					<Annotation String="The PIC Power Index connected to the FRU." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="Type" Type="Edm.String">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The type of the FRU." Term="OData.Description"/>
+					<Annotation String="The type of the FRU." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="FormFactor" Type="Edm.String">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The FormFactor provided by the FRU." Term="OData.Description"/>
+					<Annotation String="The FormFactor provided by the FRU." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="FirmwareVersion" Type="Edm.String">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The firmware version provided by the FRU." Term="OData.Description"/>
+					<Annotation String="The firmware version provided by the FRU." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="Location" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The Location of the FRU in the system." Term="OData.Description"/>
+					<Annotation String="The Location of the FRU in the system." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="BayId" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The Bay Identifier provided by the FRU." Term="OData.Description"/>
+					<Annotation String="This property shall contain the Bay Id." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="SlotCount" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The SlotCount location the hardware is in." Term="OData.Description"/>
+					<Annotation String="The SlotCount location the hardware is in." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="FirmwareMajor" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The FirmwareMajor of the FRU." Term="OData.Description"/>
+					<Annotation String="The FirmwareMajor of the FRU." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="FirmwareMinor" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The FirmwareMinor of the FRU." Term="OData.Description"/>
+					<Annotation String="The FirmwareMinor of the FRU." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="ModuleClass" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The ModuleClass of the FRU." Term="OData.Description"/>
+					<Annotation String="The ModuleClass of the FRU." Term="OData.LongDescription"/>
+				</Property>
+        <Property Name="EndpointCount" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The EndpointCount of the FRU." Term="OData.Description"/>
+					<Annotation String="The EndpointCount of the FRU." Term="OData.LongDescription"/>
+				</Property>
+		<Property Name="HardwareId" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The HardwareId of FRU." Term="OData.Description"/>
+					<Annotation String="The HardwareId of FRU." Term="OData.LongDescription"/>
+				</Property>
+		<Property Name="DellFRUAssembly" Type="DellFRUAssembly.DellFRUAssemblyInfo">
+                    <Annotation Term="OData.Description" String="Oem properties for representing FRU properties."/>
+                    <Annotation Term="OData.LongDescription" String="Oem properties for representing FRU properties."/>
+                </Property>
+	  </ComplexType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemAssembly.v1_2_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+    <ComplexType Name="DellOemAssemblyLinks" BaseType="DellOemAssembly.v1_1_0.DellOemAssemblyLinks">
+        <Annotation Term="OData.Description" String="This version was added to add the PhysicalLocation property."/>
+        <Annotation Term="OData.LongDescription" String="This version was added to add the PhysicalLocation property."/>
+        <Property Name="PhysicalLocation" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The physical location of the assembly."/>
+					<Annotation Term="OData.LongDescription" String="This property shall contain the physical location of the assembly."/>
+				</Property>
+	  </ComplexType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

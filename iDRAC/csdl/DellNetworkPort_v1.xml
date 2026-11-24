@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--#
+Redfish Schema: DellNetworkPort v1_0_0-->
+<!--# -->
+<!--#
+Copyright © 2021-2024 Dell Inc. or its subsidiaries. All Rights Reserved.-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference
+        Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData" />
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish" />
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiver_v1.xml">
+        <edmx:Include Namespace="DellNetworkTransceiver" />
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics_v1.xml">
+        <edmx:Include Namespace="DellNetworkTransceiverPortMetrics" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="DellNetworkPort" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity" />
+            <ComplexType Name="DellNetworkPort" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false" />
+                <Annotation Term="OData.Description" String="This property shall represent the Oem properties for a DellNetworkPort resource." />
+                <Annotation Term="OData.LongDescription" String="This property shall represent the Oem properties for a DellNetworkPort resource." />
+            </ComplexType>
+        </Schema>
+        <Schema Namespace="DellNetworkPort.v1_0_0"
+            xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity" />
+            <ComplexType Name="DellNetworkPort" BaseType="DellNetworkPort.DellNetworkPort">
+                <Annotation Term="OData.Description" String="This version was added to add new Oem resources and Links." />
+                <Annotation Term="OData.LongDescription" String="This version was added to add new Oem resources and Links." />
+                <NavigationProperty Name="DellNetworkTransceiver"
+                    Type="DellNetworkTransceiver.DellNetworkTransceiver" ContainsTarget="true"
+                    Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+                    <Annotation Term="OData.Description" String="A reference to DellNetworkTransceiver resource." />
+                    <Annotation Term="OData.LongDescription" String="A reference to DellNetworkTransceiver resource." />
+                    <Annotation Term="OData.AutoExpandReferences" />
+                </NavigationProperty>
+                <NavigationProperty Name="DellNetworkTransceiverPortMetrics"
+                    Type="DellNetworkTransceiverPortMetrics.DellNetworkTransceiverPortMetrics"
+                    ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+                    <Annotation Term="OData.Description" String="A reference to DellNetworkTransceiverPortMetrics resource." />
+                    <Annotation Term="OData.LongDescription" String="A reference to DellNetworkTransceiverPortMetrics resource." />
+                    <Annotation Term="OData.AutoExpandReferences" />
+                </NavigationProperty>
+            </ComplexType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

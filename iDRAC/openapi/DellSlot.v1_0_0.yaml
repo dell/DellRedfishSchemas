@@ -1,0 +1,103 @@
+components:
+  schemas:
+    DellSlot_v1_0_0_DellSlot:
+      additionalProperties: false
+      description: DellSlot provides slot occupancy and device correlation information.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        ConnectorLayout:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSlot.yaml#/components/schemas/DellSlot_ConnectorLayout
+          description: Describes the type of packaging normally associated with this
+            type of connector. 16 (PCI) - Describes the generic PCI connector layout.
+            17 (PCI-X) - Describes the PCI Extended connector layout. 18 (PCI-E) -
+            Describes the PCI Express connector layout, where the actual layout, as
+            far as the length is concerned, is unknown. 19 - 25 (PCI-E xN) - Describes
+            the PCI Express connector layout, where N is the lane count that appropriately
+            describes the length of the PCI-E connector.
+          nullable: true
+          readOnly: true
+          x-longDescription: Describes the type of packaging normally associated with
+            this type of connector. 16 (PCI) - Describes the generic PCI connector
+            layout. 17 (PCI-X) - Describes the PCI Extended connector layout. 18 (PCI-E)
+            - Describes the PCI Express connector layout, where the actual layout,
+            as far as the length is concerned, is unknown. 19 - 25 (PCI-E xN) - Describes
+            the PCI Express connector layout, where N is the lane count that appropriately
+            describes the length of the PCI-E connector.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceFQDD:
+          description: The property represents the FQDD for the device that is plugged
+            into the slot.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property represents the FQDD for the device that
+            is plugged into the slot.
+        EmptySlot:
+          description: The property represents whether the slot is empty. TRUE - Empty.
+            FALSE - Occupied.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: The property represents whether the slot is empty. TRUE
+            - Empty. FALSE - Occupied.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Number:
+          description: The property represents the numeric slot number. If the slot
+            number contains alphabets, this property is NULL and the slot number is
+            obtained from property NumberDescription.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property represents the numeric slot number. If the
+            slot number contains alphabets, this property is NULL and the slot number
+            is obtained from property NumberDescription.
+        NumberDescription:
+          description: The property represents the slot number containing alphanumeric
+            value.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property represents the slot number containing alphanumeric
+            value.
+        SlotEnabledState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSlot.yaml#/components/schemas/DellSlot_SlotEnabledState
+          description: The property represents whether the slot is enabled or disabled.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property represents whether the slot is enabled or
+            disabled.
+        Tag:
+          description: This property is the key and has a unique value.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property is the key and has a unique value.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: DellSlot provides slot occupancy and device correlation information.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellSlot.v1_0_0.DellSlot'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

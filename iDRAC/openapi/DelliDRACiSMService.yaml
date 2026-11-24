@@ -1,0 +1,13 @@
+components:
+  schemas:
+    DelliDRACiSMService_DelliDRACiSMService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACiSMService.v1_2_0.yaml#/components/schemas/DelliDRACiSMService_v1_2_0_DelliDRACiSMService
+      description: The DelliDRACiSMService resource provides some actions and properties
+        to support communication between iDRAC and iSM.
+      x-longDescription: The DelliDRACiSMService resource provides some actions and
+        properties to support communication between iDRAC and iSM.
+title: '#DelliDRACiSMService.DelliDRACiSMService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

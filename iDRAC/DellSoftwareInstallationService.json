@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInstallationService.json",
     "$ref": "#/definitions/DellSoftwareInstallationService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ApplyReboot": {
             "enum": [
@@ -22,10 +22,12 @@
         "ApplyUpdate": {
             "enum": [
                 "False",
-                "True"
+                "True",
+                "Selected"
             ],
             "enumDescriptions": {
                 "False": "False",
+                "Selected": "Selected",
                 "True": "True"
             },
             "type": "string"
@@ -36,7 +38,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInstallationService.v1_4_1.json#/definitions/DellSoftwareInstallationService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInstallationService.v1_5_0.json#/definitions/DellSoftwareInstallationService"
                 }
             ],
             "deletable": false,

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--#############################################################################################-->
+<!--# Redfish Schema: DellManagerDiagnostic v1.0.0                                               #-->
+<!--# This schema complements the Oem section of ManagerDiagnosticData. It exposes the          #-->
+<!--# DiagnosticCommands action for executing network and system diagnostics.                    #-->
+<!--# Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.                   #-->
+<!--# See the full Dell copyright policy.                                                       #-->
+<!--#############################################################################################-->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ManagerDiagnosticData_v1.xml">
+    <edmx:Include Namespace="ManagerDiagnosticData"/>
+    <edmx:Include Namespace="ManagerDiagnosticData.v1_0_0"/>
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManagerDiagnostic">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+
+      <!-- Individual OEM Actions for ManagerDiagnosticData -->
+      <Action Name="Ping" IsBound="true">
+        <Parameter Name="DellManagerDiagnostic" Type="ManagerDiagnosticData.v1_0_0.OemActions" Nullable="false"/>
+        <Parameter Name="IPAddress" Type="Edm.String" Nullable="false" MaxLength="253">
+          <Annotation Term="OData.Description" String="IP address to ping."/>
+          <Annotation Term="OData.LongDescription" String="The target IP address or domain name to test network connectivity. Must be valid IPv4, IPv6 address format, or domain name."/>
+          <Annotation Term="Redfish.Required"/>
+          <Annotation Term="Validation.Pattern" String="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$|^[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?)*$"/>
+        </Parameter>
+        <Parameter Name="Count" Type="Edm.Int32" Nullable="true" DefaultValue="1">
+          <Annotation Term="OData.Description" String="Number of ping packets to send."/>
+          <Annotation Term="OData.LongDescription" String="The number of ping packets to send to the target IP address. Must be between 1 and 10. Default is 1. Values outside this range will be rejected."/>
+          <Annotation Term="Validation.Minimum" Int="1"/>
+          <Annotation Term="Validation.Maximum" Int="10"/>
+        </Parameter>
+        <Annotation Term="OData.Description" String="Test network connectivity."/>
+        <Annotation Term="OData.LongDescription" String="This action shall test network connectivity to the specified IP address or domain name with count range checking (1-10). Returns network connectivity test output."/>
+        <ReturnType Type="DellManagerDiagnostic.v1_0_0.CommandResponse" Nullable="false"/>
+      </Action>
+
+      <Action Name="GetArpTable" IsBound="true">
+        <Parameter Name="DellManagerDiagnostic" Type="ManagerDiagnosticData.v1_0_0.OemActions" Nullable="false"/>
+        <Annotation Term="OData.Description" String="Display the ARP cache."/>
+        <Annotation Term="OData.LongDescription" String="This action shall display ARP table entries. Returns ARP table output with numeric IP addresses and MAC addresses."/>
+        <ReturnType Type="DellManagerDiagnostic.v1_0_0.CommandResponse" Nullable="false"/>
+      </Action>
+
+      <Action Name="GetNetworkStatistics" IsBound="true">
+        <Parameter Name="DellManagerDiagnostic" Type="ManagerDiagnosticData.v1_0_0.OemActions" Nullable="false"/>
+        <Annotation Term="OData.Description" String="Display network connections and routing tables."/>
+        <Annotation Term="OData.LongDescription" String="This action shall display network statistics and connection information. Returns network statistics output showing all active connections."/>
+        <ReturnType Type="DellManagerDiagnostic.v1_0_0.CommandResponse" Nullable="false"/>
+      </Action>
+
+      <Action Name="GetInterfaceConfiguration" IsBound="true">
+        <Parameter Name="DellManagerDiagnostic" Type="ManagerDiagnosticData.v1_0_0.OemActions" Nullable="false"/>
+        <Annotation Term="OData.Description" String="Display network interface parameters."/>
+        <Annotation Term="OData.LongDescription" String="This action shall display network interface configuration. Returns network interface output showing all network interfaces with IP addresses, MAC addresses, and statistics."/>
+        <ReturnType Type="DellManagerDiagnostic.v1_0_0.CommandResponse" Nullable="false"/>
+      </Action>
+
+      <Action Name="GetTraceLog" IsBound="true">
+        <Parameter Name="DellManagerDiagnostic" Type="ManagerDiagnosticData.v1_0_0.OemActions" Nullable="false"/>
+        <Annotation Term="OData.Description" String="Display trace log information."/>
+        <Annotation Term="OData.LongDescription" String="This action shall display trace log information. Returns trace log output showing all trace log entries."/>
+        <ReturnType Type="DellManagerDiagnostic.v1_0_0.GetTraceLogResponse" Nullable="false"/>
+      </Action>
+
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManagerDiagnostic.v1_0_0">
+
+      <ComplexType Name="DellManagerDiagnostic">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="Oem data related to ManagerDiagnosticData."/>
+        <Annotation Term="OData.LongDescription" String="Oem extensions for ManagerDiagnosticData resource providing additional diagnostic capabilities."/>
+      </ComplexType>
+      <ComplexType Name="GetTraceLogResponse">
+        <Property Name="Output" Type="Collection(Edm.String)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The diagnostic output."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the output returned by the diagnostic action."/>
+        </Property>
+      </ComplexType>
+      <!-- Command response type for actions that return raw OS command output -->
+      <ComplexType Name="CommandResponse">
+        <Property Name="Output" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The diagnostic output."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the output returned by the diagnostic action."/>
+        </Property>
+      </ComplexType>
+    </Schema>
+
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellNetworkDeviceFunction v1_0_0-->
+<!--# -->
+<!--# Copyright 2024 Dell, Inc. or its subsidiaries. All Rights Reserved.-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+      <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+      <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+      <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Processor_v1.xml">
+      <edmx:Include Namespace="Processor"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC_v1.xml">
+      <edmx:Include Namespace="DellNIC"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICCapabilities_v1.xml">
+      <edmx:Include Namespace="DellNICCapabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICPortMetrics_v1.xml">
+      <edmx:Include Namespace="DellNICPortMetrics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAttributes_v1.xml">
+      <edmx:Include Namespace="DellAttributes"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFC_v1.xml">
+        <edmx:Include Namespace="DellFC"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFCCapabilities_v1.xml">
+        <edmx:Include Namespace="DellFCCapabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFCPortMetrics_v1.xml">
+        <edmx:Include Namespace="DellFCPortMetrics"/>
+    </edmx:Reference>
+        <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand_v1.xml">
+        <edmx:Include Namespace="DellInfiniBand"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities_v1.xml">
+        <edmx:Include Namespace="DellInfiniBandCapabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandPortMetrics_v1.xml">
+        <edmx:Include Namespace="DellInfiniBandPortMetrics"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="DellNetworkDeviceFunction" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellNetworkDeviceFunction" Abstract="true">
+              <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+              <Annotation Term="OData.Description" String="This property shall represent the Oem properties for a DellNetworkDeviceFunction resource."/>
+              <Annotation Term="OData.LongDescription" String="This property shall represent the Oem properties for a DellNetworkDeviceFunction resource."/>
+            </ComplexType>
+            <ComplexType Name="DellNetworkDeviceFunctionLinks" Abstract="true">
+              <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+              <Annotation Term="OData.Description" String="This is the complex property is for the additional OEM Links realted to the DMTF NetworkDeviceFunction Controller."/>
+              <Annotation Term="OData.LongDescription" String="This is the complex property is for the additional OEM Links realted to the DMTF NetworkDeviceFunction Controller."/>
+            </ComplexType>
+        </Schema>
+        <Schema Namespace="DellNetworkDeviceFunction.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellNetworkDeviceFunction" BaseType="DellNetworkDeviceFunction.DellNetworkDeviceFunction">
+              <NavigationProperty Name="DellNIC" Type="DellNIC.DellNIC" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellNIC."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellNIC."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellNICCapabilities" Type="DellNICCapabilities.DellNICCapabilities" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellNICCapabilities."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellNICCapabilities."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellNICPortMetrics" Type="DellNICPortMetrics.DellNICPortMetrics" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellNICPortMetrics."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellNICPortMetrics."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellFC" Type="DellFC.DellFC" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellFC."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellFC."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellFCCapabilities" Type="DellFCCapabilities.DellFCCapabilities" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellFCCapabilities."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellFCCapabilities."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellFCPortMetrics" Type="DellFCPortMetrics.DellFCPortMetrics" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellFCPortMetrics."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellFCPortMetrics."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellInfiniBand" Type="DellInfiniBand.DellInfiniBand" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellInfiniBand."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellInfiniBand."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellInfiniBandCapabilities" Type="DellInfiniBandCapabilities.DellInfiniBandCapabilities" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellInfiniBandCapabilities."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellInfiniBandCapabilities."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellInfiniBandPortMetrics" Type="DellInfiniBandPortMetrics.DellInfiniBandPortMetrics" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellInfiniBandPortMetrics."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellInfiniBandPortMetrics."/>
+                <Annotation Term="OData.AutoExpand"/>
+              </NavigationProperty>
+            </ComplexType>
+            <ComplexType Name="DellNetworkDeviceFunctionLinks" BaseType="DellNetworkDeviceFunction.DellNetworkDeviceFunctionLinks">
+              <Annotation Term="OData.Description" String="This version was added to add new Oem resources and Links."/>
+              <Annotation Term="OData.LongDescription" String="This version was added to add new Oem resources and Links."/>
+              <NavigationProperty Name="CPUAffinity" Type="Collection(Processor.Processor)" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+                <Annotation Term="OData.LongDescription" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+              </NavigationProperty>
+              <NavigationProperty Name="DellNetworkAttributes" Type="DellAttributes.DellAttributes" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DellNetworkAttributes."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DellNetworkAttributes."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+              </NavigationProperty>
+            </ComplexType>
+        </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

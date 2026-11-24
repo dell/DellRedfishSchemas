@@ -1,0 +1,428 @@
+components:
+  schemas:
+    DellNICPortMetrics_v1_2_0_DellNICPortMetrics:
+      additionalProperties: false
+      description: Represents the statistics of the NIC, NIC port, or partition.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DiscardedPkts:
+          description: Indicates the total number of discarded packets.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of discarded packets.
+        FCCRCErrorCount:
+          description: Indicates the number of FC frames with CRC errors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of FC frames with CRC errors.
+        FCOELinkFailures:
+          description: Indicates the number of FCoE/FIP login failures.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of FCoE/FIP login failures.
+        FCOEPktRxCount:
+          description: Indicates the number of good (FCS valid) packets received with
+            the active FCoE MAC address of the partition.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of good (FCS valid) packets received
+            with the active FCoE MAC address of the partition.
+        FCOEPktTxCount:
+          description: Indicates the number of good (FCS valid) packets transmitted
+            that passed L2 filtering by a specific MAC address.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of good (FCS valid) packets transmitted
+            that passed L2 filtering by a specific MAC address.
+        FCOERxPktDroppedCount:
+          description: Indicates the number of receive packets with FCS errors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of receive packets with FCS errors.
+        FQDD:
+          description: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LanFCSRxErrors:
+          description: Indicates the Lan FCS receive Errors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the Lan FCS receive Errors.
+        LanUnicastPktRXCount:
+          description: Indicates the total number of Lan Unicast Packets Received.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of Lan Unicast Packets Received.
+        LanUnicastPktTXCount:
+          description: Indicates the total number of Lan Unicast Packets Transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of Lan Unicast Packets Transmitted.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        OSDriverState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICPortMetrics.yaml#/components/schemas/DellNICPortMetrics_OSDriverState
+          description: Indicates operating system driver states.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates operating system driver states.
+        PartitionLinkStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICPortMetrics.yaml#/components/schemas/DellNICPortMetrics_PartitionLinkStatus
+          description: Indicates whether the partition link is up or down.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates whether the partition link is up or down.
+        PartitionOSDriverState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNICPortMetrics.yaml#/components/schemas/DellNICPortMetrics_PartitionOSDriverState
+          description: Indicates operating system driver states of the partitions.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates operating system driver states of the partitions.
+        RDMARxTotalBytes:
+          description: Indicates the total number of RDMA bytes received.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA bytes received.
+        RDMARxTotalPackets:
+          description: Indicates the total number of RDMA packets received.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA packets received.
+        RDMATotalProtectionErrors:
+          description: Indicates the total number of RDMA Protection errors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA Protection errors.
+        RDMATotalProtocolErrors:
+          description: Indicates the total number of RDMA Protocol errors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA Protocol errors.
+        RDMATxTotalBytes:
+          description: Indicates the total number of RDMA bytes transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA bytes transmitted.
+        RDMATxTotalPackets:
+          description: Indicates the total number of RDMA packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA packets transmitted.
+        RDMATxTotalReadReqPkts:
+          description: Indicates the total number of RDMA ReadRequest packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA ReadRequest packets
+            transmitted.
+        RDMATxTotalSendPkts:
+          description: Indicates the total number of RDMA Send packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA Send packets transmitted.
+        RDMATxTotalWritePkts:
+          description: Indicates the total number of RDMA Write packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of RDMA Write packets transmitted.
+        RxBroadcast:
+          description: Indicates the total number of good broadcast packets received.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of good broadcast packets
+            received.
+        RxBytes:
+          description: Indicates the total number of bytes received, including host
+            and remote management pass through traffic. Remote management passthrough
+            traffic is applicable to LOMs only.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of bytes received, including
+            host and remote management pass through traffic. Remote management passthrough
+            traffic is applicable to LOMs only.
+          x-units: Bytes
+        RxErrorPktAlignmentErrors:
+          description: Indicates the total number of packets received with alignment
+            errors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of packets received with alignment
+            errors.
+        RxErrorPktFCSErrors:
+          description: Indicates the total number of packets received with FCS errors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of packets received with FCS
+            errors.
+        RxFalseCarrierDetection:
+          description: Indicates the total number of false carrier errors received
+            from PHY.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of false carrier errors received
+            from PHY.
+        RxJabberPkt:
+          description: Indicates the total number of frames that are too long.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of frames that are too long.
+        RxMulticastPackets:
+          description: Indicates the total number of good multicast packets received.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of good multicast packets
+            received.
+          x-units: Packets
+          x-versionAdded: v1_2_0
+        RxMutlicastPackets:
+          deprecated: true
+          description: Indicates the total number of good multicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-deprecatedReason: This property has been deprecated in favor of RxMulticastPackets.
+          x-longDescription: Indicates the total number of good multicast packets
+            transmitted.
+          x-units: Packets
+          x-versionDeprecated: v1_2_0
+        RxPauseXOFFFrames:
+          description: Indicates the flow control frames from the network to pause
+            transmission.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the flow control frames from the network to
+            pause transmission.
+        RxPauseXONFrames:
+          description: Indicates the flow control frames from the network to resume
+            transmission.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the flow control frames from the network to
+            resume transmission.
+        RxRuntPkt:
+          description: Indicates the total number of frames that are too short (<
+            64 bytes).
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of frames that are too short
+            (< 64 bytes).
+        RxUnicastPackets:
+          description: Indicates the total number of good unicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of good unicast packets transmitted.
+          x-units: Packets
+        StartStatisticTime:
+          description: Indicates the measurement time for the first NIC statistics.
+            The property is used with the StatisticTime property to calculate the
+            duration over which the NIC statistics are gathered.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Indicates the measurement time for the first NIC statistics.
+            The property is used with the StatisticTime property to calculate the
+            duration over which the NIC statistics are gathered.
+        StatisticTime:
+          description: Indicates the most recent measurement time for NIC statistics.
+            The property is used with the StatisticStartTime property to calculate
+            the duration over which the NIC statistics are gathered.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Indicates the most recent measurement time for NIC statistics.
+            The property is used with the StatisticStartTime property to calculate
+            the duration over which the NIC statistics are gathered.
+        TxBroadcast:
+          description: Indicates the total number of good broadcast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of good broadcast packets
+            transmitted.
+        TxBytes:
+          description: Indicates the total number of bytes transmitted, including
+            host and remote management passthrough traffic. Remote management passthrough
+            traffic is applicable to LOMs only.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of bytes transmitted, including
+            host and remote management passthrough traffic. Remote management passthrough
+            traffic is applicable to LOMs only.
+          x-units: Bytes
+        TxErrorPktExcessiveCollision:
+          description: Indicates the number of times a single transmitted packet encountered
+            more than 15 collisions.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of times a single transmitted packet
+            encountered more than 15 collisions.
+        TxErrorPktLateCollision:
+          description: Indicates the number of collisions that occurred after one
+            slot time (defined by IEEE 802.3).
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of collisions that occurred after
+            one slot time (defined by IEEE 802.3).
+        TxErrorPktMultipleCollision:
+          description: Indicates the number of times that a transmitted packet encountered
+            2-15 collisions.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of times that a transmitted packet
+            encountered 2-15 collisions.
+        TxErrorPktSingleCollision:
+          description: Indicates the number of times that a successfully transmitted
+            packet encountered a single collision.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of times that a successfully transmitted
+            packet encountered a single collision.
+        TxMulticastPackets:
+          description: Indicates the total number of good multicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of good multicast packets
+            transmitted.
+          x-units: Packets
+          x-versionAdded: v1_2_0
+        TxMutlicastPackets:
+          deprecated: true
+          description: Indicates the total number of good multicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-deprecatedReason: This property has been deprecated in favor of TxMulticastPackets.
+          x-longDescription: Indicates the total number of good multicast packets
+            transmitted.
+          x-units: Packets
+          x-versionDeprecated: v1_2_0
+        TxPauseXOFFFrames:
+          description: Indicates the number of XOFF packets transmitted to the network.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of XOFF packets transmitted to the
+            network.
+        TxPauseXONFrames:
+          description: Indicates the number of XON packets transmitted to the network.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of XON packets transmitted to the
+            network.
+        TxUnicastPackets:
+          description: Indicates the total number of good unicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the total number of good unicast packets transmitted.
+          x-units: Packets
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: Represents the statistics of the NIC, NIC port, or partition.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellNICPortMetrics.v1_2_0.DellNICPortMetrics'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

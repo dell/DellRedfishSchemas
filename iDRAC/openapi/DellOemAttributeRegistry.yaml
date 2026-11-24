@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellOemAttributeRegistry_Attributes:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemAttributeRegistry.v1_0_0.yaml#/components/schemas/DellOemAttributeRegistry_v1_0_0_Attributes
+      description: This is the complex property for the additional attribute group
+        details.
+      x-longDescription: This is the complex property for the additional attribute
+        group details.
+title: '#DellOemAttributeRegistry'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

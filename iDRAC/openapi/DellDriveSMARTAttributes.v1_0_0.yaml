@@ -1,0 +1,194 @@
+components:
+  schemas:
+    DellDriveSMARTAttributes_v1_0_0_DellDriveSMARTAttributes:
+      additionalProperties: false
+      description: An instance of DellDriveSMARTAttributes will have SAS/SATA SSDs
+        SMARTAttributes specific data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        CRCErrorCountPercent:
+          description: This property shall represent the CRC error count.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the CRC error count.
+          x-units: Percent
+        CommandTimeoutCount:
+          description: This property shall represent number of aborted operations
+            due to disk timeout.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent number of aborted operations
+            due to disk timeout.
+        CurrentPendingSectorCount:
+          description: This property shall represent current pending sector count
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent current pending sector
+            count
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DriveLifeRemainingPercent:
+          description: This property shall represent the percentage life remaining
+            for the drive.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the percentage life remaining
+            for the drive.
+        DriveTemperatureCelsius:
+          description: This property shall represent the Drive temperature in Celsius.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the Drive temperature in
+            Celsius.
+          x-units: Cel
+        ECCERate:
+          description: This property shall represent the uncorrected read errors reported
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the uncorrected read errors
+            reported
+        EraseFailCount:
+          description: This property shall represent the Erase fail count.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the Erase fail count.
+        ExceptionModeStatus:
+          description: This property shall represent the Exception mode status
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the Exception mode status.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        MediaWriteCount:
+          description: This propert shall represent the Media (SSD) write count
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the Media (SSD) write count.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        PowerCycleCount:
+          description: This property shall represent the count of full hard disk power
+            on/off cycles.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the count of full hard
+            disk power on/off cycles..
+        PowerOnHours:
+          description: This property shall represent the total count of hours (or
+            minutes, or seconds, depending on manufacturer) in power-on state
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the total count of hours
+            (or minutes, or seconds, depending on manufacturer) in power-on state
+        ProgramFailCount:
+          description: This property shall represent the program fail count since
+            drive was deployed
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the program fail count
+            since drive was deployed.
+        ReadErrorRate:
+          description: This property shall represent the Read error rate.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the Read error rate.
+        ReallocatedBlockCount:
+          description: This propert shall represent the Reallocated block count
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the Reallocated block count
+        UncorrectableErrorCount:
+          description: This property shall represent the uncorrectable error count.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the uncorrectable error
+            count
+        UncorrectableLBACount:
+          description: This property shall represent uncorrectable LBA(Logical block
+            addressing) count
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent uncorrectable LBA(Logical
+            block addressing) count
+        UnusedReservedBlockCount:
+          description: This property shall represent the unused reserved block count
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the unused reserved block
+            count
+        UsedReservedBlockCount:
+          description: This property shall represent the used reserved block count.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the used reserved block
+            count
+        VolatileMemoryBackupSourceFailures:
+          description: This property shall represent the volatile memory backup source
+            failures
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the volatile memory backup
+            source failures
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellDriveSMARTAttributes will have SAS/SATA
+        SSDs SMAAttributes specific data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellDriveSMARTAttributes.v1_0_0.DellDriveSMARTAttributes'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

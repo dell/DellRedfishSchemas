@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -194,20 +194,20 @@
             },
             "additionalProperties": false,
             "description": "Retrieve Redfish resources for a set of endpoints, possibly using wildcards.",
-            "longDescription": "This action retrieves the Redfish resources for the specified endpoints. The action may return partial results if the operation exceeds the specified timeout.",
+            "longDescription": "This action retrieves the Redfish resources for the specified endpoints. The action supports wildcard expansion and may return partial results if the operation exceeds the specified timeout or MaxURIs limit. Only one GetRedfishResources request can execute at a time; concurrent requests are rejected with HTTP 429.",
             "parameters": {
                 "EndPoints": {
-                    "description": "A collection of URL paths using a file path syntax.",
+                    "description": "A collection of Redfish URI paths or wildcard patterns to retrieve. Each entry must start with /redfish/ and must not contain '?', '#', '[', ']', '%', or end with '/SSE'. Wildcard matching using a single asterisk (*) is supported at multiple path levels (for example, /redfish/v1/Systems/*/Processors/*). URIs served by Auxiliary Management Controllers (AMCs) do not support wildcard matching and must be specified explicitly. DellAttributes, TelemetryService, Registries, JsonSchemas, and Schemas (including their subordinate resources) are not supported by this action. Log entry instances under /Entries/ segments are not supported; log entries should be accessed through their parent LogService resource. Invalid or unsupported endpoints are reported in FailedEndPoints. Trailing slashes are automatically removed.",
                     "items": {
                         "type": "string"
                     },
-                    "longDescription": "A collection of URL paths using a file path syntax. Wildcards may be used.",
+                    "longDescription": "A collection of Redfish URI paths or wildcard patterns to retrieve. Each entry must start with /redfish/ and must not contain '?', '#', '[', ']', '%', or end with '/SSE'. Wildcard matching using a single asterisk (*) is supported at multiple path levels (for example, /redfish/v1/Systems/*/Processors/*). URIs served by Auxiliary Management Controllers (AMCs) do not support wildcard matching and must be specified explicitly. DellAttributes, TelemetryService, Registries, JsonSchemas, and Schemas (including their subordinate resources) are not supported by this action. Log entry instances under /Entries/ segments are not supported; log entries should be accessed through their parent LogService resource. Invalid or unsupported endpoints are reported in FailedEndPoints. Trailing slashes are automatically removed.",
                     "requiredParameter": true,
                     "type": "array"
                 },
                 "MaxURIs": {
                     "description": "Maximum number of expanded URIs the service will process.",
-                    "longDescription": "After wildcard expansion, the service will process at most this many URIs. Any additional URIs will be returned in PendingEndpoints.",
+                    "longDescription": "After wildcard expansion, the service will process at most this many URIs. Any additional URIs will be returned in PendingEndpoints for subsequent requests.",
                     "maximum": 200,
                     "minimum": 1,
                     "type": "integer"
@@ -246,8 +246,7 @@
                     "type": "string"
                 }
             },
-            "type": "object",
-            "versionAdded": "v1_6_0"
+            "type": "object"
         },
         "GetRedfishResourcesResponse": {
             "additionalProperties": false,
@@ -273,11 +272,11 @@
                     "versionAdded": "v1_6_0"
                 },
                 "FailedEndPoints": {
-                    "description": "The URLs that could not be retrieved due to errors.",
+                    "description": "The URLs that could not be retrieved.",
                     "items": {
                         "type": "string"
                     },
-                    "longDescription": "This property shall contain the URLs that failed to be retrieved due to non-timeout errors and cannot be processed.",
+                    "longDescription": "This property shall contain the URLs that could not be retrieved due to errors. This includes URIs that do not conform to Redfish URI requirements or failed to fetch due to non-timeout errors.",
                     "type": "array",
                     "versionAdded": "v1_6_0"
                 },
@@ -569,6 +568,7 @@
             "properties": {
                 "FileName": {
                     "description": "The target output file name.",
+                    "pattern": "^[^:*?|/\\<>]+$",
                     "readonly": true,
                     "type": "string"
                 },

@@ -1,0 +1,145 @@
+components:
+  schemas:
+    DellOAuthConfig_v1_0_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellOAuthConfig.SubmitTestToken':
+          $ref: '#/components/schemas/DellOAuthConfig_v1_0_0_SubmitTestToken'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOAuthConfig_v1_0_0_OAuthConfig:
+      additionalProperties: false
+      description: OAuth Authentication configurations for both online and offline
+        modes.
+      properties:
+        OAuthConfig:
+          $ref: '#/components/schemas/DellOAuthConfig_v1_0_0_OAuthConfigInfo'
+          description: OAuth Authentication configurations for both online and offline
+            modes.
+          nullable: true
+          x-longDescription: OAuth Authentication configurations for both online and
+            offline modes.
+      type: object
+      x-longDescription: OAuth Authentication configurations for both online and offline
+        modes.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOAuthConfig_v1_0_0_OAuthConfigInfo:
+      additionalProperties: false
+      properties:
+        HttpsCertificate:
+          description: Delegated Authentication HTTP Public Certificate used by the
+            Authorization Server. Is RequiredOnCreate if 'ServerURL' is specified.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: Delegated Authentication HTTP Public Certificate used
+            by the Authorization Server. Is RequiredOnCreate if 'ServerURL' is specified.
+        Issuer:
+          description: Issuer string  value in tokens signed by the configured static
+            key (s). Is RequiredOnCreate if 'PublicSigningKey' is specified.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: Issuer string  value in tokens signed by the configured
+            static key (s). Is RequiredOnCreate if 'PublicSigningKey' is specified.
+        NameTag:
+          description: A user defined name of the Delegated Auth instance. On POST
+            Create, one or both of the following pairs of parameters are required
+            to be provided along with this in the POST body; 'HttpsCertificate' paired
+            with 'ServerURL' and/or 'Issuer' paired with 'PublicSigningKey'.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: A user defined name of the Delegated Auth instance. On
+            POST Create, one or both of the following pairs of parameters are required
+            to be provided along with this in the POST body; 'HttpsCertificate' paired
+            with 'ServerURL' and/or 'Issuer' paired with 'PublicSigningKey'.
+        PublicSigningKey:
+          description: The public signing key as defined in rfc7517 or a JWK set document
+            as specified in rfc8414. Is RequiredOnCreate if 'Issuer' is specified.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: The public signing key as defined in rfc7517 or a JWK
+            set document as specified in rfc8414. Is RequiredOnCreate if 'Issuer'
+            is specified.
+        ServerURL:
+          description: The Oauth Metadata document URL of the Authorization Server.
+            Is RequiredOnCreate if 'HttpsCertificate' is specified.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: The Oauth Metadata document URL of the Authorization
+            Server. Is RequiredOnCreate if 'HttpsCertificate' is specified.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-requiredOnCreate:
+      - NameTag
+    DellOAuthConfig_v1_0_0_OAuthConfigProperties:
+      additionalProperties: false
+      description: OAuth Authentication configurations for both online and offline
+        modes.
+      properties:
+        OAuthConfig:
+          $ref: '#/components/schemas/DellOAuthConfig_v1_0_0_OAuthConfigInfo'
+          description: OAuth Authentication configurations for both online and offline
+            modes.
+          nullable: true
+          x-longDescription: OAuth Authentication configurations for both online and
+            offline modes.
+      type: object
+      x-longDescription: OAuth Authentication configurations for both online and offline
+        modes.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOAuthConfig_v1_0_0_SubmitTestToken:
+      additionalProperties: false
+      description: The SubmitTestToken operation shall test the supplied Token against
+        the OAuth Configurations present in OAuthConfig.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The SubmitTestToken operation shall test the supplied Token
+        against the OAuth Configurations present in OAuthConfig.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOAuthConfig_v1_0_0_SubmitTestTokenRequestBody:
+      additionalProperties: false
+      description: The SubmitTestToken operation shall test the supplied Token against
+        the OAuth Configurations present in OAuthConfig.
+      properties:
+        ForceDownload:
+          description: Boolean value to force the Resource Server to re-download any
+            cached metadata. This parameter is ignored for offline mode.
+          type: boolean
+          x-longDescription: Boolean value to force the Resource Server to re-download
+            any cached metadata. This parameter is optional for offline mode and shall
+            be ignored if provided.
+        Token:
+          description: String value containing a generated access token signed by
+            one of the configured authorization servers.
+          type: string
+          x-longDescription: String value containing a generated access token signed
+            by one of the configured authorization servers.
+      required:
+      - Token
+      type: object
+      x-longDescription: The SubmitTestToken operation shall test the supplied Token
+        against the OAuth Configurations present in OAuthConfig.
+title: '#DellOAuthConfig.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

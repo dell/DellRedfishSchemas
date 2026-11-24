@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellOemStorage  v1.0.0                                              -->
+<!--# This is Dell Oem Schema for storage resource.                                        -->
+<!--# Copyright 2023-2024 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Processor_v1.xml">
+    <edmx:Include Namespace="Processor"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController_v1.xml">
+    <edmx:Include Namespace="DellController"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellControllerBattery_v1.xml">
+    <edmx:Include Namespace="DellControllerBattery"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemStorage">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellOemStorageLinks" Abstract="true">
+          <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+          <Annotation Term="OData.Description" String="A complex property for the additional Oem Links realted to StorageController."/>
+          <Annotation Term="OData.LongDescription" String="A complex property for the additional Oem Links realted to StorageController."/>
+      </ComplexType>
+      <ComplexType Name="DellOemStorageResources" Abstract="true">
+          <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+          <Annotation Term="OData.Description" String="A complex property for the additional Oem resources realted to StorageController."/>
+          <Annotation Term="OData.LongDescription" String="A complex property for the additional Oem resources realted to StorageController."/>
+      </ComplexType>
+    </Schema>
+      <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemStorage.v1_0_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellOemStorageLinks" BaseType="DellOemStorage.DellOemStorageLinks">
+          <Annotation Term="OData.Description" String="This version was added to add new Oem resources and Links."/>
+          <Annotation Term="OData.LongDescription" String="This version was added to add new Oem resources and Links."/>
+          <NavigationProperty Name="CPUAffinity" Type="Collection(Processor.Processor)" ContainsTarget="true">
+             <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+             <Annotation Term="OData.Description" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+             <Annotation Term="OData.LongDescription" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+             <Annotation Term="OData.AutoExpandReferences"/>
+          </NavigationProperty>
+      </ComplexType>
+      <ComplexType Name="DellOemStorageResources" BaseType="DellOemStorage.DellOemStorageResources">
+          <NavigationProperty Name="DellController" Type="DellController.DellController" ContainsTarget="true" Nullable="false">
+             <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+             <Annotation Term="OData.Description" String="A resource representation of DellController."/>
+             <Annotation Term="OData.LongDescription" String="A resource representation of DellController."/>
+             <Annotation Term="OData.AutoExpand"/>
+          </NavigationProperty>
+          <NavigationProperty Name="DellControllerBattery" Type="DellControllerBattery.DellControllerBattery" ContainsTarget="true" Nullable="true">
+             <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+             <Annotation Term="OData.Description" String="A resource representation of DellControllerBattery."/>
+             <Annotation Term="OData.LongDescription" String="A resource representation of DellControllerBattery."/>
+             <Annotation Term="OData.AutoExpand"/>
+          </NavigationProperty>
+      </ComplexType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

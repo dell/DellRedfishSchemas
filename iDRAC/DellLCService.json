@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCService.json",
     "$ref": "#/definitions/DellLCService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Component": {
             "enum": [
@@ -19,7 +19,8 @@
                 "PERCNVCache",
                 "ReinstallFW",
                 "vFlash",
-                "Sanitize"
+                "Sanitize",
+                "LCLog"
             ],
             "enumDescriptions": {
                 "AllApps": "AllApps",
@@ -30,6 +31,7 @@
                 "DrvPack": "DrvPack",
                 "IDRAC": "IDRAC",
                 "LCData": "LCData",
+                "LCLog": "LCLog - Clear the Lifecycle Controller log",
                 "NonVolatileMemory": "NonVolatileMemory",
                 "OverwritePD": "OverwritePD",
                 "PERCNVCache": "PERCNVCache",
@@ -46,6 +48,7 @@
                 "DrvPack": "v1_1_0",
                 "IDRAC": "v1_1_0",
                 "LCData": "v1_1_0",
+                "LCLog": "v1_16_0",
                 "NonVolatileMemory": "v1_1_0",
                 "OverwritePD": "v1_1_0",
                 "PERCNVCache": "v1_1_0",
@@ -61,7 +64,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCService.v1_12_2.json#/definitions/DellLCService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCService.v1_17_0.json#/definitions/DellLCService"
                 }
             ],
             "deletable": false,

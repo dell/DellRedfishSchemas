@@ -1,0 +1,132 @@
+components:
+  schemas:
+    DellFCPortMetrics_DellFCPortMetrics:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFCPortMetrics.v1_1_1.yaml#/components/schemas/DellFCPortMetrics_v1_1_1_DellFCPortMetrics
+      description: This resource shall represents the statistics of the Fibre Channel
+        HBA port.
+      urisDeprecated:
+      - /redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/Oem/Dell/DellFCPortMetrics/{FCPortMetricsId}
+      - /redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceId}/Oem/Dell/DellFCPortMetrics/{FCPortMetricsId}
+      x-longDescription: This resource shall represents the statistics of the Fibre
+        Channel HBA port.
+    DellFCPortMetrics_OSDriverState:
+      enum:
+      - Non-operational
+      - NotApplicable
+      - Operational
+      - Other
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Non-operational: Non-operational
+        NotApplicable: Not Applicable
+        Operational: Operational
+        Other: Other
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Non-operational: Non-operational
+        NotApplicable: Not Applicable
+        Operational: Operational
+        Other: Other
+        Unknown: Unknown
+    DellFCPortMetrics_PortStatus:
+      enum:
+      - Down
+      - Unknown
+      - Up
+      type: string
+      x-enumDescriptions:
+        Down: Down
+        Unknown: Unknown
+        Up: Up
+      x-enumLongDescriptions:
+        Down: Down
+        Unknown: Unknown
+        Up: Up
+    DellFCPortMetrics_RXInputPowerStatus:
+      enum:
+      - Critical
+      - Ok
+      - Warning
+      type: string
+      x-enumDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+      x-enumLongDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+      x-enumVersionAdded:
+        Critical: v1_1_0
+        Ok: v1_1_0
+        Warning: v1_1_0
+    DellFCPortMetrics_TXBiasCurrentStatus:
+      enum:
+      - Critical
+      - Ok
+      - Warning
+      type: string
+      x-enumDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+      x-enumLongDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+      x-enumVersionAdded:
+        Critical: v1_1_0
+        Ok: v1_1_0
+        Warning: v1_1_0
+    DellFCPortMetrics_TXOutputPowerStatus:
+      enum:
+      - Critical
+      - Ok
+      - Warning
+      type: string
+      x-enumDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+      x-enumLongDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+      x-enumVersionAdded:
+        Critical: v1_1_0
+        Ok: v1_1_0
+        Warning: v1_1_0
+    DellFCPortMetrics_TemperatureStatus:
+      enum:
+      - Critical
+      - Ok
+      - Warning
+      type: string
+      x-enumDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+      x-enumLongDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+    DellFCPortMetrics_VoltageStatus:
+      enum:
+      - Critical
+      - Ok
+      - Warning
+      type: string
+      x-enumDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+      x-enumLongDescriptions:
+        Critical: Critical
+        Ok: Ok
+        Warning: Warning
+title: '#DellFCPortMetrics.DellFCPortMetrics'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

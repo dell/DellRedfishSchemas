@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellPorcessorMetrics v1_1_0-->
+<!--# -->
+<!--# Copyright © 2024 Dell Inc. or its subsidiaries. All Rights Reserved.-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+	<edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ProcessorMetrics_v1.xml">
+        <edmx:Include Namespace="ProcessorMetrics"/>
+        <edmx:Include Namespace="ProcessorMetrics.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="DellProcessorMetrics" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+                <ComplexType Name="DellProcessorMetrics" Abstract="true">
+                    <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                    <Annotation Term="OData.Description" String="This property shall represent the Oem properties for a ProcessorMetrics resource."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall represent the Oem properties for a ProcessorMetrics resource."/>
+                </ComplexType>
+        </Schema>
+        <Schema Namespace="DellProcessorMetrics.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	    <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellProcessorMetrics" BaseType="DellProcessorMetrics.DellProcessorMetrics">
+                <Property Name="MaxSupportedPCIeLinkSpeed" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The highest version of the PCIe specification supported by this device."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the maximum PCIe specification that this device supports."/>
+                </Property>
+                <Property Name="CurrentPCIeLinkSpeed" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The version of the PCIe specification in use by this device."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the negotiated PCIe interface version in use by this device."/>
+                </Property>
+                <Property Name="DRAMUtilizationPercent" Type="Edm.Decimal">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The memory Bandwidth utilization. DRAM usage as a percentage."/>
+                    <Annotation Term="OData.LongDescription" String="The memory Bandwidth utilization. DRAM usage as a percentage (relative to maximum theoretical bandwidth)"/>
+                    <Annotation Term="Validation.Minimum" Int="0"/>
+                    <Annotation Term="Measures.Unit" String="%"/>
+                </Property>
+            </ComplexType>
+        </Schema>
+        <Schema Namespace="DellProcessorMetrics.v1_1_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	        <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <EnumType Name="ResetRecommendedState">
+			<Member Name="Reset is recommended">
+				<Annotation Term="OData.Description" String="Reset is recommended for the GPU"/>
+			</Member>
+			<Member Name="Reset is not recommended">
+				<Annotation Term="OData.Description" String="Reset is not recommended for the GPU"/>
+			</Member>
+			</EnumType>
+            <ComplexType Name="DellProcessorMetrics" BaseType="DellProcessorMetrics.v1_0_0.DellProcessorMetrics">
+                <Property Name="ThermalViolationDuration" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The Thermal Violation Duration in nano seconds."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the Thermal Violation Duration in nano seconds."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+                <Property Name="PowerViolationDuration" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The Power Violation Duration in nano seconds."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the Power Violation Duration in nano seconds."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+                <Property Name="SWViolationDuration" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The SWViolation Duration in nano seconds."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the SWViolation Duration in nano seconds."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+                <Property Name="NVLinkTxThroughput" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The NVLinkTxThroughput in KB."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the NVLinkTxThroughput in KB."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+                <Property Name="NVLinkRxThroughput" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The NVLinkRxThroughput in KB."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the NVLinkRxThroughput in KB."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+                <Property Name="NVLinkTrainingError" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The NVLinkTrainingError in Which  each bit represents training error."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the NVLinkTrainingError in hexadecimal string when converted to binary, each bit represents NVLinkerror status. If it is 0 menas no error and if it is 1 means error exist for the respective link."/>
+                </Property>
+                <Property Name="NVLinkRuntimeError" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The NVLinkRuntimeError in Which  each bit represents training error."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the NVLinkRuntimeError in hexadecimal string when converted to binary, each bit represents NVLink error status. If it is 0 menas no error and if it is 1 means error exist for the respective link."/>
+                </Property>
+                <Property Name="NVLinkStatusFlag" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The NVLinkStatusFlag represents flag status."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the NVLinkStatusFlag in hexadecimal string when converted to binary, each bit represents NVLink flag status of recpective link. If bit is 0 then link is down ,if it is 1 then link is up."/>
+                </Property>
+                <Property Name="NVLinksCount" Type="Edm.Int32">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The NVLinksCount is count of current devices."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the NVLinksCount is count of NVLinks for the current device."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+                <Property Name="PCIeRxThroughput" Type="Edm.Int32">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The PCIeRxThroughput shows Granularity in KB."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the PCIeRxThroughput Granularity in KB."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+                <Property Name="PCIeTxThroughput" Type="Edm.Int32">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The PCIeTxThroughput shows Granularity in KB."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the PCIeTxThroughput Granularity in KB."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+                <Property Name="GPUResetRecommendedState" Type="DellProcessorMetrics.v1_1_0.ResetRecommendedState">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The GPU ResetRecommendedState is shown."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the GPU Reset RecommendedState."/>
+                    <Annotation Term="Measures.Unit" String="By"/>
+                </Property>
+            </ComplexType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

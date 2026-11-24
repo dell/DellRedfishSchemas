@@ -1,0 +1,31 @@
+components:
+  schemas:
+    DellNetworkAdapter_ControllerLinks:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkAdapter.v1_4_0.yaml#/components/schemas/DellNetworkAdapter_v1_4_0_ControllerLinks
+      description: This is the complex property is for the additional OEM Links realted
+        to the DMTF NetworkAdapter Controller.
+      x-longDescription: This is the complex property is for the additional OEM Links
+        realted to the DMTF NetworkAdapter Controller.
+    DellNetworkAdapter_DellNetworkAdapter:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkAdapter.v1_4_0.yaml#/components/schemas/DellNetworkAdapter_v1_4_0_DellNetworkAdapter
+      description: This property shall represent the Oem properties for a NetworkAdapter
+        resource.
+      x-longDescription: This property shall represent the Oem properties for a NetworkAdapter
+        resource.
+    DellNetworkAdapter_ExportTriggerLog:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkAdapter.v1_4_0.yaml#/components/schemas/DellNetworkAdapter_v1_4_0_ExportTriggerLog
+      description: This action exports the trigger log to a specified server
+      x-longDescription: This action exports the trigger log to a specified server
+        using the provided credentials and share information
+    DellNetworkAdapter_SetPowerSavingMode:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkAdapter.v1_4_0.yaml#/components/schemas/DellNetworkAdapter_v1_4_0_SetPowerSavingMode
+      description: This action is used to set the PowerSavingMode for a NetworkAdapter.
+      x-longDescription: This action is used to set the PowerSavingMode for a NetworkAdapter.
+        It enables or disables the power save mode on the NetworkAdapter.
+title: '#DellNetworkAdapter'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

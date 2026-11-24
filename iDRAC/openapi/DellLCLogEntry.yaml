@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellLCLogEntry_DellLCLogEntry:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCLogEntry.v1_2_0.yaml#/components/schemas/DellLCLogEntry_v1_2_0_DellLCLogEntry
+      description: This is for the additional OEM properties to complement DMTF LogEntry
+        Schema for Lifecycle Logs.
+      x-longDescription: This is for the additional OEM properties to complement DMTF
+        LogEntry Schema for Lifecycle Logs.
+title: '#DellLCLogEntry'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

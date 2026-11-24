@@ -1,0 +1,15 @@
+components:
+  schemas:
+    DellExportConfiguration_DellExportConfiguration:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellExportConfiguration.v1_0_0.yaml#/components/schemas/DellExportConfiguration_v1_0_0_DellExportConfiguration
+      description: The DellExportConfiguration resource provides exported configuration
+        data for Dell OEM components. This is a generic endpoint that returns component-specific
+        JSON based on the OEMComponents parameter used during export.
+      x-longDescription: The DellExportConfiguration resource provides exported configuration
+        data for Dell OEM components such as EventFilters, BIOS settings, and network
+        configuration. The response format varies based on the component type exported.
+        Phase 1 supports EventFilter configuration export/import.
+title: '#DellExportConfiguration'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--########################################################################-->
+<!--# Redfish Schema:  DellOemSensor  v1.1.0                               #-->
+<!--#                                                                      #-->
+<!--# Copyright 2024 Dell, Inc. or its subsidiaries.All Rights Reserved.   #-->
+<!--########################################################################-->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Alias="OData" Namespace="Org.OData.Core.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+		<edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+		<edmx:Include Alias="Redfish" Namespace="RedfishExtensions.v1_0_0"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNumericSensor_v1.xml">
+		<edmx:Include Namespace="DellNumericSensor"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellHistoricalSensorReadings_v1.xml">
+		<edmx:Include Namespace="DellHistoricalSensorReadings"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemSensor">
+			<Annotation String="Dell" Term="Redfish.OwningEntity"/>
+			<ComplexType Name="DellOemSensor" Abstract="true">
+				<Annotation Term="OData.AdditionalProperties" Bool="false"/>
+				<Annotation Term="OData.Description" String="This is the complex property for the additional OEM properties to complement DMTF Sensor Schema."/>
+				<Annotation Term="OData.LongDescription" String="This is the complex property for the additional OEM properties to complement DMTF Sensor Schema. This shall be used to represent an OEM Sensor for a Redfish implementation."/>
+			</ComplexType>
+			<Action Name="GetHistoricalSensorReadings" IsBound="true">
+				<Annotation Term="OData.Description" String="An action to retrieve historical readings of the sensor."/>
+				<Annotation Term="OData.LongDescription" String="An action to retrieve historical readings of the sensor. The action shall accept a parameter ReadingHistoryPeriod to specify the period for which the readings shall be returned."/>
+				<Annotation Term="Redfish.Revisions">
+					<Collection>
+						<Record>
+						<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+						<PropertyValue Property="Version" String="v1_2_0"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Parameter Name="DellOemSensor" Type="Sensor.v1_0_0.OemActions"/>
+				<Parameter Name="ReadingHistoryPeriod" Type="DellOemSensor.ReadingHistoryPeriod">
+					<Annotation Term="OData.Description" String="The parameter for specifying the reading history period."/>
+					<Annotation Term="OData.LongDescription" String="The parameter for specifying the reading history period. Valid values are LastHour, LastDay and LastWeek."/>
+				</Parameter>
+				<ReturnType Type="DellOemSensor.GetHistoricalSensorReadingsResponse" Nullable="false"/>
+			</Action>
+			<Action Name="GetHistoricalThermalReadings" IsBound="true">
+				<Annotation Term="OData.Description" String="An action to retrieve historical readings of the thermal Sensor."/>
+				<Annotation Term="OData.LongDescription" String="An action to retrieve historical readings of the thermal sensor. The action shall accept a parameter ReadingHistoryPeriod to specify the period for which the readings shall be returned."/>
+				<Annotation Term="Redfish.Revisions">
+					<Collection>
+						<Record>
+						<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+						<PropertyValue Property="Version" String="v1_3_0"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Parameter Name="DellOemSensor" Type="Sensor.v1_0_0.OemActions"/>
+				<Parameter Name="ReadingHistoryPeriod" Type="DellOemSensor.ReadingHistoryPeriod">
+					<Annotation Term="OData.Description" String="The parameter for specifying the reading history period."/>
+					<Annotation Term="OData.LongDescription" String="The parameter for specifying the reading history period. Valid values are LastHour, LastDay and LastWeek."/>
+				</Parameter>
+				<ReturnType Type="DellOemSensor.GetHistoricalThermalReadingsResponse" Nullable="false"/>
+			</Action>
+			<ComplexType Name="GetHistoricalSensorReadingsResponse">
+				<Annotation Term="OData.Description" String="The response payload for the GetHistoricalSensorReadings action."/>
+				<Annotation Term="OData.LongDescription" String="The response payload for the GetHistoricalSensorReadings action."/>
+				<Annotation Term="Redfish.Revisions">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+							<PropertyValue Property="Version" String="v1_2_0"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Property Name="Readings" Type="Collection(Edm.Decimal)">
+					<Annotation String="List of historical readings." Term="OData.Description"/>
+					<Annotation String="List of historical readings." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="ReadingHistoryPeriod" Type="DellOemSensor.ReadingHistoryPeriod">
+					<Annotation String="The reading history period." Term="OData.Description"/>
+					<Annotation String="The reading history period." Term="OData.LongDescription"/>
+				</Property>
+			</ComplexType>
+			<EnumType Name="ReadingHistoryPeriod">
+				<Annotation Term="Redfish.Revisions">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+							<PropertyValue Property="Version" String="v1_2_0"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Member Name="LastHour">
+					<Annotation String="Historical readings for the last hour." Term="OData.Description"/>
+				</Member>
+				<Member Name="LastDay">
+					<Annotation String="Historical readings for the last day." Term="OData.Description"/>
+				</Member>
+				<Member Name="LastWeek">
+					<Annotation String="Historical readings for the last week." Term="OData.Description"/>
+				</Member>
+				<Member Name="LastMonth">
+					<Annotation String="Historical readings for the last month." Term="OData.Description"/>
+					<Annotation Term="Redfish.Revisions">
+						<Collection>
+							<Record>
+								<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+								<PropertyValue Property="Version" String="v1_3_0"/>
+							</Record>
+						</Collection>
+					</Annotation>
+				</Member>
+				<Member Name="LastYear">
+					<Annotation String="Historical readings for the last year." Term="OData.Description"/>
+					<Annotation Term="Redfish.Revisions">
+						<Collection>
+							<Record>
+								<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+								<PropertyValue Property="Version" String="v1_3_0"/>
+							</Record>
+						</Collection>
+					</Annotation>
+				</Member>
+			</EnumType>
+			<ComplexType Name="GetHistoricalThermalReadingsResponse">
+				<Annotation Term="OData.Description" String="The response payload for the GetHistoricalThermalReadings action."/>
+				<Annotation Term="Redfish.Revisions">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+							<PropertyValue Property="Version" String="v1_3_0"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Property Name="CriticalThreshold" Type="Edm.Int64">
+					<Annotation String="The reading history period." Term="OData.Description"/>
+				</Property>
+				<Property Name="PercentageAboveCriticalThreshold" Type="Edm.Decimal">
+					<Annotation String="The reading history period." Term="OData.Description"/>
+				</Property>
+				<Property Name="PercentageAboveWarningThreshold" Type="Edm.Decimal">
+					<Annotation String="The reading history period." Term="OData.Description"/>
+				</Property>
+				<Property Name="TotalOperationalDays" Type="Edm.Int64">
+					<Annotation String="The reading history period." Term="OData.Description"/>
+				</Property>
+				<Property Name="Readings" Type="Collection(DellOemSensor.HistoricalThermalReadings)">
+					<Annotation String="List of historical readings." Term="OData.Description"/>
+				</Property>
+			</ComplexType>
+			<ComplexType Name="HistoricalThermalReadings">
+				<Annotation Term="OData.Description" String="The defenintion of Reading object in the GetHistoricalThermalReadingsResponse complex type."/>
+				<Annotation Term="Redfish.Revisions">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+							<PropertyValue Property="Version" String="v1_3_0"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Property Name="AverageReading" Type="Edm.Int64">
+					<Annotation String="The average reading." Term="OData.Description"/>
+				</Property>
+				<Property Name="PeakReading" Type="Edm.Int64">
+					<Annotation String="The peak reading." Term="OData.Description"/>
+				</Property>
+				<Property Name="ReadingTime" Type="Edm.DateTimeOffset">
+					<Annotation String="The time at which the data is recorded." Term="OData.Description"/>
+				</Property>
+				<Property Name="WarningThreshold" Type="Edm.Int64">
+					<Annotation String="The reading history period." Term="OData.Description"/>
+				</Property>
+			</ComplexType>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemSensor.v1_0_0">
+			<Annotation String="Dell" Term="Redfish.OwningEntity"/>
+			<ComplexType Name="DellOemSensor" BaseType="DellOemSensor.DellOemSensor">
+				<Property Name="DeviceID" Type="Edm.String">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="An address or other identifying information to uniquely name the LogicalDevice." Term="OData.Description"/>
+					<Annotation String="An address or other identifying information to uniquely name the LogicalDevice." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="PossibleStates" Type="Collection(Edm.String)">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="PossibleStates enumerates the string outputs of the Sensor. For example, a &quot;Switch&quot; Sensor may output the states &quot;On&quot;, or &quot;Off&quot;. Another implementation of the Switch may output the states &quot;Open&quot;, and &quot;Close&quot;. Another example is a NumericSensor that supports thresholds. This sensor can report states such as &quot;Normal&quot;, &quot;Upper Fatal&quot;, &quot;Lower Non-Critical&quot;, and so on. A NumericSensor that does not publish readings and thresholds, but stores this data internally, can still report its states." Term="OData.Description"/>
+					<Annotation String="PossibleStates enumerates the string outputs of the Sensor. For example, a &quot;Switch&quot; Sensor may output the states &quot;On&quot;, or &quot;Off&quot;. Another implementation of the Switch may output the states &quot;Open&quot;, and &quot;Close&quot;. Another example is a NumericSensor that supports thresholds. This sensor can report states such as &quot;Normal&quot;, &quot;Upper Fatal&quot;, &quot;Lower Non-Critical&quot;, and so on. A NumericSensor that does not publish readings and thresholds, but stores this data internally, can still report its states." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="RequestedState" Type="DellNumericSensor.RequestedState">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="RequestedState is an integer enumeration that indicates the last requested or desired state for the element, irrespective of the mechanism through which it was requested." Term="OData.Description"/>
+					<Annotation String="RequestedState is an integer enumeration that indicates the last requested or desired state for the element, irrespective of the mechanism through which it was requested." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="CurrentState" Type="Edm.String">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The current state indicated by the Sensor. This value is always one of the PossibleStates." Term="OData.Description"/>
+					<Annotation String="The current state indicated by the Sensor. This value is always one of the PossibleStates." Term="OData.LongDescription"/>
+				</Property>
+			</ComplexType>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemSensor.v1_1_0">
+			<Annotation Term="OData.Description" String="This version was created to add the AverageReadings, PeakReadings, LowestReadings, DurationInCriticalThresholdPercent, DurationInWarningThresholdPercent, AggregatedReadings, AggregatedReading properties and HistoricalReadings Navigation property"/>
+		    <ComplexType Name="DellOemSensor" BaseType="DellOemSensor.v1_0_0.DellOemSensor">
+				<Property Name="AverageReadings" Type="DellOemSensor.v1_1_0.AggregatedReadings">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="An aggregation of averages of readings." Term="OData.Description"/>
+					<Annotation String="An aggregation of averages of readings." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="PeakReadings" Type="DellOemSensor.v1_1_0.AggregatedReadings">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="An aggregation of readings with the highest value." Term="OData.Description"/>
+					<Annotation String="An aggregation of readings with the highest value." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="LowestReadings" Type="DellOemSensor.v1_1_0.AggregatedReadings">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="An aggregation of readings with the lowest value." Term="OData.Description"/>
+					<Annotation String="An aggregation of readings with the lowest value." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="TotalOperationalDuration"  Type="Edm.Duration">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The duration of Operational days." Term="OData.Description"/>
+					<Annotation String="The duration of total Operational days." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="DurationInCriticalThresholdPercent" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The duration spent beyond the critical thresholds in percent." Term="OData.Description"/>
+					<Annotation String="The duration spent beyond the critical thresholds in percent." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="DurationInWarningThresholdPercent" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The duration spent beyond the warning thresholds in percent." Term="OData.Description"/>
+					<Annotation String="The duration spent beyond the warning thresholds in percent." Term="OData.LongDescription"/>
+			    </Property>
+				<NavigationProperty Name="HistoricalReadings" Type="DellHistoricalSensorReadings.DellHistoricalSensorReadings" ContainsTarget="true" Nullable="false">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="A resource representation of HistoricalReadings."/>
+					<Annotation Term="OData.LongDescription" String="A resource representation of HistoricalReadings."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</ComplexType>
+			<ComplexType Name="AggregatedReadings">
+				<Property Name="LastHour" Type="DellOemSensor.v1_1_0.AggregatedReading">
+					<Annotation String="Aggregated reading for the last hour." Term="OData.Description"/>
+					<Annotation String="Aggregated reading for the last hour." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="LastDay" Type="DellOemSensor.v1_1_0.AggregatedReading">
+					<Annotation String="Aggregated reading for the last day." Term="OData.Description"/>
+					<Annotation String="Aggregated reading for the last day." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="LastWeek" Type="DellOemSensor.v1_1_0.AggregatedReading">
+					<Annotation String="Aggregated reading for the last week." Term="OData.Description"/>
+					<Annotation String="Aggregated reading for the last week." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="LastMonth" Type="DellOemSensor.v1_1_0.AggregatedReading">
+					<Annotation String="Aggregated reading for the last month." Term="OData.Description"/>
+					<Annotation String="Aggregated reading for the last month." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="LastYear" Type="DellOemSensor.v1_1_0.AggregatedReading">
+					<Annotation String="Aggregated reading for the last year." Term="OData.Description"/>
+					<Annotation String="Aggregated reading for the last year." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="Lifetime" Type="DellOemSensor.v1_1_0.AggregatedReading">
+					<Annotation String="Aggregated reading for the lifetime." Term="OData.Description"/>
+					<Annotation String="Aggregated reading for the lifetime." Term="OData.LongDescription"/>
+				</Property>
+			</ComplexType>
+			<ComplexType Name="AggregatedReading">
+				<Property Name="Reading" Type="Edm.Decimal">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The value of the reading." Term="OData.Description"/>
+					<Annotation String="The value of the reading. The unit is the same as the ReadingUnits." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="AveragingIntervalAchieved" Type="Edm.Boolean">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="Set to true if the averaging interval has been achieved." Term="OData.Description"/>
+					<Annotation String="Set to true if the averaging interval has been achieved. This property is only present if the reading is an average." Term="OData.LongDescription"/>
+				</Property>
+				<Property Name="ReadingTime" Type="Edm.DateTimeOffset">
+					<Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+					<Annotation String="The time of the reading." Term="OData.Description"/>
+					<Annotation String="The time of the reading. It is not applicable if the reading is an average." Term="OData.LongDescription"/>
+				</Property>
+			</ComplexType>
+        </Schema>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemSensor.v1_2_0">
+			<Annotation Term="OData.Description" String="This version was introduced to add support for new action GetHistoricalSensorReadings."/>
+			<Annotation Term="OData.LongDescription" String="This version was introduced to add support for new action GetHistoricalSensorReadings."/>
+			<ComplexType Name="DellOemSensor" BaseType="DellOemSensor.v1_1_0.DellOemSensor"/>
+		</Schema>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemSensor.v1_3_0">
+			<Annotation Term="OData.Description" String="This version was introduced to add support for new action GetHistoricalThermalReadings."/>
+			<Annotation Term="OData.LongDescription" String="This version was introduced to add support for new action GetHistoricalThermalReadings."/>
+			<ComplexType Name="DellOemSensor" BaseType="DellOemSensor.v1_2_0.DellOemSensor"/>
+		</Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

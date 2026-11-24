@@ -1,0 +1,289 @@
+components:
+  schemas:
+    DellPhysicalDisk_Certified:
+      enum:
+      - 'No'
+      - NotApplicable
+      - 'Yes'
+      type: string
+      x-enumDescriptions:
+        'No': 'No'
+        NotApplicable: NotApplicable
+        'Yes': 'Yes'
+      x-enumLongDescriptions:
+        'No': 'No'
+        NotApplicable: NotApplicable
+        'Yes': 'Yes'
+      x-enumVersionAdded:
+        'No': v1_2_0
+        NotApplicable: v1_2_0
+        'Yes': v1_2_0
+    DellPhysicalDisk_CryptographicEraseCapable:
+      enum:
+      - Capable
+      - NotCapable
+      type: string
+      x-enumDescriptions:
+        Capable: Capable
+        NotCapable: Not Capable
+      x-enumLongDescriptions:
+        Capable: Capable
+        NotCapable: Not Capable
+      x-enumVersionAdded:
+        Capable: v1_4_0
+        NotCapable: v1_4_0
+    DellPhysicalDisk_DellPhysicalDisk:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.v1_8_0.yaml#/components/schemas/DellPhysicalDisk_v1_8_0_DellPhysicalDisk
+      description: An instance of DellPhysicalDisk will have Physical Disk specific
+        data.
+      urisDeprecated:
+      - /redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Drives/Oem/Dell/DellDrives/{PhysicalDiskId}
+      - /redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Drives/{DriveId}/Oem/Dell/DellDrives/{PhysicalDiskId}
+      x-longDescription: An instance of DellPhysicalDisk will have Physical Disk specific
+        data.
+    DellPhysicalDisk_DriveFormFactor:
+      enum:
+      - 1.8Inch
+      - 2.5Inch
+      - 3.5Inch
+      - AddInCard
+      - E3.L
+      - E3.L.2T
+      - E3.S
+      - E3.S2T
+      - E1.S
+      - EDSFF-E1.L
+      - M.2
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        1.8Inch: 1.8 inch
+        2.5Inch: 2.5 inch
+        3.5Inch: 3.5 inch
+        AddInCard: Add-in card
+        E1.S: E1.S
+        E3.L: E3.L
+        E3.L.2T: E3.L.2T
+        E3.S: E3.S
+        E3.S2T: E3.S 2T
+        EDSFF-E1.L: EDSFF-E1.L
+        M.2: M.2
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        1.8Inch: 1.8 inch
+        2.5Inch: 2.5 inch
+        3.5Inch: 3.5 inch
+        AddInCard: Add-in card
+        E1.S: E1.S
+        E3.L: E3.L
+        E3.L.2T: E3.L.2T
+        E3.S: E3.S
+        E3.S2T: E3.S 2T
+        EDSFF-E1.L: EDSFF-E1.L
+        M.2: M.2
+        Unknown: Unknown
+      x-enumVersionAdded:
+        E1.S: v1_8_0
+        E3.L: v1_6_0
+        E3.L.2T: v1_6_0
+        E3.S: v1_6_0
+        E3.S2T: v1_6_0
+        EDSFF-E1.L: v1_3_0
+    DellPhysicalDisk_EncryptionProtocol:
+      enum:
+      - None
+      - TCGEnterpriseSSC
+      - TCGOpalSSC
+      - TCGRubySSC
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        None: None
+        TCGEnterpriseSSC: TCGEnterpriseSSC
+        TCGOpalSSC: TCGOpalSSC
+        TCGRubySSC: TCGRubySSC
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        None: None
+        TCGEnterpriseSSC: TCGEnterpriseSSC
+        TCGOpalSSC: TCGOpalSSC
+        TCGRubySSC: TCGRubySSC
+        Unknown: Unknown
+      x-enumVersionAdded:
+        None: v1_2_0
+        TCGEnterpriseSSC: v1_2_0
+        TCGOpalSSC: v1_2_0
+        TCGRubySSC: v1_7_0
+        Unknown: v1_2_0
+    DellPhysicalDisk_ErrorRecoverable:
+      enum:
+      - 'No'
+      - NotApplicable
+      - 'Yes'
+      type: string
+      x-enumDescriptions:
+        'No': 'No'
+        NotApplicable: NotApplicable
+        'Yes': 'Yes'
+      x-enumLongDescriptions:
+        'No': 'No'
+        NotApplicable: NotApplicable
+        'Yes': 'Yes'
+      x-enumVersionAdded:
+        'No': v1_5_0
+        NotApplicable: v1_5_0
+        'Yes': v1_5_0
+    DellPhysicalDisk_NonRAIDDiskCachePolicy:
+      enum:
+      - Default
+      - Disabled
+      - Enabled
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Default: Default
+        Disabled: Disabled
+        Enabled: Enabled
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Default: Default
+        Disabled: Disabled
+        Enabled: Enabled
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Default: v1_2_0
+        Disabled: v1_2_0
+        Enabled: v1_2_0
+        Unknown: v1_2_0
+    DellPhysicalDisk_PowerStatus:
+      enum:
+      - 'On'
+      - Spun-Down
+      - Spun-Up
+      - Transition
+      type: string
+      x-enumDescriptions:
+        'On': 'On'
+        Spun-Down: Spun-Down
+        Spun-Up: Spun-Up
+        Transition: Transition
+      x-enumLongDescriptions:
+        'On': 'On'
+        Spun-Down: Spun-Down
+        Spun-Up: Spun-Up
+        Transition: Transition
+      x-enumVersionAdded:
+        'On': v1_2_0
+        Spun-Down: v1_2_0
+        Spun-Up: v1_2_0
+        Transition: v1_2_0
+    DellPhysicalDisk_PredictiveFailureState:
+      enum:
+      - SmartAlertAbsent
+      - SmartAlertPresent
+      type: string
+      x-enumDescriptions:
+        SmartAlertAbsent: Smart Alert Absent
+        SmartAlertPresent: Smart Alert Present
+      x-enumLongDescriptions:
+        SmartAlertAbsent: Smart Alert Absent
+        SmartAlertPresent: Smart Alert Present
+    DellPhysicalDisk_RAIDType:
+      enum:
+      - HardwareRAID
+      - MDSoftwareRAID
+      - Unknown
+      - WindowsSoftwareRAID
+      type: string
+      x-enumDescriptions:
+        HardwareRAID: HardwareRAID
+        MDSoftwareRAID: MDSoftwareRAID
+        Unknown: Unknown
+        WindowsSoftwareRAID: WindowsSoftwareRAID
+      x-enumLongDescriptions:
+        HardwareRAID: HardwareRAID
+        MDSoftwareRAID: MDSoftwareRAID
+        Unknown: Unknown
+        WindowsSoftwareRAID: WindowsSoftwareRAID
+      x-enumVersionAdded:
+        HardwareRAID: v1_1_0
+        MDSoftwareRAID: v1_1_0
+        Unknown: v1_1_0
+        WindowsSoftwareRAID: v1_1_0
+    DellPhysicalDisk_RaidStatus:
+      enum:
+      - Blocked
+      - Degraded
+      - Failed
+      - Foreign
+      - Missing
+      - NonRAID
+      - Offline
+      - Online
+      - Ready
+      - Unknown
+      - Unusable
+      type: string
+      x-enumDescriptions:
+        Blocked: Blocked
+        Degraded: Degraded
+        Failed: Failed
+        Foreign: Foreign
+        Missing: Missing
+        NonRAID: Non-RAID
+        Offline: Offline
+        Online: Online
+        Ready: Ready
+        Unknown: Unknown
+        Unusable: Unusable
+      x-enumLongDescriptions:
+        Blocked: Blocked
+        Degraded: Degraded
+        Failed: Failed
+        Foreign: Foreign
+        Missing: Missing
+        NonRAID: Non-RAID
+        Offline: Offline
+        Online: Online
+        Ready: Ready
+        Unknown: Unknown
+        Unusable: Unusable
+      x-enumVersionAdded:
+        Unusable: v1_5_0
+    DellPhysicalDisk_SystemEraseCapability:
+      enum:
+      - CryptographicErasePD
+      - NotSupported
+      - OverwritePD
+      type: string
+      x-enumDescriptions:
+        CryptographicErasePD: CryptographicErasePD
+        NotSupported: Not Supported
+        OverwritePD: OverwritePD
+      x-enumLongDescriptions:
+        CryptographicErasePD: CryptographicErasePD
+        NotSupported: Not Supported
+        OverwritePD: OverwritePD
+      x-enumVersionAdded:
+        CryptographicErasePD: v1_1_0
+        NotSupported: v1_1_0
+        OverwritePD: v1_1_0
+    DellPhysicalDisk_T10PICapability:
+      enum:
+      - NotSupported
+      - Supported
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not supported
+        Supported: Supported
+      x-enumLongDescriptions:
+        NotSupported: Not supported
+        Supported: Supported
+      x-enumVersionAdded:
+        NotSupported: v1_1_0
+        Supported: v1_1_0
+title: '#DellPhysicalDisk.DellPhysicalDisk'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

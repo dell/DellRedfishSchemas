@@ -1,0 +1,215 @@
+components:
+  schemas:
+    DellVideo_v1_3_0_DellVideo:
+      additionalProperties: false
+      description: DellVideo provides Video specific data which includes supported
+        GPU properties if supported.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        BoardPartNumber:
+          description: This property represent Board Part Number of GPU device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represent Board Part Number of GPU device.
+        BuildDate:
+          description: This property represents BuildDate of the GPU device in yyyymmdd
+            format.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents BuildDate of the GPU device
+            in yyyymmdd format.
+        BusNumber:
+          description: The bus number where this video device resides.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The bus number where this video device resides.
+        DataBusWidth:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVideo.yaml#/components/schemas/DellVideo_DataBusWidth
+          description: Data-bus width of the PCI device.
+          nullable: true
+          readOnly: true
+          x-longDescription: Data-bus width of the PCI device.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceNumber:
+          description: The device number assigned to this video for this bus.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The device number assigned to this video for this bus.
+        FQDD:
+          description: A string that contains the Fully Qualified Device Description
+            (FQDD) - a user-friendly name for the object.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Fully Qualified Device Description
+            (FQDD) - a user-friendly name for the object.
+        FirmwareVersion:
+          description: This property represents the software version of GPU Device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the software version of GPU
+            Device.
+        FunctionNumber:
+          description: The function number for this video device.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The function number for this video device.
+        GPUGUID:
+          description: This property represents the GPU GUID of the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the GPU GUID of the device.
+        GPUHealth:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVideo.yaml#/components/schemas/DellVideo_GPUHealth
+          description: This property represents the GPU Health status.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the GPU Health status.
+        GPUPartNumber:
+          description: This property represents Part Number of GPU device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents Part Number of GPU device.
+        GPUState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVideo.yaml#/components/schemas/DellVideo_GPUState
+          description: This property represents the GPU state.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the GPU state.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        InstanceID:
+          description: A unique identifier for the instance.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A unique identifier for the instance.
+        LastSystemInventoryTime:
+          description: This property provides the last time System Inventory Collection
+            On Reboot (CSIOR) was performed or the object was last updated on iDRAC.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the last time System Inventory
+            Collection On Reboot (CSIOR) was performed or the object was last updated
+            on iDRAC. The value is represented as yyyymmddHHMMSS.
+        LastUpdateTime:
+          description: This property provides the last time the data was updated.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the last time the data was updated.
+            The value is represented as yyyymmddHHMMSS.
+        Manufacturer:
+          description: The name of the organization responsible for producing the
+            PhysicalElement. This organization might be the entity from whom the Element
+            is purchased, but this is not necessarily true.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The name of the organization responsible for producing
+            the PhysicalElement. This organization might be the entity from whom the
+            Element is purchased, but this is not necessarily true.
+        MarketingName:
+          description: Indicates Marketing name of the GPU device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Indicates Marketing name of the GPU device.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        OEMInfo:
+          description: Indicates OEM information of the GPU device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Indicates OEM information of the GPU device.
+        PCIDeviceID:
+          description: This property contains a value assigned by the device manufacturer
+            used to identify the type of device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property contains a value assigned by the device
+            manufacturer used to identify the type of device.
+        PCISubDeviceID:
+          description: Register that contains a value assigned by the device manufacturer
+            used to identify the type of device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Register that contains a value assigned by the device
+            manufacturer used to identify the type of device.
+        PCISubVendorID:
+          description: Subsystem vendor ID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Subsystem vendor ID.
+        PCIVendorID:
+          description: Register that contains a value assigned by the Video SIG used
+            to identify the manufacturer of the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Register that contains a value assigned by the Video
+            SIG used to identify the manufacturer of the device.
+        SerialNumber:
+          description: This property represent Serial Number of GPU device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represent Serial Number of GPU device.
+        SlotLength:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVideo.yaml#/components/schemas/DellVideo_SlotLength
+          description: Slot length of the PCI device.
+          nullable: true
+          readOnly: true
+          x-longDescription: Slot length of the PCI device.
+        SlotType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVideo.yaml#/components/schemas/DellVideo_SlotType
+          description: Slot type of the PCI device.
+          nullable: true
+          readOnly: true
+          x-longDescription: Slot type of the PCI device.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: DellVideo provides Video specific data which includes supported
+        GPU properties if supported.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellVideo.v1_3_0.DellVideo'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

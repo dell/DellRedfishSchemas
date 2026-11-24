@@ -1,0 +1,263 @@
+components:
+  schemas:
+    DellOemSensor_v1_3_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellOemSensor.GetHistoricalSensorReadings':
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_GetHistoricalSensorReadings'
+        '#DellOemSensor.GetHistoricalThermalReadings':
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_GetHistoricalThermalReadings'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemSensor_v1_3_0_AggregatedReading:
+      additionalProperties: false
+      properties:
+        AveragingIntervalAchieved:
+          description: Set to true if the averaging interval has been achieved.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: Set to true if the averaging interval has been achieved.
+            This property is only present if the reading is an average.
+          x-versionAdded: v1_1_0
+        Reading:
+          description: The value of the reading.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The value of the reading. The unit is the same as the
+            ReadingUnits.
+          x-versionAdded: v1_1_0
+        ReadingTime:
+          description: The time of the reading.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The time of the reading. It is not applicable if the
+            reading is an average.
+          x-versionAdded: v1_1_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemSensor_v1_3_0_AggregatedReadings:
+      additionalProperties: false
+      properties:
+        LastDay:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReading'
+          description: Aggregated reading for the last day.
+          nullable: true
+          x-longDescription: Aggregated reading for the last day.
+          x-versionAdded: v1_1_0
+        LastHour:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReading'
+          description: Aggregated reading for the last hour.
+          nullable: true
+          x-longDescription: Aggregated reading for the last hour.
+          x-versionAdded: v1_1_0
+        LastMonth:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReading'
+          description: Aggregated reading for the last month.
+          nullable: true
+          x-longDescription: Aggregated reading for the last month.
+          x-versionAdded: v1_1_0
+        LastWeek:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReading'
+          description: Aggregated reading for the last week.
+          nullable: true
+          x-longDescription: Aggregated reading for the last week.
+          x-versionAdded: v1_1_0
+        LastYear:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReading'
+          description: Aggregated reading for the last year.
+          nullable: true
+          x-longDescription: Aggregated reading for the last year.
+          x-versionAdded: v1_1_0
+        Lifetime:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReading'
+          description: Aggregated reading for the lifetime.
+          nullable: true
+          x-longDescription: Aggregated reading for the lifetime.
+          x-versionAdded: v1_1_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemSensor_v1_3_0_DellOemSensor:
+      additionalProperties: false
+      description: This is the complex property for the additional OEM properties
+        to complement DMTF Sensor Schema.
+      properties:
+        AverageReadings:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReadings'
+          description: An aggregation of averages of readings.
+          nullable: true
+          readOnly: true
+          x-longDescription: An aggregation of averages of readings.
+          x-versionAdded: v1_1_0
+        CurrentState:
+          description: The current state indicated by the Sensor. This value is always
+            one of the PossibleStates.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The current state indicated by the Sensor. This value
+            is always one of the PossibleStates.
+        DeviceID:
+          description: An address or other identifying information to uniquely name
+            the LogicalDevice.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: An address or other identifying information to uniquely
+            name the LogicalDevice.
+        DurationInCriticalThresholdPercent:
+          description: The duration spent beyond the critical thresholds in percent.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The duration spent beyond the critical thresholds in
+            percent.
+          x-versionAdded: v1_1_0
+        DurationInWarningThresholdPercent:
+          description: The duration spent beyond the warning thresholds in percent.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The duration spent beyond the warning thresholds in percent.
+          x-versionAdded: v1_1_0
+        HistoricalReadings:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of HistoricalReadings.
+          readOnly: true
+          x-longDescription: A resource representation of HistoricalReadings.
+          x-versionAdded: v1_1_0
+        LowestReadings:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReadings'
+          description: An aggregation of readings with the lowest value.
+          nullable: true
+          readOnly: true
+          x-longDescription: An aggregation of readings with the lowest value.
+          x-versionAdded: v1_1_0
+        PeakReadings:
+          $ref: '#/components/schemas/DellOemSensor_v1_3_0_AggregatedReadings'
+          description: An aggregation of readings with the highest value.
+          nullable: true
+          readOnly: true
+          x-longDescription: An aggregation of readings with the highest value.
+          x-versionAdded: v1_1_0
+        PossibleStates:
+          description: PossibleStates enumerates the string outputs of the Sensor.
+            For example, a "Switch" Sensor may output the states "On", or "Off". Another
+            implementation of the Switch may output the states "Open", and "Close".
+            Another example is a NumericSensor that supports thresholds. This sensor
+            can report states such as "Normal", "Upper Fatal", "Lower Non-Critical",
+            and so on. A NumericSensor that does not publish readings and thresholds,
+            but stores this data internally, can still report its states.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: PossibleStates enumerates the string outputs of the Sensor.
+            For example, a "Switch" Sensor may output the states "On", or "Off". Another
+            implementation of the Switch may output the states "Open", and "Close".
+            Another example is a NumericSensor that supports thresholds. This sensor
+            can report states such as "Normal", "Upper Fatal", "Lower Non-Critical",
+            and so on. A NumericSensor that does not publish readings and thresholds,
+            but stores this data internally, can still report its states.
+        RequestedState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNumericSensor.yaml#/components/schemas/DellNumericSensor_RequestedState
+          description: RequestedState is an integer enumeration that indicates the
+            last requested or desired state for the element, irrespective of the mechanism
+            through which it was requested.
+          nullable: true
+          readOnly: true
+          x-longDescription: RequestedState is an integer enumeration that indicates
+            the last requested or desired state for the element, irrespective of the
+            mechanism through which it was requested.
+        TotalOperationalDuration:
+          description: The duration of Operational days.
+          nullable: true
+          pattern: ^P(\d+D)?(T(\d+H)?(\d+M)?(\d+(.\d+)?S)?)?$
+          readOnly: true
+          type: string
+          x-longDescription: The duration of total Operational days.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This is the complex property for the additional OEM properties
+        to complement DMTF Sensor Schema. This shall be used to represent an OEM Sensor
+        for a Redfish implementation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemSensor_v1_3_0_GetHistoricalSensorReadings:
+      additionalProperties: false
+      description: An action to retrieve historical readings of the sensor.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: An action to retrieve historical readings of the sensor.
+        The action shall accept a parameter ReadingHistoryPeriod to specify the period
+        for which the readings shall be returned.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DellOemSensor_v1_3_0_GetHistoricalSensorReadingsRequestBody:
+      additionalProperties: false
+      description: An action to retrieve historical readings of the sensor.
+      properties:
+        ReadingHistoryPeriod:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.yaml#/components/schemas/DellOemSensor_ReadingHistoryPeriod
+          description: The parameter for specifying the reading history period.
+          x-longDescription: The parameter for specifying the reading history period.
+            Valid values are LastHour, LastDay and LastWeek.
+      type: object
+      x-longDescription: An action to retrieve historical readings of the sensor.
+        The action shall accept a parameter ReadingHistoryPeriod to specify the period
+        for which the readings shall be returned.
+    DellOemSensor_v1_3_0_GetHistoricalThermalReadings:
+      additionalProperties: false
+      description: An action to retrieve historical readings of the thermal Sensor.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: An action to retrieve historical readings of the thermal
+        sensor. The action shall accept a parameter ReadingHistoryPeriod to specify
+        the period for which the readings shall be returned.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_3_0
+    DellOemSensor_v1_3_0_GetHistoricalThermalReadingsRequestBody:
+      additionalProperties: false
+      description: An action to retrieve historical readings of the thermal Sensor.
+      properties:
+        ReadingHistoryPeriod:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.yaml#/components/schemas/DellOemSensor_ReadingHistoryPeriod
+          description: The parameter for specifying the reading history period.
+          x-longDescription: The parameter for specifying the reading history period.
+            Valid values are LastHour, LastDay and LastWeek.
+      type: object
+      x-longDescription: An action to retrieve historical readings of the thermal
+        sensor. The action shall accept a parameter ReadingHistoryPeriod to specify
+        the period for which the readings shall be returned.
+title: '#DellOemSensor.v1_3_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

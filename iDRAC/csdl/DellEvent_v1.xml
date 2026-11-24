@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellEvent  v1.0.0 -->
+<!--# This schema complements to OEM section of DMTF Event Resource                   -->
+<!--# Copyright 2021-2022 Dell, Inc. or its subsidiaries.All Rights Reserved.             -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellEvent">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellEvent" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="This is the complex property for the additional OEM properties."/>
+        <Annotation Term="OData.LongDescription" String="This is the complex property for the additional OEM properties."/>
+      </ComplexType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellEvent.v1_0_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellEvent" BaseType="DellEvent.DellEvent">
+        <Property Name="ServerHostname" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This property provides the server hostname for the events."/>
+          <Annotation Term="OData.LongDescription" String="This property provides the server hostname for the events."/>
+        </Property>
+	 </ComplexType>
+    </Schema>
+	<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellEvent.v1_1_0">
+      <Annotation Term="OData.Description" String="This version was created to add the properties BitMask, Category, SequenceNumber, AgentID."/>
+      <ComplexType Name="DellEvent" BaseType="DellEvent.v1_0_0.DellEvent">
+        <Property Name="AgentID" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This property provides the agentID for the event."/>
+          <Annotation Term="OData.LongDescription" String="This property provides the agentID for the event."/>
+        </Property>
+		<Property Name="BitMask" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This property provides the action filter bit mask for the event."/>
+          <Annotation Term="OData.LongDescription" String="This property provides the action filter bit mask for the event."/>
+        </Property>
+		<Property Name="Category" Type="DellEvent.v1_1_0.Category">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This property provides the category for the event."/>
+          <Annotation Term="OData.LongDescription" String="This property provides the category for the event."/>
+        </Property>
+		<Property Name="SequenceNumber" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This property provides the sequence number for the event."/>
+          <Annotation Term="OData.LongDescription" String="This property provides the sequence number for the event."/>
+        </Property>
+      </ComplexType>
+      <EnumType Name="Category">
+        <Member Name="Storage">
+          <Annotation Term="OData.Description" String="The event has been generated as part of Storage unit"/>
+        </Member>
+        <Member Name="Updates">
+          <Annotation Term="OData.Description" String="The event has been generated as part of Updates"/>
+        </Member>
+        <Member Name="Audit">
+          <Annotation Term="OData.Description" String="The event has been generated as part of Audit type"/>
+        </Member>
+        <Member Name="Configuration">
+          <Annotation Term="OData.Description" String="The event has been generated as part of Configuration type"/>
+        </Member>
+        <Member Name="WorkNotes">
+          <Annotation Term="OData.Description" String="The event has been generated as part of Work Notes"/>
+        </Member>
+        <Member Name="SystemHealth">
+          <Annotation Term="OData.Description" String="The event has been generated as part of System Health unit"/>
+        </Member>
+      </EnumType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellEvent.v1_2_0">
+      <Annotation Term="OData.Description" String="This version was created to add the TrapId property."/>
+      <ComplexType Name="DellEvent" BaseType="DellEvent.v1_1_0.DellEvent">
+        <Property Name="TrapId" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This property provides the trap ID for the event."/>
+          <Annotation Term="OData.LongDescription" String="This property provides the trap ID for the event."/>
+        </Property>
+      </ComplexType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellPrivilegeRegistry v1.0.0                                        -->
+<!--# This schema defines Dell OEM extensions for PrivilegeRegistry, specifically          -->
+<!--# PayloadMatchRules for action-based privilege overrides.                              -->
+<!--# Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.             -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PrivilegeRegistry_v1.xml">
+    <edmx:Include Namespace="PrivilegeRegistry"/>
+    <edmx:Include Namespace="PrivilegeRegistry.v1_3_0"/>
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <!-- Unversioned namespace -->
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPrivilegeRegistry">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+
+      <ComplexType Name="DellOperationPrivilege" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="Dell OEM extension for OperationPrivilege providing payload-based privilege matching."/>
+        <Annotation Term="OData.LongDescription" String="This complex type provides Dell OEM extension for the DMTF OperationPrivilege type, enabling payload-based privilege matching for action requests."/>
+      </ComplexType>
+    </Schema>
+
+    <!-- Versioned namespace v1.0.0 -->
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPrivilegeRegistry.v1_0_0">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+      <Annotation Term="Redfish.Release" String="2026.2"/>
+      <Annotation Term="OData.Description" String="Initial release with PayloadMatchRules support for action-based privilege overrides."/>
+
+      <ComplexType Name="DellOperationPrivilege" BaseType="DellPrivilegeRegistry.DellOperationPrivilege">
+        <Annotation Term="OData.Description" String="Dell OEM extension for OperationPrivilege with payload matching."/>
+        <Annotation Term="OData.LongDescription" String="This type provides Dell OEM extension for OperationPrivilege with payload-based privilege matching rules."/>
+        <Property Name="PayloadMatchRules" Type="DellPrivilegeRegistry.v1_0_0.PayloadMatchRules" Nullable="false">
+          <Annotation Term="OData.Description" String="Rules for matching request payload properties to determine privilege requirements."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain rules for matching request payload properties. An empty object indicates a default entry that matches any payload not caught by specific rules. Non-empty rules apply only if all specified conditions match (AND logic)."/>
+        </Property>
+      </ComplexType>
+
+      <ComplexType Name="PayloadMatchRules">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="A set of payload property matching rules."/>
+        <Annotation Term="OData.LongDescription" String="This type shall contain payload property matching rules. Each property name in this object corresponds to a property in the action request payload, and its value specifies the matching criteria. An empty object indicates a default entry that matches any payload."/>
+        <Annotation Term="Redfish.DynamicPropertyPatterns">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Pattern" String="[A-Za-z_][A-Za-z0-9_]*"/>
+              <PropertyValue Property="Type" String="DellPrivilegeRegistry.v1_0_0.MatchCriteria"/>
+            </Record>
+          </Collection>
+        </Annotation>
+      </ComplexType>
+
+      <ComplexType Name="MatchCriteria">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="Matching criteria for a single payload property."/>
+        <Annotation Term="OData.LongDescription" String="This type shall contain the matching criteria for a single payload property. Exactly one match operator should be specified."/>
+        <Property Name="ExactMatch" Type="Edm.String" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value exactly equals this value."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the exact value to match against the payload property. The match succeeds if the payload property value equals this value."/>
+        </Property>
+        <Property Name="OneOf" Type="Collection(Resource.OemObject)" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value equals any value in this array."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain an array of allowed values. The match succeeds if the payload property value equals any value in this array."/>
+        </Property>
+        <Property Name="RegexMatch" Type="Edm.String" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value matches this regular expression pattern."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a regular expression pattern. The match succeeds if the payload property value (converted to string) matches this pattern."/>
+        </Property>
+        <Property Name="NavigationUriOneOf" Type="Collection(Edm.String)" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value matches any of the specified Redfish URI templates."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain an array of Redfish URI templates in OpenAPI format (e.g., '/redfish/v1/Managers/{ManagerId}/NetworkProtocol/HTTPS/Certificates/{CertificateId}'). The match succeeds if the payload property value matches any of the URI patterns in the array."/>
+        </Property>
+        <Property Name="InRange" Type="Collection(Edm.Decimal)" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value is within the specified range [min, max]."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a two-element array [min, max]. The match succeeds if the payload property value is a number within this inclusive range."/>
+        </Property>
+        <Property Name="GreaterThan" Type="Edm.Decimal" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value is greater than this number."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a number. The match succeeds if the payload property value is greater than this number."/>
+        </Property>
+        <Property Name="GreaterThanOrEqual" Type="Edm.Decimal" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value is greater than or equal to this number."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a number. The match succeeds if the payload property value is greater than or equal to this number."/>
+        </Property>
+        <Property Name="LessThan" Type="Edm.Decimal" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value is less than this number."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a number. The match succeeds if the payload property value is less than this number."/>
+        </Property>
+        <Property Name="LessThanOrEqual" Type="Edm.Decimal" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches if the payload property value is less than or equal to this number."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a number. The match succeeds if the payload property value is less than or equal to this number."/>
+        </Property>
+        <Property Name="Exists" Type="Edm.Boolean" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches based on whether the payload property exists."/>
+          <Annotation Term="OData.LongDescription" String="If true, the match succeeds if the payload property exists (regardless of value). If false, the match succeeds if the payload property does not exist."/>
+        </Property>
+        <Property Name="IsNull" Type="Edm.Boolean" Nullable="true">
+          <Annotation Term="OData.Description" String="Matches based on whether the payload property value is null."/>
+          <Annotation Term="OData.LongDescription" String="If true, the match succeeds if the payload property value is null. If false, the match succeeds if the payload property value is not null."/>
+        </Property>
+      </ComplexType>
+    </Schema>
+
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellEnvironmentMetrics v1_1_0-->
+<!--# -->
+<!--# Copyright © 2021-2024 Dell Inc. or its subsidiaries. All Rights Reserved.-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Sensor_v1.xml">
+        <edmx:Include Namespace="Sensor"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EnvironmentMetrics_v1.xml">
+        <edmx:Include Namespace="EnvironmentMetrics"/>
+        <edmx:Include Namespace="EnvironmentMetrics.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="DellEnvironmentMetrics" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <Action Name="SetPowerCappingConfigurations" IsBound="true">
+                <Annotation Term="OData.Description" String="This action set the Power Limiting value for standalone servers, where a user may enter a Power Limiting value of the chassis."/>
+                <Annotation Term="OData.LongDescription" String="This action sets the Power Limiting value for standalone servers, where a user may enter a Power Limiting value of the chassis. This command includes Chassis-level Power Capping, Sled-level Power Capping, and Emergency Power Capping"/>
+                <Parameter Name="DellEnvironmentMetrics" Type="EnvironmentMetrics.v1_0_0.OemActions" Nullable="false"/>
+                <Parameter Name="PowerLimitValue" Type="Edm.Int16" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter specifies the power limiting value in watts."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies the power limiting value in watts, with the least significant byte first."/>
+                </Parameter>
+                <Parameter Name="PowerLimitStatus" Type="DellEnvironmentMetrics.PowerLimitStatusType" Nullable="false" >
+                    <Annotation Term="OData.Description" String="This parameter defines the power limiting status for the chassis enclosure."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter defines the power limiting status for the chassis enclosure."/>
+                </Parameter>
+                <Parameter Name="PowerLimitAction" Type="DellEnvironmentMetrics.PowerLimitActionType" Nullable="false" >
+                    <Annotation Term="OData.Description" String="This parameter specifies the action to take when the power limit is reached."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies the action to take when the power limit is reached, such as throttling via PROCHOT or software mechanisms."/>
+                </Parameter>
+                <Parameter Name="PowerLimitException" Type="DellEnvironmentMetrics.PowerLimitExceptionType" Nullable="false" >
+                    <Annotation Term="OData.Description" String="This parameter defines the sled-level power capping exception."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter defines the exception policy for sled-level power capping, indicating whether to follow its own sled-level power capping or chassis-level power capping."/>
+                </Parameter>
+                <Parameter Name="EmergencyPowerLimitAction" Type="DellEnvironmentMetrics.PowerLimitEmergencyActionType" Nullable="false" >
+                    <Annotation Term="OData.Description" String="This parameter specifies the emergency action policy for chassis power capping."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies the emergency action policy for chassis power capping, such as doing nothing, throttling via PROCHOT, throttling via software, or powering off."/>
+                </Parameter>
+                <Parameter Name="EmergencyPowerLimitActionSled" Type="DellEnvironmentMetrics.PowerLimitEmergencyActionType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter defines the emergency action policy for sled power capping."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter defines the emergency action policy for sled power capping, indicating whether to follow chassis policy, throttle via PROCHOT, throttle via software, or power off."/>
+                </Parameter>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_2_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <EnumType Name="PowerLimitStatusType">
+                <Member Name="Disabled">
+                    <Annotation Term="OData.Description" String="Power capping is disabled (default)." />
+                    <Annotation Term="OData.LongDescription" String="Power capping is disabled (default)." />
+                </Member>
+                <Member Name="Enabled">
+                    <Annotation Term="OData.Description" String="Power capping is enabled." />
+                    <Annotation Term="OData.LongDescription" String="Power capping is enabled." />
+                </Member>
+            </EnumType>
+            <EnumType Name="PowerLimitActionType">
+                <Member Name="Reserved">
+                    <Annotation Term="OData.Description" String="No action is taken, this value is a placeholder." />
+                    <Annotation Term="OData.LongDescription" String="This value is reserved and does not correspond to any specific power capping mechanism. It is essentially a placeholder and should not be used for actual power capping actions" />
+                </Member>
+                <Member Name="ThrottleViaPROCHOT">
+                    <Annotation Term="OData.Description" String="Throttling via PROCHOT (Processor Hot) is a hardware-based mechanism that ensures immediate response to thermal events, providing a reliable way to manage power and thermal conditions." />
+                    <Annotation Term="OData.LongDescription" String="Throttling via PROCHOT (Processor Hot) is a hardware-based mechanism that ensures immediate response to thermal events, providing a reliable way to manage power and thermal conditions"/>
+                </Member>
+                <Member Name="ThrottleViaSoftwareMechanism">
+                    <Annotation Term="OData.Description" String="Throttling via software mechanisms like NM (Node Manager) or APML (Advanced Platform Management Link) allows for more flexible and granular control over power management." />
+                    <Annotation Term="OData.LongDescription" String="Software-based mechanisms like NM (Node Manager) or APML (Advanced Platform Management Link) provide dynamic and flexible control over power consumption, allowing for more sophisticated power management strategies." />
+                </Member>
+            </EnumType>
+            <EnumType Name="PowerLimitExceptionType">
+                <Member Name="Reserved">
+                    <Annotation Term="OData.Description" String="No action is taken, this value is a placeholder." />
+                    <Annotation Term="OData.LongDescription" String="This value is reserved and does not correspond to any specific power capping mechanism. It is essentially a placeholder and should not be used for actual power capping actions." />
+                </Member>
+                <Member Name="FollowSledLevelPowerCapping">
+                    <Annotation Term="OData.Description" String="Follow its own sled-level power capping." />
+                    <Annotation Term="OData.LongDescription" String="When this value is set, the sled will follow its own power capping rules and limits independently of the chassis-level power capping. This means that each sled within the chassis can have its own power capping settings, allowing for more granular control over power consumption at the sled level." />
+                </Member>
+                <Member Name="FollowChassisLevelPowerCapping">
+                    <Annotation Term="OData.Description" String="Follow chassis-level power capping." />
+                    <Annotation Term="OData.LongDescription" String="When this value is set, the sled will adhere to the power capping rules and limits defined at the chassis level. This means that the power capping settings applied to the entire chassis will also apply to each sled within it, ensuring uniform power management across all sleds." />
+                </Member>
+            </EnumType>
+            <EnumType Name="PowerLimitEmergencyActionType">
+                <Member Name="DoNothing">
+                    <Annotation Term="OData.Description" String="Specifies that no action is taken for emergency power capping at the chassis level." />
+                    <Annotation Term="OData.LongDescription" String="Specifies that no action is taken for emergency power capping at the chassis level." />
+                </Member>
+                <Member Name="ThrottleViaPROCHOT">
+                    <Annotation Term="OData.Description" String="Throttle via PROCHOT (Processor Hot)." />
+                    <Annotation Term="OData.LongDescription" String="Specifies that the processor will be throttled using the PROCHOT (Processor Hot) signal to reduce power consumption during emergency power capping at the chassis level." />
+                </Member>
+                <Member Name="ThrottleViaSoftwareMechanism">
+                    <Annotation Term="OData.Description" String="Throttle via software mechanism NM (Node Manager)." />
+                    <Annotation Term="OData.LongDescription" String="Specifies that the processor will be throttled using a software mechanism, such as Node Manager NM (Node Manager), to reduce power consumption during emergency power capping at the chassis level." />
+                </Member>
+                <Member Name="PowerOff">
+                    <Annotation Term="OData.Description" String="Power Off." />
+                    <Annotation Term="OData.LongDescription" String="Specifies that the system will be powered off to reduce power consumption during emergency power capping at the chassis level." />
+                </Member>
+                <Member Name="FollowChassisPolicy">
+                    <Annotation Term="OData.Description" String="Follow chassis policy." />
+                    <Annotation Term="OData.LongDescription" String="Specifies that the sled will follow the emergency power capping actions defined at the chassis level." />
+                </Member>
+            </EnumType>
+            <ComplexType Name="DellEnvironmentMetrics" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="This property shall represent the Oem properties for a EnvironmentMetrics resource."/>
+                <Annotation Term="OData.LongDescription" String="This property shall represent the Oem properties for a EnvironmentMetrics resource."/>
+            </ComplexType>
+        </Schema>
+        <Schema Namespace="DellEnvironmentMetrics.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellEnvironmentMetrics" BaseType="DellEnvironmentMetrics.DellEnvironmentMetrics">
+                <Property Name="AverageFanPWM" Type="Edm.Decimal">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Represents average fan speed in PWM."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall represent average fan speed in PWM"/>
+                </Property>
+            </ComplexType>
+        </Schema>
+        <Schema Namespace="DellEnvironmentMetrics.v1_1_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellEnvironmentMetrics" BaseType="DellEnvironmentMetrics.v1_0_0.DellEnvironmentMetrics">
+                <NavigationProperty Name="PowerWatts" Type="Collection(Sensor.Sensor)">
+                    <Annotation Term="Redfish.ExcerptCopy" String="Array"/>
+                    <Annotation Term="OData.Description" String="Power consumption (W)."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the total power, in watt units, for this resource. The value of the DataSourceUri property, if present, shall reference a resource of type Sensor with the ReadingType property containing the value `Power`."/>
+                </NavigationProperty>
+                <NavigationProperty Name="TemperatureCelsius" Type="Collection(Sensor.Sensor)">
+                    <Annotation Term="Redfish.ExcerptCopy" String="Array"/>
+                    <Annotation Term="OData.Description" String="Temperature (Celsius)."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the temperature, in degrees Celsius units, for this resource. The value of the DataSourceUri property, if present, shall reference a resource of type Sensor with the ReadingType property containing the value `Temperature`."/>
+                </NavigationProperty>
+            </ComplexType>
+        </Schema>
+        <Schema Namespace="DellEnvironmentMetrics.v1_2_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellEnvironmentMetrics" BaseType="DellEnvironmentMetrics.v1_1_0.DellEnvironmentMetrics">
+                <Property Name="InfraPowerWatts" Type="Edm.Decimal">
+                    <Annotation Term="OData.Description" String="Power consumption of infrastructure (W)."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the total power, in watt units, for this resource infrastructure`."/>
+                </Property>
+                <Property Name="CMInputCurrentLimit" Type="DellEnvironmentMetrics.v1_2_0.CMInputCurrentLimitType">
+                    <Annotation Term="OData.Description" String="This property shall contains the chassis input current limit settings of a system."/>
+                    <Annotation Term="OData.LongDescription" String="his property shall contains the chassis input current limit settings of a system"/>
+                </Property>
+                <Property Name="CMConfiguration" Type="DellEnvironmentMetrics.v1_2_0.CMConfigurationType">
+                    <Annotation Term="OData.Description" String="This property shall contain Chassis Manager (CM) configuration information for this chassis."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain Chassis Manager (CM) configuration information for this chassis."/>
+                </Property>
+                <Property Name="PowerLimit" Type="DellEnvironmentMetrics.v1_2_0.PowerLimitType">
+                    <Annotation Term="OData.Description" String="This property shall contain power limit status and configuration information for this chassis."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain power limit status and configuration information for this chassis."/>
+                </Property>
+            </ComplexType>
+            <ComplexType Name="CMInputCurrentLimitType">
+                <Property Name="Enabled" Type="Edm.Boolean" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+                    <Annotation Term="OData.Description" String="Indicates whether the input current limit is enabled."/>
+                    <Annotation Term="OData.LongDescription" String="This property specifies whether the input current limit functionality is enabled for the system. When set to true, the system will enforce the input current limit to ensure stability and prevent overcurrent conditions. This property is crucial for maintaining system integrity and preventing potential hardware damage."/>
+                </Property>
+                <Property Name="GridICLAmps" Type="Edm.Int32">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+                    <Annotation Term="OData.Description" String="This property specifies the value in milliAmps (mA) to use in Set SPA calculations, with a default value of 0. It is only valid if the GridChassisICLEnabled Bit 0 is set to 1." />
+                    <Annotation Term="OData.LongDescription" String="This property specifies the value in milliAmps (mA) to use in Set SPA calculations, with a default value of 0. It is only valid if the GridChassisICLEnabled Bit 0 is set to 1. This is a read-only property that can only be set by the Chassis Manager (CM) and applies to Lake Austin only." />
+                </Property>
+                <Property Name="ChassisICLAmps" Type="Edm.Int32">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+                    <Annotation Term="OData.Description" String="This property specifies the value in milliAmps (mA) to use in Set SPA calculations. Only valid if GridChassisICLEnabled Bit 0 is 1." />
+                    <Annotation Term="OData.LongDescription" String="This property specifies the value in milliAmps (mA) to use in Set SPA calculations, with a default value of 0. It is only valid if the GridChassisICLEnabled Bit 0 is set to 1. This is a read-only property that can only be set by the Chassis Manager (CM) and applies to Lake Austin only." />
+                </Property>
+            </ComplexType>
+            <ComplexType Name="CMConfigurationType">
+                <Property Name="BVMEnable" Type="Edm.Boolean" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+                    <Annotation Term="OData.Description" String="This property specifies the Bulk Voltage Modulation (BVM) setting for PSUs."/>
+                    <Annotation Term="OData.LongDescription" String="This property specifies the Bulk Voltage Modulation (BVM) setting for Power Supply Units (PSUs). It can be set to 0 or 1, with a default value of 1. This property applies to Hubble and Lake Austin systems only."/>
+                </Property>
+                <Property Name="CableAmpLimit" Type="Edm.Int32">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+                    <Annotation Term="OData.Description" String="This property enables the Power Adapter Cable Support." />
+                    <Annotation Term="OData.LongDescription" String="This property enables the Power Adapter Cable Support, such as for the C19-C14 cable. A value of 0 disables it, while a value greater than 0 enables it for the specified amp limit (e.g., 0Ch = 12 Amps). The default value is 0. This value is read-only and set to 0Ch when a PSU with a specific part number is inserted." />
+                </Property>
+            </ComplexType>
+            <ComplexType Name="PowerLimitType">
+                <Property Name="PowerLimitStatus" Type="DellEnvironmentMetrics.PowerLimitStatusType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property shall define the power limiting status for the chassis enclosure."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall define the power limiting status for the chassis enclosure."/>
+                </Property>
+                <Property Name="PowerLimitAction" Type="DellEnvironmentMetrics.PowerLimitActionType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property specify the action on power limit."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall specify the action to take when the power limit is reached, such as throttling via PROCHOT or software mechanisms."/>
+                </Property>
+                <Property Name="PowerLimitException" Type="DellEnvironmentMetrics.PowerLimitExceptionType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property shall define the sled-level power capping exception."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall define the exception policy for sled-level power capping, indicating whether to follow its own sled-level power capping or chassis-level power capping."/>
+                </Property>
+                <Property Name="EmergencyPowerLimitAction" Type="DellEnvironmentMetrics.PowerLimitEmergencyActionType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property shall specify emergency action for chassis."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall specify the emergency action policy for chassis power capping, such as doing nothing, throttling via PROPROCHOT (Processor Hot), throttling via software, or powering off."/>
+                </Property>
+                <Property Name="EmergencyPowerLimitActionSled" Type="DellEnvironmentMetrics.PowerLimitEmergencyActionType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property shall define the emergency action for sled."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall define the emergency action policy for sled power capping, indicating whether to follow chassis policy, throttle via PROCHOT (Processor Hot), throttle via software, or power off."/>
+                </Property>
+            </ComplexType>
+        </Schema>
+        </edmx:DataServices>
+    </edmx:Edmx>

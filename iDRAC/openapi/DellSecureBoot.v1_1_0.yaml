@@ -1,0 +1,31 @@
+components:
+  schemas:
+    DellSecureBoot_v1_1_0_DellSecureBoot:
+      additionalProperties: false
+      description: This resource contains the Dell specific Redfish implementation
+        for SecureBoot.
+      properties:
+        Certificates:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to the collection of SecureBoot Certificates associated
+            with this system.
+          readOnly: true
+          x-longDescription: The value of this property shall be a link to a collection
+            of type SecureBoot Certificates.
+        FirmwareImageHashes:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to the collection of FirmwareImageHash associated
+            with this system.
+          readOnly: true
+          x-longDescription: The value of this property shall be a link to a collection
+            of FirmwareImageHash.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This resource contains the Dell specific Redfish implementation
+        for SecureBoot.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellSecureBoot.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

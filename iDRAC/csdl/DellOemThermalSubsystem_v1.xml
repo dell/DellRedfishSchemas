@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellOemThermalSubsystem  v1.0.0                                              -->
+<!--# This schema complements to OEM section of DMTF ThermalSubsystem resource               -->
+<!--# Copyright 2023-2024 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFanBoardCollection_v1.xml">
+    <edmx:Include Namespace="DellFanBoardCollection"/>
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemThermalSubsystem">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellOemThermalSubsystem" Abstract="true">
+          <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+          <Annotation Term="OData.Description" String="This is the complex property is for the additional OEM extension realted to the DMTF ThermalSubsystem."/>
+          <Annotation Term="OData.LongDescription" String="This is the complex property is for the additional OEM extension realted to the DMTF ThermalSubsystem."/>
+      </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemThermalSubsystem.v1_0_0">
+        <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+    <ComplexType Name="DellOemThermalSubsystem" BaseType="DellOemThermalSubsystem.DellOemThermalSubsystem">
+        <Annotation Term="OData.Description" String="This version was added to add new Oem extension."/>
+        <Annotation Term="OData.LongDescription" String="This version was added to add new Oem extension."/>
+		    <NavigationProperty Name="DellFanBoards" Type="DellFanBoardCollection.DellFanBoardCollection" ContainsTarget="true" Nullable="false">
+            <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+            <Annotation Term="OData.Description" String="A collection representation of DellFanBoard."/>
+            <Annotation Term="OData.LongDescription" String="A collection representation of DellFanBoard."/>
+            <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+	  </ComplexType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

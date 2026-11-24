@@ -1,0 +1,70 @@
+components:
+  schemas:
+    DellUpdateService_ConfigureCX8WriteProtect:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.yaml#/components/schemas/DellUpdateService_v1_6_0_ConfigureCX8WriteProtect
+      description: 'This action supports for PCIe CX-8 in band updates only, and users
+        will need to manually disable #WP before the update and enable #WP after the
+        update is completed.'
+      x-longDescription: 'This action supports for PCIe CX-8 in band updates only,
+        and users will need to manually disable #WP before the update and enable #WP
+        after the update is completed.'
+    DellUpdateService_ConfigureHardwareWriteProtect:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.yaml#/components/schemas/DellUpdateService_v1_6_0_ConfigureHardwareWriteProtect
+      description: This action configures hardware write protection for supported
+        components. Users will need to manually disable write protection before firmware
+        updates and enable it after updates are completed.
+      x-longDescription: This action configures hardware write protection for supported
+        components. Users will need to manually disable write protection before firmware
+        updates and enable it after updates are completed.
+    DellUpdateService_DellOemUpdateService:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.yaml#/components/schemas/DellUpdateService_v1_6_0_DellOemUpdateService
+      description: This is the complex property for the additional OEM Links.
+      x-longDescription: This is the complex property for the additional OEM Links.
+    DellUpdateService_HardwareComponentType:
+      enum:
+      - Default
+      type: string
+      x-enumDescriptions:
+        Default: Apply write protection configuration to all supported hardware components.
+      x-enumLongDescriptions:
+        Default: Apply write protection configuration to all supported hardware components.
+          This is the default value and currently the only supported option.
+    DellUpdateService_Install:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.yaml#/components/schemas/DellUpdateService_v1_6_0_Install
+      description: This action is used to install firmware inventory instances
+      x-longDescription: This action shall perform install of firmware inventory instances
+    DellUpdateService_InstallStagedPackages:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.yaml#/components/schemas/DellUpdateService_v1_6_0_InstallStagedPackages
+      description: This action creates install jobs for all eligible firmware packages
+        in the LocalImageStore collection. Supports @Redfish.OperationApplyTime (Immediate
+        or OnReset).
+      x-longDescription: This action accepts no package list parameter. Install jobs
+        are created for all packages with PackageValidationStatus = Success in the
+        LocalImageStore collection based on the operation apply time. The action supports
+        @Redfish.OperationApplyTime with values Immediate (install now) or OnReset
+        (install on next reboot).
+    DellUpdateService_RecoverFirmware:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.yaml#/components/schemas/DellUpdateService_v1_6_0_RecoverFirmware
+      description: This action shall recover BOSS controller firmware in case of root
+        of trust (RoT) failure.
+      x-longDescription: This action shall recover BOSS controller firmware in case
+        of root of trust (RoT) failure.
+    DellUpdateService_RequestType:
+      enum:
+      - Enable
+      - Disable
+      type: string
+      x-enumDescriptions:
+        Disable: 'nvcore will immediately disable #WP.'
+        Enable: 'nvcore will immediately enable #WP.'
+      x-enumLongDescriptions:
+        Disable: 'nvcore will immediately disable #WP.'
+        Enable: 'nvcore will immediately enable #WP.'
+title: '#DellUpdateService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.

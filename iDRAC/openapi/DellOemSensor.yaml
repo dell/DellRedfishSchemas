@@ -1,0 +1,131 @@
+components:
+  schemas:
+    DellOemSensor_DellOemSensor:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.v1_3_0.yaml#/components/schemas/DellOemSensor_v1_3_0_DellOemSensor
+      description: This is the complex property for the additional OEM properties
+        to complement DMTF Sensor Schema.
+      x-longDescription: This is the complex property for the additional OEM properties
+        to complement DMTF Sensor Schema. This shall be used to represent an OEM Sensor
+        for a Redfish implementation.
+    DellOemSensor_GetHistoricalSensorReadings:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.v1_3_0.yaml#/components/schemas/DellOemSensor_v1_3_0_GetHistoricalSensorReadings
+      description: An action to retrieve historical readings of the sensor.
+      x-longDescription: An action to retrieve historical readings of the sensor.
+        The action shall accept a parameter ReadingHistoryPeriod to specify the period
+        for which the readings shall be returned.
+    DellOemSensor_GetHistoricalSensorReadingsResponse:
+      additionalProperties: false
+      description: The response payload for the GetHistoricalSensorReadings action.
+      properties:
+        ReadingHistoryPeriod:
+          $ref: '#/components/schemas/DellOemSensor_ReadingHistoryPeriod'
+          description: The reading history period.
+          nullable: true
+          x-longDescription: The reading history period.
+        Readings:
+          description: List of historical readings.
+          items:
+            nullable: true
+            type: number
+          type: array
+          x-longDescription: List of historical readings.
+      type: object
+      x-longDescription: The response payload for the GetHistoricalSensorReadings
+        action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DellOemSensor_GetHistoricalThermalReadings:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSensor.v1_3_0.yaml#/components/schemas/DellOemSensor_v1_3_0_GetHistoricalThermalReadings
+      description: An action to retrieve historical readings of the thermal Sensor.
+      x-longDescription: An action to retrieve historical readings of the thermal
+        sensor. The action shall accept a parameter ReadingHistoryPeriod to specify
+        the period for which the readings shall be returned.
+    DellOemSensor_GetHistoricalThermalReadingsResponse:
+      additionalProperties: false
+      description: The response payload for the GetHistoricalThermalReadings action.
+      properties:
+        CriticalThreshold:
+          description: The reading history period.
+          format: int64
+          nullable: true
+          type: integer
+        PercentageAboveCriticalThreshold:
+          description: The reading history period.
+          nullable: true
+          type: number
+        PercentageAboveWarningThreshold:
+          description: The reading history period.
+          nullable: true
+          type: number
+        Readings:
+          description: List of historical readings.
+          items:
+            $ref: '#/components/schemas/DellOemSensor_HistoricalThermalReadings'
+            nullable: true
+          type: array
+        TotalOperationalDays:
+          description: The reading history period.
+          format: int64
+          nullable: true
+          type: integer
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_3_0
+    DellOemSensor_HistoricalThermalReadings:
+      additionalProperties: false
+      description: The defenintion of Reading object in the GetHistoricalThermalReadingsResponse
+        complex type.
+      properties:
+        AverageReading:
+          description: The average reading.
+          format: int64
+          nullable: true
+          type: integer
+        PeakReading:
+          description: The peak reading.
+          format: int64
+          nullable: true
+          type: integer
+        ReadingTime:
+          description: The time at which the data is recorded.
+          format: date-time
+          nullable: true
+          type: string
+        WarningThreshold:
+          description: The reading history period.
+          format: int64
+          nullable: true
+          type: integer
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_3_0
+    DellOemSensor_ReadingHistoryPeriod:
+      enum:
+      - LastHour
+      - LastDay
+      - LastWeek
+      - LastMonth
+      - LastYear
+      type: string
+      x-enumDescriptions:
+        LastDay: Historical readings for the last day.
+        LastHour: Historical readings for the last hour.
+        LastMonth: Historical readings for the last month.
+        LastWeek: Historical readings for the last week.
+        LastYear: Historical readings for the last year.
+      x-enumVersionAdded:
+        LastMonth: v1_3_0
+        LastYear: v1_3_0
+      x-versionAdded: v1_2_0
+title: '#DellOemSensor'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

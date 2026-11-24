@@ -1,0 +1,10 @@
+components:
+  schemas:
+    DellCertificateLocations_DellCertificateLocationLinks:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateLocations.v1_0_0.yaml#/components/schemas/DellCertificateLocations_v1_0_0_DellCertificateLocationLinks
+      description: This resource defines links to certificates.
+      x-longDescription: This resource defines links to certificates.
+title: '#DellCertificateLocations'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

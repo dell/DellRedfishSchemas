@@ -1,0 +1,669 @@
+components:
+  schemas:
+    DellPersistentStorageService_v1_1_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DellPersistentStorageService.AttachPartition':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_AttachPartition'
+        '#DellPersistentStorageService.CreatePartition':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_CreatePartition'
+        '#DellPersistentStorageService.CreatePartitionUsingImage':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_CreatePartitionUsingImage'
+        '#DellPersistentStorageService.DeletePartition':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_DeletePartition'
+        '#DellPersistentStorageService.DetachPartition':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_DetachPartition'
+        '#DellPersistentStorageService.ExportDataFromPartition':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_ExportDataFromPartition'
+        '#DellPersistentStorageService.FormatPartition':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_FormatPartition'
+        '#DellPersistentStorageService.InitializeMedia':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_InitializeMedia'
+        '#DellPersistentStorageService.ModifyPartition':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_ModifyPartition'
+        '#DellPersistentStorageService.VFlashStateChange':
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_VFlashStateChange'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPersistentStorageService_v1_1_0_AttachPartition:
+      additionalProperties: false
+      description: The AttachPartition() method exposes a partition as to the managed
+        system's OS. Upon the successful execution of the AttachPartition() method,
+        the partition, represented by the DellOpaqueManagementData instance with the
+        PartitionIndex property equal to the Partition Index parameter, is exposed
+        to the host OS.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The AttachPartition() method exposes a partition as to the
+        managed system's OS. Upon the successful execution of the AttachPartition()
+        method, the partition, represented by the DellOpaqueManagementData instance
+        with the PartitionIndex property equal to the Partition Index parameter, is
+        exposed to the host OS.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_AttachPartitionRequestBody:
+      additionalProperties: false
+      description: The AttachPartition() method exposes a partition as to the managed
+        system's OS. Upon the successful execution of the AttachPartition() method,
+        the partition, represented by the DellOpaqueManagementData instance with the
+        PartitionIndex property equal to the Partition Index parameter, is exposed
+        to the host OS.
+      properties:
+        PartitionIndex:
+          description: The index of the partition, which is a value between 1 and
+            16.
+          format: int64
+          type: integer
+          x-longDescription: The index of the partition, which is a value between
+            1 and 16.
+      required:
+      - PartitionIndex
+      type: object
+      x-longDescription: The AttachPartition() method exposes a partition as to the
+        managed system's OS. Upon the successful execution of the AttachPartition()
+        method, the partition, represented by the DellOpaqueManagementData instance
+        with the PartitionIndex property equal to the Partition Index parameter, is
+        exposed to the host OS.
+    DellPersistentStorageService_v1_1_0_CreatePartition:
+      additionalProperties: false
+      description: The CreatePartition() method is used for creating a new partition
+        on a storage device. Upon successful invocation of the CreatePartition() method,
+        a new instance of DellOpaqueManagementData is created with the PartitionIndex
+        property equal to the PartitionIndex parameter, the Size property in MB equal
+        to the Size parameter in the SizeUnit parameter specified units, the PartitionType
+        property equal to the string representation of PartitionType parameter value
+        map, and the Name property equal to the OSVolumeLabel parameter.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The CreatePartition() method is used for creating a new partition
+        on a storage device. Upon successful invocation of the CreatePartition() method,
+        a new instance of DellOpaqueManagementData is created with the PartitionIndex
+        property equal to the PartitionIndex parameter, the Size property in MB equal
+        to the Size parameter in the SizeUnit parameter specified units, the PartitionType
+        property equal to the string representation of PartitionType parameter value
+        map, and the Name property equal to the OSVolumeLabel parameter.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_CreatePartitionRequestBody:
+      additionalProperties: false
+      description: The CreatePartition() method is used for creating a new partition
+        on a storage device. Upon successful invocation of the CreatePartition() method,
+        a new instance of DellOpaqueManagementData is created with the PartitionIndex
+        property equal to the PartitionIndex parameter, the Size property in MB equal
+        to the Size parameter in the SizeUnit parameter specified units, the PartitionType
+        property equal to the string representation of PartitionType parameter value
+        map, and the Name property equal to the OSVolumeLabel parameter.
+      properties:
+        OSVolumeLabel:
+          description: The value is limited to 6 characters. This is the same label
+            which will be seen in the OS after attaching the partition.
+          type: string
+          x-longDescription: The value is limited to 6 characters. This is the same
+            label which will be seen in the OS after attaching the partition.
+        PartitionIndex:
+          description: The index of the partition, which is a value between 1 and
+            16.
+          format: int64
+          type: integer
+          x-longDescription: The index of the partition, which is a value between
+            1 and 16.
+        PartitionType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_PartitionType
+          description: The Partition Type.
+          x-longDescription: The Partition Type.
+        Size:
+          description: The size of the partition that needs to be created in units
+            specified by the SizeUnit parameter.
+          format: int64
+          type: integer
+          x-longDescription: The size of the partition that needs to be created in
+            units specified by the SizeUnit parameter.
+        SizeUnit:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_SizeUnit
+          description: The value is 1(MB) or 2(GB).
+          x-longDescription: The value is 1(MB) or 2(GB).
+      required:
+      - OSVolumeLabel
+      - PartitionIndex
+      - PartitionType
+      - Size
+      - SizeUnit
+      type: object
+      x-longDescription: The CreatePartition() method is used for creating a new partition
+        on a storage device. Upon successful invocation of the CreatePartition() method,
+        a new instance of DellOpaqueManagementData is created with the PartitionIndex
+        property equal to the PartitionIndex parameter, the Size property in MB equal
+        to the Size parameter in the SizeUnit parameter specified units, the PartitionType
+        property equal to the string representation of PartitionType parameter value
+        map, and the Name property equal to the OSVolumeLabel parameter.
+    DellPersistentStorageService_v1_1_0_CreatePartitionUsingImage:
+      additionalProperties: false
+      description: The CreatePartitionUsingImage() method is used to create a partition
+        using an image provided by the user. Image may reside on (T)FTP or HTTP server,
+        or on a CIFS or NFS share. Upon successful invocation of the CreatePartitionUsingImage()
+        method, the image is downloaded and provisioned as a partition on a VFlash.Upon
+        successful invocation of the CreatePartitionUsingImage() method, a new instance
+        of DellOpaqueManagementData is created with the PartitionIndex property equal
+        to the PartitionIndex parameter, the Size property in MB equal to the size
+        of the remote image, the PartitionType property equal to the string representation
+        of PartitionType parameter value map, and the Name property equal to the OSVolumeLabel
+        parameter.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The CreatePartitionUsingImage() method is used to create
+        a partition using an image provided by the user. Image may reside on (T)FTP
+        or HTTP server, or on a CIFS or NFS share. Upon successful invocation of the
+        CreatePartitionUsingImage() method, the image is downloaded and provisioned
+        as a partition on a VFlash.Upon successful invocation of the CreatePartitionUsingImage()
+        method, a new instance of DellOpaqueManagementData is created with the PartitionIndex
+        property equal to the PartitionIndex parameter, the Size property in MB equal
+        to the size of the remote image, the PartitionType property equal to the string
+        representation of PartitionType parameter value map, and the Name property
+        equal to the OSVolumeLabel parameter.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_CreatePartitionUsingImageRequestBody:
+      additionalProperties: false
+      description: The CreatePartitionUsingImage() method is used to create a partition
+        using an image provided by the user. Image may reside on (T)FTP or HTTP server,
+        or on a CIFS or NFS share. Upon successful invocation of the CreatePartitionUsingImage()
+        method, the image is downloaded and provisioned as a partition on a VFlash.Upon
+        successful invocation of the CreatePartitionUsingImage() method, a new instance
+        of DellOpaqueManagementData is created with the PartitionIndex property equal
+        to the PartitionIndex parameter, the Size property in MB equal to the size
+        of the remote image, the PartitionType property equal to the string representation
+        of PartitionType parameter value map, and the Name property equal to the OSVolumeLabel
+        parameter.
+      properties:
+        HashType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_HashType
+          description: The value is 1 (MD5) or 2 (SHA1).
+          x-longDescription: The value is 1 (MD5) or 2 (SHA1).
+        HashValue:
+          description: The HashValue parameter is set to the hash value of the image
+            using the specified hash type in the HashType parameter.
+          type: string
+          x-longDescription: The HashValue parameter is set to the hash value of the
+            image using the specified hash type in the HashType parameter.
+        IPAddress:
+          description: If the ShareType parameter is set to 0 (NFS) or, 1 (TFTP),
+            or 2 (CIFS), this parameter must be populated.
+          type: string
+          x-longDescription: If the ShareType parameter is set to 0 (NFS) or, 1 (TFTP),
+            or 2 (CIFS), this parameter must be populated.
+        ImageName:
+          description: Name of the image file.
+          type: string
+          x-longDescription: Name of the image file.
+        OSVolumeLabel:
+          description: The value is limited to 6 characters. This is the same label
+            which will be seen in the OS after attaching the partition.
+          type: string
+          x-longDescription: The value is limited to 6 characters. This is the same
+            label which will be seen in the OS after attaching the partition.
+        PartitionIndex:
+          description: The index of the partition, which is a value between 1 and
+            16.
+          format: int64
+          type: integer
+          x-longDescription: The index of the partition, which is a value between
+            1 and 16.
+        PartitionType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_PartitionType
+          description: The Partition Type.
+          x-longDescription: The Partition Type.
+        Password:
+          description: The password for accessing the image on a remote node. This
+            parameter is mandatory for CIFS ShareType.
+          type: string
+          x-longDescription: The password for accessing the image on a remote node.
+            This parameter is mandatory for CIFS ShareType.
+        Port:
+          description: If the ShareType parameter is set to 1 (TFTP, this parameter
+            must be populated).
+          format: int64
+          type: integer
+          x-longDescription: If the ShareType parameter is set to 1 (TFTP, this parameter
+            must be populated).
+        SharePath:
+          description: If the ShareType parameter is set to 0 (NFS) or, 1 (TFTP),
+            or 2 (CIFS), this parameter must be populated.
+          type: string
+          x-longDescription: If the ShareType parameter is set to 0 (NFS) or, 1 (TFTP),
+            or 2 (CIFS), this parameter must be populated.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_ShareType
+          description: The parameter specifies the type of network share.
+          x-longDescription: The parameter specifies the type of network share.
+        URI:
+          description: The parameter is populated, if the ShareType parameter is set
+            to 3(FTP), or 4 (HTTP).
+          type: string
+          x-longDescription: The parameter is populated, if the ShareType parameter
+            is set to 3(FTP), or 4 (HTTP).
+        Username:
+          description: The username for accessing the image on a remote node. This
+            parameter is mandatory for CIFS ShareType.
+          type: string
+          x-longDescription: The username for accessing the image on a remote node.
+            This parameter is mandatory for CIFS ShareType.
+        Workgroup:
+          description: Workgroup for the CIFS share-optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share-optional.
+      required:
+      - ImageName
+      - OSVolumeLabel
+      - PartitionIndex
+      - PartitionType
+      - ShareType
+      type: object
+      x-longDescription: The CreatePartitionUsingImage() method is used to create
+        a partition using an image provided by the user. Image may reside on (T)FTP
+        or HTTP server, or on a CIFS or NFS share. Upon successful invocation of the
+        CreatePartitionUsingImage() method, the image is downloaded and provisioned
+        as a partition on a VFlash.Upon successful invocation of the CreatePartitionUsingImage()
+        method, a new instance of DellOpaqueManagementData is created with the PartitionIndex
+        property equal to the PartitionIndex parameter, the Size property in MB equal
+        to the size of the remote image, the PartitionType property equal to the string
+        representation of PartitionType parameter value map, and the Name property
+        equal to the OSVolumeLabel parameter.
+    DellPersistentStorageService_v1_1_0_DeletePartition:
+      additionalProperties: false
+      description: The DeletePartition() method is used for deleting a partition on
+        a vFlash.Upon the successful execution of the DeletePartition() method, the
+        DDellOpaqueManagementData instance with PartitionIndex property equal to the
+        PartitionIndex parameter is be deleted.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The DeletePartition() method is used for deleting a partition
+        on a vFlash.Upon the successful execution of the DeletePartition() method,
+        the DDellOpaqueManagementData instance with PartitionIndex property equal
+        to the PartitionIndex parameter is be deleted.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_DeletePartitionRequestBody:
+      additionalProperties: false
+      description: The DeletePartition() method is used for deleting a partition on
+        a vFlash.Upon the successful execution of the DeletePartition() method, the
+        DDellOpaqueManagementData instance with PartitionIndex property equal to the
+        PartitionIndex parameter is be deleted.
+      properties:
+        PartitionIndex:
+          description: The index of the partition, which is a value between 1 and
+            16.
+          format: int64
+          type: integer
+          x-longDescription: The index of the partition, which is a value between
+            1 and 16.
+      required:
+      - PartitionIndex
+      type: object
+      x-longDescription: The DeletePartition() method is used for deleting a partition
+        on a vFlash.Upon the successful execution of the DeletePartition() method,
+        the DDellOpaqueManagementData instance with PartitionIndex property equal
+        to the PartitionIndex parameter is be deleted.
+    DellPersistentStorageService_v1_1_0_DellPersistentStorageService:
+      additionalProperties: false
+      description: The DellPersistentStorageService resource provides some actions
+        to support VFlash functionality.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DellPersistentStorageService_v1_1_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: The DellPersistentStorageService resource provides some actions
+        to support VFlash functionality.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPersistentStorageService_v1_1_0_DetachPartition:
+      additionalProperties: false
+      description: The DetachPartition() method is used to remove a partition that
+        was previously exposed to the managed system's OS. Upon the successful execution
+        of the DetachPartition() method, the partition, represented by the DellOpaqueManagementData
+        instance with the PartitionIndex property equal to the PartitionIndex parameter,
+        is removed from the host OS.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The DetachPartition() method is used to remove a partition
+        that was previously exposed to the managed system's OS. Upon the successful
+        execution of the DetachPartition() method, the partition, represented by the
+        DellOpaqueManagementData instance with the PartitionIndex property equal to
+        the PartitionIndex parameter, is removed from the host OS.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_DetachPartitionRequestBody:
+      additionalProperties: false
+      description: The DetachPartition() method is used to remove a partition that
+        was previously exposed to the managed system's OS. Upon the successful execution
+        of the DetachPartition() method, the partition, represented by the DellOpaqueManagementData
+        instance with the PartitionIndex property equal to the PartitionIndex parameter,
+        is removed from the host OS.
+      properties:
+        PartitionIndex:
+          description: The index of the partition, which is a value between 1 and
+            16.
+          format: int64
+          type: integer
+          x-longDescription: The index of the partition, which is a value between
+            1 and 16.
+      required:
+      - PartitionIndex
+      type: object
+      x-longDescription: The DetachPartition() method is used to remove a partition
+        that was previously exposed to the managed system's OS. Upon the successful
+        execution of the DetachPartition() method, the partition, represented by the
+        DellOpaqueManagementData instance with the PartitionIndex property equal to
+        the PartitionIndex parameter, is removed from the host OS.
+    DellPersistentStorageService_v1_1_0_ExportDataFromPartition:
+      additionalProperties: false
+      description: The ExportDataFromPartition() method exports an image from a partition
+        and transfers it to a (T)FTP or HTTP server, or on a CIFS or NFS share. Upon
+        successful invocation of the ExportDataFromPartition() method, the image of
+        the partition is exported from a vFlash to a remote endpoint.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The ExportDataFromPartition() method exports an image from
+        a partition and transfers it to a (T)FTP or HTTP server, or on a CIFS or NFS
+        share. Upon successful invocation of the ExportDataFromPartition() method,
+        the image of the partition is exported from a vFlash to a remote endpoint.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_ExportDataFromPartitionRequestBody:
+      additionalProperties: false
+      description: The ExportDataFromPartition() method exports an image from a partition
+        and transfers it to a (T)FTP or HTTP server, or on a CIFS or NFS share. Upon
+        successful invocation of the ExportDataFromPartition() method, the image of
+        the partition is exported from a vFlash to a remote endpoint.
+      properties:
+        IPAddress:
+          description: If the ShareType parameter is set to 0 (NFS) or, 1 (TFTP),
+            or 2 (CIFS), this parameter must be populated.
+          type: string
+          x-longDescription: If the ShareType parameter is set to 0 (NFS) or, 1 (TFTP),
+            or 2 (CIFS), this parameter must be populated.
+        ImageName:
+          description: Name of the image file.
+          type: string
+          x-longDescription: Name of the image file.
+        PartitionIndex:
+          description: The index of the partition, which is a value between 1 and
+            16.
+          format: int64
+          type: integer
+          x-longDescription: The index of the partition, which is a value between
+            1 and 16.
+        Password:
+          description: The password for accessing the image on a remote node.
+          type: string
+          x-longDescription: The password for accessing the image on a remote node.
+        Port:
+          description: If the ShareType parameter is set to 1 (TFTP, this parameter
+            must be populated).
+          format: int64
+          type: integer
+          x-longDescription: If the ShareType parameter is set to 1 (TFTP, this parameter
+            must be populated).
+        SharePath:
+          description: If the ShareType parameter is set to 0 (NFS) or, 1 (TFTP),
+            or 2 (CIFS), this parameter must be populated.
+          type: string
+          x-longDescription: If the ShareType parameter is set to 0 (NFS) or, 1 (TFTP),
+            or 2 (CIFS), this parameter must be populated.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_ShareType
+          description: The parameter specifies the type of network share.
+          x-longDescription: The parameter specifies the type of network share.
+        Username:
+          description: The username for accessing the image on a remote node.
+          type: string
+          x-longDescription: The username for accessing the image on a remote node.
+        Workgroup:
+          description: Workgroup for the CIFS share, optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share, optional.
+      required:
+      - IPAddress
+      - ImageName
+      - PartitionIndex
+      - SharePath
+      - ShareType
+      type: object
+      x-longDescription: The ExportDataFromPartition() method exports an image from
+        a partition and transfers it to a (T)FTP or HTTP server, or on a CIFS or NFS
+        share. Upon successful invocation of the ExportDataFromPartition() method,
+        the image of the partition is exported from a vFlash to a remote endpoint.
+    DellPersistentStorageService_v1_1_0_FormatPartition:
+      additionalProperties: false
+      description: 'The FormatPartition() method is used for formatting a partition
+        on a vFlash. Note: This method allows formatting the partitions with AccessType
+        as Read-Only.'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: 'The FormatPartition() method is used for formatting a partition
+        on a vFlash. Note: This method allows formatting the partitions with AccessType
+        as Read-Only.'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPersistentStorageService_v1_1_0_FormatPartitionRequestBody:
+      additionalProperties: false
+      description: 'The FormatPartition() method is used for formatting a partition
+        on a vFlash. Note: This method allows formatting the partitions with AccessType
+        as Read-Only.'
+      properties:
+        FormatType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_FormatType
+          description: The list of types to format to.
+          x-longDescription: The list of types to format to.
+        PartitionIndex:
+          description: The index of the partition that shall have value be between
+            1 and 16.
+          format: int64
+          type: integer
+          x-longDescription: The index of the partition that shall have value be between
+            1 and 16.
+      required:
+      - FormatType
+      - PartitionIndex
+      type: object
+      x-longDescription: 'The FormatPartition() method is used for formatting a partition
+        on a vFlash. Note: This method allows formatting the partitions with AccessType
+        as Read-Only.'
+    DellPersistentStorageService_v1_1_0_InitializeMedia:
+      additionalProperties: false
+      description: The InitializeMedia() method initializes or formats the vFlash
+        media device. Upon successful invocation of the InitializeMedia() method,
+        the DellVFlashView.InitializedState property has string value "Initialized".
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The InitializeMedia() method initializes or formats the vFlash
+        media device. Upon successful invocation of the InitializeMedia() method,
+        the DellVFlashView.InitializedState property has string value "Initialized".
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_InitializeMediaRequestBody:
+      additionalProperties: false
+      description: The InitializeMedia() method initializes or formats the vFlash
+        media device. Upon successful invocation of the InitializeMedia() method,
+        the DellVFlashView.InitializedState property has string value "Initialized".
+      properties: {}
+      type: object
+      x-longDescription: The InitializeMedia() method initializes or formats the vFlash
+        media device. Upon successful invocation of the InitializeMedia() method,
+        the DellVFlashView.InitializedState property has string value "Initialized".
+    DellPersistentStorageService_v1_1_0_ModifyPartition:
+      additionalProperties: false
+      description: The ModifyPartition() method is used for modifying a partition
+        on a vFlash. Upon the successful execution of the ModifyPartition() method,
+        the partition, represented by the DellOpaqueManagementData instance with the
+        PartitionIndex property equal to the PartitionIndex parameter, is modified
+        to the access type specified in the AccessType parameter.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The ModifyPartition() method is used for modifying a partition
+        on a vFlash. Upon the successful execution of the ModifyPartition() method,
+        the partition, represented by the DellOpaqueManagementData instance with the
+        PartitionIndex property equal to the PartitionIndex parameter, is modified
+        to the access type specified in the AccessType parameter.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_ModifyPartitionRequestBody:
+      additionalProperties: false
+      description: The ModifyPartition() method is used for modifying a partition
+        on a vFlash. Upon the successful execution of the ModifyPartition() method,
+        the partition, represented by the DellOpaqueManagementData instance with the
+        PartitionIndex property equal to the PartitionIndex parameter, is modified
+        to the access type specified in the AccessType parameter.
+      properties:
+        AccessType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_AccessType
+          description: Type of access level.
+          x-longDescription: Type of access level.
+        PartitionIndex:
+          description: The index of the partition, which is a value between 1 and
+            16.
+          format: int64
+          type: integer
+          x-longDescription: The index of the partition, which is a value between
+            1 and 16.
+      required:
+      - AccessType
+      - PartitionIndex
+      type: object
+      x-longDescription: The ModifyPartition() method is used for modifying a partition
+        on a vFlash. Upon the successful execution of the ModifyPartition() method,
+        the partition, represented by the DellOpaqueManagementData instance with the
+        PartitionIndex property equal to the PartitionIndex parameter, is modified
+        to the access type specified in the AccessType parameter.
+    DellPersistentStorageService_v1_1_0_VFlashStateChange:
+      additionalProperties: false
+      description: The VFlashStateChange() method is used to enable or disable the
+        virtual flash media device.Upon successful invocation of the VFlashStateChange()
+        method with RequestedState 1(Enable), the DellVFlashView. VFlashEnabledState
+        property value changes to TRUE. Upon successful invocation of the VFlashStateChange()
+        method with RequestedState 2 (Disable), the DellVFlashView. VFlashEnabledState
+        property value changes to FALSE.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The VFlashStateChange() method is used to enable or disable
+        the virtual flash media device.Upon successful invocation of the VFlashStateChange()
+        method with RequestedState 1(Enable), the DellVFlashView. VFlashEnabledState
+        property value changes to TRUE. Upon successful invocation of the VFlashStateChange()
+        method with RequestedState 2 (Disable), the DellVFlashView. VFlashEnabledState
+        property value changes to FALSE.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPersistentStorageService_v1_1_0_VFlashStateChangeRequestBody:
+      additionalProperties: false
+      description: The VFlashStateChange() method is used to enable or disable the
+        virtual flash media device.Upon successful invocation of the VFlashStateChange()
+        method with RequestedState 1(Enable), the DellVFlashView. VFlashEnabledState
+        property value changes to TRUE. Upon successful invocation of the VFlashStateChange()
+        method with RequestedState 2 (Disable), the DellVFlashView. VFlashEnabledState
+        property value changes to FALSE.
+      properties:
+        RequestedState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.yaml#/components/schemas/DellPersistentStorageService_RequestedState
+          description: The state to set to.
+          x-longDescription: The state to set to.
+      required:
+      - RequestedState
+      type: object
+      x-longDescription: The VFlashStateChange() method is used to enable or disable
+        the virtual flash media device.Upon successful invocation of the VFlashStateChange()
+        method with RequestedState 1(Enable), the DellVFlashView. VFlashEnabledState
+        property value changes to TRUE. Upon successful invocation of the VFlashStateChange()
+        method with RequestedState 2 (Disable), the DellVFlashView. VFlashEnabledState
+        property value changes to FALSE.
+title: '#DellPersistentStorageService.v1_1_0.DellPersistentStorageService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

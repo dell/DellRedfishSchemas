@@ -1,0 +1,28 @@
+components:
+  schemas:
+    DellRollupStatus_DellRollupStatus:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellRollupStatus.v1_0_0.yaml#/components/schemas/DellRollupStatus_v1_0_0_DellRollupStatus
+      description: Represents the subcomponent roll-up statuses.
+      x-longDescription: Represents the subcomponent roll-up statuses.
+    DellRollupStatus_RollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - Ok
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        Ok: Ok
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        Ok: Ok
+        Unknown: Unknown
+title: '#DellRollupStatus.DellRollupStatus'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

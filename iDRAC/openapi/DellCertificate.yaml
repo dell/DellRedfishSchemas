@@ -1,0 +1,11 @@
+components:
+  schemas:
+    DellCertificate_DellCertificate:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificate.v1_0_1.yaml#/components/schemas/DellCertificate_v1_0_1_DellCertificate
+      description: This resource contains information about a SecureBoot Certificate.
+      x-longDescription: This resource shall be used to represent a SecureBoot Certificate.
+title: '#DellCertificate.DellCertificate'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

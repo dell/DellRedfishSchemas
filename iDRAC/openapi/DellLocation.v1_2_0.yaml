@@ -1,0 +1,32 @@
+components:
+  schemas:
+    DellLocation_v1_2_0_DellLocation:
+      additionalProperties: false
+      description: Oem data related to the location details.
+      properties:
+        PartLocation:
+          $ref: '#/components/schemas/DellLocation_v1_2_0_PartLocation'
+          description: Oem data related to the DellLocation.
+          nullable: true
+          x-longDescription: Oem data related to the DellLocation.
+      type: object
+      x-longDescription: Oem data related to the location details.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLocation_v1_2_0_PartLocation:
+      additionalProperties: false
+      properties:
+        ExtendedReference:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLocation.yaml#/components/schemas/DellLocation_ExtendedReference
+          description: The property shall represent the extended reference info.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the extended reference info.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellLocation.v1_2_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

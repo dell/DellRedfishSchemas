@@ -1,0 +1,373 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellExportConfiguration.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "AlertChannelStatus": {
+            "description": "The status of an alert channel (Enabled or Disabled).",
+            "enum": [
+                "Enabled",
+                "Disabled"
+            ],
+            "enumDescriptions": {
+                "Disabled": "The alert channel is disabled.",
+                "Enabled": "The alert channel is enabled."
+            },
+            "type": "string"
+        },
+        "AlertChannelsConfig": {
+            "additionalProperties": false,
+            "description": "Alert channel configuration with enabled/disabled status for each channel.",
+            "longDescription": "This complex type contains individual alert channel properties. Each property represents a channel with its status (Enabled or Disabled). Only permitted channels are included in the configuration.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Email": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AlertChannelStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Email alert channel status.",
+                    "readonly": false
+                },
+                "IPMI": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AlertChannelStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "IPMI PET alert channel status.",
+                    "readonly": false
+                },
+                "OSLog": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AlertChannelStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Operating system log alert channel status.",
+                    "readonly": false
+                },
+                "RedfishEventing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AlertChannelStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Redfish eventing alert channel status.",
+                    "readonly": false
+                },
+                "SNMP": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AlertChannelStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "SNMP trap alert channel status.",
+                    "readonly": false
+                },
+                "SysLog": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AlertChannelStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Syslog alert channel status.",
+                    "readonly": false
+                },
+                "WSEventing": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/AlertChannelStatus"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Windows Event Forwarding alert channel status.",
+                    "readonly": false
+                }
+            },
+            "type": "object"
+        },
+        "CategoryConfig": {
+            "additionalProperties": false,
+            "description": "Configuration for a single event category containing severity levels.",
+            "longDescription": "This complex type contains event filter configurations for a single category, organized by severity level (Critical, Warning, Informational).",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Critical": {
+                    "description": "Array of message ID configurations at Critical severity.",
+                    "items": {
+                        "$ref": "#/definitions/MessageIdConfig"
+                    },
+                    "readonly": true,
+                    "type": "array"
+                },
+                "Informational": {
+                    "description": "Array of message ID configurations at Informational severity.",
+                    "items": {
+                        "$ref": "#/definitions/MessageIdConfig"
+                    },
+                    "readonly": true,
+                    "type": "array"
+                },
+                "Warning": {
+                    "description": "Array of message ID configurations at Warning severity.",
+                    "items": {
+                        "$ref": "#/definitions/MessageIdConfig"
+                    },
+                    "readonly": true,
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "DellExportConfiguration": {
+            "additionalProperties": false,
+            "description": "The DellExportConfiguration resource provides exported configuration data for Dell OEM components.",
+            "longDescription": "The DellExportConfiguration resource provides exported configuration data for Dell OEM components.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "EventFilters": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/EventFilters"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The EventFilters configuration object containing all event filter settings organized by category and severity.",
+                    "longDescription": "This property contains the complete EventFilter configuration when OEMComponents includes 'EventFilters'. The structure organizes filters by Category (SystemHealth, Storage, Updates, Audit, Configuration, WorkNotes) and Severity (Critical, Warning, Informational).",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "EventFilters": {
+            "additionalProperties": false,
+            "description": "The EventFilters configuration containing all categories.",
+            "longDescription": "This complex type contains event filter configurations organized by category. Each category contains severity levels with arrays of message ID configurations.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Audit": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/CategoryConfig"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Audit and security related events.",
+                    "readonly": true
+                },
+                "Configuration": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/CategoryConfig"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Configuration related events.",
+                    "readonly": true
+                },
+                "Storage": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/CategoryConfig"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Storage related events.",
+                    "readonly": true
+                },
+                "SystemHealth": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/CategoryConfig"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "System health related events.",
+                    "readonly": true
+                },
+                "Updates": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/CategoryConfig"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Update related events.",
+                    "readonly": true
+                },
+                "WorkNotes": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/CategoryConfig"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Work notes and annotations.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "MessageIdConfig": {
+            "additionalProperties": false,
+            "description": "Configuration for a single message ID within a category/severity.",
+            "longDescription": "This complex type contains the alert channel and power action configuration for a specific message ID.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "AlertChannels": {
+                    "$ref": "#/definitions/AlertChannelsConfig",
+                    "description": "Complex object containing alert channel configurations with enabled/disabled status.",
+                    "longDescription": "This complex type contains alert channel configurations where each property represents a channel with its enabled/disabled status. Only permitted channels are included.",
+                    "readonly": false
+                },
+                "Description": {
+                    "description": "A descriptive name for this message ID.",
+                    "readonly": true,
+                    "type": "string"
+                },
+                "Name": {
+                    "description": "The message identifier (e.g., 'CPU', 'MEM', 'PDISK').",
+                    "readonly": true,
+                    "type": "string"
+                },
+                "PermittedPowerActions": {
+                    "description": "Array of permitted power actions for this message ID/severity combination.",
+                    "items": {
+                        "$ref": "#/definitions/PowerAction"
+                    },
+                    "longDescription": "The power actions that are permitted for this message ID/severity combination. This is read-only and derived from the backend.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "PowerAction": {
+                    "$ref": "#/definitions/PowerAction",
+                    "description": "The current power action configured for this message ID.",
+                    "readonly": false
+                }
+            },
+            "required": [
+                "Name"
+            ],
+            "type": "object"
+        },
+        "PowerAction": {
+            "description": "The available power action types.",
+            "enum": [
+                "NoAction",
+                "PowerOff",
+                "PowerCycle",
+                "Reset"
+            ],
+            "enumDescriptions": {
+                "NoAction": "No power action is taken.",
+                "PowerCycle": "Power cycle the system.",
+                "PowerOff": "Power off the system.",
+                "Reset": "Reset the system."
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellExportConfiguration.v1_0_0"
+}

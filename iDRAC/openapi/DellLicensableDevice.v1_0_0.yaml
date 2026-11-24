@@ -1,0 +1,161 @@
+components:
+  schemas:
+    DellLicensableDevice_v1_0_0_DellLicensableDevice:
+      additionalProperties: false
+      description: DellLicensableDevice represents a device in the system that has
+        registered with the License Manager.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceID:
+          description: An address or other identifying information to uniquely name
+            the LogicalDevice.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: An address or other identifying information to uniquely
+            name the LogicalDevice.
+        DevicePrimaryStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicensableDevice.yaml#/components/schemas/DellLicensableDevice_DevicePrimaryStatus
+          description: The property represents the license status for the device.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property represents the license status for the device.
+        DeviceState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicensableDevice.yaml#/components/schemas/DellLicensableDevice_DeviceState
+          description: The value of this property represent the current device state.
+          nullable: true
+          readOnly: true
+          x-longDescription: The value of this property represent the current device
+            state.
+        DeviceStatusMessage:
+          description: The property has the message string associated with the license
+            status of the device. If the property has a NULL value, no message is
+            associated with the license status of the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property has the message string associated with the
+            license status of the device. If the property has a NULL value, no message
+            is associated with the license status of the device.
+        DeviceStatusMessageID:
+          description: The property represents the message ID associated with the
+            license status of the device. If the property has a NULL value, no message
+            is associated with the license status of the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property represents the message ID associated with
+            the license status of the device. If the property has a NULL value, no
+            message is associated with the license status of the device.
+        DeviceType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicensableDevice.yaml#/components/schemas/DellLicensableDevice_DeviceType
+          description: The value of this property represents the device type.
+          nullable: true
+          readOnly: true
+          x-longDescription: The value of this property represents the device type.
+        FQDD:
+          description: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LicenseList:
+          description: The values of this property array contain the Entitlement IDs
+            of the licenses that are assigned to this device.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: The values of this property array contain the Entitlement
+            IDs of the licenses that are assigned to this device.
+        Model:
+          description: The value of this property represents the model description
+            of the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property represents the model description
+            of the device.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        RollupStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicensableDevice.yaml#/components/schemas/DellLicensableDevice_RollupStatus
+          description: RollupStatus provides a high-level status value, intended to
+            align with Red-Yellow-Green type representation of status.
+          nullable: true
+          readOnly: true
+          x-longDescription: RollupStatus provides a high-level status value, intended
+            to align with Red-Yellow-Green type representation of status.
+        SubsystemID:
+          description: The value of this property represents the PCI subsystem ID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property represents the PCI subsystem
+            ID.
+        SubsystemVendorID:
+          description: The value of this property represents the PCI subsystem vendor
+            ID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property represents the PCI subsystem
+            vendor ID.
+        UniqueID:
+          description: The value of this property represents the unique ID of the
+            devices, as used in the binding information. The information may not be
+            available for all the licensable devices. In such cases, the property
+            value is NULL.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property represents the unique ID of
+            the devices, as used in the binding information. The information may not
+            be available for all the licensable devices. In such cases, the property
+            value is NULL.
+        VendorID:
+          description: The value of this property represents the PCI vendor or manufacturer
+            ID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property represents the PCI vendor
+            or manufacturer ID.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: DellLicensableDevice represents a device in the system that
+        has registered with the License Manager.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellLicensableDevice.v1_0_0.DellLicensableDevice'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

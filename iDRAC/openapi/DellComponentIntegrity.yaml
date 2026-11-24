@@ -1,0 +1,18 @@
+components:
+  schemas:
+    DellComponentIntegrity_SPDM:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellComponentIntegrity.v1_1_0.yaml#/components/schemas/DellComponentIntegrity_v1_1_0_SPDM
+      description: An Oem extension to represent SPDM related properties.
+      x-longDescription: An Oem extension to represent SPDM related properties.
+    DellComponentIntegrity_TPMGetSignedTCGEventLog:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellComponentIntegrity.v1_1_0.yaml#/components/schemas/DellComponentIntegrity_v1_1_0_TPMGetSignedTCGEventLog
+      description: This action retrieves a signed TCG event log from the TPM for the
+        specified reboot index.
+      x-longDescription: This action shall retrieve a signed TCG event log from the
+        TPM for the specified reboot index. On success, a TaskMonitor URI is returned
+        to track the progress of the operation.
+title: '#DellComponentIntegrity'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

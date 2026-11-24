@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricReportDefinition.v1_1_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellMetricReportDefinition": {
             "additionalProperties": false,
@@ -47,6 +47,15 @@
                         "string",
                         "null"
                     ]
+                },
+                "Otel": {
+                    "description": "OTel property flags whether the MetricReportDefinition is used for OpenTelemetry export.",
+                    "longDescription": "If true the MetricReportDefinition is processed exclusively through the OTel pipeline and does not generate a DMTF MetricReport.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
                 },
                 "iDRACFirmwareVersion": {
                     "description": "iDRAC Firmware Version.",

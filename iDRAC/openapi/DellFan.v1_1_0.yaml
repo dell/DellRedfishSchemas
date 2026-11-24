@@ -1,0 +1,52 @@
+components:
+  schemas:
+    DellFan_v1_1_0_DellFan:
+      additionalProperties: false
+      description: This property shall represent the Oem properties for a Fan resource.
+      properties:
+        FanPWM:
+          description: Represents Fan's PWM.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent Fan's Pulse width modulation(PWM).
+        FanType:
+          $ref: '#/components/schemas/DellFan_v1_1_0_FanType'
+          description: Represents type of the fan.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall represent type of the fan.
+      type: object
+      x-longDescription: This property shall represent the Oem properties for a Fan
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellFan_v1_1_0_FanType:
+      enum:
+      - NotApplicable
+      - Standard
+      - Silver
+      - NotSupported
+      - Gold
+      - Platinum
+      - Titanium
+      type: string
+      x-enumDescriptions:
+        Gold: A Gold standard fan.
+        NotApplicable: Fan type not applicable.
+        NotSupported: Fan type not supported.
+        Platinum: A Platinum standard fan.
+        Silver: A Silver standard fan.
+        Standard: A standard fan.
+        Titanium: A Titanium standard fan.
+      x-enumLongDescriptions:
+        Platinum: A Platinum standard fan.
+        Titanium: A Titanium standard fan.
+      x-enumVersionAdded:
+        Platinum: v1_1_0
+        Titanium: v1_1_0
+title: '#DellFan.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

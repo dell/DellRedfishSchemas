@@ -1,0 +1,341 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_2_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#DellCertificateService.GenerateCSRAndImport": {
+                    "$ref": "#/definitions/GenerateCSRAndImport"
+                },
+                "#DellCertificateService.GenerateHPMCSR": {
+                    "$ref": "#/definitions/GenerateHPMCSR"
+                },
+                "#DellCertificateService.GetLastGeneratedCSR": {
+                    "$ref": "#/definitions/GetLastGeneratedCSR"
+                }
+            },
+            "type": "object"
+        },
+        "GenerateCSRAndImport": {
+            "additionalProperties": false,
+            "description": "This action generates Certificate Singing Request(CSR), signs and imports the singed certificate.",
+            "longDescription": "This action will generate a Certificate Singing Request(CSR), sign the certificate using the uploaded Custom Signing Certificate(CSC) and will import the singed certificate.",
+            "parameters": {
+                "AlternativeNames": {
+                    "description": "The additional host names of the component to secure.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "longDescription": "This parameter shall contain an array of additional host names of the component to secure, as defined by the RFC5280 'subjectAltName' attribute.",
+                    "type": "array"
+                },
+                "CertificateCollection": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/CertificateCollection.json#/definitions/CertificateCollection",
+                    "description": "The link to the certificate collection where the certificate is installed after the certificate authority (CA) signs the certificate.",
+                    "longDescription": "This parameter shall contain a link to a resource collection of type CertificateCollection where the certificate is installed after the certificate authority (CA) signs the certificate.",
+                    "requiredParameter": true
+                },
+                "City": {
+                    "description": "The city or locality of the organization making the request.",
+                    "longDescription": "This parameter shall contain the city or locality of the organization making the request, as defined by the RFC5280 'localityName' attribute.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "CommonName": {
+                    "description": "The fully qualified domain name of the component to secure.",
+                    "longDescription": "This parameter shall contain the fully qualified domain name of the component to secure, as defined by the RFC5280 'commonName' attribute.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "Country": {
+                    "description": "The two-letter country code of the organization making the request.",
+                    "longDescription": "This parameter shall contain the two-letter ISO code for the country of the organization making the request, as defined by the RFC5280 'countryName' attribute.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "CustomSigningCertificate": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Certificate.json#/definitions/Certificate",
+                    "description": "The link to the Custom Sigining Certificate(CSC) which is used to sign the certificate.",
+                    "longDescription": "This parameter shall contain a link the Custom Sigining Certificate(CSC) which is used to sign the certificate.",
+                    "requiredParameter": true
+                },
+                "Email": {
+                    "description": "The email address of the contact within the organization making the request.",
+                    "longDescription": "This parameter shall contain the email address of the contact within the organization making the request, as defined by the RFC2985 'emailAddress' attribute.",
+                    "type": "string"
+                },
+                "Organization": {
+                    "description": "The name of the organization making the request.",
+                    "longDescription": "This parameter shall contain the name of the organization making the request, as defined by the RFC5280 'organizationName' attribute.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "description": "The name of the unit or division of the organization making the request.",
+                    "longDescription": "This parameter shall contain the name of the unit or division of the organization making the request, as defined by the RFC5280 'organizationalUnitName' attribute.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "State": {
+                    "description": "The state, province, or region of the organization making the request.",
+                    "longDescription": "This parameter shall contain the state, province, or region of the organization making the request, as defined by the RFC5280 'stateOrProvinceName' attribute.",
+                    "requiredParameter": true,
+                    "type": "string"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "GenerateHPMCSR": {
+            "actionResponse": {
+                "$ref": "#/definitions/GenerateHPMCSRResponse"
+            },
+            "additionalProperties": false,
+            "description": "Generates a Certificate Signing Request (CSR) for a Hardware Platform Module (HPM).",
+            "longDescription": "This action generates a Certificate Signing Request (CSR) for the specified Hardware Platform Module (HPM). The resulting CSR can be submitted to a Certificate Authority (CA) for signing.",
+            "parameters": {
+                "HPMType": {
+                    "$ref": "#/definitions/HPMType",
+                    "description": "The Hardware Platform Module type for which to generate the CSR.",
+                    "longDescription": "This parameter shall specify whether to generate the CSR for the Primary or Secondary Hardware Platform Module.",
+                    "requiredParameter": true
+                },
+                "KeyCurveID": {
+                    "$ref": "#/definitions/KeyCurveIDType",
+                    "description": "The elliptic curve to use for key generation.",
+                    "longDescription": "This parameter shall specify the elliptic curve identifier used for key generation when an elliptic curve algorithm is selected.",
+                    "requiredParameter": true
+                },
+                "KeyPairAlgorithm": {
+                    "$ref": "#/definitions/KeyPairAlgorithmType",
+                    "description": "The cryptographic algorithm to use for key pair generation.",
+                    "longDescription": "This parameter shall specify the cryptographic algorithm used to generate the key pair for the certificate signing request.",
+                    "requiredParameter": true
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "GenerateHPMCSRResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the GenerateHPMCSR action.",
+            "longDescription": "This type shall contain the properties found in the response body for the GenerateHPMCSR action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CSRString": {
+                    "description": "The Privacy Enhanced Mail (PEM)-encoded certificate signing request.",
+                    "longDescription": "This property shall contain the PEM-encoded Certificate Signing Request (CSR) that can be submitted to a Certificate Authority (CA) for signing. The private key is not included.",
+                    "readonly": true,
+                    "type": "string",
+                    "versionAdded": "v1_2_0"
+                },
+                "HPMType": {
+                    "$ref": "#/definitions/HPMType",
+                    "description": "The Hardware Platform Module type for which the CSR was generated.",
+                    "longDescription": "This property shall indicate whether the CSR was generated for the Primary or Secondary Hardware Platform Module.",
+                    "readonly": true,
+                    "versionAdded": "v1_2_0"
+                }
+            },
+            "required": [
+                "HPMType",
+                "CSRString"
+            ],
+            "type": "object"
+        },
+        "GetLastGeneratedCSR": {
+            "actionResponse": {
+                "$ref": "#/definitions/GetLastGeneratedCSRResponse"
+            },
+            "additionalProperties": false,
+            "description": "This action returns last generated CSR.",
+            "longDescription": "This action returns last generated CSR. The response will contain a signing request that a certificate authority (CA) will sign.",
+            "parameters": {
+                "CertificateCollection": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/CertificateCollection.json#/definitions/CertificateCollection",
+                    "description": "The link to the certificate collection where the certificate is expected to be installed after the certificate authority (CA) signs the certificate.",
+                    "longDescription": "This parameter shall contain a link to a resource collection of type CertificateCollection where the certificate is expected to be installed after the certificate authority (CA) signs the certificate.",
+                    "requiredParameter": true
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "GetLastGeneratedCSRResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the GetLastGeneratedCSR action.",
+            "longDescription": "This type shall contain the properties found in the response body for the GetLastGeneratedCSR action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "CSRString": {
+                    "description": "The string for the certificate signing request.",
+                    "longDescription": "This property shall contain the Privacy Enhanced Mail (PEM)-encoded string, which contains RFC2986-specified structures, of the certificate signing request.  The private key should not be part of the string.",
+                    "readonly": true,
+                    "type": "string"
+                },
+                "CertificateCollection": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/CertificateCollection.json#/definitions/CertificateCollection",
+                    "description": "The link to the certificate collection where the certificate is expected to be installed.",
+                    "longDescription": "This property shall contain a link to a resource collection of type CertificateCollection where the certificate is expected to be installed after the certificate authority (CA) has signed the certificate.",
+                    "readonly": true
+                }
+            },
+            "required": [
+                "CertificateCollection",
+                "CSRString"
+            ],
+            "type": "object"
+        },
+        "HPMType": {
+            "description": "The type of Hardware Platform Module.",
+            "enum": [
+                "Primary",
+                "Secondary"
+            ],
+            "enumDescriptions": {
+                "Primary": "The Primary Hardware Platform Module.",
+                "Secondary": "The Secondary Hardware Platform Module."
+            },
+            "longDescription": "This enumeration shall specify the type of Hardware Platform Module (HPM) used for certificate generation.",
+            "type": "string"
+        },
+        "KeyCurveIDType": {
+            "description": "The elliptic curve used for key generation.",
+            "enum": [
+                "TPM_ECC_NIST_P384"
+            ],
+            "enumDescriptions": {
+                "TPM_ECC_NIST_P384": "NIST P-384 elliptic curve (384-bit), also known as secp384r1."
+            },
+            "longDescription": "This enumeration shall specify the elliptic curve used for key generation when an elliptic curve algorithm is selected.",
+            "type": "string"
+        },
+        "KeyPairAlgorithmType": {
+            "description": "The cryptographic algorithm used for key pair generation.",
+            "enum": [
+                "TPM2_ALG_ECDSA"
+            ],
+            "enumDescriptions": {
+                "TPM2_ALG_ECDSA": "Elliptic Curve Digital Signature Algorithm (ECDSA) as defined by TPM 2.0."
+            },
+            "longDescription": "This enumeration shall specify the cryptographic algorithm used to generate the key pair for the certificate signing request.",
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellCertificateService.v1_2_0"
+}

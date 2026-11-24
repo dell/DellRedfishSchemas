@@ -1,0 +1,407 @@
+components:
+  schemas:
+    DellLCService_Component:
+      enum:
+      - AllApps
+      - BIOS
+      - CryptographicErasePD
+      - DIAG
+      - DPU
+      - DrvPack
+      - IDRAC
+      - LCData
+      - NonVolatileMemory
+      - OverwritePD
+      - PERCNVCache
+      - ReinstallFW
+      - vFlash
+      - Sanitize
+      - LCLog
+      type: string
+      x-enumDescriptions:
+        AllApps: AllApps
+        BIOS: BIOS
+        CryptographicErasePD: CryptographicErasePD
+        DIAG: DIAG
+        DPU: DPU
+        DrvPack: DrvPack
+        IDRAC: IDRAC
+        LCData: LCData
+        LCLog: LCLog - Clear the Lifecycle Controller log
+        NonVolatileMemory: NonVolatileMemory
+        OverwritePD: OverwritePD
+        PERCNVCache: PERCNVCache
+        ReinstallFW: ReinstallFW
+        Sanitize: Sanitize - Sanitize option will wipe out all server data so needs
+          to be used with caution and it needs DELL Field Service Debug enabled. Sanitize
+          option should not be combined with other components.
+        vFlash: vFlash
+      x-enumVersionAdded:
+        AllApps: v1_1_0
+        BIOS: v1_1_0
+        CryptographicErasePD: v1_1_0
+        DIAG: v1_1_0
+        DPU: v1_5_0
+        DrvPack: v1_1_0
+        IDRAC: v1_1_0
+        LCData: v1_1_0
+        LCLog: v1_16_0
+        NonVolatileMemory: v1_1_0
+        OverwritePD: v1_1_0
+        PERCNVCache: v1_1_0
+        ReinstallFW: v1_6_0
+        Sanitize: v1_12_2
+        vFlash: v1_1_0
+    DellLCService_DellLCService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCService.v1_17_0.yaml#/components/schemas/DellLCService_v1_17_0_DellLCService
+      description: The DellLCService resource provides some actions to support Lifecycle
+        Controller functionality.
+      x-longDescription: The DellLCService resource provides some actions to support
+        Lifecycle Controller functionality.
+    DellLCService_ExportTechSupportReportDataSelectorArrayIn:
+      enum:
+      - HWData
+      - OSAppData
+      - OSAppDataWithoutPII
+      - TTYLogs
+      type: string
+      x-enumDescriptions:
+        HWData: HW Data
+        OSAppData: OSApp Data
+        OSAppDataWithoutPII: OSApp Data Without PII
+        TTYLogs: TTY Logs
+    DellLCService_FileType:
+      enum:
+      - BootCaptureVideo
+      - CrashCaptureVideo
+      - LastCrashScreenShot
+      - Preview
+      - ServerScreenShot
+      type: string
+      x-enumDescriptions:
+        BootCaptureVideo: Boot Capture Video
+        CrashCaptureVideo: Crash Capture Video
+        LastCrashScreenShot: Last Crash Screen Shot
+        Preview: Preview
+        ServerScreenShot: Server Screen Shot
+      x-enumVersionAdded:
+        BootCaptureVideo: v1_1_0
+        CrashCaptureVideo: v1_1_0
+        LastCrashScreenShot: v1_1_0
+        Preview: v1_1_0
+        ServerScreenShot: v1_1_0
+    DellLCService_Filter:
+      enum:
+      - 'No'
+      - 'Yes'
+      type: string
+      x-enumDescriptions:
+        'No': 'No'
+        'Yes': 'Yes'
+      x-enumVersionAdded:
+        'No': v1_1_0
+        'Yes': v1_1_0
+    DellLCService_GetRemoteServicesAPIStatusResponseLCStatus:
+      enum:
+      - Disabled
+      - InRecovery
+      - InUse
+      - NotInitialized
+      - Ready
+      - ReloadingData
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        InRecovery: In Recovery
+        InUse: In Use
+        NotInitialized: Not Initialized
+        Ready: Ready
+        ReloadingData: Reloading data
+    DellLCService_GetRemoteServicesAPIStatusResponseRTStatus:
+      enum:
+      - NotReady
+      - Ready
+      - NotApplicable
+      type: string
+      x-enumDescriptions:
+        NotApplicable: Not Applicable
+        NotReady: Not Ready
+        Ready: Ready
+      x-enumVersionAdded:
+        NotApplicable: v1_12_0
+    DellLCService_GetRemoteServicesAPIStatusResponseSEKMServiceStatus:
+      enum:
+      - NotReady
+      - Ready
+      type: string
+      x-enumDescriptions:
+        NotReady: Not Ready
+        Ready: Ready
+    DellLCService_GetRemoteServicesAPIStatusResponseServerStatus:
+      enum:
+      - AutomatedTaskExecution
+      - CollectingSystemInventory
+      - EnteredF11BootManager
+      - EnteredF2Setup
+      - HaltedF1/F2/F11Prompt
+      - HaltedF1/F2Prompt
+      - InPOST
+      - LCUSC
+      - OutOfPOST
+      - PoweredOff
+      type: string
+      x-enumDescriptions:
+        AutomatedTaskExecution: Automated Task Execution
+        CollectingSystemInventory: Collecting System Inventory
+        EnteredF11BootManager: Server has entered F11 Boot Manager menu
+        EnteredF2Setup: Server has entered F2 setup menu
+        HaltedF1/F2/F11Prompt: Server has halted at F1/F2/F11 prompt because there
+          are no bootable devices available
+        HaltedF1/F2Prompt: Server has halted at F1/F2 error prompt because of a POST
+          error
+        InPOST: In POST
+        LCUSC: Lifecycle Controller Unified Server Configurator
+        OutOfPOST: Out of POST
+        PoweredOff: Powered Off
+    DellLCService_GetRemoteServicesAPIStatusResponseStatus:
+      enum:
+      - Disabled
+      - InRecovery
+      - InUse
+      - NotReady
+      - Ready
+      - ReloadingData
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        InRecovery: In Recovery
+        InUse: In Use
+        NotReady: Not Ready
+        Ready: Ready
+        ReloadingData: Reloading data
+    DellLCService_GetRemoteServicesAPIStatusResponseTelemetryServiceStatus:
+      enum:
+      - NotReady
+      - Ready
+      type: string
+      x-enumDescriptions:
+        NotReady: Not Ready
+        Ready: Ready
+    DellLCService_IgnoreCertWarning:
+      enum:
+      - 'Off'
+      - 'On'
+      type: string
+      x-enumDescriptions:
+        'Off': 'Off'
+        'On': 'On'
+    DellLCService_PerformAutoDiscovery:
+      enum:
+      - NextBoot
+      - Now
+      - 'Off'
+      type: string
+      x-enumDescriptions:
+        NextBoot: NextBoot
+        Now: Now
+        'Off': 'Off'
+    DellLCService_ProxySupport:
+      enum:
+      - DefaultProxy
+      - 'Off'
+      - ParametersProxy
+      type: string
+      x-enumDescriptions:
+        DefaultProxy: On-use user default proxy settings
+        'Off': 'Off'
+        ParametersProxy: On-use passed in parameters for proxy
+    DellLCService_ProxyType:
+      enum:
+      - HTTP
+      - SOCKS
+      type: string
+      x-enumDescriptions:
+        HTTP: HTTP
+        SOCKS: SOCKS
+    DellLCService_RebootJobType:
+      enum:
+      - GracefulRebootWithForcedShutdown
+      - GracefulRebootWithoutForcedShutdown
+      - PowerCycle
+      - NoReboot
+      type: string
+      x-enumDescriptions:
+        GracefulRebootWithForcedShutdown: Graceful Reboot with forced shutdown
+        GracefulRebootWithoutForcedShutdown: Graceful Reboot without forced shutdown
+        NoReboot: Reboot operation is not required
+        PowerCycle: PowerCycle
+      x-enumVersionAdded:
+        GracefulRebootWithForcedShutdown: v1_1_0
+        GracefulRebootWithoutForcedShutdown: v1_1_0
+        NoReboot: v1_12_1
+        PowerCycle: v1_1_0
+    DellLCService_Recurrence:
+      enum:
+      - Monthly
+      - Quarterly
+      - Weekly
+      type: string
+      x-enumDescriptions:
+        Monthly: Monthly
+        Quarterly: Quarterly
+        Weekly: Weekly
+      x-enumVersionAdded:
+        Monthly: v1_1_0
+        Quarterly: v1_1_0
+        Weekly: v1_1_0
+    DellLCService_RunMode:
+      enum:
+      - Express
+      - ExpressAndExtended
+      - Extended
+      type: string
+      x-enumDescriptions:
+        Express: Express
+        ExpressAndExtended: Express&amp;Extended
+        Extended: Extended
+      x-enumVersionAdded:
+        Express: v1_1_0
+        ExpressAndExtended: v1_1_0
+        Extended: v1_1_0
+    DellLCService_ShareType:
+      enum:
+      - CIFS
+      - FTP
+      - HTTP
+      - HTTPS
+      - Local
+      - NFS
+      - TFTP
+      type: string
+      x-enumDescriptions:
+        CIFS: CIFS
+        FTP: FTP
+        HTTP: HTTP
+        HTTPS: HTTPS
+        Local: Local
+        NFS: NFS
+        TFTP: TFTP
+      x-enumVersionAdded:
+        FTP: v1_1_0
+        TFTP: v1_1_0
+    DellLCService_SupportAssistCollectionDataSelectorArrayIn:
+      enum:
+      - DebugLogs
+      - HWData
+      - OSAppData
+      - TTYLogs
+      - TelemetryReports
+      - GPULogs
+      - StorageLogs
+      type: string
+      x-enumDescriptions:
+        DebugLogs: Debug Logs
+        GPULogs: GPU Logs
+        HWData: HW Data
+        OSAppData: OSApp Data
+        StorageLogs: Storage Logs
+        TTYLogs: TTY Logs
+        TelemetryReports: Telemetry Reports
+      x-enumVersionAdded:
+        DebugLogs: v1_1_0
+        GPULogs: v1_8_0
+        StorageLogs: v1_8_0
+        TelemetryReports: v1_2_0
+    DellLCService_SupportAssistGetAutoCollectScheduleResponseRecurrence:
+      enum:
+      - Monthly
+      - Quarterly
+      - Weekly
+      type: string
+      x-enumDescriptions:
+        Monthly: Monthly
+        Quarterly: Quarterly
+        Weekly: Weekly
+      x-enumVersionAdded:
+        Monthly: v1_1_0
+        Quarterly: v1_1_0
+        Weekly: v1_1_0
+    DellLCService_SupportAssistGetEULAStatusResponseInterface:
+      enum:
+      - LCUI
+      - REDFISH
+      - Racadm
+      - SCP
+      - WSMan
+      - iDRACGUI
+      type: string
+      x-enumDescriptions:
+        LCUI: LC UI
+        REDFISH: REDFISH
+        Racadm: Racadm
+        SCP: SCP
+        WSMan: WSMan
+        iDRACGUI: iDRAC GUI
+      x-enumVersionAdded:
+        LCUI: v1_1_0
+        REDFISH: v1_1_0
+        Racadm: v1_1_0
+        SCP: v1_1_0
+        WSMan: v1_1_0
+        iDRACGUI: v1_1_0
+    DellLCService_SupportAssistGetEULAStatusResponseIsRegistered:
+      enum:
+      - NotRegistered
+      - Registered
+      type: string
+      x-enumDescriptions:
+        NotRegistered: Not Registered
+        Registered: Registered
+      x-enumVersionAdded:
+        NotRegistered: v1_1_0
+        Registered: v1_1_0
+    DellLCService_Transmit:
+      enum:
+      - 'No'
+      - 'Yes'
+      type: string
+      x-enumDescriptions:
+        'No': 'No'
+        'Yes': 'Yes'
+      x-enumVersionAdded:
+        'No': v1_1_0
+        'Yes': v1_1_0
+    DellLCService_UpdateType:
+      enum:
+      - Automatic
+      type: string
+      x-enumDescriptions:
+        Automatic: Automatic
+      x-enumVersionAdded:
+        Automatic: v1_1_0
+    DellLCService_XMLSchema:
+      enum:
+      - CIM-XML
+      - JSON
+      - Simple
+      - CIM-eXML
+      type: string
+      x-enumDeprecated:
+        CIM-eXML: This action has been deprecated
+      x-enumDescriptions:
+        CIM-XML: CIM-XML
+        CIM-eXML: CIM-eXML
+        JSON: JSON
+        Simple: Simple
+      x-enumLongDescriptions:
+        CIM-XML: CIM-XML representation of hardware inventory. Default value.
+        CIM-eXML: Extended CIM-XML representation of hardware inventory.
+        JSON: JSON representation of hardware inventory.
+        Simple: XML representation of hardware inventory.
+      x-enumVersionDeprecated:
+        CIM-eXML: v1_11_0
+title: '#DellLCService.DellLCService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

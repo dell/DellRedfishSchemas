@@ -1,0 +1,118 @@
+components:
+  schemas:
+    DellOemAssembly_v1_2_0_DellOemAssemblyLinks:
+      additionalProperties: false
+      description: This version was added to add new Oem resources and Links.
+      properties:
+        BayId:
+          description: The Bay Identifier provided by the FRU.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: This property shall contain the Bay Id.
+          x-versionAdded: v1_1_0
+        DellAssembly:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellAssembly.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellAssembly.
+        DellFRUAssembly:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFRUAssembly.yaml#/components/schemas/DellFRUAssembly_DellFRUAssemblyInfo
+          description: Oem properties for representing FRU properties.
+          nullable: true
+          x-longDescription: Oem properties for representing FRU properties.
+          x-versionAdded: v1_1_0
+        EndpointCount:
+          description: The EndpointCount of the FRU.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The EndpointCount of the FRU.
+          x-versionAdded: v1_1_0
+        FirmwareMajor:
+          description: The FirmwareMajor of the FRU.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The FirmwareMajor of the FRU.
+          x-versionAdded: v1_1_0
+        FirmwareMinor:
+          description: The FirmwareMinor of the FRU.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The FirmwareMinor of the FRU.
+          x-versionAdded: v1_1_0
+        FirmwareVersion:
+          description: The firmware version provided by the FRU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The firmware version provided by the FRU.
+          x-versionAdded: v1_1_0
+        FormFactor:
+          description: The FormFactor provided by the FRU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The FormFactor provided by the FRU.
+          x-versionAdded: v1_1_0
+        HardwareId:
+          description: The HardwareId of FRU.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The HardwareId of FRU.
+          x-versionAdded: v1_1_0
+        Location:
+          description: The Location of the FRU in the system.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The Location of the FRU in the system.
+          x-versionAdded: v1_1_0
+        ModuleClass:
+          description: The ModuleClass of the FRU.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The ModuleClass of the FRU.
+          x-versionAdded: v1_1_0
+        PICPowerIndex:
+          description: The PIC Power Index connected to the FRU.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The PIC Power Index connected to the FRU.
+          x-versionAdded: v1_1_0
+        PhysicalLocation:
+          description: The physical location of the assembly.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the physical location of
+            the assembly.
+          x-versionAdded: v1_2_0
+        SlotCount:
+          description: The SlotCount location the hardware is in.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: The SlotCount location the hardware is in.
+          x-versionAdded: v1_1_0
+        Type:
+          description: The type of the FRU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The type of the FRU.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This version was added to add new Oem resources and Links.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellOemAssembly.v1_2_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

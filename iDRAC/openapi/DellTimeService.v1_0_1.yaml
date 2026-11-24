@@ -1,0 +1,113 @@
+components:
+  schemas:
+    DellTimeService_v1_0_1_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DellTimeService.ManageTime':
+          $ref: '#/components/schemas/DellTimeService_v1_0_1_ManageTime'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellTimeService_v1_0_1_DellTimeService:
+      additionalProperties: false
+      description: DellTimeService provides actions to manage time (retrieve or set
+        time) for the service processor.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DellTimeService_v1_0_1_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: DellTimeService provides actions to manage time (retrieve
+        or set time) for the service processor.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellTimeService_v1_0_1_ManageTime:
+      additionalProperties: false
+      description: 'The DellTimeService.ManageTime() method is used to query the service
+        processor time and to set the service processor time during the host system
+        reboots and service processor resets. The service processor time set through
+        the successful execution of this method is volatile and does not persist.
+        The service processor time resets to the BIOS time at every reset of the host
+        system or the service processor. Note: ManageTime method not supported on
+        modular servers(MX840, MX740, etc) and also servers with NTP mode enabled.'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: 'The DellTimeService.ManageTime() method is used to query
+        the service processor time and to set the service processor time during the
+        host system reboots and service processor resets. The service processor time
+        set through the successful execution of this method is volatile and does not
+        persist. The service processor time resets to the BIOS time at every reset
+        of the host system or the service processor. Note: ManageTime method not supported
+        on modular servers(MX840, MX740, etc) and also servers with NTP mode enabled.'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellTimeService_v1_0_1_ManageTimeRequestBody:
+      additionalProperties: false
+      description: 'The DellTimeService.ManageTime() method is used to query the service
+        processor time and to set the service processor time during the host system
+        reboots and service processor resets. The service processor time set through
+        the successful execution of this method is volatile and does not persist.
+        The service processor time resets to the BIOS time at every reset of the host
+        system or the service processor. Note: ManageTime method not supported on
+        modular servers(MX840, MX740, etc) and also servers with NTP mode enabled.'
+      properties:
+        GetRequest:
+          description: The parameter is set to TRUE to request the time for the iDRAC
+            and is set to FALSE for setting the time for iDRAC.
+          type: boolean
+          x-longDescription: The parameter is set to TRUE to request the time for
+            the iDRAC and is set to FALSE for setting the time for iDRAC.
+        TimeData:
+          description: On input, this is the desired value for the service processor
+            time. On output, this is the service processor time.
+          format: date-time
+          type: string
+          x-longDescription: On input, this is the desired value for the service processor
+            time. On output, this is the service processor time.
+      required:
+      - GetRequest
+      type: object
+      x-longDescription: 'The DellTimeService.ManageTime() method is used to query
+        the service processor time and to set the service processor time during the
+        host system reboots and service processor resets. The service processor time
+        set through the successful execution of this method is volatile and does not
+        persist. The service processor time resets to the BIOS time at every reset
+        of the host system or the service processor. Note: ManageTime method not supported
+        on modular servers(MX840, MX740, etc) and also servers with NTP mode enabled.'
+title: '#DellTimeService.v1_0_1.DellTimeService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,650 @@
+components:
+  schemas:
+    DellNIC_v1_10_1_DellNIC:
+      additionalProperties: false
+      description: An instance of DellNIC will have NIC device specific data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        BusNumber:
+          description: The bus number where this PCI device resides.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The bus number where this PCI device resides.
+        CableLengthMetres:
+          deprecated: true
+          description: 'This property represents the cable length of Small Form Factor
+            pluggable(SFP) Transceiver. Note: This property will be deprecated in
+            Poweredge systems with model YX5X and iDRAC firmware version 4.20.20.20
+            or later.'
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-deprecatedReason: This property has been deprecated. Property is preserved
+            to support backward comapatibilty. This property has no significance.
+          x-longDescription: 'This property represents the cable length of Small Form
+            Factor pluggable(SFP) Transceiver. Note: This property will be deprecated
+            in Poweredge systems with model YX5X and iDRAC firmware version 4.20.20.20
+            or later.'
+          x-units: Metres
+          x-versionAdded: v1_1_0
+          x-versionDeprecated: v1_1_1
+        ControllerBIOSVersion:
+          description: This property represents the firmware version of Controller
+            BIOS.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the firmware version of Controller
+            BIOS.
+          x-versionAdded: v1_1_0
+        DataBusWidth:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_DataBusWidth
+          description: This property represents the data-bus width of the NIC PCI
+            device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the data-bus width of the NIC
+            PCI device.
+          x-versionAdded: v1_1_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceDescription:
+          description: A string that contains the friendly Fully Qualified Device
+            Description (FQDD), which is a property that describes the device and
+            its location.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the friendly Fully Qualified Device
+            Description (FQDD), which is a property that describes the device and
+            its location.
+          x-versionAdded: v1_1_0
+        DeviceNumber:
+          description: This property represents the device number assigned to this
+            PCI device for this bus.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the device number assigned to
+            this PCI device for this bus.
+          x-versionAdded: v1_10_1
+        EFIVersion:
+          description: This property represents the firmware version of EFI.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the firmware version of EFI.
+          x-versionAdded: v1_1_0
+        FCOSDriverVersion:
+          description: This property represents the FC OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the FC OS Driver version.
+          x-versionAdded: v1_6_0
+        FCoEOSDriverVersion:
+          description: This property represents the FCOE OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the FCOE OS Driver version.
+          x-versionAdded: v1_6_0
+        FCoEOffloadMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_FCoEOffloadMode
+          description: This property indicates if Fibre Channel over Ethernet (FCoE)
+            personality is enabled or disabled on current partition in a Converged
+            Network Adaptor device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates if Fibre Channel over Ethernet
+            (FCoE) personality is enabled or disabled on current partition in a Converged
+            Network Adaptor device.
+          x-versionAdded: v1_4_0
+        FCoEWWNN:
+          description: This property represents the FCoE WWNN.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the FCoE WWNN.
+          x-versionAdded: v1_8_0
+        FQDD:
+          description: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+          x-versionAdded: v1_1_0
+        FamilyVersion:
+          description: Represents family version of firmware.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Represents family version of firmware.
+        FunctionNumber:
+          description: This property represents the function number for this PCI device.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the function number for this
+            PCI device.
+          x-versionAdded: v1_8_0
+        ISCSIOSDriverVersion:
+          description: This property represents the ISCSI OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the ISCSI OS Driver version.
+          x-versionAdded: v1_6_0
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        IdentifierType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_IdentifierType
+          deprecated: true
+          description: 'This property represents the type of Small Form Factor pluggable(SFP)
+            Transceiver. Note: This property is deprecated and not supported in iDRAC
+            firmware version 4.40.00.00 or later versions.'
+          nullable: true
+          readOnly: true
+          x-deprecatedReason: This property has been deprecated in favor of IdentifierType
+            under DellNetworkTransceiver.
+          x-longDescription: 'This property represents the type of Small Form Factor
+            pluggable(SFP) Transceiver. Note: This property is deprecated and not
+            supported in iDRAC firmware version 4.40.00.00 or later versions.'
+          x-versionAdded: v1_1_0
+          x-versionDeprecated: v1_4_0
+        InstanceID:
+          description: A unique identifier for the instance.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A unique identifier for the instance.
+          x-versionAdded: v1_1_0
+        LANDriverVersion:
+          description: This property represents the Driver version of LAN.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Driver version of LAN.
+          x-versionAdded: v1_6_0
+        LastSystemInventoryTime:
+          description: This property represents the time when System Inventory Collection
+            On Reboot (CSIOR) was last performed or the object was last updated on
+            iDRAC. The value is represented in the format yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the time when System Inventory
+            Collection On Reboot (CSIOR) was last performed or the object was last
+            updated on iDRAC. The value is represented in the format yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        LastUpdateTime:
+          description: This property represents the time when the data was last updated.
+            The value is represented in the format yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the time when the data was last
+            updated. The value is represented in the format yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        LinkDuplex:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_LinkDuplex
+          description: This property indicates whether the Link is full-duplex or
+            half-duplex.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether the Link is full-duplex
+            or half-duplex.
+          x-versionAdded: v1_1_0
+        MaxBandwidthPercent:
+          description: This property represents the maximum bandwidth of current partition
+            of this NIC or Converged Network Adapter.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the maximum bandwidth of current
+            partition of this NIC or Converged Network Adapter.
+          x-units: Percent
+          x-versionAdded: v1_6_0
+        MediaType:
+          description: The property shall represent the drive media type.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the drive media type.
+        MinBandwidthPercent:
+          description: This property represents the minimum bandwidth on current partition
+            of a Converged Network Adapter device. The value must be less than "MaxBandwidth".
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the minimum bandwidth on current
+            partition of a Converged Network Adapter device. The value must be less
+            than "MaxBandwidth".
+          x-units: Percent
+          x-versionAdded: v1_6_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        NicMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_NicMode
+          description: Represents if network interface card personality is enabled
+            or disabled on current partition in a Converged Network Adaptor device.
+          nullable: true
+          readOnly: true
+          x-longDescription: Represents if network interface card personality is enabled
+            or disabled on current partition in a Converged Network Adaptor device.
+        NumberOfPorts:
+          description: This property represents the number of ports.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the number of ports.
+          x-versionAdded: v1_8_0
+        NumberPCIEFunctionsEnabled:
+          description: This property represents the number of PCIE functions enabled
+            per port.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the number of PCIE functions
+            enabled per port.
+          x-versionAdded: v1_8_0
+        NumberPCIEFunctionsSupported:
+          description: This property represents the number of PCIE functions supported
+            per port.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the number of PCIE functions
+            supported per port.
+          x-versionAdded: v1_8_0
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        PCIDeviceID:
+          description: This property contains a value assigned by the device manufacturer
+            used to identify the type of device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property contains a value assigned by the device
+            manufacturer used to identify the type of device.
+          x-versionAdded: v1_1_0
+        PCISubDeviceID:
+          description: Represents PCI sub device ID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Represents PCI sub device ID.
+          x-versionAdded: v1_1_0
+        PCISubVendorID:
+          description: This property represents the subsystem vendor ID. ID information
+            is reported from a PCIDevice through protocol-specific requests.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the subsystem vendor ID. ID
+            information is reported from a PCIDevice through protocol-specific requests.
+          x-versionAdded: v1_1_0
+        PCIVendorID:
+          description: This property represents the register that contains a value
+            assigned by the PCI SIG used to identify the manufacturer of the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the register that contains a
+            value assigned by the PCI SIG used to identify the manufacturer of the
+            device.
+          x-versionAdded: v1_1_0
+        PartNumber:
+          description: The part number assigned by the organization that is responsible
+            for producing or manufacturing the NIC device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The part number assigned by the organization that is
+            responsible for producing or manufacturing the NIC device.
+          x-versionAdded: v1_1_0
+        PermanentFCOEMACAddress:
+          description: PermanentFCOEMACAddress defines the network address that is
+            hardcoded into a port for FCoE.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: PermanentFCOEMACAddress defines the network address that
+            is hardcoded into a port for FCoE.
+        PermanentFIPAddress:
+          description: This property represents the Permanent Fibre Channel over Ethernet
+            (FCoE) Initialization Protocol (FIP) MAC Address.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Permanent Fibre Channel
+            over Ethernet (FCoE) Initialization Protocol (FIP) MAC Address.
+          x-versionAdded: v1_6_0
+        PermanentiSCSIMACAddress:
+          description: PermanentAddress defines the network address that is hardcoded
+            into a port for iSCSI. This 'hardcoded' address can be changed using a
+            firmware upgrade or a software configuration. When this change is made,
+            the field should be updated at the same time. PermanentAddress should
+            be left blank if no 'hardcoded' address exists for the NetworkAdapter.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: PermanentAddress defines the network address that is
+            hardcoded into a port for iSCSI. This 'hardcoded' address can be changed
+            using a firmware upgrade or a software configuration. When this change
+            is made, the field should be updated at the same time. PermanentAddress
+            should be left blank if no 'hardcoded' address exists for the NetworkAdapter.
+        ProductName:
+          description: A string containing the product name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string containing the product name.
+        Protocol:
+          description: Supported Protocol Types.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Supported Protocol Types.
+          x-versionAdded: v1_1_0
+        RDMAOSDriverVersion:
+          description: This property represents the RDMA OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the RDMA OS Driver version.
+          x-versionAdded: v1_6_0
+        RTCapable:
+          description: This property indicates real-time monitoring capability of
+            the device.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property indicates real-time monitoring capability
+            of the device.
+          x-versionAdded: v1_8_0
+        RXFlowControl:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_RXFlowControl
+          description: This property indicates the receive flow control support status
+            of the NIC port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates the receive flow control support
+            status of the NIC port.
+          x-versionAdded: v1_10_0
+        Revision:
+          deprecated: true
+          description: 'This property represents the revision number of the Small
+            Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated
+            and not supported in iDRAC firmware version 4.40.00.00 or later versions.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-deprecatedReason: This property has been deprecated in favor of Revision
+            under DellNetworkTransceiver.
+          x-longDescription: 'This property represents the revision number of the
+            Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated
+            and not supported in iDRAC firmware version 4.40.00.00 or later versions.'
+          x-versionAdded: v1_1_0
+          x-versionDeprecated: v1_4_0
+        SNAPIState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_SNAPIState
+          description: This property represents the SNAPI state.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the SNAPI state.
+          x-versionAdded: v1_3_0
+        SNAPISupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_SNAPISupport
+          description: This property represents the SNAPI support.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the SNAPI support.
+          x-versionAdded: v1_3_0
+        SerialNumber:
+          description: A manufacturer-allocated number used to identify the NIC device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A manufacturer-allocated number used to identify the
+            NIC device.
+          x-versionAdded: v1_1_0
+        SlotLength:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_SlotLength
+          description: This property represents the represents the slot length of
+            the NIC PCI device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the represents the slot length
+            of the NIC PCI device.
+          x-versionAdded: v1_1_0
+        SlotType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_SlotType
+          description: This property indicates the slot type of the NIC PCI device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates the slot type of the NIC PCI
+            device.
+          x-versionAdded: v1_1_0
+        TXBandwidthControlMaximum:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_TXBandwidthControlMaximum
+          description: This property indicates the maximum transmit bandwidth control
+            support status of the NIC port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates the maximum transmit bandwidth
+            control support status of the NIC port.
+          x-versionAdded: v1_10_0
+        TXBandwidthControlMinimum:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_TXBandwidthControlMinimum
+          description: This property indicates the minimum transmit bandwidth control
+            support status of the NIC port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates the minimum transmit bandwidth
+            control support status of the NIC port.
+          x-versionAdded: v1_10_0
+        TXFlowControl:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_TXFlowControl
+          description: This property indicates the transmit flow control support status
+            of the NIC port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates the transmit flow control support
+            status of the NIC port.
+          x-versionAdded: v1_10_0
+        TransceiverPartNumber:
+          deprecated: true
+          description: 'The part number assigned by the organization that is responsible
+            for producing or manufacturing the Small Form Factor pluggable(SFP) Transceivers.
+            Note: This property is deprecated and not supported in iDRAC firmware
+            version 4.40.00.00 or later versions.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-deprecatedReason: This property has been deprecated in favor of PartNumber
+            under DellNetworkTransceiver.
+          x-longDescription: 'The part number assigned by the organization that is
+            responsible for producing or manufacturing the Small Form Factor pluggable(SFP)
+            Transceivers. Note: This property is deprecated and not supported in iDRAC
+            firmware version 4.40.00.00 or later versions.'
+          x-versionAdded: v1_2_0
+          x-versionDeprecated: v1_4_0
+        TransceiverSerialNumber:
+          deprecated: true
+          description: 'A manufacturer-allocated number used to identify the Small
+            Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated
+            and not supported in iDRAC firmware version 4.40.00.00 or later versions.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-deprecatedReason: This property has been deprecated in favor of SerialNumber
+            under DellNetworkTransceiver.
+          x-longDescription: 'A manufacturer-allocated number used to identify the
+            Small Form Factor pluggable(SFP) Transceiver. Note: This property is deprecated
+            and not supported in iDRAC firmware version 4.40.00.00 or later versions.'
+          x-versionAdded: v1_2_0
+          x-versionDeprecated: v1_4_0
+        TransceiverVendorName:
+          deprecated: true
+          description: 'This property represents the vendor name of Small Form Factor
+            pluggable(SFP) Transceiver. Note: This property is deprecated and not
+            supported in iDRAC firmware version 4.40.00.00 or later versions.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-deprecatedReason: This property has been deprecated in favor of VendorName
+            under DellNetworkTransceiver.
+          x-longDescription: 'This property represents the vendor name of Small Form
+            Factor pluggable(SFP) Transceiver. Note: This property is deprecated and
+            not supported in iDRAC firmware version 4.40.00.00 or later versions.'
+          x-versionAdded: v1_2_0
+          x-versionDeprecated: v1_4_0
+        UpdateLockdownCapable:
+          description: This property represents the firmware update capable or not.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property represents the firmware update capable
+            or not.
+          x-versionAdded: v1_10_1
+        UpdateLockdownState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_UpdateLockdownState
+          description: This property represents the update lock down mode state.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the update lock down mode state.
+          x-versionAdded: v1_10_1
+        VFSRIOVSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_VFSRIOVSupport
+          description: This property indicates whether Virtual Function Single Root
+            I/O Virtualization (VF SR-IOV) is supported on the NIC port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether Virtual Function Single
+            Root I/O Virtualization (VF SR-IOV) is supported on the NIC port.
+          x-versionAdded: v1_10_0
+        VPISupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_VPISupport
+          description: This property represents the VPI support.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the VPI support.
+          x-versionAdded: v1_3_0
+        VendorName:
+          description: This property represents the vendor name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the vendor name.
+          x-versionAdded: v1_1_0
+        VirtWWN:
+          description: This property represents the VirtWWN of the NIC device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the VirtWWN of the NIC device.
+          x-versionAdded: v1_10_1
+        VirtWWPN:
+          description: This property represents the VirtWWPN of the NIC device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the VirtWWPN of the NIC device.
+          x-versionAdded: v1_10_1
+        VirtualFIPAddress:
+          description: This property represents the Virtual Fibre Channel over Ethernet
+            (FCoE) Initialization Protocol (FIP) MAC Address.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Virtual Fibre Channel over
+            Ethernet (FCoE) Initialization Protocol (FIP) MAC Address.
+          x-versionAdded: v1_6_0
+        VirtualISCSIAddress:
+          description: This property represents the Virtual ISCSI MAC Address of a
+            port.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Virtual ISCSI MAC Address
+            of a port.
+          x-versionAdded: v1_6_0
+        WOLSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_WOLSupport
+          description: This property indicates the Wake-on-LAN support status of the
+            NIC port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates the Wake-on-LAN support status
+            of the NIC port.
+          x-versionAdded: v1_10_0
+        WWN:
+          description: This property represents the WWN of the NIC device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the WWN of the NIC device.
+          x-versionAdded: v1_10_1
+        WWPN:
+          description: This property represents the currently configured World Wide
+            Port Name (WWPN) address.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the currently configured World
+            Wide Port Name (WWPN) of the NIC device.
+          x-versionAdded: v1_10_1
+        iScsiOffloadMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.yaml#/components/schemas/DellNIC_iScsiOffloadMode
+          description: This property indicates if Internet Small Computer System Interface
+            (iSCSI) personality is enabled or disabled on current partition in a Converged
+            Network Adaptor device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates if Internet Small Computer System
+            Interface (iSCSI) personality is enabled or disabled on current partition
+            in a Converged Network Adaptor device.
+          x-versionAdded: v1_1_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellNIC will have NIC device specific data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellNIC.v1_10_1.DellNIC'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

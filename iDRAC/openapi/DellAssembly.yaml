@@ -1,0 +1,72 @@
+components:
+  schemas:
+    DellAssembly_DellAssembly:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAssembly.v1_1_0.yaml#/components/schemas/DellAssembly_v1_1_0_DellAssembly
+      description: This resource shall be used to represent an assembly information.
+      x-longDescription: This resource shall be used to represent an assembly information.
+    DellAssembly_PackageType:
+      enum:
+      - Battery
+      - Blade
+      - BladeExpansion
+      - Chassis/Frame
+      - Container/FrameSlot
+      - CrossConnect/Backplane
+      - Fan
+      - Memory
+      - Module/Card
+      - Other
+      - Port/Connector
+      - PowerSource/Generator
+      - PowerSupply
+      - Processor
+      - Rack
+      - Sensor
+      - StorageMediaPackage(E.GDiskOrTapeDrive)
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Battery: Battery
+        Blade: Blade
+        BladeExpansion: Blade Expansion
+        Chassis/Frame: Chassis/Frame
+        Container/FrameSlot: Container/Frame Slot
+        CrossConnect/Backplane: Cross Connect/Backplane
+        Fan: Fan
+        Memory: Memory
+        Module/Card: Module/Card
+        Other: Other
+        Port/Connector: Port/Connector
+        PowerSource/Generator: Power Source/Generator
+        PowerSupply: Power Supply
+        Processor: Processor
+        Rack: Rack
+        Sensor: Sensor
+        StorageMediaPackage(E.GDiskOrTapeDrive): Storage Media Package (e.g Disk or
+          Tape Drive)
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Battery: Battery
+        Blade: Blade
+        BladeExpansion: Blade Expansion
+        Chassis/Frame: Chassis/Frame
+        Container/FrameSlot: Container/Frame Slot
+        CrossConnect/Backplane: Cross Connect/Backplane
+        Fan: Fan
+        Memory: Memory
+        Module/Card: Module/Card
+        Other: Other
+        Port/Connector: Port/Connector
+        PowerSource/Generator: Power Source/Generator
+        PowerSupply: Power Supply
+        Processor: Processor
+        Rack: Rack
+        Sensor: Sensor
+        StorageMediaPackage(E.GDiskOrTapeDrive): Storage Media Package (e.g Disk or
+          Tape Drive)
+        Unknown: Unknown
+title: '#DellAssembly.DellAssembly'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

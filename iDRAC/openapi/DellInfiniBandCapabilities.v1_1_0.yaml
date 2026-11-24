@@ -1,0 +1,351 @@
+components:
+  schemas:
+    DellInfiniBandCapabilities_v1_1_0_DellInfiniBandCapabilities:
+      additionalProperties: false
+      description: An instance of DellInfiniBandCapabilities will have data specific
+        to InfiniBand and its port and partitions capabilities.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        BPESupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_BPESupport
+          description: This property represents Bridge Port Extension (BPE) for the
+            ports of the InfiniBand.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents Bridge Port Extension (BPE)
+            for the ports of the InfiniBand.
+        CongestionNotification:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_CongestionNotification
+          description: This property represents congestion notification support for
+            a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents congestion notification support
+            for a InfiniBand port.
+        DCBExchangeProtocol:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_DCBExchangeProtocol
+          description: This property represents DCB Exchange protocol support for
+            a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents DCB Exchange protocol support
+            for a InfiniBand port.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        ETS:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_ETS
+          description: This property represents Enhanced Transmission Selection support
+            for a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents Enhanced Transmission Selection
+            support for a InfiniBand port.
+        EVBModesSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_EVBModesSupport
+          description: This property represents EVB Edge Virtual Bridging) mode support
+            for the ports of the InfiniBand. Possible values are 0 Unknown, 2 Supported,
+            3 Not Supported.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents EVB Edge Virtual Bridging) mode
+            support for the ports of the InfiniBand. Possible values are 0 Unknown,
+            2 Supported, 3 Not Supported.
+        EnergyEfficientEthernet:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_EnergyEfficientEthernet
+          description: This property represents energy-efficient ethernet support
+            for a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents energy-efficient ethernet support
+            for a InfiniBand port.
+        FeatureLicensingSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_FeatureLicensingSupport
+          description: This property represents feature licensing support for the
+            InfiniBand.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents feature licensing support for
+            the InfiniBand.
+        FlexAddressingSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_FlexAddressingSupport
+          description: This property represents flex-addressing support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents flex-addressing support for
+            a InfiniBand port.
+        IPSecOffloadSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_IPSecOffloadSupport
+          description: This property represents IPSec offload support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents IPSec offload support for a
+            InfiniBand port.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LinkSupportedSpeed:
+          description: This property specifies the supported link speed of InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property specifies the supported link speed of InfiniBand
+            port.
+        LinkSupportedWidth:
+          description: This property specifies the supported link width of InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property specifies the supported link width of InfiniBand
+            port.
+        MACSecSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_MACSecSupport
+          description: This property represents secure MAC support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents secure MAC support for a InfiniBand
+            port.
+        NWManagementPassThrough:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_NWManagementPassThrough
+          description: This property represents network management passthrough support
+            for a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents network management passthrough
+            support for a InfiniBand port.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        NicPartitioningSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_NicPartitioningSupport
+          description: This property represents partitioning support for the InfiniBand.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents partitioning support for the
+            InfiniBand.
+        OSBMCManagementPassThrough:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_OSBMCManagementPassThrough
+          description: This property represents OS-inband to BMC-out-of-band management
+            passthrough support for a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents OS-inband to BMC-out-of-band
+            management passthrough support for a InfiniBand port.
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        OnChipThermalSensor:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_OnChipThermalSensor
+          description: This property represents on-chip thermal sensor support for
+            the InfiniBand.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents on-chip thermal sensor support
+            for the InfiniBand.
+        OpenFlowSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_OpenFlowSupport
+          description: This property represents open-flow support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents open-flow support for a InfiniBand
+            port.
+        PXEBootSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_PXEBootSupport
+          description: This property represents PXE-boot support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents PXE-boot support for a InfiniBand
+            port.
+        PartitionWOLSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_PartitionWOLSupport
+          description: This property represents Wake-On-LAN support for a InfiniBand
+            partition.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents Wake-On-LAN support for a InfiniBand
+            partition.
+        PersistencePolicySupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_PersistencePolicySupport
+          description: This property specifies whether the card supports persistence
+            policy.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property specifies whether the card supports persistence
+            policy.
+        PriorityFlowControl:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_PriorityFlowControl
+          description: This property represents priority flow-control support for
+            a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents priority flow-control support
+            for a InfiniBand port.
+        RDMAEnabled:
+          description: This property represents RDMA is enabled on this Infiniband
+            partition or not.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-versionAdded: v1_1_0
+        RDMASupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_RDMASupport
+          description: This property represents RDMA support for a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents RDMA support for a InfiniBand
+            port.
+        RXFlowControl:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_RXFlowControl
+          description: This property represents RX flow-control support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents RX flow-control support for
+            a InfiniBand port.
+        RemotePHY:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_RemotePHY
+          description: This property represents remote PHY support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents remote PHY support for a InfiniBand
+            port.
+        TCPChimneySupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_TCPChimneySupport
+          description: This property represents TCP Chimney support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents TCP Chimney support for a InfiniBand
+            port.
+        TXBandwidthControlMaximum:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_TXBandwidthControlMaximum
+          description: This property represents open-flow support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents open-flow support for a InfiniBand
+            port.
+        TXBandwidthControlMinimum:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_TXBandwidthControlMinimum
+          description: This property represents open-flow support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents open-flow support for a InfiniBand
+            port.
+        TXFlowControl:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_TXFlowControl
+          description: This property represents TX flow-control support for a InfiniBand
+            partition.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents TX flow-control support for
+            a InfiniBand partition.
+        VEB:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_VEB
+          description: This property provides details about the VEB (Virtual Ethernet
+            Bridging) - single channel support for the ports of the InfiniBand.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property provides details about the VEB (Virtual
+            Ethernet Bridging) - single channel support for the ports of the InfiniBand.
+        VEBVEPAMultiChannel:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_VEBVEPAMultiChannel
+          description: This property provides details about the VEB-VEPA (Virtual
+            Ethernet Bridging and Virtual Ethernet Port Aggregator) multichannel support
+            for the ports of the InfiniBand.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property provides details about the VEB-VEPA (Virtual
+            Ethernet Bridging and Virtual Ethernet Port Aggregator) multichannel support
+            for the ports of the InfiniBand.
+        VEBVEPASingleChannel:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_VEBVEPASingleChannel
+          description: This property provides details about the VEB-VEPA (Virtual
+            Ethernet Bridging and Virtual Ethernet Port Aggregator) - single channel
+            support for the ports of the InfiniBand.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property provides details about the VEB-VEPA (Virtual
+            Ethernet Bridging and Virtual Ethernet Port Aggregator) - single channel
+            support for the ports of the InfiniBand.
+        VFSRIOVSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_VFSRIOVSupport
+          description: This property represents support for Virtual Function of Single
+            Root I/O Virtualization for a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents support for Virtual Function
+            of Single Root I/O Virtualization for a InfiniBand port.
+        VirtualLinkControl:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_VirtualLinkControl
+          description: This property represents virtual link-control support for a
+            InfiniBand partition.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents virtual link-control support
+            for a InfiniBand partition.
+        WOLSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_WOLSupport
+          description: This property represents Wake-On-LAN support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents Wake-On-LAN support for a InfiniBand
+            port.
+        iSCSIBootSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_iSCSIBootSupport
+          description: This property represents iSCSI boot support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents iSCSI boot support for a InfiniBand
+            port.
+        iSCSIOffloadSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_iSCSIOffloadSupport
+          description: This property represents iSCSI offload support for a InfiniBand
+            port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents iSCSI offload support for a
+            InfiniBand port.
+        uEFISupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.yaml#/components/schemas/DellInfiniBandCapabilities_uEFISupport
+          description: This property represents UEFI support for a InfiniBand port.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents UEFI support for a InfiniBand
+            port.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellInfiniBandCapabilities will have data
+        specific to InfiniBand and its port and partitions capabilities.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellInfiniBandCapabilities.v1_1_0.DellInfiniBandCapabilities'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

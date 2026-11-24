@@ -1,0 +1,18 @@
+components:
+  schemas:
+    DellOemStorage_DellOemStorageLinks:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorage.v1_0_0.yaml#/components/schemas/DellOemStorage_v1_0_0_DellOemStorageLinks
+      description: A complex property for the additional Oem Links realted to StorageController.
+      x-longDescription: A complex property for the additional Oem Links realted to
+        StorageController.
+    DellOemStorage_DellOemStorageResources:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorage.v1_0_0.yaml#/components/schemas/DellOemStorage_v1_0_0_DellOemStorageResources
+      description: A complex property for the additional Oem resources realted to
+        StorageController.
+      x-longDescription: A complex property for the additional Oem resources realted
+        to StorageController.
+title: '#DellOemStorage'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

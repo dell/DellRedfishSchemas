@@ -1,0 +1,289 @@
+components:
+  schemas:
+    DellEnvironmentMetrics_v1_2_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellEnvironmentMetrics.SetPowerCappingConfigurations':
+          $ref: '#/components/schemas/DellEnvironmentMetrics_v1_2_0_SetPowerCappingConfigurations'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellEnvironmentMetrics_v1_2_0_CMConfigurationType:
+      additionalProperties: false
+      properties:
+        BVMEnable:
+          description: This property specifies the Bulk Voltage Modulation (BVM) setting
+            for PSUs.
+          readOnly: true
+          type: boolean
+          x-longDescription: This property specifies the Bulk Voltage Modulation (BVM)
+            setting for Power Supply Units (PSUs). It can be set to 0 or 1, with a
+            default value of 1. This property applies to Hubble and Lake Austin systems
+            only.
+          x-versionAdded: v1_2_0
+        CableAmpLimit:
+          description: This property enables the Power Adapter Cable Support.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property enables the Power Adapter Cable Support,
+            such as for the C19-C14 cable. A value of 0 disables it, while a value
+            greater than 0 enables it for the specified amp limit (e.g., 0Ch = 12
+            Amps). The default value is 0. This value is read-only and set to 0Ch
+            when a PSU with a specific part number is inserted.
+          x-versionAdded: v1_2_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellEnvironmentMetrics_v1_2_0_CMInputCurrentLimitType:
+      additionalProperties: false
+      properties:
+        ChassisICLAmps:
+          description: This property specifies the value in milliAmps (mA) to use
+            in Set SPA calculations. Only valid if GridChassisICLEnabled Bit 0 is
+            1.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property specifies the value in milliAmps (mA) to
+            use in Set SPA calculations, with a default value of 0. It is only valid
+            if the GridChassisICLEnabled Bit 0 is set to 1. This is a read-only property
+            that can only be set by the Chassis Manager (CM) and applies to Lake Austin
+            only.
+          x-versionAdded: v1_2_0
+        Enabled:
+          description: Indicates whether the input current limit is enabled.
+          readOnly: true
+          type: boolean
+          x-longDescription: This property specifies whether the input current limit
+            functionality is enabled for the system. When set to true, the system
+            will enforce the input current limit to ensure stability and prevent overcurrent
+            conditions. This property is crucial for maintaining system integrity
+            and preventing potential hardware damage.
+          x-versionAdded: v1_2_0
+        GridICLAmps:
+          description: This property specifies the value in milliAmps (mA) to use
+            in Set SPA calculations, with a default value of 0. It is only valid if
+            the GridChassisICLEnabled Bit 0 is set to 1.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property specifies the value in milliAmps (mA) to
+            use in Set SPA calculations, with a default value of 0. It is only valid
+            if the GridChassisICLEnabled Bit 0 is set to 1. This is a read-only property
+            that can only be set by the Chassis Manager (CM) and applies to Lake Austin
+            only.
+          x-versionAdded: v1_2_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellEnvironmentMetrics_v1_2_0_DellEnvironmentMetrics:
+      additionalProperties: false
+      description: This property shall represent the Oem properties for a EnvironmentMetrics
+        resource.
+      properties:
+        AverageFanPWM:
+          description: Represents average fan speed in PWM.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: This property shall represent average fan speed in PWM
+        CMConfiguration:
+          $ref: '#/components/schemas/DellEnvironmentMetrics_v1_2_0_CMConfigurationType'
+          description: This property shall contain Chassis Manager (CM) configuration
+            information for this chassis.
+          nullable: true
+          x-longDescription: This property shall contain Chassis Manager (CM) configuration
+            information for this chassis.
+          x-versionAdded: v1_2_0
+        CMInputCurrentLimit:
+          $ref: '#/components/schemas/DellEnvironmentMetrics_v1_2_0_CMInputCurrentLimitType'
+          description: This property shall contains the chassis input current limit
+            settings of a system.
+          nullable: true
+          x-longDescription: his property shall contains the chassis input current
+            limit settings of a system
+          x-versionAdded: v1_2_0
+        InfraPowerWatts:
+          description: Power consumption of infrastructure (W).
+          nullable: true
+          type: number
+          x-longDescription: This property shall contain the total power, in watt
+            units, for this resource infrastructure`.
+          x-versionAdded: v1_2_0
+        PowerLimit:
+          $ref: '#/components/schemas/DellEnvironmentMetrics_v1_2_0_PowerLimitType'
+          description: This property shall contain power limit status and configuration
+            information for this chassis.
+          nullable: true
+          x-longDescription: This property shall contain power limit status and configuration
+            information for this chassis.
+          x-versionAdded: v1_2_0
+        PowerWatts:
+          description: Power consumption (W).
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/Sensor.yaml#/components/schemas/Sensor_SensorArrayExcerpt
+          type: array
+          x-excerptCopy: SensorArrayExcerpt
+          x-longDescription: This property shall contain the total power, in watt
+            units, for this resource. The value of the DataSourceUri property, if
+            present, shall reference a resource of type Sensor with the ReadingType
+            property containing the value `Power`.
+          x-versionAdded: v1_1_0
+        PowerWatts@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+        TemperatureCelsius:
+          description: Temperature (Celsius).
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/Sensor.yaml#/components/schemas/Sensor_SensorArrayExcerpt
+          type: array
+          x-excerptCopy: SensorArrayExcerpt
+          x-longDescription: This property shall contain the temperature, in degrees
+            Celsius units, for this resource. The value of the DataSourceUri property,
+            if present, shall reference a resource of type Sensor with the ReadingType
+            property containing the value `Temperature`.
+          x-versionAdded: v1_1_0
+        TemperatureCelsius@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+      type: object
+      x-longDescription: This property shall represent the Oem properties for a EnvironmentMetrics
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellEnvironmentMetrics_v1_2_0_PowerLimitType:
+      additionalProperties: false
+      properties:
+        EmergencyPowerLimitAction:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitEmergencyActionType
+          description: This property shall specify emergency action for chassis.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall specify the emergency action policy
+            for chassis power capping, such as doing nothing, throttling via PROPROCHOT
+            (Processor Hot), throttling via software, or powering off.
+          x-versionAdded: v1_2_0
+        EmergencyPowerLimitActionSled:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitEmergencyActionType
+          description: This property shall define the emergency action for sled.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall define the emergency action policy
+            for sled power capping, indicating whether to follow chassis policy, throttle
+            via PROCHOT (Processor Hot), throttle via software, or power off.
+          x-versionAdded: v1_2_0
+        PowerLimitAction:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitActionType
+          description: This property specify the action on power limit.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall specify the action to take when the
+            power limit is reached, such as throttling via PROCHOT or software mechanisms.
+          x-versionAdded: v1_2_0
+        PowerLimitException:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitExceptionType
+          description: This property shall define the sled-level power capping exception.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall define the exception policy for sled-level
+            power capping, indicating whether to follow its own sled-level power capping
+            or chassis-level power capping.
+          x-versionAdded: v1_2_0
+        PowerLimitStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitStatusType
+          description: This property shall define the power limiting status for the
+            chassis enclosure.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall define the power limiting status
+            for the chassis enclosure.
+          x-versionAdded: v1_2_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellEnvironmentMetrics_v1_2_0_SetPowerCappingConfigurations:
+      additionalProperties: false
+      description: This action set the Power Limiting value for standalone servers,
+        where a user may enter a Power Limiting value of the chassis.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action sets the Power Limiting value for standalone
+        servers, where a user may enter a Power Limiting value of the chassis. This
+        command includes Chassis-level Power Capping, Sled-level Power Capping, and
+        Emergency Power Capping
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DellEnvironmentMetrics_v1_2_0_SetPowerCappingConfigurationsRequestBody:
+      additionalProperties: false
+      description: This action set the Power Limiting value for standalone servers,
+        where a user may enter a Power Limiting value of the chassis.
+      properties:
+        EmergencyPowerLimitAction:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitEmergencyActionType
+          description: This parameter specifies the emergency action policy for chassis
+            power capping.
+          x-longDescription: This parameter specifies the emergency action policy
+            for chassis power capping, such as doing nothing, throttling via PROCHOT,
+            throttling via software, or powering off.
+        EmergencyPowerLimitActionSled:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitEmergencyActionType
+          description: This parameter defines the emergency action policy for sled
+            power capping.
+          x-longDescription: This parameter defines the emergency action policy for
+            sled power capping, indicating whether to follow chassis policy, throttle
+            via PROCHOT, throttle via software, or power off.
+        PowerLimitAction:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitActionType
+          description: This parameter specifies the action to take when the power
+            limit is reached.
+          x-longDescription: This parameter specifies the action to take when the
+            power limit is reached, such as throttling via PROCHOT or software mechanisms.
+        PowerLimitException:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitExceptionType
+          description: This parameter defines the sled-level power capping exception.
+          x-longDescription: This parameter defines the exception policy for sled-level
+            power capping, indicating whether to follow its own sled-level power capping
+            or chassis-level power capping.
+        PowerLimitStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnvironmentMetrics.yaml#/components/schemas/DellEnvironmentMetrics_PowerLimitStatusType
+          description: This parameter defines the power limiting status for the chassis
+            enclosure.
+          x-longDescription: This parameter defines the power limiting status for
+            the chassis enclosure.
+        PowerLimitValue:
+          description: This parameter specifies the power limiting value in watts.
+          format: int64
+          type: integer
+          x-longDescription: This parameter specifies the power limiting value in
+            watts, with the least significant byte first.
+      required:
+      - EmergencyPowerLimitAction
+      - EmergencyPowerLimitActionSled
+      - PowerLimitAction
+      - PowerLimitException
+      - PowerLimitStatus
+      - PowerLimitValue
+      type: object
+      x-longDescription: This action sets the Power Limiting value for standalone
+        servers, where a user may enter a Power Limiting value of the chassis. This
+        command includes Chassis-level Power Capping, Sled-level Power Capping, and
+        Emergency Power Capping
+title: '#DellEnvironmentMetrics.v1_2_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

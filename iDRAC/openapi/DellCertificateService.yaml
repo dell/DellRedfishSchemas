@@ -1,0 +1,27 @@
+components:
+  schemas:
+    DellCertificateService_GenerateCSRAndImport:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_2_0.yaml#/components/schemas/DellCertificateService_v1_2_0_GenerateCSRAndImport
+      description: This action generates Certificate Singing Request(CSR), signs and
+        imports the singed certificate.
+      x-longDescription: This action will generate a Certificate Singing Request(CSR),
+        sign the certificate using the uploaded Custom Signing Certificate(CSC) and
+        will import the singed certificate.
+    DellCertificateService_GenerateHPMCSR:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_2_0.yaml#/components/schemas/DellCertificateService_v1_2_0_GenerateHPMCSR
+      description: Generates a Certificate Signing Request (CSR) for a Hardware Platform
+        Module (HPM).
+      x-longDescription: This action generates a Certificate Signing Request (CSR)
+        for the specified Hardware Platform Module (HPM). The resulting CSR can be
+        submitted to a Certificate Authority (CA) for signing.
+    DellCertificateService_GetLastGeneratedCSR:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_2_0.yaml#/components/schemas/DellCertificateService_v1_2_0_GetLastGeneratedCSR
+      description: This action returns last generated CSR.
+      x-longDescription: This action returns last generated CSR. The response will
+        contain a signing request that a certificate authority (CA) will sign.
+title: '#DellCertificateService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

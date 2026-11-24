@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellMetricReportValue_DellMetricReportValue:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricReportValue.v1_0_1.yaml#/components/schemas/DellMetricReportValue_v1_0_1_DellMetricReportValue
+      description: The DellMetricReport schema describes Dell metric metadata collected
+        and reported by the Redfish Service.
+      x-longDescription: The schema describes property additions to the Metrics within
+        the MetricReport.
+title: '#DellMetricReportValue'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

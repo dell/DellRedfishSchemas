@@ -1,0 +1,184 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPrivilegeRegistry.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellOperationPrivilege": {
+            "additionalProperties": false,
+            "description": "Dell OEM extension for OperationPrivilege with payload matching.",
+            "longDescription": "This type provides Dell OEM extension for OperationPrivilege with payload-based privilege matching rules.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "PayloadMatchRules": {
+                    "$ref": "#/definitions/PayloadMatchRules",
+                    "description": "Rules for matching request payload properties to determine privilege requirements.",
+                    "longDescription": "This property shall contain rules for matching request payload properties. An empty object indicates a default entry that matches any payload not caught by specific rules. Non-empty rules apply only if all specified conditions match (AND logic)."
+                }
+            },
+            "type": "object"
+        },
+        "MatchCriteria": {
+            "additionalProperties": false,
+            "description": "Matching criteria for a single payload property.",
+            "longDescription": "This type shall contain the matching criteria for a single payload property. Exactly one match operator should be specified.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ExactMatch": {
+                    "description": "Matches if the payload property value exactly equals this value.",
+                    "longDescription": "This property shall contain the exact value to match against the payload property. The match succeeds if the payload property value equals this value.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Exists": {
+                    "description": "Matches based on whether the payload property exists.",
+                    "longDescription": "If true, the match succeeds if the payload property exists (regardless of value). If false, the match succeeds if the payload property does not exist.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "GreaterThan": {
+                    "description": "Matches if the payload property value is greater than this number.",
+                    "longDescription": "This property shall contain a number. The match succeeds if the payload property value is greater than this number.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "GreaterThanOrEqual": {
+                    "description": "Matches if the payload property value is greater than or equal to this number.",
+                    "longDescription": "This property shall contain a number. The match succeeds if the payload property value is greater than or equal to this number.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "InRange": {
+                    "description": "Matches if the payload property value is within the specified range [min, max].",
+                    "items": {
+                        "type": [
+                            "number",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "This property shall contain a two-element array [min, max]. The match succeeds if the payload property value is a number within this inclusive range.",
+                    "type": "array"
+                },
+                "IsNull": {
+                    "description": "Matches based on whether the payload property value is null.",
+                    "longDescription": "If true, the match succeeds if the payload property value is null. If false, the match succeeds if the payload property value is not null.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "LessThan": {
+                    "description": "Matches if the payload property value is less than this number.",
+                    "longDescription": "This property shall contain a number. The match succeeds if the payload property value is less than this number.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "LessThanOrEqual": {
+                    "description": "Matches if the payload property value is less than or equal to this number.",
+                    "longDescription": "This property shall contain a number. The match succeeds if the payload property value is less than or equal to this number.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "NavigationUriOneOf": {
+                    "description": "Matches if the payload property value matches any of the specified Redfish URI templates.",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "This property shall contain an array of Redfish URI templates in OpenAPI format (e.g., '/redfish/v1/Managers/{ManagerId}/NetworkProtocol/HTTPS/Certificates/{CertificateId}'). The match succeeds if the payload property value matches any of the URI patterns in the array.",
+                    "type": "array"
+                },
+                "OneOf": {
+                    "description": "Matches if the payload property value equals any value in this array.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/OemObject"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "This property shall contain an array of allowed values. The match succeeds if the payload property value equals any value in this array.",
+                    "type": "array"
+                },
+                "RegexMatch": {
+                    "description": "Matches if the payload property value matches this regular expression pattern.",
+                    "longDescription": "This property shall contain a regular expression pattern. The match succeeds if the payload property value (converted to string) matches this pattern.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PayloadMatchRules": {
+            "additionalProperties": true,
+            "description": "A set of payload property matching rules.",
+            "longDescription": "This type shall contain payload property matching rules. Each property name in this object corresponds to a property in the action request payload, and its value specifies the matching criteria. An empty object indicates a default entry that matches any payload.",
+            "patternProperties": {
+                "[A-Za-z_][A-Za-z0-9_]*": {
+                    "$ref": "#/definitions/MatchCriteria"
+                },
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {},
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "release": "2026.2",
+    "title": "#DellPrivilegeRegistry.v1_0_0"
+}

@@ -1,0 +1,19 @@
+components:
+  schemas:
+    DellOemProcessor_DellOemProcessorLinks:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemProcessor.v1_1_0.yaml#/components/schemas/DellOemProcessor_v1_1_0_DellOemProcessorLinks
+      description: This is the complex property is for the additional OEM Links realted
+        to the DMTF NetworkAdapter Controller.
+      x-longDescription: This is the complex property is for the additional OEM Links
+        realted to the DMTF NetworkAdapter Controller.
+    DellOemProcessor_DellOemProcessorResources:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemProcessor.v1_1_0.yaml#/components/schemas/DellOemProcessor_v1_1_0_DellOemProcessorResources
+      description: This is the complex property is for the additional OEM Links realted
+        to the DMTF NetworkAdapter Controller.
+      x-longDescription: This is the complex property is for the additional OEM Links
+        realted to the DMTF NetworkAdapter Controller.
+title: '#DellOemProcessor'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

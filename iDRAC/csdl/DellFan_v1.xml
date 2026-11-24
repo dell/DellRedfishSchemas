@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellFan v1_1_0-->
+<!--# -->
+<!--# Copyright © 2021-2024 Dell Inc. or its subsidiaries. All Rights Reserved.-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+
+    <edmx:DataServices>
+
+        <Schema Namespace="DellFan" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellFan" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="This property shall represent the Oem properties for a Fan resource."/>
+                <Annotation Term="OData.LongDescription" String="This property shall represent the Oem properties for a Fan resource."/>
+            </ComplexType>
+        </Schema>
+
+        <Schema Namespace="DellFan.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellFan" BaseType="DellFan.DellFan">
+                <Property Name="FanPWM" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Represents Fan's PWM."/>
+                    <Annotation Term="OData.LongDescription" String="The property shall represent Fan's Pulse width modulation(PWM)."/>
+                </Property>
+                 <Property Name="FanType" Type="DellFan.v1_0_0.FanType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Represents type of the fan."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall represent type of the fan."/>
+                </Property>
+            </ComplexType>
+
+            <EnumType Name="FanType">
+                <Member Name="NotApplicable">
+                    <Annotation Term="OData.Description" String="Fan type not applicable."/>
+                </Member>
+                <Member Name="Standard">
+                    <Annotation Term="OData.Description" String="A standard fan."/>
+                </Member>
+                <Member Name="Silver">
+                    <Annotation Term="OData.Description" String="A Silver standard fan."/>
+                </Member>
+                <Member Name="NotSupported">
+                    <Annotation Term="OData.Description" String="Fan type not supported."/>
+                </Member>
+                <Member Name="Gold">
+                    <Annotation Term="OData.Description" String="A Gold standard fan."/>
+                </Member>
+                <Member Name="Platinum">
+                    <Annotation String="A Platinum standard fan." Term="OData.Description"/>
+                    <Annotation String="A Platinum standard fan." Term="OData.LongDescription"/>
+                    <Annotation Term="Redfish.Revisions">
+                        <Collection>
+                            <Record>
+                                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                                <PropertyValue Property="Version" String="v1_1_0"/>
+                            </Record>
+                        </Collection>
+                    </Annotation>
+                </Member>
+                <Member Name="Titanium">
+                    <Annotation String="A Titanium standard fan." Term="OData.Description"/>
+                    <Annotation String="A Titanium standard fan." Term="OData.LongDescription"/>
+                    <Annotation Term="Redfish.Revisions">
+                        <Collection>
+                            <Record>
+                                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                                <PropertyValue Property="Version" String="v1_1_0"/>
+                            </Record>
+                        </Collection>
+                    </Annotation>
+                </Member>
+            </EnumType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellFan.v1_1_0">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <Annotation Term="OData.Description" String="This version was created to update the enums for FanType."/>
+            <ComplexType Name="DellFan" BaseType="DellFan.v1_0_0.DellFan">
+            </ComplexType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

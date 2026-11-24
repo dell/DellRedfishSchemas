@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTelemetryService.v1_2_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -62,6 +62,13 @@
                     },
                     "longDescription": "The value of this property is a DELL defined FQDDList.",
                     "type": "array"
+                },
+                "OTel": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef",
+                    "description": "The link to the OTel service.",
+                    "longDescription": "This property shall contain a link to the OTel service.",
+                    "readonly": true,
+                    "versionAdded": "v1_2_0"
                 },
                 "SourceList": {
                     "description": "The SourceList available for Telemetry Configuration (MetricReportDefinition).",

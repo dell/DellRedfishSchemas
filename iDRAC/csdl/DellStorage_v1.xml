@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellStorage  v1.0.0 -->
+<!--# This schema complements to OemAction section of Storage Resource                   -->
+<!--# Copyright © 2024 Dell Inc. or its subsidiaries. All Rights Reserved.             -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Storage_v1.xml">
+        <edmx:Include Namespace="Storage"/>
+        <edmx:Include Namespace="Storage.v1_0_0"/>
+    </edmx:Reference>
+
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellStorage">
+            <Action Name="ControllerDrivesDecommission" IsBound="true">
+                <Parameter Name="Storage" Type="Storage.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to decommission the drives attached to the storage controller."/>
+                <Annotation Term="OData.LongDescription" String="This action is used to decommission the drives attached to the storage controller."/>
+                <Parameter Name="DisableControllerSecurity" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="This parameter specifies whether to disable security on the controller."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies whether to disable security on the controller."/>
+                </Parameter>
+                <Parameter Name="DisableSEKMiLKM" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="This parameter specifies whether to disable SEKM and iLKM on the iDRAC."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies whether to disable SEKM and iLKM on the iDRAC."/>
+                    <Annotation Term="Redfish.Revisions">
+                        <Collection>
+                            <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                            </Record>
+                        </Collection>
+                    </Annotation>
+                </Parameter>
+            </Action>
+        </Schema>
+
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellStorage.v1_0_0">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <Annotation Term="OData.Description" String="This is the schema definition for the additional Oem property to complement the DMTF Storage Schema."/>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellStorage.v1_1_0">
+            <Annotation Term="OData.Description" String="This version added to support action parameter DisableSEKMiLKM."/>
+            <Annotation Term="OData.LongDescription" String="This version added to support action parameter DisableSEKMiLKM."/>
+        </Schema>
+
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,21 +1,30 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "GenerateCSRAndImport": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_1_0.json#/definitions/GenerateCSRAndImport"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_2_0.json#/definitions/GenerateCSRAndImport"
                 }
             ],
             "description": "This action generates Certificate Singing Request(CSR), signs and imports the singed certificate.",
             "longDescription": "This action will generate a Certificate Singing Request(CSR), sign the certificate using the uploaded Custom Signing Certificate(CSC) and will import the singed certificate."
         },
+        "GenerateHPMCSR": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_2_0.json#/definitions/GenerateHPMCSR"
+                }
+            ],
+            "description": "Generates a Certificate Signing Request (CSR) for a Hardware Platform Module (HPM).",
+            "longDescription": "This action generates a Certificate Signing Request (CSR) for the specified Hardware Platform Module (HPM). The resulting CSR can be submitted to a Certificate Authority (CA) for signing."
+        },
         "GetLastGeneratedCSR": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_1_0.json#/definitions/GetLastGeneratedCSR"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificateService.v1_2_0.json#/definitions/GetLastGeneratedCSR"
                 }
             ],
             "description": "This action returns last generated CSR.",

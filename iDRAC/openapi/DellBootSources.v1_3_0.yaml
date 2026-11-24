@@ -1,0 +1,202 @@
+components:
+  schemas:
+    DellBootSources_v1_3_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DellManager.ClearPending':
+          $ref: '#/components/schemas/DellBootSources_v1_3_0_ClearPending'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellBootSources_v1_3_0_Attributes:
+      additionalProperties: false
+      properties:
+        BootSeq:
+          description: The array containing possible values for attributes of type
+            'OrderedList'.
+          items:
+            $ref: '#/components/schemas/DellBootSources_v1_3_0_Entry'
+          readOnly: false
+          type: array
+          x-longDescription: The value of this property shall be an array containing
+            the possible values of an attribute of type 'OrderedList'.
+          x-versionAdded: v1_2_0
+        HddSeq:
+          description: The array containing possible values for attributes of type
+            'OrderedList'.
+          items:
+            $ref: '#/components/schemas/DellBootSources_v1_3_0_Entry'
+          readOnly: false
+          type: array
+          x-longDescription: The value of this property shall be an array containing
+            the possible values of an attribute of type 'OrderedList'.
+          x-versionAdded: v1_2_0
+        OneTimeBootMode:
+          description: The array containing possible values for attributes of type
+            'OrderedList'.
+          items:
+            $ref: '#/components/schemas/DellBootSources_v1_3_0_Entry'
+          readOnly: false
+          type: array
+          x-longDescription: The value of this property shall be an array containing
+            the possible values of an attribute of type 'OrderedList'.
+          x-versionAdded: v1_2_0
+        UefiBootSeq:
+          description: The array containing possible values for attributes of type
+            'OrderedList'.
+          items:
+            $ref: '#/components/schemas/DellBootSources_v1_3_0_Entry'
+          readOnly: false
+          type: array
+          x-longDescription: The value of this property shall be an array containing
+            the possible values of an attribute of type 'OrderedList'.
+          x-versionAdded: v1_2_0
+      type: object
+      x-patternProperties:
+        '[A-Za-z0-9]+':
+          $ref: '#/components/schemas/DellBootSources_v1_3_0_Entry'
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellBootSources_v1_3_0_ClearPending:
+      additionalProperties: false
+      description: This action is used to clear all the pending values.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action shall perform a clear pending values.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellBootSources_v1_3_0_ClearPendingRequestBody:
+      additionalProperties: false
+      description: This action is used to clear all the pending values.
+      properties: {}
+      type: object
+      x-longDescription: This action shall perform a clear pending values.
+    DellBootSources_v1_3_0_DellBootSources:
+      additionalProperties: true
+      description: BootSources contains properties surrounding a BootSources Attribute
+        Registry (where the system-specific BootSources attributes are described)
+        and the Actions needed to perform changes to BootSources settings, which typically
+        require a system reset to apply.
+      properties:
+        '@Redfish.Settings':
+          $ref: http://redfish.dmtf.org/schemas/v1/Settings.yaml#/components/schemas/Settings_Settings
+          description: The link to the settings resource that represents the settings
+            to apply to this resource.
+        '@Redfish.SettingsApplyTime':
+          $ref: http://redfish.dmtf.org/schemas/v1/Settings.yaml#/components/schemas/Settings_PreferredApplyTime
+          description: The configuration settings for when the values in the settings
+            object are applied to a resource.
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DellBootSources_v1_3_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The actions property shall contain the available actions
+            for this resource.
+        AttributeRegistry:
+          description: This is the AttributeRegistry for this resource
+          nullable: true
+          type: string
+          x-versionAdded: v1_2_0
+        Attributes:
+          $ref: '#/components/schemas/DellBootSources_v1_3_0_Attributes'
+          description: This is the manufacturer/provider specific list of BootSources
+            attributes.
+          x-longDescription: BootSources Attribute settings appear as additional properties
+            in this object, and can be looked up in the Attribute Registry by their
+            AttributeName.
+          x-versionAdded: v1_2_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: '#/components/schemas/DellBootSources_v1_3_0_DellBootSources_Oem'
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: This resource shall be used to represent BootSources attributes
+        for a Redfish implementation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellBootSources_v1_3_0_DellBootSources_Oem:
+      additionalProperties: false
+      description: The OEM extension to the DellBootSources resource.
+      properties:
+        Dell:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.yaml#/components/schemas/DellManager_DellManager
+          description: An Oem extension to the DellBootSources resource.
+          x-longDescription: An Oem extension to the DellBootSources resource.
+      type: object
+      x-longDescription: This object represents the OEM properties. The resource values
+        shall comply with the Redfish Specification-described requirements.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellBootSources_v1_3_0_Entry:
+      additionalProperties: false
+      properties:
+        DisplayName:
+          description: Display Name of the boot device
+          nullable: true
+          type: string
+          x-longDescription: Display Name of the boot device
+          x-versionAdded: v1_3_0
+        Enabled:
+          description: The attribute that is used set if the boot device is Enabled.
+          nullable: true
+          type: boolean
+          x-longDescription: The value of this property shall be used to indicate
+            if the boot device is Enabled.
+        Id:
+          description: The device ID fo the boot device.
+          type: string
+          x-longDescription: The value of this property shall indicate the device
+            ID for the boot device.
+        Index:
+          description: The index number of the boot device in the boot order list.
+          format: int64
+          nullable: true
+          type: integer
+          x-longDescription: The value of this property shall indicate the index number
+            of the boot device in the boot order list.
+        Name:
+          description: The fully qualified device descriptor (FQDD) of the boot device.
+          type: string
+          x-longDescription: The value of this property shall indicate the fully qualified
+            device descriptor (FQDD) of the boot device.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellBootSources.v1_3_0.DellBootSources'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

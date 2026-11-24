@@ -1,0 +1,283 @@
+components:
+  schemas:
+    DellFC_v1_4_0_DellFC:
+      additionalProperties: false
+      description: An instance of DellFC will have Fiber Channel device specific data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Bus:
+          description: This property represents the bus number of the PCI device.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the bus number of the PCI device.
+          x-versionAdded: v1_1_0
+        ChipType:
+          description: This property represents the chip type.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the chip type.
+          x-versionAdded: v1_1_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Device:
+          description: This property represents the device number of the PCI device.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the device number of the PCI
+            device.
+          x-versionAdded: v1_1_0
+        DeviceDescription:
+          description: A string that contains the friendly Fully Qualified Device
+            Description - a property that describes the device and its location.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the friendly Fully Qualified Device
+            Description - a property that describes the device and its location.
+          x-versionAdded: v1_3_0
+        DeviceName:
+          description: This property represents FC HBA device name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents FC HBA device name.
+          x-versionAdded: v1_1_0
+        EFIVersion:
+          description: This property represents the EFI version on the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the EFI version on the device.
+          x-versionAdded: v1_1_0
+        FCOSDriverVersion:
+          description: This property represents the FCOS OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the FCOS OS Driver version.
+          x-versionAdded: v1_4_0
+        FCTapeEnable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFC.yaml#/components/schemas/DellFC_FCTapeEnable
+          description: This property represents the FC Tape state.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the FC Tape state.
+          x-versionAdded: v1_1_0
+        FCoEOSDriverVersion:
+          description: This property represents the FCOE OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the FCOE OS Driver version.
+          x-versionAdded: v1_4_0
+        FabricLoginRetryCount:
+          description: This property represents the Fabric Login Retry Count.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Fabric Login Retry Count.
+          x-versionAdded: v1_1_0
+        FabricLoginTimeout:
+          description: This property represents the Fabric Login Timeout in milliseconds.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Fabric Login Timeout in
+            milliseconds.
+          x-versionAdded: v1_1_0
+        FamilyVersion:
+          description: This property represents the firmware version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the firmware version.
+        FramePayloadSize:
+          description: This property represents the frame payload size.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the frame payload size.
+          x-versionAdded: v1_1_0
+        Function:
+          description: This property represents the function number of the PCI device.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the function number of the PCI
+            device.
+          x-versionAdded: v1_1_0
+        HardZoneAddress:
+          description: This property represents the Hard Zone Address.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Hard Zone Address.
+          x-versionAdded: v1_1_0
+        HardZoneEnable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFC.yaml#/components/schemas/DellFC_HardZoneEnable
+          description: This property represents the Hard Zone state.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the Hard Zone state.
+          x-versionAdded: v1_1_0
+        ISCSIOSDriverVersion:
+          description: This property represents the ISCSI OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the ISCSI OS Driver version.
+          x-versionAdded: v1_4_0
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LANDriverVersion:
+          description: This property represents the LAN Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the LAN Driver version.
+          x-versionAdded: v1_4_0
+        LinkDownTimeout:
+          description: This property represents the Link Down Timeout in milliseconds.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Link Down Timeout in milliseconds.
+          x-versionAdded: v1_1_0
+        LoopResetDelay:
+          description: This property represents the Loop Reset Delay in seconds.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Loop Reset Delay in seconds.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        PartNumber:
+          description: The part number assigned by the organization that is responsible
+            for producing or manufacturing the FC device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The part number assigned by the organization that is
+            responsible for producing or manufacturing the FC device.
+          x-versionAdded: v1_1_0
+        PortDownRetryCount:
+          description: This property represents the Port Down Retry Count.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Port Down Retry Count.
+          x-versionAdded: v1_1_0
+        PortDownTimeout:
+          description: This property represents the Port Down Timeout in milliseconds.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Port Down Timeout in milliseconds.
+          x-versionAdded: v1_1_0
+        PortLoginRetryCount:
+          description: This property represents the Port Login Retry Count.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Port Login Retry Count.
+          x-versionAdded: v1_1_0
+        PortLoginTimeout:
+          description: This property represents the Port Login Timeout in milliseconds.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Port Login Timeout in milliseconds.
+          x-versionAdded: v1_1_0
+        ProductName:
+          description: This property represents the Product Name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Product Name.
+          x-versionAdded: v1_4_0
+        RDMAOSDriverVersion:
+          description: This property represents the RDMA OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the RDMA OS Driver version.
+          x-versionAdded: v1_4_0
+        SecondFCTargetLUN:
+          description: This property represents the Second FC Target LUN.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Second FC Target LUN.
+          x-versionAdded: v1_3_0
+        SecondFCTargetWWPN:
+          description: This property represents the Second FC Target World-Wide Port
+            Name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Second FC Target World-Wide
+            Port Name.
+          x-versionAdded: v1_3_0
+        SerialNumber:
+          description: A manufacturer-allocated number used to identify the FC device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A manufacturer-allocated number used to identify the
+            FC device.
+          x-versionAdded: v1_1_0
+        VendorName:
+          description: This property represents the Vendor Name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Vendor Name.
+          x-versionAdded: v1_4_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellFC will have Fiber Channel device specific
+        data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellFC.v1_4_0.DellFC'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

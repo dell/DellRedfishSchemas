@@ -1,0 +1,37 @@
+components:
+  schemas:
+    DellManagerAccount_v1_0_0_DellManagerAccount:
+      additionalProperties: false
+      description: This is the complex property is for the additional OEM properties
+        to complement DMTF ManagerAccount Schema.
+      properties:
+        SNMPv3PassphraseEnabled:
+          $ref: '#/components/schemas/DellManagerAccount_v1_0_0_EnabledStates'
+          description: The value of the property, if set to Enabled, will mean that
+            the AuthenticationKey and EncryptionKey properties will used for SNMP
+            authentication
+          nullable: true
+          readOnly: false
+          x-longDescription: The value of the property, if set to Enabled, will mean
+            that the AuthenticationKey and EncryptionKey properties will used for
+            SNMP authentication
+      type: object
+      x-longDescription: This is the complex property is for the additional OEM properties
+        to complement DMTF ManagerAccount Schema.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerAccount_v1_0_0_EnabledStates:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: The property associated with the value is Disabled
+        Enabled: The property associated with the value is Enabled
+      x-enumLongDescriptions:
+        Disabled: The property associated with the value is Disabled
+        Enabled: The property associated with the value is Enabled
+title: '#DellManagerAccount.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

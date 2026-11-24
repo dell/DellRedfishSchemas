@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.json",
     "$ref": "#/definitions/DellPCIeSSD",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "BusProtocol": {
             "enum": [
@@ -99,7 +99,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.v1_11_0.json#/definitions/DellPCIeSSD"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.v1_12_0.json#/definitions/DellPCIeSSD"
                 }
             ],
             "deletable": false,
@@ -362,21 +362,25 @@
             "enum": [
                 "On",
                 "Spun-Down",
+                "Spun-Up",
                 "Unknown"
             ],
             "enumDescriptions": {
                 "On": "On",
                 "Spun-Down": "Spun-Down",
+                "Spun-Up": "Spun-Up",
                 "Unknown": "Unknown"
             },
             "enumLongDescriptions": {
                 "On": "On",
                 "Spun-Down": "Spun-Down",
+                "Spun-Up": "Spun-Up",
                 "Unknown": "Unknown"
             },
             "enumVersionAdded": {
                 "On": "v1_11_0",
                 "Spun-Down": "v1_11_0",
+                "Spun-Up": "v1_12_0",
                 "Unknown": "v1_11_0"
             },
             "type": "string"

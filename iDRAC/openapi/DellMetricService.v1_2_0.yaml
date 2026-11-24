@@ -1,0 +1,134 @@
+components:
+  schemas:
+    DellMetricService_v1_2_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DellMetricService.ExportThermalHistory':
+          $ref: '#/components/schemas/DellMetricService_v1_2_0_ExportThermalHistory'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellMetricService_v1_2_0_ControlMetrics:
+      additionalProperties: false
+      description: The ControlMetrics action provides the ability to reset the metric
+        collection for a particular metric or metrics.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The ControlMetrics action provides the ability to reset the
+        metric collection for a particular metric or metrics.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellMetricService_v1_2_0_DellMetricService:
+      additionalProperties: false
+      description: Provides the ability to manage metrics.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DellMetricService_v1_2_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: Provides the ability to manage metrics.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellMetricService_v1_2_0_ExportThermalHistory:
+      additionalProperties: false
+      description: The ExportThermalHistory() method is used to exports the thermal
+        history of the system from Lifecycle Controller to a remote share, in xml
+        or csv format.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The ExportThermalHistory() method is used to exports the
+        thermal history of the system from Lifecycle Controller to a remote share,
+        in xml or csv format.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellMetricService_v1_2_0_ExportThermalHistoryRequestBody:
+      additionalProperties: false
+      description: The ExportThermalHistory() method is used to exports the thermal
+        history of the system from Lifecycle Controller to a remote share, in xml
+        or csv format.
+      properties:
+        FileName:
+          description: The target output file name.
+          type: string
+          x-longDescription: The target output file name.
+        FileType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricService.yaml#/components/schemas/DellMetricService_FileType
+          description: Type of exported file.
+          x-longDescription: Type of exported file.
+        IPAddress:
+          description: IP address of the network share.
+          type: string
+          x-longDescription: IP address of the network share.
+        Password:
+          description: Password of the account to access the share.
+          type: string
+          x-longDescription: Password of the account to access the share.
+        ShareName:
+          description: Name of the CIFS share or full path of the NFS share.
+          type: string
+          x-longDescription: Name of the CIFS share or full path of the NFS share.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricService.yaml#/components/schemas/DellMetricService_ShareType
+          description: Type of the network Share.
+          x-longDescription: Type of the network Share.
+        Username:
+          description: User name for the network share authentication.
+          type: string
+          x-longDescription: User name for the network share authentication.
+        Workgroup:
+          description: Workgroup for the CIFS share - optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share - optional.
+      required:
+      - FileType
+      - ShareType
+      type: object
+      x-longDescription: The ExportThermalHistory() method is used to exports the
+        thermal history of the system from Lifecycle Controller to a remote share,
+        in xml or csv format.
+title: '#DellMetricService.v1_2_0.DellMetricService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

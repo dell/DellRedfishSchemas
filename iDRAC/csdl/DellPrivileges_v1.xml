@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellPrivileges v1_0_0                                         -->
+<!--#                                                                               -->
+<!--# Copyright © 2025 Dell Inc. or its subsidiaries. All Rights Reserved.          -->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="OData" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+    </edmx:Reference>
+
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPrivileges">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <EntityType BaseType="Resource.v1_0_0.Resource" Name="DellPrivileges" Abstract="true">
+                <Annotation String="A custom OEM privilege resource for privilege management." Term="OData.Description"/>
+                <Annotation String="A custom OEM privilege resource for privilege management." Term="OData.LongDescription"/>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Insertable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Updatable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Bool="true" Property="Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Redfish.Uris">
+                    <Collection>
+                        <String>/redfish/v1/AccountService/Oem/Dell/Privileges/{PrivilegeId}</String>
+                    </Collection>
+                </Annotation>
+            </EntityType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPrivileges.v1_0_0">
+            <EntityType Name="DellPrivileges" BaseType="DellPrivileges.DellPrivileges">
+                <Annotation Term="OData.Description" String="A custom OEM privilege resource."/>
+                <Annotation Term="OData.LongDescription" String="A custom OEM privilege resource for privilege management."/>
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Property Name="PrivilegeId" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The unique identifier for this privilege."/>
+                    <Annotation Term="OData.LongDescription" String="The unique identifier for this privilege. This property shall be alphanumeric, start with a character, and have a maximum length of 32 characters."/>
+                    <Annotation Term="Redfish.Required"/>
+                    <Annotation Term="Redfish.RequiredOnCreate"/>
+                </Property>
+                <Property Name="Ownership" Type="DellPrivileges.v1_0_0.OwnershipType" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The ownership type of this privilege."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the ownership type indicating whether this is a DMTF standard, OEM predefined, or Custom user-created privilege."/>
+                </Property>
+                <Property Name="IsPredefined" Type="Edm.Boolean" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates if this is a predefined privilege."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate if this privilege is predefined and cannot be deleted. Predefined privileges include DMTF standard privileges and OEM predefined privileges."/>
+                </Property>
+            </EntityType>
+            <EnumType Name="OwnershipType">
+                <Member Name="DMTF">
+                    <Annotation Term="OData.Description" String="Standard DMTF privilege."/>
+                </Member>
+                <Member Name="OEM">
+                    <Annotation Term="OData.Description" String="OEM predefined privilege."/>
+                </Member>
+                <Member Name="Custom">
+                    <Annotation Term="OData.Description" String="Custom user-created privilege."/>
+                </Member>
+            </EnumType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

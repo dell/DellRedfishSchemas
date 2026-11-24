@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellBootSourcesRegistry  v1.0.0                                     -->
+<!--# This is DELL OEM Schema.                                                             -->
+<!--# Copyright 2014-2016 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Capabilities.V1.xml">
+    <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/AttributeRegistry_v1.xml">
+    <edmx:Include Namespace="AttributeRegistry"/>
+    <edmx:Include Namespace="AttributeRegistry.v1_0_0" />
+	<edmx:Include Namespace="AttributeRegistry.v1_0_1" />
+  </edmx:Reference>
+
+  <edmx:DataServices>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellBootSourcesRegistry">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+
+      <EntityType Name="DellBootSourcesRegistry" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.Description" String="An BootSources Registry is a set of key-value pairs which are specific to a particular implementation or product, such that creating standardized property names would be impractical.  This schema describes the structure of a Registry, and also includes mechanisms for building user interfaces (menus) allowing consistent navigation of the contents."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an BootSources registry for a Redfish implementation."/>
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record>
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record>
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Redfish.Uris">
+          <Collection>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/BootSources/BootSourcesRegistry</String>
+          </Collection>
+        </Annotation>
+      </EntityType>
+
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellBootSourcesRegistry.v1_0_0">
+
+      <EntityType Name="DellBootSourcesRegistry" BaseType="DellBootSourcesRegistry.DellBootSourcesRegistry">
+        <Property Name="Language" Type="Edm.String" Nullable="false" >
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This is the RFC 5646 compliant language code for the registry."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be a string consisting of an RFC 5646 language code"/>
+          <Annotation Term="Redfish.Required"/>
+        </Property>
+        <Property Name="RegistryVersion" Type="Edm.String" Nullable="false" >
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This is the BootSources registry version which is used in the middle portion of a BootSourcesRegistry."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be the version of this BootSources registry. The format of this string shall be of the format majorversion.minorversion.errata in compliance with Protocol Version section of the Redfish specification."/>
+          <Annotation Term="Redfish.Required"/>
+        </Property>
+        <Property Name="OwningEntity" Type="Edm.String" Nullable="false" >
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="This is the organization or company that publishes this registry."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be a string that represents the publisher of this registry."/>
+          <Annotation Term="Redfish.Required"/>
+        </Property>
+        <Property Name="SupportedSystems" Type="Collection(DellBootSourcesRegistry.v1_0_0.SupportedSystems)" Nullable="false" >
+          <Annotation Term="OData.Description" String="Array of systems supported by this BootSources registry."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing a list of systems supported by this BootSources registry."/>
+        </Property>
+        <Property Name="RegistryEntries" Type="DellBootSourcesRegistry.v1_0_0.RegistryEntries" Nullable="false" >
+          <Annotation Term="OData.Description" String="List of all attributes and their metadata for this component."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall a list of all attributes for this component, along with their possible values, dependencies, and other metadata."/>
+        </Property>
+      </EntityType>
+
+      <ComplexType Name="SupportedSystems">
+        <Annotation Term="OData.Description" String="A system that this attribute registry supports."/>
+        <Annotation Term="OData.LongDescription" String="This type shall describe a system that this attribute registry supports."/>
+        <Property Name="ProductName" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The product name of the computer system to which this attribute registry applies."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the product name of the computer system to which this attribute registry applies."/>
+        </Property>
+        <Property Name="SystemId" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The ID of the systems to which this attribute registry applies."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the system ID that identifies the systems to which this attribute registry applies.  This can be identified by one or more properties in the computer system resource, such as Model, SubModel, or SKU."/>
+          <Annotation Term="Validation.Pattern" String="^[A-Za-z0-9]+$"/>
+        </Property>
+      </ComplexType>
+
+      <ComplexType Name="RegistryEntries">
+        <Property Name="Attributes" Type="Collection(DellBootSourcesRegistry.v1_0_0.Attributes)" Nullable="false" >
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The array containing the attributes and their possible values."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing the attributes and their possible values and other metadata."/>
+        </Property>
+        <Property Name="Menus" Type="Collection(DellBootSourcesRegistry.v1_0_0.Menus)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The array containing the attributes menus and their hierarchy."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing the attributes menus and their hierarchy."/>
+        </Property>
+        <Property Name="Dependencies" Type="Collection(DellBootSourcesRegistry.v1_0_0.Dependencies)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The array containing a list of dependencies of attributes on this component."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing a list of dependencies of attributes on this component."/>
+        </Property>
+      </ComplexType>
+      <ComplexType Name="Dependencies">
+        <Annotation Term="OData.Description" String="The dependency of attributes on this component."/>
+        <Annotation Term="OData.LongDescription" String="This type shall describe a dependency of attributes on this component."/>
+        <Property Name="Dependency" Type="DellBootSourcesRegistry.v1_0_0.Dependency" Nullable="false">
+          <Annotation Term="OData.Description" String="The dependency expression for one or more attributes in this attribute registry."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the dependency expression for one or more attributes in this attribute registry."/>
+        </Property>
+        <Property Name="DependencyFor" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The `AttributeName` of the attribute whose change triggers the evaluation of this dependency expression."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the `AttributeName` of the attribute whose change triggers the evaluation of this dependency expression."/>
+          <Annotation Term="Validation.Pattern" String="^[A-Za-z][A-Za-z0-9_]+$"/>
+        </Property>
+        <Property Name="Type" Type="DellBootSourcesRegistry.v1_0_0.DependencyType" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The type of the dependency structure."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain an enumeration that describes the type for the attribute dependency."/>
+        </Property>
+      </ComplexType>
+      <ComplexType Name="Dependency">
+        <Annotation Term="OData.Description" String="The dependency expression for one or more attributes in this attribute registry."/>
+        <Annotation Term="OData.LongDescription" String="This type shall describe the dependency expression for one or more attributes in this attribute registry."/>
+        <Property Name="MapFrom" Type="Collection(DellBootSourcesRegistry.v1_0_0.MapFrom)" Nullable="false">
+          <Annotation Term="OData.Description" String="An array of the map-from conditions for a mapping dependency."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain an array containing the map-from conditions for a dependency of the `Map` type."/>
+        </Property>
+        <Property Name="MapToAttribute" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The `AttributeName` of the attribute that is affected by this dependency expression."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the `AttributeName` of the attribute that is affected by this dependency expression."/>
+          <Annotation Term="Validation.Pattern" String="^[A-Za-z][A-Za-z0-9_]+$"/>
+        </Property>
+        <Property Name="MapToProperty" Type="DellBootSourcesRegistry.v1_0_0.MapToProperty" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The metadata property for the attribute that contains the map-from condition that evaluates this dependency expression."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the metadata property for the attribute that the `MapFromAttribute` property specifies that evaluates this dependency expression.  For example, this value could be the `MapFromAttribute` `CurrentValue` or `ReadOnly` state."/>
+        </Property>
+        <Property Name="MapToValue" Type="Edm.PrimitiveType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The value that the map-to property changes to if the dependency expression evaluates to `true`."/>
+          <Annotation Term="OData.LongDescription" String="The value that the property in `MapToProperty` in the attribute specified in `MapToAttribute` changes to if the dependency expression evaluates to `true`."/>
+        </Property>
+      </ComplexType>
+
+      <ComplexType Name="MapFrom">
+        <Annotation Term="OData.Description" String="A map-from condition for mapping dependency."/>
+        <Annotation Term="OData.LongDescription" String="This type shall describe a map-from condition for a dependency of the Map type."/>
+        <Property Name="MapFromAttribute" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The attribute to use to evaluate this dependency expression."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the `AttributeName` for the attribute to use to evaluate this dependency expression term."/>
+          <Annotation Term="Validation.Pattern" String="^[A-Za-z][A-Za-z0-9_]+$"/>
+        </Property>
+        <Property Name="MapFromProperty" Type="DellBootSourcesRegistry.v1_0_0.MapFromProperty" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The metadata property for the attribute that the `MapFromAttribute` property specifies to use to evaluate this dependency expression."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the metadata property for the attribute that the `MapFromAttribute` property specifies to use to evaluate this dependency expression.  For example, this value could be the `MapFromAttribute` `CurrentValue`, or `ReadOnly` state."/>
+        </Property>
+        <Property Name="MapFromCondition" Type="DellBootSourcesRegistry.v1_0_0.MapFromCondition" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The condition to use to evaluate this dependency expression."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the condition to use to evaluate this dependency expression.  For example, `EQU` or `NEQ`."/>
+        </Property>
+        <Property Name="MapFromValue" Type="Edm.PrimitiveType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The value to use to evaluate this dependency expression."/>
+          <Annotation Term="OData.LongDescription" String="The value that the property in `MapFromProperty` in the attribute in `MapFromAttribute` to use to evaluate this dependency expression."/>
+        </Property>
+        <Property Name="MapTerms" Type="DellBootSourcesRegistry.v1_0_0.MapTerms" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The logical term that combines two or more map-from conditions in this dependency expression.  For example, `AND` for logical AND, or `OR` for logical OR."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the logical term that combines two or more `MapFrom` conditions in this dependency expression.  For example, `AND` for logical AND, or `OR` for logical OR.  If multiple logical terms are present in a dependency expression, they should be evaluated in array order, meaning they are evaluated left-to-right when displayed as a logic expression."/>
+        </Property>
+      </ComplexType>
+
+      <EnumType Name="AttributeType">
+        <Member Name="Enumeration">
+          <Annotation Term="OData.Description" String="A list of the known possible enumerated values."/>
+        </Member>
+        <Member Name="String">
+          <Annotation Term="OData.Description" String="Free-form text in their values."/>
+        </Member>
+        <Member Name="Integer">
+          <Annotation Term="OData.Description" String="An integer value."/>
+        </Member>
+        <Member Name="Boolean">
+          <Annotation Term="OData.Description" String="A flag with a `true` or `false` value."/>
+        </Member>
+        <Member Name="Password">
+          <Annotation Term="OData.Description" String="Password values that do not appear as plain text.  The value is `null` in responses."/>
+        </Member>
+      </EnumType>
+
+      <EnumType Name="DependencyType">
+        <Member Name="Map">
+          <Annotation Term="OData.Description" String="A simple mapping dependency.  If the condition evaluates to `true`, the attribute or state changes to the mapped value."/>
+        </Member>
+      </EnumType>
+
+      <EnumType Name="MapFromCondition">
+        <Member Name="EQU">
+          <Annotation Term="OData.Description" String="The logical operation for 'Equal'."/>
+        </Member>
+        <Member Name="NEQ">
+          <Annotation Term="OData.Description" String="The logical operation for 'Not Equal'."/>
+        </Member>
+        <Member Name="GTR">
+          <Annotation Term="OData.Description" String="The logical operation for 'Greater than'."/>
+        </Member>
+        <Member Name="GEQ">
+          <Annotation Term="OData.Description" String="The logical operation for 'Greater than or Equal'."/>
+        </Member>
+        <Member Name="LSS">
+          <Annotation Term="OData.Description" String="The logical operation for 'Less than'."/>
+        </Member>
+        <Member Name="LEQ">
+          <Annotation Term="OData.Description" String="The logical operation for 'Less than or Equal'."/>
+        </Member>
+      </EnumType>
+
+      <EnumType Name="MapFromProperty">
+        <Member Name="CurrentValue">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `CurrentValue`."/>
+        </Member>
+        <Member Name="DefaultValue">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `DefaultValue`."/>
+        </Member>
+        <Member Name="ReadOnly">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `ReadOnly` state."/>
+        </Member>
+        <Member Name="WriteOnly">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `WriteOnly` state."/>
+        </Member>
+        <Member Name="GrayOut">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `GrayOut` state."/>
+        </Member>
+        <Member Name="Hidden">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `Hidden` state."/>
+        </Member>
+        <Member Name="LowerBound">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `LowerBound`."/>
+        </Member>
+        <Member Name="UpperBound">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `UpperBound`."/>
+        </Member>
+        <Member Name="MinLength">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `MinLength`."/>
+        </Member>
+        <Member Name="MaxLength">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `MaxLength`."/>
+        </Member>
+        <Member Name="ScalarIncrement">
+          <Annotation Term="OData.Description" String="The dependency on an attribute's `ScalarIncrement`."/>
+        </Member>
+      </EnumType>
+
+      <EnumType Name="MapTerms">
+        <Member Name="AND">
+          <Annotation Term="OData.Description" String="The operation used for logical 'AND' of dependency terms."/>
+        </Member>
+        <Member Name="OR">
+          <Annotation Term="OData.Description" String="The operation used for logical 'OR' of dependency terms."/>
+        </Member>
+      </EnumType>
+
+      <EnumType Name="MapToProperty">
+        <Member Name="CurrentValue">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `CurrentValue`."/>
+        </Member>
+        <Member Name="DefaultValue">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `DefaultValue`."/>
+        </Member>
+        <Member Name="ReadOnly">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `ReadOnly` state."/>
+        </Member>
+        <Member Name="WriteOnly">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `WriteOnly` state."/>
+        </Member>
+        <Member Name="GrayOut">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `GrayOut` state."/>
+        </Member>
+        <Member Name="Hidden">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `Hidden` state."/>
+        </Member>
+        <Member Name="Immutable">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `Immutable` state."/>
+        </Member>
+        <Member Name="HelpText">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `HelpText`."/>
+        </Member>
+        <Member Name="WarningText">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `WarningText`."/>
+        </Member>
+        <Member Name="DisplayName">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `DisplayName`."/>
+        </Member>
+        <Member Name="DisplayOrder">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `DisplayName`."/>
+        </Member>
+        <Member Name="LowerBound">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `LowerBound`."/>
+        </Member>
+        <Member Name="UpperBound">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `UpperBound`."/>
+        </Member>
+        <Member Name="MinLength">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `MinLength`."/>
+        </Member>
+        <Member Name="MaxLength">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `MaxLength`."/>
+        </Member>
+        <Member Name="ScalarIncrement">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `ScalarIncrement`."/>
+        </Member>
+        <Member Name="ValueExpression">
+          <Annotation Term="OData.Description" String="The dependency that affects an attribute's `ValueExpression`."/>
+        </Member>
+      </EnumType>
+      <ComplexType Name="Menus">
+        <Annotation Term="OData.Description" String="An attribute's menu and its hierarchy."/>
+        <Annotation Term="OData.LongDescription" String="This type shall describe an attribute's menu and its hierarchy."/>
+        <Property Name="MenuName" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The unique name string of this menu."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the name of this menu that is unique in this attribute registry."/>
+          <Annotation Term="Validation.Pattern" String="^[^/]+$"/>
+        </Property>
+        <Property Name="DisplayName" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The user-readable display string of this menu in the defined language."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the user-readable display string of the menu in the defined language."/>
+        </Property>
+        <Property Name="DisplayOrder" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The ascending order, as a number, in which this menu appears relative to other menus."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the ascending order, as a number, in which this menu appears relative to other menus."/>
+        </Property>
+        <Property Name="ReadOnly" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An indication of whether this menu is read-only.  A read-only menu, its properties, and sub-menus are not accessible in user interfaces."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether this menu is read-only.  A read-only menu is not accessible in user interfaces, and all properties contained in that menu and its sub-menus are read-only."/>
+        </Property>
+        <Property Name="GrayOut" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An indication of whether this menu is grayed out.  A grayed-only menu is not accessible in user interfaces."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether this menu is grayed out.  A grayed-only menu is not accessible in user interfaces."/>
+        </Property>
+        <Property Name="MenuPath" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The path to the menu names that describes this menu hierarchy relative to other menus."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the menu hierarchy of this menu, in the form of a path to the menu names.  It shall start with `./` to indicate the root menu, followed by the menu names with `/` characters to delineate the menu traversal."/>
+          <Annotation Term="Validation.Pattern" String="^\.\/([^/]+(\/[^/]+)*)?$"/>
+        </Property>
+      </ComplexType>
+
+      <ComplexType Name="Attributes">
+         <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+		      <Property Name="Entry" Type="Collection(DellBootSourcesRegistry.v1_0_0.Entry)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The array containing possible values for attributes of type 'OrderedList'."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing the possible values of an attribute of type 'OrderedList'."/>
+        </Property>
+      </ComplexType>
+
+	  <ComplexType Name="Entry">
+        <Property Name="Enabled" Type="Edm.Boolean">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The attribute that is used set if the boot device is Enabled."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall be used to indicate if the boot device is Enabled."/>
+        </Property>
+        <Property Name="Id" Type="Edm.String" Nullable="false">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The device ID fo the boot device."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the device ID for the boot device."/>
+        </Property>
+        <Property Name="Index" Type="Edm.Int64">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The index number of the boot device in the boot order list."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the index number of the boot device in the boot order list."/>
+        </Property>
+        <Property Name="Name" Type="Edm.String" Nullable="false">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The fully qualified device descriptor (FQDD) of the boot device."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the fully qualified device descriptor (FQDD) of the boot device."/>
+        </Property>
+        <Property Name="DisplayName" Type="Edm.String" Nullable="false">
+		  <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The display name of the boot device."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate the display name of the boot device."/>
+        </Property>
+      </ComplexType>
+
+   </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellBootSourcesRegistry.v1_1_0">
+      <Annotation Term="OData.Description" String="This version was created to force the regeneration of JSON Schema so that OData properties are not included.  It was also created to update the description of AttributeType Password enumeration.  It also updates descriptions that this schema defines."/>
+      <EntityType Name="DellBootSourcesRegistry" BaseType="DellBootSourcesRegistry.v1_0_0.DellBootSourcesRegistry"/>
+
+      <ComplexType Name="Attributes" BaseType="DellBootSourcesRegistry.v1_0_0.Attributes">
+        <Property Name="AttributeName" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The unique name for the attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the name of this attribute that is unique in this Attribute Registry."/>
+          <Annotation Term="Validation.Pattern" String="^[A-Za-z][A-Za-z0-9_]+$"/>
+          <Annotation Term="Redfish.Required"/>
+        </Property>
+        <Property Name="CurrentValue" Type="Edm.PrimitiveType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The placeholder of the current value for the attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the placeholder of the current value for the attribute, to aid in evaluating dependencies.  The evaluation results of the Dependencies array might affect the current attribute value."/>
+        </Property>
+        <Property Name="DisplayName" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The user-readable display string for the attribute in the defined language."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the user-readable display string for the attribute in the defined language."/>
+        </Property>
+        <Property Name="DisplayOrder" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The ascending order, as a number, in which this attribute appears relative to other attributes."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the ascending order, as a number, in which this attribute appears relative to other attributes."/>
+        </Property>
+        <Property Name="HelpText" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The help text for the attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the help text for the attribute."/>
+        </Property>
+        <Property Name="WarningText" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The warning text for the attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the warning text for the attribute."/>
+        </Property>
+        <Property Name="Hidden" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An indication of whether this attribute is hidden in user interfaces."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether this attribute is hidden in user interfaces.  The evaluation results of the Dependencies array might affect the hidden state of an attribute."/>
+        </Property>
+        <Property Name="Immutable" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An indication of whether this attribute is immutable.  Immutable attributes shall not be modified and typically reflect a hardware state."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether this attribute is immutable.  Immutable attributes shall not be modified and typically reflect a hardware state."/>
+        </Property>
+        <Property Name="MenuPath" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The path that describes the menu hierarchy of this attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the menu hierarchy of this attribute, in the form of a path to the menu names.  It shall start with `./` to indicate the root menu, followed by the menu names with `/` characters to delineate the menu traversal."/>
+          <Annotation Term="Validation.Pattern" String="^\.\/([^/]+(\/[^/]+)*)?$"/>
+        </Property>
+        <Property Name="ReadOnly" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An indication of whether this attribute is read-only.  A read-only attribute cannot be modified, and should be grayed out in user interfaces."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether this attribute is read-only.  A read-only attribute cannot be modified, and should be grayed out in user interfaces.  The evaluation results of the Dependencies array might affect the read-only state of an attribute."/>
+        </Property>
+        <Property Name="WriteOnly" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An indication of whether this attribute is write-only.  A write-only attribute reverts to its initial value after settings are applied."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether this attribute is write-only.  A write-only attribute reverts to its initial value after settings are applied."/>
+        </Property>
+        <Property Name="GrayOut" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An indication of whether this attribute is grayed out.  A grayed-out attribute is not active and is grayed out in user interfaces but the attribute value can be modified."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether this attribute is grayed out.  A grayed-out attribute is not active and is grayed out in user interfaces but the attribute value can be modified.  The evaluation results of the Dependencies array might affect the grayed-out state of an attribute."/>
+        </Property>
+        <Property Name="ResetRequired" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An indication of whether a system or device reset is required for this attribute value change to take effect."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether a system or device reset is required for this attribute value change to take effect."/>
+        </Property>
+        <Property Name="MaxLength" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The maximum character length of a string attribute."/>
+          <Annotation Term="OData.LongDescription" String="This numeric property shall contain the maximum character length of an attribute of the String type."/>
+        </Property>
+        <Property Name="MinLength" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The minimum character length of the string attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a number indicating the minimum character length of an attribute of the String type."/>
+        </Property>
+        <Property Name="UpperBound" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The upper limit for an integer attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a number indicating the upper limit for an integer attribute."/>
+        </Property>
+        <Property Name="LowerBound" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The lower limit for an integer attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a number indicating the lower limit for an integer attribute."/>
+		</Property>
+        <Property Name="Type" Type="DellBootSourcesRegistry.v1_1_0.AttributeType" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The attribute type."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain an enumeration that describes the attribute type."/>
+        </Property>
+        <Property Name="Value" Type="Collection(DellBootSourcesRegistry.v1_1_0.AttributeValue)" Nullable="false">
+          <Annotation Term="OData.Description" String="An array of the possible values for enumerated attribute values."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain an array containing the possible values of an attribute of the Enumeration type."/>
+        </Property>
+        <Property Name="ValueExpression" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A valid regular expression, according to the Perl regular expression dialect, that validates the attribute value.  Applies to only string and integer attributes."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a valid regular expression, according to the Perl regular expression dialect, that validates the attribute value.  Applies to only string and integer attributes."/>
+        </Property>
+      </ComplexType>
+
+      <EnumType Name="AttributeType">
+        <Member Name="Enumeration">
+          <Annotation Term="OData.Description" String="A list of the known possible enumerated values."/>
+        </Member>
+        <Member Name="String">
+          <Annotation Term="OData.Description" String="Free-form text in their values."/>
+        </Member>
+        <Member Name="Integer">
+          <Annotation Term="OData.Description" String="An integer value."/>
+        </Member>
+        <Member Name="Boolean">
+          <Annotation Term="OData.Description" String="A flag with a `true` or `false` value."/>
+        </Member>
+        <Member Name="Password">
+          <Annotation Term="OData.Description" String="Password values that do not appear as plain text.  The value shall be null in responses."/>
+        </Member>
+        <Member Name="OrderedList">
+          <Annotation Term="OData.Description" String="A list of items of any sort."/>
+        </Member>
+      </EnumType>
+
+      <ComplexType Name="AttributeValue">
+        <Annotation Term="OData.Description" String="A possible value for an enumeration attribute."/>
+        <Annotation Term="OData.LongDescription" String="This type shall describe a possible enumeration attribute value."/>
+        <Property Name="ValueName" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The unique value name for the attribute."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a string representing the value name for the attribute.  ValueName is a unique string within the list of possible values in the Value array for an attribute."/>
+          <Annotation Term="Redfish.Required"/>
+        </Property>
+        <Property Name="ValueDisplayName" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A user-readable display string of the value for the attribute in the defined language."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a string representing the user-readable display string of the value for the attribute in the defined language."/>
+        </Property>
+      </ComplexType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellBootSourcesRegistry.v1_2_0">
+      <Annotation Term="OData.Description" String="This version was created to define Dependency object, Menu and SupportedSystem complex properties in this namespace and to start using these. "/>
+      <EntityType Name="DellBootSourcesRegistry" BaseType="DellBootSourcesRegistry.v1_1_0.DellBootSourcesRegistry"/>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

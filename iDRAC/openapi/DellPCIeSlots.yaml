@@ -1,0 +1,19 @@
+components:
+  schemas:
+    DellPCIeSlots_DellPCIeSlotLinks:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSlots.v1_1_0.yaml#/components/schemas/DellPCIeSlots_v1_1_0_DellPCIeSlotLinks
+      description: This is the complex property is for the additional OEM Links realted
+        to the DMTF PCIeSlots Schema.
+      x-longDescription: This is the complex property is for the additional OEM Links
+        realted to the DMTF PCIeSlots Schema.
+    DellPCIeSlots_DellPCIeSlots:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSlots.v1_1_0.yaml#/components/schemas/DellPCIeSlots_v1_1_0_DellPCIeSlots
+      description: This is the complex property is for the additional OEM properties
+        to complement DMTF PCIeSlots Schema.
+      x-longDescription: This is the complex property is for the additional OEM properties
+        to complement DMTF PCIeSlots Schema.
+title: '#DellPCIeSlots'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

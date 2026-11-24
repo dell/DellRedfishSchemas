@@ -1,0 +1,16 @@
+components:
+  schemas:
+    DellAttributeRegistry_DellAttributeRegistry:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAttributeRegistry.v1_2_1.yaml#/components/schemas/DellAttributeRegistry_v1_2_1_DellAttributeRegistry
+      description: The DellAttributeRegistry schema contains a set of key-value pairs
+        that represents the structure of a Registry. It includes mechanisms for building
+        user interfaces (menus), allowing consistent navigation of the contents. The
+        Attribute Registry is specific to a particular implementation or product.
+        The attributes and property names are not standardized.
+      x-longDescription: This resource shall be used to represent an Attribute registry
+        for a Redfish implementation.
+title: '#DellAttributeRegistry.DellAttributeRegistry'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellNetworkPort_DellNetworkPort:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkPort.v1_0_0.yaml#/components/schemas/DellNetworkPort_v1_0_0_DellNetworkPort
+      description: This property shall represent the Oem properties for a DellNetworkPort
+        resource.
+      x-longDescription: This property shall represent the Oem properties for a DellNetworkPort
+        resource.
+title: '#DellNetworkPort'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

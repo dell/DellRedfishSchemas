@@ -1,0 +1,71 @@
+components:
+  schemas:
+    DellPrivileges_v1_0_0_DellPrivileges:
+      additionalProperties: false
+      description: A custom OEM privilege resource.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        IsPredefined:
+          description: Indicates if this is a predefined privilege.
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate if this privilege is predefined
+            and cannot be deleted. Predefined privileges include DMTF standard privileges
+            and OEM predefined privileges.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Ownership:
+          $ref: '#/components/schemas/DellPrivileges_v1_0_0_OwnershipType'
+          description: The ownership type of this privilege.
+          readOnly: true
+          x-longDescription: This property shall contain the ownership type indicating
+            whether this is a DMTF standard, OEM predefined, or Custom user-created
+            privilege.
+        PrivilegeId:
+          description: The unique identifier for this privilege.
+          readOnly: true
+          type: string
+          x-longDescription: The unique identifier for this privilege. This property
+            shall be alphanumeric, start with a character, and have a maximum length
+            of 32 characters.
+      required:
+      - PrivilegeId
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: A custom OEM privilege resource for privilege management.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-requiredOnCreate:
+      - PrivilegeId
+    DellPrivileges_v1_0_0_OwnershipType:
+      enum:
+      - DMTF
+      - OEM
+      - Custom
+      type: string
+      x-enumDescriptions:
+        Custom: Custom user-created privilege.
+        DMTF: Standard DMTF privilege.
+        OEM: OEM predefined privilege.
+title: '#DellPrivileges.v1_0_0.DellPrivileges'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,330 @@
+components:
+  schemas:
+    DellVirtualDisk_v1_3_0_DellVirtualDisk:
+      additionalProperties: false
+      description: An instance of DellVirtualDisk will have data specific to the Virtual
+        Disks in the system.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        AllowedOperations:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_AllowedOperations
+          description: The allowed operations for the virtual disk.
+          readOnly: true
+          x-longDescription: This property shall contain the allowed operations that
+            can be performed on the virtual disk.
+          x-versionAdded: v1_3_0
+        AvailableCachePolicies:
+          description: The cache policies available for the virtual disk.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_AvailableCachePolicies
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain a collection of cache policies
+            supported by the virtual disk, as reported by the storage controller.
+          x-versionAdded: v1_3_0
+        BadBlocksFound:
+          description: An indication of whether bad blocks have been detected on the
+            virtual disk.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether bad blocks have
+            been detected on the virtual disk.
+          x-versionAdded: v1_3_0
+        BusProtocol:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_BusProtocol
+          description: The property shall represent the bus protocol.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the bus protocol.
+        Cachecade:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_Cachecade
+          description: The property shall represent the Cachecade property can have
+            following values and shall be one of the following values:0-Not a cachecade
+            Virtual Disk,  1-Cachecade Virtual Disk.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the Cachecade property can
+            have following values and shall be one of the following values:0-Not a
+            cachecade Virtual Disk,  1-Cachecade Virtual Disk.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DiskCachePolicy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_DiskCachePolicy
+          description: The property shall represent the policy for physical disks
+            included in the virtual disk.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the policy for physical
+            disks included in the virtual disk.
+        Encrypted:
+          description: An indication of whether the virtual disk is protected through
+            encryption.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the virtual disk
+            is currently protected through encryption.
+          x-versionAdded: v1_3_0
+        EnhancedCacheEnabled:
+          description: An indication of whether enhanced cache is enabled for the
+            virtual disk.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether enhanced cache is
+            enabled for the virtual disk.
+          x-versionAdded: v1_3_0
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LastSystemInventoryTime:
+          description: This property provides the time when System Inventory Collection
+            On Reboot (CSIOR) was last performed or the object was last updated on
+            iDRAC. The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time when System Inventory
+            Collection On Reboot (CSIOR) was last performed or the object was last
+            updated on iDRAC. The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        LastUpdateTime:
+          description: This property provides the time when the data was last updated.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time when the data was last
+            updated. The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        LockStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_LockStatus
+          description: The property shall represent if this Virtual Disk is locked.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent if this Virtual Disk is
+            locked.
+        MediaType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_MediaType
+          description: The property shall represent the drive media type.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the drive media type.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        ObjectStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_ObjectStatus
+          description: This property represents the virtual disk configuration state.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the virtual disk configuration
+            state.
+          x-versionAdded: v1_1_0
+        OperationName:
+          description: This property represents the operation that is running on a
+            virtual disk in background. If no operation is running, the value is "None".
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the operation that is running
+            on a virtual disk in background. If no operation is running, the value
+            is "None".
+          x-versionAdded: v1_1_0
+        OperationPercentComplete:
+          description: This property represents the percentage of completion of the
+            operation that is represented by the OperationName property.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the percentage of completion
+            of the operation that is represented by the OperationName property.
+          x-versionAdded: v1_1_0
+        OperationalStates:
+          description: The current operational states of the virtual disk.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_OperationalStates
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain a collection of values representing
+            the current operational states of an active or recent virtual disk operation.
+          x-versionAdded: v1_3_0
+        PendingChanges:
+          description: The configuration changes that are pending for the virtual
+            disk.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_PendingChanges
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain a collection of configuration
+            updates that have been requested but not yet applied to the virtual disk.
+          x-versionAdded: v1_3_0
+        PendingConfigurationStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_PendingConfigurationStatus
+          description: The status of pending configuration changes on the virtual
+            disk.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain a value indicating the status
+            associated with any pending operations or configuration changes on the
+            virtual disk.
+          x-versionAdded: v1_3_0
+        PendingOperations:
+          description: The operations that are scheduled but not yet completed for
+            the virtual disk.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_PendingOperations
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain a collection of operations
+            that are scheduled for the virtual disk but have not yet been completed.
+          x-versionAdded: v1_3_0
+        PrimaryStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_PrimaryStatus
+          description: This property represents the status of the device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the status of the device.
+          x-versionAdded: v1_1_0
+        ProgressPercent:
+          description: The completion percentage of an ongoing operation on the virtual
+            disk.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the completion percentage
+            of an ongoing operation on the virtual disk. A value of 0 indicates no
+            operation is in progress.
+          x-versionAdded: v1_3_0
+        RaidStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_RaidStatus
+          description: This property represents the RAID specific status.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the RAID specific status.
+          x-versionAdded: v1_1_0
+        ReadCachePolicy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_ReadCachePolicy
+          description: The property shall represent the current read policy.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the current read policy.
+        RemainingRedundancy:
+          description: This property provides information about the remaining redundancy
+            of the virtual disk.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property provides information about the remaining
+            redundancy of the virtual disk.
+          x-versionAdded: v1_1_0
+        SpanDepth:
+          description: The property shall represent the number of spans in virtual
+            disk.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the number of spans in virtual
+            disk.
+        SpanLength:
+          description: The property shall represent the number of physical disks per
+            span.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the number of physical disks
+            per span.
+        StartingLBAinBlocks:
+          description: This property represents the starting logical block address
+            in blocks for virtual disk.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the starting logical block address
+            in blocks for virtual disk.
+          x-versionAdded: v1_1_0
+        StorageCapabilities:
+          description: The functional capabilities supported by the virtual disk.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_StorageCapabilities
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain a collection of functional
+            features and attributes supported by the virtual disk.
+          x-versionAdded: v1_3_0
+        StripeSize:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_StripeSize
+          description: This property represents the current strip size.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the current strip size.
+          x-versionAdded: v1_1_0
+        T10PIStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_T10PIStatus
+          description: T10PIStatus indicates whether T10 Protection Information is
+            enabled on the virtual disk.
+          nullable: true
+          readOnly: true
+          x-longDescription: T10PIStatus indicates whether T10 Protection Information
+            is enabled on the virtual disk.
+          x-versionAdded: v1_1_0
+        VirtualDiskEPDPassthroughSupported:
+          description: An indication of whether Emergency Power Down passthrough is
+            supported for the virtual disk.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether Emergency Power
+            Down (EPD) passthrough is supported for the virtual disk.
+          x-versionAdded: v1_3_0
+        VirtualDiskTargetID:
+          description: The property shall represent the virtual disk target number.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the virtual disk target
+            number.
+        WriteCachePolicy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.yaml#/components/schemas/DellVirtualDisk_WriteCachePolicy
+          description: The property shall represent the current write policy.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the current write policy.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellVirtualDisk will have data specific to
+        the Virtual Disks in the system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellVirtualDisk.v1_3_0.DellVirtualDisk'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

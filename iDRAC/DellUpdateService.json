@@ -1,39 +1,69 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ConfigureCX8WriteProtect": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_4_0.json#/definitions/ConfigureCX8WriteProtect"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.json#/definitions/ConfigureCX8WriteProtect"
                 }
             ],
             "description": "This action supports for PCIe CX-8 in band updates only, and users will need to manually disable #WP before the update and enable #WP after the update is completed.",
             "longDescription": "This action supports for PCIe CX-8 in band updates only, and users will need to manually disable #WP before the update and enable #WP after the update is completed."
         },
+        "ConfigureHardwareWriteProtect": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.json#/definitions/ConfigureHardwareWriteProtect"
+                }
+            ],
+            "description": "This action configures hardware write protection for supported components. Users will need to manually disable write protection before firmware updates and enable it after updates are completed.",
+            "longDescription": "This action configures hardware write protection for supported components. Users will need to manually disable write protection before firmware updates and enable it after updates are completed."
+        },
         "DellOemUpdateService": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_4_0.json#/definitions/DellOemUpdateService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.json#/definitions/DellOemUpdateService"
                 }
             ],
             "description": "This is the complex property for the additional OEM Links.",
             "longDescription": "This is the complex property for the additional OEM Links."
         },
+        "HardwareComponentType": {
+            "enum": [
+                "Default"
+            ],
+            "enumDescriptions": {
+                "Default": "Apply write protection configuration to all supported hardware components."
+            },
+            "enumLongDescriptions": {
+                "Default": "Apply write protection configuration to all supported hardware components. This is the default value and currently the only supported option."
+            },
+            "type": "string"
+        },
         "Install": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_4_0.json#/definitions/Install"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.json#/definitions/Install"
                 }
             ],
             "description": "This action is used to install firmware inventory instances",
             "longDescription": "This action shall perform install of firmware inventory instances"
         },
+        "InstallStagedPackages": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.json#/definitions/InstallStagedPackages"
+                }
+            ],
+            "description": "This action creates install jobs for all eligible firmware packages in the LocalImageStore collection. Supports @Redfish.OperationApplyTime (Immediate or OnReset).",
+            "longDescription": "This action accepts no package list parameter. Install jobs are created for all packages with PackageValidationStatus = Success in the LocalImageStore collection based on the operation apply time. The action supports @Redfish.OperationApplyTime with values Immediate (install now) or OnReset (install on next reboot)."
+        },
         "RecoverFirmware": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_4_0.json#/definitions/RecoverFirmware"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.json#/definitions/RecoverFirmware"
                 }
             ],
             "description": "This action shall recover BOSS controller firmware in case of root of trust (RoT) failure.",

@@ -1,0 +1,13 @@
+components:
+  schemas:
+    DellServiceRoot_DellServiceRoot:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellServiceRoot.v1_1_0.yaml#/components/schemas/DellServiceRoot_v1_1_0_DellServiceRoot
+      description: This is the complex property is for the additional OEM properties
+        to complement DMTF ServiceRoot Schema.
+      x-longDescription: This is the complex property is for the additional OEM properties
+        to complement DMTF ServiceRoot Schema. This shall be used to represent an
+        OEM Service Root for a Redfish implementation.
+title: '#DellServiceRoot'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

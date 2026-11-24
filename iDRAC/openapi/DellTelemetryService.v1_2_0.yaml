@@ -1,0 +1,131 @@
+components:
+  schemas:
+    DellTelemetryService_v1_2_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellTelemetryService.SubmitMetricValue':
+          $ref: '#/components/schemas/DellTelemetryService_v1_2_0_SubmitMetricValue'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellTelemetryService_v1_2_0_DellTelemetryService:
+      additionalProperties: false
+      description: This is telemetryservice oem property schemas.
+      properties:
+        D4D:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: The link to the d4d service.
+          readOnly: true
+          x-longDescription: This property shall contain a link to the d4d service.
+          x-versionAdded: v1_1_0
+        FQDDList:
+          description: The FQDD list available for Telemetry Configuration (MetricReportDefinition).
+          items:
+            nullable: true
+            type: string
+          type: array
+          x-longDescription: The value of this property is a DELL defined FQDDList.
+        OTel:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: The link to the OTel service.
+          readOnly: true
+          x-longDescription: This property shall contain a link to the OTel service.
+          x-versionAdded: v1_2_0
+        SourceList:
+          description: The SourceList available for Telemetry Configuration (MetricReportDefinition).
+          items:
+            nullable: true
+            type: string
+          type: array
+          x-longDescription: The value of this property is an available list of sources
+            that can be retrieved for Telemetry.
+      type: object
+      x-longDescription: This is telemetryservice oem property schemas
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellTelemetryService_v1_2_0_MetricValue:
+      additionalProperties: false
+      description: This is Metric Value.
+      properties:
+        Timestamp:
+          description: The time in epoch when the metric is obtained. A management
+            application can establish a time series of metric data by retrieving the
+            instances of metric value and sorting them according to their timestamp.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value shall time when the metric value was obtained
+            in epoch time. Note that this value might be different from the time when
+            this instance is created.
+          x-versionAdded: v1_2_0
+        Value:
+          description: The metric value, as a string.
+          nullable: true
+          type: string
+          x-longDescription: This property shall contain the metric value, as a string.
+          x-versionAdded: v1_2_0
+      type: object
+      x-longDescription: This is Metric Value
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellTelemetryService_v1_2_0_SubmitMetricValue:
+      additionalProperties: false
+      description: This is telemetryservice Action oem property schemas
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This is telemetryservice Action oem property schemas
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellTelemetryService_v1_2_0_SubmitMetricValueRequestBody:
+      additionalProperties: false
+      description: This is telemetryservice Action oem property schemas
+      properties:
+        ContextId:
+          description: The Context Id is a user friendly way to read the metric source.
+          type: string
+          x-longDescription: The value of this property is a Context Id of the metric
+            source.
+        Label:
+          description: The Label is a user friendly representation of the metric.
+          type: string
+          x-longDescription: The value of this property is a friendly representation
+            of the device description associated with the Metric Id.
+        MetricId:
+          description: The Report metric ID.
+          readOnly: true
+          type: string
+          x-longDescription: The Report's metric ID.
+        MetricValues:
+          description: This is Metric Values of the complex type .
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTelemetryService.yaml#/components/schemas/DellTelemetryService_MetricValue
+          type: array
+          x-longDescription: This is Metric Values of the complex type.
+        Source:
+          description: This field shows the data source name that the metric value
+            was obtained from.
+          type: string
+          x-longDescription: The value of this property shows the data source name
+            that the metric value was obtained from.
+      required:
+      - ContextId
+      - Label
+      - MetricId
+      - MetricValues
+      - Source
+      type: object
+      x-longDescription: This is telemetryservice Action oem property schemas
+title: '#DellTelemetryService.v1_2_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

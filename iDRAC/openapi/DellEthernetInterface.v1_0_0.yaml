@@ -1,0 +1,80 @@
+components:
+  schemas:
+    DellEthernetInterface_v1_0_0_DellEthernetInterface:
+      additionalProperties: false
+      description: This property shall represent Oem properties for EthernetInterface
+        resource .
+      properties:
+        DHCPv4Server:
+          description: DHCPv4 server for this interface.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the DHCPv4 server for this
+            interface.
+        DHCPv6Server:
+          description: DHCPv6 server for this interface.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the DHCPv6 server for this
+            interface.
+        InterfaceStatus:
+          $ref: '#/components/schemas/DellEthernetInterface_v1_0_0_InterfaceStatus'
+          description: The status of the interface.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain the status of the interface.
+        InterfaceType:
+          $ref: '#/components/schemas/DellEthernetInterface_v1_0_0_InterfaceType'
+          description: The type of the interface.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain the type of the interface.
+      type: object
+      x-longDescription: This property shall represent Oem properties for EthernetInterface
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellEthernetInterface_v1_0_0_InterfaceStatus:
+      enum:
+      - Down
+      - Up
+      - Testing
+      - Unknown
+      - Dormant
+      - Absent
+      type: string
+      x-enumDescriptions:
+        Absent: Interface status is absent.
+        Dormant: Interface status is dormant.
+        Down: Interface status is down.
+        Testing: Interface status is testing.
+        Unknown: Interface status is unknown.
+        Up: Interface status is up.
+    DellEthernetInterface_v1_0_0_InterfaceType:
+      enum:
+      - Ethernet
+      - Loop Back
+      - Token Ring
+      - Ppp
+      - Atm
+      - IEEE 802.11
+      - Tunnel
+      - IEEE 1IEEE 802.11
+      - Other
+      type: string
+      x-enumDescriptions:
+        Atm: Atm interface.
+        Ethernet: Ethernet interface.
+        IEEE 1IEEE 802.11: IEEE 1IEEE 802.11 interface.
+        IEEE 802.11: IEEE 802.11 interface.
+        Loop Back: Loop Back interface.
+        Other: Other interface.
+        Ppp: Ppp interface.
+        Token Ring: Token ring interface.
+        Tunnel: Tunnel interface.
+title: '#DellEthernetInterface.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

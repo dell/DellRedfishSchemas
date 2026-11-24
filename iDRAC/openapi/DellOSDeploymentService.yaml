@@ -1,0 +1,81 @@
+components:
+  schemas:
+    DellOSDeploymentService_DellOSDeploymentService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.v1_2_0.yaml#/components/schemas/DellOSDeploymentService_v1_2_0_DellOSDeploymentService
+      description: The DellOSDeploymentService resource provides some actions to support
+        OS deployment configurations.
+      x-longDescription: The DellOSDeploymentService resource provides some actions
+        to support OS deployment configurations.
+    DellOSDeploymentService_GetAttachStatusResponseDriversAttachStatus:
+      enum:
+      - Attached
+      - NotAttached
+      type: string
+      x-enumDescriptions:
+        Attached: Attached
+        NotAttached: Not Attached
+    DellOSDeploymentService_GetAttachStatusResponseISOAttachStatus:
+      enum:
+      - Attached
+      - NotAttached
+      type: string
+      x-enumDescriptions:
+        Attached: Attached
+        NotAttached: Not Attached
+    DellOSDeploymentService_GetNetworkISOImageConnectionInfoResponseHostAttachedStatus:
+      enum:
+      - Attached
+      - NotAttached
+      type: string
+      x-enumDescriptions:
+        Attached: Attached
+        NotAttached: Not Attached
+    DellOSDeploymentService_GetNetworkISOImageConnectionInfoResponseHostBootedFromISO:
+      enum:
+      - 'No'
+      - 'Yes'
+      type: string
+      x-enumDescriptions:
+        'No': 'No'
+        'Yes': 'Yes'
+    DellOSDeploymentService_GetNetworkISOImageConnectionInfoResponseISOConnectionStatus:
+      enum:
+      - ConnectionDown
+      - ConnectionUp
+      type: string
+      x-enumDescriptions:
+        ConnectionDown: Connection down
+        ConnectionUp: Connection up
+    DellOSDeploymentService_HashType:
+      enum:
+      - MD5
+      - SHA1
+      type: string
+      x-enumDescriptions:
+        MD5: MD5
+        SHA1: SHA1
+    DellOSDeploymentService_ResetType:
+      enum:
+      - ColdReset
+      - NoReset
+      - WarmReset
+      type: string
+      x-enumDescriptions:
+        ColdReset: Cold reset
+        NoReset: No reset
+        WarmReset: Warm reset
+    DellOSDeploymentService_ShareType:
+      enum:
+      - CIFS
+      - NFS
+      - TFTP
+      type: string
+      x-enumDescriptions:
+        CIFS: CIFS
+        NFS: NFS
+        TFTP: TFTP
+title: '#DellOSDeploymentService.DellOSDeploymentService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

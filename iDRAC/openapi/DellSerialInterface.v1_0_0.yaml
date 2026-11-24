@@ -1,0 +1,60 @@
+components:
+  schemas:
+    DellSerialInterface_v1_0_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellSerialInterface.SerialDataClear':
+          $ref: '#/components/schemas/DellSerialInterface_v1_0_0_SerialDataClear'
+        '#DellSerialInterface.SerialDataExport':
+          $ref: '#/components/schemas/DellSerialInterface_v1_0_0_SerialDataExport'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellSerialInterface_v1_0_0_SerialDataClear:
+      additionalProperties: false
+      description: This action is used to clear Serial Interface data.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform a clear of Serial Interface data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellSerialInterface_v1_0_0_SerialDataClearRequestBody:
+      additionalProperties: false
+      description: This action is used to clear Serial Interface data.
+      properties: {}
+      type: object
+      x-longDescription: This action shall perform a clear of Serial Interface data.
+    DellSerialInterface_v1_0_0_SerialDataExport:
+      additionalProperties: false
+      description: This action is used to export Serial Interface data.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform an export of Serial Interface data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellSerialInterface_v1_0_0_SerialDataExportRequestBody:
+      additionalProperties: false
+      description: This action is used to export Serial Interface data.
+      properties: {}
+      type: object
+      x-longDescription: This action shall perform an export of Serial Interface data.
+title: '#DellSerialInterface.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

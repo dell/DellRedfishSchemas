@@ -1,0 +1,542 @@
+components:
+  schemas:
+    OemManager_v1_6_0_Actions:
+      additionalProperties: false
+      properties:
+        '#OemManager.ClearPending':
+          $ref: '#/components/schemas/OemManager_v1_6_0_ClearPending'
+        '#OemManager.ExportSystemConfiguration':
+          $ref: '#/components/schemas/OemManager_v1_6_0_ExportSystemConfiguration'
+        '#OemManager.GetRedfishResources':
+          $ref: '#/components/schemas/OemManager_v1_6_0_GetRedfishResources'
+        '#OemManager.ImportSystemConfiguration':
+          $ref: '#/components/schemas/OemManager_v1_6_0_ImportSystemConfiguration'
+        '#OemManager.ImportSystemConfigurationPreview':
+          $ref: '#/components/schemas/OemManager_v1_6_0_ImportSystemConfigurationPreview'
+        '#OemManager.ResetToDefaults':
+          $ref: '#/components/schemas/OemManager_v1_6_0_ResetToDefaults'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_Attributes:
+      additionalProperties: false
+      properties: {}
+      type: object
+      x-patternProperties:
+        '[A-Za-z0-9]+': {}
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_ClearPending:
+      additionalProperties: false
+      description: This action is used to clear the pending values.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to clear the pending values of Manager.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_ClearPendingRequestBody:
+      additionalProperties: false
+      description: This action is used to clear the pending values.
+      properties: {}
+      type: object
+      x-longDescription: This action is used to clear the pending values of Manager.
+    OemManager_v1_6_0_ExecutionModes:
+      enum:
+      - Default
+      - DeployOnSledInsert
+      - InstantDeploy
+      type: string
+      x-enumDescriptions:
+        Default: Default execution mode
+        DeployOnSledInsert: Deploy the imported configuration on inserting the Sled
+        InstantDeploy: Deploy the imported configuration instantly
+      x-enumLongDescriptions:
+        Default: Default execution mode
+        DeployOnSledInsert: Deploy the imported configuration on inserting the Sled
+        InstantDeploy: Deploy the imported configuration instantly
+    OemManager_v1_6_0_ExportFormat:
+      enum:
+      - XML
+      - JSON
+      type: string
+    OemManager_v1_6_0_ExportSystemConfiguration:
+      additionalProperties: false
+      description: This action is used to export System Configuration attributes.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform an export System Configuration
+        attributes.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_ExportSystemConfigurationRequestBody:
+      additionalProperties: false
+      description: This action is used to export System Configuration attributes.
+      properties:
+        ExportFormat:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ExportFormat'
+          description: XML format
+          x-longDescription: XML format
+        ExportUse:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ExportUse'
+          description: Type of Export intended for use :Default =0, Clone=1 , Replace=2.
+        IncludeInExport:
+          description: Extra information to include in the export. Allowable values
+            are Default, IncludeReadOnly, IncludePasswordHashValues, IncludeCustomTelemetry.
+            One or more values can be given in comma separated format.
+          items:
+            $ref: '#/components/schemas/OemManager_v1_6_0_IncludeInExportOptions'
+          type: array
+        ShareParameters:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ShareParameters'
+          description: Share parameters are listed.
+      required:
+      - ExportFormat
+      - ShareParameters
+      type: object
+      x-longDescription: This action shall perform an export System Configuration
+        attributes.
+    OemManager_v1_6_0_ExportUse:
+      enum:
+      - Default
+      - Clone
+      - Replace
+      type: string
+    OemManager_v1_6_0_GetRedfishResources:
+      additionalProperties: false
+      description: Retrieve Redfish resources for a set of endpoints, possibly using
+        wildcards.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action retrieves the Redfish resources for the specified
+        endpoints. The action supports wildcard expansion and may return partial results
+        if the operation exceeds the specified timeout or MaxURIs limit. Only one
+        GetRedfishResources request can execute at a time; concurrent requests are
+        rejected with HTTP 429.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_GetRedfishResourcesRequestBody:
+      additionalProperties: false
+      description: Retrieve Redfish resources for a set of endpoints, possibly using
+        wildcards.
+      properties:
+        EndPoints:
+          description: A collection of Redfish URI paths or wildcard patterns to retrieve.
+            Each entry must start with /redfish/ and must not contain '?', '#', '[',
+            ']', '%', or end with '/SSE'. Wildcard matching using a single asterisk
+            (*) is supported at multiple path levels (for example, /redfish/v1/Systems/*/Processors/*).
+            URIs served by Auxiliary Management Controllers (AMCs) do not support
+            wildcard matching and must be specified explicitly. DellAttributes, TelemetryService,
+            Registries, JsonSchemas, and Schemas (including their subordinate resources)
+            are not supported by this action. Log entry instances under /Entries/
+            segments are not supported; log entries should be accessed through their
+            parent LogService resource. Invalid or unsupported endpoints are reported
+            in FailedEndPoints. Trailing slashes are automatically removed.
+          items:
+            type: string
+          type: array
+          x-longDescription: A collection of Redfish URI paths or wildcard patterns
+            to retrieve. Each entry must start with /redfish/ and must not contain
+            '?', '#', '[', ']', '%', or end with '/SSE'. Wildcard matching using a
+            single asterisk (*) is supported at multiple path levels (for example,
+            /redfish/v1/Systems/*/Processors/*). URIs served by Auxiliary Management
+            Controllers (AMCs) do not support wildcard matching and must be specified
+            explicitly. DellAttributes, TelemetryService, Registries, JsonSchemas,
+            and Schemas (including their subordinate resources) are not supported
+            by this action. Log entry instances under /Entries/ segments are not supported;
+            log entries should be accessed through their parent LogService resource.
+            Invalid or unsupported endpoints are reported in FailedEndPoints. Trailing
+            slashes are automatically removed.
+        MaxURIs:
+          description: Maximum number of expanded URIs the service will process.
+          format: int64
+          maximum: 200
+          minimum: 1
+          type: integer
+          x-longDescription: After wildcard expansion, the service will process at
+            most this many URIs. Any additional URIs will be returned in PendingEndpoints
+            for subsequent requests.
+        TimeoutSeconds:
+          description: Maximum time allowed to resolve all URIs. If exceeded, the
+            action returns partial data.
+          format: int64
+          maximum: 30
+          minimum: 1
+          type: integer
+          x-longDescription: If the operation exceeds this timeout, the action returns
+            partial results along with PendingEndpoints so the remaining endpoints
+            can be retried.
+          x-units: s
+      required:
+      - EndPoints
+      type: object
+      x-longDescription: This action retrieves the Redfish resources for the specified
+        endpoints. The action supports wildcard expansion and may return partial results
+        if the operation exceeds the specified timeout or MaxURIs limit. Only one
+        GetRedfishResources request can execute at a time; concurrent requests are
+        rejected with HTTP 429.
+    OemManager_v1_6_0_GetRedfishResourcesResponse:
+      additionalProperties: false
+      properties:
+        Data:
+          $ref: '#/components/schemas/OemManager_v1_6_0_RedfishResourceData'
+          description: A key-value dictionary where keys are exact Redfish URIs and
+            values are the JSON data.
+          x-longDescription: This property shall contain a mapping of Redfish resource
+            URIs to the retrieved JSON payloads.
+          x-versionAdded: v1_6_0
+        FailedEndPoints:
+          description: The URLs that could not be retrieved.
+          items:
+            type: string
+          type: array
+          x-longDescription: This property shall contain the URLs that could not be
+            retrieved due to errors. This includes URIs that do not conform to Redfish
+            URI requirements or failed to fetch due to non-timeout errors.
+          x-versionAdded: v1_6_0
+        PendingEndpoints:
+          description: If the action returned partial data, the remaining URLs can
+            be retried using these values.
+          items:
+            type: string
+          type: array
+          x-longDescription: In case the action returned partial results, this property
+            shall contain the URLs that can be passed back in EndPoints to fetch the
+            remaining data.
+          x-versionAdded: v1_6_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_HostPowerState:
+      enum:
+      - 'On'
+      - 'Off'
+      type: string
+    OemManager_v1_6_0_IgnoreCertificateWarning:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Ignoring of certificate warning is Disabled.
+        Enabled: Ignoring of certificate warning is Enabled.
+    OemManager_v1_6_0_ImportSystemConfiguration:
+      additionalProperties: false
+      description: This action is used to import System Configuration attributes.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform an import System Configuration
+        attributes.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_ImportSystemConfigurationPreview:
+      additionalProperties: false
+      description: This action is used to import System Configuration Preview.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform an import System Configuration
+        Preview.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_ImportSystemConfigurationPreviewRequestBody:
+      additionalProperties: false
+      description: This action is used to import System Configuration Preview.
+      properties:
+        ImportBuffer:
+          description: Buffer content to perform Import. This is required for localstore
+            only and not required for CIFS/NFS style Import.
+          type: string
+        ShareParameters:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ShareParameters'
+          description: Share parameters are listed.
+      required:
+      - ShareParameters
+      type: object
+      x-longDescription: This action shall perform an import System Configuration
+        Preview.
+    OemManager_v1_6_0_ImportSystemConfigurationRequestBody:
+      additionalProperties: false
+      description: This action is used to import System Configuration attributes.
+      properties:
+        ExecutionMode:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ExecutionModes'
+          description: The mode of execution as identified by the defined enumeration
+            types
+          x-versionAdded: v1_4_0
+        HostPowerState:
+          $ref: '#/components/schemas/OemManager_v1_6_0_HostPowerState'
+          description: Type of host power state after performing import operation.
+        ImportBuffer:
+          description: Buffer content to perform Import. This is required for localstore
+            only and not required for CIFS/NFS style Import.
+          type: string
+        ShareParameters:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ShareParameters'
+          description: Share parameters are listed.
+        ShutdownType:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ShutdownType'
+          description: Type of shut down before performing import operation.
+        TimeToWait:
+          description: The time to wait for the host to shut down. Default and minimum
+            value is 300 seconds. Maximum value is 3600 seconds.
+          format: int64
+          maximum: 3600
+          minimum: 300
+          type: integer
+          x-units: s
+      required:
+      - ShareParameters
+      type: object
+      x-longDescription: This action shall perform an import System Configuration
+        attributes.
+    OemManager_v1_6_0_IncludeInExportOptions:
+      enum:
+      - Default
+      - IncludeReadOnly
+      - IncludePasswordHashValues
+      - IncludeCustomTelemetry
+      type: string
+      x-enumDescriptions:
+        Default: Default export configuration
+        IncludeCustomTelemetry: Include custom telemetry attributes in exported configuration
+        IncludePasswordHashValues: Include password hash attributes in exported configuration
+        IncludeReadOnly: Include read only attributes in exported configuration
+      x-enumLongDescriptions:
+        Default: Default export configuration
+        IncludeCustomTelemetry: Include custom telemetry attributes in exported configuration
+        IncludePasswordHashValues: Include password hash attributes in exported configuration
+        IncludeReadOnly: Include read only attributes in exported configuration
+    OemManager_v1_6_0_OemManager:
+      additionalProperties: true
+      description: OemManager contains properties of additional actions to complement
+        the Manager DMTF schema.
+      properties:
+        AttributeRegistry:
+          description: The Resource ID of the Attribute Registry for the OEM Manager
+            Attributes resource.
+          nullable: true
+          type: string
+          x-longDescription: The reference to the Attribute Registry that lists the
+            metadata describing the Oem Manager attribute settings in this resource.
+          x-versionAdded: v1_1_0
+        Attributes:
+          $ref: '#/components/schemas/OemManager_v1_6_0_Attributes'
+          description: This is the manufacturer/provider specific list of Manager
+            attributes.
+          x-longDescription: Manager Attribute settings appear as additional properties
+            in this object, and can be looked up in the Attribute Registry by their
+            AttributeName.
+          x-versionAdded: v1_1_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_ProxySupport:
+      enum:
+      - Disabled
+      - EnabledProxyDefault
+      - Enabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Proxy Support is Disabled.
+        Enabled: Proxy Support is Enabled.
+        EnabledProxyDefault: Proxy Support to be Enabled and set to default.
+    OemManager_v1_6_0_ProxyType:
+      enum:
+      - HTTP
+      - SOCKS4
+      type: string
+      x-enumDescriptions:
+        HTTP: Proxy type is of HTTP type.
+        SOCKS4: Proxy type is of SOCKS4 type.
+    OemManager_v1_6_0_RedfishResourceData:
+      additionalProperties: true
+      properties: {}
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+        ^/redfish/v1/.*$:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_OemObject
+    OemManager_v1_6_0_ResetToDefaults:
+      additionalProperties: false
+      description: This action is used to reset the Manager attributes to default.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform a reset of the Manager attributes
+        to their default values.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_ResetToDefaultsRequestBody:
+      additionalProperties: false
+      description: This action is used to reset the Manager attributes to default.
+      properties: {}
+      type: object
+      x-longDescription: This action shall perform a reset of the Manager attributes
+        to their default values.
+    OemManager_v1_6_0_ShareParameters:
+      additionalProperties: false
+      properties:
+        FileName:
+          description: The target output file name.
+          pattern: ^[^:*?|/\<>]+$
+          readOnly: true
+          type: string
+        IPAddress:
+          description: The IP address of the target export server.
+          readOnly: true
+          type: string
+        IgnoreCertificateWarning:
+          $ref: '#/components/schemas/OemManager_v1_6_0_IgnoreCertificateWarning'
+          description: Ignore Certificate Warning.
+          readOnly: true
+          x-versionAdded: v1_1_1
+        Password:
+          description: Password for the target export server.
+          readOnly: true
+          type: string
+        PortNumber:
+          description: The Port Number of the target export server.
+          readOnly: true
+          type: string
+        ProxyPassword:
+          description: Proxy Server Password.
+          readOnly: true
+          type: string
+          x-versionAdded: v1_1_0
+        ProxyPort:
+          description: Proxy Port address.
+          readOnly: true
+          type: string
+          x-versionAdded: v1_1_0
+        ProxyServer:
+          description: Proxy Server address.
+          readOnly: true
+          type: string
+          x-versionAdded: v1_1_0
+        ProxySupport:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ProxySupport'
+          description: Proxy Support to be Enabled or Disabled.
+          readOnly: true
+          x-versionAdded: v1_1_0
+        ProxyType:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ProxyType'
+          description: Type of Proxy HTTP or SOCKS4.
+          readOnly: true
+          x-versionAdded: v1_1_0
+        ProxyUserName:
+          description: Proxy Server User Name.
+          readOnly: true
+          type: string
+          x-versionAdded: v1_1_0
+        ShareName:
+          description: The directory path to the mount point.
+          readOnly: true
+          type: string
+        ShareType:
+          $ref: '#/components/schemas/OemManager_v1_6_0_ShareType'
+          description: Type of share like NFS, CIFS, FTP, HTTP, HTTPS, TFTP, LOCAL
+          readOnly: true
+        Target:
+          description: To identify the component for Export. It identifies the one
+            or more FQDDs. Default = ALL.
+          items:
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property shall indicate the component(s) for Export.
+            The list of valid values for Target is ALL, IDRAC, BIOS, NIC, RAID, FC,
+            InfiniBand, SupportAssist, EventFilters, System, LifecycleController,
+            AHCI, PCIeSSD etc. FQDD strings are also supported as valid values. Default
+            value is ALL. The action ImportSystemConfigurationPreview accepts only
+            the default value ALL.
+        Username:
+          description: User name for the target export server.
+          readOnly: true
+          type: string
+        Workgroup:
+          description: WorkGroup name if it is needed.
+          readOnly: true
+          type: string
+      required:
+      - FileName
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemManager_v1_6_0_ShareType:
+      enum:
+      - NFS
+      - CIFS
+      - FTP
+      - HTTP
+      - HTTPS
+      - TFTP
+      - LOCAL
+      type: string
+      x-enumDescriptions:
+        CIFS: Share type is of CIFS type.
+        FTP: Share type is of FTP type.
+        HTTP: Share type is of HTTP type.
+        HTTPS: Share type is of HTTPS type.
+        LOCAL: Share type is of LOCAL type.
+        NFS: Share type is of NFS type.
+        TFTP: Share type is of TFTP type.
+    OemManager_v1_6_0_ShutdownType:
+      enum:
+      - Graceful
+      - Forced
+      - NoReboot
+      type: string
+title: '#OemManager.v1_6_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

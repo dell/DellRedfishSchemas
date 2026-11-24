@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellOemThermalSubsystem_DellOemThermalSubsystem:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemThermalSubsystem.v1_0_0.yaml#/components/schemas/DellOemThermalSubsystem_v1_0_0_DellOemThermalSubsystem
+      description: This is the complex property is for the additional OEM extension
+        realted to the DMTF ThermalSubsystem.
+      x-longDescription: This is the complex property is for the additional OEM extension
+        realted to the DMTF ThermalSubsystem.
+title: '#DellOemThermalSubsystem'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

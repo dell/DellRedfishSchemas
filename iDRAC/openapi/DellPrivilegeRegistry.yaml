@@ -1,0 +1,13 @@
+components:
+  schemas:
+    DellPrivilegeRegistry_DellOperationPrivilege:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPrivilegeRegistry.v1_0_0.yaml#/components/schemas/DellPrivilegeRegistry_v1_0_0_DellOperationPrivilege
+      description: Dell OEM extension for OperationPrivilege providing payload-based
+        privilege matching.
+      x-longDescription: This complex type provides Dell OEM extension for the DMTF
+        OperationPrivilege type, enabling payload-based privilege matching for action
+        requests.
+title: '#DellPrivilegeRegistry'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

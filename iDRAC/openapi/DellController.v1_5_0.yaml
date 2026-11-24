@@ -1,0 +1,342 @@
+components:
+  schemas:
+    DellController_v1_5_0_DellController:
+      additionalProperties: false
+      description: An instance of DellController will have RAID Controller specific
+        data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        AlarmState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_AlarmState
+          description: This property represents the state of Alarm if it is present.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the state of Alarm if it is
+            present.
+          x-versionAdded: v1_1_0
+        AutoConfigBehavior:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_AutoConfigBehavior
+          description: This property provides the current Auto config behavior of
+            the controller.RAID0 is applicble only for PERC 10.4.x or earlier releases.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property provides the current Auto config behavior
+            of the controller.RAID0 is applicble only for PERC 10.4.x or earlier releases.
+          x-versionAdded: v1_2_0
+        BootVirtualDiskFQDD:
+          description: This property indicates FQDD of BootVD. If no VD is set as
+            BootVD in the controller, this property is an empty string.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property indicates FQDD of BootVD. If no VD is set
+            as BootVD in the controller, this property is an empty string.
+          x-versionAdded: v1_1_0
+        CacheSizeInMB:
+          description: This property shall represent the controller cache size in
+            MB.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the controller cache size
+            in MB.
+          x-units: MB
+        CachecadeCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_CachecadeCapability
+          description: The property shall represent the controllers support of cachecade
+            virtual disk creation.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the controllers support
+            of cachecade virtual disk creation.
+        ConnectorCount:
+          description: This property represents the count of SAS connectors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the count of SAS connectors.
+          x-versionAdded: v1_1_0
+        ControllerFirmwareVersion:
+          description: This property gives information about the Firmware Version
+            installed on the Controller.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property gives information about the Firmware Version
+            installed on the Controller.
+        CurrentControllerMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_CurrentControllerMode
+          description: This property of the controller provides information to the
+            user regarding the mode in which the controller is currently on.It has
+            only one value and is RAID
+          nullable: true
+          readOnly: true
+          x-longDescription: This property of the controller provides information
+            to the user regarding the mode in which the controller is currently on.It
+            has only one value and is RAID
+          x-versionAdded: v1_2_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Device:
+          description: This property represents the PCI device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the PCI device.
+          x-versionAdded: v1_1_0
+        DeviceCardDataBusWidth:
+          description: This property represents the bus width.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the bus width.
+          x-versionAdded: v1_1_0
+        DeviceCardSlotLength:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_DeviceCardSlotLength
+          description: This property represents the controller slot length.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the controller slot length.
+          x-versionAdded: v1_1_0
+        DeviceCardSlotType:
+          description: This property represents the controller slot type. The possible
+            values of the string can be Other, Unknown, PCI Express x8, PCI Express
+            Gen 3, PCI Express Gen 3x1, PCI Express Gen 3x2, PCI Express Gen 3x4,
+            PCI Express Gen 3x8, PCI Express Gen 3x16, or PCI Express Gen4.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the controller slot type. The
+            possible values of the string can be Other, Unknown, PCI Express x8, PCI
+            Express Gen 3, PCI Express Gen 3x1, PCI Express Gen 3x2, PCI Express Gen
+            3x4, PCI Express Gen 3x8, PCI Express Gen 3x16, or PCI Express Gen4.
+        DriverVersion:
+          description: This property shall represent the controller driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the controller driver version.
+        EncryptionCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_EncryptionCapability
+          description: The property shall represent the possible encryption states
+            on the controller.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the possible encryption
+            states on the controller.
+        EncryptionMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_EncryptionMode
+          description: The property shall represent the current encryption state on
+            the controller.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the current encryption state
+            on the controller.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        KeyID:
+          description: KeyID provides details about the Key identification on the
+            controller when the controller is in Local Key Management mode.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: KeyID provides details about the Key identification on
+            the controller when the controller is in Local Key Management mode.
+          x-versionAdded: v1_1_0
+        LastSystemInventoryTime:
+          description: This property provides the time when System Inventory Collection
+            On Reboot(CSIOR) was last performed or the object was last updated on
+            iDRAC. The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time when System Inventory
+            Collection On Reboot(CSIOR) was last performed or the object was last
+            updated on iDRAC. The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        LastUpdateTime:
+          description: This property provides the time the data was last updated.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time the data was last updated.
+            The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        MaxAvailablePCILinkSpeed:
+          description: This property represents the maximum PCI link speed that the
+            controller is set to allow.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the maximum PCI link speed that
+            the controller is set to allow.
+          x-versionAdded: v1_1_0
+        MaxPossiblePCILinkSpeed:
+          description: This property represents the maximum possible PCI link speed,
+            which is the speed this device is capable of.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the maximum possible PCI link
+            speed, which is the speed this device is capable of.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        PCISlot:
+          description: The property shall represent the associated PCI slot.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the associated PCI slot.
+        PatrolReadState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_PatrolReadState
+          description: This property shall represent the current state of the patrol
+            read operation.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall represent the current state of the
+            patrol read operation.
+        PersistentHotspare:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_PersistentHotspare
+          description: This property indicates status of the persistent hotspare slot
+            of the controller.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates status of the persistent hotspare
+            slot of the controller.
+          x-versionAdded: v1_1_0
+        RealtimeCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_RealtimeCapability
+          description: 'This property indicates whether this controller supports Realtime.
+            Note: Host should be in power ON state to reflect the controller realtime
+            capability.'
+          nullable: true
+          readOnly: true
+          x-longDescription: 'This property indicates whether this controller supports
+            Realtime. Note: Host should be in power ON state to reflect the controller
+            realtime capability.'
+          x-versionAdded: v1_1_0
+        RollupStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_RollupStatus
+          description: RollupStatus provides overall health status of the system by
+            considering their sub-component health statuses, e.g RollupStatus will
+            be degraded if any one of the sub-component is degraded.
+          nullable: true
+          readOnly: true
+          x-longDescription: RollupStatus provides overall health status of the system
+            by considering their sub-component health statuses, e.g RollupStatus will
+            be degraded if any one of the sub-component is degraded.
+        SASAddress:
+          description: The property provides the unique ID of the controller and is
+            in hexadecimal form.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property provides the unique ID of the controller
+            and is in hexadecimal form.
+          x-versionAdded: v1_1_0
+        SecurityStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SecurityStatus
+          description: The property shall represent the controller security configuration
+            information.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the controller security
+            configuration information.
+        SharedSlotAssignmentAllowed:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SharedSlotAssignmentAllowed
+          description: This property indicates whether the controller allows shared
+            assignments of slots, that is, whether the controller can access slots
+            that are shared with other controllers.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether the controller allows
+            shared assignments of slots, that is, whether the controller can access
+            slots that are shared with other controllers.
+          x-versionAdded: v1_1_0
+        SlicedVDCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SlicedVDCapability
+          description: The property shall represent the controllers support of sliced
+            virtual disk creation and shall have one of the following values:0 - Sliced
+            Virtual Disk not supported, 1-Sliced Virtual Disk supported.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the controllers support
+            of sliced virtual disk creation and shall have one of the following values:0
+            - Sliced Virtual Disk not supported, 1-Sliced Virtual Disk supported.
+        SupportControllerBootMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SupportControllerBootMode
+          description: This property indicates whether this controller supports setting
+            of controller boot mode.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether this controller supports
+            setting of controller boot mode.
+          x-versionAdded: v1_1_0
+        SupportEnhancedAutoForeignImport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SupportEnhancedAutoForeignImport
+          description: This property represents the controller supports automatic
+            foreign import operation when the device is in foreign import mode.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the controller supports automatic
+            foreign import operation when the device is in foreign import mode.
+          x-versionAdded: v1_1_0
+        SupportRAID10UnevenSpans:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SupportRAID10UnevenSpans
+          description: This property indicates whether this controller supports uneven
+            spans for RAID 10.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether this controller supports
+            uneven spans for RAID 10.
+          x-versionAdded: v1_1_0
+        SupportsLKMtoSEKMTransition:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SupportsLKMtoSEKMTransition
+          description: This property represents whether a controller supports LKM
+            to SEKM transition or not.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents whether a controller supports
+            LKM to SEKM transition or not.
+          x-versionAdded: v1_3_0
+        T10PICapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_T10PICapability
+          description: This property indicates whether this controller supports T10
+            Protection Information (T10 PI).
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether this controller supports
+            T10 Protection Information (T10 PI).
+          x-versionAdded: v1_1_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellController will have RAID Controller specific
+        data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellController.v1_5_0.DellController'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

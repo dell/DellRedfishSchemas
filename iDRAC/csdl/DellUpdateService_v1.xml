@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellUpdateService  v1.6.0 -->
+<!--# This schema complements to OEM section of Update Service Resource                   -->
+<!--# Copyright 2014-2026 Dell, Inc. or its subsidiaries.All Rights Reserved.             -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/UpdateService_v1.xml">
+    <edmx:Include Namespace="UpdateService"/>
+    <edmx:Include Namespace="UpdateService.v1_0_0" />
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInventoryCollection_v1.xml">
+    <edmx:Include Namespace="DellSoftwareInventoryCollection"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService">
+      <!--<EntityType Name="DellUpdateService" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+	    <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="This is the schema definition for the additional OEM properties to complement DMTF Update Service Schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an OEM Update Service for a Redfish implementation."/>
+      </EntityType>-->
+	  <Action Name="Install" IsBound="true">
+		<Parameter Name="DellUpdateService" Type="UpdateService.v1_0_0.OemActions"/>
+		<Parameter Name="SoftwareIdentityURIs" Type="Collection(Edm.String)" Nullable="false">
+		  <Annotation Term="OData.Description" String="Contains the relative URIs of the firmware inventory components to be installed, only one component installation at a time is allowed."/>
+		  <Annotation Term="OData.LongDescription" String="Contains the relative URIs of the firmware inventory components to be installed, only one component installation at a time is allowed."/>
+		  <Annotation Term="Redfish.Required"/>
+		</Parameter>
+		<Parameter Name="InstallUpon" Type="DellUpdateService.v1_0_0.InstallUpon" Nullable="false">
+		  <Annotation Term="OData.Description" String="The type of Install Upon option, default value is NextReboot if not provided by user"/>
+		  <Annotation Term="OData.LongDescription" String="The type of Install Upon option, default value is NextReboot if not provided by user"/>
+		</Parameter>
+        <Annotation Term="OData.Description" String="This action is used to install firmware inventory instances"/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform install of firmware inventory instances"/>
+        <Annotation Term="Redfish.Revisions">
+            <Collection>
+              <Record>
+                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Deprecated"/>
+                <PropertyValue Property="Version" String="v1_1_0"/>
+                <PropertyValue Property="Description" String="This Action has been deprecated in favor of DMTF SimpleUpdate Action."/>
+              </Record>
+            </Collection>
+          </Annotation>
+      </Action>
+      <Action Name="RecoverFirmware" IsBound="true">
+        <Annotation String="This action shall recover BOSS controller firmware in case of root of trust (RoT) failure." Term="OData.Description"/>
+        <Annotation String="This action shall recover BOSS controller firmware in case of root of trust (RoT) failure." Term="OData.LongDescription"/>
+        <Annotation Term="Redfish.Revisions">
+            <Collection>
+                <Record>
+                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                <PropertyValue Property="Version" String="v1_3_0"/>
+                </Record>
+            </Collection>
+        </Annotation>
+        <Parameter Name="DellUpdateService" Type="UpdateService.v1_0_0.OemActions"/>
+        <Parameter Name="TargetFQDD" Type="Edm.String" Nullable="false">
+            <Annotation String="This Parameter is the FQDD of the BOSS Controller." Term="OData.Description"/>
+            <Annotation String="This Parameter is the FQDD of the BOSS Controller." Term="OData.LongDescription"/>
+        </Parameter>
+      </Action>
+      <Action Name="ConfigureCX8WriteProtect" IsBound="true">
+        <Annotation String="This action supports for PCIe CX-8 in band updates only, and users will need to manually disable #WP before the update and enable #WP after the update is completed." Term="OData.Description"/>
+        <Annotation String="This action supports for PCIe CX-8 in band updates only, and users will need to manually disable #WP before the update and enable #WP after the update is completed." Term="OData.LongDescription"/>
+        <Parameter Name="UpdateService" Type="UpdateService.v1_0_0.OemActions"/>
+        <Parameter Name="RequestType" Type="DellUpdateService.RequestType"  Nullable="false">
+            <Annotation String="This Parameter is used to set the CX8 Write Protect to Disable/Enable." Term="OData.Description"/>
+            <Annotation String="This Parameter is used to set the CX8 Write Protect to Disable/Enable." Term="OData.LongDescription"/>
+        </Parameter>
+        <Annotation Term="Redfish.Revisions">
+            <Collection>
+                <Record>
+                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                <PropertyValue Property="Version" String="v1_4_0"/>
+                </Record>
+                <Record>
+                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Deprecated"/>
+                <PropertyValue Property="Version" String="v1_6_0"/>
+                <PropertyValue Property="Description" String="This action has been deprecated in favor of ConfigureHardwareWriteProtect action. This action if invoked will WriteProtect all the hardware components and not just CX8."/>
+                </Record>
+            </Collection>
+        </Annotation>
+      </Action>
+      <Action Name="ConfigureHardwareWriteProtect" IsBound="true">
+        <Annotation Term="OData.Description" String="This action configures hardware write protection for supported components. Users will need to manually disable write protection before firmware updates and enable it after updates are completed."/>
+        <Annotation Term="OData.LongDescription" String="This action configures hardware write protection for supported components. Users will need to manually disable write protection before firmware updates and enable it after updates are completed."/>
+        <Parameter Name="UpdateService" Type="UpdateService.v1_0_0.OemActions"/>
+        <Parameter Name="RequestType" Type="DellUpdateService.RequestType" Nullable="false">
+            <Annotation Term="OData.Description" String="This parameter specifies whether to enable or disable hardware write protection."/>
+            <Annotation Term="OData.LongDescription" String="This parameter specifies whether to enable or disable hardware write protection."/>
+            <Annotation Term="Redfish.Required"/>
+        </Parameter>
+        <Parameter Name="HardwareComponents" Type="Collection(DellUpdateService.HardwareComponentType)" Nullable="false">
+            <Annotation Term="OData.Description" String="This parameter specifies the list of hardware components for which write protection should be configured."/>
+            <Annotation Term="OData.LongDescription" String="This parameter specifies the list of hardware components for which write protection should be configured. Currently only Default is supported, which applies write protection to all supported hardware components."/>
+            <Annotation Term="Redfish.Required"/>
+        </Parameter>
+        <Annotation Term="Redfish.Revisions">
+            <Collection>
+                <Record>
+                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                <PropertyValue Property="Version" String="v1_6_0"/>
+                </Record>
+            </Collection>
+        </Annotation>
+      </Action>
+      <Action Name="InstallStagedPackages" IsBound="true">
+        <Annotation Term="OData.Description" String="This action creates install jobs for all eligible firmware packages in the LocalImageStore collection. Supports @Redfish.OperationApplyTime (Immediate or OnReset)."/>
+        <Annotation Term="OData.LongDescription" String="This action accepts no package list parameter. Install jobs are created for all packages with PackageValidationStatus = Success in the LocalImageStore collection based on the operation apply time. The action supports @Redfish.OperationApplyTime with values Immediate (install now) or OnReset (install on next reboot)."/>
+        <Parameter Name="DellUpdateService" Type="UpdateService.v1_0_0.OemActions" Nullable="false"/>
+        <Parameter Name="RebootHost" Type="Edm.Boolean">
+          <Annotation Term="OData.Description" String="Whether to trigger a host reboot after update job creation."/>
+          <Annotation Term="OData.LongDescription" String="When set to true and ApplyTime is Immediate, the host system will be rebooted after all update jobs are created. When ApplyTime is OnReset, this parameter is ignored as the reboot will occur at the next scheduled system reset."/>
+        </Parameter>
+        <Annotation Term="Redfish.Revisions">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+              <PropertyValue Property="Version" String="v1_5_0"/>
+            </Record>
+          </Collection>
+        </Annotation>
+      </Action>
+      <ComplexType Name="DellOemUpdateService" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="This is the complex property for the additional OEM Links."/>
+        <Annotation Term="OData.LongDescription" String="This is the complex property for the additional OEM Links."/>
+      </ComplexType>
+      <EnumType Name="RequestType">
+          <Member Name="Enable">
+            <Annotation Term="OData.Description" String="nvcore will immediately enable #WP."/>
+            <Annotation Term="OData.LongDescription" String="nvcore will immediately enable #WP."/>
+          </Member>
+          <Member Name="Disable">
+            <Annotation Term="OData.Description" String="nvcore will immediately disable #WP."/>
+            <Annotation Term="OData.LongDescription" String="nvcore will immediately disable #WP."/>
+          </Member>
+        </EnumType>
+      <EnumType Name="HardwareComponentType">
+          <Member Name="Default">
+            <Annotation Term="OData.Description" String="Apply write protection configuration to all supported hardware components."/>
+            <Annotation Term="OData.LongDescription" String="Apply write protection configuration to all supported hardware components. This is the default value and currently the only supported option."/>
+          </Member>
+        </EnumType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService.v1_0_0">
+
+      <!--<EntityType Name="DellUpdateService" BaseType="DellUpdateService.DellUpdateService">
+        <Annotation Term="OData.Description" String="This is the schema definition for the additional OEM properties to complement DMTF Update Service Schema."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an OEM Update Service for a Redfish implementation."/>
+      </EntityType>
+       <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+       </ComplexType>-->
+      <!--InstallUpon parameter values for Install Action-->
+      <EnumType Name="InstallUpon">
+        <Member Name="Now">
+          <Annotation Term="OData.Description" String="To indicate install now"/>
+        </Member>
+        <Member Name="NextReboot">
+          <Annotation Term="OData.Description" String="To indicate install on next reboot"/>
+        </Member>
+        <Member Name="NowAndReboot">
+          <Annotation Term="OData.Description" String="To indicate install and reboot"/>
+        </Member>
+     </EnumType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService.v1_1_0">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+      <Annotation Term="OData.Description" String="This version was created to mark Install Action as Deprecated."/>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService.v1_2_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellOemUpdateService" BaseType="DellUpdateService.DellOemUpdateService">
+          <Annotation Term="OData.Description" String="This version was introduced to add Oem Links in UpdateService resource."/>
+          <Annotation Term="OData.LongDescription" String="This version was introduced to add Oem Links in UpdateService resource."/>
+          <NavigationProperty Name="DellSoftwareInventoryCollection" Type="DellSoftwareInventoryCollection.DellSoftwareInventoryCollection" ContainsTarget="true" Nullable="false">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="A reference to a DellSoftwareInventoryCollection resource."/>
+              <Annotation Term="OData.LongDescription" String="A reference to a DellSoftwareInventoryCollection resource."/>
+              <Annotation Term="OData.AutoExpandReferences"/>
+          </NavigationProperty>
+      </ComplexType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService.v1_3_0">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+      <Annotation Term="OData.Description" String="This version was created to add RecoverFirmware action."/>
+      <ComplexType Name="DellOemUpdateService" BaseType="DellUpdateService.v1_2_0.DellOemUpdateService"/>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService.v1_4_0">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+      <Annotation Term="OData.Description" String="This version was created to add ConfigureCX8WriteProtect action."/>
+      <ComplexType Name="DellOemUpdateService" BaseType="DellUpdateService.v1_3_0.DellOemUpdateService"/>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService.v1_5_0">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+      <Annotation Term="Redfish.Release" String="2026.1"/>
+      <Annotation Term="OData.Description" String="This version was created to add InstallStagedPackages action."/>
+      <ComplexType Name="DellOemUpdateService" BaseType="DellUpdateService.v1_4_0.DellOemUpdateService"/>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellUpdateService.v1_6_0">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+      <Annotation Term="Redfish.Release" String="2026.2"/>
+      <Annotation Term="OData.Description" String="This version was created to add ConfigureHardwareWriteProtect action and deprecate ConfigureCX8WriteProtect action."/>
+      <ComplexType Name="DellOemUpdateService" BaseType="DellUpdateService.v1_5_0.DellOemUpdateService"/>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "BatteryLearnMode": {
             "enum": [
@@ -41,18 +41,21 @@
                 "UserMode",
                 "ContinueBootOnError",
                 "HeadlessModeContinueOnError",
-                "HeadlessSafeMode"
+                "HeadlessSafeMode",
+                "SafeModeOnError"
             ],
             "enumDescriptions": {
                 "ContinueBootOnError": "Boot Mode is Continue Boot On Error.",
                 "HeadlessModeContinueOnError": "Boot Mode is Headless.",
                 "HeadlessSafeMode": "Boot Mode is Headless Safe.",
+                "SafeModeOnError": "Boot Mode is Safe Mode On Error.",
                 "UserMode": "Boot Mode is User."
             },
             "enumLongDescriptions": {
                 "ContinueBootOnError": "Boot Mode is Continue Boot On Error.",
                 "HeadlessModeContinueOnError": "Boot Mode is Headless.",
                 "HeadlessSafeMode": "Boot Mode is Headless Safe.",
+                "SafeModeOnError": "Boot Mode is Safe Mode On Error.",
                 "UserMode": "Boot Mode is User."
             },
             "type": "string"
@@ -99,7 +102,7 @@
         "DellOemStorageController": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.v1_1_0.json#/definitions/DellOemStorageController"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.v1_2_0.json#/definitions/DellOemStorageController"
                 }
             ],
             "description": "Oem data related to the Storage Controller.",

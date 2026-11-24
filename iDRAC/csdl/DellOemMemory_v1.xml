@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellOemMemory  v1.0.0                                              -->
+<!--# This schema complements to OEM section of DMTF Memory resource               -->
+<!--# Copyright 2023-2024 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Processor_v1.xml">
+    <edmx:Include Namespace="Processor"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMemory_v1.xml">
+    <edmx:Include Namespace="DellMemory"/>
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemMemory">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellMemoryLinks" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="This is the complex property is for the additional OEM Links related to the Memory."/>
+        <Annotation Term="OData.LongDescription" String="This is the complex property is for the additional OEM Links related to the Memory."/>
+      </ComplexType>
+      <ComplexType Name="DellMemory" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="This is the complex property is for the additional OEM properties related to the Memory."/>
+        <Annotation Term="OData.LongDescription" String="This is the complex property is for the additional OEM properties related to the Memory."/>
+      </ComplexType>
+    </Schema>
+
+	  <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemMemory.v1_0_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellMemoryLinks" BaseType="DellOemMemory.DellMemoryLinks">
+        <Annotation Term="OData.Description" String="This version was added to add new Oem resources and Links."/>
+        <Annotation Term="OData.LongDescription" String="This version was added to add new Oem resources and Links."/>
+        <NavigationProperty Name="CPUAffinity" Type="Collection(Processor.Processor)" ContainsTarget="true">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+      </ComplexType>
+      <ComplexType Name="DellMemoryProperties" BaseType="DellOemMemory.DellMemory">
+        <NavigationProperty Name="DellMemory" Type="DellMemory.DellMemory" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A resource representation of DellMemory."/>
+          <Annotation Term="OData.LongDescription" String="A resource representation of DellMemory."/>
+          <Annotation Term="OData.AutoExpand"/>
+        </NavigationProperty>
+      </ComplexType>
+      <ComplexType Name="DellMemory" BaseType="DellOemMemory.v1_0_0.DellMemoryProperties">
+        <Annotation Term="OData.Description" String="This version was added to add new Oem resources and Links."/>
+        <Annotation Term="OData.LongDescription" String="This version was added to add new Oem resources and Links."/>
+      </ComplexType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

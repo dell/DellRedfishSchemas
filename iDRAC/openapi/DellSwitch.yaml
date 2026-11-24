@@ -1,0 +1,179 @@
+components:
+  schemas:
+    DellSwitch_DebugType:
+      enum:
+      - TraceSeverity
+      - SubSystem
+      type: string
+      x-enumDescriptions:
+        SubSystem: SubSystem
+        TraceSeverity: TraceSeverity
+      x-enumLongDescriptions:
+        SubSystem: SubSystem
+        TraceSeverity: TraceSeverity
+    DellSwitch_GetTagSBTimeout:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_2_0.yaml#/components/schemas/DellSwitch_v1_2_0_GetTagSBTimeout
+      description: This action is used to read the Tag ScoreBoard timeout value for
+        the given station
+      x-longDescription: This action is used to tead the Tag ScoreBoard timeout value
+        for the given station
+    DellSwitch_GetTagSBTimeoutResponse:
+      additionalProperties: false
+      description: The response body for the GetTagSBTimeout action.
+      properties:
+        StationNumber:
+          description: This property states the station number.
+          format: int64
+          type: integer
+          x-longDescription: This property states the station number for which ScoreBoard
+            timeout value is captured.
+        TagSBTimeoutValue:
+          description: This property states the timeout value.
+          type: string
+          x-longDescription: This property states Tag ScoreBoard timeout value for
+            the given station.
+        TimeoutMode:
+          description: This property states about Timeout mode.
+          type: string
+          x-longDescription: This property states about Timeout mode.
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetTagSBTimeout action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellSwitch_GetTraceSeverity:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_2_0.yaml#/components/schemas/DellSwitch_v1_2_0_GetTraceSeverity
+      description: This action is used to get the Broadcom Switch health config trace
+        log options
+      x-longDescription: This action is used to get the Broadcom Switch health config
+        trace log options
+    DellSwitch_GetTraceSeverityResponse:
+      additionalProperties: false
+      description: The response body for the GetTraceSeverity action.
+      properties:
+        TraceMask:
+          description: This property states the TraceMask
+          nullable: true
+          type: string
+          x-longDescription: 'This property states the TraceMask, only this property
+            will be show if we select DebugType as SubSystemType in GetTraceSeverity '
+        TraceSeverity:
+          $ref: '#/components/schemas/DellSwitch_TraceSeverity'
+          description: This property states the trigger status
+          nullable: true
+          x-longDescription: This property states the trigger status, only this property
+            will be show if we select DebugType as TraceSeverity in GetTraceSeverity
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetTraceSeverity action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellSwitch_InjFrequency:
+      enum:
+      - 1US
+      - 16US
+      - 1MS
+      type: string
+      x-enumDescriptions:
+        16US: 'Inject error every 16us '
+        1MS: 'Inject error every 1ms '
+        1US: 'Inject error every 1us '
+      x-enumLongDescriptions:
+        16US: Data Link Layer Packet
+        1MS: Inject error every 1ms
+        1US: Transaction Layer Packet
+      x-versionAdded: v1_1_0
+    DellSwitch_QueryMode:
+      enum:
+      - Runtime
+      - Flash
+      type: string
+      x-enumDescriptions:
+        Flash: Query data stored in the flash
+        Runtime: Query data stored in the current session
+      x-enumLongDescriptions:
+        Flash: 'Query data stored in the flash '
+        Runtime: Query data stored in the current session
+      x-versionAdded: v1_1_0
+    DellSwitch_SetLaneErrorInjection:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_2_0.yaml#/components/schemas/DellSwitch_v1_2_0_SetLaneErrorInjection
+      description: This action is used to Perform the error injection on a Lane
+      x-longDescription: This action is used to Perform the error injection on a Lane
+    DellSwitch_SetTraceSeverity:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitch.v1_2_0.yaml#/components/schemas/DellSwitch_v1_2_0_SetTraceSeverity
+      description: This action is used to set the Broadcom Switch trace severity log
+        options
+      x-longDescription: This action is used to set the Broadcom Switch trace severity
+        log options
+    DellSwitch_SubSystemType:
+      enum:
+      - HALI
+      - FWCORE
+      - SES
+      - PMG
+      - OEM
+      - BPL
+      - OOB
+      - SPI
+      - SEC
+      - SMM
+      type: string
+      x-enumDescriptions:
+        BPL: BPL
+        FWCORE: FWCORE
+        HALI: HALI
+        OEM: OEM
+        OOB: OOB
+        PMG: PMG
+        SEC: SEC
+        SES: SES
+        SMM: SMM
+        SPI: SPI
+      x-enumLongDescriptions:
+        BPL: BPL
+        FWCORE: FWCORE
+        HALI: HALI
+        OEM: OEM
+        OOB: OOB
+        PMG: PMG
+        SEC: SEC
+        SES: SES
+        SMM: SMM
+        SPI: SPI
+    DellSwitch_TraceSeverity:
+      enum:
+      - Debug
+      - Info
+      - Warning
+      - Error
+      type: string
+      x-enumDescriptions:
+        Debug: Debug
+        Error: Error
+        Info: Info
+        Warning: Warning
+      x-enumLongDescriptions:
+        Debug: Debug
+        Error: Error
+        Info: Info
+        Warning: Warning
+    DellSwitch_UpdateType:
+      enum:
+      - Runtime
+      - Persistent
+      type: string
+      x-enumDescriptions:
+        Persistent: Persistent
+        Runtime: Runtime
+      x-enumLongDescriptions:
+        Persistent: Persistent
+        Runtime: Runtime
+title: '#DellSwitch'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.

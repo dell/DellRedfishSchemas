@@ -1,0 +1,289 @@
+components:
+  schemas:
+    OemComputerSystem_v1_2_0_Actions:
+      additionalProperties: false
+      properties:
+        '#OemComputerSystem.SetWatchdog':
+          $ref: '#/components/schemas/OemComputerSystem_v1_2_0_SetWatchdog'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemComputerSystem_v1_2_0_ComputerSystem:
+      additionalProperties: false
+      description: This version was introduced to add Oem properties in ComputerSystems
+        resource.
+      properties:
+        DellSystem:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellSystem.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellSystem.
+        IPMIHostWatchdogTimer:
+          $ref: '#/components/schemas/OemComputerSystem_v1_2_0_IPMIHostWatchdogTimer'
+          description: IPMI watchdog timer status and countdown values.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain the IPMI watchdog timer status
+            including timeout action and countdown values.
+          x-versionAdded: v1_2_0
+        WatchdogState:
+          $ref: '#/components/schemas/OemComputerSystem_v1_2_0_WatchdogState'
+          description: The watchdog state.
+          nullable: true
+          readOnly: true
+          x-longDescription: The current state of the watchdog.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This version was introduced to add Oem properties in ComputerSystems
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemComputerSystem_v1_2_0_IPMIHostWatchdogTimer:
+      additionalProperties: false
+      description: IPMI watchdog timer status and countdown values.
+      properties:
+        CurrentCountdown:
+          description: Present (remaining) countdown value in seconds.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the present (remaining) countdown
+            value in seconds. This value counts down from TimeoutSeconds.
+          x-versionAdded: v1_2_0
+        TimeoutAction:
+          $ref: '#/components/schemas/OemComputerSystem_v1_2_0_WatchdogTimeoutActions'
+          description: Timeout action when IPMI watchdog expires.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain the timeout action that occurs
+            when the IPMI watchdog timer expires.
+          x-versionAdded: v1_2_0
+        TimeoutSeconds:
+          description: Timeout value in seconds.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the timeout value in seconds
+            that was programmed when the IPMI watchdog was last started.
+          x-versionAdded: v1_2_0
+      type: object
+      x-longDescription: This complex type shall contain the IPMI watchdog timer status
+        including timeout action and countdown values.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemComputerSystem_v1_2_0_Links:
+      additionalProperties: false
+      description: This version was introduced to add Oem Links in ComputerSystems
+        resource.
+      properties:
+        DellAcceleratorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellAcceleratorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellAcceleratorCollection resource.
+        DellBIOSService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellBIOSService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellBIOSService resource.
+        DellBootSources:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellBootSources resource.
+          readOnly: true
+          x-longDescription: A reference to a DellBootSources resource.
+        DellChassisCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellChassisCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellChassisCollection resource.
+        DellControllerCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellControllerCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellControllerCollection resource.
+        DellGPUSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellGPUSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellGPUSensorCollection resource.
+        DellMemoryCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellMemoryCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellMemoryCollection resource.
+        DellMetricService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellMetricService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellMetricService resource.
+        DellNumericSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellNumericSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellNumericSensorCollection resource.
+        DellOSDeploymentService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellOSDeploymentService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellOSDeploymentService resource.
+        DellPCIeSSDCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPCIeSSDCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPCIeSSDCollection resource.
+        DellPCIeSSDExtenderCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPCIeSSDExtenderCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPCIeSSDExtenderCollection resource.
+        DellPSNumericSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPSNumericSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPSNumericSensorCollection resource.
+        DellPhysicalDiskCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPhysicalDiskCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPhysicalDiskCollection resource.
+        DellPresenceAndStatusSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPresenceAndStatusSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPresenceAndStatusSensorCollection
+            resource.
+        DellProcessorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellProcessorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellProcessorCollection resource.
+        DellRaidService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellRaidService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellRaidService resource.
+        DellRollupStatusCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellRollupStatusCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellRollupStatusCollection resource.
+        DellSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSensorCollection resource.
+        DellSlotCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSlotCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSlotCollection resource.
+        DellSoftwareInstallationService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSoftwareInstallationService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSoftwareInstallationService resource.
+        DellSwitchConnectionCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSwitchConnectionCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSwitchConnectionCollection resource.
+        DellSwitchConnectionService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSwitchConnectionService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSwitchConnectionService resource.
+        DellSystemManagementService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSystemManagementService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSystemManagementService resource.
+        DellVideoCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellVideoCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellVideoCollection resource.
+        DellVideoNetworkCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellVideoNetworkCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellVideoNetworkCollection resource.
+        DellVirtualDiskCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellVirtualDiskCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellVirtualDiskCollection resource.
+      type: object
+      x-longDescription: This version was introduced to add Oem Links in ComputerSystems
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemComputerSystem_v1_2_0_SetWatchdog:
+      additionalProperties: false
+      description: This action is used to set the watchdog timeout interval.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall set the watchdog timeout interval. The
+        watchdog state will reset to its factory default setting of disabled upon
+        reset to defaults.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    OemComputerSystem_v1_2_0_SetWatchdogRequestBody:
+      additionalProperties: false
+      description: This action is used to set the watchdog timeout interval.
+      properties:
+        TimeoutInterval:
+          description: The watchdog timeout interval to be set.
+          format: int64
+          maximum: 5
+          minimum: 0
+          type: integer
+          x-longDescription: The watchdog timeout interval to be set in minutes with
+            a supported range of 0 to 5. If the value is non-zero, the watchdog will
+            be enabled with the specified timeout interval, if zero, it will be disabled.
+      required:
+      - TimeoutInterval
+      type: object
+      x-longDescription: This action shall set the watchdog timeout interval. The
+        watchdog state will reset to its factory default setting of disabled upon
+        reset to defaults.
+    OemComputerSystem_v1_2_0_WatchdogState:
+      enum:
+      - Running
+      - NotRunning
+      type: string
+      x-enumDescriptions:
+        NotRunning: Watchdog is not running.
+        Running: Watchdog is running.
+    OemComputerSystem_v1_2_0_WatchdogTimeoutActions:
+      enum:
+      - None
+      - ResetSystem
+      - PowerCycle
+      - PowerDown
+      - OEM
+      type: string
+      x-enumDescriptions:
+        None: No action taken.
+        OEM: Perform an OEM-defined action.
+        PowerCycle: Power cycle the system.
+        PowerDown: Power down the system.
+        ResetSystem: Reset the system.
+title: '#OemComputerSystem.v1_2_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

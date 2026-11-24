@@ -1,0 +1,78 @@
+components:
+  schemas:
+    DellAssembly_v1_1_0_DellAssembly:
+      additionalProperties: false
+      description: This resource shall be used to represent an assembly information.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceFQDD:
+          description: This property has the value of the FQDD of the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property has the value of the FQDD of the device.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        MACAddress:
+          description: A string that contains the MAC Address.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the MAC Address.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        PackageType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAssembly.yaml#/components/schemas/DellAssembly_PackageType
+          description: Enumeration that defines the type of the PhysicalPackage.
+          nullable: true
+          readOnly: true
+          x-longDescription: Enumeration that defines the type of the PhysicalPackage.
+        SDKVersion:
+          description: This property represents the SDK version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the SDK version.
+          x-versionAdded: v1_1_0
+        SerialNumber:
+          description: A manufacturer-allocated number used to identify the Physical
+            Element.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A manufacturer-allocated number used to identify the
+            Physical Element.
+        VendorIANA:
+          description: This property represents the VendorIANA.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the VendorIANA.
+          x-versionAdded: v1_1_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: This resource shall be used to represent an assembly information.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellAssembly.v1_1_0.DellAssembly'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

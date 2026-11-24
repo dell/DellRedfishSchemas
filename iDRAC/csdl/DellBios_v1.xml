@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--############################################################################################       -->
+<!--# Redfish Schema:  DellBios  v1.0.0 -->
+<!--# This schema complements to Oem section of Bios. -->
+<!--# Copyright © 2014-2025 Dell Inc. or its subsidiaries. All Rights Reserved.                                                                     -->
+<!--# See the full Dell copyright policy                                                                                             -->
+<!--#############################################################################################       -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="OData" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Alias="Redfish" Namespace="RedfishExtensions.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Bios_v1.xml">
+        <edmx:Include Namespace="Bios"/>
+        <edmx:Include Namespace="Bios.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+
+        <Schema Namespace="DellBios" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <Action Name="RunBIOSLiveScanning" IsBound="true">
+                <Parameter Name="DellBios" Type="Bios.v1_0_0.OemActions"/>
+                <Annotation Term="OData.Description" String="Real time BIOS scanning verifies the integrity and authenticity of the BIOS image in the Primary ROM when the host is powered ON, but not in the POST. This feature is available only with iDRAC Datacenter license and user need to have the Debug privilege to perform this operation"/>
+                <Annotation Term="OData.LongDescription" String="Real time BIOS scanning verifies the integrity and authenticity of the BIOS image in the Primary ROM when the host is powered ON, but not in the POST. This feature is available only with iDRAC Datacenter license and user need to have the Debug privilege to perform this operation"/>
+            </Action>
+            <Action Name="SetBiosTime" IsBound="true">
+                <Annotation Term="OData.Description" String="Sets the BIOS time to a specified value. This action allows the user to configure the system clock and ensure that the BIOS is synchronized with the current time. If @Redfish.OperationApplyTime is not passed, by default it will be set to OnReset"/>
+                <Annotation Term="OData.LongDescription" String="Sets the BIOS time to a specified value. This action allows the user to configure the system clock and ensure that the BIOS is synchronized with the current time. If @Redfish.OperationApplyTime is not passed, by default it will be set to OnReset"/>
+                <Parameter Name="Bios" Type="Bios.v1_0_0.OemActions"/>
+                <Parameter Name="BiosDateTime" Type="Edm.DateTimeOffset">
+                    <Annotation String="This property specifies the BIOS time that needs to be set. The BIOS time is the time that is stored in the computer's Basic Input/Output System (BIOS) and is used to keep track of the current time and date. The BIOS time is set in the format YYYY-MM-DDTHH:MM:SS+-HH:MM" Term="OData.Description"/>
+                    <Annotation String="This property specifies the BIOS time that needs to be set. The BIOS time is the time that is stored in the computer's Basic Input/Output System (BIOS) and is used to keep track of the current time and date. The BIOS time is set in the format YYYY-MM-DDTHH:MM:SS+-HH:MM" Term="OData.LongDescription"/>
+                </Parameter>
+                <Parameter Name="DaylightSavingsEnabled" Type="Edm.Boolean">
+                    <Annotation String="This property specifies whether Daylight Saving Time (DST) is enabled or not. DST is the practice of temporarily advancing clocks during the summer months by one hour so that people can make the most of the sunlight during their waking hours." Term="OData.Description"/>
+                    <Annotation String="This property specifies whether Daylight Saving Time (DST) is enabled or not. DST is the practice of temporarily advancing clocks during the summer months by one hour so that people can make the most of the sunlight during their waking hours." Term="OData.LongDescription"/>
+                </Parameter>
+            </Action>
+        </Schema>
+        <Schema Namespace="DellBios.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        </Schema>
+        <Schema Namespace="DellBios.v1_0_1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation Term="OData.Description" String="The Description and LongDescription for Parameter DellBios was changed"/>
+            <Annotation Term="OData.LongDescription" String="The Description and LongDescription for Parameter DellBios was changed to a detailed description"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

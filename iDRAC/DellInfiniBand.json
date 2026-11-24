@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.json",
     "$ref": "#/definitions/DellInfiniBand",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ConnectFirstTarget": {
             "enum": [
@@ -76,7 +76,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.v1_3_0.json#/definitions/DellInfiniBand"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.v1_4_0.json#/definitions/DellInfiniBand"
                 }
             ],
             "deletable": false,
@@ -210,6 +210,7 @@
                 "PCIExpressGen5x4",
                 "PCIExpressGen5x8",
                 "PCIExpressGen5x16",
+                "PCIExpressGen6andBeyond",
                 "PCIExpressX1",
                 "PCIExpressX16",
                 "PCIExpressX2",
@@ -266,6 +267,7 @@
                 "PCIExpressGen5x16": "PCI Express Gen 5 x16",
                 "PCIExpressGen5x4": "PCI Express Gen 5 x4",
                 "PCIExpressGen5x8": "PCI Express Gen 5 x8",
+                "PCIExpressGen6andBeyond": "PCI Express Gen 6 and Beyond",
                 "PCIExpressX1": "PCI Express x1",
                 "PCIExpressX16": "PCI Express x16",
                 "PCIExpressX2": "PCI Express x2",
@@ -322,6 +324,7 @@
                 "PCIExpressGen5x16": "PCI Express Gen 5 x16",
                 "PCIExpressGen5x4": "PCI Express Gen 5 x4",
                 "PCIExpressGen5x8": "PCI Express Gen 5 x8",
+                "PCIExpressGen6andBeyond": "PCI Express Gen 6 and Beyond",
                 "PCIExpressX1": "PCI Express x1",
                 "PCIExpressX16": "PCI Express x16",
                 "PCIExpressX2": "PCI Express x2",
@@ -337,7 +340,8 @@
                 "PCIExpressGen5": "v1_2_0",
                 "PCIExpressGen5x16": "v1_3_0",
                 "PCIExpressGen5x4": "v1_3_0",
-                "PCIExpressGen5x8": "v1_3_0"
+                "PCIExpressGen5x8": "v1_3_0",
+                "PCIExpressGen6andBeyond": "v1_4_0"
             },
             "type": "string"
         },

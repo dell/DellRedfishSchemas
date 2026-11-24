@@ -1,0 +1,11 @@
+components:
+  schemas:
+    DellFan_DellFan:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFan.v1_1_0.yaml#/components/schemas/DellFan_v1_1_0_DellFan
+      description: This property shall represent the Oem properties for a Fan resource.
+      x-longDescription: This property shall represent the Oem properties for a Fan
+        resource.
+title: '#DellFan'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell
