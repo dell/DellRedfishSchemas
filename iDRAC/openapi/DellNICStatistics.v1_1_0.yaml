@@ -1,0 +1,119 @@
+components:
+  schemas:
+    DellNICStatistics_v1_1_0_DellNICStatistics:
+      additionalProperties: false
+      description: An instance of DellNICStatistics will have the statistics of the
+        NIC, NIC port or partition.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        RxBytes:
+          description: Counts the total number of bytes received, including host and
+            remote management pass through traffic (remote management pass through
+            traffic is applicable to LOMs only).
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Counts the total number of bytes received, including
+            host and remote management pass through traffic (remote management pass
+            through traffic is applicable to LOMs only).
+          x-units: Bytes
+        RxMulticastPackets:
+          description: Counts the total number of good multicast packets received.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Counts the total number of good multicast packets received.
+          x-units: Packets
+          x-versionAdded: v1_1_0
+        RxMutlicastPackets:
+          deprecated: true
+          description: Counts the total number of good multicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-deprecatedReason: This property has been deprecated in favor of RxMulticastPackets.
+          x-longDescription: Counts the total number of good multicast packets transmitted.
+          x-units: Packets
+          x-versionDeprecated: v1_1_0
+        RxUnicastPackets:
+          description: Counts the total number of good unicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Counts the total number of good unicast packets transmitted.
+          x-units: Packets
+        TxBytes:
+          description: Counts the total number of bytes transmitted, including host
+            and remote management pass through traffic (remote management pass through
+            traffic is applicable to LOMs only).
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Counts the total number of bytes transmitted, including
+            host and remote management pass through traffic (remote management pass
+            through traffic is applicable to LOMs only).
+          x-units: Bytes
+        TxMulticastPackets:
+          description: Counts the total number of good multicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Counts the total number of good multicast packets transmitted.
+          x-units: Packets
+          x-versionAdded: v1_1_0
+        TxMutlicastPackets:
+          deprecated: true
+          description: Counts the total number of good multicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-deprecatedReason: This property has been deprecated in favor of TxMulticastPackets.
+          x-longDescription: Counts the total number of good multicast packets transmitted.
+          x-units: Packets
+          x-versionDeprecated: v1_1_0
+        TxUnicastPackets:
+          description: Counts the total number of good unicast packets transmitted.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Counts the total number of good unicast packets transmitted.
+          x-units: Packets
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellNICStatistics will have the statistics
+        of the NIC, NIC port or partition.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellNICStatistics.v1_1_0.DellNICStatistics'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

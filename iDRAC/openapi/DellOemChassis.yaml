@@ -1,0 +1,48 @@
+components:
+  schemas:
+    DellOemChassis_DellOemChassis:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemChassis.v1_6_0.yaml#/components/schemas/DellOemChassis_v1_6_0_DellOemChassis
+      description: Oem data related to DellOemChassis.
+      x-longDescription: Oem data related to DellOemChassis.
+    DellOemChassis_DellOemChassisLinks:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemChassis.v1_6_0.yaml#/components/schemas/DellOemChassis_v1_6_0_DellOemChassisLinks
+      description: This is the complex property for the additional OEM Links.
+      x-longDescription: This is the complex property for the additional OEM Links.
+    DellOemChassis_ExtendedReset:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemChassis.v1_6_0.yaml#/components/schemas/DellOemChassis_v1_6_0_ExtendedReset
+      description: This action performs an extended chassis reset action.
+      x-longDescription: This action performs a chassis reset. It let's the user set
+        the targeted power state after the reset is completed.
+    DellOemChassis_ResetFilterLife:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemChassis.v1_6_0.yaml#/components/schemas/DellOemChassis_v1_6_0_ResetFilterLife
+      description: This action is used to reset Bezel air filter.
+      x-longDescription: This action shall perform reset of Bezel air filter.
+    DellOemChassis_ResetSensorMetrics:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemChassis.v1_6_0.yaml#/components/schemas/DellOemChassis_v1_6_0_ResetSensorMetrics
+      description: This action performs an extended chassis reset action.
+      x-longDescription: This action performs a chassis reset. It let's the user set
+        the targeted power state after the reset is completed.
+    DellOemChassis_ResetTimingModule:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemChassis.v1_6_0.yaml#/components/schemas/DellOemChassis_v1_6_0_ResetTimingModule
+      description: This action triggers a hardware reset pulse to the timing module.
+      x-longDescription: This action triggers a hardware reset pulse to the timing
+        module.
+    DellOemChassis_SetLEDStatus:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemChassis.v1_6_0.yaml#/components/schemas/DellOemChassis_v1_6_0_SetLEDStatus
+      description: This action performs an extended Set Chassis LED Status.
+      x-longDescription: This action performs a Set Chassis LED Status.
+    DellOemChassis_SetPSUConfiguration:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemChassis.v1_6_0.yaml#/components/schemas/DellOemChassis_v1_6_0_SetPSUConfiguration
+      description: This action performs an extended chassis Set PSUConfiguration.
+      x-longDescription: This action performs a chassis Set PSUConfiguration.
+title: '#DellOemChassis'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

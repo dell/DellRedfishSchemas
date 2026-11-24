@@ -1,0 +1,550 @@
+components:
+  schemas:
+    DellVirtualDisk_AllowedOperations:
+      additionalProperties: false
+      description: The allowed operations for the virtual disk.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain the allowed operations that can be
+        performed on the virtual disk.
+      x-patternProperties:
+        '[A-Za-z0-9]+': {}
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellVirtualDisk_AvailableCachePolicies:
+      enum:
+      - WriteThrough
+      - WriteBack
+      - WriteBackForce
+      - NoReadAhead
+      - ReadAhead
+      - AdaptiveReadAhead
+      type: string
+      x-enumDescriptions:
+        AdaptiveReadAhead: The adaptive read ahead cache policy is available for the
+          virtual disk.
+        NoReadAhead: The no read ahead cache policy is available for the virtual disk.
+        ReadAhead: The read ahead cache policy is available for the virtual disk.
+        WriteBack: The write back cache policy is available for the virtual disk.
+        WriteBackForce: The force write back cache policy is available for the virtual
+          disk.
+        WriteThrough: The write through cache policy is available for the virtual
+          disk.
+      x-enumLongDescriptions:
+        AdaptiveReadAhead: The adaptive read ahead cache policy is available for the
+          virtual disk.
+        NoReadAhead: The no read ahead cache policy is available for the virtual disk.
+        ReadAhead: The read ahead cache policy is available for the virtual disk.
+        WriteBack: The write back cache policy is available for the virtual disk.
+        WriteBackForce: The force write back cache policy is available for the virtual
+          disk.
+        WriteThrough: The write through cache policy is available for the virtual
+          disk.
+    DellVirtualDisk_BusProtocol:
+      enum:
+      - FIBRE
+      - PATA
+      - PCIE
+      - SAS
+      - SATA
+      - SCSI
+      - USB
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        FIBRE: FIBRE
+        PATA: PATA
+        PCIE: PCIE
+        SAS: SAS
+        SATA: SATA
+        SCSI: SCSI
+        USB: USB
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        FIBRE: FIBRE
+        PATA: PATA
+        PCIE: PCIE
+        SAS: SAS
+        SATA: SATA
+        SCSI: SCSI
+        USB: USB
+        Unknown: Unknown
+      x-enumVersionAdded:
+        PCIE: v1_2_0
+    DellVirtualDisk_Cachecade:
+      enum:
+      - CachecadeVD
+      - NonCachecadeVD
+      type: string
+      x-enumDescriptions:
+        CachecadeVD: Cachecade Virtual Disk
+        NonCachecadeVD: Not a Cachecade Virtual Disk
+      x-enumLongDescriptions:
+        CachecadeVD: Cachecade Virtual Disk
+        NonCachecadeVD: Not a Cachecade Virtual Disk
+    DellVirtualDisk_DellVirtualDisk:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDisk.v1_3_0.yaml#/components/schemas/DellVirtualDisk_v1_3_0_DellVirtualDisk
+      description: An instance of DellVirtualDisk will have data specific to the Virtual
+        Disks in the system.
+      urisDeprecated:
+      - /redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/Oem/Dell/DellVolumes/{VirtualDiskId}
+      - /redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/{VolumeId}/Oem/Dell/DellVolumes/{VirtualDiskId}
+      x-longDescription: An instance of DellVirtualDisk will have data specific to
+        the Virtual Disks in the system.
+    DellVirtualDisk_DiskCachePolicy:
+      enum:
+      - Default
+      - Disabled
+      - Enabled
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Default: Default
+        Disabled: Disabled
+        Enabled: Enabled
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Default: Default
+        Disabled: Disabled
+        Enabled: Enabled
+        Unknown: Unknown
+    DellVirtualDisk_LockStatus:
+      enum:
+      - Locked
+      - Unlocked
+      type: string
+      x-enumDescriptions:
+        Locked: Locked
+        Unlocked: Unlocked
+      x-enumLongDescriptions:
+        Locked: Locked
+        Unlocked: Unlocked
+    DellVirtualDisk_MediaType:
+      enum:
+      - HardDiskDrive
+      - SolidStateDrive
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        HardDiskDrive: Hard Disk Drive
+        SolidStateDrive: Solid State Drive
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        HardDiskDrive: Hard Disk Drive
+        SolidStateDrive: Solid State Drive
+        Unknown: Unknown
+    DellVirtualDisk_ObjectStatus:
+      enum:
+      - Current
+      - CurrentVirtualDiskPendingDelete
+      - Pending
+      - PendingCreate
+      type: string
+      x-enumDescriptions:
+        Current: Current
+        CurrentVirtualDiskPendingDelete: Current Virtual Disk Pending Delete
+        Pending: Pending
+        PendingCreate: Pending Create
+      x-enumLongDescriptions:
+        Current: Current
+        CurrentVirtualDiskPendingDelete: Current Virtual Disk Pending Delete
+        Pending: Pending
+        PendingCreate: Pending Create
+      x-enumVersionAdded:
+        Current: v1_1_0
+        CurrentVirtualDiskPendingDelete: v1_1_0
+        Pending: v1_1_0
+        PendingCreate: v1_1_0
+    DellVirtualDisk_OperationalStates:
+      enum:
+      - BackgroundInitialization
+      - CheckConsistency
+      - Initialize
+      - Reconstruct
+      - Rebuild
+      - Clear
+      - Copyback
+      - Learn
+      - TTYExport
+      type: string
+      x-enumDescriptions:
+        BackgroundInitialization: A background initialization operation is in progress.
+        CheckConsistency: A check consistency operation is in progress.
+        Clear: A data erase operation is in progress on a physical disk.
+        Copyback: A copyback operation is in progress from a hot spare to a replacement
+          physical disk.
+        Initialize: An initialization operation is in progress.
+        Learn: A battery reconditioning cycle is in progress.
+        Rebuild: A rebuild operation is in progress on a failed disk.
+        Reconstruct: A virtual disk reconstruction operation is in progress.
+        TTYExport: A log export operation is in progress.
+      x-enumLongDescriptions:
+        BackgroundInitialization: A background initialization operation is in progress.
+        CheckConsistency: A check consistency operation is in progress.
+        Clear: A data erase operation is in progress on a physical disk.
+        Copyback: A copyback operation is in progress from a hot spare to a replacement
+          physical disk.
+        Initialize: An initialization operation is in progress.
+        Learn: A battery reconditioning cycle is in progress.
+        Rebuild: A rebuild operation is in progress on a failed disk.
+        Reconstruct: A virtual disk reconstruction operation is in progress.
+        TTYExport: A log export operation is in progress.
+    DellVirtualDisk_PendingChanges:
+      enum:
+      - RAIDLevel
+      - RAIDLevelQualifier
+      - Size
+      - StripeSize
+      - CachePolicy
+      - ReadPolicy
+      - WritePolicy
+      - AccessPolicy
+      - DiskCachePolicy
+      - SpanRedundancyLevel
+      - Operations
+      - Name
+      - T10PIStatus
+      - UnmapState
+      type: string
+      x-enumDescriptions:
+        AccessPolicy: A change to the access policy is pending.
+        CachePolicy: A change to the cache policy is pending.
+        DiskCachePolicy: A change to the disk cache policy is pending.
+        Name: A change to the virtual disk name is pending.
+        Operations: Virtual disk operations are pending.
+        RAIDLevel: A change to the RAID level is pending.
+        RAIDLevelQualifier: A change to the RAID level qualifier is pending.
+        ReadPolicy: A change to the read policy is pending.
+        Size: A change to the virtual disk size is pending.
+        SpanRedundancyLevel: A change to the span redundancy level is pending.
+        StripeSize: A change to the stripe size is pending.
+        T10PIStatus: A change to the T10 Protection Information status is pending.
+        UnmapState: A change to the virtual disk unmap state is pending.
+        WritePolicy: A change to the write policy is pending.
+      x-enumLongDescriptions:
+        AccessPolicy: A change to the access policy is pending.
+        CachePolicy: A change to the cache policy is pending.
+        DiskCachePolicy: A change to the disk cache policy is pending.
+        Name: A change to the virtual disk name is pending.
+        Operations: Virtual disk operations are pending.
+        RAIDLevel: A change to the RAID level is pending.
+        RAIDLevelQualifier: A change to the RAID level qualifier is pending.
+        ReadPolicy: A change to the read policy is pending.
+        Size: A change to the virtual disk size is pending.
+        SpanRedundancyLevel: A change to the span redundancy level is pending.
+        StripeSize: A change to the stripe size is pending.
+        T10PIStatus: A change to the T10 Protection Information status is pending.
+        UnmapState: A change to the virtual disk unmap state is pending.
+        WritePolicy: A change to the write policy is pending.
+    DellVirtualDisk_PendingConfigurationStatus:
+      enum:
+      - Current
+      - Pending
+      - CurrentPendingDelete
+      - PendingCreate
+      type: string
+      x-enumDescriptions:
+        Current: The virtual disk configuration is current with no pending changes.
+        CurrentPendingDelete: The virtual disk is current but has a pending delete
+          operation.
+        Pending: Configuration changes are pending for the virtual disk.
+        PendingCreate: The virtual disk has a pending create operation.
+      x-enumLongDescriptions:
+        Current: The virtual disk configuration is current with no pending changes.
+        CurrentPendingDelete: The virtual disk is current but has a pending delete
+          operation.
+        Pending: Configuration changes are pending for the virtual disk.
+        PendingCreate: The virtual disk has a pending create operation.
+    DellVirtualDisk_PendingOperations:
+      enum:
+      - None
+      - FastInitialize
+      - FullInitialize
+      - CheckConsistency
+      - CancelCheckConsistency
+      - AbortInitialize
+      - EncryptVirtualDisk
+      - CancelBackgroundInitialization
+      type: string
+      x-enumDescriptions:
+        AbortInitialize: An abort initialization operation is pending.
+        CancelBackgroundInitialization: A cancel background initialization operation
+          is pending.
+        CancelCheckConsistency: A cancel check consistency operation is pending.
+        CheckConsistency: A check consistency operation is pending.
+        EncryptVirtualDisk: A virtual disk encryption operation is pending.
+        FastInitialize: A fast initialization operation is pending.
+        FullInitialize: A full initialization operation is pending.
+        None: No operations are pending.
+      x-enumLongDescriptions:
+        AbortInitialize: An abort initialization operation is pending.
+        CancelBackgroundInitialization: A cancel background initialization operation
+          is pending.
+        CancelCheckConsistency: A cancel check consistency operation is pending.
+        CheckConsistency: A check consistency operation is pending.
+        EncryptVirtualDisk: A virtual disk encryption operation is pending.
+        FastInitialize: A fast initialization operation is pending.
+        FullInitialize: A full initialization operation is pending.
+        None: No operations are pending.
+    DellVirtualDisk_PrimaryStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_1_0
+        Error: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+    DellVirtualDisk_RaidStatus:
+      enum:
+      - Blocked
+      - Degraded
+      - Failed
+      - Foreign
+      - Offline
+      - Online
+      - Ready
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Blocked: Blocked
+        Degraded: Degraded
+        Failed: Failed
+        Foreign: Foreign
+        Offline: Offline
+        Online: Online
+        Ready: Ready
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Blocked: Blocked
+        Degraded: Degraded
+        Failed: Failed
+        Foreign: Foreign
+        Offline: Offline
+        Online: Online
+        Ready: Ready
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Blocked: v1_1_0
+        Degraded: v1_1_0
+        Failed: v1_1_0
+        Foreign: v1_1_0
+        Offline: v1_1_0
+        Online: v1_1_0
+        Ready: v1_1_0
+        Unknown: v1_1_0
+    DellVirtualDisk_ReadCachePolicy:
+      enum:
+      - AdaptiveReadAhead
+      - NoReadAhead
+      - ReadAhead
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        AdaptiveReadAhead: Adaptive Read Ahead
+        NoReadAhead: No Read Ahead
+        ReadAhead: Read Ahead
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        AdaptiveReadAhead: Adaptive Read Ahead
+        NoReadAhead: No Read Ahead
+        ReadAhead: Read Ahead
+        Unknown: Unknown
+    DellVirtualDisk_StorageCapabilities:
+      enum:
+      - FullDiskEncryption
+      - DataIntegrityField
+      - SolidStateDrive
+      - HardDiskDrive
+      - SATAProtocol
+      - SASProtocol
+      - BadBlocksPresent
+      - SecondaryCache
+      - NVMeProtocol
+      - RealTimePartialInventory
+      - EPDPassthrough
+      - UnmapCapable
+      - BlinkUnblinkNotCapable
+      - OnlineCapacityExpansionWithDisk
+      - OnlineCapacityExpansionWithinArray
+      - OnlineCapacityExpansionValid
+      type: string
+      x-enumDescriptions:
+        BadBlocksPresent: The virtual disk has bad blocks present.
+        BlinkUnblinkNotCapable: The virtual disk does not support blink and unblink
+          operations.
+        DataIntegrityField: The virtual disk supports data integrity field protection.
+        EPDPassthrough: The virtual disk supports Emergency Power Down passthrough.
+        FullDiskEncryption: The virtual disk supports full disk encryption.
+        HardDiskDrive: The virtual disk is composed of hard disk drives.
+        NVMeProtocol: The virtual disk uses the NVMe protocol.
+        OnlineCapacityExpansionValid: The online capacity expansion capability fields
+          are valid.
+        OnlineCapacityExpansionWithDisk: The virtual disk supports online capacity
+          expansion with additional disk addition.
+        OnlineCapacityExpansionWithinArray: The virtual disk supports online capacity
+          expansion within the existing array.
+        RealTimePartialInventory: The virtual disk supports real-time partial inventory.
+        SASProtocol: The virtual disk uses the SAS protocol.
+        SATAProtocol: The virtual disk uses the SATA protocol.
+        SecondaryCache: The virtual disk supports secondary cache.
+        SolidStateDrive: The virtual disk is composed of solid state drives.
+        UnmapCapable: The virtual disk supports unmap operations.
+      x-enumLongDescriptions:
+        BadBlocksPresent: The virtual disk has bad blocks present.
+        BlinkUnblinkNotCapable: The virtual disk does not support blink and unblink
+          operations.
+        DataIntegrityField: The virtual disk supports data integrity field protection.
+        EPDPassthrough: The virtual disk supports Emergency Power Down passthrough.
+        FullDiskEncryption: The virtual disk supports full disk encryption.
+        HardDiskDrive: The virtual disk is composed of hard disk drives.
+        NVMeProtocol: The virtual disk uses the NVMe protocol.
+        OnlineCapacityExpansionValid: The online capacity expansion capability fields
+          are valid.
+        OnlineCapacityExpansionWithDisk: The virtual disk supports online capacity
+          expansion with additional disk addition.
+        OnlineCapacityExpansionWithinArray: The virtual disk supports online capacity
+          expansion within the existing array.
+        RealTimePartialInventory: The virtual disk supports real-time partial inventory.
+        SASProtocol: The virtual disk uses the SAS protocol.
+        SATAProtocol: The virtual disk uses the SATA protocol.
+        SecondaryCache: The virtual disk supports secondary cache.
+        SolidStateDrive: The virtual disk is composed of solid state drives.
+        UnmapCapable: The virtual disk supports unmap operations.
+    DellVirtualDisk_StripeSize:
+      enum:
+      - 128KB
+      - 16KB
+      - 16MB
+      - 1KB
+      - 1MB
+      - 256KB
+      - 2KB
+      - 2MB
+      - 32KB
+      - 4KB
+      - 4MB
+      - 512B
+      - 512KB
+      - 64KB
+      - 8KB
+      - 8MB
+      - Default
+      type: string
+      x-enumDescriptions:
+        128KB: 128KB
+        16KB: 16KB
+        16MB: 16MB
+        1KB: 1KB
+        1MB: 1MB
+        256KB: 256KB
+        2KB: 2KB
+        2MB: 2MB
+        32KB: 32KB
+        4KB: 4KB
+        4MB: 4MB
+        512B: 512B
+        512KB: 512KB
+        64KB: 64KB
+        8KB: 8KB
+        8MB: 8MB
+        Default: Default
+      x-enumLongDescriptions:
+        128KB: 128KB
+        16KB: 16KB
+        16MB: 16MB
+        1KB: 1KB
+        1MB: 1MB
+        256KB: 256KB
+        2KB: 2KB
+        2MB: 2MB
+        32KB: 32KB
+        4KB: 4KB
+        4MB: 4MB
+        512B: 512B
+        512KB: 512KB
+        64KB: 64KB
+        8KB: 8KB
+        8MB: 8MB
+        Default: Default
+      x-enumVersionAdded:
+        128KB: v1_1_0
+        16KB: v1_1_0
+        16MB: v1_1_0
+        1KB: v1_1_0
+        1MB: v1_1_0
+        256KB: v1_1_0
+        2KB: v1_1_0
+        2MB: v1_1_0
+        32KB: v1_1_0
+        4KB: v1_1_0
+        4MB: v1_1_0
+        512B: v1_1_0
+        512KB: v1_1_0
+        64KB: v1_1_0
+        8KB: v1_1_0
+        8MB: v1_1_0
+        Default: v1_1_0
+    DellVirtualDisk_T10PIStatus:
+      enum:
+      - Disabled
+      - Enabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+      x-enumLongDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+      x-enumVersionAdded:
+        Disabled: v1_1_0
+        Enabled: v1_1_0
+    DellVirtualDisk_VirtualDiskEpdPassthrough:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+      x-enumLongDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+      x-enumVersionAdded:
+        Disabled: v1_4_0
+        Enabled: v1_4_0
+    DellVirtualDisk_WriteCachePolicy:
+      enum:
+      - Unknown
+      - WriteBack
+      - WriteBackForce
+      - WriteThrough
+      type: string
+      x-enumDescriptions:
+        Unknown: Unknown
+        WriteBack: Write Back
+        WriteBackForce: Write Back Force
+        WriteThrough: Write Through
+      x-enumLongDescriptions:
+        Unknown: Unknown
+        WriteBack: Write Back
+        WriteBackForce: Write Back Force
+        WriteThrough: Write Through
+title: '#DellVirtualDisk.DellVirtualDisk'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

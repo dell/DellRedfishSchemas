@@ -1,0 +1,132 @@
+components:
+  schemas:
+    DellChassis_v1_1_0_DellChassis:
+      additionalProperties: true
+      description: This resource shall provide information about the enclosure or
+        chassis the system is in.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        CanBeFRUed:
+          description: Boolean that indicates whether this PhysicalElement can be
+            FRUed (TRUE) or not (FALSE).
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: Boolean that indicates whether this PhysicalElement can
+            be FRUed (TRUE) or not (FALSE).
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Links:
+          $ref: '#/components/schemas/DellChassis_v1_1_0_Links'
+          description: Contains references to other resources that are related to
+            this resource.
+          x-longDescription: The Links property, as described by the Redfish Specification,
+            shall contain references to resources that are related to, but not contained
+            by (subordinate to), this resource.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        SystemID:
+          description: This property value is the unique Dell System ID for the platform.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property value is the unique Dell System ID for
+            the platform.
+        TimingConfiguration:
+          $ref: '#/components/schemas/DellChassis_v1_1_0_TimingConfigurationType'
+          description: Timing hardware configuration properties.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property shall contain timing hardware configuration
+            properties, including SMA output source selection and timing module write
+            enable state.
+          x-versionAdded: v1_1_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: This resource shall provide information about the enclosure
+        or chassis the system is in.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellChassis_v1_1_0_Links:
+      additionalProperties: true
+      description: Contains references to other resources that are related to this
+        resource.
+      properties:
+        ComputerSystem:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: Contains references to other resources that are related to
+            this resource.
+          nullable: true
+          readOnly: true
+          x-longDescription: Contains references to other resources that are related
+            to this resource.
+      type: object
+      x-longDescription: This type, as described by the Redfish Specification, shall
+        contain references to resources that are related to, but not contained by
+        (subordinate to), this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellChassis_v1_1_0_SmaOutSourceType:
+      enum:
+      - ePPS
+      - 1PPS
+      type: string
+      x-enumDescriptions:
+        1PPS: The SMA output is sourced from the external 1PPS signal.
+        ePPS: The SMA output is sourced from the embedded PPS signal.
+      x-enumLongDescriptions:
+        1PPS: This value shall indicate the SMA output mux selects the external 1
+          pulse-per-second (1PPS) signal.
+        ePPS: This value shall indicate the SMA output mux selects the embedded PPS
+          (ePPS) signal.
+    DellChassis_v1_1_0_TimingConfigurationType:
+      additionalProperties: false
+      description: Timing hardware configuration.
+      properties:
+        SmaOutSource:
+          $ref: '#/components/schemas/DellChassis_v1_1_0_SmaOutSourceType'
+          description: The SMA output signal source selection (ePPS or 1PPS).
+          nullable: true
+          readOnly: false
+          x-longDescription: This property shall indicate the SMA output mux selection.
+            A value of ePPS selects the embedded PPS signal. A value of 1PPS selects
+            the external 1PPS signal.
+          x-versionAdded: v1_1_0
+        WriteEnable:
+          description: Indicates whether writes to the timing module are enabled.
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: This property shall indicate whether the timing module
+            write enable bit is set. A value of true enables writes; false disables
+            writes. This state does not persist across power cycles.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This type shall contain the timing hardware configuration
+        properties.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellChassis.v1_1_0.DellChassis'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,49 @@
+components:
+  schemas:
+    DellMetricReportDefinition_v1_1_0_DellMetricReportDefinition:
+      additionalProperties: false
+      description: The DellMetricReportDefinition schema describes Dell metric metadata
+        used for collecting and reporting metric data within the Redfish Service.
+      properties:
+        CustomLabel:
+          description: Metric Custom Label shall override the default Label of the
+            metric in the MetricReport.
+          nullable: true
+          type: string
+          x-longDescription: The custom label is customized by the user.
+          x-versionAdded: v1_1_0
+        D4D:
+          description: D4D property flags the type of Report outputted by the MetricReportDefinition.
+          nullable: true
+          type: boolean
+          x-longDescription: D4D property flag if true will provide a DellD4DReport
+            schema formatted report, if false a MetricReport
+          x-versionAdded: v1_1_0
+        Digest:
+          description: Digest is the checksum representation of the MetricReportDefinition.
+          nullable: true
+          type: string
+          x-longDescription: Users can compare their Metric Report Definition with
+            what is available int he system using the Digest.
+        Otel:
+          description: OTel property flags whether the MetricReportDefinition is used
+            for OpenTelemetry export.
+          nullable: true
+          type: boolean
+          x-longDescription: If true the MetricReportDefinition is processed exclusively
+            through the OTel pipeline and does not generate a DMTF MetricReport.
+          x-versionAdded: v1_1_0
+        iDRACFirmwareVersion:
+          description: iDRAC Firmware Version.
+          nullable: true
+          type: string
+          x-longDescription: DRAC Firmware Version.
+      type: object
+      x-longDescription: The schema describes property additions to the Metrics within
+        the MetricReportDefinition.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellMetricReportDefinition.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema:  DellCertificateLocations  v1_0_0                              -->
+<!--#                                                                                -->
+<!--# Copyright (c) 2024 Dell Inc. or its subsidiaries. All Rights Reserved.           -->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellCertificate_v1.xml">
+        <edmx:Include Namespace="DellCertificate"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Certificate_v1.xml">
+        <edmx:Include Namespace="Certificate"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+    <Schema Namespace="DellCertificateLocations" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+        <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+        <ComplexType Name="DellCertificateLocationLinks" Abstract="true">
+            <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+            <Annotation Term="OData.Description" String="This resource defines links to certificates."/>
+            <Annotation Term="OData.LongDescription" String="This resource defines links to certificates."/>
+        </ComplexType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellCertificateLocations.v1_0_0">
+        <ComplexType Name="DellCertificateLocationLinks" BaseType="DellCertificateLocations.DellCertificateLocationLinks">
+            <NavigationProperty Name="HWCertificates" Type="Certificate.Certificate" ContainsTarget="true" Nullable="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A link to a resource of type DellCertificateLocations."/>
+                <Annotation Term="OData.LongDescription" String="A link to a resource of type DellCertificateLocations."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <NavigationProperty Name="Certificates" Type="Collection(Certificate.Certificate)" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A reference to a Certificate resource."/>
+                <Annotation Term="OData.LongDescription" String="A reference to a Certificate resource."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+        </ComplexType>
+    </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

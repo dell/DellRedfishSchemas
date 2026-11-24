@@ -1,0 +1,36 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSoftwareInventory.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellOemSoftwareInventory": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSoftwareInventory.v1_0_0.json#/definitions/DellOemSoftwareInventory"
+                }
+            ],
+            "description": "This property shall represent the OEM properties for a SoftwareInventory resource.",
+            "longDescription": "This complex type provides OEM extensions for the DMTF SoftwareInventory resource, including plugin inventory properties and Dell-specific extensions."
+        },
+        "Restart": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSoftwareInventory.v1_0_0.json#/definitions/Restart"
+                }
+            ],
+            "description": "The Restart operation shall restart plugin instance present in SoftwareInventory.",
+            "longDescription": "The Restart operation shall restart plugin instance present in SoftwareInventory."
+        },
+        "Uninstall": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSoftwareInventory.v1_0_0.json#/definitions/Uninstall"
+                }
+            ],
+            "description": "The Uninstall operation shall remove plugin instance present in SoftwareInventory.",
+            "longDescription": "The Uninstall operation shall remove plugin instance present in SoftwareInventory."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellOemSoftwareInventory"
+}

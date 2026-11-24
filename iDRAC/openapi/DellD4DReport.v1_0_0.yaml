@@ -1,0 +1,113 @@
+components:
+  schemas:
+    DellD4DReport_v1_0_0_DellD4DReport:
+      additionalProperties: false
+      description: The DellD4DReport schema represents a set of collected metrics.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Data:
+          description: The list of Metric Reports.
+          items:
+            $ref: '#/components/schemas/DellD4DReport_v1_0_0_Report'
+          readOnly: true
+          type: array
+          x-longDescription: The property shall contain a list of metric reports.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        Timestamp:
+          description: The date and time when the metric is obtained. A management
+            application can establish a time series of metric data by retrieving the
+            instances of metric value and sorting them according to their timestamp.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value shall time when the metric value was obtained.
+            Note that this value might be different from the time when this instance
+            is created.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: This resource shall represent a metric report in a Redfish
+        implementation. When a metric report is deleted, the historic metric data
+        used to generate the report shall be deleted as well unless other metric reports
+        are consuming the data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellD4DReport_v1_0_0_MetricValue:
+      additionalProperties: false
+      properties:
+        T:
+          description: The time in epoch when the metric is obtained. A management
+            application can establish a time series of metric data by retrieving the
+            instances of metric value and sorting them according to their timestamp.
+          format: int64
+          nullable: true
+          type: integer
+          x-longDescription: The value shall time when the metric value was obtained
+            in epoch time. Note that this value might be different from the time when
+            this instance is created.
+        V:
+          description: The metric value, as a string.
+          nullable: true
+          type: string
+          x-longDescription: This property shall contain the metric value, as a string.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellD4DReport_v1_0_0_Report:
+      additionalProperties: false
+      properties:
+        FQDD:
+          description: Metric Id's FQDD.
+          nullable: true
+          type: string
+          x-longDescription: The FQDD is a hardware identifier.  One Metric Id can
+            have many FQDD.  The Metric Report will contain a specific metric pertaining
+            to one type of hardware
+        Id:
+          description: The Report metric ID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The Report's metric ID.
+        Values:
+          description: The property shall contain a list of metric values.
+          items:
+            $ref: '#/components/schemas/DellD4DReport_v1_0_0_MetricValue'
+          type: array
+          x-longDescription: The property shall contain a list of metric values specific
+            to the FQDD hardware component and Metric ID.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellD4DReport.v1_0_0.DellD4DReport'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

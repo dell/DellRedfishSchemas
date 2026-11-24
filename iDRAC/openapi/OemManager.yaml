@@ -1,0 +1,44 @@
+components:
+  schemas:
+    OemManager_ClearPending:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.yaml#/components/schemas/OemManager_v1_6_0_ClearPending
+      description: This action is used to clear the pending values.
+      x-longDescription: This action is used to clear the pending values of Manager.
+    OemManager_ExportSystemConfiguration:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.yaml#/components/schemas/OemManager_v1_6_0_ExportSystemConfiguration
+      description: This action is used to export System Configuration attributes.
+      x-longDescription: This action shall perform an export System Configuration
+        attributes.
+    OemManager_GetRedfishResources:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.yaml#/components/schemas/OemManager_v1_6_0_GetRedfishResources
+      description: Retrieve Redfish resources for a set of endpoints, possibly using
+        wildcards.
+      x-longDescription: This action retrieves the Redfish resources for the specified
+        endpoints. The action supports wildcard expansion and may return partial results
+        if the operation exceeds the specified timeout or MaxURIs limit. Only one
+        GetRedfishResources request can execute at a time; concurrent requests are
+        rejected with HTTP 429.
+    OemManager_ImportSystemConfiguration:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.yaml#/components/schemas/OemManager_v1_6_0_ImportSystemConfiguration
+      description: This action is used to import System Configuration attributes.
+      x-longDescription: This action shall perform an import System Configuration
+        attributes.
+    OemManager_ImportSystemConfigurationPreview:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.yaml#/components/schemas/OemManager_v1_6_0_ImportSystemConfigurationPreview
+      description: This action is used to import System Configuration Preview.
+      x-longDescription: This action shall perform an import System Configuration
+        Preview.
+    OemManager_ResetToDefaults:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/OemManager.v1_6_0.yaml#/components/schemas/OemManager_v1_6_0_ResetToDefaults
+      description: This action is used to reset the Manager attributes to default.
+      x-longDescription: This action shall perform a reset of the Manager attributes
+        to their default values.
+title: '#OemManager'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

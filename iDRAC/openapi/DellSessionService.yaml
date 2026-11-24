@@ -1,0 +1,10 @@
+components:
+  schemas:
+    DellSessionService_DellSessionService:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSessionService.v1_0_0.yaml#/components/schemas/DellSessionService_v1_0_0_DellSessionService
+      description: OEM extension to represent Dell Session Service related properties.
+      x-longDescription: OEM extension to represent Dell Session Service related properties.
+title: '#DellSessionService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,686 @@
+components:
+  schemas:
+    DellOemStorageController_v1_2_0_AllowedOperations:
+      additionalProperties: false
+      description: The allowed operations for the controller.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain the allowed operations that can be
+        performed on the controller.
+      x-patternProperties:
+        '[A-Za-z0-9]+': {}
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemStorageController_v1_2_0_DellOemStorageController:
+      additionalProperties: false
+      description: Oem data related to the Storage Controller.
+      properties:
+        DellController:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellController.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellController.
+        DellStorageController:
+          $ref: '#/components/schemas/DellOemStorageController_v1_2_0_DellStorageControllerInfo'
+          description: Oem data related to the Storage Controller.
+          nullable: true
+          x-longDescription: Oem data related to the Storage Controller.
+      type: object
+      x-longDescription: Oem data related to the Storage Controller.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemStorageController_v1_2_0_DellStorageControllerInfo:
+      additionalProperties: false
+      properties:
+        AlarmState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_AlarmState
+          description: This property represents the state of Alarm if it is present.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the state of Alarm if it is
+            present.
+        AllowedOperations:
+          $ref: '#/components/schemas/DellOemStorageController_v1_2_0_AllowedOperations'
+          description: The allowed operations for the controller.
+          x-longDescription: This property shall contain the allowed operations that
+            can be performed on the controller.
+          x-versionAdded: v1_1_0
+        AutoConfigBehavior:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_AutoConfigBehavior
+          description: This property provides the current Auto config behavior of
+            the controller.RAID0 is applicble only for PERC 10.4.x or earlier releases.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property provides the current Auto config behavior
+            of the controller.RAID0 is applicble only for PERC 10.4.x or earlier releases.
+        BackgroundInitializationRatePercent:
+          description: The percentage of controller resources used for background
+            initialization rate volumes.
+          format: int64
+          maximum: 100
+          minimum: 0
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: This property shall contain the percentage of controller
+            resources used for background initialization rate of volumes.
+        BatteryLearnMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_BatteryLearnMode
+          description: This property specifies the Battery learning cycle mode of
+            the controller.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property specifies the Battery learning cycle mode
+            of the controller.
+        BootVirtualDiskFQDD:
+          description: This property indicates FQDD of BootVD. If no VD is set as
+            BootVD in the controller, this property is an empty string.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: This property indicates FQDD of BootVD. If no VD is set
+            as BootVD in the controller, this property is an empty string.
+        CacheSizeInMB:
+          description: This property shall represent the controller cache size in
+            MB.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the controller cache size
+            in MB.
+          x-units: MB
+        CachecadeCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_CachecadeCapability
+          description: The property shall represent the controllers support of cachecade
+            virtual disk creation.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the controllers support
+            of cachecade virtual disk creation.
+        CheckConsistencyMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_CheckConsistencyMode
+          description: This property specifies the check consistency mode of the controller.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property specifies the check consistency mode of
+            the controller.
+        ConfigJobExists:
+          description: An indication of whether a configuration job exists for the
+            controller.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether a configuration
+            job exists for the controller. When true, a configuration job is in progress
+            or pending.
+          x-versionAdded: v1_1_0
+        ConnectorCount:
+          description: This property represents the count of SAS connectors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the count of SAS connectors.
+        ControllerBootMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_ControllerBootMode
+          description: This property indicates the controller boot mode.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property indicates the controller boot mode.
+        ControllerFirmwareVersion:
+          description: This property gives information about the Firmware Version
+            installed on the Controller.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property gives information about the Firmware Version
+            installed on the Controller.
+        ControllerMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_ControllerMode
+          description: This property specifies the personality mode of the controller.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property specifies the personality mode of the controller.
+        ControllerVersion:
+          description: The version of the controller.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the version of the controller
+            firmware.
+          x-versionAdded: v1_1_0
+        CopybackMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_CopybackMode
+          description: This property specifies the copy back mode of the adapter.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property specifies the copy back mode of the adapter.
+        CurrentControllerMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_CurrentControllerMode
+          description: This property of the controller provides information to the
+            user regarding the mode in which the controller is currently on.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property of the controller provides information
+            to the user regarding the mode in which the controller is currently on.
+        Device:
+          description: This property represents the PCI device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the PCI device.
+        DeviceCardDataBusWidth:
+          description: This property represents the bus width.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the bus width.
+        DeviceCardSlotLength:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_DeviceCardSlotLength
+          description: This property represents the controller slot length.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the controller slot length.
+        DeviceCardSlotType:
+          description: This property represents the controller slot type. The possible
+            values of the string can be Other, Unknown, PCI Express x8, PCI Express
+            Gen 3, PCI Express Gen 3x1, PCI Express Gen 3x2, PCI Express Gen 3x4,
+            PCI Express Gen 3x8, PCI Express Gen 3x16, or PCI Express Gen4.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the controller slot type. The
+            possible values of the string can be Other, Unknown, PCI Express x8, PCI
+            Express Gen 3, PCI Express Gen 3x1, PCI Express Gen 3x2, PCI Express Gen
+            3x4, PCI Express Gen 3x8, PCI Express Gen 3x16, or PCI Express Gen4.
+        DriverVersion:
+          description: This property shall represent the controller driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the controller driver version.
+        EPDPassthroughAllowed:
+          description: An indication of whether the controller allows EPD passthrough.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller allows
+            Extended Power Domain (EPD) passthrough.
+          x-versionAdded: v1_1_0
+        EncryptionCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_EncryptionCapability
+          description: The property shall represent the possible encryption states
+            on the controller.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the possible encryption
+            states on the controller.
+        EncryptionMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_EncryptionMode
+          description: The property shall represent the current encryption state on
+            the controller.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the current encryption state
+            on the controller.
+        EnhancedAutoImportForeignConfigurationMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_EnhancedAutoImportForeignConfigurationMode
+          description: This property represents the controller supports automatic
+            foreign import operation when the device is in foreign import mode.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property represents the controller supports automatic
+            foreign import operation when the device is in foreign import mode.
+        EnhancedHBAModeSupported:
+          description: An indication of whether the controller supports Enhanced HBA
+            mode.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller supports
+            operating in Enhanced HBA personality mode.
+          x-versionAdded: v1_1_0
+        HardwareRAIDCapable:
+          description: An indication of whether the controller supports hardware RAID.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller implements
+            RAID functionality in hardware rather than software.
+          x-versionAdded: v1_1_0
+        InternalExternalMixingWarningEnabled:
+          description: An indication of whether mixing internal and external drives
+            generates a warning.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller generates
+            a warning when internal and external drives are mixed.
+          x-versionAdded: v1_1_0
+        IsDummyController:
+          description: An indication of whether the controller is a placeholder controller.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller is
+            a placeholder controller that is not physically present.
+          x-versionAdded: v1_1_0
+        IsEmbedded:
+          description: An indication of whether the controller is embedded on the
+            motherboard.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller is
+            embedded on the system motherboard rather than being an add-in card.
+          x-versionAdded: v1_1_0
+        KeyID:
+          description: KeyID provides details about the Key identification on the
+            controller when the controller is in Local Key Management mode.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: KeyID provides details about the Key identification on
+            the controller when the controller is in Local Key Management mode.
+        LastSystemInventoryTime:
+          description: This property provides the time when System Inventory Collection
+            On Reboot(CSIOR) was last performed or the object was last updated on
+            iDRAC. The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time when System Inventory
+            Collection On Reboot(CSIOR) was last performed or the object was last
+            updated on iDRAC. The value is represented as yyyymmddHHMMSS.
+        LastUpdateTime:
+          description: This property provides the time the data was last updated.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time the data was last updated.
+            The value is represented as yyyymmddHHMMSS.
+        LoadBalanceMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_LoadBalanceMode
+          description: This property specifies the load balancing mode of the controller.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property specifies the load balancing mode of the
+            controller.
+        MaxAvailablePCILinkSpeed:
+          description: This property represents the maximum PCI link speed that the
+            controller is set to allow.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the maximum PCI link speed that
+            the controller is set to allow.
+        MaxDrivesInSpanCount:
+          description: The property shall represent the maximum number of drives that
+            can be present in a Span.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the maximum number of drives
+            that can be present in a Span.
+        MaxPossiblePCILinkSpeed:
+          description: This property represents the maximum possible PCI link speed,
+            which is the speed this device is capable of.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the maximum possible PCI link
+            speed, which is the speed this device is capable of.
+        MaxSpansInVolumeCount:
+          description: The property shall represent the maximum number of Spans that
+            a Volume can have in a multi-span Raid Level.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the maximum number of Spans
+            that a Volume can have in a multi-span Raid Level.
+        MaxSupportedVolumesCount:
+          description: The property shall represent the maximum number of Volumes
+            that can be created and managed by adapter.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the maximum number of Volumes
+            that can be created and managed by adapter.
+        PCISlot:
+          description: The property shall represent the associated PCI slot.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the associated PCI slot.
+        PatrolReadIterationsCount:
+          description: The property shall represent the number of patrol read runs
+            performed by adapter.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the number of patrol read
+            runs performed by adapter.
+        PatrolReadMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_PatrolReadMode
+          description: This property specifies the patrol read mode of the controller.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property specifies the patrol read mode of the controller.
+        PatrolReadRatePercent:
+          description: The percentage of controller resources used for patrol read
+            rate.
+          format: int64
+          maximum: 100
+          minimum: 0
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: This property shall contain the percentage of controller
+            resources used for patrol read rate.
+        PatrolReadState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_PatrolReadState
+          description: This property shall represent the current state of the patrol
+            read operation.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall represent the current state of the
+            patrol read operation.
+        PatrolReadUnconfiguredAreaMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_PatrolReadUnconfiguredAreaMode
+          description: This property specifies the patrol read unconfigured area setting
+            mode on the adapter.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property specifies the patrol read unconfigured
+            area setting mode on the adapter.
+        PendingChanges:
+          description: The pending changes for the controller.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_PendingChange
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: This property shall contain a list of pending changes
+            that require a reboot or reset to take effect.
+          x-versionAdded: v1_1_0
+        PersistentHotspare:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_PersistentHotspare
+          description: This property indicates status of the persistent hotspare slot
+            of the controller.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property indicates status of the persistent hotspare
+            slot of the controller.
+        PersistentHotspareMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_PersistentHotspareMode
+          description: This property indicates mode of the persistent hotspare slot
+            of the controller.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property indicates mode of the persistent hotspare
+            slot of the controller.
+        PersonalityMode:
+          description: The personality mode of the controller.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_PersonalityMode
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: This property shall contain the personality mode of the
+            controller.
+          x-versionAdded: v1_1_0
+        PhysicalDiskEPDPassthroughSupported:
+          description: An indication of whether physical disk EPD passthrough is supported.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller supports
+            Extended Power Domain (EPD) passthrough for physical disks.
+          x-versionAdded: v1_1_0
+        PreservedCache:
+          description: An indication of whether the controller has preserved cache
+            enabled.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller cache
+            is configured to be preserved across power cycles or controller resets.
+          x-versionAdded: v1_1_0
+        RAID0ExecutionSupported:
+          description: An indication of whether RAID 0 execution operations are supported.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller supports
+            executing RAID 0 auto-configuration operations.
+          x-versionAdded: v1_1_0
+        RAID0SetSupported:
+          description: An indication of whether RAID 0 set operations are supported.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller supports
+            setting RAID 0 auto-configuration options.
+          x-versionAdded: v1_1_0
+        RAIDMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_RAIDMode
+          description: This property specifies the current RAID mode.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property specifies the current RAID mode.
+        RealTimeConfigSupported:
+          description: An indication of whether the controller supports real-time
+            configuration.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller supports
+            real-time configuration changes without requiring a system reboot.
+          x-versionAdded: v1_1_0
+        RealtimeCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_RealtimeCapability
+          description: This property indicates whether this controller supports Realtime.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether this controller supports
+            Realtime.
+        ReconstructRatePercent:
+          description: The property specifies the reconstruction rate.
+          format: int64
+          maximum: 100
+          minimum: 0
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The property specifies the reconstruction rate.
+        RollupStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_RollupStatus
+          description: RollupStatus provides overall health status of the system by
+            considering their sub-component health statuses, e.g RollupStatus will
+            be degraded if any one of the sub-component is degraded.
+          nullable: true
+          readOnly: true
+          x-longDescription: RollupStatus provides overall health status of the system
+            by considering their sub-component health statuses, e.g RollupStatus will
+            be degraded if any one of the sub-component is degraded.
+        SASAddress:
+          description: The property provides the unique ID of the controller and is
+            in hexadecimal form.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property provides the unique ID of the controller
+            and is in hexadecimal form.
+        SEKMCapable:
+          description: An indication of whether the controller supports Secure Enterprise
+            Key Management.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller is
+            capable of using Secure Enterprise Key Management (SEKM) for encryption
+            key management.
+          x-versionAdded: v1_1_0
+        SecurityStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SecurityStatus
+          description: The property shall represent the controller security configuration
+            information.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the controller security
+            configuration information.
+        SharedSlotAssignmentAllowed:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SharedSlotAssignmentAllowed
+          description: This property indicates whether the controller allows shared
+            assignments of slots, that is, whether the controller can access slots
+            that are shared with other controllers.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether the controller allows
+            shared assignments of slots, that is, whether the controller can access
+            slots that are shared with other controllers.
+        SlicedVDCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SlicedVDCapability
+          description: The property shall represent the controllers support of sliced
+            virtual disk creation and shall have one of the following values:0 - Sliced
+            Virtual Disk not supported, 1-Sliced Virtual Disk supported.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the controllers support
+            of sliced virtual disk creation and shall have one of the following values:0
+            - Sliced Virtual Disk not supported, 1-Sliced Virtual Disk supported.
+        SpindownHotspare:
+          description: An indication of whether hotspare drives are configured to
+            spin down when idle.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller is
+            configured to spin down hotspare drives when they are idle to conserve
+            power.
+          x-versionAdded: v1_1_0
+        SpindownIdleTimeSeconds:
+          description: The property shall represent the amount of inactive time before
+            a drive is considered idle and the disk spin down occurs.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the amount of inactive time
+            before a drive is considered idle and the disk spin down occurs.
+        SpindownUnconfigured:
+          description: An indication of whether unconfigured drives are configured
+            to spin down when idle.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller is
+            configured to spin down unconfigured drives when they are idle to conserve
+            power.
+          x-versionAdded: v1_1_0
+        SupportControllerBootMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SupportControllerBootMode
+          description: This property indicates whether this controller supports setting
+            of controller boot mode.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether this controller supports
+            setting of controller boot mode.
+        SupportEnhancedAutoForeignImport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SupportEnhancedAutoForeignImport
+          description: This property represents the controller supports automatic
+            foreign import operation when the device is in foreign import mode.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the controller supports automatic
+            foreign import operation when the device is in foreign import mode.
+        SupportPersonalityChange:
+          description: An indication of whether the controller supports changing its
+            personality mode.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller supports
+            changing between different personality modes such as RAID, HBA, or Enhanced
+            HBA.
+          x-versionAdded: v1_1_0
+        SupportPersonalityMode:
+          description: An indication of whether the controller supports personality
+            mode capability.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller has
+            the capability to operate in different personality modes.
+          x-versionAdded: v1_1_0
+        SupportRAID10UnevenSpans:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SupportRAID10UnevenSpans
+          description: This property indicates whether this controller supports uneven
+            spans for RAID 10.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether this controller supports
+            uneven spans for RAID 10.
+        SupportedDiskProtocols:
+          description: The disk protocols supported by the controller.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_SupportedDiskProtocol
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain the disk protocols supported
+            by the controller.
+          x-versionAdded: v1_1_0
+        SupportedInitializationTypes:
+          description: This property specifies the supported initialization types
+            of the controller.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemStorageController.yaml#/components/schemas/DellOemStorageController_SupportedInitializationTypes
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property specifies the supported initialization
+            of the controller.
+        SupportsLKMtoSEKMTransition:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_SupportsLKMtoSEKMTransition
+          description: This property represents whether a controller supports LKM
+            to SEKM transition or not.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents whether a controller supports
+            LKM to SEKM transition or not.
+        T10PICapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellController.yaml#/components/schemas/DellController_T10PICapability
+          description: This property indicates whether this controller supports T10
+            Protection Information (T10 PI).
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether this controller supports
+            T10 Protection Information (T10 PI).
+        VirtualDiskEPDPassthroughSupported:
+          description: An indication of whether virtual disk EPD passthrough is supported.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the controller supports
+            Extended Power Domain (EPD) passthrough for virtual disks.
+          x-versionAdded: v1_1_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellOemStorageController.v1_2_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,568 @@
+components:
+  schemas:
+    DellSystem_BatteryRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_BladeGeometry:
+      enum:
+      - 1UFullWidth
+      - 1UHalfWidth
+      - 1UQuarterWidth
+      - DualWidth,FullHeight
+      - DualWidth,HalfHeight
+      - NotApplicable
+      - SingleWidth,FullHeight
+      - SingleWidth,HalfHeight
+      - SingleWidth,QuarterHeight
+      type: string
+      x-enumDescriptions:
+        1UFullWidth: 1UFullWidth
+        1UHalfWidth: 1UHalf Width
+        1UQuarterWidth: 1UQuarterWidth
+        DualWidth,FullHeight: Dual width, full height
+        DualWidth,HalfHeight: Dual width, half height
+        NotApplicable: Not Applicable
+        SingleWidth,FullHeight: Single width, full height
+        SingleWidth,HalfHeight: Single width, half height
+        SingleWidth,QuarterHeight: Single width, quarter height
+      x-enumLongDescriptions:
+        1UFullWidth: 1UFullWidth
+        1UHalfWidth: 1UHalf Width
+        1UQuarterWidth: 1UQuarterWidth
+        DualWidth,FullHeight: Dual width, full height
+        DualWidth,HalfHeight: Dual width, half height
+        NotApplicable: Not Applicable
+        SingleWidth,FullHeight: Single width, full height
+        SingleWidth,HalfHeight: Single width, half height
+        SingleWidth,QuarterHeight: Single width, quarter height
+    DellSystem_CMCRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_4_0
+        Error: v1_4_0
+        OK: v1_4_0
+        Unknown: v1_4_0
+    DellSystem_CPURollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_CoolingRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_4_0
+        Error: v1_4_0
+        OK: v1_4_0
+        Unknown: v1_4_0
+    DellSystem_CurrentRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_1_0
+        Error: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+    DellSystem_DellSystem:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem.v1_4_1.yaml#/components/schemas/DellSystem_v1_4_1_DellSystem
+      description: An instance of DellSystem will have data representing the overall
+        system devices in the managed system.
+      x-longDescription: An instance of DellSystem will have data representing the
+        overall system devices in the managed system.
+    DellSystem_FanRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_IDSDMRedundancyStatus:
+      enum:
+      - Degraded
+      - Full
+      - Lost
+      - Not_Applicable
+      - Offline
+      - Other
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Full: Full
+        Lost: Lost
+        Not_Applicable: Not_Applicable
+        Offline: Offline
+        Other: Other
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Full: Full
+        Lost: Lost
+        Not_Applicable: Not_Applicable
+        Offline: Offline
+        Other: Other
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_4_0
+        Full: v1_4_0
+        Lost: v1_4_0
+        Not_Applicable: v1_4_0
+        Offline: v1_4_0
+        Other: v1_4_0
+        Unknown: v1_4_0
+    DellSystem_IDSDMRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_1_0
+        Error: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+    DellSystem_IntrusionRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_IsOEMBranded:
+      enum:
+      - 'False'
+      - 'True'
+      type: string
+      x-enumDescriptions:
+        'False': 'False'
+        'True': 'True'
+      x-enumLongDescriptions:
+        'False': 'False'
+        'True': 'True'
+      x-enumVersionAdded:
+        'False': v1_1_0
+        'True': v1_1_0
+    DellSystem_LicensingRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_PSRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_PowerCapEnabledState:
+      enum:
+      - Disabled
+      - Enabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+      x-enumLongDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+    DellSystem_SDCardRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_1_0
+        Error: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+    DellSystem_SELRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_1_0
+        Error: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+    DellSystem_StorageRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_SysMemErrorMethodology:
+      enum:
+      - CRC
+      - Multi-bitECC
+      - None
+      - Other
+      - Parity
+      - Single-bitECC
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        CRC: CRC
+        Multi-bitECC: Multi-bit ECC
+        None: None
+        Other: Other
+        Parity: Parity
+        Single-bitECC: Single-bit ECC
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        CRC: CRC
+        Multi-bitECC: Multi-bit ECC
+        None: None
+        Other: Other
+        Parity: Parity
+        Single-bitECC: Single-bit ECC
+        Unknown: Unknown
+      x-enumVersionAdded:
+        CRC: v1_1_0
+        Multi-bitECC: v1_1_0
+        None: v1_1_0
+        Other: v1_1_0
+        Parity: v1_1_0
+        Single-bitECC: v1_1_0
+        Unknown: v1_1_0
+    DellSystem_SysMemLocation:
+      enum:
+      - EISAAdd-OnCard
+      - ISAAdd-OnCard
+      - MCAAdd-OnCard
+      - NuBus
+      - Other
+      - PC-98/C20Add-OnCard
+      - PC-98/C24Add-OnCard
+      - PC-98/EAdd-OnCard
+      - PC-98/LocalBusAdd-OnCard
+      - PCIAdd-OnCard
+      - PCMCIAAdd-OnCard
+      - ProprietaryAdd-OnCard
+      - SystemBoardOrMotherboard
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        EISAAdd-OnCard: EISA add-on card
+        ISAAdd-OnCard: ISA add-on card
+        MCAAdd-OnCard: MCA add-on card
+        NuBus: NuBus
+        Other: Other
+        PC-98/C20Add-OnCard: PC-98/C20 add-on card
+        PC-98/C24Add-OnCard: PC-98/C24 add-on card
+        PC-98/EAdd-OnCard: PC-98/E add-on card
+        PC-98/LocalBusAdd-OnCard: PC-98/Local bus add-on card
+        PCIAdd-OnCard: PCI add-on card
+        PCMCIAAdd-OnCard: PCMCIA add-on card
+        ProprietaryAdd-OnCard: Proprietary add-on card
+        SystemBoardOrMotherboard: System board or motherboard
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        EISAAdd-OnCard: EISA add-on card
+        ISAAdd-OnCard: ISA add-on card
+        MCAAdd-OnCard: MCA add-on card
+        NuBus: NuBus
+        Other: Other
+        PC-98/C20Add-OnCard: PC-98/C20 add-on card
+        PC-98/C24Add-OnCard: PC-98/C24 add-on card
+        PC-98/EAdd-OnCard: PC-98/E add-on card
+        PC-98/LocalBusAdd-OnCard: PC-98/Local bus add-on card
+        PCIAdd-OnCard: PCI add-on card
+        PCMCIAAdd-OnCard: PCMCIA add-on card
+        ProprietaryAdd-OnCard: Proprietary add-on card
+        SystemBoardOrMotherboard: System board or motherboard
+        Unknown: Unknown
+      x-enumVersionAdded:
+        EISAAdd-OnCard: v1_1_0
+        ISAAdd-OnCard: v1_1_0
+        MCAAdd-OnCard: v1_1_0
+        NuBus: v1_1_0
+        Other: v1_1_0
+        PC-98/C20Add-OnCard: v1_1_0
+        PC-98/C24Add-OnCard: v1_1_0
+        PC-98/EAdd-OnCard: v1_1_0
+        PC-98/LocalBusAdd-OnCard: v1_1_0
+        PCIAdd-OnCard: v1_1_0
+        PCMCIAAdd-OnCard: v1_1_0
+        ProprietaryAdd-OnCard: v1_1_0
+        SystemBoardOrMotherboard: v1_1_0
+        Unknown: v1_1_0
+    DellSystem_SysMemPrimaryStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_SystemHealthRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_4_0
+        Error: v1_4_0
+        OK: v1_4_0
+        Unknown: v1_4_0
+    DellSystem_SystemRevision:
+      enum:
+      - I
+      - II
+      - III
+      - IV
+      type: string
+      x-enumDescriptions:
+        I: I
+        II: II
+        III: III
+        IV: IV
+      x-enumLongDescriptions:
+        I: I
+        II: II
+        III: III
+        IV: IV
+      x-enumVersionAdded:
+        I: v1_1_0
+        II: v1_1_0
+        III: v1_1_0
+        IV: v1_1_0
+    DellSystem_TempRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+    DellSystem_TempStatisticsRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_1_0
+        Error: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+    DellSystem_VoltRollupStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+title: '#DellSystem.DellSystem'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

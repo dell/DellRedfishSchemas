@@ -1,0 +1,349 @@
+components:
+  schemas:
+    DellComputerSystem_v1_2_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellComputerSystem.SecureWipeDPU':
+          $ref: '#/components/schemas/DellComputerSystem_v1_2_0_SecureWipeDPU'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellComputerSystem_v1_2_0_BootStatus:
+      enum:
+      - None
+      - UEFI
+      - Reset
+      - Firmware
+      - OSBooting
+      - OSRunning
+      - OSHalted
+      - OSUpdating
+      - OSCrashDumpInProgress
+      - OSCrashDumpCompleted
+      - Fault
+      - FaultComplete
+      type: string
+      x-enumDescriptions:
+        Fault: Hardware or Software fault.
+        FaultComplete: Hardware or Software fault complete.
+        Firmware: Boot status is firmware.
+        None: Boot status is unknown.
+        OSBooting: OS is booting.
+        OSCrashDumpCompleted: OS Crash dump is complete.
+        OSCrashDumpInProgress: OS Crash dump in progress.
+        OSHalted: OS is halted.
+        OSRunning: OS is running.
+        OSUpdating: OS update in progess.
+        Reset: DPU is resetting.
+        UEFI: Boot status is UEFI.
+      x-enumLongDescriptions:
+        Fault: Hardware or Software fault.
+        FaultComplete: Hardware or Software fault complete.
+        Firmware: Boot status is firmware. CPU has passed firmware checkpoint.
+        None: Boot status is unknown.
+        OSBooting: OS is booting.
+        OSCrashDumpCompleted: OS Crash dump is complete.
+        OSCrashDumpInProgress: OS Crash dump in progress.
+        OSHalted: OS is halted or shutdown.
+        OSRunning: OS is running.
+        OSUpdating: OS update in progress.
+        Reset: Boot status is reset (CPU is in reset / Boot ROM).
+        UEFI: Boot status is UEFI.
+    DellComputerSystem_v1_2_0_DPUBootSynchronization:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Boot synchronization is disabled.
+        Enabled: Boot synchronization is enabled.
+      x-enumLongDescriptions:
+        Disabled: Boot synchronization is disabled.
+        Enabled: Boot synchronization is enabled.
+    DellComputerSystem_v1_2_0_DPUConfig:
+      additionalProperties: false
+      description: .
+      properties:
+        BIOSFirmwareVersion:
+          description: The property value provides current BIOS Firmware version of
+            DPU device .
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property value provides current BIOS Firmware version
+            of DPU device.
+          x-versionAdded: v1_2_0
+        BMCFirmwareVersion:
+          description: The property value provides current BMC Firmware version of
+            DPU device .
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property value provides current BMC Firmware version
+            of DPU device.
+          x-versionAdded: v1_2_0
+        BootStatus:
+          $ref: '#/components/schemas/DellComputerSystem_v1_2_0_BootStatus'
+          description: The BootStatus provides the boot status of the pre-OS environment
+            od DPU.
+          nullable: true
+          readOnly: true
+          x-longDescription: The BootStatus provides the boot status of the pre-OS
+            environment od DPU.
+          x-versionAdded: v1_1_0
+        DPUBootSynchronization:
+          $ref: '#/components/schemas/DellComputerSystem_v1_2_0_DPUBootSynchronization'
+          description: Provides details whether Boot synchronization is enabled or
+            not.
+          nullable: true
+          readOnly: false
+          x-longDescription: Provides details whether Boot synchronization is enabled
+            or not.
+          x-versionAdded: v1_1_0
+        DPUFirmwareVersion:
+          description: The property value provides current DPU Firmware version of
+            device .
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property value provides current DPU Firmware version
+            of device.
+          x-versionAdded: v1_2_0
+        DPUTrust:
+          $ref: '#/components/schemas/DellComputerSystem_v1_2_0_DPUTrust'
+          description: Provides details whether Oauth is enabled or not for DPU.
+          nullable: true
+          readOnly: false
+          x-longDescription: Provides details whether Oauth is enabled or not for
+            DPU.
+          x-versionAdded: v1_1_0
+        DeviceID:
+          description: PCIe device id of DPU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: PCIe device id of DPU.
+          x-versionAdded: v1_1_0
+        FQDD:
+          description: Fully Qualified Device Descriptor of DPU device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Fully Qualified Device Descriptor of DPU device.
+          x-versionAdded: v1_1_0
+        IdenticalSBDF:
+          description: PCIe Segment, Bus, Device and Function details of DPU.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: PCIe Segment, Bus, Device and Function details of DPU.
+          x-versionAdded: v1_1_0
+        LastResetReason:
+          description: The value of this property shall be used to know the cause
+            of the last/recent ungraceful of DPU reset.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property shall be used to know the
+            cause of the last/recent ungraceful of DPU reset.
+          x-versionAdded: v1_1_0
+        OSInstallationTimeout:
+          description: The property value indicates maximum window period for OS installation
+            timeout (in minutes).
+          format: int64
+          maximum: 60
+          minimum: 10
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The property value indicates maximum window period for
+            OS installation timeout (in minutes). This property refers to global configuration,
+            any change on this property shall be applicable to all DPU devices OS
+            installation timeout
+          x-versionAdded: v1_1_0
+        OSName:
+          description: Operating system running on DPU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property value provides information regarding operating
+            system running on DPU.
+          x-versionAdded: v1_1_0
+        OSReadyTimeout:
+          description: The property value indicates maximum window period for OS Ready
+            notification (in minutes).
+          format: int64
+          maximum: 30
+          minimum: 0
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The property value indicates maximum window period for
+            OS Ready notification (in minutes).
+          x-versionAdded: v1_1_0
+        OSStatus:
+          $ref: '#/components/schemas/DellComputerSystem_v1_2_0_OSStatus'
+          description: The property value provides current state of operating system
+            running on DPU.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property value information regarding current state
+            of operating system running on DPU.
+          x-versionAdded: v1_1_0
+        OSVendor:
+          description: The property value provides operating system distributor name
+            running on DPU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property value provides operating system distributor
+            name running on DPU.
+          x-versionAdded: v1_1_0
+        OSVersion:
+          description: The property value provides current version of operating system
+            running on DPU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property value provides current version of operating
+            system running on DPU.
+          x-versionAdded: v1_1_0
+        PCIeSlotState:
+          $ref: '#/components/schemas/DellComputerSystem_v1_2_0_PCIeSlotState'
+          description: Provides details whether PCIe Slot is Enabled/Disables.
+          nullable: true
+          readOnly: true
+          x-longDescription: Provides details whether PCIe Slot is Enabled/Disables.
+          x-versionAdded: v1_1_0
+        PostCode:
+          description: Provides details of Power On Self Test Code.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Provides details of Power On Self Test Code.
+          x-versionAdded: v1_1_0
+        Slot:
+          description: Slot number on which DPU is present.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Slot number on which DPU is present.
+          x-versionAdded: v1_1_0
+        SubDeviceID:
+          description: PCIe sub device id of DPU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: PCIe sub device id of DPU.
+          x-versionAdded: v1_1_0
+        SubVendorID:
+          description: PCIe sub vendor id of DPU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: PCIe sub vendor id of DPU.
+          x-versionAdded: v1_1_0
+        VendorID:
+          description: PCIe vendor id of DPU.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: PCIe vendor id of DPU.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: .
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellComputerSystem_v1_2_0_DPUTrust:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: DPU trust is disabled.
+        Enabled: DPU trust is enabled.
+      x-enumLongDescriptions:
+        Disabled: DPU trust is disabled.
+        Enabled: DPU trust is enabled.
+    DellComputerSystem_v1_2_0_DellComputerSystem:
+      additionalProperties: true
+      description: This resource contains the Dell specific Redfish implementation
+        for ComputerSystem.
+      properties:
+        BootOrder:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to the BootSources settings associated with this
+            system.
+          readOnly: true
+          x-longDescription: The value of this property shall be a link to a resource
+            of type BootSources that lists the BootSources settings for this system.
+        DPUConfig:
+          $ref: '#/components/schemas/DellComputerSystem_v1_2_0_DPUConfig'
+          description: The DPU config details.
+          x-longDescription: This DPU config details.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This resource contains the Dell specific Redfish implementation
+        for ComputerSystem.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellComputerSystem_v1_2_0_OSStatus:
+      enum:
+      - Unknown
+      - Ready
+      - Rebooting
+      - Halting
+      type: string
+      x-enumDescriptions:
+        Halting: OS is halting.
+        Ready: OS is ready.
+        Rebooting: OS is booting.
+        Unknown: OS state is unknown or DPU is in power off state.
+      x-enumLongDescriptions:
+        Halting: OS is halting.
+        Ready: OS is ready.
+        Rebooting: OS is booting.
+        Unknown: OS is ready.
+    DellComputerSystem_v1_2_0_PCIeSlotState:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: PCIe slot is disabled.
+        Enabled: PCIe slot is enabled.
+      x-enumLongDescriptions:
+        Disabled: PCIe slot is disabled.
+        Enabled: PCIe slot is enabled.
+    DellComputerSystem_v1_2_0_SecureWipeDPU:
+      additionalProperties: false
+      description: This action is used to erase the DPU.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform a secure wipe on DPU.It will not
+        turn off the system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellComputerSystem_v1_2_0_SecureWipeDPURequestBody:
+      additionalProperties: false
+      description: This action is used to erase the DPU.
+      properties: {}
+      type: object
+      x-longDescription: This action shall perform a secure wipe on DPU.It will not
+        turn off the system.
+title: '#DellComputerSystem.v1_2_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

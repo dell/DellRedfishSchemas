@@ -1,0 +1,174 @@
+components:
+  schemas:
+    DelliDRACCardService_Algorithm:
+      enum:
+      - ML-DSA-87
+      - AES128CBC
+      - AES_256_GCM
+      type: string
+      x-enumDescriptions:
+        AES128CBC: AES128CBC
+        AES_256_GCM: AES_256_GCM
+        ML-DSA-87: ML-DSA-87
+      x-enumVersionAdded:
+        AES128CBC: v1_2_0
+        AES_256_GCM: v1_11_0
+        ML-DSA-87: v1_18_0
+    DelliDRACCardService_CertificateType:
+      enum:
+      - CA
+      - CSC
+      - ClientTrustCertificate
+      - CustomCertificate
+      - IEEE8021xCSC
+      - IEEE8021xClient
+      - KMS_SERVER_CA
+      - RSA_CA_CERT
+      - RSYSLOG_SERVER_CA
+      - SCEP_CA_CERT
+      - SEKM_SSL_CERT
+      - SEKM_CUSTOM_CERT
+      - SEKM_CUSTOM_PEM_CERT
+      - SMARTCARD_CA_CERT
+      - SMARTCARD_USER_CERT
+      - DCM_DA_CERT1
+      - DCM_DA_CERT2
+      - OIDC_CERT
+      - Server
+      - TPM_FACTORY_CERT
+      - SCV_CERT
+      type: string
+      x-enumDescriptions:
+        CA: CA
+        CSC: CSC
+        ClientTrustCertificate: Client Trust Certificate
+        CustomCertificate: Custom Certificate
+        DCM_DA_CERT1: DCM_DA_CERT1
+        DCM_DA_CERT2: DCM_DA_CERT2
+        IEEE8021xCSC: Base64 encoded PKCS12 IEEE 8021.x Custom Signing Certificate
+        IEEE8021xClient: Base64 encoded PKCS12 Certificate for IEEE 8021.x Client
+        KMS_SERVER_CA: KMS_SERVER_CA
+        OIDC_CERT: Used for OpenID Connect Certificates
+        RSA_CA_CERT: RSA_CA_CERT
+        RSYSLOG_SERVER_CA: RSYSLOG_SERVER_CA
+        SCEP_CA_CERT: SCEP_CA_CERT
+        SCV_CERT: SCV_CERT
+        SEKM_CUSTOM_CERT: SEKM_CUSTOM_CERT
+        SEKM_CUSTOM_PEM_CERT: SEKM_CUSTOM_PEM_CERT
+        SEKM_SSL_CERT: SEKM_SSL_CERT
+        SMARTCARD_CA_CERT: SMARTCARD_CA_CERT
+        SMARTCARD_USER_CERT: SMARTCARD_USER_CERT
+        Server: Server
+        TPM_FACTORY_CERT: TPM_FACTORY_CERT
+      x-enumVersionAdded:
+        CustomCertificate: v1_5_0
+        DCM_DA_CERT1: v1_10_0
+        DCM_DA_CERT2: v1_10_0
+        IEEE8021xCSC: v1_6_0
+        IEEE8021xClient: v1_6_0
+        OIDC_CERT: v1_13_0
+        RSA_CA_CERT: v1_7_0
+        SCEP_CA_CERT: v1_7_0
+        SCV_CERT: v1_15_0
+        SEKM_CUSTOM_CERT: v1_7_1
+        SEKM_CUSTOM_PEM_CERT: v1_8_0
+        SMARTCARD_CA_CERT: v1_7_0
+        SMARTCARD_USER_CERT: v1_7_0
+        TPM_FACTORY_CERT: v1_12_0
+    DelliDRACCardService_CloneConfiguration:
+      enum:
+      - Disable
+      - Enable
+      type: string
+      x-enumDescriptions:
+        Disable: Disable
+        Enable: Enable
+      x-enumVersionAdded:
+        Disable: v1_1_0
+        Enable: v1_1_0
+    DelliDRACCardService_ConnectionType:
+      enum:
+      - RSA_SERVER
+      type: string
+      x-enumDescriptions:
+        RSA_SERVER: RSA_SERVER
+      x-enumVersionAdded:
+        RSA_SERVER: v1_7_0
+    DelliDRACCardService_DelliDRACCardService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.v1_18_0.yaml#/components/schemas/DelliDRACCardService_v1_18_0_DelliDRACCardService
+      description: The DelliDRACCardService resource provides some actions to support
+        iDRAC configurations.
+      x-longDescription: The DelliDRACCardService resource provides some actions to
+        support iDRAC configurations.
+    DelliDRACCardService_Force:
+      enum:
+      - Force
+      - Graceful
+      type: string
+      x-enumDescriptions:
+        Force: Force
+        Graceful: Graceful
+    DelliDRACCardService_KeyDerivationFunction:
+      enum:
+      - DellSHA256
+      - HKDF_SHA384
+      type: string
+      x-enumDescriptions:
+        DellSHA256: DellSHA256
+        HKDF_SHA384: HKDF_SHA384
+      x-enumVersionAdded:
+        DellSHA256: v1_2_0
+        HKDF_SHA384: v1_11_0
+    DelliDRACCardService_Mode:
+      enum:
+      - SEKM
+      - iLKM
+      type: string
+      x-enumDescriptions:
+        SEKM: SEKM
+        iLKM: iLKM
+      x-enumVersionAdded:
+        SEKM: v1_4_0
+        iLKM: v1_4_0
+    DelliDRACCardService_Preserve:
+      enum:
+      - All
+      - Default
+      - ResetAllWithRootDefaults
+      type: string
+      x-enumDescriptions:
+        All: All
+        Default: Default
+        ResetAllWithRootDefaults: ResetAllWithRootDefaults
+    DelliDRACCardService_SSLCertType:
+      enum:
+      - CA
+      - CSC
+      - ClientTrustCertificate
+      - CustomCertificate
+      - Server
+      type: string
+      x-enumDescriptions:
+        CA: CA
+        CSC: CSC
+        ClientTrustCertificate: Client Trust Certificate
+        CustomCertificate: Custom Certificate
+        Server: Server
+      x-enumVersionAdded:
+        CustomCertificate: v1_7_0
+    DelliDRACCardService_ServerType:
+      enum:
+      - Primary
+      - Secondary
+      type: string
+      x-enumDescriptions:
+        Primary: Primary
+        Secondary: Secondary
+      x-enumVersionAdded:
+        Primary: v1_2_0
+        Secondary: v1_2_0
+title: '#DelliDRACCardService.DelliDRACCardService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,105 @@
+components:
+  schemas:
+    DellPersistentStorageService_AccessType:
+      enum:
+      - Read-Only
+      - Read-Write
+      type: string
+      x-enumDescriptions:
+        Read-Only: Read-Only
+        Read-Write: Read-Write
+      x-enumVersionAdded:
+        Read-Only: v1_1_0
+        Read-Write: v1_1_0
+    DellPersistentStorageService_DellPersistentStorageService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPersistentStorageService.v1_1_0.yaml#/components/schemas/DellPersistentStorageService_v1_1_0_DellPersistentStorageService
+      description: The DellPersistentStorageService resource provides some actions
+        to support VFlash functionality.
+      urisDeprecated:
+      - /redfish/v1/Managers/{ManagerId}/Oem/Dell/DellPersistentStorageService
+      x-longDescription: The DellPersistentStorageService resource provides some actions
+        to support VFlash functionality.
+    DellPersistentStorageService_FormatType:
+      enum:
+      - EXT2
+      - EXT3
+      - FAT16
+      - FAT32
+      type: string
+      x-enumDescriptions:
+        EXT2: EXT2
+        EXT3: EXT3
+        FAT16: FAT16
+        FAT32: FAT32
+    DellPersistentStorageService_HashType:
+      enum:
+      - MD5
+      - SHA1
+      type: string
+      x-enumDescriptions:
+        MD5: MD5
+        SHA1: SHA1
+      x-enumVersionAdded:
+        MD5: v1_1_0
+        SHA1: v1_1_0
+    DellPersistentStorageService_PartitionType:
+      enum:
+      - CDROM
+      - Floppy
+      - HardDisk
+      type: string
+      x-enumDescriptions:
+        CDROM: CDROM
+        Floppy: Floppy
+        HardDisk: Hard Disk
+      x-enumVersionAdded:
+        CDROM: v1_1_0
+        Floppy: v1_1_0
+        HardDisk: v1_1_0
+    DellPersistentStorageService_RequestedState:
+      enum:
+      - Disable
+      - Enable
+      type: string
+      x-enumDescriptions:
+        Disable: Disable
+        Enable: Enable
+      x-enumVersionAdded:
+        Disable: v1_1_0
+        Enable: v1_1_0
+    DellPersistentStorageService_ShareType:
+      enum:
+      - CIFS
+      - FTP
+      - HTTP
+      - NFS
+      - TFTP
+      type: string
+      x-enumDescriptions:
+        CIFS: CIFS
+        FTP: FTP
+        HTTP: HTTP
+        NFS: NFS
+        TFTP: TFTP
+      x-enumVersionAdded:
+        CIFS: v1_1_0
+        FTP: v1_1_0
+        HTTP: v1_1_0
+        NFS: v1_1_0
+        TFTP: v1_1_0
+    DellPersistentStorageService_SizeUnit:
+      enum:
+      - GB
+      - MB
+      type: string
+      x-enumDescriptions:
+        GB: GB
+        MB: MB
+      x-enumVersionAdded:
+        GB: v1_1_0
+        MB: v1_1_0
+title: '#DellPersistentStorageService.DellPersistentStorageService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

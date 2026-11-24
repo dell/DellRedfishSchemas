@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellOemPower_PowerSupplies v1_1_0-->
+<!--#                                                                                -->
+<!--# Copyright © 2023-2024 Dell Inc. or its subsidiaries. All Rights Reserved.      -->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPowerSupply_v1.xml">
+        <edmx:Include Namespace="DellPowerSupply"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPowerSupplyView_v1.xml">
+        <edmx:Include Namespace="DellPowerSupplyView"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnclosurePowerSupply_v1.xml">
+        <edmx:Include Namespace="DellEnclosurePowerSupply"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="DellOemPower_PowerSupplies" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellOemPower_PowerSupplies" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="Oem data related to the Power_PowerSupply."/>
+                <Annotation Term="OData.LongDescription" String="Oem data related to the Power_PowerSupply."/>
+            </ComplexType>
+        </Schema>
+
+        <Schema Namespace="DellOemPower_PowerSupplies.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellOemPower_PowerSupplies" BaseType="DellOemPower_PowerSupplies.DellOemPower_PowerSupplies">
+                <NavigationProperty Name="DellPowerSupply" Type="DellPowerSupply.DellPowerSupply">
+                    <Annotation Term="OData.Description" String="Oem data related to the PowerSupply."/>
+                    <Annotation Term="OData.LongDescription" String="Oem data related to the PowerSupply."/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellPowerSupplyView" Type="DellPowerSupplyView.DellPowerSupplyView">
+                    <Annotation Term="OData.Description" String="Oem data related to the PowerSupply."/>
+                    <Annotation Term="OData.LongDescription" String="Oem data related to the PowerSupply."/>
+                </NavigationProperty>
+            </ComplexType>
+        </Schema>
+        <Schema Namespace="DellOemPower_PowerSupplies.v1_1_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellOemPower_PowerSupplies" BaseType="DellOemPower_PowerSupplies.v1_0_0.DellOemPower_PowerSupplies">
+                <NavigationProperty Name="DellEnclosurePowerSupply" Type="DellEnclosurePowerSupply.DellEnclosurePowerSupply">
+                    <Annotation Term="OData.Description" String="Oem data related to the Enclosure's PowerSupply."/>
+                    <Annotation Term="OData.LongDescription" String="Oem data related to the Enclosure's PowerSupply."/>
+                </NavigationProperty>
+            </ComplexType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

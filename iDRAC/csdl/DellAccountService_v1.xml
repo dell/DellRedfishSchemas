@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellAccountService  v1.0.0                                          -->
+<!--# This schema defines OEM actions for AccountService including AD/LDAP test            -->
+<!--# Copyright 2026 Dell, Inc. or its subsidiaries. All Rights Reserved.                  -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PrivilegeRegistry_v1.xml">
+         <edmx:Include Namespace="PrivilegeRegistry"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPrivilegesCollection_v1.xml">
+         <edmx:Include Namespace="DellPrivilegesCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/AccountService_v1.xml">
+        <edmx:Include Namespace="AccountService"/>
+        <edmx:Include Namespace="AccountService.v1_0_0"/>
+    </edmx:Reference>
+
+    <edmx:DataServices>
+        <!-- Unversioned namespace: actions -->
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellAccountService">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <ComplexType Name="DellAccountService" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="OEM extension for AccountService resource providing custom privilege management."/>
+                <Annotation Term="OData.LongDescription" String="This complex type provides OEM extension for the DMTF AccountService resource, enabling custom privilege management and privilege registry overlay functionality."/>
+            </ComplexType>
+            <Action Name="TestDirectory" IsBound="true">
+            <Annotation Term="OData.Description" String="This action tests the connectivity and authentication to the configured Active Directory or LDAP directory service."/>
+                <Annotation Term="OData.LongDescription" String="This action shall perform a comprehensive diagnostic test of the configured directory service (Active Directory or Generic LDAP)."/>
+                <Parameter Name="DellAccountService" Type="AccountService.v1_0_0.OemActions" Nullable="false"/>
+                <Parameter Name="UserName" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Description" String="The username to use for the directory service test connection."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the username to authenticate against the configured Active Directory or LDAP service for diagnostic purposes."/>
+                    <Annotation Term="Redfish.Required"/>
+                </Parameter>
+                <Parameter Name="Password" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Description" String="The password to use for the directory service test connection."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the password to authenticate against the configured Active Directory or LDAP service for diagnostic purposes."/>
+                    <Annotation Term="Redfish.Required"/>
+                </Parameter>
+                <ReturnType Type="DellAccountService.v1_0_0.TestDirectoryResponse" Nullable="false"/>
+            </Action>
+            <!-- GetFinalPrivilegeMap Action -->
+            <Action Name="GetFinalPrivilegeMap" IsBound="true">
+                <Annotation Term="OData.Description" String="Retrieves the effective privilege registry after applying the overlay."/>
+                <Annotation Term="OData.LongDescription" String="This action shall compute and return the effective PrivilegeRegistry by merging the PrivilegeRegistryOverlay on top of the base PrivilegeRegistry. This action requires Login privilege and is allowed in lockdown mode."/>
+                <Parameter Name="DellAccountService" Type="AccountService.v1_0_0.OemActions" Nullable="false"/>
+            </Action>
+        </Schema>
+
+        <!-- Versioned namespace v1.0.0 -->
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellAccountService.v1_0_0">
+            <!-- Enum types for test results -->
+            <EnumType Name="TestResultType">
+                <Annotation Term="OData.Description" String="The result of a directory service diagnostic test with NotRun state."/>
+                <Member Name="Passed">
+                    <Annotation Term="OData.Description" String="The test passed successfully."/>
+                </Member>
+                <Member Name="Failed">
+                    <Annotation Term="OData.Description" String="The test failed."/>
+                </Member>
+                <Member Name="NotRun">
+                    <Annotation Term="OData.Description" String="The test was not run."/>
+                </Member>
+            </EnumType>
+            <EnumType Name="ExtendedTestResultType">
+                <Annotation Term="OData.Description" String="The result of a directory service diagnostic test with additional states for DC/GC connections."/>
+                <Member Name="Passed">
+                    <Annotation Term="OData.Description" String="The test passed successfully."/>
+                </Member>
+                <Member Name="Failed">
+                    <Annotation Term="OData.Description" String="The test failed."/>
+                </Member>
+                <Member Name="NotRun">
+                    <Annotation Term="OData.Description" String="The test was not run."/>
+                </Member>
+                <Member Name="NotConfigured">
+                    <Annotation Term="OData.Description" String="The server is not configured."/>
+                </Member>
+                <Member Name="NotApplicable">
+                    <Annotation Term="OData.Description" String="The test is not applicable to the current configuration."/>
+                </Member>
+            </EnumType>
+            <EnumType Name="DNSLookupResultType">
+                <Annotation Term="OData.Description" String="The result of a DNS lookup test."/>
+                <Member Name="Passed">
+                    <Annotation Term="OData.Description" String="The DNS lookup succeeded."/>
+                </Member>
+                <Member Name="Failed">
+                    <Annotation Term="OData.Description" String="The DNS lookup failed."/>
+                </Member>
+                <Member Name="NotApplicable">
+                    <Annotation Term="OData.Description" String="The DNS lookup is not applicable to the current configuration."/>
+                </Member>
+            </EnumType>
+            <ComplexType Name="TestDirectoryResponse">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The response body for the TestDirectory action."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the TestDirectory action."/>
+                <Property Name="ADSSOKeytabExists" Type="DellAccountService.v1_0_0.TestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether the Kerberos keytab file exists."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of checking for the existence of the Kerberos keytab file."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADSSOKeytabValid" Type="DellAccountService.v1_0_0.TestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether the Kerberos keytab file is valid."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of validating the Kerberos keytab file."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADServerDNS" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="Indicates whether the directory server DNS name was resolved."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of resolving the directory server DNS name."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADDNSLookupDC" Type="DellAccountService.v1_0_0.DNSLookupResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether DNS SRV record lookup for domain controllers succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of performing DNS SRV record lookup for Active Directory domain controllers. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADDNSLookupGC" Type="DellAccountService.v1_0_0.DNSLookupResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether DNS SRV record lookup for global catalog servers succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of performing DNS SRV record lookup for Active Directory global catalog servers. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADDC1Connection" Type="DellAccountService.v1_0_0.ExtendedTestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether connection to domain controller 1 succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of connecting to the first Active Directory domain controller. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADDC2Connection" Type="DellAccountService.v1_0_0.ExtendedTestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether connection to domain controller 2 succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of connecting to the second Active Directory domain controller. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADDC3Connection" Type="DellAccountService.v1_0_0.ExtendedTestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether connection to domain controller 3 succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of connecting to the third Active Directory domain controller. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADDC4Connection" Type="DellAccountService.v1_0_0.ExtendedTestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether connection to domain controller 4 succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of connecting to the fourth Active Directory domain controller. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADGC1Connection" Type="DellAccountService.v1_0_0.ExtendedTestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether connection to global catalog server 1 succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of connecting to the first Active Directory global catalog server. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADGC2Connection" Type="DellAccountService.v1_0_0.ExtendedTestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether connection to global catalog server 2 succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of connecting to the second Active Directory global catalog server. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADGC3Connection" Type="DellAccountService.v1_0_0.ExtendedTestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether connection to global catalog server 3 succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of connecting to the third Active Directory global catalog server. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADGC4Connection" Type="DellAccountService.v1_0_0.ExtendedTestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether connection to global catalog server 4 succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of connecting to the fourth Active Directory global catalog server. Applicable to Active Directory only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="LDAPGC1SSLConnection" Type="DellAccountService.v1_0_0.TestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether SSL/TLS connection to the LDAP directory server succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of establishing an SSL/TLS connection to the Generic LDAP directory server. Applicable to Generic LDAP only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADCertValidation" Type="DellAccountService.v1_0_0.TestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether certificate validation succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of validating the directory server certificate. Applicable to both Active Directory and Generic LDAP when certificate validation is enabled."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="LDAPUserDNExists" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="Indicates whether the user DN exists in the directory."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of checking whether the user distinguished name (DN) exists in the directory. Applicable to Generic LDAP only."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADUserAuthentication" Type="DellAccountService.v1_0_0.TestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether user authentication succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of authenticating the user against the directory service. Applicable to both Active Directory and Generic LDAP."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADUserAuthorization" Type="DellAccountService.v1_0_0.TestResultType">
+                    <Annotation Term="OData.Description" String="Indicates whether user authorization succeeded."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the result of authorizing the user (role assignment check) against the directory service. Applicable to both Active Directory and Generic LDAP."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="ADTestLog" Type="Edm.String">
+                    <Annotation Term="OData.Description" String="The detailed test log containing step-by-step diagnostic information."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain a formatted text log with detailed diagnostic information for each step of the directory service test, including timestamps, server addresses, and result messages."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+            </ComplexType>
+            <ComplexType Name="DellAccountService" BaseType="DellAccountService.DellAccountService">
+                <Annotation Term="OData.Description" String="OEM extension for AccountService with privilege management."/>
+                <Annotation Term="OData.LongDescription" String="This version provides OEM extension for AccountService with custom privilege management and privilege registry overlay."/>
+                <NavigationProperty Name="Privileges" Type="DellPrivilegesCollection.DellPrivilegesCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A collection of custom OEM privileges."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain a link to a collection of DellPrivileges resources that can be managed at runtime. The collection supports up to 33 total privileges (11 predefined + 22 custom)."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="PrivilegeRegistryOverlay" Type="PrivilegeRegistry.PrivilegeRegistry" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="The privilege registry overlay that customizes the base registry."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain a link to the PrivilegeRegistryOverlay resource that applies customizations on top of the base PrivilegeRegistry via PUT operation. The effective registry is computed by merging the overlay on top of the base registry."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+            </ComplexType>
+        </Schema>
+       </edmx:DataServices>
+       </edmx:Edmx>

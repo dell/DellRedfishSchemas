@@ -1,0 +1,73 @@
+components:
+  schemas:
+    DellLicenseManagementService_DeleteOptions:
+      enum:
+      - All
+      - Force
+      - NoOption
+      type: string
+      x-enumDescriptions:
+        All: All
+        Force: Force
+        NoOption: No option
+    DellLicenseManagementService_DellLicenseManagementService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.v1_1_0.yaml#/components/schemas/DellLicenseManagementService_v1_1_0_DellLicenseManagementService
+      description: The DellLicenseManagementService resource provides some actions
+        to support License Management functionality.
+      urisDeprecated:
+      - /redfish/v1/Managers/{ManagerId}/Oem/Dell/DellLicenseManagementService
+      x-longDescription: The DellLicenseManagementService resource provides some actions
+        to support License Management functionality.
+    DellLicenseManagementService_IgnoreCertWarning:
+      enum:
+      - 'Off'
+      - 'On'
+      type: string
+      x-enumDescriptions:
+        'Off': 'Off'
+        'On': 'On'
+    DellLicenseManagementService_ImportOptions:
+      enum:
+      - All
+      - Force
+      - NoOption
+      type: string
+      x-enumDescriptions:
+        All: All
+        Force: Force
+        NoOption: No Option
+    DellLicenseManagementService_ProxySupport:
+      enum:
+      - DefaultProxy
+      - 'Off'
+      - ParametersProxy
+      type: string
+      x-enumDescriptions:
+        DefaultProxy: On - use default proxy settings
+        'Off': 'Off'
+        ParametersProxy: On - use passed in parameters for proxy
+    DellLicenseManagementService_ProxyType:
+      enum:
+      - HTTP
+      - SOCKS
+      type: string
+      x-enumDescriptions:
+        HTTP: HTTP
+        SOCKS: SOCKS
+    DellLicenseManagementService_ShareType:
+      enum:
+      - CIFS
+      - HTTP
+      - HTTPS
+      - NFS
+      type: string
+      x-enumDescriptions:
+        CIFS: CIFS
+        HTTP: HTTP
+        HTTPS: HTTPS
+        NFS: NFS
+title: '#DellLicenseManagementService.DellLicenseManagementService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

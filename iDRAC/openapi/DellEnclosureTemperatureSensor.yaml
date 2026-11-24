@@ -1,0 +1,143 @@
+components:
+  schemas:
+    DellEnclosureTemperatureSensor_BaseUnits:
+      enum:
+      - DegreesC
+      - Other
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        DegreesC: Degrees C
+        Other: Other
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        DegreesC: Degrees C
+        Other: Other
+        Unknown: Unknown
+      x-enumVersionAdded:
+        DegreesC: v1_1_0
+        Other: v1_1_0
+        Unknown: v1_1_0
+    DellEnclosureTemperatureSensor_DellEnclosureTemperatureSensor:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnclosureTemperatureSensor.v1_1_0.yaml#/components/schemas/DellEnclosureTemperatureSensor_v1_1_0_DellEnclosureTemperatureSensor
+      description: An instance of DellEnclosureTemperatureSensor will have Storage
+        Enclosure temperature sensor specific data.
+      x-longDescription: An instance of DellEnclosureTemperatureSensor will have Storage
+        Enclosure temperature sensor specific data.
+    DellEnclosureTemperatureSensor_PrimaryStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_1_0
+        Error: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+    DellEnclosureTemperatureSensor_RateUnits:
+      enum:
+      - None
+      type: string
+      x-enumDescriptions:
+        None: None
+      x-enumLongDescriptions:
+        None: None
+      x-enumVersionAdded:
+        None: v1_1_0
+    DellEnclosureTemperatureSensor_SensorType:
+      enum:
+      - Temperature
+      type: string
+      x-enumDescriptions:
+        Temperature: Temperature
+      x-enumLongDescriptions:
+        Temperature: Temperature
+      x-enumVersionAdded:
+        Temperature: v1_1_0
+    DellEnclosureTemperatureSensor_State:
+      enum:
+      - Blocked
+      - Charging
+      - Degraded
+      - Failed
+      - Foreign
+      - Learning
+      - LowPower
+      - NonRAID
+      - NotApplicable
+      - Offline
+      - Online
+      - OverTemp
+      - Ready
+      - Removed
+      - UnderTemp
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Blocked: Blocked
+        Charging: Charging
+        Degraded: Degraded
+        Failed: Failed
+        Foreign: Foreign
+        Learning: Learning
+        LowPower: Low Power
+        NonRAID: Non-Raid
+        NotApplicable: Not Applicable
+        Offline: Offline
+        Online: Online
+        OverTemp: Over Temp
+        Ready: Ready
+        Removed: Removed
+        UnderTemp: Under Temp
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Blocked: Blocked
+        Charging: Charging
+        Degraded: Degraded
+        Failed: Failed
+        Foreign: Foreign
+        Learning: Learning
+        LowPower: Low Power
+        NonRAID: Non-Raid
+        NotApplicable: Not Applicable
+        Offline: Offline
+        Online: Online
+        OverTemp: Over Temp
+        Ready: Ready
+        Removed: Removed
+        UnderTemp: Under Temp
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Blocked: v1_1_0
+        Charging: v1_1_0
+        Degraded: v1_1_0
+        Failed: v1_1_0
+        Foreign: v1_1_0
+        Learning: v1_1_0
+        LowPower: v1_1_0
+        NonRAID: v1_1_0
+        NotApplicable: v1_1_0
+        Offline: v1_1_0
+        Online: v1_1_0
+        OverTemp: v1_1_0
+        Ready: v1_1_0
+        Removed: v1_1_0
+        UnderTemp: v1_1_0
+        Unknown: v1_1_0
+title: '#DellEnclosureTemperatureSensor.DellEnclosureTemperatureSensor'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,201 @@
+components:
+  schemas:
+    DellManagerDiagnostic_v1_0_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellManagerDiagnostic.GetArpTable':
+          $ref: '#/components/schemas/DellManagerDiagnostic_v1_0_0_GetArpTable'
+        '#DellManagerDiagnostic.GetInterfaceConfiguration':
+          $ref: '#/components/schemas/DellManagerDiagnostic_v1_0_0_GetInterfaceConfiguration'
+        '#DellManagerDiagnostic.GetNetworkStatistics':
+          $ref: '#/components/schemas/DellManagerDiagnostic_v1_0_0_GetNetworkStatistics'
+        '#DellManagerDiagnostic.GetTraceLog':
+          $ref: '#/components/schemas/DellManagerDiagnostic_v1_0_0_GetTraceLog'
+        '#DellManagerDiagnostic.Ping':
+          $ref: '#/components/schemas/DellManagerDiagnostic_v1_0_0_Ping'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_CommandResponse:
+      additionalProperties: false
+      properties:
+        Output:
+          description: The diagnostic output.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the output returned by the
+            diagnostic action.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_DellManagerDiagnostic:
+      additionalProperties: false
+      description: Oem data related to ManagerDiagnosticData.
+      properties: {}
+      type: object
+      x-longDescription: Oem extensions for ManagerDiagnosticData resource providing
+        additional diagnostic capabilities.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_GetArpTable:
+      additionalProperties: false
+      description: Display the ARP cache.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall display ARP table entries. Returns ARP
+        table output with numeric IP addresses and MAC addresses.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_GetArpTableRequestBody:
+      additionalProperties: false
+      description: Display the ARP cache.
+      properties: {}
+      type: object
+      x-longDescription: This action shall display ARP table entries. Returns ARP
+        table output with numeric IP addresses and MAC addresses.
+    DellManagerDiagnostic_v1_0_0_GetInterfaceConfiguration:
+      additionalProperties: false
+      description: Display network interface parameters.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall display network interface configuration.
+        Returns network interface output showing all network interfaces with IP addresses,
+        MAC addresses, and statistics.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_GetInterfaceConfigurationRequestBody:
+      additionalProperties: false
+      description: Display network interface parameters.
+      properties: {}
+      type: object
+      x-longDescription: This action shall display network interface configuration.
+        Returns network interface output showing all network interfaces with IP addresses,
+        MAC addresses, and statistics.
+    DellManagerDiagnostic_v1_0_0_GetNetworkStatistics:
+      additionalProperties: false
+      description: Display network connections and routing tables.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall display network statistics and connection
+        information. Returns network statistics output showing all active connections.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_GetNetworkStatisticsRequestBody:
+      additionalProperties: false
+      description: Display network connections and routing tables.
+      properties: {}
+      type: object
+      x-longDescription: This action shall display network statistics and connection
+        information. Returns network statistics output showing all active connections.
+    DellManagerDiagnostic_v1_0_0_GetTraceLog:
+      additionalProperties: false
+      description: Display trace log information.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall display trace log information. Returns
+        trace log output showing all trace log entries.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_GetTraceLogRequestBody:
+      additionalProperties: false
+      description: Display trace log information.
+      properties: {}
+      type: object
+      x-longDescription: This action shall display trace log information. Returns
+        trace log output showing all trace log entries.
+    DellManagerDiagnostic_v1_0_0_GetTraceLogResponse:
+      additionalProperties: false
+      properties:
+        Output:
+          description: The diagnostic output.
+          items:
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain the output returned by the
+            diagnostic action.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_Ping:
+      additionalProperties: false
+      description: Test network connectivity.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall test network connectivity to the specified
+        IP address or domain name with count range checking (1-10). Returns network
+        connectivity test output.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManagerDiagnostic_v1_0_0_PingRequestBody:
+      additionalProperties: false
+      description: Test network connectivity.
+      properties:
+        Count:
+          description: Number of ping packets to send.
+          format: int64
+          maximum: 10
+          minimum: 1
+          type: integer
+          x-longDescription: The number of ping packets to send to the target IP address.
+            Must be between 1 and 10. Default is 1. Values outside this range will
+            be rejected.
+        IPAddress:
+          description: IP address to ping.
+          pattern: ^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$|^[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?)*$
+          type: string
+          x-longDescription: The target IP address or domain name to test network
+            connectivity. Must be valid IPv4, IPv6 address format, or domain name.
+      required:
+      - IPAddress
+      type: object
+      x-longDescription: This action shall test network connectivity to the specified
+        IP address or domain name with count range checking (1-10). Returns network
+        connectivity test output.
+title: '#DellManagerDiagnostic.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

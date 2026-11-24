@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAttributes.json",
     "$ref": "#/definitions/DellAttributes",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellAttributes": {
             "anyOf": [
@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAttributes.v1_0_0.json#/definitions/DellAttributes"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAttributes.v1_1_0.json#/definitions/DellAttributes"
                 }
             ],
             "deletable": false,
@@ -21,6 +21,7 @@
             "uris": [
                 "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellAttributes/{DellAttributesId}",
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceFunctionId}/Oem/Dell/DellNetworkAttributes/{NetworkAttributesId}",
+                "/redfish/v1/Oem/Dell/DellAttributes",
                 "/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceFunctionId}/Oem/Dell/DellNetworkAttributes/{NetworkAttributesId}/Settings",
                 "/redfish/v1/Managers/{ManagerId}/Oem/Dell/DellAttributes/{DellAttributesId}/{SpecializationId}"
             ]

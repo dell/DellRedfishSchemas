@@ -1,0 +1,18 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellExportConfiguration.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellExportConfiguration": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellExportConfiguration.v1_0_0.json#/definitions/DellExportConfiguration"
+                }
+            ],
+            "description": "The DellExportConfiguration resource provides exported configuration data for Dell OEM components. This is a generic endpoint that returns component-specific JSON based on the OEMComponents parameter used during export.",
+            "longDescription": "The DellExportConfiguration resource provides exported configuration data for Dell OEM components such as EventFilters, BIOS settings, and network configuration. The response format varies based on the component type exported. Phase 1 supports EventFilter configuration export/import."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellExportConfiguration"
+}

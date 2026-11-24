@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellSwitch  v1.2.0 -->
+<!--# This schema complements to OemAction section of Switch Resource                      -->
+<!--# Copyright © 2025 Dell Inc. or its subsidiaries. All Rights Reserved.                 -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Switch_v1.xml">
+        <edmx:Include Namespace="Switch"/>
+        <edmx:Include Namespace="Switch.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellSwitch">
+            <Action Name="SetTraceSeverity" IsBound="true">
+                <Parameter Name="Switch" Type="Switch.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to set the Broadcom Switch trace severity log options"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to set the Broadcom Switch trace severity log options"/>
+                 <Parameter Name="DebugType" Type="DellSwitch.DebugType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the debug type required"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the debug type required"/>
+                </Parameter>
+                 <Parameter Name="UpdateType" Type="DellSwitch.UpdateType">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the update type required"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the update type required"/>
+                </Parameter>
+                 <Parameter Name="TraceSeverity" Type="DellSwitch.TraceSeverity">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the TraceSeverity"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the TraceSeverity"/>
+                </Parameter>
+                 <Parameter Name="SubSystemType" Type="DellSwitch.SubSystemType">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the SubSystemType"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the SubSystemType"/>
+                </Parameter>
+                 <Parameter Name="TraceMask" Type="Edm.String">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the TraceMask"/>
+                    <Annotation Term="OData.LongDescription" String="Please provide the TraceMask from the Broadcom ScrutinySwitch Healthconfig document when setting the SubSystemType level log. E.g. value 0x00000001"/>
+		    <Annotation Term="Validation.Pattern" String="^0x[0-9A-Fa-f]+$"/>
+                </Parameter>
+            </Action>
+
+            <Action Name="GetTraceSeverity" IsBound="true">
+                <Parameter Name="Switch" Type="Switch.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to get the Broadcom Switch health config trace log options"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to get the Broadcom Switch health config trace log options"/>
+                 <Parameter Name="DebugType" Type="DellSwitch.DebugType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the debug type required"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the debug type required"/>
+                </Parameter>
+                 <Parameter Name="SubSystemType" Type="DellSwitch.SubSystemType">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the SubSystemType"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the SubSystemType"/>
+                </Parameter>
+                <ReturnType Type="DellSwitch.GetTraceSeverityResponse" Nullable="false"/>
+            </Action>
+            <ComplexType Name="GetTraceSeverityResponse">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The response body for the GetTraceSeverity action."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the GetTraceSeverity action."/>
+                <Property Name="TraceSeverity" Type="DellSwitch.TraceSeverity">
+                    <Annotation Term="OData.Description" String="This property states the trigger status"/>
+                    <Annotation Term="OData.LongDescription" String="This property states the trigger status, only this property will be show if we select DebugType as TraceSeverity in GetTraceSeverity"/>
+                </Property>
+                <Property Name="TraceMask" Type="Edm.String">
+                    <Annotation Term="OData.Description" String="This property states the TraceMask"/>
+                    <Annotation Term="OData.LongDescription" String="This property states the TraceMask, only this property will be show if we select DebugType as SubSystemType in GetTraceSeverity "/>
+                </Property>
+            </ComplexType>
+            <EnumType Name="DebugType">
+                <Member Name="TraceSeverity">
+                    <Annotation Term="OData.Description" String="TraceSeverity"/>
+                    <Annotation Term="OData.LongDescription" String="TraceSeverity"/>
+                </Member>
+                <Member Name="SubSystem">
+                    <Annotation Term="OData.Description" String="SubSystem"/>
+                    <Annotation Term="OData.LongDescription" String="SubSystem"/>
+                </Member>
+            </EnumType>
+
+            <EnumType Name="UpdateType">
+                <Member Name="Runtime">
+                    <Annotation Term="OData.Description" String="Runtime"/>
+                    <Annotation Term="OData.LongDescription" String="Runtime"/>
+                </Member>
+                <Member Name="Persistent">
+                    <Annotation Term="OData.Description" String="Persistent"/>
+                    <Annotation Term="OData.LongDescription" String="Persistent"/>
+                </Member>
+            </EnumType>
+
+            <EnumType Name="TraceSeverity">
+                <Member Name="Debug">
+                    <Annotation Term="OData.Description" String="Debug"/>
+                    <Annotation Term="OData.LongDescription" String="Debug"/>
+                </Member>
+                <Member Name="Info">
+                    <Annotation Term="OData.Description" String="Info"/>
+                    <Annotation Term="OData.LongDescription" String="Info"/>
+                </Member>
+                <Member Name="Warning">
+                    <Annotation Term="OData.Description" String="Warning"/>
+                    <Annotation Term="OData.LongDescription" String="Warning"/>
+                </Member>
+                <Member Name="Error">
+                    <Annotation Term="OData.Description" String="Error"/>
+                    <Annotation Term="OData.LongDescription" String="Error"/>
+                </Member>
+            </EnumType>
+
+            <EnumType Name="SubSystemType">
+                <Member Name="HALI">
+                    <Annotation Term="OData.Description" String="HALI"/>
+                    <Annotation Term="OData.LongDescription" String="HALI"/>
+                </Member>
+                <Member Name="FWCORE">
+                    <Annotation Term="OData.Description" String="FWCORE"/>
+                    <Annotation Term="OData.LongDescription" String="FWCORE"/>
+                </Member>
+                <Member Name="SES">
+                    <Annotation Term="OData.Description" String="SES"/>
+                    <Annotation Term="OData.LongDescription" String="SES"/>
+                </Member>
+                <Member Name="PMG">
+                    <Annotation Term="OData.Description" String="PMG"/>
+                    <Annotation Term="OData.LongDescription" String="PMG"/>
+                </Member>
+                <Member Name="OEM">
+                    <Annotation Term="OData.Description" String="OEM"/>
+                    <Annotation Term="OData.LongDescription" String="OEM"/>
+                </Member>
+                <Member Name="BPL">
+                    <Annotation Term="OData.Description" String="BPL"/>
+                    <Annotation Term="OData.LongDescription" String="BPL"/>
+                </Member>
+                <Member Name="OOB">
+                    <Annotation Term="OData.Description" String="OOB"/>
+                    <Annotation Term="OData.LongDescription" String="OOB"/>
+                </Member>
+                <Member Name="SPI">
+                    <Annotation Term="OData.Description" String="SPI"/>
+                    <Annotation Term="OData.LongDescription" String="SPI"/>
+                </Member>
+                <Member Name="SEC">
+                    <Annotation Term="OData.Description" String="SEC"/>
+                    <Annotation Term="OData.LongDescription" String="SEC"/>
+                </Member>
+                <Member Name="SMM">
+                    <Annotation Term="OData.Description" String="SMM"/>
+                    <Annotation Term="OData.LongDescription" String="SMM"/>
+                </Member>
+            </EnumType>
+            <Action Name="GetTagSBTimeout" IsBound="true">
+                <Parameter Name="Switch" Type="Switch.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to read the Tag ScoreBoard timeout value for the given station"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to tead the Tag ScoreBoard timeout value for the given station"/>
+                <Parameter Name="StationNumber" Type="Edm.Int16">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the station number. The possible values are 0 to 8"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the station number. The possible values are 0 to 8"/>
+                </Parameter>
+                <Parameter Name="QueryMode" Type="DellSwitch.QueryMode" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the query mode"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the query mode"/>
+                </Parameter>
+                <ReturnType Type="DellSwitch.GetTagSBTimeoutResponse"  Nullable="false" />
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <ComplexType Name="GetTagSBTimeoutResponse">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The response body for the GetTagSBTimeout action."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the GetTagSBTimeout action."/>
+                <Property Name="StationNumber" Type="Edm.Int16" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states the station number."/>
+                    <Annotation Term="OData.LongDescription" String="This property states the station number for which ScoreBoard timeout value is captured."/>
+                </Property>
+                <Property Name="TimeoutMode" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states about Timeout mode."/>
+                    <Annotation Term="OData.LongDescription" String="This property states about Timeout mode."/>
+                </Property>
+                <Property Name="TagSBTimeoutValue" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states the timeout value."/>
+                    <Annotation Term="OData.LongDescription" String="This property states Tag ScoreBoard timeout value for the given station."/>
+                </Property>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </ComplexType>
+            <EnumType Name="QueryMode">
+                <Member Name="Runtime">
+                    <Annotation Term="OData.Description" String="Query data stored in the current session"/>
+                    <Annotation Term="OData.LongDescription" String="Query data stored in the current session"/>
+                </Member>
+                <Member Name="Flash">
+                    <Annotation Term="OData.Description" String="Query data stored in the flash"/>
+                    <Annotation Term="OData.LongDescription" String="Query data stored in the flash "/>
+                </Member>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </EnumType>
+            <Action Name="SetLaneErrorInjection" IsBound="true">
+                <Parameter Name="Switch" Type="Switch.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to Perform the error injection on a Lane"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to Perform the error injection on a Lane"/>
+                <Parameter Name="LaneNum" Type="Edm.Int16" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter specifies the lane number."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies the lane number."/>
+                </Parameter>
+                <Parameter Name="Enable" Type="Edm.Boolean" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter specifies whether to enable or disable the lane injection"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies whether to enable or disable the lane injection"/>
+                </Parameter>
+                <Parameter Name="Frequency" Type="DellSwitch.InjFrequency" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter specifies the error injection frequency."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies Error injection control value."/>
+                </Parameter>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <EnumType Name="InjFrequency">
+                <Member Name="1US">
+                    <Annotation Term="OData.Description" String="Inject error every 1us "/>
+                    <Annotation Term="OData.LongDescription" String="Transaction Layer Packet"/>
+                </Member>
+                <Member Name="16US">
+                    <Annotation Term="OData.Description" String="Inject error every 16us "/>
+                    <Annotation Term="OData.LongDescription" String="Data Link Layer Packet"/>
+                </Member>
+                <Member Name="1MS">
+                    <Annotation Term="OData.Description" String="Inject error every 1ms "/>
+                    <Annotation Term="OData.LongDescription" String="Inject error every 1ms"/>
+                </Member>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </EnumType>
+        </Schema>
+
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellSwitch.v1_0_0">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <Annotation Term="OData.Description" String="This is the schema definition for the additional Oem property to complement the DMTF Switch Schema."/>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellSwitch.v1_1_0">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <Annotation Term="OData.Description" String="This is the schema definition for adding the new actions GetTagSBTimeout, GetLaneErrorInjectionInfo and SetLaneErrorInjection."/>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellSwitch.v1_2_0">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <Annotation Term="OData.Description" String="This is the schema definition for removing the support for action GetLaneErrorInjectionInfo."/>
+        </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

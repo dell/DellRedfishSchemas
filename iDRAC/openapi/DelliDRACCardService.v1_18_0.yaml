@@ -1,0 +1,1256 @@
+components:
+  schemas:
+    DelliDRACCardService_v1_18_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DelliDRACCardService.DeleteCertificate':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_DeleteCertificate'
+        '#DelliDRACCardService.DeleteSSLCertificate':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_DeleteSSLCertificate'
+        '#DelliDRACCardService.DisableSEKM':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_DisableSEKM'
+        '#DelliDRACCardService.DisableiLKM':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_DisableiLKM'
+        '#DelliDRACCardService.EnableSEKM':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_EnableSEKM'
+        '#DelliDRACCardService.EnableiLKM':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_EnableiLKM'
+        '#DelliDRACCardService.ExportCertificate':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_ExportCertificate'
+        '#DelliDRACCardService.ExportSSLCertificate':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_ExportSSLCertificate'
+        '#DelliDRACCardService.GenerateSEKMCSR':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_GenerateSEKMCSR'
+        '#DelliDRACCardService.GetKVMSession':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_GetKVMSession'
+        '#DelliDRACCardService.GetVirtualConsoleLaunchURI':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_GetVirtualConsoleLaunchURI'
+        '#DelliDRACCardService.GetVirtualMediaLaunchURI':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_GetVirtualMediaLaunchURI'
+        '#DelliDRACCardService.ImportCertificate':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_ImportCertificate'
+        '#DelliDRACCardService.ImportSSLCertificate':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_ImportSSLCertificate'
+        '#DelliDRACCardService.PeriodicSyncWithKMS':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_PeriodicSyncWithKMS'
+        '#DelliDRACCardService.Rekey':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_Rekey'
+        '#DelliDRACCardService.SSLResetCfg':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_SSLResetCfg'
+        '#DelliDRACCardService.SendTestEmailAlert':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_SendTestEmailAlert'
+        '#DelliDRACCardService.SendTestSNMPTrap':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_SendTestSNMPTrap'
+        '#DelliDRACCardService.TestConnection':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_TestConnection'
+        '#DelliDRACCardService.TestSEKMServerConnection':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_TestSEKMServerConnection'
+        '#DelliDRACCardService.UploadSSLKey':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_UploadSSLKey'
+        '#DelliDRACCardService.VerifyHWProofOfPossession':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_VerifyHWProofOfPossession'
+        '#DelliDRACCardService.iDRACReset':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_iDRACReset'
+        '#DelliDRACCardService.iDRACResetCfg':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_iDRACResetCfg'
+        '#DelliDRACCardService.iLKMToSEKMTransition':
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_iLKMToSEKMTransition'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_DeleteCertificate:
+      additionalProperties: false
+      description: This method is used to delete the certificate from iDRAC, on the
+        basis of input parameter Type.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to delete the certificate from iDRAC,
+        on the basis of input parameter Type.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_DeleteCertificateRequestBody:
+      additionalProperties: false
+      description: This method is used to delete the certificate from iDRAC, on the
+        basis of input parameter Type.
+      properties:
+        CertificateType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_CertificateType
+          description: The type of the certificate to be deleted.
+          x-longDescription: The type of the certificate to be deleted.
+        Instance:
+          description: This parameter represent the instance number. Only applicable
+            for OIDC_CERT type.
+          format: int64
+          type: integer
+          x-longDescription: This parameter represent the instance number. Only applicable
+            for OIDC_CERT type.
+      required:
+      - CertificateType
+      type: object
+      x-longDescription: This method is used to delete the certificate from iDRAC,
+        on the basis of input parameter Type.
+    DelliDRACCardService_v1_18_0_DeleteGroup:
+      additionalProperties: false
+      deprecated: true
+      description: The method is used delete the group.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-deprecatedReason: GroupManager feature has been deprecated release 17G onwards.
+      x-longDescription: The method is used delete the group.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+      x-versionDeprecated: v1_10_0
+    DelliDRACCardService_v1_18_0_DeleteSSLCertificate:
+      additionalProperties: false
+      description: This method is used to delete the Custom Signing Certificate(CSC)
+        from iDRAC, on the basis of input parameter Type. Reset iDRAC to complete
+        the delete action of the certificate.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to delete the Custom Signing Certificate(CSC)
+        from iDRAC, on the basis of input parameter Type. Reset iDRAC to complete
+        the delete action of the certificate.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_7_0
+    DelliDRACCardService_v1_18_0_DeleteSSLCertificateRequestBody:
+      additionalProperties: false
+      description: This method is used to delete the Custom Signing Certificate(CSC)
+        from iDRAC, on the basis of input parameter Type. Reset iDRAC to complete
+        the delete action of the certificate.
+      properties:
+        CertificateType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_CertificateType
+          description: The type of the certificate to be deleted.
+          x-longDescription: The type of the certificate to be deleted.
+      required:
+      - CertificateType
+      type: object
+      x-longDescription: This method is used to delete the Custom Signing Certificate(CSC)
+        from iDRAC, on the basis of input parameter Type. Reset iDRAC to complete
+        the delete action of the certificate.
+    DelliDRACCardService_v1_18_0_DelliDRACCardService:
+      additionalProperties: false
+      description: The DelliDRACCardService resource provides some actions to support
+        iDRAC configurations.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DelliDRACCardService_v1_18_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: The DelliDRACCardService resource provides some actions to
+        support iDRAC configurations.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_DisableSEKM:
+      additionalProperties: false
+      description: Disable SEKM on iDRAC
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: Disable SEKM on iDRAC
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_4_0
+    DelliDRACCardService_v1_18_0_DisableSEKMRequestBody:
+      additionalProperties: false
+      description: Disable SEKM on iDRAC
+      properties:
+        DeleteKMSKeys:
+          description: When DeleteKMSKeys is enabled(Set to true), all keys on the
+            KMS are removed, including both old and new ones.
+          type: boolean
+          x-versionAdded: v1_16_0
+      type: object
+      x-longDescription: Disable SEKM on iDRAC
+    DelliDRACCardService_v1_18_0_DisableiLKM:
+      additionalProperties: false
+      description: This method is used to Disable iLKM.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to Disable iLKM.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_4_0
+    DelliDRACCardService_v1_18_0_DisableiLKMRequestBody:
+      additionalProperties: false
+      description: This method is used to Disable iLKM.
+      properties: {}
+      type: object
+      x-longDescription: This method is used to Disable iLKM.
+    DelliDRACCardService_v1_18_0_EnableSEKM:
+      additionalProperties: false
+      description: Enable SEKM on iDRAC
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: Enable SEKM on iDRAC
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_4_0
+    DelliDRACCardService_v1_18_0_EnableSEKMRequestBody:
+      additionalProperties: false
+      description: Enable SEKM on iDRAC
+      properties: {}
+      type: object
+      x-longDescription: Enable SEKM on iDRAC
+    DelliDRACCardService_v1_18_0_EnableiLKM:
+      additionalProperties: false
+      description: This method is used to Enable iLKM.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to Enable iLKM.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_4_0
+    DelliDRACCardService_v1_18_0_EnableiLKMRequestBody:
+      additionalProperties: false
+      description: This method is used to Enable iLKM.
+      properties:
+        KeyID:
+          description: Specifies the Key ID.
+          type: string
+          x-longDescription: Specifies the Key ID.
+        Passphrase:
+          description: Specifies the Passphrase.
+          type: string
+          x-longDescription: Specifies the Passphrase.
+      required:
+      - KeyID
+      - Passphrase
+      type: object
+      x-longDescription: This method is used to Enable iLKM.
+    DelliDRACCardService_v1_18_0_ExportCertificate:
+      additionalProperties: false
+      description: This method is used to export the certificate from the idrac, based
+        on input parameter CertificateType. ExportCertificate returns the certificate
+        file path.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to export the certificate from the idrac,
+        based on input parameter CertificateType. ExportCertificate returns the certificate
+        file path.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_ExportCertificateRequestBody:
+      additionalProperties: false
+      description: This method is used to export the certificate from the idrac, based
+        on input parameter CertificateType. ExportCertificate returns the certificate
+        file path.
+      properties:
+        CertificateType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_CertificateType
+          description: The type of the certificate to be exported.
+          x-longDescription: The type of the certificate to be exported.
+        Instance:
+          description: This parameter represent the instance number. Only applicable
+            for OIDC_CERT type.
+          format: int64
+          type: integer
+          x-longDescription: This parameter represent the instance number. Only applicable
+            for OIDC_CERT type.
+      required:
+      - CertificateType
+      type: object
+      x-longDescription: This method is used to export the certificate from the idrac,
+        based on input parameter CertificateType. ExportCertificate returns the certificate
+        file path.
+    DelliDRACCardService_v1_18_0_ExportSSLCertificate:
+      additionalProperties: false
+      description: This method is used to export the ssl certificate from the idrac,
+        based on input parameter Type. ExportSSLCertificate returns the certificate.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to export the ssl certificate from the
+        idrac, based on input parameter Type. ExportSSLCertificate returns the certificate.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_ExportSSLCertificateRequestBody:
+      additionalProperties: false
+      description: This method is used to export the ssl certificate from the idrac,
+        based on input parameter Type. ExportSSLCertificate returns the certificate.
+      properties:
+        SSLCertType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_SSLCertType
+          description: The type of the certificate to be exported.
+          x-longDescription: The type of the certificate to be exported.
+      required:
+      - SSLCertType
+      type: object
+      x-longDescription: This method is used to export the ssl certificate from the
+        idrac, based on input parameter Type. ExportSSLCertificate returns the certificate.
+    DelliDRACCardService_v1_18_0_ExportSSLCertificateResponse:
+      additionalProperties: false
+      description: The response body for the ExportSSLCertificate action.
+      properties:
+        CertificateFile:
+          description: Exported certificate file encoded in base64.
+          readOnly: true
+          type: string
+          x-longDescription: Exported certificate file encoded in base64.
+      required:
+      - CertificateFile
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the ExportSSLCertificate action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_FactoryIdentityCertificateGenerateCSR:
+      additionalProperties: false
+      description: The FactoryIdentityCertificateGenerateCSR() method is used to Generate
+        CSR for Factory Identity certificate.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The FactoryIdentityCertificateGenerateCSR() method is used
+        to Generate CSR for Factory Identity certificate.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DelliDRACCardService_v1_18_0_FactoryIdentityCertificateGenerateCSRResponse:
+      additionalProperties: false
+      description: The response body for the FactoryIdentityCertificateGenerateCSR
+        action.
+      properties:
+        CSRString:
+          description: This property shall contain the Privacy Enhanced Mail (PEM)-encoded
+            string, which contains RFC2986-specified structures, of the certificate
+            signing request. The private key should not be part of the string.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the Privacy Enhanced Mail
+            (PEM)-encoded string, which contains RFC2986-specified structures, of
+            the certificate signing request. The private key should not be part of
+            the string.
+          x-versionAdded: v1_2_0
+      required:
+      - CSRString
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the FactoryIdentityCertificateGenerateCSR action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_FactoryIdentityExportCertificate:
+      additionalProperties: false
+      description: The FactoryIdentityExportCertificate() method is used to export
+        factory identity certificate.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The FactoryIdentityExportCertificate() method is used to
+        export factory identity certificate.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DelliDRACCardService_v1_18_0_FactoryIdentityImportCertificate:
+      additionalProperties: false
+      description: The FactoryIdentityImportCertificate() method is used to import
+        factory Identity certificate.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The FactoryIdentityImportCertificate() method is used to
+        import factory Identity certificate.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DelliDRACCardService_v1_18_0_GenerateSEKMCSR:
+      additionalProperties: false
+      description: 'This method is used to create the SEKM certificate signing request(CSR)
+        and return the certificate file. The certificate file should be signed by
+        an authority. Note: For creating the CSR, the following DelliDRACCardString
+        attributes under SEKMCert group must be configured. 1.CommonName, 2.OrganizationUnit,
+        3.LocalityName, 4.StateName, 5. CountryCode, 6. EmailAddress, 7.OrganizationName
+        and optional attributes are 1.SubjectAltName 2.UserId.'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: 'This method is used to create the SEKM certificate signing
+        request(CSR) and return the certificate file. The certificate file should
+        be signed by an authority. Note: For creating the CSR, the following DelliDRACCardString
+        attributes under SEKMCert group must be configured. 1.CommonName, 2.OrganizationUnit,
+        3.LocalityName, 4.StateName, 5. CountryCode, 6. EmailAddress, 7.OrganizationName
+        and optional attributes are 1.SubjectAltName 2.UserId.'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DelliDRACCardService_v1_18_0_GenerateSEKMCSRRequestBody:
+      additionalProperties: false
+      description: 'This method is used to create the SEKM certificate signing request(CSR)
+        and return the certificate file. The certificate file should be signed by
+        an authority. Note: For creating the CSR, the following DelliDRACCardString
+        attributes under SEKMCert group must be configured. 1.CommonName, 2.OrganizationUnit,
+        3.LocalityName, 4.StateName, 5. CountryCode, 6. EmailAddress, 7.OrganizationName
+        and optional attributes are 1.SubjectAltName 2.UserId.'
+      properties: {}
+      type: object
+      x-longDescription: 'This method is used to create the SEKM certificate signing
+        request(CSR) and return the certificate file. The certificate file should
+        be signed by an authority. Note: For creating the CSR, the following DelliDRACCardString
+        attributes under SEKMCert group must be configured. 1.CommonName, 2.OrganizationUnit,
+        3.LocalityName, 4.StateName, 5. CountryCode, 6. EmailAddress, 7.OrganizationName
+        and optional attributes are 1.SubjectAltName 2.UserId.'
+    DelliDRACCardService_v1_18_0_GetKVMSession:
+      additionalProperties: false
+      description: This method is used to get the Temporary credentials for the vKVM
+        Session.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to get the Temporary credentials for
+        the vKVM Session.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_3_0
+    DelliDRACCardService_v1_18_0_GetKVMSessionRequestBody:
+      additionalProperties: false
+      description: This method is used to get the Temporary credentials for the vKVM
+        Session.
+      properties:
+        SessionTypeName:
+          description: A random string value upto 32 bytes.
+          type: string
+          x-longDescription: A random string value upto 32 bytes.
+      required:
+      - SessionTypeName
+      type: object
+      x-longDescription: This method is used to get the Temporary credentials for
+        the vKVM Session.
+    DelliDRACCardService_v1_18_0_GetKVMSessionResponse:
+      additionalProperties: false
+      description: The response body for the GetKVMSession action.
+      properties:
+        TempPassword:
+          description: Temporary password credential.
+          readOnly: true
+          type: string
+          x-longDescription: Temporary password credential.
+          x-versionAdded: v1_3_0
+        TempUsername:
+          description: Temporary user name credential.
+          readOnly: true
+          type: string
+          x-longDescription: Temporary user name credential.
+          x-versionAdded: v1_3_0
+      required:
+      - TempPassword
+      - TempUsername
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetKVMSession action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_GetVirtualConsoleLaunchURI:
+      additionalProperties: false
+      description: This method is used to get a launch URI for the HTML5 Virtual Console
+        viewer.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to get a launch URI for the HTML5 Virtual
+        Console viewer. The URI contains session keys and configuration parameters
+        required to authenticate and launch the viewer.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_18_0
+    DelliDRACCardService_v1_18_0_GetVirtualConsoleLaunchURIRequestBody:
+      additionalProperties: false
+      description: This method is used to get a launch URI for the HTML5 Virtual Console
+        viewer.
+      properties: {}
+      type: object
+      x-longDescription: This method is used to get a launch URI for the HTML5 Virtual
+        Console viewer. The URI contains session keys and configuration parameters
+        required to authenticate and launch the viewer.
+    DelliDRACCardService_v1_18_0_GetVirtualConsoleLaunchURIResponse:
+      additionalProperties: false
+      description: The response body for the GetVirtualConsoleLaunchURI action.
+      properties:
+        LaunchURI:
+          description: The launch URI for the HTML5 Virtual Console viewer.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a fully-qualified HTTPS URI
+            that can be used to launch the HTML5 Virtual Console viewer with embedded
+            session keys and configuration parameters.
+          x-versionAdded: v1_18_0
+      required:
+      - LaunchURI
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetVirtualConsoleLaunchURI action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_GetVirtualMediaLaunchURI:
+      additionalProperties: false
+      description: This method is used to get a launch URI for the HTML5 Virtual Media
+        viewer.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to get a launch URI for the HTML5 Virtual
+        Media viewer. The URI contains session keys and configuration parameters required
+        to authenticate and launch the viewer.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_18_0
+    DelliDRACCardService_v1_18_0_GetVirtualMediaLaunchURIRequestBody:
+      additionalProperties: false
+      description: This method is used to get a launch URI for the HTML5 Virtual Media
+        viewer.
+      properties: {}
+      type: object
+      x-longDescription: This method is used to get a launch URI for the HTML5 Virtual
+        Media viewer. The URI contains session keys and configuration parameters required
+        to authenticate and launch the viewer.
+    DelliDRACCardService_v1_18_0_GetVirtualMediaLaunchURIResponse:
+      additionalProperties: false
+      description: The response body for the GetVirtualMediaLaunchURI action.
+      properties:
+        LaunchURI:
+          description: The launch URI for the HTML5 Virtual Media viewer.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a fully-qualified HTTPS URI
+            that can be used to launch the HTML5 Virtual Media viewer with embedded
+            session keys and configuration parameters.
+          x-versionAdded: v1_18_0
+      required:
+      - LaunchURI
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetVirtualMediaLaunchURI action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_ImportCertificate:
+      additionalProperties: false
+      description: This method is used to import the certificate to iDRAC, on the
+        basis of input parameter CertificateType.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to import the certificate to iDRAC, on
+        the basis of input parameter CertificateType.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_ImportCertificateRequestBody:
+      additionalProperties: false
+      description: This method is used to import the certificate to iDRAC, on the
+        basis of input parameter CertificateType.
+      properties:
+        CertificateFile:
+          description: A base 64 encoded string of the Certificate file.
+          type: string
+          x-longDescription: A base 64 encoded string of the Certificate file.
+        CertificateType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_CertificateType
+          description: Type of the certificate to be imported.
+          x-longDescription: Type of the certificate to be imported.
+        Instance:
+          description: This parameter represent the instance number.
+          format: int64
+          type: integer
+          x-longDescription: This parameter represent the instance number.
+        Passphrase:
+          description: A passphrase for certificate file.
+          type: string
+          x-longDescription: A passphrase for certificate file.
+      required:
+      - CertificateFile
+      - CertificateType
+      type: object
+      x-longDescription: This method is used to import the certificate to iDRAC, on
+        the basis of input parameter CertificateType.
+    DelliDRACCardService_v1_18_0_ImportSSLCertificate:
+      additionalProperties: false
+      description: This method is used to import the ssl certificate to iDRAC, on
+        the basis of input parameter Type. After importing the certificate, the iDRAC
+        will automatically restart.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to import the ssl certificate to iDRAC,
+        on the basis of input parameter Type. After importing the certificate, the
+        iDRAC will automatically restart.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_ImportSSLCertificateRequestBody:
+      additionalProperties: false
+      description: This method is used to import the ssl certificate to iDRAC, on
+        the basis of input parameter Type. After importing the certificate, the iDRAC
+        will automatically restart.
+      properties:
+        CertificateType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_CertificateType
+          description: Type of the certificate to be imported.
+          x-longDescription: Type of the certificate to be imported.
+        Passphrase:
+          description: 'A passphrase for certificate file. Note: This is optional
+            parameter for CSC certificate, and not required for Server and CA certificates.'
+          type: string
+          x-longDescription: 'A passphrase for certificate file. Note: This is optional
+            parameter for CSC certificate, and not required for Server and CA certificates.'
+        SSLCertificateFile:
+          description: 'A base 64 encoded string of the XML Certificate file. Note:
+            For importing CSC certificate, user has to convert PKCS file to base64
+            format. Use the openssl command. The CTC file content has to be in PEM
+            format (base 64 encoded).'
+          type: string
+          x-longDescription: 'A base 64 encoded string of the XML Certificate file.
+            Note: For importing CSC certificate, user has to convert PKCS file to
+            base64 format. Use the openssl command. The CTC file content has to be
+            in PEM format (base 64 encoded).'
+      required:
+      - CertificateType
+      - SSLCertificateFile
+      type: object
+      x-longDescription: This method is used to import the ssl certificate to iDRAC,
+        on the basis of input parameter Type. After importing the certificate, the
+        iDRAC will automatically restart.
+    DelliDRACCardService_v1_18_0_JoinGroup:
+      additionalProperties: false
+      deprecated: true
+      description: The method is used join an existing group providing the GroupPasscode.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-deprecatedReason: GroupManager feature has been deprecated release 17G onwards.
+      x-longDescription: The method is used join an existing group providing the GroupPasscode.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+      x-versionDeprecated: v1_10_0
+    DelliDRACCardService_v1_18_0_PeriodicSyncWithKMS:
+      additionalProperties: false
+      description: This method enables periodic key sync from the KMS server.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method enables periodic key sync from the KMS server.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_9_0
+    DelliDRACCardService_v1_18_0_PeriodicSyncWithKMSRequestBody:
+      additionalProperties: false
+      description: This method enables periodic key sync from the KMS server.
+      properties: {}
+      type: object
+      x-longDescription: This method enables periodic key sync from the KMS server.
+    DelliDRACCardService_v1_18_0_Rekey:
+      additionalProperties: false
+      description: This method is used to Rekey all the secure capable devices in
+        iDRAC.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to Rekey all the secure capable devices
+        in iDRAC.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_3_0
+    DelliDRACCardService_v1_18_0_RekeyRequestBody:
+      additionalProperties: false
+      description: This method is used to Rekey all the secure capable devices in
+        iDRAC.
+      properties:
+        Mode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_Mode
+          description: 'Specifies the security mode of iDRAC : 1 - iDrac Local Key
+            Management (iLKM), 2 - Secure Enterprise Key Manager(SEKM).'
+          x-longDescription: 'Specifies the security mode of iDRAC : 1 - iDrac Local
+            Key Management (iLKM), 2 - Secure Enterprise Key Manager(SEKM).'
+        NewKeyId:
+          description: 'new security key identifier for iLKM '
+          type: string
+          x-longDescription: 'new security key identifier for iLKM '
+        NewPassphrase:
+          description: 'new security key passphrase for ILKM '
+          type: string
+          x-longDescription: 'new security key passphrase for ILKM '
+        OldPassphrase:
+          description: Old security key passphrase iLKM
+          type: string
+          x-longDescription: Old security key passphrase iLKM
+        RetryFailedOnly:
+          description: If set to true, retry attempts for Rekey operations will be
+            limited to devices where previous attempts failed, utilizing the existing
+            key.
+          type: boolean
+          x-longDescription: If set to true, retry attempts for Rekey operations will
+            be limited to devices where previous attempts failed, utilizing the existing
+            key.
+          x-versionAdded: v1_1_0
+        fqdd:
+          description: Specifies the fqdd of the component. currently it supports
+            only "iDRAC.Embedded.1".
+          type: string
+          x-longDescription: Specifies the fqdd of the component. currently it supports
+            only "iDRAC.Embedded.1".
+      required:
+      - fqdd
+      type: object
+      x-longDescription: This method is used to Rekey all the secure capable devices
+        in iDRAC.
+    DelliDRACCardService_v1_18_0_RemoveSelf:
+      additionalProperties: false
+      deprecated: true
+      description: The method is used to remove the iDRAC from a group, that the iDRAC
+        is a member of.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-deprecatedReason: GroupManager feature has been deprecated release 17G onwards.
+      x-longDescription: The method is used to remove the iDRAC from a group, that
+        the iDRAC is a member of.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+      x-versionDeprecated: v1_10_0
+    DelliDRACCardService_v1_18_0_SSLResetCfg:
+      additionalProperties: false
+      description: This method is used to restores the web-server certificate to factory
+        defaults.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to restores the web-server certificate
+        to factory defaults.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DelliDRACCardService_v1_18_0_SSLResetCfgRequestBody:
+      additionalProperties: false
+      description: This method is used to restores the web-server certificate to factory
+        defaults.
+      properties: {}
+      type: object
+      x-longDescription: This method is used to restores the web-server certificate
+        to factory defaults.
+    DelliDRACCardService_v1_18_0_SendTestEmailAlert:
+      additionalProperties: false
+      description: This method is used to to send a test email alert for a particular
+        attribute.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to to send a test email alert for a particular
+        attribute.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DelliDRACCardService_v1_18_0_SendTestEmailAlertRequestBody:
+      additionalProperties: false
+      description: This method is used to to send a test email alert for a particular
+        attribute.
+      properties:
+        InstanceID:
+          description: The property shall have the value of the InstanceID property
+            of the attribute for which the test email alert is generated.
+          type: string
+          x-longDescription: The property shall have the value of the InstanceID property
+            of the attribute for which the test email alert is generated.
+      required:
+      - InstanceID
+      type: object
+      x-longDescription: This method is used to to send a test email alert for a particular
+        attribute.
+    DelliDRACCardService_v1_18_0_SendTestSNMPTrap:
+      additionalProperties: false
+      description: This action sends a test alert to a configured SNMP alert destination
+        to verify alert delivery. By default, the service generates a standard SNMP
+        test trap. If the optional `IPMITrap` parameter is set to `true`, the service
+        generates an IPMI Platform Event Trap (PET), which is delivered using SNMP..
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action sends a test alert to a configured SNMP alert
+        destination to verify alert delivery. By default, the service generates a
+        standard SNMP test trap. If the optional `IPMITrap` parameter is set to `true`,
+        the service generates an IPMI Platform Event Trap (PET), which is delivered
+        using SNMP..
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DelliDRACCardService_v1_18_0_SendTestSNMPTrapRequestBody:
+      additionalProperties: false
+      description: This action sends a test alert to a configured SNMP alert destination
+        to verify alert delivery. By default, the service generates a standard SNMP
+        test trap. If the optional `IPMITrap` parameter is set to `true`, the service
+        generates an IPMI Platform Event Trap (PET), which is delivered using SNMP..
+      properties:
+        IPMITrap:
+          description: Optional parameter. When this parameter is set to `true`, the
+            service generates an IPMI Platform Event Trap (PET).
+          type: boolean
+          x-longDescription: Optional parameter. When this parameter is set to `true`,
+            the service generates an IPMI Platform Event Trap (PET).
+          x-versionAdded: v1_17_0
+        InstanceID:
+          description: The property shall have the value of the InstanceID property
+            of the attribute for which the test email alert is generated.
+          type: string
+          x-longDescription: The property shall have the value of the InstanceID property
+            of the attribute for which the test email alert is generated.
+      required:
+      - InstanceID
+      type: object
+      x-longDescription: This action sends a test alert to a configured SNMP alert
+        destination to verify alert delivery. By default, the service generates a
+        standard SNMP test trap. If the optional `IPMITrap` parameter is set to `true`,
+        the service generates an IPMI Platform Event Trap (PET), which is delivered
+        using SNMP..
+    DelliDRACCardService_v1_18_0_TestConnection:
+      additionalProperties: false
+      description: This method is used to test server connection.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to test server connection.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_7_0
+    DelliDRACCardService_v1_18_0_TestConnectionRequestBody:
+      additionalProperties: false
+      description: This method is used to test server connection.
+      properties:
+        ConnectionType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_ConnectionType
+          description: Type of the connection to test..
+          x-longDescription: Type of the connection to test..
+      required:
+      - ConnectionType
+      type: object
+      x-longDescription: This method is used to test server connection.
+    DelliDRACCardService_v1_18_0_TestSEKMServerConnection:
+      additionalProperties: false
+      description: This method is used to test SEKM server connection.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to test SEKM server connection.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DelliDRACCardService_v1_18_0_TestSEKMServerConnectionRequestBody:
+      additionalProperties: false
+      description: This method is used to test SEKM server connection.
+      properties:
+        ServerIndex:
+          description: Specifies the SEKM server index value and the possible values
+            for PrimaryServer is 1 and for SecondaryServer is 1-8.
+          format: int64
+          type: integer
+          x-longDescription: Specifies the SEKM server index value and the possible
+            values for PrimaryServer is 1 and for SecondaryServer is 1-8.
+        ServerType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_ServerType
+          description: specifies the SEKM server type.
+          x-longDescription: specifies the SEKM server type.
+      required:
+      - ServerIndex
+      - ServerType
+      type: object
+      x-longDescription: This method is used to test SEKM server connection.
+    DelliDRACCardService_v1_18_0_UploadSSLKey:
+      additionalProperties: false
+      description: This API is used to upload the SSL key from the client to iDRAC.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This API is used to upload the SSL key from the client to
+        iDRAC.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_5_0
+    DelliDRACCardService_v1_18_0_UploadSSLKeyRequestBody:
+      additionalProperties: false
+      description: This API is used to upload the SSL key from the client to iDRAC.
+      properties:
+        SSLKeyString:
+          description: A SSL key used to generate the server certificate.
+          type: string
+          x-longDescription: A SSL key used to generate the server certificate.
+      required:
+      - SSLKeyString
+      type: object
+      x-longDescription: This API is used to upload the SSL key from the client to
+        iDRAC.
+    DelliDRACCardService_v1_18_0_VerifyHWProofOfPossession:
+      additionalProperties: false
+      description: This method is used to verify hardware identity certificate (Factory
+        certificate).
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to verify hardware identity certificate
+        (Factory certificate).
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DelliDRACCardService_v1_18_0_VerifyHWProofOfPossessionRequestBody:
+      additionalProperties: false
+      description: This method is used to verify hardware identity certificate (Factory
+        certificate).
+      properties:
+        Algorithm:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_Algorithm
+          description: The algorithm used to encrypt EncryptedChallenge.
+          x-longDescription: The algorithm used to encrypt EncryptedChallenge.
+        EncryptedChallenge:
+          description: A string encrypted with the public key of the certificate.
+          type: string
+          x-longDescription: A string encrypted with the public key of the certificate.
+        HMAC:
+          description: The Hash-based Message Authentication Code for the EncryptedChallenge.
+          type: string
+          x-longDescription: The Hash-based Message Authentication Code for the EncryptedChallenge.
+        InitialVector:
+          description: A hexidecimal representation of the initial vector used for
+            the EncryptedChallenge.
+          type: string
+          x-longDescription: A hexidecimal representation of the initial vector used
+            for the EncryptedChallenge.
+        KeyDerivationFunction:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_KeyDerivationFunction
+          description: The key derivation function used.
+          x-longDescription: The key derivation function used.
+        Nonce:
+          description: A 32-byte ML-DSA-87 signature in base64 encoded format.
+          type: string
+          x-longDescription: A 32-byte ML-DSA-87 signature in base64 encoded format.
+            This param is required when the Algorithm is ML-DSA-87
+        PublicKey:
+          description: A hexidecimal representation of the public key used to encrypt
+            the EncryptedChallenge.
+          type: string
+          x-longDescription: A hexidecimal representation of the public key used to
+            encrypt the EncryptedChallenge.
+      required:
+      - Algorithm
+      type: object
+      x-longDescription: This method is used to verify hardware identity certificate
+        (Factory certificate).
+    DelliDRACCardService_v1_18_0_VerifyHWProofOfPossessionResponse:
+      additionalProperties: false
+      description: The response body for the VerifyHWProofOfPossession action.
+      properties:
+        EncryptedResponse:
+          description: A base64 encoded string encrypted with the private key of the
+            certificate.
+          readOnly: true
+          type: string
+          x-longDescription: A base64 encoded string encrypted with the private key
+            of the certificate.
+          x-versionAdded: v1_2_0
+        HMAC:
+          description: The Hash-based Message Authentication Code for the EncryptedChallenge.
+          nullable: true
+          type: string
+          x-longDescription: The Hash-based Message Authentication Code for the EncryptedChallenge.
+          x-versionAdded: v1_2_0
+        InitialVector:
+          description: A hexidecimal representation of the initial vector used for
+            the EncryptedChallenge.
+          nullable: true
+          type: string
+          x-longDescription: A hexidecimal representation of the initial vector used
+            for the EncryptedChallenge.
+          x-versionAdded: v1_2_0
+        PublicKey:
+          description: A hexidecimal representation of the public key used to encrypt
+            the EncryptedChallenge.
+          nullable: true
+          type: string
+          x-longDescription: A hexidecimal representation of the public key used to
+            encrypt the EncryptedChallenge.
+          x-versionAdded: v1_2_0
+        Signature:
+          description: Signature data
+          nullable: true
+          type: string
+          x-versionAdded: v1_2_0
+        SignedData:
+          description: Signed data string
+          nullable: true
+          type: string
+          x-versionAdded: v1_2_0
+      required:
+      - EncryptedResponse
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the VerifyHWProofOfPossession action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_iDRACReset:
+      additionalProperties: false
+      description: This method is used to reset iDRAC .
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to reset iDRAC .
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_iDRACResetCfg:
+      additionalProperties: false
+      description: This method is used to reset the iDRAC to factory default configurations.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to reset the iDRAC to factory default
+        configurations.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACCardService_v1_18_0_iDRACResetCfgRequestBody:
+      additionalProperties: false
+      description: This method is used to reset the iDRAC to factory default configurations.
+      properties:
+        Force:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_Force
+          description: This option is used to reset the iDRAC to factory defaults
+            by force or gracefully.
+          x-longDescription: This option is used to reset the iDRAC to factory defaults
+            by force or gracefully.
+        Preserve:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_Preserve
+          description: Preserve= 0 (Default)-reset all configuration to default except
+            network and users. Preserve=1 (All)-reset all configuration to default
+            including network and users. Preserve=2 (ResetAllWithRootDefaults)  -
+            reset all configuration to default including network preserve default
+            user as root calvin.
+          x-longDescription: Preserve= 0 (Default)-reset all configuration to default
+            except network and users. Preserve=1 (All)-reset all configuration to
+            default including network and users. Preserve=2 (ResetAllWithRootDefaults)  -
+            reset all configuration to default including network preserve default
+            user as root calvin.
+      type: object
+      x-longDescription: This method is used to reset the iDRAC to factory default
+        configurations.
+    DelliDRACCardService_v1_18_0_iDRACResetRequestBody:
+      additionalProperties: false
+      description: This method is used to reset iDRAC .
+      properties:
+        Force:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.yaml#/components/schemas/DelliDRACCardService_Force
+          description: This option is used to reset the iDRAC by force or gracefully.
+          x-longDescription: This option is used to reset the iDRAC by force or gracefully.
+      type: object
+      x-longDescription: This method is used to reset iDRAC .
+    DelliDRACCardService_v1_18_0_iLKMToSEKMTransition:
+      additionalProperties: false
+      description: This method is used to iLKM To SEKM Transition.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This method is used to iLKM To SEKM Transition.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_4_0
+    DelliDRACCardService_v1_18_0_iLKMToSEKMTransitionRequestBody:
+      additionalProperties: false
+      description: This method is used to iLKM To SEKM Transition.
+      properties:
+        KeyID:
+          description: Specifies the Key ID.
+          type: string
+          x-longDescription: Specifies the Key ID.
+        Passphrase:
+          description: Specifies the Passphrase.
+          type: string
+          x-longDescription: Specifies the Passphrase.
+      required:
+      - KeyID
+      - Passphrase
+      type: object
+      x-longDescription: This method is used to iLKM To SEKM Transition.
+title: '#DelliDRACCardService.v1_18_0.DelliDRACCardService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

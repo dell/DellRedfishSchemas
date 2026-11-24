@@ -1,0 +1,531 @@
+components:
+  schemas:
+    DellManager_v1_7_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellManager.ClearPending':
+          $ref: '#/components/schemas/DellManager_v1_7_0_ClearPending'
+        '#DellManager.GetIdentityProvenanceChain':
+          $ref: '#/components/schemas/DellManager_v1_7_0_GetIdentityProvenanceChain'
+        '#DellManager.ResetToDefaults':
+          $ref: '#/components/schemas/DellManager_v1_7_0_ResetToDefaults'
+        '#DellManager.SetCustomDefaults':
+          $ref: '#/components/schemas/DellManager_v1_7_0_SetCustomDefaults'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_CA:
+      additionalProperties: false
+      properties:
+        Certificates:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: The link to a collection of CA certificates used for TLS support
+            for RemoteSystemLogs.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain a link to a Resource Collection
+            of type CertificateCollection.
+          x-versionAdded: v1_2_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_ClearPending:
+      additionalProperties: false
+      description: This action is used to clear all the pending values.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform a clear pending values.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_ClearPendingRequestBody:
+      additionalProperties: false
+      description: This action is used to clear all the pending values.
+      properties: {}
+      type: object
+      x-longDescription: This action shall perform a clear pending values.
+    DellManager_v1_7_0_DellManager:
+      additionalProperties: false
+      description: Oem data related to DellManager.
+      properties:
+        CustomDefaultsDownloadURI:
+          description: The URI at which to download saved custom defaults. This URI
+            shall return an HTTP 404, if the custom defaults have not been set already
+            by using the SetCustomDefaults Oem Action.
+          format: uri-reference
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the URI at which to download
+            the saved custom defaults, using the Redfish protocol and authentication
+            methods.  The service provides this URI for the download of the OEM-specific
+            XML file of the saved custom defaults.  An HTTP GET from this URI shall
+            return a response payload of MIME time `application/octet-stream`. This
+            URI shall return an HTTP 404, if the custom defaults have not been set
+            already by using the SetCustomDefaults Oem Action.
+          x-versionAdded: v1_4_0
+        DelliDRACCard:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DelliDRACCard.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DelliDRACCard.
+          x-versionAdded: v1_2_0
+        FSDStatus:
+          $ref: '#/components/schemas/DellManager_v1_7_0_FSDStatus'
+          description: This is the complex property for the additional FSD related
+            properties.
+          nullable: true
+          x-longDescription: This is the complex property for the additional FSD related
+            properties.
+          x-versionAdded: v1_6_0
+        FrontUSBPortOwner:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.yaml#/components/schemas/DellManager_PortOwner
+          deprecated: true
+          description: Indicates the entity that currently owns the front USB ports.
+          nullable: true
+          readOnly: false
+          x-deprecatedReason: This property is deprecated in favour of DMTF standard
+            USBPorts resource.
+          x-longDescription: This property shall indicate the entity that currently
+            controls the front USB ports of the system.
+          x-versionAdded: v1_5_0
+          x-versionDeprecated: v1_5_1
+        Jobs:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to the collection of Job associated with this system.
+          nullable: true
+          readOnly: true
+          x-longDescription: The value of this property shall be a link to a collection
+            of type Job.
+          x-versionAdded: v1_3_0
+        RearUSBPortOwner:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.yaml#/components/schemas/DellManager_PortOwner
+          deprecated: true
+          description: Indicates the entity that currently owns the rear USB ports.
+          nullable: true
+          readOnly: false
+          x-deprecatedReason: This property is deprecated in favour of DMTF standard
+            USBPorts resource.
+          x-longDescription: This property shall indicate the entity that currently
+            controls the rear USB ports of the system.
+          x-versionAdded: v1_5_0
+          x-versionDeprecated: v1_5_1
+        RemoteSystemLogs:
+          $ref: '#/components/schemas/DellManager_v1_7_0_RemoteSystemLogs'
+          description: TLS based remote syslog configurations.
+          x-longDescription: This property shall contain the TLS based remote syslog
+            configurations.
+          x-versionAdded: v1_2_0
+      type: object
+      x-longDescription: Oem data related to DellManager.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_DellManagerLinks:
+      additionalProperties: false
+      description: This is the complex property is for the additional OEM Links realted
+        to the DMTF Manager Schema.
+      properties:
+        DellAttributes:
+          description: A reference to a DellAttributes resource.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: A reference to a DellAttributes resource.
+          x-versionAdded: v1_5_0
+        DellAttributes@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+        DellJobService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellJobService resource.
+          readOnly: true
+          x-longDescription: A reference to a Processor resource.
+          x-versionAdded: v1_5_0
+        DellLCService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellLCService resource.
+          readOnly: true
+          x-longDescription: A reference to a Processor resource.
+          x-versionAdded: v1_5_0
+        DellLicensableDeviceCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellLicensableDeviceCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellLicensableDeviceCollection resource.
+          x-versionAdded: v1_5_0
+        DellLicenseCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellLicenseCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellLicenseCollection resource.
+          x-versionAdded: v1_5_0
+        DellLicenseManagementService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellLicenseManagementService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellLicenseManagementService resource.
+          x-versionAdded: v1_5_0
+        DellSystemQuickSyncCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSystemQuickSyncCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSystemQuickSyncCollection resource.
+          x-versionAdded: v1_5_0
+        DellTimeService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellTimeService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellTimeService resource.
+          x-versionAdded: v1_5_0
+        DellUSBDeviceCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellUSBDeviceCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellUSBDeviceCollection resource.
+          x-versionAdded: v1_5_0
+        DelliDRACCardService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DelliDRACCardService resource.
+          readOnly: true
+          x-longDescription: A reference to a DelliDRACCardService resource.
+          x-versionAdded: v1_5_0
+      type: object
+      x-longDescription: This is the complex property is for the additional OEM Links
+        realted to the DMTF Manager Schema.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_FSDStatus:
+      additionalProperties: false
+      description: This is the complex property for the additional FSD related properties.
+      properties:
+        Enabled:
+          description: This property shall indicate whether Field Service Debug is
+            enabled or disabled.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether Field Service Debug
+            is enabled or disabled.
+          x-versionAdded: v1_6_0
+      type: object
+      x-longDescription: This is the complex property for the additional FSD related
+        properties.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_GetIdentityProvenanceChain:
+      additionalProperties: false
+      description: This action retrieves the identity provenance certificate chain.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall retrieve the identity provenance certificate
+        chain from the easyrestore backend and return it as a PEM chain for motherboard/DC-SCM
+        replacement tracking.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_7_0
+    DellManager_v1_7_0_GetIdentityProvenanceChainRequestBody:
+      additionalProperties: false
+      description: This action retrieves the identity provenance certificate chain.
+      properties: {}
+      type: object
+      x-longDescription: This action shall retrieve the identity provenance certificate
+        chain from the easyrestore backend and return it as a PEM chain for motherboard/DC-SCM
+        replacement tracking.
+    DellManager_v1_7_0_GetIdentityProvenanceChainResponse:
+      additionalProperties: false
+      description: The response body for the GetIdentityProvenanceChain action.
+      properties:
+        IdentityProvenanceChain:
+          description: Array of certificate entry objects representing the identity
+            provenance chain.
+          items:
+            $ref: '#/components/schemas/DellManager_v1_7_0_IdentityProvenanceCertEntry'
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain an array of certificate entry
+            objects. Each entry contains an Id and CertificateString. Entries are
+            ordered by pair index from CertChainRestore.json. For each pair, the SCV
+            entry (if present) comes before the IDEVID entry.
+          x-versionAdded: v1_7_0
+      required:
+      - IdentityProvenanceChain
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetIdentityProvenanceChain action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_HTTPS:
+      additionalProperties: false
+      properties:
+        Certificates:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: The link to a collection of client trust certificates used
+            for TLS support for RemoteSystemLogs.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain a link to a Resource Collection
+            of type CertificateCollection.
+          x-versionAdded: v1_2_0
+        SecureClientAuth:
+          $ref: '#/components/schemas/DellManager_v1_7_0_SecureClientAuth'
+          description: The identity authentication option used by iDRAC for TLS based
+            remote syslog.
+          readOnly: false
+          x-longDescription: This property shall indicate the identity authentication
+            option used by iDRAC for TLS based remote syslog. By default iDRAC will
+            use anonymous idenity which can be overriden by generating a signed trust
+            certificate to prove iDRAC's authenticity.
+          x-versionAdded: v1_2_0
+        SecurePort:
+          description: Specifies the secure remote syslog port number.
+          format: int64
+          maximum: 65535
+          minimum: 1
+          readOnly: false
+          type: integer
+          x-longDescription: This property shall contain the secure remote syslog
+            port number. The default port value is 6514. The port value should be
+            an integral value from 1 to 65535.
+          x-versionAdded: v1_2_0
+        SecureServers:
+          description: Name of the TLS supported remote syslog servers.
+          items:
+            type: string
+          readOnly: false
+          type: array
+          x-longDescription: This property shall contain the list of all TLS supported
+            remote syslog servers.
+          x-versionAdded: v1_2_0
+        SecureSysLogEnable:
+          $ref: '#/components/schemas/DellManager_v1_7_0_SecureSysLogEnable'
+          description: An indication of whether TLS based remote syslog is enabled.
+          readOnly: false
+          x-longDescription: This property shall indicate whether TLS based remote
+            syslog is enabled or not. Enabled indicates TLS based remote syslog is
+            enabled. Disabled indicates TLS based remote syslog is disabled. By default
+            TLS support is disabled.
+          x-versionAdded: v1_2_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_IdentityProvenanceCertEntry:
+      additionalProperties: false
+      description: A single certificate entry in the identity provenance chain.
+      properties:
+        CertificateString:
+          description: PEM-encoded certificate string.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the PEM-encoded certificate
+            string.
+          x-versionAdded: v1_7_0
+        Id:
+          description: Certificate identifier in format SCV_<index> or IDEVID_<index>.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the certificate identifier
+            in format SCV_<index> or IDEVID_<index> where index comes from the pair's
+            index field in CertChainRestore.json.
+          x-versionAdded: v1_7_0
+      required:
+      - Id
+      - CertificateString
+      type: object
+      x-longDescription: This type shall contain a single certificate entry with its
+        identifier and PEM-encoded certificate string.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_OemActions:
+      additionalProperties: true
+      properties: {}
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_RemoteSystemLogs:
+      additionalProperties: false
+      properties:
+        CA:
+          $ref: '#/components/schemas/DellManager_v1_7_0_CA'
+          description: TLS based remote syslog CA certificate.
+          x-longDescription: This property shall contain the TLS based remote syslog
+            CA certificate.
+          x-versionAdded: v1_2_0
+        HTTPS:
+          $ref: '#/components/schemas/DellManager_v1_7_0_HTTPS'
+          description: TLS based remote syslog configurations and client trust certificate.
+          x-longDescription: This property shall contain the TLS based remote syslog
+            configurations and client trust certificate.
+          x-versionAdded: v1_2_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_ResetToDefaults:
+      additionalProperties: false
+      description: This action is used to reset the Dell attributes to default.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform reset of the Dell attributes to
+        their default values.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_ResetToDefaultsRequestBody:
+      additionalProperties: false
+      description: This action is used to reset the Dell attributes to default.
+      properties:
+        ResetType:
+          $ref: '#/components/schemas/DellManager_v1_7_0_ResetType'
+          description: The type of ResetType option to be performed.
+          x-longDescription: The type of ResetType option to be performed.
+      required:
+      - ResetType
+      type: object
+      x-longDescription: This action shall perform reset of the Dell attributes to
+        their default values.
+    DellManager_v1_7_0_ResetType:
+      enum:
+      - All
+      - ResetAllWithRootDefaults
+      - Default
+      - CustomDefaults
+      type: string
+      x-enumDescriptions:
+        All: All configuration is set to default.
+        CustomDefaults: All configuration is set to the custom defaults which would
+          have been set previously using the SetCustomDefaults Action. In case there
+          is no saved custom default settings available, this option will not work
+        Default: All configuration is set to default except users and network settings
+          are preserved.
+        ResetAllWithRootDefaults: All configuration including network is set to default
+          exception root user password set to calvin.
+      x-enumVersionAdded:
+        CustomDefaults: v1_4_0
+    DellManager_v1_7_0_SecureClientAuth:
+      enum:
+      - Anonymous
+      - Certificate
+      type: string
+      x-enumDescriptions:
+        Anonymous: TLS based remote syslog with anonymous client authentication.
+        Certificate: TLS based remote syslog with certificate based client trust authentication
+    DellManager_v1_7_0_SecureSysLogEnable:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: TLS based remote syslog is disabled.
+        Enabled: TLS based remote syslog is enabled.
+    DellManager_v1_7_0_ServerConfigurationProfileResults:
+      additionalProperties: false
+      properties:
+        DisplayValue:
+          description: This is the Display Value of the Configuration opertaion.
+          type: string
+          x-longDescription: This property shall contain Display Value of the Configuration
+            opertaion.
+        ErrCode:
+          description: This is the Error code of the configuration operation.
+          type: string
+          x-longDescription: This property shall contain Error code of the configuration
+            operation, default value for success is 0.
+        FQDD:
+          description: This is the FQDD of the configuration operation.
+          type: string
+          x-longDescription: This property shall contain FQDD of the configuration
+            operation.
+        Name:
+          description: This is the Name of the configuration operation.
+          type: string
+          x-longDescription: This property shall contain Name of the configuration
+            operation.
+        NewValue:
+          description: This is the New Value of the configuration operation.
+          type: string
+          x-longDescription: This property shall contain New Value of the configuration
+            operation.
+        OldValue:
+          description: This is the Old Value of the configuration operation.
+          type: string
+          x-longDescription: This property shall contain Old Value of the configuration
+            operation.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellManager_v1_7_0_SetCustomDefaults:
+      additionalProperties: false
+      description: This action is used to set the custom defaults to be used during
+        Reset.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to set the custom defaults to be used
+        during Reset.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_4_0
+    DellManager_v1_7_0_SetCustomDefaultsRequestBody:
+      additionalProperties: false
+      description: This action is used to set the custom defaults to be used during
+        Reset.
+      properties:
+        CustomDefaults:
+          description: The XML representing the custom defaults.
+          type: string
+          x-longDescription: The XML representing the custom defaults.
+      required:
+      - CustomDefaults
+      type: object
+      x-longDescription: This action is used to set the custom defaults to be used
+        during Reset.
+    DellManager_v1_7_0_Status:
+      enum:
+      - Success
+      - Failure
+      type: string
+      x-enumDescriptions:
+        Failure: Status of the configuration operation change when failed.
+        Success: Status of the configuration operation change when succeeded.
+title: '#DellManager.v1_7_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

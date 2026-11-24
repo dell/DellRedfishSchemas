@@ -1,0 +1,11 @@
+components:
+  schemas:
+    DellUSBDevice_DellUSBDevice:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUSBDevice.v1_0_0.yaml#/components/schemas/DellUSBDevice_v1_0_0_DellUSBDevice
+      description: DellUSBDeviceView provides USB Device specific data.
+      x-longDescription: DellUSBDeviceView provides USB Device specific data.
+title: '#DellUSBDevice.DellUSBDevice'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

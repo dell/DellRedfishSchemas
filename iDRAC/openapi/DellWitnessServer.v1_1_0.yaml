@@ -1,0 +1,148 @@
+components:
+  schemas:
+    DellWitnessServer_v1_1_0_DellWitnessServer:
+      additionalProperties: false
+      description: An Oem extension to represent Witness Server Node related properties
+        in the chassis.
+      properties:
+        DellWitnessServer:
+          $ref: '#/components/schemas/DellWitnessServer_v1_1_0_DellWitnessServerObject'
+          description: Oem properties for representing Witness Server properties.
+          nullable: true
+          x-longDescription: Oem properties for representing Witness Server properties.
+      type: object
+      x-longDescription: An Oem extension to represent Witness Server Node related
+        properties in the chassis.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellWitnessServer_v1_1_0_DellWitnessServerObject:
+      additionalProperties: false
+      description: An Oem extension to represent Witness Server Node related properties
+        in the chassis.
+      properties:
+        Eppid:
+          description: A string that contains the EPPID of the Witness Server.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the EPPID of the Witness Server.
+        HeartBeat:
+          $ref: '#/components/schemas/DellWitnessServer_v1_1_0_HeartBeatStatus'
+          description: The property shall represent the policy for physical disks
+            included in the virtual disk.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the policy for physical
+            disks included in the virtual disk.
+        Mac1:
+          description: A string that contains the MAC address of port 1 of witness
+            server.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the MAC address of port 1 of witness
+            server.
+        Mac2:
+          description: A string that contains the MAC address of port 2 of witness
+            server.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the MAC address of port 2 of witness
+            server.
+        POSTCode:
+          description: A string that contains the BIOS POST code of witness server.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the BIOS POST code of witness
+            server.
+        PowerConsumptioninWatts:
+          description: Power Consumption of Witness server in Watts.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Power Consumption of witness server in Watts.
+        Status:
+          description: An array of status values of witness server.
+          items:
+            $ref: '#/components/schemas/DellWitnessServer_v1_1_0_WitnessStatus'
+          readOnly: true
+          type: array
+          x-longDescription: An array of status values of witness server.
+        SystemID:
+          description: A string that contains the SystemID of witness server.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the SystemID of witness server.
+      type: object
+      x-longDescription: An Oem extension to represent Witness Server Node related
+        properties in the chassis.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellWitnessServer_v1_1_0_DellWitnessServerProperties:
+      additionalProperties: false
+      description: An Oem extension to represent Witness Server Node related properties
+        in the chassis.
+      properties:
+        DellWitnessServer:
+          $ref: '#/components/schemas/DellWitnessServer_v1_1_0_DellWitnessServerObject'
+          description: Oem properties for representing Witness Server properties.
+          nullable: true
+          x-longDescription: Oem properties for representing Witness Server properties.
+      type: object
+      x-longDescription: An Oem extension to represent Witness Server Node related
+        properties in the chassis.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellWitnessServer_v1_1_0_HeartBeatStatus:
+      enum:
+      - Disabled
+      - Enabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+      x-enumLongDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+    DellWitnessServer_v1_1_0_WitnessStatus:
+      enum:
+      - FanMismatch
+      - PGFailure
+      - POSTError
+      - FanAbsent
+      - HeartbeatFailure
+      - Throttle
+      - Thermtrip
+      - Absent
+      - Present
+      type: string
+      x-enumDescriptions:
+        Absent: Absent
+        FanAbsent: Fan Absent
+        FanMismatch: Fan Mismatch
+        HeartbeatFailure: Heartbeat Failure
+        PGFailure: PG Failure
+        POSTError: POST Error
+        Present: Present
+        Thermtrip: 'Thermal Trip '
+        Throttle: Throttle
+      x-enumLongDescriptions:
+        Absent: Witness Server is Absent
+        FanAbsent: Witness FAN is not installed
+        FanMismatch: Witness FAN Airflow mismatch
+        HeartbeatFailure: Witness Server OS Heart Beat failed
+        PGFailure: Witness Server Power Good Failure
+        POSTError: Witness BIOS POST error
+        Present: Witness Server is Present
+        Thermtrip: Witness CPU Thermal Trip occurred
+        Throttle: Witness CPU Throttled
+title: '#DellWitnessServer.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

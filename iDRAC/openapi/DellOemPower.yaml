@@ -1,0 +1,10 @@
+components:
+  schemas:
+    DellOemPower_DellOemPower:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemPower.v1_1_0.yaml#/components/schemas/DellOemPower_v1_1_0_DellOemPower
+      description: Oem data related to the PowerSupply.
+      x-longDescription: Oem data related to the PowerSupply.
+title: '#DellOemPower'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,28 @@
+components:
+  schemas:
+    DellOemAttributeRegistry_v1_0_0_Attributes:
+      additionalProperties: false
+      description: This is the complex property for the additional attribute group
+        details.
+      properties:
+        GroupDisplayName:
+          description: Attribute group display name details.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Attribute group display name details.
+        GroupName:
+          description: Attribute group name details.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Attribute group name details.
+      type: object
+      x-longDescription: This is the complex property for the additional attribute
+        group details.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellOemAttributeRegistry.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

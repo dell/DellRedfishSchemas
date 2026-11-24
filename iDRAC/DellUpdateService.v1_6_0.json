@@ -1,0 +1,311 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.v1_6_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#DellUpdateService.Install": {
+                    "$ref": "#/definitions/Install"
+                },
+                "#DellUpdateService.InstallStagedPackages": {
+                    "$ref": "#/definitions/InstallStagedPackages"
+                },
+                "#DellUpdateService.RecoverFirmware": {
+                    "$ref": "#/definitions/RecoverFirmware"
+                },
+                "#UpdateService.ConfigureCX8WriteProtect": {
+                    "$ref": "#/definitions/ConfigureCX8WriteProtect"
+                },
+                "#UpdateService.ConfigureHardwareWriteProtect": {
+                    "$ref": "#/definitions/ConfigureHardwareWriteProtect"
+                }
+            },
+            "type": "object"
+        },
+        "ConfigureCX8WriteProtect": {
+            "additionalProperties": false,
+            "deprecated": "This action has been deprecated in favor of ConfigureHardwareWriteProtect action. This action if invoked will WriteProtect all the hardware components and not just CX8.",
+            "description": "This action supports for PCIe CX-8 in band updates only, and users will need to manually disable #WP before the update and enable #WP after the update is completed.",
+            "longDescription": "This action supports for PCIe CX-8 in band updates only, and users will need to manually disable #WP before the update and enable #WP after the update is completed.",
+            "parameters": {
+                "RequestType": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.json#/definitions/RequestType",
+                    "description": "This Parameter is used to set the CX8 Write Protect to Disable/Enable.",
+                    "longDescription": "This Parameter is used to set the CX8 Write Protect to Disable/Enable.",
+                    "requiredParameter": true
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_4_0",
+            "versionDeprecated": "v1_6_0"
+        },
+        "ConfigureHardwareWriteProtect": {
+            "additionalProperties": false,
+            "description": "This action configures hardware write protection for supported components. Users will need to manually disable write protection before firmware updates and enable it after updates are completed.",
+            "longDescription": "This action configures hardware write protection for supported components. Users will need to manually disable write protection before firmware updates and enable it after updates are completed.",
+            "parameters": {
+                "HardwareComponents": {
+                    "description": "This parameter specifies the list of hardware components for which write protection should be configured.",
+                    "items": {
+                        "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.json#/definitions/HardwareComponentType"
+                    },
+                    "longDescription": "This parameter specifies the list of hardware components for which write protection should be configured. Currently only Default is supported, which applies write protection to all supported hardware components.",
+                    "requiredParameter": true,
+                    "type": "array"
+                },
+                "RequestType": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.json#/definitions/RequestType",
+                    "description": "This parameter specifies whether to enable or disable hardware write protection.",
+                    "longDescription": "This parameter specifies whether to enable or disable hardware write protection.",
+                    "requiredParameter": true
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_6_0"
+        },
+        "DellOemUpdateService": {
+            "additionalProperties": false,
+            "description": "This version was introduced to add Oem Links in UpdateService resource.",
+            "longDescription": "This version was introduced to add Oem Links in UpdateService resource.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DellSoftwareInventoryCollection": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInventoryCollection.json#/definitions/DellSoftwareInventoryCollection",
+                    "description": "A reference to a DellSoftwareInventoryCollection resource.",
+                    "longDescription": "A reference to a DellSoftwareInventoryCollection resource.",
+                    "readonly": true,
+                    "versionAdded": "v1_2_0"
+                }
+            },
+            "type": "object"
+        },
+        "Install": {
+            "additionalProperties": false,
+            "deprecated": "This Action has been deprecated in favor of DMTF SimpleUpdate Action.",
+            "description": "This action is used to install firmware inventory instances",
+            "longDescription": "This action shall perform install of firmware inventory instances",
+            "parameters": {
+                "InstallUpon": {
+                    "$ref": "#/definitions/InstallUpon",
+                    "description": "The type of Install Upon option, default value is NextReboot if not provided by user",
+                    "longDescription": "The type of Install Upon option, default value is NextReboot if not provided by user",
+                    "requiredParameter": true
+                },
+                "SoftwareIdentityURIs": {
+                    "description": "Contains the relative URIs of the firmware inventory components to be installed, only one component installation at a time is allowed.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "longDescription": "Contains the relative URIs of the firmware inventory components to be installed, only one component installation at a time is allowed.",
+                    "requiredParameter": true,
+                    "type": "array"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionDeprecated": "v1_1_0"
+        },
+        "InstallStagedPackages": {
+            "additionalProperties": false,
+            "description": "This action creates install jobs for all eligible firmware packages in the LocalImageStore collection. Supports @Redfish.OperationApplyTime (Immediate or OnReset).",
+            "longDescription": "This action accepts no package list parameter. Install jobs are created for all packages with PackageValidationStatus = Success in the LocalImageStore collection based on the operation apply time. The action supports @Redfish.OperationApplyTime with values Immediate (install now) or OnReset (install on next reboot).",
+            "parameters": {
+                "RebootHost": {
+                    "description": "Whether to trigger a host reboot after update job creation.",
+                    "longDescription": "When set to true and ApplyTime is Immediate, the host system will be rebooted after all update jobs are created. When ApplyTime is OnReset, this parameter is ignored as the reboot will occur at the next scheduled system reset.",
+                    "type": "boolean"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@Redfish.OperationApplyTimeSupport": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Settings.json#/definitions/OperationApplyTimeSupport",
+                    "description": "An indication of whether a client can request an apply time for a create, delete, or action operation of a resource through the OperationApplyTime term."
+                },
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_5_0"
+        },
+        "InstallUpon": {
+            "enum": [
+                "Now",
+                "NextReboot",
+                "NowAndReboot"
+            ],
+            "enumDescriptions": {
+                "NextReboot": "To indicate install on next reboot",
+                "Now": "To indicate install now",
+                "NowAndReboot": "To indicate install and reboot"
+            },
+            "type": "string"
+        },
+        "RecoverFirmware": {
+            "additionalProperties": false,
+            "description": "This action shall recover BOSS controller firmware in case of root of trust (RoT) failure.",
+            "longDescription": "This action shall recover BOSS controller firmware in case of root of trust (RoT) failure.",
+            "parameters": {
+                "TargetFQDD": {
+                    "description": "This Parameter is the FQDD of the BOSS Controller.",
+                    "longDescription": "This Parameter is the FQDD of the BOSS Controller.",
+                    "requiredParameter": true,
+                    "type": "string"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_3_0"
+        }
+    },
+    "owningEntity": "Dell",
+    "release": "2026.2",
+    "title": "#DellUpdateService.v1_6_0"
+}

@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellChassis.json",
     "$ref": "#/definitions/DellChassis",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellChassis": {
             "anyOf": [
@@ -10,14 +10,14 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellChassis.v1_0_0.json#/definitions/DellChassis"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellChassis.v1_1_0.json#/definitions/DellChassis"
                 }
             ],
             "deletable": false,
             "description": "This resource shall provide information about the enclosure or chassis the system is in.",
             "insertable": false,
             "longDescription": "This resource shall provide information about the enclosure or chassis the system is in.",
-            "updatable": false,
+            "updatable": true,
             "uris": [
                 "/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellChassis/{ChassisId}"
             ]

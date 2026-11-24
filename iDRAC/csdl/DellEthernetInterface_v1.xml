@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellEthernetInterface  v1.0.0                                       -->
+<!--# This is DELL OEM Schema.                                                             -->
+<!--# Copyright © 2024 Dell Inc. or its subsidiaries. All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="DellEthernetInterface" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity" />
+            <ComplexType Name="DellEthernetInterface" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false" />
+                <Annotation Term="OData.Description" String="This property shall represent Oem properties for EthernetInterface resource ." />
+                <Annotation Term="OData.LongDescription" String="This property shall represent Oem properties for EthernetInterface resource." />
+            </ComplexType>
+        </Schema>
+        <Schema Namespace="DellEthernetInterface.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellEthernetInterface" BaseType="DellEthernetInterface.DellEthernetInterface">
+                <Property Name="InterfaceStatus" Type="DellEthernetInterface.v1_0_0.InterfaceStatus">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The status of the interface."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the status of the interface."/>
+                </Property>
+                <Property Name="InterfaceType" Type="DellEthernetInterface.v1_0_0.InterfaceType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The type of the interface."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the type of the interface."/>
+                </Property>
+                <Property Name="DHCPv4Server" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="DHCPv4 server for this interface."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the DHCPv4 server for this interface."/>
+                </Property>
+                <Property Name="DHCPv6Server" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="DHCPv6 server for this interface."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the DHCPv6 server for this interface."/>
+                </Property>
+            </ComplexType>
+            <EnumType Name="InterfaceStatus">
+                <Member Name="Down">
+                    <Annotation Term="OData.Description" String="Interface status is down."/>
+                </Member>
+                <Member Name="Up">
+                    <Annotation Term="OData.Description" String="Interface status is up."/>
+                </Member>
+                <Member Name="Testing">
+                    <Annotation Term="OData.Description" String="Interface status is testing."/>
+                </Member>
+                <Member Name="Unknown">
+                    <Annotation Term="OData.Description" String="Interface status is unknown."/>
+                </Member>
+                <Member Name="Dormant">
+                    <Annotation Term="OData.Description" String="Interface status is dormant."/>
+                </Member>
+                <Member Name="Absent">
+                    <Annotation Term="OData.Description" String="Interface status is absent."/>
+                </Member>
+            </EnumType>
+            <EnumType Name="InterfaceType">
+                <Member Name="Ethernet">
+                    <Annotation Term="OData.Description" String="Ethernet interface."/>
+                </Member>
+                <Member Name="Loop Back">
+                    <Annotation Term="OData.Description" String="Loop Back interface."/>
+                </Member>
+                <Member Name="Token Ring">
+                    <Annotation Term="OData.Description" String="Token ring interface."/>
+                </Member>
+                <Member Name="Ppp">
+                    <Annotation Term="OData.Description" String="Ppp interface."/>
+                </Member>
+                <Member Name="Atm">
+                    <Annotation Term="OData.Description" String="Atm interface."/>
+                </Member>
+                <Member Name="IEEE 802.11">
+                    <Annotation Term="OData.Description" String="IEEE 802.11 interface."/>
+                </Member>
+                <Member Name="Tunnel">
+                    <Annotation Term="OData.Description" String="Tunnel interface."/>
+                </Member>
+                <Member Name="IEEE 1IEEE 802.11">
+                    <Annotation Term="OData.Description" String="IEEE 1IEEE 802.11 interface."/>
+                </Member>
+                <Member Name="Other">
+                    <Annotation Term="OData.Description" String="Other interface."/>
+                </Member>
+            </EnumType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

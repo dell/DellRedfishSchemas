@@ -1,0 +1,15 @@
+components:
+  schemas:
+    DellTimeService_DellTimeService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTimeService.v1_0_1.yaml#/components/schemas/DellTimeService_v1_0_1_DellTimeService
+      description: DellTimeService provides actions to manage time (retrieve or set
+        time) for the service processor.
+      urisDeprecated:
+      - /redfish/v1/Managers/{ManagerId}/Oem/Dell/DellTimeService
+      x-longDescription: DellTimeService provides actions to manage time (retrieve
+        or set time) for the service processor.
+title: '#DellTimeService.DellTimeService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

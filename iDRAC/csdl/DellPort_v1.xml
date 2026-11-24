@@ -1,0 +1,864 @@
+<!--  -->
+<!-- ################################################################################        -->
+<!-- # Redfish Schema:  DellPort  v1.1.0  -->
+<!-- # This schema complements to OemAction section of Port Resource                       -->
+<!-- # Copyright © 2025 Dell Inc. or its subsidiaries. All Rights Reserved.                  -->
+<!-- ################################################################################        -->
+<!--  -->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
+        <edmx:Include Namespace="Port"/>
+        <edmx:Include Namespace="Port.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPort">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <Action Name="SetLinkDownConditionStatus" IsBound="true">
+                <Parameter Name="DellPort" Type="Port.v1_0_0.OemActions" Nullable="false" />
+                <Annotation Term="OData.Description" String="This action is used to set the link down condition to the downlink port."/>
+                <Annotation Term="OData.LongDescription" String="This action is used to set the link down condition to the downlink port."/>
+                <Parameter Name="ConditionType" Type="DellPort.ConditionType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the ConditionType."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the ConditionType."/>
+                </Parameter>
+                <Parameter Name="Action" Type="DellPort.ActionType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the Action"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the Action"/>
+                </Parameter>
+                <Parameter Name="EgressCreditTimeoutMs" Type="Edm.Int64">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the EgressCreditTimeoutMs of the portdown action. The possible values are 1, 2, 4, 8, 16, 32, 512, 1024."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the EgressCreditTimeoutMs of the portdown action. The possible values are 1, 2, 4, 8, 16, 32, 512, 1024."/>
+                </Parameter>
+            </Action>
+            <EnumType Name="ConditionType">
+                <Member Name="None">
+                    <Annotation Term="OData.Description" String="None"/>
+                    <Annotation Term="OData.LongDescription" String="None"/>
+                </Member>
+                <Member Name="EgressCreditTimeout">
+                    <Annotation Term="OData.Description" String="EgressCreditTimeout"/>
+                    <Annotation Term="OData.LongDescription" String="EgressCreditTimeout"/>
+                </Member>
+            </EnumType>
+            <EnumType Name="ActionType">
+                <Member Name="Enable">
+                    <Annotation Term="OData.Description" String="Enable"/>
+                    <Annotation Term="OData.LongDescription" String="Enable"/>
+                </Member>
+                <Member Name="Disable">
+                    <Annotation Term="OData.Description" String="Disable"/>
+                    <Annotation Term="OData.LongDescription" String="Disable"/>
+                </Member>
+            </EnumType>
+            <!-- Action2  -->
+            <Action Name="GetLinkDownConditionStatus" IsBound="true">
+                <Annotation String="The GetLinkDownConditionStatus gives the condition and time to get the link down " Term="OData.Description"/>
+                <Annotation String="The GetLinkDownConditionStatus gives the condition and time to get the link down " Term="OData.LongDescription"/>
+                <Parameter Name="DellPort" Type="Port.v1_0_0.OemActions" Nullable="false" />
+                <ReturnType Type="DellPort.GetLinkDownConditionStatusResponse"  Nullable="false" />
+            </Action>
+            <ComplexType Name="GetLinkDownConditionStatusResponse">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The response body for the GetLinkDownConditionStatus action."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the GetLinkDownConditionStatus action."/>
+                <Property Name="ConditionTriggered" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="This property states whether the condition is triggered or not."/>
+                    <Annotation Term="OData.LongDescription" String="This property states whether the condition is triggered or not."/>
+                </Property>
+                <Property Name="TriggerStatus" Type="DellPort.TriggerStatus">
+                    <Annotation Term="OData.Description" String="This property states the trigger status"/>
+                    <Annotation Term="OData.LongDescription" String="This property states the trigger status"/>
+                </Property>
+            </ComplexType>
+            <EnumType Name="TriggerStatus">
+                <Member Name="Posted">
+                    <Annotation Term="OData.Description" String="The will be Posted only when the ConditionTriggered is True."/>
+                    <Annotation Term="OData.LongDescription" String="The will be Posted only when the ConditionTriggered is True."/>
+                </Member>
+            </EnumType>
+            <!-- Action 3 -->
+            <Action Name="SetupLTSSMTrigger" IsBound="true">
+                <Parameter Name="DellPort" Type="Port.v1_0_0.OemActions" Nullable="false" />
+                <Annotation Term="OData.Description" String="This action is used to set the trigger condition."/>
+                <Annotation Term="OData.LongDescription" String="This action is used to set the trigger condition."/>
+                <Parameter Name="TriggerCondition" Type="DellPort.TriggerCondition" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the TriggerCondition values."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the TriggerCondition values."/>
+                </Parameter>
+            </Action>
+            <EnumType Name="TriggerCondition">
+                <Member Name="DetectQuiet">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_QUIET" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_QUIET" />
+                </Member>
+                <Member Name="DetectActive">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_ACTIVE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_ACTIVE" />
+                </Member>
+                <Member Name="DetectRate">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_RATE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_RATE" />
+                </Member>
+                <Member Name="DetectWait12ms">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_WAIT12MS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_WAIT12MS" />
+                </Member>
+                <Member Name="DetectP1Req">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_P1_REQ" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_P1_REQ" />
+                </Member>
+                <Member Name="DetectDoneST">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_DONEST" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_DONEST" />
+                </Member>
+                <Member Name="DetectP0Req">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_P0_REQ" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_P0_REQ" />
+                </Member>
+                <Member Name="DetectRateOk">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_RATEOK" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_RATEOK" />
+                </Member>
+                <Member Name="DetectSPCOP">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_SPCOP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_SPCOP" />
+                </Member>
+                <Member Name="DetectDetWaitP1ST">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_DET_WAIT_P1_ST" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_DET_WAIT_P1_ST" />
+                </Member>
+                <Member Name="DetectDetWaitRateST">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DETECT_DET_WAIT_RATE_ST" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DETECT_DET_WAIT_RATE_ST" />
+                </Member>
+                <Member Name="PollingIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_IDLE" />
+                </Member>
+                <Member Name="PollingP0Req">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_P0_REQ" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_P0_REQ" />
+                </Member>
+                <Member Name="PollingActive">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_ACTIVE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_ACTIVE" />
+                </Member>
+                <Member Name="PollingDone">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_DONE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_DONE" />
+                </Member>
+                <Member Name="PollingConfig">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_CONFIG" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_CONFIG" />
+                </Member>
+                <Member Name="PollingTXEIOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_TXEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_TXEIOS" />
+                </Member>
+                <Member Name="PollingCompliance">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_COMPLIANCE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_COMPLIANCE" />
+                </Member>
+                <Member Name="PollingEIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_EIDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_EIDLE" />
+                </Member>
+                <Member Name="PollingSpeed">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_POLLING_SPEED" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_POLLING_SPEED" />
+                </Member>
+                <Member Name="ConfigIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_IDLE" />
+                </Member>
+                <Member Name="ConfigLWStartDn">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_LW_START_DN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_LW_START_DN" />
+                </Member>
+                <Member Name="ConfigLNWaitDn">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_LN_WAIT_DN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_LN_WAIT_DN" />
+                </Member>
+                <Member Name="ConfigLWAcceptDn">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_LW_ACCEPT_DN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_LW_ACCEPT_DN" />
+                </Member>
+                <Member Name="ConfigTxIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_TXIDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_TXIDLE" />
+                </Member>
+                <Member Name="ConfigLNAcceptDn">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_LN_ACCEPT_DN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_LN_ACCEPT_DN" />
+                </Member>
+                <Member Name="ConfigCompleteDn">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_COMPLETE_DN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_COMPLETE_DN" />
+                </Member>
+                <Member Name="ConfigLNWaitUp">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_LN_WAIT_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_LN_WAIT_UP" />
+                </Member>
+                <Member Name="ConfigLNAcceptUp">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_LN_ACCEPT_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_LN_ACCEPT_UP" />
+                </Member>
+                <Member Name="ConfigDoneST">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_DONE_ST" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_DONE_ST" />
+                </Member>
+                <Member Name="ConfigTxCtlskip">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_TXCTLSKIP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_TXCTLSKIP" />
+                </Member>
+                <Member Name="ConfigLwStartUp">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_LW_START_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_LW_START_UP" />
+                </Member>
+                <Member Name="ConfigXLINKARBWON">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_XLINKARB_WON" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_XLINKARB_WON" />
+                </Member>
+                <Member Name="ConfigComplete">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_COMPLETE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_COMPLETE" />
+                </Member>
+                <Member Name="ConfigTXSDSM">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_TXSDSM" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_TXSDSM" />
+                </Member>
+                <Member Name="ConfigLWAcceptUp">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_LW_ACCEPT_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_LW_ACCEPT_UP" />
+                </Member>
+                <Member Name="ConfigCompleteUp">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_CONFIG_COMPLETE_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_CONFIG_COMPLETE_UP" />
+                </Member>
+                <Member Name="RecoveryIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_IDLE" />
+                </Member>
+                <Member Name="RecoveryRcvrLock">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_RCVRLOCK" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_RCVRLOCK" />
+                </Member>
+                <Member Name="RecoveryTXEIOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_TXEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_TXEIOS" />
+                </Member>
+                <Member Name="RecoveryRcvrCfg">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_RCVRCFG" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_RCVRCFG" />
+                </Member>
+                <Member Name="RecoveryEQPH1Dn">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH1_DN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH1_DN" />
+                </Member>
+                <Member Name="RecoverySpeed">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_SPEED" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_SPEED" />
+                </Member>
+                <Member Name="RecoveryTXEIEOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_TXEIEOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_TXEIEOS" />
+                </Member>
+                <Member Name="RecoveryReset">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_RESET" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_RESET" />
+                </Member>
+                <Member Name="RecoveryDisable">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_DISABLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_DISABLE" />
+                </Member>
+                <Member Name="RecoveryTxIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_TXIDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_TXIDLE" />
+                </Member>
+                <Member Name="RecoveryErrCfg">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_ERRCFG" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_ERRCFG" />
+                </Member>
+                <Member Name="RecoveryTXSDSM">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_TXSDSM" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_TXSDSM" />
+                </Member>
+                <Member Name="RecoveryErrDet">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_ERRDET" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_ERRDET" />
+                </Member>
+                <Member Name="RecoveryLoopback">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_LOOPBACK" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_LOOPBACK" />
+                </Member>
+                <Member Name="RecoveryEQPH3Up">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH3_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH3_UP" />
+                </Member>
+                <Member Name="RecoveryEQPH0Up">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH0_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH0_UP" />
+                </Member>
+                <Member Name="RecoveryEQPH2Dn">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH2_DN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH2_DN" />
+                </Member>
+                <Member Name="RecoveryEQPH3Dn">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH3_DN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH3_DN" />
+                </Member>
+                <Member Name="RecoveryEQPH2Up">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH2_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH2_UP" />
+                </Member>
+                <Member Name="RecoveryEQPH1Up">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH1_UP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_EQPH1_UP" />
+                </Member>
+                <Member Name="RecoveryTxCtlSkp">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_TXCTLSKP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_TXCTLSKP" />
+                </Member>
+                <Member Name="RecoveryMYEQPHASE">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_RECOVERY_MYEQPHASE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_RECOVERY_MYEQPHASE" />
+                </Member>
+                <Member Name="L0Idle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_L0_IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_L0_IDLE" />
+                </Member>
+                <Member Name="L0">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_L0" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_L0" />
+                </Member>
+                <Member Name="L0L0s">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_L0_L0S" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_L0_L0S" />
+                </Member>
+                <Member Name="L0TXEIOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_L0_TXEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_L0_TXEIOS" />
+                </Member>
+                <Member Name="LinkDown">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LINKDOWN" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LINKDOWN" />
+                </Member>
+                <Member Name="LdWait">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LDWAIT" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LDWAIT" />
+                </Member>
+                <Member Name="L1">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_L1" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_L1" />
+                </Member>
+                <Member Name="L0Recovery">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_L0_RECOVERY" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_L0_RECOVERY" />
+                </Member>
+                <Member Name="L2">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_L2" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_L2" />
+                </Member>
+                <Member Name="ACTREC">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_ACTREC" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_ACTREC" />
+                </Member>
+                <Member Name="HrIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_HR_IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_HR_IDLE" />
+                </Member>
+                <Member Name="HrDir">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_HR_DIR" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_HR_DIR" />
+                </Member>
+                <Member Name="HrRcv">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_HR_RCV" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_HR_RCV" />
+                </Member>
+                <Member Name="HrTx">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_HR_TX" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_HR_TX" />
+                </Member>
+                <Member Name="HrTXEIOS1">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_HR_TXEIOS_1" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_HR_TXEIOS_1" />
+                </Member>
+                <Member Name="HrTXEIEOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_HR_TXEIEOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_HR_TXEIEOS" />
+                </Member>
+                <Member Name="HrRcvWait">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_HR_RCVWAIT" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_HR_RCVWAIT" />
+                </Member>
+                <Member Name="HrTXEIOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_HR_TXEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_HR_TXEIOS" />
+                </Member>
+                <Member Name="LbIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_IDLE" />
+                </Member>
+                <Member Name="LbEntry">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_ENTRY" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_ENTRY" />
+                </Member>
+                <Member Name="LbSlvEntry">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_SLVENTRY" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_SLVENTRY" />
+                </Member>
+                <Member Name="LbTXEIOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_TXEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_TXEIOS" />
+                </Member>
+                <Member Name="LbACTMST">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_ACTMST" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_ACTMST" />
+                </Member>
+                <Member Name="LbACTSLV">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_ACTSLV" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_ACTSLV" />
+                </Member>
+                <Member Name="LbExitST">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_EXITST" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_EXITST" />
+                </Member>
+                <Member Name="LbSpeed">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_SPEED" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_SPEED" />
+                </Member>
+                <Member Name="LbEIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LB_EIDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LB_EIDLE" />
+                </Member>
+                <Member Name="LpL0sEntry">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L0SENTRY" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L0SENTRY" />
+                </Member>
+                <Member Name="LpL0sIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L0SIDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L0SIDLE" />
+                </Member>
+                <Member Name="LpL0STXEIE">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L0STXEIE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L0STXEIE" />
+                </Member>
+                <Member Name="LpL0STXFTS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L0STXFTS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L0STXFTS" />
+                </Member>
+                <Member Name="LpL0STXSKP">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L0STXSKP" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L0STXSKP" />
+                </Member>
+                <Member Name="LpL0STXSDSM">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L0STXSDSM" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L0STXSDSM" />
+                </Member>
+                <Member Name="LpL1RXEIOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L1RXEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L1RXEIOS" />
+                </Member>
+                <Member Name="LpL1Idle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L1IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L1IDLE" />
+                </Member>
+                <Member Name="LpL2RXEIOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L2RXEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L2RXEIOS" />
+                </Member>
+                <Member Name="LpL2Idle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L2IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L2IDLE" />
+                </Member>
+                <Member Name="LpL2Rate">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L2RATE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L2RATE" />
+                </Member>
+                <Member Name="LpL2RateOk">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_L2RATEOK" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_L2RATEOK" />
+                </Member>
+                <Member Name="LpIdle1">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_IDLE_1" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_IDLE_1" />
+                </Member>
+                <Member Name="LpIdle2">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_IDLE_2" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_IDLE_2" />
+                </Member>
+                <Member Name="LpIdle3">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_LP_IDLE_3" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_LP_IDLE_3" />
+                </Member>
+                <Member Name="DisableIdle">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_IDLE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_IDLE" />
+                </Member>
+                <Member Name="DisableTXEIEOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_TXEIEOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_TXEIEOS" />
+                </Member>
+                <Member Name="DisableTXTS1">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_TXTS1" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_TXTS1" />
+                </Member>
+                <Member Name="DisableTXEIOS">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_TXEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_TXEIOS" />
+                </Member>
+                <Member Name="DisableWaitEIos">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_WAITEIOS" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_WAITEIOS" />
+                </Member>
+                <Member Name="DisableRate">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_RATE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_RATE" />
+                </Member>
+                <Member Name="DisableRateOk">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_RATEOK" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_RATEOK" />
+                </Member>
+                <Member Name="DisableP1Req">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_P1_REQ" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_P1_REQ" />
+                </Member>
+                <Member Name="DisableDone">
+                    <Annotation Term="OData.Description" String="SWITCH_LTSSM_TRIG_DISABLE_DONE" />
+                    <Annotation Term="OData.LongDescription" String="SWITCH_LTSSM_TRIG_DISABLE_DONE" />
+                </Member>
+            </EnumType>
+            <!-- action 4 -->
+            <Action Name="IsLTSSMTriggered" IsBound="true">
+                <Annotation String="The IsLTSSMTriggered gives the whether the set condition is triggred or not." Term="OData.Description"/>
+                <Annotation Term="OData.LongDescription" String="The IsLTSSMTriggered gives the whether the set condition is triggred or not."/>
+                <Parameter Name="DellPort" Type="Port.v1_0_0.OemActions" Nullable="false"/>
+                <ReturnType Type="DellPort.IsLTSSMTriggeredResponse" Nullable="false"/>
+            </Action>
+            <ComplexType Name="IsLTSSMTriggeredResponse">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The response body for the IsLTSSMTriggeredResponse action."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the IsLTSSMTriggeredResponse action."/>
+                <Property Name="IsTriggered" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="This property states whether the condition is triggered or not."/>
+                    <Annotation Term="OData.LongDescription" String="This property states whether the condition is triggered or not."/>
+                </Property>
+            </ComplexType>
+            <Action Name="ExportLTSSMTriggerLog" IsBound="true">
+                <Parameter Name="DellPort" Type="Port.v1_0_0.OemActions" Nullable="false" />
+                <Annotation Term="OData.Description" String="This ExportLTSSMTriggerLog is used to collect the LTSSM port logs after trigger condition executed."/>
+                <Annotation Term="OData.LongDescription" String="This ExportLTSSMTriggerLog is used to collect the LTSSM port logs after trigger condition executed."/>
+                <Parameter Name="TriggerCondition" Type="DellPort.TriggerCondition" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the TriggerCondition values."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the TriggerCondition values."/>
+                </Parameter>
+            </Action>
+            <Action Name="SetCreditCapture" IsBound="true">
+                <Parameter Name="Port" Type="Port.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to start or stop credit capture for specific packet types"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to start or stop credit capture for specific packet types"/>
+                <Parameter Name="Opcode" Type="DellPort.Opcode" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain the Operation code to start or stop the capture"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain the Operation code to start or stop the capture"/>
+                </Parameter>
+                <Parameter Name="PacketType" Type="DellPort.PacketType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter specifies the type of packet to monitor"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies the type of packet to monitor"/>
+                </Parameter>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <EnumType Name="Opcode">
+                <Member Name="Start">
+                    <Annotation Term="OData.Description" String="Start credit capture"/>
+                    <Annotation Term="OData.LongDescription" String="Start credit capture"/>
+                </Member>
+                <Member Name="Stop">
+                    <Annotation Term="OData.Description" String="Stop credit capture"/>
+                    <Annotation Term="OData.LongDescription" String="Stop credit capture"/>
+                </Member>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </EnumType>
+            <Action Name="GetCreditCapture" IsBound="true">
+                <Parameter Name="Port" Type="Port.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to get the credit information"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to get the credit information"/>
+                <ReturnType Type="DellPort.GetCreditCaptureResponse"  Nullable="false" />
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <ComplexType Name="GetCreditCaptureResponse">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The response body for the GetCreditCapture action."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the GetCreditCapture action."/>
+                <Property Name="PacketType" Type="DellPort.PacketType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states the type of packet for which credits are captured."/>
+                    <Annotation Term="OData.LongDescription" String="This property states the type of packet for which credits are captured."/>
+                </Property>
+                <Property Name="TimeStamp" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states the timestamp of the credits"/>
+                    <Annotation Term="OData.LongDescription" String="This property states the timestamp of the credits"/>
+                </Property>
+                <Property Name="LiveHeaderCredits" Type="Edm.Int32" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states information about header credits"/>
+                    <Annotation Term="OData.LongDescription" String="This property states information about header credits of the given Packet Type"/>
+                </Property>
+                <Property Name="LiveDataCredits" Type="Edm.Int32" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states information about Data credits"/>
+                    <Annotation Term="OData.LongDescription" String="This property states information about header credits of the given Packet Type"/>
+                </Property>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </ComplexType>
+            <EnumType Name="PacketType">
+                <Member Name="NearEndPosted">
+                    <Annotation Term="OData.Description" String="Near end posted"/>
+                    <Annotation Term="OData.LongDescription" String="Near end posted"/>
+                </Member>
+                <Member Name="NearEndNonPosted">
+                    <Annotation Term="OData.Description" String="Near end non posted"/>
+                    <Annotation Term="OData.LongDescription" String="Near end non posted"/>
+                </Member>
+                <Member Name="NearEndCompletion">
+                    <Annotation Term="OData.Description" String="Near end completion"/>
+                    <Annotation Term="OData.LongDescription" String="Near end completion"/>
+                </Member>
+                <Member Name="FarEndPosted">
+                    <Annotation Term="OData.Description" String="Far end posted"/>
+                    <Annotation Term="OData.LongDescription" String="Far end posted"/>
+                </Member>
+                <Member Name="FarEndNonPosted">
+                    <Annotation Term="OData.Description" String="Far end non posted"/>
+                    <Annotation Term="OData.LongDescription" String="Far end non posted"/>
+                </Member>
+                <Member Name="FarEndCompletion">
+                    <Annotation Term="OData.Description" String="Far end completion"/>
+                    <Annotation Term="OData.LongDescription" String="Far end completion"/>
+                </Member>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </EnumType>
+            <Action Name="SetErrorInjection" IsBound="true">
+                <Parameter Name="Port" Type="Port.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to perform the error injection on a port"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to perform the error injection on a port"/>
+                <Parameter Name="ErrInjType" Type="DellPort.ErrInjType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain injection type."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain injection type."/>
+                </Parameter>
+                <Parameter Name="ErrorInjCtrl" Type="DellPort.ErrorInjCtrl" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter specifies error injection control value."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies error injection control value. If ErrInjType is DLLP then Disabled,1us,1ms,NextDLLP are the valid members. If ErrInjType is TLP then Disabled,NextTLP,128th-TLP,8192th-TLP are the valid members"/>
+                </Parameter>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <Action Name="GetErrorInjectionInfo" IsBound="true">
+                <Parameter Name="Port" Type="Port.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to read the error injection info for a port"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to read the error injection info for a port"/>
+                <Parameter Name="ErrInjType" Type="DellPort.ErrInjType" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter shall contain injection type."/>
+                    <Annotation Term="OData.LongDescription" String="This parameter shall contain injection type."/>
+                </Parameter>
+                <ReturnType Type="DellPort.GetErrorInjectionInfoResponse"  Nullable="false" />
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <ComplexType Name="GetErrorInjectionInfoResponse">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The response body for the GetErrorInjectionInfo action."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the GetErrorInjectionInfo action."/>
+                <Property Name="InjectionStatus" Type="Edm.String" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states if error injection is running or not running."/>
+                    <Annotation Term="OData.LongDescription" String="This property states if error injection is running or not running."/>
+                </Property>
+                <Property Name="ErrorInjCtrl" Type="DellPort.ErrorInjCtrl" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states the type of ErrorInjCtrl."/>
+                    <Annotation Term="OData.LongDescription" String="This property states the type of ErrorInjCtrl."/>
+                </Property>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </ComplexType>
+            <EnumType Name="ErrInjType">
+                <Member Name="TLP">
+                    <Annotation Term="OData.Description" String="Transaction Layer Packet"/>
+                    <Annotation Term="OData.LongDescription" String="Transaction Layer Packet"/>
+                </Member>
+                <Member Name="DLLP">
+                    <Annotation Term="OData.Description" String="Data Link Layer Packet"/>
+                    <Annotation Term="OData.LongDescription" String="Data Link Layer Packet"/>
+                </Member>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </EnumType>
+            <EnumType Name="ErrorInjCtrl">
+                <Member Name="Disabled">
+                    <Annotation Term="OData.Description" String="Disable the injection"/>
+                    <Annotation Term="OData.LongDescription" String="Disable the injection"/>
+                </Member>
+                <Member Name="1us">
+                    <Annotation Term="OData.Description" String="Inject error in every 1us"/>
+                    <Annotation Term="OData.LongDescription" String="Inject error in every 1us"/>
+                </Member>
+                <Member Name="1ms">
+                    <Annotation Term="OData.Description" String="Inject error in every 1ms"/>
+                    <Annotation Term="OData.LongDescription" String="Inject error in every 1ms"/>
+                </Member>
+                <Member Name="NextDLLP">
+                    <Annotation Term="OData.Description" String="Inject error next DLLP"/>
+                    <Annotation Term="OData.LongDescription" String="Inject error next DLLP"/>
+                </Member>
+                <Member Name="NextTLP">
+                    <Annotation Term="OData.Description" String="Inject error next TLP"/>
+                    <Annotation Term="OData.LongDescription" String="Inject error next TLP"/>
+                </Member>
+                <Member Name="128th-TLP">
+                    <Annotation Term="OData.Description" String="Inject error in every 128th TLP"/>
+                    <Annotation Term="OData.LongDescription" String="Inject error in every 128th TLP"/>
+                </Member>
+                <Member Name="8192th-TLP">
+                    <Annotation Term="OData.Description" String="Inject error in every 8192th TLP"/>
+                    <Annotation Term="OData.LongDescription" String="Inject error in every 8192th TLP"/>
+                </Member>
+                <Member Name="Unable to Recognize">
+                    <Annotation Term="OData.Description" String="Unable to recognize the error injection control"/>
+                    <Annotation Term="OData.LongDescription" String="Unable to recognize the error injection control"/>
+                </Member>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </EnumType>
+            <Action Name="ConfigureTLPRoundTripTime" IsBound="true">
+                <Parameter Name="Port" Type="Port.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to Configure the TLP round-trip time"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to Configure the TLP round-trip time"/>
+                <Parameter Name="TLPType" Type="Edm.Int16" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter specifies the TLP Type"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies the TLP Type"/>
+                </Parameter>
+                <Parameter Name="TLPFormat" Type="Edm.Int16" Nullable="false">
+                    <Annotation Term="OData.Description" String="This parameter specifies the TLP Format"/>
+                    <Annotation Term="OData.LongDescription" String="This parameter specifies the TLP Format"/>
+                </Parameter>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <Action Name="ReadTLPRoundTripTime" IsBound="true">
+                <Parameter Name="Port" Type="Port.v1_0_0.OemActions" Nullable="false"/>
+                <Annotation Term="OData.Description" String="This action is used to read the TLP round-trip time in nanoseconds"/>
+                <Annotation Term="OData.LongDescription" String="This action is used to read the TLP round-trip time in nanoseconds"/>
+                <ReturnType Type="DellPort.ReadTLPRoundTripTimeResponse"  Nullable="false" />
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <ComplexType Name="ReadTLPRoundTripTimeResponse">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="The response body for the ReadTLPRoundTripTime action."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the ReadTLPRoundTripTime action."/>
+                <Property Name="MinTLPRoundTripTime" Type="Edm.Int32" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states the minimum TLP Round trip time on a port."/>
+                    <Annotation Term="OData.LongDescription" String="This property states the minimum TLP Round trip time on a port."/>
+                </Property>
+                <Property Name="MaxTLPRoundTripTime" Type="Edm.Int32" Nullable="false">
+                    <Annotation Term="OData.Description" String="This property states the maximum TLP Round trip time on a port."/>
+                    <Annotation Term="OData.LongDescription" String="This property states the maximum TLP Round trip time on a port."/>
+                </Property>
+                <Annotation Term="Redfish.Revisions">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPort.v1_0_0">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <Annotation Term="OData.Description" String="This is the schema definition for the additional Oem property to complement the DMTF Port Schema."/>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPort.v1_1_0">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <Annotation Term="OData.Description" String="This is the schema definition for adding the new actions SetCreditCapture, GetCreditCapture, SetErrorInjection,GetErrorInjectionInfo,ConfigureTLPRoundTripTime and ReadTLPRoundTripTime."/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

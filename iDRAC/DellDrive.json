@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ComplianceDescriptorType": {
             "enum": [
@@ -33,7 +33,7 @@
         "DellDrive": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.v1_4_0.json#/definitions/DellDrive"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.v1_4_1.json#/definitions/DellDrive"
                 }
             ],
             "description": "Oem data related to DellDrive.",
@@ -42,7 +42,7 @@
         "DellDriveLinks": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.v1_4_0.json#/definitions/DellDriveLinks"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.v1_4_1.json#/definitions/DellDriveLinks"
                 }
             ],
             "description": "A complex property for the additional Oem resources realted to Drive.",
@@ -51,7 +51,7 @@
         "ExportNVMeDeviceLogs": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.v1_4_0.json#/definitions/ExportNVMeDeviceLogs"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.v1_4_1.json#/definitions/ExportNVMeDeviceLogs"
                 }
             ],
             "description": "The ExportNVMeDeviceLogs operation shall be used to export the storage device logs.",
@@ -113,9 +113,11 @@
                 "RebuildPhysicalDisk",
                 "CancelRebuildPhysicalDisk",
                 "SecureErase",
-                "SecureErasePSID"
+                "SecureErasePSID",
+                "BlockErase"
             ],
             "enumDescriptions": {
+                "BlockErase": "A block erase operation is pending.",
                 "CancelRebuildPhysicalDisk": "A cancel rebuild operation is pending.",
                 "HotSpare": "A hot spare assignment change is pending.",
                 "Operations": "An operations change is pending.",
@@ -123,6 +125,9 @@
                 "SecureErase": "A secure erase operation is pending.",
                 "SecureErasePSID": "A secure erase PSID operation is pending.",
                 "State": "A state change is pending."
+            },
+            "enumVersionAdded": {
+                "BlockErase": "v1_4_1"
             },
             "longDescription": "This type shall contain the types of pending changes for the physical disk configuration.",
             "type": "string"
@@ -254,7 +259,7 @@
             "type": "string"
         },
         "StorageCapability": {
-            "description": "The drive attribute capabilities of the physical disk.",
+            "description": "The storage capability of the physical disk.",
             "enum": [
                 "SmartAlert",
                 "SSD",
@@ -313,7 +318,7 @@
                 "UnknownMediaType": "The drive has an unknown media type.",
                 "VOSS": "The drive is a VOSS drive."
             },
-            "longDescription": "This type shall contain the drive attribute capabilities of the physical disk.",
+            "longDescription": "This type shall contain the storage capabilities supported by the physical disk.",
             "type": "string"
         }
     },

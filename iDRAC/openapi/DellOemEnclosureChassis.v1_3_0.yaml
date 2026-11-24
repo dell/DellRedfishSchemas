@@ -1,0 +1,401 @@
+components:
+  schemas:
+    DellOemEnclosureChassis_v1_3_0_ChassisManagerConfigType:
+      additionalProperties: false
+      properties:
+        ChassisID:
+          description: The property used to identify different chassis configurations
+            within a system.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property used to identify different chassis configurations
+            within a system,        ensuring proper configuration and management
+          x-versionAdded: v1_2_0
+        FTREnabled:
+          description: This property enables or disables the FaultTolerantRedundancy
+            setting.
+          nullable: true
+          type: boolean
+          x-longDescription: This property enables or disables the FaultTolerantRedundancy
+            setting.  It takes effect immediately when set, without requiring a Chassis
+            Manager (CM) reset.
+          x-versionAdded: v1_2_0
+        FaultLEDStatus:
+          $ref: '#/components/schemas/DellOemEnclosureChassis_v1_3_0_LedStatus'
+          description: The property shall represent the Chassis Fault LED .
+          nullable: true
+          readOnly: false
+          x-longDescription: The property shall represent the Chassis Fault LED.
+          x-versionAdded: v1_2_0
+        IdentificationLEDStatus:
+          $ref: '#/components/schemas/DellOemEnclosureChassis_v1_3_0_LedStatus'
+          description: The property shall represent the Chassis Identification LED.
+          nullable: true
+          readOnly: false
+          x-longDescription: The property shall represent the Chassis Identification
+            LED.
+          x-versionAdded: v1_2_0
+        LEDSupportStatus:
+          description: The LED Support on Chassis Indicates the support status of
+            LEDs on the chassis.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The LED Support on Chassis property indicates whether
+            certain LEDs are supported and controlled by the System Controller (SC)
+          x-versionAdded: v1_2_0
+        RackID:
+          description: The property used to identify different racks within a system.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property help in managing and identifying racks within
+            a system, ensuring proper configuration and management.
+          x-versionAdded: v1_2_0
+        ServiceTag:
+          description: The property shall represent the service tag of the chassis.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: The property shall represent the service tag of the chassis.
+          x-versionAdded: v1_2_0
+        SledConfiguration:
+          $ref: '#/components/schemas/DellOemEnclosureChassis_v1_3_0_SledConfigurationType'
+          description: The property SledConfig used to identify the physical configuration
+            of sleds in a chassis.
+          nullable: true
+          readOnly: true
+          x-longDescription: These configurations help in managing and identifying
+            sleds within a chassis, ensuring proper thermal and physical management
+          x-versionAdded: v1_2_0
+        SledID:
+          description: The property The SledID value used to identify different sled
+            configurations within a chassis.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property The SledID value used to identify different
+            sled configurations within a chassis.       These IDs help in managing
+            and identifying sleds within a chassis, ensuring proper configuration
+            and management
+          x-versionAdded: v1_2_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemEnclosureChassis_v1_3_0_DellChassisEnclosureInfo:
+      additionalProperties: false
+      properties:
+        AssetName:
+          description: This property contains up to 32 ASCII alpha-numeric characters.
+            Updated with ReadWrite permissions.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: This property contains up to 32 ASCII alpha-numeric characters.
+        BackplaneType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_BackplaneType
+          deprecated: true
+          description: The property shall represent universal mode or non shared mode
+            of backplane.
+          readOnly: true
+          x-deprecatedReason: This property has been deprecated in favor of the EnclosureMode
+            property.
+          x-longDescription: The property shall represent universal mode or non shared
+            mode of backplane.
+          x-versionDeprecated: v1_3_0
+        Connector:
+          description: The property shall represent the enclosure port connection.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the enclosure port connection.
+        EnclosureCfgMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_EnclosureCfgMode
+          description: The current operating mode of the enclosure.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property shall indicate the current enclosure operating
+            mode, such as Unified or Split.
+          x-versionAdded: v1_3_0
+        EnclosureGeneration:
+          description: Hardware generation of the enclosure.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Represents the hardware generation of the enclosure (for
+            example Gen11, Gen12). Displayed in advanced properties.
+          x-versionAdded: v1_3_0
+        EnclosureMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_EnclosureMode
+          description: The property shall represent universal mode or non shared mode
+            of enclosure.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent universal mode or non shared
+            mode of enclosure.
+          x-versionAdded: v1_3_0
+        EnclosurePosition:
+          description: The position of the enclosure in a chain or rack.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall indicate the enclosure position or
+            connection sequence relative to the controller port.
+          x-versionAdded: v1_3_0
+        EnclosureState:
+          $ref: '#/components/schemas/DellOemEnclosureChassis_v1_3_0_EnclosureState'
+          description: Current mode state of the enclosure.
+          nullable: true
+          readOnly: true
+          x-longDescription: Represents the current enclosure mode state (Ready, Online,
+            ResetPowerCycle, Offline, or NvmFail).
+          x-versionAdded: v1_3_0
+        FormFactor:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_FormFactor
+          description: The form factor of the enclosure.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the form factor of the enclosure.
+          x-versionAdded: v1_3_0
+        LastSystemInventoryTime:
+          description: This property provides the time when System Inventory Collection
+            On Reboot (CSIOR) was last performed or the object was last updated on
+            iDRAC. The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time when System Inventory
+            Collection On Reboot (CSIOR) was last performed or the object was last
+            updated on iDRAC. The value is represented as yyyymmddHHMMSS.
+        LastUpdateTime:
+          description: This property provides the time when the data was last updated.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time when the data was last
+            updated. The value is represented as yyyymmddHHMMSS.
+        Links:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnclosure.yaml#/components/schemas/DellEnclosure_Links
+          description: Contains references to other resources that are related to
+            this resource.
+          x-longDescription: The Links property, as described by the Redfish Specification,
+            shall contain references to resources that are related to, but not contained
+            by (subordinate to), this resource.
+        ObjAttributes:
+          description: The object attributes for the enclosure.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_ObjAttribute
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain the object attributes defining
+            enclosure capabilities.
+          x-versionAdded: v1_3_0
+        PendingChanges:
+          description: The pending changes for the enclosure configuration.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_PendingChange
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: This property shall contain the pending changes that
+            have been configured for the enclosure but have not yet been applied.
+          x-versionAdded: v1_3_0
+        RAIDEnclosureConfigMode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_RAIDEnclosureConfigMode
+          description: The property shall represent the configuration mode for the
+            enclosure.
+          nullable: true
+          readOnly: false
+          x-longDescription: The property shall represent the configuration mode for
+            the enclosure.
+        RAIDMultipath:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_RAIDMultipath
+          description: The property shall represent whether the adapter has multiple
+            paths to reach the enclosure.
+          readOnly: true
+          x-longDescription: The property shall represent whether the adapter has
+            multiple paths to reach the enclosure.
+        SASAddress:
+          description: SAS address of the enclosure.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The SAS address string associated with the enclosure;
+            shown in advanced properties.
+          x-versionAdded: v1_3_0
+        ServiceTag:
+          description: The property shall represent the service tag of the enclosure.
+            Updated with ReadWrite permissions.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: The property shall represent the service tag of the enclosure.
+        SlotAccessInfo:
+          description: The slot access information for the enclosure.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the slot access information
+            for the enclosure, useful for backplanes in split mode.
+          x-versionAdded: v1_3_0
+        SlotCount:
+          description: The property shall represent the number of drive slots in the
+            enclosure.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the number of drive slots
+            in the enclosure.
+        SplitModeCapable:
+          description: Indicates whether the enclosure supports split mode.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: True if the enclosure hardware supports operating in
+            split mode; surfaced in advanced properties.
+          x-versionAdded: v1_3_0
+        SupportedProtocols:
+          description: The protocols supported by the enclosure.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemEnclosureChassis.yaml#/components/schemas/DellOemEnclosureChassis_SupportedProtocol
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain the protocols supported by
+            the enclosure.
+          x-versionAdded: v1_3_0
+        TempProbeCount:
+          description: This property represents the number of temperature probes present.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the number of temperature probes
+            present.
+        Version:
+          description: The property shall represent the EMM or Backplane version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the EMM or Backplane version.
+        WiredOrder:
+          description: For JBOD this property shall represent the enclosure position
+            or connection sequence in a daisy chain of enclosures in the relation
+            to the controller port. For internal backplane, the wiredorder is same
+            as BayID.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: For JBOD this property shall represent the enclosure
+            position or connection sequence in a daisy chain of enclosures in the
+            relation to the controller port. For internal backplane, the wiredorder
+            is same as BayID.
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemEnclosureChassis_v1_3_0_DellOemEnclosureChassis:
+      additionalProperties: false
+      description: Oem data related to the Storage Enclosure Chassis.
+      properties:
+        ChassisManagerConfig:
+          $ref: '#/components/schemas/DellOemEnclosureChassis_v1_3_0_ChassisManagerConfigType'
+          description: This Property helps in managing and identifying sleds within
+            a chassis, ensuring proper power and physical management.
+          nullable: true
+          readOnly: false
+          x-longDescription: This Property helps in managing and identifying sleds
+            within a chassis, ensuring proper power and physical management.
+          x-versionAdded: v1_2_0
+        DellChassis:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellChassis.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellChassis.
+          x-versionAdded: v1_1_0
+        DellChassisEnclosure:
+          $ref: '#/components/schemas/DellOemEnclosureChassis_v1_3_0_DellChassisEnclosureInfo'
+          description: Oem data related to the DellChassisEnclosure.
+          nullable: true
+          x-longDescription: Oem data related to the DellChassisEnclosure.
+        DellEnclosure:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellEnclosure.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellEnclosure.
+        DellPCIeSSDBackPlane:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPCIeSSDBackPlane.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPCIeSSDBackPlane.
+      type: object
+      x-longDescription: Oem data related to the Storage Enclosure Chassis.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemEnclosureChassis_v1_3_0_EnclosureState:
+      enum:
+      - Unknown
+      - Ready
+      - Online
+      - Foreign
+      - Offline
+      - Blocked
+      - Failed
+      - Missing
+      - Degraded
+      type: string
+      x-enumDescriptions:
+        Blocked: Enclosure is blocked.
+        Degraded: Enclosure is degraded.
+        Failed: Enclosure has failed.
+        Foreign: Enclosure is in foreign state.
+        Missing: Enclosure is missing.
+        Offline: Enclosure is offline.
+        Online: Enclosure is online.
+        Ready: Enclosure is ready.
+        Unknown: Enclosure state is unknown.
+    DellOemEnclosureChassis_v1_3_0_LedStatus:
+      enum:
+      - 'Off'
+      - Lit
+      - Blinking
+      type: string
+      x-enumDescriptions:
+        Blinking: This value shall represent the Indicator LED is in a blinking state
+          where the LED is being turned on and off in repetition
+        Lit: This value shall represent the Indicator LED is in a solid on state.
+        'Off': This value shall represent the Indicator LED is in a solid off state.
+    DellOemEnclosureChassis_v1_3_0_SledConfigurationType:
+      enum:
+      - FullWidth
+      - HalfWidth
+      - ThirdWidth
+      type: string
+      x-enumDescriptions:
+        FullWidth: This value shall represents a sled that spans the entire width
+          of the chassis (5GU for G5).
+        HalfWidth: This value shall represents a sled that occupies half the width
+          of the chassis (5GU for G5).
+        ThirdWidth: This value shall represents a sled that occupies one-third of
+          the width of the chassis (6GU for G5).
+title: '#DellOemEnclosureChassis.v1_3_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

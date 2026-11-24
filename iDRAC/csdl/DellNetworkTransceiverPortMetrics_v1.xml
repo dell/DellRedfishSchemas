@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellNetworkTransceiverPortMetrics v1_0_0-->
+<!--# -->
+<!--# Schema copyright info to be put here-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="OData" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+        <edmx:Include Namespace="Resource.v1_2_0"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellNetworkTransceiverPortMetrics">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <EntityType BaseType="Resource.v1_0_0.Resource" Name="DellNetworkTransceiverPortMetrics" Abstract="true">
+                <Annotation String="The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver." Term="OData.Description"/>
+                <Annotation String="The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver." Term="OData.LongDescription"/>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Insertable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Updatable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Redfish.Uris">
+                    <Collection>
+                        <String>/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}</String>
+                        <String>/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/{NetworkPortId}/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}</String>
+                        <String>/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Redfish.DeprecatedUris">
+                    <Collection>
+                        <String>/redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}</String>
+                        <String>/redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkPorts/{NetworkPortId}/Oem/Dell/DellNetworkTransceiverPortMetrics/{NetworkTransceiverPortMetricsId}</String>
+                    </Collection>
+                </Annotation>
+            </EntityType>
+            <EnumType Name="RXInputPowerStatus">
+                <Member Name="Critical">
+                    <Annotation String="Critical" Term="OData.Description"/>
+                    <Annotation String="Critical" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Ok">
+                    <Annotation String="Ok" Term="OData.Description"/>
+                    <Annotation String="Ok" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Warning">
+                    <Annotation String="Warning" Term="OData.Description"/>
+                    <Annotation String="Warning" Term="OData.LongDescription"/>
+                </Member>
+            </EnumType>
+            <EnumType Name="TXBiasCurrentStatus">
+                <Member Name="Critical">
+                    <Annotation String="Critical" Term="OData.Description"/>
+                    <Annotation String="Critical" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Ok">
+                    <Annotation String="Ok" Term="OData.Description"/>
+                    <Annotation String="Ok" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Warning">
+                    <Annotation String="Warning" Term="OData.Description"/>
+                    <Annotation String="Warning" Term="OData.LongDescription"/>
+                </Member>
+            </EnumType>
+            <EnumType Name="TXOutputPowerStatus">
+                <Member Name="Critical">
+                    <Annotation String="Critical" Term="OData.Description"/>
+                    <Annotation String="Critical" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Ok">
+                    <Annotation String="Ok" Term="OData.Description"/>
+                    <Annotation String="Ok" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Warning">
+                    <Annotation String="Warning" Term="OData.Description"/>
+                    <Annotation String="Warning" Term="OData.LongDescription"/>
+                </Member>
+            </EnumType>
+            <EnumType Name="TemperatureStatus">
+                <Member Name="Critical">
+                    <Annotation String="Critical" Term="OData.Description"/>
+                    <Annotation String="Critical" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Ok">
+                    <Annotation String="Ok" Term="OData.Description"/>
+                    <Annotation String="Ok" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Warning">
+                    <Annotation String="Warning" Term="OData.Description"/>
+                    <Annotation String="Warning" Term="OData.LongDescription"/>
+                </Member>
+            </EnumType>
+            <EnumType Name="VoltageStatus">
+                <Member Name="Critical">
+                    <Annotation String="Critical" Term="OData.Description"/>
+                    <Annotation String="Critical" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Ok">
+                    <Annotation String="Ok" Term="OData.Description"/>
+                    <Annotation String="Ok" Term="OData.LongDescription"/>
+                </Member>
+                <Member Name="Warning">
+                    <Annotation String="Warning" Term="OData.Description"/>
+                    <Annotation String="Warning" Term="OData.LongDescription"/>
+                </Member>
+            </EnumType>
+            <EnumType Name="GatingSupportAccuracy">
+                <Member Name="NotSupported">
+                    <Annotation Term="OData.Description" String="Gating support accuracy is not supported." />
+                </Member>
+                <Member Name="LessThanOrEqual2ms">
+                    <Annotation Term="OData.Description" String="Gating support accuracy is less than or equal to 2 milliseconds." />
+                </Member>
+                <Member Name="LessThanOrEqual20ms">
+                    <Annotation Term="OData.Description" String="Gating support accuracy is less than or equal to 20 milliseconds." />
+                </Member>
+                <Member Name="GreaterThan20ms">
+                    <Annotation Term="OData.Description" String="Gating support accuracy is greater than 20 milliseconds." />
+                </Member>
+            </EnumType>
+            <EnumType Name="MemoryModel">
+                <Member Name="PagedMemory">
+                    <Annotation Term="OData.Description" String="Indicates that memory is organized in pages and requires page selection for access." />
+                </Member>
+                <Member Name="FlatMemory">
+                    <Annotation Term="OData.Description" String="Indicates that memory is organized as a single flat address space without paging." />
+                </Member>
+            </EnumType>
+            <EnumType Name="LoopbackCapability">
+                <Member Name="SimultaneousHostAndMediaSideLoopbacks">
+                    <Annotation Term="OData.Description" String="Allows simultaneous loopback operations on both host and media sides." />
+                    <Annotation Term="OData.LongDescription" String="Allows simultaneous loopback operations on both host and media sides." />
+                </Member>
+                <Member Name="PerLaneMediaSideLoopbacks">
+                    <Annotation Term="OData.Description" String="Supports loopback functionality for individual lanes on the media side." />
+                    <Annotation Term="OData.LongDescription" String="Supports loopback functionality for individual lanes on the media side." />
+                </Member>
+                <Member Name="PerLaneHostSideLoopbacks">
+                    <Annotation Term="OData.Description" String="Supports loopback functionality for individual lanes on the host side." />
+                    <Annotation Term="OData.LongDescription" String="Supports loopback functionality for individual lanes on the host side." />
+                </Member>
+                <Member Name="HostSideInputLoopback">
+                    <Annotation Term="OData.Description" String="Enables input signal loopback on the host side." />
+                    <Annotation Term="OData.LongDescription" String="Enables input signal loopback on the host side." />
+                </Member>
+                <Member Name="HostSideOutputLoopback">
+                    <Annotation Term="OData.Description" String="Enables output signal loopback on the host side." />
+                    <Annotation Term="OData.LongDescription" String="Enables output signal loopback on the host side." />
+                </Member>
+                <Member Name="MediaSideInputLoopback">
+                    <Annotation Term="OData.Description" String="Enables input signal loopback on the media side." />
+                    <Annotation Term="OData.LongDescription" String="Enables input signal loopback on the media side." />
+                </Member>
+                <Member Name="MediaSideOutputLoopback">
+                    <Annotation Term="OData.Description" String="Enables output signal loopback on the media side." />
+                    <Annotation Term="OData.LongDescription" String="Enables output signal loopback on the media side." />
+                </Member>
+            </EnumType>
+            <EnumType Name="DiagnosticReportingCapabilities">
+                <Member Name="MediaSideFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for reporting Forward Error Correction (FEC) status on the media side." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to report FEC status and related diagnostic information for the media side." />
+                </Member>
+                <Member Name="HostSideFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for reporting Forward Error Correction (FEC) status on the host side." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to report FEC status and related diagnostic information for the host side." />
+                </Member>
+                <Member Name="MediaSideInputSNRMeasurement">
+                    <Annotation Term="OData.Description" String="Indicates support for measuring input Signal-to-Noise Ratio (SNR) on the media side." />
+                    <Annotation Term="OData.LongDescription" String="This capability enables the device to measure and report input SNR values for the media side for diagnostic purposes." />
+                </Member>
+                <Member Name="HostSideInputSNRMeasurement">
+                    <Annotation Term="OData.Description" String="Indicates support for measuring input Signal-to-Noise Ratio (SNR) on the host side." />
+                    <Annotation Term="OData.LongDescription" String="This capability enables the device to measure and report input SNR values for the host side for diagnostic purposes." />
+                </Member>
+                <Member Name="BitsAndErrorsCountingSupported">
+                    <Annotation Term="OData.Description" String="Indicates support for counting bits and errors during diagnostics." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to count transmitted bits and errors for diagnostic analysis and performance monitoring." />
+                </Member>
+                <Member Name="BitErrorRatioResultsSupported">
+                    <Annotation Term="OData.Description" String="Indicates support for reporting Bit Error Ratio (BER) results." />
+                    <Annotation Term="OData.LongDescription" String="This capability enables the device to calculate and report BER results as part of diagnostic measurements." />
+                </Member>
+            </EnumType>
+            <EnumType Name="PatternGeneratorAndCheckingLocation">
+                <Member Name="PRBSGeneratorMediaSidePreFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for PRBS generation on the media side before FEC." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to generate PRBS patterns on the media side prior to Forward Error Correction for diagnostic purposes." />
+                </Member>
+                <Member Name="PRBSGeneratorMediaSidePostFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for PRBS generation on the media side after FEC." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to generate PRBS patterns on the media side after Forward Error Correction for diagnostic purposes." />
+                </Member>
+                <Member Name="PRBSCheckerMediaSidePreFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for PRBS checking on the media side before FEC." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to check PRBS patterns on the media side prior to Forward Error Correction for error detection and diagnostics." />
+                </Member>
+                <Member Name="PRBSCheckerMediaSidePostFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for PRBS checking on the media side after FEC." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to check PRBS patterns on the media side after Forward Error Correction for error detection and diagnostics." />
+                </Member>
+                <Member Name="PRBSGeneratorHostSidePreFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for PRBS generation on the host side before FEC." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to generate PRBS patterns on the host side prior to Forward Error Correction for diagnostic purposes." />
+                </Member>
+                <Member Name="PRBSGeneratorHostSidePostFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for PRBS generation on the host side after FEC." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to generate PRBS patterns on the host side after Forward Error Correction for diagnostic purposes." />
+                </Member>
+                <Member Name="PRBSCheckerHostSidePreFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for PRBS checking on the host side before FEC." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to check PRBS patterns on the host side prior to Forward Error Correction for error detection and diagnostics." />
+                </Member>
+                <Member Name="PRBSCheckerHostSidePostFEC">
+                    <Annotation Term="OData.Description" String="Indicates support for PRBS checking on the host side after FEC." />
+                    <Annotation Term="OData.LongDescription" String="This capability allows the device to check PRBS patterns on the host side after Forward Error Correction for error detection and diagnostics." />
+                </Member>
+            </EnumType>
+            <EnumType Name="DataPathHostLane" Type="Edm.String">
+                <Member Name="HostLane1">
+                    <Annotation Term="OData.Description" String="Indicates the state of Host Lane 1 for data path operations." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the state of Host Lane 1 for data path operations." />
+                </Member>
+                <Member Name="HostLane2">
+                    <Annotation Term="OData.Description" String="Indicates the state of Host Lane 2 for data path operations." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the state of Host Lane 2 for data path operations." />
+                </Member>
+                <Member Name="HostLane3">
+                    <Annotation Term="OData.Description" String="Indicates the state of Host Lane 3 for data path operations." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the state of Host Lane 3 for data path operations." />
+                </Member>
+                <Member Name="HostLane4">
+                    <Annotation Term="OData.Description" String="Indicates the state of Host Lane 4 for data path operations." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the state of Host Lane 4 for data path operations." />
+                </Member>
+                <Member Name="HostLane5">
+                    <Annotation Term="OData.Description" String="Indicates the state of Host Lane 5 for data path operations." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the state of Host Lane 5 for data path operations." />
+                </Member>
+                <Member Name="HostLane6">
+                    <Annotation Term="OData.Description" String="Indicates the state of Host Lane 6 for data path operations." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the state of Host Lane 6 for data path operations." />
+                </Member>
+                <Member Name="HostLane7">
+                    <Annotation Term="OData.Description" String="Indicates the state of Host Lane 7 for data path operations." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the state of Host Lane 7 for data path operations." />
+                </Member>
+                <Member Name="HostLane8">
+                    <Annotation Term="OData.Description" String="Indicates the state of Host Lane 8 for data path operations." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the state of Host Lane 8 for data path operations." />
+                </Member>
+            </EnumType>
+            <EnumType Name="DataPathLaneState" Type="Edm.String">
+                <Member Name="Deactivated">
+                    <Annotation Term="OData.Description" String="Data path is deactivated or the lane is unused." />
+                    <Annotation Term="OData.LongDescription" String="This state indicates that the data path for the specified lane is not active. The lane may be unused or intentionally disabled." />
+                </Member>
+                <Member Name="Init">
+                    <Annotation Term="OData.Description" String="Data path is in initialization state." />
+                    <Annotation Term="OData.LongDescription" String="This state indicates that the data path is undergoing initialization procedures, preparing the lane for activation." />
+                </Member>
+                <Member Name="Deinit">
+                    <Annotation Term="OData.Description" String="Data path is in de-initialization state." />
+                    <Annotation Term="OData.LongDescription" String="This state indicates that the data path is being de-initialized, shutting down or resetting the lane from an active state." />
+                </Member>
+                <Member Name="Activated">
+                    <Annotation Term="OData.Description" String="Data path is activated." />
+                    <Annotation Term="OData.LongDescription" String="This state indicates that the data path for the lane is fully active and operational." />
+                </Member>
+                <Member Name="TxTurnOn">
+                    <Annotation Term="OData.Description" String="Transmit path is turning on." />
+                    <Annotation Term="OData.LongDescription" String="This state indicates that the transmit portion of the data path is in the process of being enabled." />
+                </Member>
+                <Member Name="TxTurnOff">
+                    <Annotation Term="OData.Description" String="Transmit path is turning off." />
+                    <Annotation Term="OData.LongDescription" String="This state indicates that the transmit portion of the data path is in the process of being disabled." />
+                </Member>
+                <Member Name="Initialized">
+                    <Annotation Term="OData.Description" String="Data path has been initialized." />
+                    <Annotation Term="OData.LongDescription" String="This state indicates that the data path initialization process has completed successfully, but the lane may not yet be fully activated." />
+                </Member>
+            </EnumType>
+            <EnumType Name="ThresholdFlag">
+                <Member Name="HighAlarm">
+                    <Annotation Term="OData.Description" String="High alarm flag is set." />
+                </Member>
+                <Member Name="LowAlarm">
+                    <Annotation Term="OData.Description" String="Low alarm flag is set." />
+                </Member>
+                <Member Name="HighWarning">
+                    <Annotation Term="OData.Description" String="High warning flag is set." />
+                </Member>
+                <Member Name="LowWarning">
+                    <Annotation Term="OData.Description" String="Low warning flag is set." />
+                </Member>
+                <Member Name="Normal">
+                    <Annotation Term="OData.Description" String="No flags are set." />
+                </Member>
+            </EnumType>
+            <ComplexType Name="PerLaneThresholdStatus" OpenType="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="Per-lane threshold flag status."/>
+                <Annotation Term="OData.LongDescription" String="Each dynamic property represents a lane. The property name follows the pattern [R|T]x[1-8] (e.g., Rx1, Tx4). The value is a single ThresholdFlag enum representing the highest-priority threshold violation active for that lane, following the priority order HighAlarm > LowAlarm > HighWarning > LowWarning. A null value indicates no threshold violation."/>
+                <Annotation Term="Redfish.DynamicPropertyPatterns">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Pattern" String="[RT]x[1-8]"/>
+                            <PropertyValue Property="Type" String="DellNetworkTransceiverPortMetrics.ThresholdFlag"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </ComplexType>
+            <ComplexType Name="PerLaneDecimalValue" OpenType="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="Per-lane decimal measurement value."/>
+                <Annotation Term="OData.LongDescription" String="Each dynamic property represents a lane. The property name follows the pattern [R|T]x[1-8] (e.g., Rx1, Tx4). The value is a Decimal representing the measurement for that lane."/>
+                <Annotation Term="Redfish.DynamicPropertyPatterns">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Pattern" String="[RT]x[1-8]"/>
+                            <PropertyValue Property="Type" String="Edm.Decimal"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellNetworkTransceiverPortMetrics.v1_0_0">
+            <EntityType Name="DellNetworkTransceiverPortMetrics" BaseType="DellNetworkTransceiverPortMetrics.DellNetworkTransceiverPortMetrics">
+                <Annotation Term="OData.Description" String="The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver."/>
+                <Annotation Term="OData.LongDescription" String="The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver."/>
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Property Name="FQDD" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A string that contains the Fully Qualified Device Description (FQDD), which is a user-friendly name for the object."/>
+                    <Annotation Term="OData.LongDescription" String="A string that contains the Fully Qualified Device Description (FQDD), which is a user-friendly name for the object."/>
+                </Property>
+                <Property Name="RXInputPowermW" Type="Edm.Decimal">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the RX input power value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the RX input power value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="RXInputPowerStatus" Type="DellNetworkTransceiverPortMetrics.RXInputPowerStatus">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the status of Rx Input Power value limits."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the status of Rx Input Power value limits."/>
+                </Property>
+                <Property Name="TXBiasCurrentmA" Type="Edm.Decimal">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the TX Bias current value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the TX Bias current value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="Measures.Unit" String="mA"/>
+                </Property>
+                <Property Name="TXBiasCurrentStatus" Type="DellNetworkTransceiverPortMetrics.TXBiasCurrentStatus">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the status of Tx Bias Current value limits."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the status of Tx Bias Current value limits."/>
+                </Property>
+                <Property Name="TXOutputPowermW" Type="Edm.Decimal">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the TX output power value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the TX output power value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="TXOutputPowerStatus" Type="DellNetworkTransceiverPortMetrics.TXOutputPowerStatus">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the status of Tx Output Power value limits."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the status of Tx Output Power value limits."/>
+                </Property>
+                <Property Name="TemperatureCelsius" Type="Edm.Decimal">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the temperature value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the temperature value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="Measures.Unit" String="Cel"/>
+                </Property>
+                <Property Name="TemperatureStatus" Type="DellNetworkTransceiverPortMetrics.TemperatureStatus">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the status of Temperature value limits."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the status of Temperature value limits."/>
+                </Property>
+                <Property Name="VoltageStatus" Type="DellNetworkTransceiverPortMetrics.VoltageStatus">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the status of voltage value limits."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the status of voltage value limits."/>
+                </Property>
+                <Property Name="VoltageValueVolts" Type="Edm.Decimal">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the voltage value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the voltage value of Small Form Factor pluggable(SFP) Transceiver."/>
+                    <Annotation Term="Measures.Unit" String="Volts"/>
+                </Property>
+            </EntityType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellNetworkTransceiverPortMetrics.v1_1_0">
+            <EntityType Name="DellNetworkTransceiverPortMetrics" BaseType="DellNetworkTransceiverPortMetrics.v1_0_0.DellNetworkTransceiverPortMetrics">
+                <Annotation Term="OData.Description" String="The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver."/>
+                <Annotation Term="OData.LongDescription" String="The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver."/>
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Property Name="VccHighAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high alarm threshold value for Vcc."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high alarm threshold value for Vcc."/>
+                    <Annotation Term="Measures.Unit" String="V"/>
+                </Property>
+                <Property Name="VccLowAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low alarm threshold value for Vcc."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low alarm threshold value for Vcc."/>
+                    <Annotation Term="Measures.Unit" String="V"/>
+                </Property>
+                <Property Name="VccHighWarnThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high warn threshold value for Vcc."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high warn threshold value for Vcc."/>
+                    <Annotation Term="Measures.Unit" String="V"/>
+                </Property>
+                <Property Name="VccLowWarnThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low warn threshold value for Vcc."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low warn threshold value for Vcc."/>
+                    <Annotation Term="Measures.Unit" String="V"/>
+                </Property>
+                <Property Name="TxPowerHighAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high alarm threshold for transmit (Tx) optical power."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high alarm threshold for transmit (Tx) optical power."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="TxPowerLowAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low alarm threshold for transmit (Tx) optical power."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low alarm threshold for transmit (Tx) optical power."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="TxPowerHighWarnThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high warning threshold for transmit (Tx) optical power."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high warning threshold for transmit (Tx) optical power."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="TxPowerLowWarnThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low warning threshold for transmit (Tx) optical power."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low warning threshold for transmit (Tx) optical power."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="TxBiasHighAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high alarm threshold for transmit (Tx) bias current."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high alarm threshold for transmit (Tx) bias current."/>
+                    <Annotation Term="Measures.Unit" String="mA"/>
+                </Property>
+                <Property Name="TxBiasLowAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low alarm threshold for transmit (Tx) bias current."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low alarm threshold for transmit (Tx) bias current."/>
+                    <Annotation Term="Measures.Unit" String="mA"/>
+                </Property>
+                <Property Name="TxBiasHighWarnThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high warning threshold for transmit (Tx) bias current."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high warning threshold for transmit (Tx) bias current."/>
+                    <Annotation Term="Measures.Unit" String="mA"/>
+                </Property>
+                <Property Name="TxBiasLowWarnThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low warning threshold for transmit (Tx) bias current."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low warning threshold for transmit (Tx) bias current."/>
+                    <Annotation Term="Measures.Unit" String="mA"/>
+                </Property>
+                <Property Name="RxPowerHighAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high alarm threshold for receive (Rx) optical power."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high alarm threshold for receive (Rx) optical power."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="RxPowerLowAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low alarm threshold for receive (Rx) optical power."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low alarm threshold for receive (Rx) optical power."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="RxPowerHighWarnThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high warning threshold for receive (Rx) optical power."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high warning threshold for receive (Rx) optical power."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="RxPowerLowWarnThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low warning threshold for receive (Rx) optical power."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low warning threshold for receive (Rx) optical power."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="TempLowAlarmThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low alarm threshold value for Temperature."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low alarm threshold value for Temperature."/>
+                    <Annotation Term="Measures.Unit" String="Cel"/>
+                </Property>
+                <Property Name="TempLowWarningThreshold" Type="Edm.Double">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the low warning threshold value for Temperature."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the low warning threshold value for Temperature."/>
+                    <Annotation Term="Measures.Unit" String="Cel"/>
+                </Property>
+                <Property Name="CmisRevision" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the version of the CMIS implemented by the device."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the version of the CMIS implemented by the device."/>
+                </Property>
+                <Property Name="MemoryModel" Type="DellNetworkTransceiverPortMetrics.MemoryModel">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the memory model of the device."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the memory model of the device."/>
+                </Property>
+                <Property Name="SupportedPages" Type="DellNetworkTransceiverPortMetrics.v1_1_0.SupportedPages" Nullable="true">
+                    <Annotation Term="OData.Description" String="Indicates supported diagnostic and configuration pages."/>
+                    <Annotation Term="OData.LongDescription" String="Details about supported diagnostic and configuration pages on the transceiver."/>
+                </Property>
+                <Property Name="LoopbackCapabilities" Type="Collection(DellNetworkTransceiverPortMetrics.LoopbackCapability)">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the supported loopback capabilities based on bit settings." />
+                    <Annotation Term="OData.LongDescription" String="This property lists all loopback capabilities supported by the device. Each capability corresponds to a specific bit in the capability field." />
+                </Property>
+                <Property Name="DiagnosticMeasurementCapabilities" Type="DellNetworkTransceiverPortMetrics.v1_1_0.DiagnosticMeasurementCapabilities" Nullable="true">
+                    <Annotation Term="OData.Description" String="Represents diagnostic measurement capabilities supported by the device." />
+                    <Annotation Term="OData.LongDescription" String="This complex type provides details about diagnostic measurement capabilities, including gating support accuracy and additional features such as periodic updates, per-lane timers, and auto-restart control." />
+                </Property>
+                <Property Name="DiagnosticReportingCapabilities" Type="Collection(DellNetworkTransceiverPortMetrics.DiagnosticReportingCapabilities)">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the diagnostic reporting capabilities of the device."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the diagnostic reporting capabilities supported by the device. The list reflects all enabled diagnostic reporting functions available for the transceiver port."/>
+                </Property>
+                <Property Name="PatternGeneratorAndCheckingLocation" Type="Collection(DellNetworkTransceiverPortMetrics.PatternGeneratorAndCheckingLocation)">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the location of pattern generation and checking capabilities."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the location of pattern generation and checking capabilities."/>
+                </Property>
+                <Property Name="HostSidePatternGenerationCapabilities" Type="Collection(Edm.Boolean)">
+                    <Annotation Term="OData.Description" String="Each boolean in the array represents a supported host-side test pattern: Bit 0 = HostSideGeneratorSupportsPattern0, Bit 1 = HostSideGeneratorSupportsPattern1 … Bit 15 = HostSideGeneratorSupportsPattern15. A value of true indicates Supported, and false indicates Not Supported." />
+                    <Annotation Term="OData.LongDescription" String="Each boolean in the array represents support for a specific test pattern on the host side. Bit 0 corresponds to HostSideGeneratorSupportsPattern0, Bit 1 to HostSideGeneratorSupportsPattern1, and so on up to Bit 15 for HostSideGeneratorSupportsPattern15. A value of true indicates Supported, and false indicates Not Supported." />
+                </Property>
+                <Property Name="MediaSidePatternGenerationCapabilities" Type="Collection(Edm.Boolean)">
+                    <Annotation Term="OData.Description" String="Each boolean in the array represents a supported host-side test pattern: Bit 0 = MediaSideGeneratorSupportsPattern0, Bit 1 = MediaSideGeneratorSupportsPattern1 … Bit 15 = MediaSideGeneratorSupportsPattern15. A value of true indicates Supported, and false indicates Not Supported." />
+                    <Annotation Term="OData.LongDescription" String="Each boolean in the array represents support for a specific test pattern on the media side. Bit 0 corresponds to MediaSideGeneratorSupportsPattern0, Bit 1 to MediaSideGeneratorSupportsPattern1, and so on up to Bit 15 for MediaSideGeneratorSupportsPattern15. A value of true indicates Supported, and false indicates Not Supported." />
+                </Property>
+                <Property Name="DataPathState" Type="Collection(DellNetworkTransceiverPortMetrics.v1_1_0.DataPathState)">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                    <Annotation Term="OData.Description" String="Represents the state of a specific host lane in the data path."/>
+                </Property>
+                <Property Name="RxLaneOutputStatus" Type="Collection(Edm.Boolean)">
+                    <Annotation Term="OData.Description" String="Each boolean in the array indicates the validity of an Rx lane: Bit 0 = OutputStatusRx1, Bit 1 = OutputStatusRx2, … Bit 7 = OutputStatusRx8. A value of true indicates Valid, and false indicates Invalid." />
+                    <Annotation Term="OData.LongDescription" String="Each boolean in the array corresponds to a validity of an Rx lane: Bit 0 represents OutputStatusRx1, Bit 1 represents OutputStatusRx2, and so on up to Bit 7 for OutputStatusRx8. A value of true indicates Valid, and false indicates Invalid." />
+                </Property>
+                <Property Name="TxLaneOutputStatus" Type="Collection(Edm.Boolean)">
+                    <Annotation Term="OData.Description" String="Each boolean in the array indicates Tx lane validity: Bit 0 = OutputStatusTx1, Bit 1 = OutputStatusTx2 … Bit 7 = OutputStatusTx8. A value of true indicates Valid, and false indicates Invalid." />
+                    <Annotation Term="OData.LongDescription" String="Each boolean in the array corresponds to a validity of a Tx lane: Bit 0 represents OutputStatusTx1, Bit 1 represents OutputStatusTx2, and so on up to Bit 7 for OutputStatusTx8. A value of true indicates Valid, and false indicates Invalid." />
+                </Property>
+            </EntityType>
+            <ComplexType Name="SupportedPages">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="Represents the set of diagnostic and configuration pages supported by the device." />
+                <Annotation Term="OData.LongDescription" String="This complex type provides details about which optional diagnostic and configuration pages are supported by the device. It includes information such as supported banks for extended pages and flags indicating support for specific page types like Page03h, VDM pages, and network path pages." />
+                <Property Name="BanksSupported" Type="Collection(Edm.Int32)">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="List of supported bank indices for Pages 10h-1Fh." />
+                    <Annotation Term="OData.LongDescription" String="Indicates which banks (0-3) are supported for Pages 10h-1Fh. Each bank typically represents 8 lanes." />
+                </Property>
+                <Property Name="Page03hSupported" Type="Edm.Boolean">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates whether Page 03h is supported." />
+                    <Annotation Term="OData.LongDescription" String="This flag indicates support for Page 03h." />
+                </Property>
+                <Property Name="DiagnosticPagesSupported" Type="Edm.Boolean">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates whether diagnostic pages are supported." />
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate whether the device supports diagnostic pages for reporting detailed status and measurements." />
+                </Property>
+                <Property Name="VDMPagesSupported" Type="Edm.Boolean">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates whether VDM pages are supported." />
+                    <Annotation Term="OData.LongDescription" String="This property reflects support for Vendor Defined Messaging (VDM) pages, typically used for advanced diagnostics and vendor-specific features."/>
+                </Property>
+                <Property Name="NetworkPathPagesSupported" Type="Edm.Boolean">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates whether network path pages are supported." />
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate whether the device supports network path pages for reporting connectivity and path details." />
+                </Property>
+            </ComplexType>
+            <ComplexType Name="DiagnosticMeasurementCapabilities">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="Represents diagnostic measurement capabilities supported by the device." />
+                <Annotation Term="OData.LongDescription" String="This complex type provides details about diagnostic measurement capabilities, including gating support accuracy and additional features such as periodic updates, per-lane timers, and auto-restart control." />
+                <Property Name="GatingSupportAccuracy" Type="DellNetworkTransceiverPortMetrics.GatingSupportAccuracy">
+                    <Annotation Term="OData.Description" String="Indicates the accuracy level of gating support." />
+                    <Annotation Term="OData.LongDescription" String="Indicates the accuracy level of gating support." />
+                </Property>
+                <Property Name="GatingResultsSupported" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="Indicates whether gating results statistics are supported." />
+                    <Annotation Term="OData.LongDescription" String="Indicates whether gating results statistics are supported." />
+                </Property>
+                <Property Name="PeriodicUpdatesSupported" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="Indicates whether periodic updates during measurement are supported." />
+                    <Annotation Term="OData.LongDescription" String="Indicates whether periodic updates during measurement are supported." />
+                </Property>
+                <Property Name="PerLaneGatingTimersSupported" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="Indicates whether per-lane gating timers are supported." />
+                    <Annotation Term="OData.LongDescription" String="Derived from bit 2. If true, the device supports individual gating timers for each lane." />
+                </Property>
+                <Property Name="AutoRestartGatingSupported" Type="Edm.Boolean">
+                    <Annotation Term="OData.Description" String="Indicates whether auto-restart gating control is supported." />
+                    <Annotation Term="OData.LongDescription" String="Derived from bit 1. If true, the device supports automatic restart of gating control after completion." />
+                </Property>
+            </ComplexType>
+            <ComplexType Name="DataPathState">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="Represents the state of a specific host lane in the data path."/>
+                <Annotation Term="OData.LongDescription" String="Each entry provides the host lane identifier and its current data path state."/>
+                <Property Name="HostLane" Type="DellNetworkTransceiverPortMetrics.DataPathHostLane" Nullable="false">
+                    <Annotation Term="OData.Description" String="The identifier of the host lane (e.g., HostLane1 to HostLane8)."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall represent the identifier of the host lane within the data path. The identifier is a descriptive string such as HostLane1 through HostLane8, which corresponds to the physical or logical lane positions in the host interface." />
+                </Property>
+                <Property Name="State" Type="DellNetworkTransceiverPortMetrics.DataPathLaneState" Nullable="false">
+                    <Annotation Term="OData.Description" String="The current state of the data path for this host lane."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall represent the current operational state of the data path for the specified host lane" />
+                </Property>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellNetworkTransceiverPortMetrics.v1_2_0">
+            <EntityType Name="DellNetworkTransceiverPortMetrics" BaseType="DellNetworkTransceiverPortMetrics.v1_1_0.DellNetworkTransceiverPortMetrics">
+                <Annotation Term="OData.Description" String="The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver."/>
+                <Annotation Term="OData.LongDescription" String="The DellNetworkTransceiverPortMetrics represents the statistics of the Network Transceiver."/>
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Property Name="HostLaneCount" Type="Edm.Int64" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the number of host-side lanes supported by the transceiver."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the number of host-side lanes supported by the transceiver module."/>
+                </Property>
+                <Property Name="StatisticsTime" Type="Edm.DateTimeOffset" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the date and time when the statistics were collected."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the date and time when the transceiver statistics were last collected."/>
+                </Property>
+                <Property Name="StatisticsStartTime" Type="Edm.DateTimeOffset" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the date and time when statistics collection started."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the date and time when the transceiver statistics collection was initiated."/>
+                </Property>
+                <Property Name="TempHighAlarmThreshold" Type="Edm.Decimal" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high alarm threshold value for Temperature."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high alarm threshold value for Temperature."/>
+                    <Annotation Term="Measures.Unit" String="Cel"/>
+                </Property>
+                <Property Name="TempHighWarningThreshold" Type="Edm.Decimal" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the high warning threshold value for Temperature."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the high warning threshold value for Temperature."/>
+                    <Annotation Term="Measures.Unit" String="Cel"/>
+                </Property>
+                <Property Name="LaserWavelengthNanoMeters" Type="Edm.Decimal" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the laser wavelength of the transceiver."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the laser wavelength of the transceiver in nanometers."/>
+                    <Annotation Term="Measures.Unit" String="nm"/>
+                </Property>
+                <Property Name="LaserWavelengthToleranceNanoMeters" Type="Edm.Decimal" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the laser wavelength tolerance of the transceiver."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the laser wavelength tolerance of the transceiver in nanometers."/>
+                    <Annotation Term="Measures.Unit" String="nm"/>
+                </Property>
+                <Property Name="InputPowerMilliWatts" Type="DellNetworkTransceiverPortMetrics.PerLaneDecimalValue" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Per-lane input optical power values in milliWatts."/>
+                    <Annotation Term="OData.LongDescription" String="Contains per-lane receive input optical power values. Dynamic properties are named Rx1 for SFP, Rx1-Rx4 for QSFP, or Rx1-Rx8 for QSFPDD. Each value is a Decimal in milliWatts."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="OutputPowerMilliWatts" Type="DellNetworkTransceiverPortMetrics.PerLaneDecimalValue" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Per-lane output optical power values in milliWatts."/>
+                    <Annotation Term="OData.LongDescription" String="Contains per-lane transmit output optical power values. Dynamic properties are named Tx1 for SFP, Tx1-Tx4 for QSFP, or Tx1-Tx8 for QSFPDD. Each value is a Decimal in milliWatts."/>
+                    <Annotation Term="Measures.Unit" String="mW"/>
+                </Property>
+                <Property Name="BiasCurrentMilliAmps" Type="DellNetworkTransceiverPortMetrics.PerLaneDecimalValue" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Per-lane bias current values in milliAmps."/>
+                    <Annotation Term="OData.LongDescription" String="Contains per-lane transmit bias current values. Dynamic properties are named Tx1 for SFP, Tx1-Tx4 for QSFP, or Tx1-Tx8 for QSFPDD. Each value is a Decimal in milliAmps."/>
+                    <Annotation Term="Measures.Unit" String="mA"/>
+                </Property>
+                <Property Name="PowerFlags" Type="DellNetworkTransceiverPortMetrics.PerLaneThresholdStatus" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Per-lane optical power threshold flag status."/>
+                    <Annotation Term="OData.LongDescription" String="Contains per-lane optical power threshold flag status. Dynamic properties are named Rx1/Tx1 for SFP, Rx1-Rx4/Tx1-Tx4 for QSFP, or Rx1-Rx8/Tx1-Tx8 for QSFPDD. Each value is a ThresholdFlag enum indicating the highest-priority threshold violation for that lane. A null value indicates no threshold violation."/>
+                </Property>
+                <Property Name="BiasFlags" Type="DellNetworkTransceiverPortMetrics.PerLaneThresholdStatus" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Per-lane bias current threshold flag status."/>
+                    <Annotation Term="OData.LongDescription" String="Contains per-lane transmit bias current threshold flag status. Dynamic properties are named Tx1 for SFP, Tx1-Tx4 for QSFP, or Tx1-Tx8 for QSFPDD. Each value is a ThresholdFlag enum indicating the highest-priority threshold violation for that lane. A null value indicates no threshold violation."/>
+                </Property>
+                <Property Name="TemperatureFlag" Type="DellNetworkTransceiverPortMetrics.ThresholdFlag">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the temperature alarm and warning flags."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the temperature alarm and warning flags. Each entry represents a threshold flag that is currently set on the transceiver."/>
+                </Property>
+                <Property Name="VoltageFlag" Type="DellNetworkTransceiverPortMetrics.ThresholdFlag">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Indicates the voltage (Vcc) alarm and warning flags."/>
+                    <Annotation Term="OData.LongDescription" String="Indicates the voltage alarm and warning flags. Each entry represents a threshold flag that is currently set on the transceiver."/>
+                </Property>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

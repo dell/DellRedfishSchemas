@@ -1,0 +1,342 @@
+components:
+  schemas:
+    DellPCIeSSD_v1_12_0_DellPCIeSSD:
+      additionalProperties: false
+      description: An instance of DellPCIeSSD will have PCIe Solid State Drive specific
+        data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        AvailableSparePercent:
+          description: This property represents the percentage of the remaining spare
+            capacity available.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the percentage of the remaining
+            spare capacity available.
+          x-units: Percent
+          x-versionAdded: v1_6_0
+        Bus:
+          description: This property represents the PCI bus.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the PCI bus.
+          x-versionAdded: v1_1_0
+        BusProtocol:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_BusProtocol
+          description: This property represents the bus protocol.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the bus protocol.
+          x-versionAdded: v1_1_0
+        Certified:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_Certified
+          description: The property provides information about the drives behind the
+            RAID controller is certified or not.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides information about the drives behind
+            the RAID controller is certified or not.
+          x-versionAdded: v1_11_0
+        CryptographicEraseCapable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_CryptographicEraseCapable
+          description: This property represents the storage component cryptographic
+            erase capability.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the storage component cryptographic
+            erase capability.
+          x-versionAdded: v1_7_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Device:
+          description: This property represents the PCI device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the PCI device.
+          x-versionAdded: v1_1_0
+        DeviceProtocol:
+          description: This property indicates the device protocol. For example, NVMe
+            1.1, NVMe 1.2 and so on.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property indicates the device protocol. For example,
+            NVMe 1.1, NVMe 1.2 and so on.
+          x-versionAdded: v1_2_0
+        DeviceSidebandProtocol:
+          description: This property indicates the device sideband protocol.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property indicates the device sideband protocol.
+          x-versionAdded: v1_6_0
+        DriveFormFactor:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_DriveFormFactor
+          description: 'This property represents the physical disk form factor and
+            is one of the following values: 0 - Unknown, 1 - 1.8 inch, 2 - 2.5 inch,
+            3 - 3.5 inch, 4-2.5 inch Add-in card, 5-M.2 , 6-EDSFF-E1.L, 7-E3.S, 8-E3.S
+            2T, 9-E3.L, 10-E3.L.2T.'
+          nullable: true
+          readOnly: true
+          x-longDescription: 'This property represents the physical disk form factor
+            and is one of the following values: 0 - Unknown, 1 - 1.8 inch, 2 - 2.5
+            inch, 3 - 3.5 inch, 4-2.5 inch Add-in card, 5-M.2 , 6-EDSFF-E1.L, 7-E3.S,
+            8-E3.S 2T, 9-E3.L, 10-E3.L.2T.'
+        DriveState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_DriveState
+          description: This property displays the current state of the device or subsystem.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property displays the current state of the device
+            or subsystem.
+          x-versionAdded: v1_5_0
+        EncryptionProtocol:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_EncryptionProtocol
+          description: The property provides information about the encryption protocol
+            used to encrypt the data stored on the Drive.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides information about the encryption
+            protocol used to encrypt the data stored on the Drive.
+          x-versionAdded: v1_6_0
+        ErrorDescription:
+          description: This property represents the Error Description of the NVMe
+            init error
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Error Description of the
+            NVMe init error
+          x-versionAdded: v1_6_0
+        ErrorRecoverable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_ErrorRecoverable
+          description: This property represents NVMe init Error is Recoverable or
+            not.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents NVMe init Error is Recoverable
+            or not.
+          x-versionAdded: v1_6_0
+        ForeignKeyIdentifier:
+          description: This property indicates foreign key identifier of a secured
+            drive. If the drive is not locked or secured by a foreign key, this property
+            is an empty string.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property indicates foreign key identifier of a secured
+            drive. If the drive is not locked or secured by a foreign key, this property
+            is an empty string.
+          x-versionAdded: v1_9_0
+        FreeSizeInBytes:
+          description: 'This property represents the free space available for a virtual
+            disk. Note: This field value is applicable when an NVMe drive is behind
+            S140.'
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: 'This property represents the free space available for
+            a virtual disk. Note: This field value is applicable when an NVMe drive
+            is behind S140.'
+          x-units: Bytes
+          x-versionAdded: v1_1_0
+        Function:
+          description: This property represents the PCI function.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the PCI function.
+          x-versionAdded: v1_1_0
+        HotSpareStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_HotSpareStatus
+          description: 'This property represents the hot-spare status and is one of
+            the following values: 0-No, 1-Dedicated, 2-Global. Note: This value is
+            applicable when an NVMe drive is behind S140 controller.'
+          nullable: true
+          readOnly: true
+          x-longDescription: 'This property represents the hot-spare status and is
+            one of the following values: 0-No, 1-Dedicated, 2-Global. Note: This value
+            is applicable when an NVMe drive is behind S140 controller.'
+          x-versionAdded: v1_1_0
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        ManufacturingDay:
+          description: The property shall represent the physical disks manufacturing
+            day.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the physical disks manufacturing
+            day.
+          x-versionAdded: v1_11_0
+        ManufacturingWeek:
+          description: The property shall represent the physical disks manufacturing
+            week.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the physical disks manufacturing
+            week.
+          x-versionAdded: v1_11_0
+        ManufacturingYear:
+          description: The property shall represent the physical disks manufacturing
+            year.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the physical disks manufacturing
+            year.
+          x-versionAdded: v1_11_0
+        MediaType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_MediaType
+          description: This property represents the drive media type.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the drive media type.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        NonRAIDDiskCachePolicy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_NonRAIDDiskCachePolicy
+          description: The property provides information about the Non RAID Disks
+            (PERC 9 System PDs and not related to EPD-PTs) Cache policy.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides information about the Non RAID
+            Disks (PERC 9 System PDs and not related to EPD-PTs) Cache policy.
+          x-versionAdded: v1_11_0
+        PCIeCapableLinkWidth:
+          description: The property indicates the Capable Link Width of the PCIe SSD
+            and is one of the following values x1, x2, x4, x8, x12, x16, x32.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property indicates the Capable Link Width of the
+            PCIe SSD and is one of the following values x1, x2, x4, x8, x12, x16,
+            x32.
+          x-versionAdded: v1_1_0
+        PCIeNegotiatedLinkWidth:
+          description: The property indicates the Negotiated Link width of the PCIe
+            SSD and is one of the following values x1, x2, x4, x8, x12, x16, x32.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property indicates the Negotiated Link width of the
+            PCIe SSD and is one of the following values x1, x2, x4, x8, x12, x16,
+            x32.
+          x-versionAdded: v1_1_0
+        PowerStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_PowerStatus
+          description: This property provides information about drive power mode.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property provides information about drive power
+            mode.
+          x-versionAdded: v1_11_0
+        ProductID:
+          description: This property represents the DeviceID of the PCIe SSD.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the DeviceID of the PCIe SSD.
+          x-versionAdded: v1_1_0
+        RAIDType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_RAIDType
+          description: The property indicates type of RAID and indicates if the RAID
+            is software based.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property indicates type of RAID and indicates if
+            the RAID is software based.
+          x-versionAdded: v1_1_0
+        RaidStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_RaidStatus
+          description: This property represents the RAID specific status.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the RAID specific status.
+          x-versionAdded: v1_2_0
+        SASAddress:
+          description: The property shall represent the SAS address of the drive.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the SAS address of the drive.
+          x-versionAdded: v1_11_0
+        Slot:
+          description: This property represents the slot where the drive is located.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the slot where the drive is
+            located.
+          x-versionAdded: v1_3_0
+        SystemEraseCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_SystemEraseCapability
+          description: The property indicates the storage component system-erase capability.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property indicates the storage component system-erase
+            capability.
+          x-versionAdded: v1_1_0
+        T10PICapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSD.yaml#/components/schemas/DellPCIeSSD_T10PICapability
+          description: This property represents if this physical disk supports T10
+            Protection Information.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents if this physical disk supports
+            T10 Protection Information.
+          x-versionAdded: v1_11_0
+        UsedSizeInBytes:
+          description: This property indicates the space already consumed by virtual
+            disks.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property indicates the space already consumed by
+            virtual disks.
+          x-units: Bytes
+          x-versionAdded: v1_4_0
+        WWN:
+          description: This property represents the WWN of the drive.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the WWN of the drive.
+          x-versionAdded: v1_7_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellPCIeSSD will have PCIe Solid State Drive
+        specific data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellPCIeSSD.v1_12_0.DellPCIeSSD'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,590 @@
+components:
+  schemas:
+    DellLicenseManagementService_v1_1_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DellLicenseManagementService.DeleteLicense':
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_DeleteLicense'
+        '#DellLicenseManagementService.ExportLicense':
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_ExportLicense'
+        '#DellLicenseManagementService.ExportLicenseByDevice':
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_ExportLicenseByDevice'
+        '#DellLicenseManagementService.ExportLicenseByDeviceToNetworkShare':
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_ExportLicenseByDeviceToNetworkShare'
+        '#DellLicenseManagementService.ExportLicenseToNetworkShare':
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_ExportLicenseToNetworkShare'
+        '#DellLicenseManagementService.ImportLicense':
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_ImportLicense'
+        '#DellLicenseManagementService.ImportLicenseFromNetworkShare':
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_ImportLicenseFromNetworkShare'
+        '#DellLicenseManagementService.ShowLicenseBits':
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_ShowLicenseBits'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_DeleteLicense:
+      additionalProperties: false
+      description: A method used to delete assigned licenses. The DeleteLicense()
+        method deletes a specific license from all devices it is assigned to if only
+        the EntitlementID parameter is present, all licenses from a specific device
+        if only the FQDD parameter is present, or a specific license from a specific
+        device if both the EntitlementID and FQDD parameters are present. Either the
+        EntitlementID or FQDD parameter shall be present.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: A method used to delete assigned licenses. The DeleteLicense()
+        method deletes a specific license from all devices it is assigned to if only
+        the EntitlementID parameter is present, all licenses from a specific device
+        if only the FQDD parameter is present, or a specific license from a specific
+        device if both the EntitlementID and FQDD parameters are present. Either the
+        EntitlementID or FQDD parameter shall be present.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_DeleteLicenseRequestBody:
+      additionalProperties: false
+      description: A method used to delete assigned licenses. The DeleteLicense()
+        method deletes a specific license from all devices it is assigned to if only
+        the EntitlementID parameter is present, all licenses from a specific device
+        if only the FQDD parameter is present, or a specific license from a specific
+        device if both the EntitlementID and FQDD parameters are present. Either the
+        EntitlementID or FQDD parameter shall be present.
+      properties:
+        DeleteOptions:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_DeleteOptions
+          description: Flag used to force delete or delete license from all like devices.
+          x-longDescription: Flag used to force delete or delete license from all
+            like devices.
+        EntitlementID:
+          description: Entitlement ID of the license to delete.
+          type: string
+          x-longDescription: Entitlement ID of the license to delete.
+        FQDD:
+          description: FQDD of the device to delete the license from.
+          type: string
+          x-longDescription: FQDD of the device to delete the license from.
+      required:
+      - DeleteOptions
+      type: object
+      x-longDescription: A method used to delete assigned licenses. The DeleteLicense()
+        method deletes a specific license from all devices it is assigned to if only
+        the EntitlementID parameter is present, all licenses from a specific device
+        if only the FQDD parameter is present, or a specific license from a specific
+        device if both the EntitlementID and FQDD parameters are present. Either the
+        EntitlementID or FQDD parameter shall be present.
+    DellLicenseManagementService_v1_1_0_DellLicenseManagementService:
+      additionalProperties: false
+      description: The DellLicenseManagementService resource provides some actions
+        to support License Management functionality.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DellLicenseManagementService_v1_1_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: The DellLicenseManagementService resource provides some actions
+        to support License Management functionality.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ExportLicense:
+      additionalProperties: false
+      description: ExportLicense is a method used to export License files from the
+        iDRAC. The ExportLicense method returns a License, specified by Entitlement
+        ID, as a base64 encoded string.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: ExportLicense is a method used to export License files from
+        the iDRAC. The ExportLicense method returns a License, specified by Entitlement
+        ID, as a base64 encoded string.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ExportLicenseByDevice:
+      additionalProperties: false
+      description: The ExportLicenseByDevice method exports license files specific
+        to a device from iDRAC. The ExportLicenseByDevice method returns all licenses
+        assigned to a device specified by FQDD, as a base64 encoded string.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The ExportLicenseByDevice method exports license files specific
+        to a device from iDRAC. The ExportLicenseByDevice method returns all licenses
+        assigned to a device specified by FQDD, as a base64 encoded string.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellLicenseManagementService_v1_1_0_ExportLicenseByDeviceRequestBody:
+      additionalProperties: false
+      description: The ExportLicenseByDevice method exports license files specific
+        to a device from iDRAC. The ExportLicenseByDevice method returns all licenses
+        assigned to a device specified by FQDD, as a base64 encoded string.
+      properties:
+        FQDD:
+          description: Unique device ID.
+          type: string
+          x-longDescription: Unique device ID.
+      required:
+      - FQDD
+      type: object
+      x-longDescription: The ExportLicenseByDevice method exports license files specific
+        to a device from iDRAC. The ExportLicenseByDevice method returns all licenses
+        assigned to a device specified by FQDD, as a base64 encoded string.
+    DellLicenseManagementService_v1_1_0_ExportLicenseByDeviceResponse:
+      additionalProperties: false
+      description: The response body for the ExportLicenseByDevice action.
+      properties:
+        LicenseFile:
+          description: Base64 encoded string of the license file contents.
+          items:
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: Base64 encoded string of the license file contents.
+          x-versionAdded: v1_1_0
+      required:
+      - LicenseFile
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the ExportLicenseByDevice action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ExportLicenseByDeviceToNetworkShare:
+      additionalProperties: false
+      description: ExportLicenseByDeviceToNetworkShare is a method used to export
+        License files from the IDRAC. The ExportLicenseByDeviceToNetworkShare method
+        exports all licenses from a device, specified by FQDD, to a user defined location.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: ExportLicenseByDeviceToNetworkShare is a method used to export
+        License files from the IDRAC. The ExportLicenseByDeviceToNetworkShare method
+        exports all licenses from a device, specified by FQDD, to a user defined location.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ExportLicenseByDeviceToNetworkShareRequestBody:
+      additionalProperties: false
+      description: ExportLicenseByDeviceToNetworkShare is a method used to export
+        License files from the IDRAC. The ExportLicenseByDeviceToNetworkShare method
+        exports all licenses from a device, specified by FQDD, to a user defined location.
+      properties:
+        FQDD:
+          description: FQDD of the device to export licenses from.
+          type: string
+          x-longDescription: FQDD of the device to export licenses from.
+        FileName:
+          description: The exported license is renamed to <FileName>.
+          type: string
+          x-longDescription: The exported license is renamed to <FileName>.
+        IPAddress:
+          description: IP Address of the machine hosting the CIFS/NFS share.
+          type: string
+          x-longDescription: IP Address of the machine hosting the CIFS/NFS share.
+        Password:
+          description: Password  for CIFS share authentication.
+          type: string
+          x-longDescription: Password  for CIFS share authentication.
+        ShareName:
+          description: Name of the CIFS share or full path to the NFS share. Optional
+            for HTTP/HTTPS share (if supported), this may be treated as the path of
+            the directory containing the file.
+          type: string
+          x-longDescription: Name of the CIFS share or full path to the NFS share.
+            Optional for HTTP/HTTPS share (if supported), this may be treated as the
+            path of the directory containing the file.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ShareType
+          description: Type of the Network Share.
+          x-longDescription: Type of the Network Share.
+        UserName:
+          description: Username for CIFS share authentication.
+          type: string
+          x-longDescription: Username for CIFS share authentication.
+        Workgroup:
+          description: Workgroup for the CIFS share, optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share, optional.
+      required:
+      - FQDD
+      - FileName
+      - IPAddress
+      - ShareName
+      - ShareType
+      type: object
+      x-longDescription: ExportLicenseByDeviceToNetworkShare is a method used to export
+        License files from the IDRAC. The ExportLicenseByDeviceToNetworkShare method
+        exports all licenses from a device, specified by FQDD, to a user defined location.
+    DellLicenseManagementService_v1_1_0_ExportLicenseRequestBody:
+      additionalProperties: false
+      description: ExportLicense is a method used to export License files from the
+        iDRAC. The ExportLicense method returns a License, specified by Entitlement
+        ID, as a base64 encoded string.
+      properties:
+        EntitlementID:
+          description: Entitlement ID of the license being exported.
+          type: string
+          x-longDescription: Entitlement ID of the license being exported.
+      required:
+      - EntitlementID
+      type: object
+      x-longDescription: ExportLicense is a method used to export License files from
+        the iDRAC. The ExportLicense method returns a License, specified by Entitlement
+        ID, as a base64 encoded string.
+    DellLicenseManagementService_v1_1_0_ExportLicenseResponse:
+      additionalProperties: false
+      description: The response body for the ExportLicense action.
+      properties:
+        LicenseFile:
+          description: Base64 encoded string of the license file contents.
+          readOnly: true
+          type: string
+          x-longDescription: Base64 encoded string of the license file contents.
+      required:
+      - LicenseFile
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the ExportLicense action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ExportLicenseToNetworkShare:
+      additionalProperties: false
+      description: ExportLicenseToNetworkShare is a method used to export License
+        files from the IDRAC. The ExportLicenseToNetworkShare method exports a License,
+        specified by EntitlementID, to a user defined location.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: ExportLicenseToNetworkShare is a method used to export License
+        files from the IDRAC. The ExportLicenseToNetworkShare method exports a License,
+        specified by EntitlementID, to a user defined location.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ExportLicenseToNetworkShareRequestBody:
+      additionalProperties: false
+      description: ExportLicenseToNetworkShare is a method used to export License
+        files from the IDRAC. The ExportLicenseToNetworkShare method exports a License,
+        specified by EntitlementID, to a user defined location.
+      properties:
+        EntitlementID:
+          description: Entitlement ID of the license being exported.
+          type: string
+          x-longDescription: Entitlement ID of the license being exported.
+        FileName:
+          description: If included, the exported license is renamed as <FileName>.
+          type: string
+          x-longDescription: If included, the exported license is renamed as <FileName>.
+        IPAddress:
+          description: IP address of the machine hosting the Network share.
+          type: string
+          x-longDescription: IP address of the machine hosting the Network share.
+        IgnoreCertWarning:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_IgnoreCertWarning
+          description: Specifies if certificate warning is to be ignored when HTTPS
+            is specified. If IgnoreCertWarning is on:certificate will be ignored.
+            Default is 1 (Off).
+          x-longDescription: Specifies if certificate warning is to be ignored when
+            HTTPS is specified. If IgnoreCertWarning is on:certificate will be ignored.
+            Default is 1 (Off).
+        Password:
+          description: Password for Network share authentication.
+          type: string
+          x-longDescription: Password for Network share authentication.
+        ProxyPasswd:
+          description: The password to login into proxy server.
+          type: string
+          x-longDescription: The password to login into proxy server.
+        ProxyPort:
+          description: Port for the proxy server. Default is set to 80.
+          type: string
+          x-longDescription: Port for the proxy server. Default is set to 80.
+        ProxyServer:
+          description: The IP Adrress of the proxy server.
+          type: string
+          x-longDescription: The IP Adrress of the proxy server.
+        ProxySupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ProxySupport
+          description: Specifies if proxy is to be used or not. Default is 1 (Off).
+          x-longDescription: Specifies if proxy is to be used or not. Default is 1
+            (Off).
+        ProxyType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ProxyType
+          description: The proxy type of the proxy server. Default is 0 (HTTP).
+          x-longDescription: The proxy type of the proxy server. Default is 0 (HTTP).
+        ProxyUname:
+          description: The username for proxy server.
+          type: string
+          x-longDescription: The username for proxy server.
+        ShareName:
+          description: Name of the CIFS share or full path to the NFS share. Optional
+            for HTTP/HTTPS share (if supported), this may be treated as the path of
+            the directory containing the file.
+          type: string
+          x-longDescription: Name of the CIFS share or full path to the NFS share.
+            Optional for HTTP/HTTPS share (if supported), this may be treated as the
+            path of the directory containing the file.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ShareType
+          description: Type of the Network Share.
+          x-longDescription: Type of the Network Share.
+        UserName:
+          description: Username for Network share authentication.
+          type: string
+          x-longDescription: Username for Network share authentication.
+        Workgroup:
+          description: Workgroup for the CIFS share, optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share, optional.
+      required:
+      - EntitlementID
+      - IPAddress
+      - ShareType
+      type: object
+      x-longDescription: ExportLicenseToNetworkShare is a method used to export License
+        files from the IDRAC. The ExportLicenseToNetworkShare method exports a License,
+        specified by EntitlementID, to a user defined location.
+    DellLicenseManagementService_v1_1_0_ImportLicense:
+      additionalProperties: false
+      description: The ImportLicense() method imports the License given in the input
+        parameter to the License Manager Data Store.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The ImportLicense() method imports the License given in the
+        input parameter to the License Manager Data Store.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ImportLicenseFromNetworkShare:
+      additionalProperties: false
+      description: The ImportLicenseFromNetworkShare() method imports the License
+        given in the network share location.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The ImportLicenseFromNetworkShare() method imports the License
+        given in the network share location.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ImportLicenseFromNetworkShareRequestBody:
+      additionalProperties: false
+      description: The ImportLicenseFromNetworkShare() method imports the License
+        given in the network share location.
+      properties:
+        FQDD:
+          description: FQDD of the device to apply the License to.
+          type: string
+          x-longDescription: FQDD of the device to apply the License to.
+        IPAddress:
+          description: IP address of the machine hosting the Network share.
+          type: string
+          x-longDescription: IP address of the machine hosting the Network share.
+        IgnoreCertWarning:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_IgnoreCertWarning
+          description: Specifies if certificate warning is to be ignored when HTTPS
+            is specified. If IgnoreCertWarning is on:certificate will be ignored.
+            Default is 1 (Off).
+          x-longDescription: Specifies if certificate warning is to be ignored when
+            HTTPS is specified. If IgnoreCertWarning is on:certificate will be ignored.
+            Default is 1 (Off).
+        ImportOptions:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ImportOptions
+          description: Flag to force or install for all like devices.
+          x-longDescription: Flag to force or install for all like devices.
+        LicenseName:
+          description: The file name of the license file to be imported.
+          type: string
+          x-longDescription: The file name of the license file to be imported.
+        Password:
+          description: Password for Network share authentication.
+          type: string
+          x-longDescription: Password for Network share authentication.
+        ProxyPasswd:
+          description: The password to login into proxy server.
+          type: string
+          x-longDescription: The password to login into proxy server.
+        ProxyPort:
+          description: Port for the proxy server. Default is set to 80.
+          type: string
+          x-longDescription: Port for the proxy server. Default is set to 80.
+        ProxyServer:
+          description: The IP Adrress of the proxy server.
+          type: string
+          x-longDescription: The IP Adrress of the proxy server.
+        ProxySupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ProxySupport
+          description: Specifies if proxy is to be used or not. Default is 1 (Off).
+          x-longDescription: Specifies if proxy is to be used or not. Default is 1
+            (Off).
+        ProxyType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ProxyType
+          description: The proxy type of the proxy server. Default is 0 (HTTP).
+          x-longDescription: The proxy type of the proxy server. Default is 0 (HTTP).
+        ProxyUname:
+          description: The username for proxy server.
+          type: string
+          x-longDescription: The username for proxy server.
+        ShareName:
+          description: Name of the CIFS share or full path to the NFS share. Optional
+            for HTTP/HTTPS share (if supported), this may be treated as the path of
+            the directory containing the file.
+          type: string
+          x-longDescription: Name of the CIFS share or full path to the NFS share.
+            Optional for HTTP/HTTPS share (if supported), this may be treated as the
+            path of the directory containing the file.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ShareType
+          description: Type of the Network Share.
+          x-longDescription: Type of the Network Share.
+        UserName:
+          description: Username for Network share authentication.
+          type: string
+          x-longDescription: Username for Network share authentication.
+        Workgroup:
+          description: Workgroup for the CIFS share, optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share, optional.
+      required:
+      - FQDD
+      - IPAddress
+      - ImportOptions
+      - LicenseName
+      - ShareType
+      type: object
+      x-longDescription: The ImportLicenseFromNetworkShare() method imports the License
+        given in the network share location.
+    DellLicenseManagementService_v1_1_0_ImportLicenseRequestBody:
+      additionalProperties: false
+      description: The ImportLicense() method imports the License given in the input
+        parameter to the License Manager Data Store.
+      properties:
+        FQDD:
+          description: FQDD of the device to apply the License to.
+          type: string
+          x-longDescription: FQDD of the device to apply the License to.
+        ImportOptions:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService.yaml#/components/schemas/DellLicenseManagementService_ImportOptions
+          description: Flag to force or install for all like devices.
+          x-longDescription: Flag to force or install for all like devices.
+        LicenseFile:
+          description: A base 64 encoded string of the XML License file.
+          type: string
+          x-longDescription: A base 64 encoded string of the XML License file.
+      required:
+      - FQDD
+      - ImportOptions
+      - LicenseFile
+      type: object
+      x-longDescription: The ImportLicense() method imports the License given in the
+        input parameter to the License Manager Data Store.
+    DellLicenseManagementService_v1_1_0_ShowLicenseBits:
+      additionalProperties: false
+      description: The ShowLicenseBits() method is used to retrieve the iDRAC feature
+        license bit string for the Licenses in iDRAC in a hexadecimal representation
+        of a 256 bit-string. To read the output, you'll need to see which bit position
+        is TRUE from right-to-left. Please refer to the Appendix section that will
+        show which bit represents what feature.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The ShowLicenseBits() method is used to retrieve the iDRAC
+        feature license bit string for the Licenses in iDRAC in a hexadecimal representation
+        of a 256 bit-string. To read the output, you'll need to see which bit position
+        is TRUE from right-to-left. Please refer to the Appendix section that will
+        show which bit represents what feature.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellLicenseManagementService_v1_1_0_ShowLicenseBitsRequestBody:
+      additionalProperties: false
+      description: The ShowLicenseBits() method is used to retrieve the iDRAC feature
+        license bit string for the Licenses in iDRAC in a hexadecimal representation
+        of a 256 bit-string. To read the output, you'll need to see which bit position
+        is TRUE from right-to-left. Please refer to the Appendix section that will
+        show which bit represents what feature.
+      properties: {}
+      type: object
+      x-longDescription: The ShowLicenseBits() method is used to retrieve the iDRAC
+        feature license bit string for the Licenses in iDRAC in a hexadecimal representation
+        of a 256 bit-string. To read the output, you'll need to see which bit position
+        is TRUE from right-to-left. Please refer to the Appendix section that will
+        show which bit represents what feature.
+    DellLicenseManagementService_v1_1_0_ShowLicenseBitsResponse:
+      additionalProperties: false
+      description: The response body for the ShowLicenseBits action.
+      properties:
+        LicenseBits:
+          description: The hexadecimal equivalent of the 256-bit license-bit string.
+          readOnly: true
+          type: string
+          x-longDescription: The hexadecimal equivalent of the 256-bit license-bit
+            string.
+      required:
+      - LicenseBits
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the ShowLicenseBits action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellLicenseManagementService.v1_1_0.DellLicenseManagementService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

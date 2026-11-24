@@ -1,0 +1,376 @@
+components:
+  schemas:
+    DellInfiniBand_v1_4_0_DellInfiniBand:
+      additionalProperties: false
+      description: An instance of DellInfiniBand will have InfiniBand device specific
+        data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        BusNumber:
+          description: This property represents the bus number where this PCI device
+            resides.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the bus number where this PCI
+            device resides.
+        ConnectFirstTarget:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_ConnectFirstTarget
+          description: This property represents the Connect First Target.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the Connect First Target.
+        ControllerBIOSVersion:
+          description: This property represents the firmware version of Controller
+            BIOS.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the firmware version of Controller
+            BIOS.
+        DataBusWidth:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_DataBusWidth
+          description: This property represents the data-bus width of the InfiniBand
+            device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the data-bus width of the InfiniBand
+            device.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceDescription:
+          description: A string that contains the friendly Fully Qualified Device
+            Description (FQDD), which is a property that describes the device and
+            its location.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the friendly Fully Qualified Device
+            Description (FQDD), which is a property that describes the device and
+            its location.
+        DeviceNumber:
+          description: This property represents the device number assigned to this
+            PCI device for this bus.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the device number assigned to
+            this PCI device for this bus.
+        EFIVersion:
+          description: This property represents the firmware version of EFI.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the firmware version of EFI.
+        FQDD:
+          description: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+        FamilyVersion:
+          description: This property represents the family version of firmware.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the family version of firmware.
+        FirstTargetChapId:
+          description: This property represents the First Target ChapId.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the First Target ChapId.
+        FirstTargetChapPwd:
+          description: This property represents the First Target ChapPassword.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the First Target ChapPassword.
+        FunctionNumber:
+          description: This property represents the function number for this PCI device.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the function number for this
+            PCI device.
+        ISCSIOSDriverVersion:
+          description: This property represents the ISCSI OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the ISCSI OS Driver version.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        InfiniBandOSDriverVersion:
+          description: This property represents the InfiniBand OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the InfiniBand OS Driver version.
+        InstanceID:
+          description: A unique identifier for the instance.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A unique identifier for the instance.
+        IscsiInitiatorSubnetPrefix:
+          description: This property represents the Iscs iInitiator SubnetPrefix.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Iscs iInitiator SubnetPrefix.
+        LANDriverVersion:
+          description: This property represents the LAN OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the LAN OS Driver version.
+        LastSystemInventoryTime:
+          description: This property represents the time when System Inventory Collection
+            On Reboot (CSIOR) was last performed or the object was last updated on
+            iDRAC. The value is represented in the format yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the time when System Inventory
+            Collection On Reboot (CSIOR) was last performed or the object was last
+            updated on iDRAC. The value is represented in the format yyyymmddHHMMSS.
+        LastUpdateTime:
+          description: This property represents the time when the data was last updated.
+            The value is represented in the format yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the time when the data was last
+            updated. The value is represented in the format yyyymmddHHMMSS.
+        MediaType:
+          description: This property represents the drive media type.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the drive media type.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        NodeGUID:
+          description: A string that contains the Node GUID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Node GUID.
+        NumberOfPorts:
+          description: This property represents the number of ports.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the number of ports.
+        NumberPCIEFunctionsEnabled:
+          description: This property represents the number of PCIE functions enabled
+            per port.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the number of PCIE functions
+            enabled per port.
+        NumberPCIEFunctionsSupported:
+          description: This property represents the number of PCIE functions supported
+            per port.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the number of PCIE functions
+            supported per port.
+          x-versionAdded: v1_1_0
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        PCIDeviceID:
+          description: This property contains a value assigned by the device manufacturer
+            used to identify the type of device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property contains a value assigned by the device
+            manufacturer used to identify the type of device.
+        PCISubDeviceID:
+          description: Represents PCI sub device ID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Represents PCI sub device ID.
+        PCISubVendorID:
+          description: This property represents the subsystem vendor ID. ID information
+            is reported from a PCIDevice through protocol-specific requests.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the subsystem vendor ID. ID
+            information is reported from a PCIDevice through protocol-specific requests.
+        PCIVendorID:
+          description: This property represents the register that contains a value
+            assigned by the PCI SIG used to identify the manufacturer of the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the register that contains a
+            value assigned by the PCI SIG used to identify the manufacturer of the
+            device.
+        PermanentPortGUID:
+          description: This property defines port GUID that is hardcoded into a port
+            . This hardcoded address can be changed using a firmware upgrade or a
+            software configuration. When this change is made, the field must updated
+            at the same time. If no hardcoded GUID exists for the InfiniBand card,
+            PermanentAddress must be left blank.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property defines port GUID that is hardcoded into
+            a port . This hardcoded address can be changed using a firmware upgrade
+            or a software configuration. When this change is made, the field must
+            updated at the same time. If no hardcoded GUID exists for the InfiniBand
+            card, PermanentAddress must be left blank.
+        PermanentiSCSIMACAddress:
+          description: This property defines the network address that is hardcoded
+            into a port for iSCSI. This hardcoded address can be changed using a firmware
+            upgrade or a software configuration. When this change is made, the field
+            must updated at the same time. If no hardcoded address exists for the
+            NetworkAdapter, PermanentAddress must be left blank.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property defines the network address that is hardcoded
+            into a port for iSCSI. This hardcoded address can be changed using a firmware
+            upgrade or a software configuration. When this change is made, the field
+            must updated at the same time. If no hardcoded address exists for the
+            NetworkAdapter, PermanentAddress must be left blank.
+        PrimaryStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_PrimaryStatus
+          description: This property represents the status of the device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the status of the device.
+        ProductName:
+          description: A string that contains the product name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the product name.
+        Protocol:
+          description: Supported Protocol Types.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Supported Protocol Types.
+        RDMAOSDriverVersion:
+          description: This property represents the RDMA OS Driver version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the RDMA OS Driver version.
+        SNAPIState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_SNAPIState
+          description: This property represents the SNAPI state.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the SNAPI state.
+        SNAPISupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_SNAPISupport
+          description: This property represents the SNAPI support.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the SNAPI support.
+        SlotLength:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_SlotLength
+          description: This property represents the represents the slot length of
+            the InfiniBand device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the represents the slot length
+            of the InfiniBand device.
+        SlotType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_SlotType
+          description: This property indicates the slot type of the NIC PCI device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates the slot type of the NIC PCI
+            device.
+        UpdateLockdownCapable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_UpdateLockdownCapable
+          description: This property represents the firmware update capable or not.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the firmware update capable
+            or not.
+        UpdateLockdownState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_UpdateLockdownState
+          description: This property represents the update lock down mode state.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the update lock down mode state.
+        VPISupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBand.yaml#/components/schemas/DellInfiniBand_VPISupport
+          description: This property represents the VPI support.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the VPI support.
+        VendorName:
+          description: This property represents the vendor name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the vendor name.
+        VirtNodeGUID:
+          description: A string that contains the Virtual Node GUID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Virtual Node GUID.
+        VirtPortGUID:
+          description: A string that contains the virtual port GUID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the virtual port GUID.
+        VirtiSCSIMACAddress:
+          description: A string that contains the virtual iSCSI MAC address.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the virtual iSCSI MAC address.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellInfiniBand will have InfiniBand device
+        specific data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellInfiniBand.v1_4_0.DellInfiniBand'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

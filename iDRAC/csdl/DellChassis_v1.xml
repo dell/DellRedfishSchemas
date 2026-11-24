@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellChassis v1_0_0-->
+<!--# -->
+<!--# Schema copyright info to be put here-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="OData" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+        <edmx:Include Namespace="Resource.v1_2_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
+        <edmx:Include Namespace="ComputerSystem"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellChassis">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <EntityType BaseType="Resource.v1_0_0.Resource" Name="DellChassis" Abstract="true">
+                <Annotation String="This resource shall provide information about the enclosure or chassis the system is in." Term="OData.Description"/>
+                <Annotation String="This resource shall provide information about the enclosure or chassis the system is in." Term="OData.LongDescription"/>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Insertable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Updatable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Redfish.Uris">
+                    <Collection>
+                        <String>/redfish/v1/Chassis/{ComputerSystemId}/Oem/Dell/DellChassis/{ChassisId}</String>
+                    </Collection>
+                </Annotation>
+            </EntityType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellChassis.v1_0_0">
+            <EntityType Name="DellChassis" BaseType="DellChassis.DellChassis">
+                <Annotation Term="OData.Description" String="This resource shall provide information about the enclosure or chassis the system is in."/>
+                <Annotation Term="OData.LongDescription" String="This resource shall provide information about the enclosure or chassis the system is in."/>
+                <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+                <Property Name="CanBeFRUed" Type="Edm.Boolean">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="Boolean that indicates whether this PhysicalElement can be FRUed (TRUE) or not (FALSE)."/>
+                    <Annotation Term="OData.LongDescription" String="Boolean that indicates whether this PhysicalElement can be FRUed (TRUE) or not (FALSE)."/>
+                </Property>
+                <Property Name="SystemID" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property value is the unique Dell System ID for the platform."/>
+                    <Annotation Term="OData.LongDescription" String="This property value is the unique Dell System ID for the platform."/>
+                </Property>
+                <Property Name="Links" Type="DellChassis.v1_0_0.Links" Nullable="false">
+                    <Annotation String="Contains references to other resources that are related to this resource." Term="OData.Description"/>
+                    <Annotation String="The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource." Term="OData.LongDescription"/>
+                </Property>
+            </EntityType>
+
+            <ComplexType BaseType="Resource.Links" Name="Links">
+                <Annotation String="Contains references to other resources that are related to this resource." Term="OData.Description"/>
+                <Annotation String="This type, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource." Term="OData.LongDescription"/>
+                <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+                <NavigationProperty Name="ComputerSystem" Type="ComputerSystem.ComputerSystem">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation String="Contains references to other resources that are related to this resource." Term="OData.Description"/>
+                    <Annotation String="Contains references to other resources that are related to this resource." Term="OData.LongDescription"/>
+                </NavigationProperty>
+            </ComplexType>
+        </Schema>
+
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellChassis.v1_1_0">
+            <Annotation Term="OData.Description" String="This version was created to add TimingConfiguration and ResetTimingModule action for timing hardware control."/>
+            <Annotation Term="OData.LongDescription" String="This version was created to add TimingConfiguration and ResetTimingModule action for timing hardware control."/>
+            <EntityType Name="DellChassis" BaseType="DellChassis.v1_0_0.DellChassis">
+                <Property Name="TimingConfiguration" Type="DellChassis.v1_1_0.TimingConfigurationType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="Timing hardware configuration properties."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain timing hardware configuration properties, including SMA output source selection and timing module write enable state."/>
+                </Property>
+            </EntityType>
+
+            <ComplexType Name="TimingConfigurationType">
+                <Annotation Term="OData.Description" String="Timing hardware configuration."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the timing hardware configuration properties."/>
+                <Property Name="SmaOutSource" Type="DellChassis.v1_1_0.SmaOutSourceType">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="The SMA output signal source selection (ePPS or 1PPS)."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate the SMA output mux selection. A value of ePPS selects the embedded PPS signal. A value of 1PPS selects the external 1PPS signal."/>
+                </Property>
+                <Property Name="WriteEnable" Type="Edm.Boolean">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="Indicates whether writes to the timing module are enabled."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall indicate whether the timing module write enable bit is set. A value of true enables writes; false disables writes. This state does not persist across power cycles."/>
+                </Property>
+            </ComplexType>
+
+            <EnumType Name="SmaOutSourceType">
+                <Member Name="ePPS">
+                    <Annotation Term="OData.Description" String="The SMA output is sourced from the embedded PPS signal."/>
+                    <Annotation Term="OData.LongDescription" String="This value shall indicate the SMA output mux selects the embedded PPS (ePPS) signal."/>
+                </Member>
+                <Member Name="1PPS">
+                    <Annotation Term="OData.Description" String="The SMA output is sourced from the external 1PPS signal."/>
+                    <Annotation Term="OData.LongDescription" String="This value shall indicate the SMA output mux selects the external 1 pulse-per-second (1PPS) signal."/>
+                </Member>
+            </EnumType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

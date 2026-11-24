@@ -1,0 +1,73 @@
+components:
+  schemas:
+    DellGPUSensor_BoardPowerSupplyStatus:
+      enum:
+      - NotApplicable
+      - SufficientPower
+      - UnderPowered
+      type: string
+      x-enumDescriptions:
+        NotApplicable: Not Applicable
+        SufficientPower: SufficientPower
+        UnderPowered: UnderPowered
+      x-enumLongDescriptions:
+        NotApplicable: Not Applicable
+        SufficientPower: SufficientPower
+        UnderPowered: UnderPowered
+    DellGPUSensor_DellGPUSensor:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellGPUSensor.v1_2_0.yaml#/components/schemas/DellGPUSensor_v1_2_0_DellGPUSensor
+      description: This resource shall represents a Graphical Processor sensor, which
+        a hardware device capable of measuring the characteristics of a physical property.
+        This resource represents a managed sensor device and its properties that returns
+        GPU sensor readings such as Power, Thermal and Temperature
+      x-longDescription: This resource shall represents a Graphical Processor sensor,
+        which a hardware device capable of measuring the characteristics of a physical
+        property. This resource represents a managed sensor device and its properties
+        that returns GPU sensor readings such as Power, Thermal and Temperature
+    DellGPUSensor_PowerBrakeStatus:
+      enum:
+      - NotApplicable
+      - Released
+      - Set
+      type: string
+      x-enumDescriptions:
+        NotApplicable: Not Applicable
+        Released: Released
+        Set: Set
+      x-enumLongDescriptions:
+        NotApplicable: Not Applicable
+        Released: Released
+        Set: Set
+    DellGPUSensor_PowerSupplyStatus:
+      enum:
+      - Disabled
+      - Enabled
+      - NotApplicable
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+        NotApplicable: Not Applicable
+      x-enumLongDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+        NotApplicable: Not Applicable
+    DellGPUSensor_ThermalAlertStatus:
+      enum:
+      - NotApplicable
+      - NotPending
+      - Pending
+      type: string
+      x-enumDescriptions:
+        NotApplicable: Not Applicable
+        NotPending: NotPending
+        Pending: Pending
+      x-enumLongDescriptions:
+        NotApplicable: Not Applicable
+        NotPending: NotPending
+        Pending: Pending
+title: '#DellGPUSensor.DellGPUSensor'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

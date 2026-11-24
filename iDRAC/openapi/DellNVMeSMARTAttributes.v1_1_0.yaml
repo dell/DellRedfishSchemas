@@ -1,0 +1,216 @@
+components:
+  schemas:
+    DellNVMeSMARTAttributes_v1_1_0_DellNVMeSMARTAttributes:
+      additionalProperties: false
+      description: An instance of DellNVMeSMARTAttributes will have NVMe SMARTAttributes
+        specific data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        AvailableSparePercent:
+          description: This property shall represent the remaining spare capacity
+            available.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the remaining spare capacity
+            available as a normalized percentage (0 to 100%)
+          x-units: Percent
+        AvailableSpareThresholdPercent:
+          description: This property shall represent the available spare value below
+            which an asynchronous event completion may occur.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the available spare value
+            below which an asynchronous event completion may occur. The value is  as
+            a normalized percentage (0 to 100%)
+          x-units: Percent
+        BadFlashBlock:
+          description: This property shall represent the number of bad flash block.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the number of bad flash
+            block. This count is incremented when the bad flash block detected.
+          x-versionAdded: v1_1_0
+        CompositeTemperatureKelvin:
+          description: This property shall represent the current composite temperature
+            of the controller and namespace(s) associated with that controller
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the current composite temperature
+            (in Kelvin) of the controller and namespace(s) associated with that controller
+          x-units: K
+        ControllerBusyTimeMinutes:
+          description: This property shall represent the amount of time in minutes
+            the controller is busy with I/O command.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the amount of time in minutes
+            the controller is busy with I/O command. It is collated by using ControllerBusyTimeLower
+            and ControllerBusyTimeUpper attributes.
+        CriticalWarningsCount:
+          description: This property shall represent the critical warnings about the
+            controller state
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the critical warnings about
+            the controller state.
+        DataUnitsReadMB:
+          description: This property shall represent the lower part of the count of
+            512 byte data units the host has read from the controller
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the lower part of the count
+            of 512 byte data units the host has read from the controller.This value
+            is reported in thousands and is rounded up.It is Collated by using DataUnitsReadLower
+            and DataUnitsReadUpper attributes
+          x-units: MB
+        DataUnitsWrittenMB:
+          description: This property shall represent the lower part of the count of
+            512 byte data units the host has written to the controller.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the lower part of the count
+            of 512 byte data units the host has written to the controller.This value
+            is reported in thousands and is rounded up. It is collated by using DataUnitsWrittenLower
+            and DataUnitsWrittenUpper attributes.
+          x-units: MB
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        ErrorInfoCount:
+          description: This property shall represent the lower part of the count of
+            error information log entries over the life of the controller.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the lower part of the count
+            of error information log entries over the life of the controller. It is
+            collated by using NumOfErrorInfoLogEntriesLower and NumOfErrorInfoLogEntriesUpper
+            attributes
+        HostReadCommandsCount:
+          description: This property shall represent the lower part of the number
+            of read commands completed by the controller
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the lower part of the number
+            of read commands completed by the controller.It is collated by using HostReadCommandsLower
+            and HostReadCommandsUpper attributes.
+        HostWriteCommandsCount:
+          description: This propert shall represent the lower part of the number of
+            write commands completed by the controller.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the lower part of the number
+            of write commands completed by the controller. It is Collated by using
+            HostWriteLower and HostWriteUpper attributes.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LifeUsedPercent:
+          description: This property shall represent a vendor specific estimate of
+            the percentage of NVM(Non Volatile Memory) subsystem life used.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent a vendor specific estimate
+            of the percentage of NVM(Non Volatile Memory) subsystem life used based
+            on the actual usage and the manufacturer's prediction of NVM life.
+          x-units: Percent
+        MediaDataIntegrityErrorsCount:
+          description: This property shall represent the lower part of the count of
+            detected unrecovered data integrity errors.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the lower part of the count
+            of detected unrecovered data integrity errors. It includes errors such
+            as uncorrectable ECC, CRC checksum failure, or LBA tag mismatch. It is
+            collated by using MediaDataIntegrityErrorsLower and MediaDataIntegrityErrorsUpper
+            attributes.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        PowerCycleCount:
+          description: This property shall represent the lower part of the number
+            of power cycles.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the lower part of the number
+            of power cycles.Specifies the lower part of the number of power cycles.
+        PowerOnHours:
+          description: This propert shall represent the lower part of the number of
+            hours powered on.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the lower part of the number
+            of hours powered on.Hours may not include time that the controller was
+            powered and in a non-operational power state. It is collated by using
+            PowerOnHoursLower and PowerOnHoursUpper attributes
+        UncorrectableError:
+          description: This property shall represent the uncorrectable error.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the uncorrectable error.
+            This count is incremented when the uncorrectable errors are detected.
+          x-versionAdded: v1_1_0
+        UnsafeShutdownsCount:
+          description: This property shall represent the upper part of the number
+            of unsafe shutdowns.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall represent the upper part of the number
+            of unsafe shutdowns. This count is incremented when a shutdown notification
+            (CC.SHN) is not received prior to loss of power. It is collated by using
+            UnsafeShutdownsLower and UnsafeShutdownsUpper attributes
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellNVMeSMARTAttributes will have NVMe SMARTAttributes
+        specific data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellNVMeSMARTAttributes.v1_1_0.DellNVMeSMARTAttributes'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

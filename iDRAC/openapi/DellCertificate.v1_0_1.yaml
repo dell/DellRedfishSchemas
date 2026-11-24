@@ -1,0 +1,172 @@
+components:
+  schemas:
+    DellCertificate_v1_0_1_DellCertificate:
+      additionalProperties: false
+      description: This resource contains information about a SecureBoot Certificate.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        CertificateSubtype:
+          description: The certificate subtype.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the subtype of the certificate.
+        CertificateType:
+          description: The certificate type.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the type of certificate.
+        CryptographicHash:
+          description: A string providing the Cryptographic Hash value of SHA-256,
+            SHA-384, SHA-512.
+          readOnly: false
+          type: string
+          writeOnly: true
+          x-longDescription: A string providing the Cryptographic Hash value of SHA-256,
+            SHA-384, SHA-512.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Hash:
+          description: The Hash value of a file.
+          readOnly: true
+          type: string
+          x-longDescription: Hash of the file, which can be of type SHA-256, SHA-384,
+            SHA-512.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        IssuerCommonName_CN:
+          description: The issuer common name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the issuer common name.
+        IssuerCountryCode_CC:
+          description: The issuer country code.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the issuer country code.
+        IssuerLocality_L:
+          description: The issuer locality.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the issuer locality.
+        IssuerOrganization_O:
+          description: The issuer organization.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the issuer organization.
+        IssuerOrganizationalUnit_OU:
+          description: The issuer organizational unit.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the issuer organizational
+            unit.
+        IssuerState_S:
+          description: The issuer state.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the issuer state.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        SecureBootPolicy:
+          description: The current SecureBoot Policy.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the SecureBoot Policy enabled
+            on the system.
+        SerialNumber:
+          description: The certificate serial number.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the serial number of the
+            certificate.
+        SubjectCommonName_CN:
+          description: The subject common name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the subject common name.
+        SubjectCountryCode_CC:
+          description: The subject country code.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the subject country code.
+        SubjectLocality_L:
+          description: The subject locality.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the subject locality.
+        SubjectOrganization_O:
+          description: The subject organization.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the subject organization.
+        SubjectOrganizationalUnit_OU:
+          description: The subject organizational unit.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the isubject organizational
+            unit.
+        SubjectState_S:
+          description: The subject state.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the subject state.
+        Thumbprint:
+          description: The certificate identifier.
+          readOnly: true
+          type: string
+          x-longDescription: The Unique identifier for a particular certificate.
+        ValidFrom:
+          description: A string providing the validity start date.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string providing the validity start date.
+        ValidTo:
+          description: A string providing the validity end date.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string providing the validity end date.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: This resource shall be used to represent a SecureBoot Certificate.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-requiredOnCreate:
+      - CryptographicHash
+title: '#DellCertificate.v1_0_1.DellCertificate'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

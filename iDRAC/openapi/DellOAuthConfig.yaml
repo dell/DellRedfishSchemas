@@ -1,0 +1,19 @@
+components:
+  schemas:
+    DellOAuthConfig_OAuthConfig:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOAuthConfig.v1_0_0.yaml#/components/schemas/DellOAuthConfig_v1_0_0_OAuthConfig
+      description: OAuth Authentication configurations for both online and offline
+        modes.
+      x-longDescription: OAuth Authentication configurations for both online and offline
+        modes.
+    DellOAuthConfig_SubmitTestToken:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOAuthConfig.v1_0_0.yaml#/components/schemas/DellOAuthConfig_v1_0_0_SubmitTestToken
+      description: The SubmitTestToken operation shall test the supplied Token against
+        the OAuth Configurations present in OAuthConfig.
+      x-longDescription: The SubmitTestToken operation shall test the supplied Token
+        against the OAuth Configurations present in OAuthConfig.
+title: '#DellOAuthConfig'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

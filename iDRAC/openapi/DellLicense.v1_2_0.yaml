@@ -1,0 +1,226 @@
+components:
+  schemas:
+    DellLicense_v1_2_0_DellLicense:
+      additionalProperties: false
+      description: An instance of DellLicense represents a feature license installed
+        on a system.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        AssignedDevices:
+          description: The property array shall have values set to FQDDs of devices
+            that have been assigned to this license.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: The property array shall have values set to FQDDs of
+            devices that have been assigned to this license.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceFamilyDeviceID:
+          description: This property represents the device IDs of PCI devices supported
+            by this license.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property represents the device IDs of PCI devices
+            supported by this license.
+          x-versionAdded: v1_1_0
+        DeviceFamilySubsystemID:
+          description: This property represents the subsystem IDs of PCI devices supported
+            by this license.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property represents the subsystem IDs of PCI devices
+            supported by this license.
+          x-versionAdded: v1_1_0
+        DeviceFamilySubsystemVendorID:
+          description: This property represents the subsystem vendor IDs of PCI devices
+            supported by this license.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property represents the subsystem vendor IDs of
+            PCI devices supported by this license.
+          x-versionAdded: v1_1_0
+        DeviceFamilyVendorID:
+          description: This property represents the vendor IDs of PCI devices supported
+            by this license.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property represents the vendor IDs of PCI devices
+            supported by this license.
+          x-versionAdded: v1_1_0
+        EntitlementID:
+          description: The property shall have the value of the entitlement ID of
+            the license which is a license unique ID.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall have the value of the entitlement
+            ID of the license which is a license unique ID.
+        EvalLicenseTimeRemainingDays:
+          description: The property shall represent the license period remaining in
+            days and is counted only during the uptime of the system. The property
+            shall be implemented, if the LicenseType property has value 3(Evaluation).
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the license period remaining
+            in days and is counted only during the uptime of the system. The property
+            shall be implemented, if the LicenseType property has value 3(Evaluation).
+          x-units: Days
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        InstanceID:
+          description: A unique identifier for the instance.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A unique identifier for the instance.
+        LicenseAttributes:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicense.yaml#/components/schemas/DellLicense_LicenseAttributes
+          description: This property represents bound-state to a device.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents bound-state to a device.
+          x-versionAdded: v1_1_0
+        LicenseDescription:
+          description: The property shall represent the licenses solution set in multiple
+            languages.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: The property shall represent the licenses solution set
+            in multiple languages.
+        LicenseDurationDays:
+          description: 'This property represents the license period in days, and is
+            counted only during the uptime of the system. Note: LicenseDuration will
+            be 0 for Permanent and Perpetual license since these licenses are not
+            time bound.'
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: 'This property represents the license period in days,
+            and is counted only during the uptime of the system. Note: LicenseDuration
+            will be 0 for Permanent and Perpetual license since these licenses are
+            not time bound.'
+          x-units: Days
+        LicenseEndDate:
+          description: The property shall represent the end date of the license. The
+            property shall be implemented, if the LicenseType property has value 2
+            (Leased) and 4 (Site).
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the end date of the license.
+            The property shall be implemented, if the LicenseType property has value
+            2 (Leased) and 4 (Site).
+        LicenseInstallDate:
+          description: The property shall represent the date on which the license
+            was installed.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the date on which the license
+            was installed.
+        LicensePrimaryStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicense.yaml#/components/schemas/DellLicense_LicensePrimaryStatus
+          description: The property shall represent the license status.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the license status.
+        LicenseSoldDate:
+          description: The property shall represent the date the factory created the
+            license.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the date the factory created
+            the license.
+        LicenseStartDate:
+          description: The property shall represent the license start date.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the license start date.
+        LicenseStatusMessage:
+          description: This property has the message string associated with the license
+            status. If the property has a NULL value, no message is associated with
+            the license status.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property has the message string associated with
+            the license status. If the property has a NULL value, no message is associated
+            with the license status.
+          x-versionAdded: v1_1_0
+        LicenseStatusMessageID:
+          description: This property represents the message ID associated with the
+            license status. If the property has a NULL value, no message is associated
+            with the license status.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the message ID associated with
+            the license status. If the property has a NULL value, no message is associated
+            with the license status.
+          x-versionAdded: v1_1_0
+        LicenseType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicense.yaml#/components/schemas/DellLicense_LicenseType
+          description: The property shall represent the license type.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the license type.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellLicense represents a feature license installed
+        on a system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellLicense.v1_2_0.DellLicense'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

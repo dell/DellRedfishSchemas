@@ -1,0 +1,381 @@
+components:
+  schemas:
+    DellPort_v1_1_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellPort.ExportLTSSMTriggerLog':
+          $ref: '#/components/schemas/DellPort_v1_1_0_ExportLTSSMTriggerLog'
+        '#DellPort.GetLinkDownConditionStatus':
+          $ref: '#/components/schemas/DellPort_v1_1_0_GetLinkDownConditionStatus'
+        '#DellPort.IsLTSSMTriggered':
+          $ref: '#/components/schemas/DellPort_v1_1_0_IsLTSSMTriggered'
+        '#DellPort.SetLinkDownConditionStatus':
+          $ref: '#/components/schemas/DellPort_v1_1_0_SetLinkDownConditionStatus'
+        '#DellPort.SetupLTSSMTrigger':
+          $ref: '#/components/schemas/DellPort_v1_1_0_SetupLTSSMTrigger'
+        '#Port.ConfigureTLPRoundTripTime':
+          $ref: '#/components/schemas/DellPort_v1_1_0_ConfigureTLPRoundTripTime'
+        '#Port.GetCreditCapture':
+          $ref: '#/components/schemas/DellPort_v1_1_0_GetCreditCapture'
+        '#Port.GetErrorInjectionInfo':
+          $ref: '#/components/schemas/DellPort_v1_1_0_GetErrorInjectionInfo'
+        '#Port.ReadTLPRoundTripTime':
+          $ref: '#/components/schemas/DellPort_v1_1_0_ReadTLPRoundTripTime'
+        '#Port.SetCreditCapture':
+          $ref: '#/components/schemas/DellPort_v1_1_0_SetCreditCapture'
+        '#Port.SetErrorInjection':
+          $ref: '#/components/schemas/DellPort_v1_1_0_SetErrorInjection'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPort_v1_1_0_ConfigureTLPRoundTripTime:
+      additionalProperties: false
+      description: This action is used to Configure the TLP round-trip time
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to Configure the TLP round-trip time
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPort_v1_1_0_ConfigureTLPRoundTripTimeRequestBody:
+      additionalProperties: false
+      description: This action is used to Configure the TLP round-trip time
+      properties:
+        TLPFormat:
+          description: This parameter specifies the TLP Format
+          format: int64
+          type: integer
+          x-longDescription: This parameter specifies the TLP Format
+        TLPType:
+          description: This parameter specifies the TLP Type
+          format: int64
+          type: integer
+          x-longDescription: This parameter specifies the TLP Type
+      required:
+      - TLPFormat
+      - TLPType
+      type: object
+      x-longDescription: This action is used to Configure the TLP round-trip time
+    DellPort_v1_1_0_ExportLTSSMTriggerLog:
+      additionalProperties: false
+      description: This ExportLTSSMTriggerLog is used to collect the LTSSM port logs
+        after trigger condition executed.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This ExportLTSSMTriggerLog is used to collect the LTSSM port
+        logs after trigger condition executed.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPort_v1_1_0_ExportLTSSMTriggerLogRequestBody:
+      additionalProperties: false
+      description: This ExportLTSSMTriggerLog is used to collect the LTSSM port logs
+        after trigger condition executed.
+      properties:
+        TriggerCondition:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_TriggerCondition
+          description: This parameter shall contain the TriggerCondition values.
+          x-longDescription: This parameter shall contain the TriggerCondition values.
+      required:
+      - TriggerCondition
+      type: object
+      x-longDescription: This ExportLTSSMTriggerLog is used to collect the LTSSM port
+        logs after trigger condition executed.
+    DellPort_v1_1_0_GetCreditCapture:
+      additionalProperties: false
+      description: This action is used to get the credit information
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to get the credit information
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPort_v1_1_0_GetCreditCaptureRequestBody:
+      additionalProperties: false
+      description: This action is used to get the credit information
+      properties: {}
+      type: object
+      x-longDescription: This action is used to get the credit information
+    DellPort_v1_1_0_GetErrorInjectionInfo:
+      additionalProperties: false
+      description: This action is used to read the error injection info for a port
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to read the error injection info for
+        a port
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPort_v1_1_0_GetErrorInjectionInfoRequestBody:
+      additionalProperties: false
+      description: This action is used to read the error injection info for a port
+      properties:
+        ErrInjType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_ErrInjType
+          description: This parameter shall contain injection type.
+          x-longDescription: This parameter shall contain injection type.
+      required:
+      - ErrInjType
+      type: object
+      x-longDescription: This action is used to read the error injection info for
+        a port
+    DellPort_v1_1_0_GetLinkDownConditionStatus:
+      additionalProperties: false
+      description: 'The GetLinkDownConditionStatus gives the condition and time to
+        get the link down '
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: 'The GetLinkDownConditionStatus gives the condition and time
+        to get the link down '
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPort_v1_1_0_GetLinkDownConditionStatusRequestBody:
+      additionalProperties: false
+      description: 'The GetLinkDownConditionStatus gives the condition and time to
+        get the link down '
+      properties: {}
+      type: object
+      x-longDescription: 'The GetLinkDownConditionStatus gives the condition and time
+        to get the link down '
+    DellPort_v1_1_0_IsLTSSMTriggered:
+      additionalProperties: false
+      description: The IsLTSSMTriggered gives the whether the set condition is triggred
+        or not.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The IsLTSSMTriggered gives the whether the set condition
+        is triggred or not.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPort_v1_1_0_IsLTSSMTriggeredRequestBody:
+      additionalProperties: false
+      description: The IsLTSSMTriggered gives the whether the set condition is triggred
+        or not.
+      properties: {}
+      type: object
+      x-longDescription: The IsLTSSMTriggered gives the whether the set condition
+        is triggred or not.
+    DellPort_v1_1_0_ReadTLPRoundTripTime:
+      additionalProperties: false
+      description: This action is used to read the TLP round-trip time in nanoseconds
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to read the TLP round-trip time in nanoseconds
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPort_v1_1_0_ReadTLPRoundTripTimeRequestBody:
+      additionalProperties: false
+      description: This action is used to read the TLP round-trip time in nanoseconds
+      properties: {}
+      type: object
+      x-longDescription: This action is used to read the TLP round-trip time in nanoseconds
+    DellPort_v1_1_0_SetCreditCapture:
+      additionalProperties: false
+      description: This action is used to start or stop credit capture for specific
+        packet types
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to start or stop credit capture for specific
+        packet types
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPort_v1_1_0_SetCreditCaptureRequestBody:
+      additionalProperties: false
+      description: This action is used to start or stop credit capture for specific
+        packet types
+      properties:
+        Opcode:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_Opcode
+          description: This parameter shall contain the Operation code to start or
+            stop the capture
+          x-longDescription: This parameter shall contain the Operation code to start
+            or stop the capture
+        PacketType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_PacketType
+          description: This parameter specifies the type of packet to monitor
+          x-longDescription: This parameter specifies the type of packet to monitor
+      required:
+      - Opcode
+      - PacketType
+      type: object
+      x-longDescription: This action is used to start or stop credit capture for specific
+        packet types
+    DellPort_v1_1_0_SetErrorInjection:
+      additionalProperties: false
+      description: This action is used to perform the error injection on a port
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to perform the error injection on a port
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellPort_v1_1_0_SetErrorInjectionRequestBody:
+      additionalProperties: false
+      description: This action is used to perform the error injection on a port
+      properties:
+        ErrInjType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_ErrInjType
+          description: This parameter shall contain injection type.
+          x-longDescription: This parameter shall contain injection type.
+        ErrorInjCtrl:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_ErrorInjCtrl
+          description: This parameter specifies error injection control value.
+          x-longDescription: This parameter specifies error injection control value.
+            If ErrInjType is DLLP then Disabled,1us,1ms,NextDLLP are the valid members.
+            If ErrInjType is TLP then Disabled,NextTLP,128th-TLP,8192th-TLP are the
+            valid members
+      required:
+      - ErrInjType
+      - ErrorInjCtrl
+      type: object
+      x-longDescription: This action is used to perform the error injection on a port
+    DellPort_v1_1_0_SetLinkDownConditionStatus:
+      additionalProperties: false
+      description: This action is used to set the link down condition to the downlink
+        port.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to set the link down condition to the
+        downlink port.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPort_v1_1_0_SetLinkDownConditionStatusRequestBody:
+      additionalProperties: false
+      description: This action is used to set the link down condition to the downlink
+        port.
+      properties:
+        Action:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_ActionType
+          description: This parameter shall contain the Action
+          x-longDescription: This parameter shall contain the Action
+        ConditionType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_ConditionType
+          description: This parameter shall contain the ConditionType.
+          x-longDescription: This parameter shall contain the ConditionType.
+        EgressCreditTimeoutMs:
+          description: This parameter shall contain the EgressCreditTimeoutMs of the
+            portdown action. The possible values are 1, 2, 4, 8, 16, 32, 512, 1024.
+          format: int64
+          type: integer
+          x-longDescription: This parameter shall contain the EgressCreditTimeoutMs
+            of the portdown action. The possible values are 1, 2, 4, 8, 16, 32, 512,
+            1024.
+      required:
+      - Action
+      - ConditionType
+      type: object
+      x-longDescription: This action is used to set the link down condition to the
+        downlink port.
+    DellPort_v1_1_0_SetupLTSSMTrigger:
+      additionalProperties: false
+      description: This action is used to set the trigger condition.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to set the trigger condition.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPort_v1_1_0_SetupLTSSMTriggerRequestBody:
+      additionalProperties: false
+      description: This action is used to set the trigger condition.
+      properties:
+        TriggerCondition:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPort.yaml#/components/schemas/DellPort_TriggerCondition
+          description: This parameter shall contain the TriggerCondition values.
+          x-longDescription: This parameter shall contain the TriggerCondition values.
+      required:
+      - TriggerCondition
+      type: object
+      x-longDescription: This action is used to set the trigger condition.
+title: '#DellPort.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,53 @@
+components:
+  schemas:
+    DellStorage_v1_1_0_Actions:
+      additionalProperties: false
+      properties:
+        '#Storage.ControllerDrivesDecommission':
+          $ref: '#/components/schemas/DellStorage_v1_1_0_ControllerDrivesDecommission'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellStorage_v1_1_0_ControllerDrivesDecommission:
+      additionalProperties: false
+      description: This action is used to decommission the drives attached to the
+        storage controller.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to decommission the drives attached to
+        the storage controller.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellStorage_v1_1_0_ControllerDrivesDecommissionRequestBody:
+      additionalProperties: false
+      description: This action is used to decommission the drives attached to the
+        storage controller.
+      properties:
+        DisableControllerSecurity:
+          description: This parameter specifies whether to disable security on the
+            controller.
+          type: boolean
+          x-longDescription: This parameter specifies whether to disable security
+            on the controller.
+        DisableSEKMiLKM:
+          description: This parameter specifies whether to disable SEKM and iLKM on
+            the iDRAC.
+          type: boolean
+          x-longDescription: This parameter specifies whether to disable SEKM and
+            iLKM on the iDRAC.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This action is used to decommission the drives attached to
+        the storage controller.
+title: '#DellStorage.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

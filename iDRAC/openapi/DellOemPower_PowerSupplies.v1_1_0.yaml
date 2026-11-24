@@ -1,0 +1,30 @@
+components:
+  schemas:
+    DellOemPower_PowerSupplies_v1_1_0_DellOemPower_PowerSupplies:
+      additionalProperties: false
+      description: Oem data related to the Power_PowerSupply.
+      properties:
+        DellEnclosurePowerSupply:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: Oem data related to the Enclosure's PowerSupply.
+          nullable: true
+          x-longDescription: Oem data related to the Enclosure's PowerSupply.
+          x-versionAdded: v1_1_0
+        DellPowerSupply:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: Oem data related to the PowerSupply.
+          nullable: true
+          x-longDescription: Oem data related to the PowerSupply.
+        DellPowerSupplyView:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: Oem data related to the PowerSupply.
+          nullable: true
+          x-longDescription: Oem data related to the PowerSupply.
+      type: object
+      x-longDescription: Oem data related to the Power_PowerSupply.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellOemPower_PowerSupplies.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

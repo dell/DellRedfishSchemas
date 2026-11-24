@@ -1,0 +1,116 @@
+components:
+  schemas:
+    DellNetworkTransceiver_v1_2_0_DellNetworkTransceiver:
+      additionalProperties: false
+      description: DellNetworkTransceiver represents a Network Transceiver device
+        in the managed system. Instantiating this class represents the specific managed
+        objects and its properties for the number of managed devices present in the
+        system.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceDescription:
+          description: A string that contains the friendly Fully Qualified Device
+            Description (FQDD), which is a property that describes the device and
+            its location.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the friendly Fully Qualified Device
+            Description (FQDD), which is a property that describes the device and
+            its location.
+        FQDD:
+          description: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        IdentifierType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiver.yaml#/components/schemas/DellNetworkTransceiver_IdentifierType
+          description: This property represents the type of Small Form Factor pluggable(SFP)
+            Transceiver.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the type of Small Form Factor
+            pluggable(SFP) Transceiver.
+        InterfaceType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiver.yaml#/components/schemas/DellNetworkTransceiver_InterfaceType
+          description: This property represents the interface type of Small Form Factor
+            pluggable(SFP) Transceiver.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the interface type of Small
+            Form Factor pluggable(SFP) Transceiver.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        PartNumber:
+          description: The part number assigned by the organization that is responsible
+            for producing or manufacturing the Small Form Factor pluggable(SFP) Transceivers.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The part number assigned by the organization that is
+            responsible for producing or manufacturing the Small Form Factor pluggable(SFP)
+            Transceivers.
+        Revision:
+          description: This property represents the revision number of the Small Form
+            Factor pluggable(SFP) Transceiver.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the revision number of the Small
+            Form Factor pluggable(SFP) Transceiver.
+        SerialNumber:
+          description: A manufacturer-allocated number used to identify the Small
+            Form Factor pluggable(SFP) Transceiver.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A manufacturer-allocated number used to identify the
+            Small Form Factor pluggable(SFP) Transceiver.
+        VendorName:
+          description: This property represents the vendor name of Small Form Factor
+            pluggable(SFP) Transceiver.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the vendor name of Small Form
+            Factor pluggable(SFP) Transceiver.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: DellNetworkTransceiver represents a Network Transceiver device
+        in the managed system. Instantiating this class represents the specific managed
+        objects and its properties for the number of managed devices present in the
+        system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellNetworkTransceiver.v1_2_0.DellNetworkTransceiver'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

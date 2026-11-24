@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  DellPCIeDevice  v1.0.0                                              -->
+<!--# This schema complements to OEM section of DMTF NetworkAdapter resource               -->
+<!--# Copyright 2023-2024 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Processor_v1.xml">
+    <edmx:Include Namespace="Processor"/>
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPCIeDevice">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <ComplexType Name="DellPCIeDeviceLinks" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="This is the complex property is for the additional OEM Links realted to the DMTF NetworkAdapter Controller."/>
+        <Annotation Term="OData.LongDescription" String="This is the complex property is for the additional OEM Links realted to the DMTF NetworkAdapter Controller."/>
+      </ComplexType>
+    </Schema>
+
+	  <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellPCIeDevice.v1_0_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+		  <ComplexType Name="DellPCIeDeviceLinks" BaseType="DellPCIeDevice.DellPCIeDeviceLinks">
+		    <Annotation Term="OData.Description" String="This version was added to add new Oem resources and Links."/>
+        <Annotation Term="OData.LongDescription" String="This version was added to add new Oem resources and Links."/>
+			  <NavigationProperty Name="CPUAffinity" Type="Collection(Processor.Processor)" ContainsTarget="true">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a Processor resource indicating CPU Affinity of the resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+		  </ComplexType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

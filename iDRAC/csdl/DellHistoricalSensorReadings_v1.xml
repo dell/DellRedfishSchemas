@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--########################################################################-->
+<!--# Redfish Schema:  DellHistoricalSensorReadings  v1.0.0                #-->
+<!--#                                                                      #-->
+<!--# Copyright 2024 Dell, Inc. or its subsidiaries.All Rights Reserved.   #-->
+<!--########################################################################-->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="OData" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+        <edmx:Include Namespace="Resource.v1_2_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Alias="Redfish" Namespace="RedfishExtensions.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellHistoricalSensorReadings">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <EntityType BaseType="Resource.v1_0_0.Resource" Name="DellHistoricalSensorReadings" Abstract="true">
+                <Annotation String="A resource to represent historical trends for the Sensor" Term="OData.Description"/>
+                <Annotation String="A resource to represent historical trends for the Sensor" Term="OData.LongDescription"/>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Insertable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Updatable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Bool="false" Property="Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Redfish.Uris">
+                    <Collection>
+                        <String>/redfish/v1/Chassis/{ChasisId}/Sensors/{SensorId}/Oem/Dell/HistoricalReadings</String>
+                    </Collection>
+                </Annotation>
+            </EntityType>
+        </Schema>
+
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellHistoricalSensorReadings.v1_0_0">
+            <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+            <EntityType Name="DellHistoricalSensorReadings" BaseType="DellHistoricalSensorReadings.DellHistoricalSensorReadings">
+                <Property Name="AverageReadingHistory" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistory">
+                    <Annotation String="Historical average readings." Term="OData.Description"/>
+                    <Annotation String="Historical average readings." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="PeakReadingHistory" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistory">
+                    <Annotation String="Historical peak readings." Term="OData.Description"/>
+                    <Annotation String="Historical peak readings." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="LowestReadingHistory" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistory">
+                    <Annotation String="Historical lowest readings." Term="OData.Description"/>
+                    <Annotation String="Historical lowest readings." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="UpperCriticalThresholdHistory" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistory">
+                    <Annotation String="Historical upper critical threshold readings." Term="OData.Description"/>
+                    <Annotation String="Historical upper critical threshold readings." Term="OData.LongDescription"/>
+                </Property>
+            </EntityType>
+            <ComplexType Name="ReadingHistory">
+                <Property Name="LastHour" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistoryEntry">
+                    <Annotation String="Historical readings for the last hour." Term="OData.Description"/>
+                    <Annotation String="Historical readings for the last hour." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="LastDay" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistoryEntry">
+                    <Annotation String="Historical readings for the last day." Term="OData.Description"/>
+                    <Annotation String="Historical readings for the last day." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="LastWeek" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistoryEntry">
+                    <Annotation String="Historical readings for the last week." Term="OData.Description"/>
+                    <Annotation String="Historical readings for the last week." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="LastMonth" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistoryEntry">
+                    <Annotation String="Historical readings for the last month." Term="OData.Description"/>
+                    <Annotation String="Historical readings for the last month." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="LastYear" Type="DellHistoricalSensorReadings.v1_0_0.ReadingHistoryEntry">
+                    <Annotation String="Historical readings for the last year." Term="OData.Description"/>
+                    <Annotation String="Historical readings for the last year." Term="OData.LongDescription"/>
+                </Property>
+            </ComplexType>
+            <ComplexType Name="ReadingHistoryEntry">
+                <Annotation String="Historical readings." Term="OData.Description"/>
+                <Annotation String="Historical readings." Term="OData.LongDescription"/>
+                <Property Name="Readings" Type="Collection(Edm.Decimal)">
+                    <Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+                    <Annotation String="List of historical readings." Term="OData.Description"/>
+                    <Annotation String="List of historical readings." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="SampleInterval" Type="Edm.Duration">
+                    <Annotation EnumMember="OData.Permission/Read" Term="OData.Permissions"/>
+                    <Annotation String="The sample interval of the readings." Term="OData.Description"/>
+                    <Annotation String="The sample interval of the readings." Term="OData.LongDescription"/>
+                </Property>
+            </ComplexType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,86 @@
+components:
+  schemas:
+    DellFRUAssembly_v1_1_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellFRUAssembly.UpdateOemFRUData':
+          $ref: '#/components/schemas/DellFRUAssembly_v1_1_0_UpdateOemFRUData'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellFRUAssembly_v1_1_0_DellFRUAssembly:
+      additionalProperties: false
+      description: FRU Assembly data
+      properties:
+        DellFRUAssembly:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFRUAssembly.yaml#/components/schemas/DellFRUAssembly_DellFRUAssemblyInfo
+          description: Represents the link to FRU Assembly Information
+          nullable: true
+          x-longDescription: The property shall represent the link to FRU Assembly
+            Information
+      type: object
+      x-longDescription: This property shall represent the FRU Assembly data
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellFRUAssembly_v1_1_0_DellFRUAssemblyProperties:
+      additionalProperties: false
+      description: FRU Assembly data
+      properties:
+        DellFRUAssembly:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFRUAssembly.yaml#/components/schemas/DellFRUAssembly_DellFRUAssemblyInfo
+          description: Represents the link to FRU Assembly Information
+          nullable: true
+          x-longDescription: The property shall represent the link to FRU Assembly
+            Information
+      type: object
+      x-longDescription: This property shall represent the FRU Assembly data
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellFRUAssembly_v1_1_0_UpdateOemFRUData:
+      additionalProperties: false
+      description: This action is used to write oem fru data
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform the write of oem fru data
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellFRUAssembly_v1_1_0_UpdateOemFRUDataRequestBody:
+      additionalProperties: false
+      description: This action is used to write oem fru data
+      properties:
+        Area:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFRUAssembly.yaml#/components/schemas/DellFRUAssembly_Area
+          description: Represents FRU Field
+          x-longDescription: This parameter shall represent FRU Area Field
+        Data:
+          description: Represents the FRU data
+          type: string
+          x-longDescription: This parameter represents the FRU data
+        Index:
+          description: Represents index value for Custom Types
+          format: int64
+          maximum: 15
+          minimum: 0
+          type: integer
+          x-longDescription: This parameter shall represent index value for Custom
+            Types
+      required:
+      - Area
+      - Data
+      type: object
+      x-longDescription: This action shall perform the write of oem fru data
+title: '#DellFRUAssembly.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

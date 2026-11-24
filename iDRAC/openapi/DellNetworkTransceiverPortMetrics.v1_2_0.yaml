@@ -1,0 +1,677 @@
+components:
+  schemas:
+    DellNetworkTransceiverPortMetrics_v1_2_0_DataPathState:
+      additionalProperties: false
+      description: Represents the state of a specific host lane in the data path.
+      properties:
+        HostLane:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_DataPathHostLane
+          description: The identifier of the host lane (e.g., HostLane1 to HostLane8).
+          x-longDescription: This property shall represent the identifier of the host
+            lane within the data path. The identifier is a descriptive string such
+            as HostLane1 through HostLane8, which corresponds to the physical or logical
+            lane positions in the host interface.
+          x-versionAdded: v1_1_0
+        State:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_DataPathLaneState
+          description: The current state of the data path for this host lane.
+          x-longDescription: This property shall represent the current operational
+            state of the data path for the specified host lane
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: Each entry provides the host lane identifier and its current
+        data path state.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellNetworkTransceiverPortMetrics_v1_2_0_DellNetworkTransceiverPortMetrics:
+      additionalProperties: false
+      description: The DellNetworkTransceiverPortMetrics represents the statistics
+        of the Network Transceiver.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        BiasCurrentMilliAmps:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_PerLaneDecimalValue
+          description: Per-lane bias current values in milliAmps.
+          nullable: true
+          readOnly: true
+          x-longDescription: Contains per-lane transmit bias current values. Dynamic
+            properties are named Tx1 for SFP, Tx1-Tx4 for QSFP, or Tx1-Tx8 for QSFPDD.
+            Each value is a Decimal in milliAmps.
+          x-units: mA
+          x-versionAdded: v1_2_0
+        BiasFlags:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_PerLaneThresholdStatus
+          description: Per-lane bias current threshold flag status.
+          nullable: true
+          readOnly: true
+          x-longDescription: Contains per-lane transmit bias current threshold flag
+            status. Dynamic properties are named Tx1 for SFP, Tx1-Tx4 for QSFP, or
+            Tx1-Tx8 for QSFPDD. Each value is a ThresholdFlag enum indicating the
+            highest-priority threshold violation for that lane. A null value indicates
+            no threshold violation.
+          x-versionAdded: v1_2_0
+        CmisRevision:
+          description: Indicates the version of the CMIS implemented by the device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Indicates the version of the CMIS implemented by the
+            device.
+          x-versionAdded: v1_1_0
+        DataPathState:
+          description: Represents the state of a specific host lane in the data path.
+          items:
+            $ref: '#/components/schemas/DellNetworkTransceiverPortMetrics_v1_2_0_DataPathState'
+            nullable: true
+          readOnly: true
+          type: array
+          x-versionAdded: v1_1_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DiagnosticMeasurementCapabilities:
+          $ref: '#/components/schemas/DellNetworkTransceiverPortMetrics_v1_2_0_DiagnosticMeasurementCapabilities'
+          description: Represents diagnostic measurement capabilities supported by
+            the device.
+          nullable: true
+          x-longDescription: This complex type provides details about diagnostic measurement
+            capabilities, including gating support accuracy and additional features
+            such as periodic updates, per-lane timers, and auto-restart control.
+          x-versionAdded: v1_1_0
+        DiagnosticReportingCapabilities:
+          description: Indicates the diagnostic reporting capabilities of the device.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_DiagnosticReportingCapabilities
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: Indicates the diagnostic reporting capabilities supported
+            by the device. The list reflects all enabled diagnostic reporting functions
+            available for the transceiver port.
+          x-versionAdded: v1_1_0
+        FQDD:
+          description: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Fully Qualified Device Description
+            (FQDD), which is a user-friendly name for the object.
+        HostLaneCount:
+          description: Indicates the number of host-side lanes supported by the transceiver.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Indicates the number of host-side lanes supported by
+            the transceiver module.
+          x-versionAdded: v1_2_0
+        HostSidePatternGenerationCapabilities:
+          description: "Each boolean in the array represents a supported host-side\
+            \ test pattern: Bit 0 = HostSideGeneratorSupportsPattern0, Bit 1 = HostSideGeneratorSupportsPattern1\
+            \ \u2026 Bit 15 = HostSideGeneratorSupportsPattern15. A value of true\
+            \ indicates Supported, and false indicates Not Supported."
+          items:
+            nullable: true
+            type: boolean
+          type: array
+          x-longDescription: Each boolean in the array represents support for a specific
+            test pattern on the host side. Bit 0 corresponds to HostSideGeneratorSupportsPattern0,
+            Bit 1 to HostSideGeneratorSupportsPattern1, and so on up to Bit 15 for
+            HostSideGeneratorSupportsPattern15. A value of true indicates Supported,
+            and false indicates Not Supported.
+          x-versionAdded: v1_1_0
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        InputPowerMilliWatts:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_PerLaneDecimalValue
+          description: Per-lane input optical power values in milliWatts.
+          nullable: true
+          readOnly: true
+          x-longDescription: Contains per-lane receive input optical power values.
+            Dynamic properties are named Rx1 for SFP, Rx1-Rx4 for QSFP, or Rx1-Rx8
+            for QSFPDD. Each value is a Decimal in milliWatts.
+          x-units: mW
+          x-versionAdded: v1_2_0
+        LaserWavelengthNanoMeters:
+          description: Indicates the laser wavelength of the transceiver.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the laser wavelength of the transceiver in
+            nanometers.
+          x-units: nm
+          x-versionAdded: v1_2_0
+        LaserWavelengthToleranceNanoMeters:
+          description: Indicates the laser wavelength tolerance of the transceiver.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the laser wavelength tolerance of the transceiver
+            in nanometers.
+          x-units: nm
+          x-versionAdded: v1_2_0
+        LoopbackCapabilities:
+          description: Indicates the supported loopback capabilities based on bit
+            settings.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_LoopbackCapability
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property lists all loopback capabilities supported
+            by the device. Each capability corresponds to a specific bit in the capability
+            field.
+          x-versionAdded: v1_1_0
+        MediaSidePatternGenerationCapabilities:
+          description: "Each boolean in the array represents a supported host-side\
+            \ test pattern: Bit 0 = MediaSideGeneratorSupportsPattern0, Bit 1 = MediaSideGeneratorSupportsPattern1\
+            \ \u2026 Bit 15 = MediaSideGeneratorSupportsPattern15. A value of true\
+            \ indicates Supported, and false indicates Not Supported."
+          items:
+            nullable: true
+            type: boolean
+          type: array
+          x-longDescription: Each boolean in the array represents support for a specific
+            test pattern on the media side. Bit 0 corresponds to MediaSideGeneratorSupportsPattern0,
+            Bit 1 to MediaSideGeneratorSupportsPattern1, and so on up to Bit 15 for
+            MediaSideGeneratorSupportsPattern15. A value of true indicates Supported,
+            and false indicates Not Supported.
+          x-versionAdded: v1_1_0
+        MemoryModel:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_MemoryModel
+          description: Indicates the memory model of the device.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the memory model of the device.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        OutputPowerMilliWatts:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_PerLaneDecimalValue
+          description: Per-lane output optical power values in milliWatts.
+          nullable: true
+          readOnly: true
+          x-longDescription: Contains per-lane transmit output optical power values.
+            Dynamic properties are named Tx1 for SFP, Tx1-Tx4 for QSFP, or Tx1-Tx8
+            for QSFPDD. Each value is a Decimal in milliWatts.
+          x-units: mW
+          x-versionAdded: v1_2_0
+        PatternGeneratorAndCheckingLocation:
+          description: Indicates the location of pattern generation and checking capabilities.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_PatternGeneratorAndCheckingLocation
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: Indicates the location of pattern generation and checking
+            capabilities.
+          x-versionAdded: v1_1_0
+        PowerFlags:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_PerLaneThresholdStatus
+          description: Per-lane optical power threshold flag status.
+          nullable: true
+          readOnly: true
+          x-longDescription: Contains per-lane optical power threshold flag status.
+            Dynamic properties are named Rx1/Tx1 for SFP, Rx1-Rx4/Tx1-Tx4 for QSFP,
+            or Rx1-Rx8/Tx1-Tx8 for QSFPDD. Each value is a ThresholdFlag enum indicating
+            the highest-priority threshold violation for that lane. A null value indicates
+            no threshold violation.
+          x-versionAdded: v1_2_0
+        RXInputPowerStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_RXInputPowerStatus
+          description: Indicates the status of Rx Input Power value limits.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the status of Rx Input Power value limits.
+        RXInputPowermW:
+          description: Indicates the RX input power value of Small Form Factor pluggable(SFP)
+            Transceiver.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the RX input power value of Small Form Factor
+            pluggable(SFP) Transceiver.
+          x-units: mW
+        RxLaneOutputStatus:
+          description: "Each boolean in the array indicates the validity of an Rx\
+            \ lane: Bit 0 = OutputStatusRx1, Bit 1 = OutputStatusRx2, \u2026 Bit 7\
+            \ = OutputStatusRx8. A value of true indicates Valid, and false indicates\
+            \ Invalid."
+          items:
+            nullable: true
+            type: boolean
+          type: array
+          x-longDescription: 'Each boolean in the array corresponds to a validity
+            of an Rx lane: Bit 0 represents OutputStatusRx1, Bit 1 represents OutputStatusRx2,
+            and so on up to Bit 7 for OutputStatusRx8. A value of true indicates Valid,
+            and false indicates Invalid.'
+          x-versionAdded: v1_1_0
+        RxPowerHighAlarmThreshold:
+          description: Indicates the high alarm threshold for receive (Rx) optical
+            power.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high alarm threshold for receive (Rx) optical
+            power.
+          x-units: mW
+          x-versionAdded: v1_1_0
+        RxPowerHighWarnThreshold:
+          description: Indicates the high warning threshold for receive (Rx) optical
+            power.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high warning threshold for receive (Rx)
+            optical power.
+          x-units: mW
+          x-versionAdded: v1_1_0
+        RxPowerLowAlarmThreshold:
+          description: Indicates the low alarm threshold for receive (Rx) optical
+            power.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low alarm threshold for receive (Rx) optical
+            power.
+          x-units: mW
+          x-versionAdded: v1_1_0
+        RxPowerLowWarnThreshold:
+          description: Indicates the low warning threshold for receive (Rx) optical
+            power.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low warning threshold for receive (Rx)
+            optical power.
+          x-units: mW
+          x-versionAdded: v1_1_0
+        StatisticsStartTime:
+          description: Indicates the date and time when statistics collection started.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Indicates the date and time when the transceiver statistics
+            collection was initiated.
+          x-versionAdded: v1_2_0
+        StatisticsTime:
+          description: Indicates the date and time when the statistics were collected.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Indicates the date and time when the transceiver statistics
+            were last collected.
+          x-versionAdded: v1_2_0
+        SupportedPages:
+          $ref: '#/components/schemas/DellNetworkTransceiverPortMetrics_v1_2_0_SupportedPages'
+          description: Indicates supported diagnostic and configuration pages.
+          nullable: true
+          x-longDescription: Details about supported diagnostic and configuration
+            pages on the transceiver.
+          x-versionAdded: v1_1_0
+        TXBiasCurrentStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_TXBiasCurrentStatus
+          description: Indicates the status of Tx Bias Current value limits.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the status of Tx Bias Current value limits.
+        TXBiasCurrentmA:
+          description: Indicates the TX Bias current value of Small Form Factor pluggable(SFP)
+            Transceiver.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the TX Bias current value of Small Form Factor
+            pluggable(SFP) Transceiver.
+          x-units: mA
+        TXOutputPowerStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_TXOutputPowerStatus
+          description: Indicates the status of Tx Output Power value limits.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the status of Tx Output Power value limits.
+        TXOutputPowermW:
+          description: Indicates the TX output power value of Small Form Factor pluggable(SFP)
+            Transceiver.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the TX output power value of Small Form Factor
+            pluggable(SFP) Transceiver.
+          x-units: mW
+        TempHighAlarmThreshold:
+          description: Indicates the high alarm threshold value for Temperature.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high alarm threshold value for Temperature.
+          x-units: Cel
+          x-versionAdded: v1_2_0
+        TempHighWarningThreshold:
+          description: Indicates the high warning threshold value for Temperature.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high warning threshold value for Temperature.
+          x-units: Cel
+          x-versionAdded: v1_2_0
+        TempLowAlarmThreshold:
+          description: Indicates the low alarm threshold value for Temperature.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low alarm threshold value for Temperature.
+          x-units: Cel
+          x-versionAdded: v1_1_0
+        TempLowWarningThreshold:
+          description: Indicates the low warning threshold value for Temperature.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low warning threshold value for Temperature.
+          x-units: Cel
+          x-versionAdded: v1_1_0
+        TemperatureCelsius:
+          description: Indicates the temperature value of Small Form Factor pluggable(SFP)
+            Transceiver.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the temperature value of Small Form Factor
+            pluggable(SFP) Transceiver.
+          x-units: Cel
+        TemperatureFlag:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_ThresholdFlag
+          description: Indicates the temperature alarm and warning flags.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the temperature alarm and warning flags. Each
+            entry represents a threshold flag that is currently set on the transceiver.
+          x-versionAdded: v1_2_0
+        TemperatureStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_TemperatureStatus
+          description: Indicates the status of Temperature value limits.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the status of Temperature value limits.
+        TxBiasHighAlarmThreshold:
+          description: Indicates the high alarm threshold for transmit (Tx) bias current.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high alarm threshold for transmit (Tx)
+            bias current.
+          x-units: mA
+          x-versionAdded: v1_1_0
+        TxBiasHighWarnThreshold:
+          description: Indicates the high warning threshold for transmit (Tx) bias
+            current.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high warning threshold for transmit (Tx)
+            bias current.
+          x-units: mA
+          x-versionAdded: v1_1_0
+        TxBiasLowAlarmThreshold:
+          description: Indicates the low alarm threshold for transmit (Tx) bias current.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low alarm threshold for transmit (Tx) bias
+            current.
+          x-units: mA
+          x-versionAdded: v1_1_0
+        TxBiasLowWarnThreshold:
+          description: Indicates the low warning threshold for transmit (Tx) bias
+            current.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low warning threshold for transmit (Tx)
+            bias current.
+          x-units: mA
+          x-versionAdded: v1_1_0
+        TxLaneOutputStatus:
+          description: "Each boolean in the array indicates Tx lane validity: Bit\
+            \ 0 = OutputStatusTx1, Bit 1 = OutputStatusTx2 \u2026 Bit 7 = OutputStatusTx8.\
+            \ A value of true indicates Valid, and false indicates Invalid."
+          items:
+            nullable: true
+            type: boolean
+          type: array
+          x-longDescription: 'Each boolean in the array corresponds to a validity
+            of a Tx lane: Bit 0 represents OutputStatusTx1, Bit 1 represents OutputStatusTx2,
+            and so on up to Bit 7 for OutputStatusTx8. A value of true indicates Valid,
+            and false indicates Invalid.'
+          x-versionAdded: v1_1_0
+        TxPowerHighAlarmThreshold:
+          description: Indicates the high alarm threshold for transmit (Tx) optical
+            power.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high alarm threshold for transmit (Tx)
+            optical power.
+          x-units: mW
+          x-versionAdded: v1_1_0
+        TxPowerHighWarnThreshold:
+          description: Indicates the high warning threshold for transmit (Tx) optical
+            power.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high warning threshold for transmit (Tx)
+            optical power.
+          x-units: mW
+          x-versionAdded: v1_1_0
+        TxPowerLowAlarmThreshold:
+          description: Indicates the low alarm threshold for transmit (Tx) optical
+            power.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low alarm threshold for transmit (Tx) optical
+            power.
+          x-units: mW
+          x-versionAdded: v1_1_0
+        TxPowerLowWarnThreshold:
+          description: Indicates the low warning threshold for transmit (Tx) optical
+            power.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low warning threshold for transmit (Tx)
+            optical power.
+          x-units: mW
+          x-versionAdded: v1_1_0
+        VccHighAlarmThreshold:
+          description: Indicates the high alarm threshold value for Vcc.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high alarm threshold value for Vcc.
+          x-units: V
+          x-versionAdded: v1_1_0
+        VccHighWarnThreshold:
+          description: Indicates the high warn threshold value for Vcc.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the high warn threshold value for Vcc.
+          x-units: V
+          x-versionAdded: v1_1_0
+        VccLowAlarmThreshold:
+          description: Indicates the low alarm threshold value for Vcc.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low alarm threshold value for Vcc.
+          x-units: V
+          x-versionAdded: v1_1_0
+        VccLowWarnThreshold:
+          description: Indicates the low warn threshold value for Vcc.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the low warn threshold value for Vcc.
+          x-units: V
+          x-versionAdded: v1_1_0
+        VoltageFlag:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_ThresholdFlag
+          description: Indicates the voltage (Vcc) alarm and warning flags.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the voltage alarm and warning flags. Each entry
+            represents a threshold flag that is currently set on the transceiver.
+          x-versionAdded: v1_2_0
+        VoltageStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_VoltageStatus
+          description: Indicates the status of voltage value limits.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the status of voltage value limits.
+        VoltageValueVolts:
+          description: Indicates the voltage value of Small Form Factor pluggable(SFP)
+            Transceiver.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: Indicates the voltage value of Small Form Factor pluggable(SFP)
+            Transceiver.
+          x-units: Volts
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: The DellNetworkTransceiverPortMetrics represents the statistics
+        of the Network Transceiver.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellNetworkTransceiverPortMetrics_v1_2_0_DiagnosticMeasurementCapabilities:
+      additionalProperties: false
+      description: Represents diagnostic measurement capabilities supported by the
+        device.
+      properties:
+        AutoRestartGatingSupported:
+          description: Indicates whether auto-restart gating control is supported.
+          nullable: true
+          type: boolean
+          x-longDescription: Derived from bit 1. If true, the device supports automatic
+            restart of gating control after completion.
+          x-versionAdded: v1_1_0
+        GatingResultsSupported:
+          description: Indicates whether gating results statistics are supported.
+          nullable: true
+          type: boolean
+          x-longDescription: Indicates whether gating results statistics are supported.
+          x-versionAdded: v1_1_0
+        GatingSupportAccuracy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNetworkTransceiverPortMetrics.yaml#/components/schemas/DellNetworkTransceiverPortMetrics_GatingSupportAccuracy
+          description: Indicates the accuracy level of gating support.
+          nullable: true
+          x-longDescription: Indicates the accuracy level of gating support.
+          x-versionAdded: v1_1_0
+        PerLaneGatingTimersSupported:
+          description: Indicates whether per-lane gating timers are supported.
+          nullable: true
+          type: boolean
+          x-longDescription: Derived from bit 2. If true, the device supports individual
+            gating timers for each lane.
+          x-versionAdded: v1_1_0
+        PeriodicUpdatesSupported:
+          description: Indicates whether periodic updates during measurement are supported.
+          nullable: true
+          type: boolean
+          x-longDescription: Indicates whether periodic updates during measurement
+            are supported.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This complex type provides details about diagnostic measurement
+        capabilities, including gating support accuracy and additional features such
+        as periodic updates, per-lane timers, and auto-restart control.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellNetworkTransceiverPortMetrics_v1_2_0_SupportedPages:
+      additionalProperties: false
+      description: Represents the set of diagnostic and configuration pages supported
+        by the device.
+      properties:
+        BanksSupported:
+          description: List of supported bank indices for Pages 10h-1Fh.
+          items:
+            format: int64
+            nullable: true
+            type: integer
+          readOnly: true
+          type: array
+          x-longDescription: Indicates which banks (0-3) are supported for Pages 10h-1Fh.
+            Each bank typically represents 8 lanes.
+          x-versionAdded: v1_1_0
+        DiagnosticPagesSupported:
+          description: Indicates whether diagnostic pages are supported.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the device supports
+            diagnostic pages for reporting detailed status and measurements.
+          x-versionAdded: v1_1_0
+        NetworkPathPagesSupported:
+          description: Indicates whether network path pages are supported.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the device supports
+            network path pages for reporting connectivity and path details.
+          x-versionAdded: v1_1_0
+        Page03hSupported:
+          description: Indicates whether Page 03h is supported.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This flag indicates support for Page 03h.
+          x-versionAdded: v1_1_0
+        VDMPagesSupported:
+          description: Indicates whether VDM pages are supported.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property reflects support for Vendor Defined Messaging
+            (VDM) pages, typically used for advanced diagnostics and vendor-specific
+            features.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This complex type provides details about which optional diagnostic
+        and configuration pages are supported by the device. It includes information
+        such as supported banks for extended pages and flags indicating support for
+        specific page types like Page03h, VDM pages, and network path pages.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellNetworkTransceiverPortMetrics.v1_2_0.DellNetworkTransceiverPortMetrics'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

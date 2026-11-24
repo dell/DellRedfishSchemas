@@ -1,0 +1,91 @@
+components:
+  schemas:
+    DellPresenceAndStatusSensor_DellPresenceAndStatusSensor:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPresenceAndStatusSensor.v1_1_0.yaml#/components/schemas/DellPresenceAndStatusSensor_v1_1_0_DellPresenceAndStatusSensor
+      description: An instance of DellPresenceAndStatusSensor will have presence and
+        status sensor specific data.
+      x-longDescription: An instance of DellPresenceAndStatusSensor will have presence
+        and status sensor specific data.
+    DellPresenceAndStatusSensor_PrimaryStatus:
+      enum:
+      - Critical
+      - OK
+      - Unknown
+      - Warning
+      type: string
+      x-enumDescriptions:
+        Critical: Critical
+        OK: OK
+        Unknown: Unknown
+        Warning: Warning
+      x-enumLongDescriptions:
+        Critical: Critical
+        OK: OK
+        Unknown: Unknown
+        Warning: Warning
+      x-enumVersionAdded:
+        Critical: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+        Warning: v1_1_0
+    DellPresenceAndStatusSensor_SensorType:
+      enum:
+      - AirFlow
+      - Counter
+      - Current
+      - Humidity
+      - Intrusion
+      - Lock
+      - Other
+      - PowerConsumption
+      - PowerProduction
+      - Presence
+      - Pressure
+      - SmokeDetection
+      - Switch
+      - Tachometer
+      - Temperature
+      - Unknown
+      - Voltage
+      type: string
+      x-enumDescriptions:
+        AirFlow: Air Flow
+        Counter: Counter
+        Current: Current
+        Humidity: Humidity
+        Intrusion: Intrusion
+        Lock: Lock
+        Other: Other
+        PowerConsumption: Power Consumption
+        PowerProduction: Power Production
+        Presence: Presence
+        Pressure: Pressure
+        SmokeDetection: Smoke Detection
+        Switch: Switch
+        Tachometer: Tachometer
+        Temperature: Temperature
+        Unknown: Unknown
+        Voltage: Voltage
+      x-enumLongDescriptions:
+        AirFlow: Air Flow
+        Counter: Counter
+        Current: Current
+        Humidity: Humidity
+        Intrusion: Intrusion
+        Lock: Lock
+        Other: Other
+        PowerConsumption: Power Consumption
+        PowerProduction: Power Production
+        Presence: Presence
+        Pressure: Pressure
+        SmokeDetection: Smoke Detection
+        Switch: Switch
+        Tachometer: Tachometer
+        Temperature: Temperature
+        Unknown: Unknown
+        Voltage: Voltage
+title: '#DellPresenceAndStatusSensor.DellPresenceAndStatusSensor'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

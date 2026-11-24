@@ -1,0 +1,140 @@
+components:
+  schemas:
+    DellUSBDevice_v1_0_0_DellUSBDevice:
+      additionalProperties: false
+      description: DellUSBDeviceView provides USB Device specific data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        BaseClass:
+          description: 'Base Class identifies the first byte of the Class Code triple
+            (Assigned by usb.org). Note: It is displayed in hex format and as a user-readable
+            string.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: 'Base Class identifies the first byte of the Class Code
+            triple (Assigned by usb.org). Note: It is displayed in hex format and
+            as a user-readable string.'
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceVersion:
+          description: A string that contains the version of the device (Assigned
+            by the manufacturer).
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the version of the device (Assigned
+            by the manufacturer).
+        FQDD:
+          description: A string that contains the Fully Qualified Device Description
+            (FQDD) - a user-friendly name for the object.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains the Fully Qualified Device Description
+            (FQDD) - a user-friendly name for the object.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Manufacturer:
+          description: The name of the organization responsible for producing the
+            PhysicalElement. This organization might be the entity from whom the Element
+            is purchased, but this is not necessarily true.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The name of the organization responsible for producing
+            the PhysicalElement. This organization might be the entity from whom the
+            Element is purchased, but this is not necessarily true.
+        MaximumCurrentDrawn:
+          description: A USB device can have multiple configuration and each configuration
+            can have a different power requirement. This property reports the maximum
+            current drawn by a USB device across all available configurations.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A USB device can have multiple configuration and each
+            configuration can have a different power requirement. This property reports
+            the maximum current drawn by a USB device across all available configurations.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        ProductID:
+          description: Used to identify the type of the product (Assigned by the manufacturer).
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Used to identify the type of the product (Assigned by
+            the manufacturer).
+        ProductName:
+          description: A string containing the product name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string containing the product name.
+        Protocol:
+          description: Protocol identifies the third byte of the Class Code triple
+            (Assigned by usb.org).
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Protocol identifies the third byte of the Class Code
+            triple (Assigned by usb.org).
+        SerialNumber:
+          description: A manufacturer-allocated number used to identify the Physical
+            Element.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A manufacturer-allocated number used to identify the
+            Physical Element.
+        SubClass:
+          description: Sub Class identifies the second byte of the Class Code triple
+            (Assigned by usb.org).
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Sub Class identifies the second byte of the Class Code
+            triple (Assigned by usb.org).
+        USBVersion:
+          description: This property represent the highest USB specification supported
+            by a device. If a device supports two versions, only the highest version
+            is reported. Often, USB devices encode this value as a binary coded decimal
+            with a format of 0xAABC, where AA is the major version number, B is the
+            minor version number, and C is the sub-minor version number.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represent the highest USB specification
+            supported by a device. If a device supports two versions, only the highest
+            version is reported. Often, USB devices encode this value as a binary
+            coded decimal with a format of 0xAABC, where AA is the major version number,
+            B is the minor version number, and C is the sub-minor version number.
+        VendorID:
+          description: This property represents the part number of the USB device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the part number of the USB device.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: DellUSBDeviceView provides USB Device specific data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellUSBDevice.v1_0_0.DellUSBDevice'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

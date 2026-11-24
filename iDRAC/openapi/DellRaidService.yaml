@@ -1,0 +1,364 @@
+components:
+  schemas:
+    DellRaidService_ApplyTime:
+      enum:
+      - Staged
+      - Immediate
+      - OnReset
+      type: string
+      x-enumDescriptions:
+        Immediate: Real-time job - applies changes immediately without reboot
+        OnReset: Staged job without automatic reboot
+        Staged: Staged job - requires system reboot to apply changes
+      x-enumLongDescriptions:
+        Immediate: Configuration changes are applied immediately in real-time without
+          requiring a system reboot.
+        OnReset: Configuration changes are staged but will not trigger an automatic
+          reboot. Changes will be applied on the next manual system reset.
+        Staged: Configuration changes are staged and will be applied on the next system
+          reboot.
+      x-enumVersionAdded:
+        Immediate: v1_10_0
+        OnReset: v1_10_0
+        Staged: v1_10_0
+    DellRaidService_BlockSizeInBytes:
+      enum:
+      - '4096'
+      - '512'
+      - All
+      type: string
+      x-enumDescriptions:
+        '4096': Include 4096 bytes block size disks
+        '512': Include 512 bytes block size disks only
+        All: Include all block size disks
+    DellRaidService_CachePolicy:
+      enum:
+      - Default
+      - CacheMask
+      - WriteMask
+      - ReadMask
+      type: string
+      x-enumDescriptions:
+        CacheMask: CacheMask
+        Default: DiskMask
+        ReadMask: ReadMask
+        WriteMask: WriteMask
+    DellRaidService_DellRaidService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellRaidService.v1_10_0.yaml#/components/schemas/DellRaidService_v1_10_0_DellRaidService
+      description: The DellRaidService resource provides some actions to support RAID
+        functionality.
+      x-longDescription: The DellRaidService resource provides some actions to support
+        RAID functionality.
+    DellRaidService_DiskCachePolicy:
+      enum:
+      - Default
+      - Disabled
+      - Enabled
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Default: Default
+        Disabled: Disabled
+        Enabled: Enabled
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Default: Default
+        Disabled: Disabled
+        Enabled: Enabled
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Default: v1_9_0
+        Disabled: v1_9_0
+        Enabled: v1_9_0
+        Unknown: v1_9_0
+    DellRaidService_DiskEncrypt:
+      enum:
+      - All
+      - FDE
+      - NonFDE
+      type: string
+      x-enumDescriptions:
+        All: Include FDE capable and non encryption capable disks
+        FDE: Include FDE disks only
+        NonFDE: Include only non FDE disks
+    DellRaidService_DiskType:
+      enum:
+      - All
+      - HDD
+      - SSD
+      type: string
+      x-enumDescriptions:
+        All: Include all Types
+        HDD: Include Hard Disk only
+        SSD: Include Solid State Only
+    DellRaidService_Diskprotocol:
+      enum:
+      - AllProtocols
+      - NVMe
+      - SAS
+      - SATA
+      type: string
+      x-enumDescriptions:
+        AllProtocols: All Protocols
+        NVMe: NVMe
+        SAS: SAS
+        SATA: SATA
+    DellRaidService_ForceRemove:
+      enum:
+      - 'No'
+      - 'Yes'
+      type: string
+      x-enumDescriptions:
+        'No': 'No'
+        'Yes': 'Yes'
+      x-enumVersionAdded:
+        'No': v1_5_0
+        'Yes': v1_5_0
+    DellRaidService_FormFactor:
+      enum:
+      - All
+      - M.2
+      type: string
+      x-enumDescriptions:
+        All: Include all
+        M.2: Include only M.2
+    DellRaidService_GetRAIDLevelsResponseVDRAIDEnumArray:
+      enum:
+      - RAID0
+      - RAID1
+      - RAID10
+      - RAID5
+      - RAID50
+      - RAID6
+      - RAID60
+      type: string
+      x-enumDescriptions:
+        RAID0: RAID0
+        RAID1: RAID1
+        RAID10: RAID10
+        RAID5: RAID5
+        RAID50: RAID50
+        RAID6: RAID6
+        RAID60: RAID60
+    DellRaidService_Mode:
+      enum:
+      - LKM
+      - LKM_TO_SEKM
+      - SEKM
+      type: string
+      x-enumDescriptions:
+        LKM: LKM
+        LKM_TO_SEKM: LKM_TO_SEKM
+        SEKM: SEKM
+      x-enumVersionAdded:
+        LKM_TO_SEKM: v1_4_0
+        SEKM: v1_3_0
+    DellRaidService_NewRaidLevel:
+      enum:
+      - NoRAID
+      - RAID0
+      - RAID1
+      - RAID10
+      - RAID5
+      - RAID50
+      - RAID6
+      - RAID60
+      type: string
+      x-enumDescriptions:
+        NoRAID: No RAID
+        RAID0: RAID0
+        RAID1: RAID1
+        RAID10: RAID10
+        RAID5: RAID5
+        RAID50: RAID50
+        RAID6: RAID6
+        RAID60: RAID60
+      x-enumVersionAdded:
+        NoRAID: v1_2_0
+        RAID0: v1_2_0
+        RAID1: v1_2_0
+        RAID10: v1_2_0
+        RAID5: v1_2_0
+        RAID50: v1_2_0
+        RAID6: v1_2_0
+        RAID60: v1_2_0
+    DellRaidService_RaidLevel:
+      enum:
+      - NoRAID
+      - RAID0
+      - RAID1
+      - RAID10
+      - RAID5
+      - RAID50
+      - RAID6
+      - RAID60
+      type: string
+      x-enumDescriptions:
+        NoRAID: No RAID
+        RAID0: RAID0
+        RAID1: RAID1
+        RAID10: RAID10
+        RAID5: RAID5
+        RAID50: RAID50
+        RAID6: RAID6
+        RAID60: RAID60
+    DellRaidService_ReadCachePolicy:
+      enum:
+      - AdaptiveReadAhead
+      - NoReadAhead
+      - ReadAhead
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        AdaptiveReadAhead: Adaptive Read Ahead
+        NoReadAhead: No Read Ahead
+        ReadAhead: Read Ahead
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        AdaptiveReadAhead: Adaptive Read Ahead
+        NoReadAhead: No Read Ahead
+        ReadAhead: Read Ahead
+        Unknown: Unknown
+      x-enumVersionAdded:
+        AdaptiveReadAhead: v1_9_0
+        NoReadAhead: v1_9_0
+        ReadAhead: v1_9_0
+        Unknown: v1_9_0
+    DellRaidService_State:
+      enum:
+      - Offline
+      - Online
+      type: string
+      x-enumDescriptions:
+        Offline: Offline
+        Online: Online
+      x-enumVersionAdded:
+        Offline: v1_1_0
+        Online: v1_1_0
+    DellRaidService_StripeSize:
+      enum:
+      - 128KB
+      - 16KB
+      - 16MB
+      - 1KB
+      - 1MB
+      - 256KB
+      - 2KB
+      - 2MB
+      - 32KB
+      - 4KB
+      - 4MB
+      - 512B
+      - 512KB
+      - 64KB
+      - 8KB
+      - 8MB
+      - Default
+      type: string
+      x-enumDescriptions:
+        128KB: 128KB
+        16KB: 16KB
+        16MB: 16MB
+        1KB: 1KB
+        1MB: 1MB
+        256KB: 256KB
+        2KB: 2KB
+        2MB: 2MB
+        32KB: 32KB
+        4KB: 4KB
+        4MB: 4MB
+        512B: 512B
+        512KB: 512KB
+        64KB: 64KB
+        8KB: 8KB
+        8MB: 8MB
+        Default: Default
+      x-enumLongDescriptions:
+        128KB: 128KB
+        16KB: 16KB
+        16MB: 16MB
+        1KB: 1KB
+        1MB: 1MB
+        256KB: 256KB
+        2KB: 2KB
+        2MB: 2MB
+        32KB: 32KB
+        4KB: 4KB
+        4MB: 4MB
+        512B: 512B
+        512KB: 512KB
+        64KB: 64KB
+        8KB: 8KB
+        8MB: 8MB
+        Default: Default
+      x-enumVersionAdded:
+        128KB: v1_9_0
+        16KB: v1_9_0
+        16MB: v1_9_0
+        1KB: v1_9_0
+        1MB: v1_9_0
+        256KB: v1_9_0
+        2KB: v1_9_0
+        2MB: v1_9_0
+        32KB: v1_9_0
+        4KB: v1_9_0
+        4MB: v1_9_0
+        512B: v1_9_0
+        512KB: v1_9_0
+        64KB: v1_9_0
+        8KB: v1_9_0
+        8MB: v1_9_0
+        Default: v1_9_0
+    DellRaidService_T10PIStatus:
+      enum:
+      - All
+      - T10PICapable
+      - T10PIIncapable
+      type: string
+      x-enumDescriptions:
+        All: All disks
+        T10PICapable: T10PI capable disks
+        T10PIIncapable: Non T10PI capable disks
+    DellRaidService_VDPropNameArrayIn:
+      enum:
+      - RAIDLevel
+      - Size
+      - SpanDepth
+      - SpanLength
+      - StartingLBA
+      - T10PIStatus
+      type: string
+      x-enumDescriptions:
+        RAIDLevel: RAIDLevel, mandatory value
+        Size: Size of the VD in MB
+        SpanDepth: Number of Spans in the VD
+        SpanLength: Number of Physical Disks per span
+        StartingLBA: Starting Logical Block Address
+        T10PIStatus: T10PIStatus 0=Disabled, 1=Enabled
+    DellRaidService_WriteCachePolicy:
+      enum:
+      - Unknown
+      - WriteBack
+      - WriteBackForce
+      - WriteThrough
+      type: string
+      x-enumDescriptions:
+        Unknown: Unknown
+        WriteBack: Write Back
+        WriteBackForce: Write Back Force
+        WriteThrough: Write Through
+      x-enumLongDescriptions:
+        Unknown: Unknown
+        WriteBack: Write Back
+        WriteBackForce: Write Back Force
+        WriteThrough: Write Through
+      x-enumVersionAdded:
+        Unknown: v1_9_0
+        WriteBack: v1_9_0
+        WriteBackForce: v1_9_0
+        WriteThrough: v1_9_0
+title: '#DellRaidService.DellRaidService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

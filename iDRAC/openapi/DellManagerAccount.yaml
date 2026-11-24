@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellManagerAccount_DellManagerAccount:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManagerAccount.v1_0_0.yaml#/components/schemas/DellManagerAccount_v1_0_0_DellManagerAccount
+      description: This is the complex property is for the additional OEM properties
+        to complement DMTF ManagerAccount Schema.
+      x-longDescription: This is the complex property is for the additional OEM properties
+        to complement DMTF ManagerAccount Schema.
+title: '#DellManagerAccount'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

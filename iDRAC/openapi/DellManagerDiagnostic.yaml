@@ -1,0 +1,37 @@
+components:
+  schemas:
+    DellManagerDiagnostic_GetArpTable:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManagerDiagnostic.v1_0_0.yaml#/components/schemas/DellManagerDiagnostic_v1_0_0_GetArpTable
+      description: Display the ARP cache.
+      x-longDescription: This action shall display ARP table entries. Returns ARP
+        table output with numeric IP addresses and MAC addresses.
+    DellManagerDiagnostic_GetInterfaceConfiguration:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManagerDiagnostic.v1_0_0.yaml#/components/schemas/DellManagerDiagnostic_v1_0_0_GetInterfaceConfiguration
+      description: Display network interface parameters.
+      x-longDescription: This action shall display network interface configuration.
+        Returns network interface output showing all network interfaces with IP addresses,
+        MAC addresses, and statistics.
+    DellManagerDiagnostic_GetNetworkStatistics:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManagerDiagnostic.v1_0_0.yaml#/components/schemas/DellManagerDiagnostic_v1_0_0_GetNetworkStatistics
+      description: Display network connections and routing tables.
+      x-longDescription: This action shall display network statistics and connection
+        information. Returns network statistics output showing all active connections.
+    DellManagerDiagnostic_GetTraceLog:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManagerDiagnostic.v1_0_0.yaml#/components/schemas/DellManagerDiagnostic_v1_0_0_GetTraceLog
+      description: Display trace log information.
+      x-longDescription: This action shall display trace log information. Returns
+        trace log output showing all trace log entries.
+    DellManagerDiagnostic_Ping:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManagerDiagnostic.v1_0_0.yaml#/components/schemas/DellManagerDiagnostic_v1_0_0_Ping
+      description: Test network connectivity.
+      x-longDescription: This action shall test network connectivity to the specified
+        IP address or domain name with count range checking (1-10). Returns network
+        connectivity test output.
+title: '#DellManagerDiagnostic'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

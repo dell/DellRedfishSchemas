@@ -1,0 +1,457 @@
+components:
+  schemas:
+    DellDrive_v1_4_1_Actions:
+      additionalProperties: false
+      properties:
+        '#DellDrive.ExportNVMeDeviceLogs':
+          $ref: '#/components/schemas/DellDrive_v1_4_1_ExportNVMeDeviceLogs'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_AllowedOperations:
+      additionalProperties: false
+      description: The allowed operations for the physical disk.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain the allowed operations that can be
+        performed on the physical disk.
+      x-patternProperties:
+        '[A-Za-z0-9]+': {}
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_DellDrive:
+      additionalProperties: false
+      description: Oem data related to DellDrive.
+      properties:
+        AllowedOperations:
+          $ref: '#/components/schemas/DellDrive_v1_4_1_AllowedOperations'
+          description: The allowed operations for the physical disk.
+          x-longDescription: This property shall contain the allowed operations that
+            can be performed on the physical disk.
+          x-versionAdded: v1_4_0
+        ConfigJobExists:
+          description: An indication of whether a configuration job exists for the
+            physical disk.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether a configuration
+            job exists for the physical disk. When true, a configuration job is in
+            progress or pending.
+          x-versionAdded: v1_4_0
+        DellDriveSMARTAttributes:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellDriveSMARTAttributes.
+          nullable: true
+          readOnly: true
+          x-longDescription: A resource representation of DellDriveSMARTAttributes.
+          x-versionAdded: v1_1_0
+        DellNVMeSMARTAttributes:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNVMeSMARTAttributes.
+          nullable: true
+          readOnly: true
+          x-longDescription: A resource representation of DellNVMeSMARTAttributes.
+          x-versionAdded: v1_1_0
+        DellPCIeSSD:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPCIeSSD.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPCIeSSD.
+          x-versionAdded: v1_1_0
+        DellPhysicalDisk:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPhysicalDisk.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPhysicalDisk.
+          x-versionAdded: v1_1_0
+        EncryptionCapable:
+          description: An indication of whether the physical disk supports encryption.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the physical disk
+            supports encryption capabilities.
+          x-versionAdded: v1_4_0
+        FIPS140ComplianceDescriptor:
+          $ref: '#/components/schemas/DellDrive_v1_4_1_FIPS140ComplianceDescriptor'
+          description: A resource representation of DellOem FIPS.
+          x-longDescription: A resource representation of DellOem FIPS.
+          x-versionAdded: v1_1_0
+        OperationalStates:
+          description: The operational states of the physical disk.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_OperationalState
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain the current operational states
+            of the physical disk.
+          x-versionAdded: v1_4_0
+        PCIeSSDPrepareForRemovalDisabled:
+          description: An indication of whether the prepare for removal functionality
+            is disabled for PCIe SSDs.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the prepare for
+            removal functionality is disabled for PCIe SSD physical disks.
+          x-versionAdded: v1_4_0
+        PendingChanges:
+          description: The pending changes for the physical disk configuration.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_PendingChange
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: This property shall contain the pending changes that
+            have been configured for the physical disk but have not yet been applied.
+          x-versionAdded: v1_4_0
+        ProgressPercent:
+          description: The completion percentage of an ongoing operation on the physical
+            disk.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the completion percentage
+            of an ongoing operation on the physical disk, such as rebuilding, initialization,
+            or other maintenance operations.
+          x-versionAdded: v1_4_0
+        RaidStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_RaidStatus
+          description: The property shall represent the RAID specific status.
+          nullable: true
+          readOnly: false
+          x-longDescription: The property shall represent the RAID specific status.
+          x-versionAdded: v1_4_0
+        RealTimeConfigSupported:
+          description: An indication of whether the physical disk supports real-time
+            configuration.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether the physical disk
+            supports real-time configuration changes without requiring a system reboot.
+          x-versionAdded: v1_4_0
+        RekeyReport:
+          $ref: '#/components/schemas/DellDrive_v1_4_1_RekeyReport'
+          description: This property represents Rekey operataion report.
+          x-longDescription: This property represents Rekey operataion report.
+          x-versionAdded: v1_3_0
+        SecurityStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_SecurityStatus
+          description: The security status of the physical disk.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain the security status of the
+            physical disk.
+          x-versionAdded: v1_4_0
+        StorageCapabilities:
+          description: The storage capabilities of the physical disk.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_StorageCapability
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain the storage capabilities
+            and features supported by the physical disk.
+          x-versionAdded: v1_4_0
+      type: object
+      x-longDescription: Oem data related to DellDrive.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_DellDriveLinks:
+      additionalProperties: false
+      description: A complex property for the additional Oem resources realted to
+        Drive.
+      properties:
+        CPUAffinity:
+          description: A reference to a Processor resource indicating CPU Affinity
+            of the resource.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: A reference to a Processor resource indicating CPU Affinity
+            of the resource.
+          x-versionAdded: v1_2_0
+        CPUAffinity@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+      type: object
+      x-longDescription: A complex property for the additional Oem resources realted
+        to Drive.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_ExportNVMeDeviceLogs:
+      additionalProperties: false
+      description: The ExportNVMeDeviceLogs operation shall be used to export the
+        storage device logs.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The ExportNVMeDeviceLogs operation shall be used to export
+        the storage device logs.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_ExportNVMeDeviceLogsRequestBody:
+      additionalProperties: false
+      description: The ExportNVMeDeviceLogs operation shall be used to export the
+        storage device logs.
+      properties:
+        FileName:
+          description: The target output file name.
+          pattern: ^[^/]+$
+          type: string
+          x-longDescription: The target output file name.
+        IPAddress:
+          description: IP address of the network share.
+          type: string
+          x-longDescription: IP address of the network share.
+        IgnoreCertificateWarning:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_IgnoreCertificateWarning
+          description: Ignore Certificate Warning.
+          readOnly: true
+        IncludeInExport:
+          description: IncludeInExport to select the logs type.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_LogTypes
+          type: array
+          x-longDescription: IncludeInExport to select the logs type.
+        Password:
+          description: Password of the account to access the share.
+          type: string
+          x-longDescription: Password of the account to access the share.
+        ProxyPassword:
+          description: Proxy Server Password.
+          readOnly: true
+          type: string
+        ProxyPort:
+          description: Proxy Port address.
+          format: int64
+          readOnly: true
+          type: integer
+        ProxyServer:
+          description: Proxy Server address.
+          readOnly: true
+          type: string
+        ProxySupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_ProxySupport
+          description: Proxy Support to be Enabled or Disabled.
+          readOnly: true
+        ProxyType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_ProxyType
+          description: Type of Proxy HTTP or SOCKS4.
+          readOnly: true
+        ProxyUserName:
+          description: Proxy Server User Name.
+          readOnly: true
+          type: string
+        ShareName:
+          description: Name of the share.
+          type: string
+          x-longDescription: Name of the share.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_ShareType
+          description: Type of the network share.
+          x-longDescription: Type of the network share.
+        UserName:
+          description: UserName of the account to access the share.
+          type: string
+          x-longDescription: UserName of the account to access the share.
+      required:
+      - FileName
+      - IncludeInExport
+      - ShareType
+      type: object
+      x-longDescription: The ExportNVMeDeviceLogs operation shall be used to export
+        the storage device logs.
+    DellDrive_v1_4_1_FIPS140ComplianceDescriptor:
+      additionalProperties: false
+      description: FIPS140 compliance properties for VOSS drives.
+      properties:
+        ComplianceDescriptorModuleName:
+          description: A string that contains compliance descriptor modulename of
+            VOSS drives.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains compliance descriptor modulename
+            of VOSS drives.
+          x-versionAdded: v1_1_0
+        ComplianceDescriptorType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_ComplianceDescriptorType
+          description: This property will describe compliance descriptor type.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property will describe compliance descriptor type.
+          x-versionAdded: v1_1_0
+        ComplianceDescriptorVersion:
+          description: A string that contains compliance descriptor version of VOSS
+            drives.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains compliance descriptor version
+            of VOSS drives.
+          x-versionAdded: v1_1_0
+        ComplianceHardwareVersion:
+          description: A string that contains compliance hardware version of VOSS
+            drives.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains compliance hardware version of
+            VOSS drives.
+          x-versionAdded: v1_1_0
+        ComplianceOverallSecurityLevel:
+          description: A string that contains compliance overall security level of
+            VOSS drives.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string that contains compliance overall security level
+            of VOSS drives.
+          x-versionAdded: v1_1_0
+        ComplianceRelatedStandard:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellDrive.yaml#/components/schemas/DellDrive_ComplianceRelatedStandard
+          description: This property will describe compliance related standard.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property will describe compliance related standard.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: FIPS140 compliance properties for VOSS drives.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_Message:
+      additionalProperties: false
+      properties:
+        Message:
+          description: The human-readable message for this condition.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a human-readable message
+            describing this condition.
+          x-versionAdded: v1_3_0
+        MessageId:
+          description: The identifier for the message.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a `MessageId`, as defined
+            in the 'MessageId format' clause of the Redfish Specification.
+          x-versionAdded: v1_3_0
+      required:
+      - MessageId
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_MessageProperties:
+      additionalProperties: false
+      properties:
+        Message:
+          description: The human-readable message for this condition.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a human-readable message
+            describing this condition.
+          x-versionAdded: v1_3_0
+        MessageId:
+          description: The identifier for the message.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a `MessageId`, as defined
+            in the 'MessageId format' clause of the Redfish Specification.
+          x-versionAdded: v1_3_0
+      required:
+      - MessageId
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_RekeyReport:
+      additionalProperties: false
+      description: This property represents Rekey operataion report.
+      properties:
+        EncryptionKeyId:
+          description: This property will describe Encryption Key Id of Rekey Report.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property will describe Encryption Key Id of Rekey
+            Report.
+          x-versionAdded: v1_3_0
+        EndTime:
+          description: This property will describe End Time of Rekey Report.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property will describe End Time of Rekey Report.
+          x-versionAdded: v1_3_0
+        Messages:
+          description: This property will describe Messages of Rekey Report.
+          items:
+            $ref: '#/components/schemas/DellDrive_v1_4_1_Message'
+          readOnly: true
+          type: array
+          x-longDescription: This property will describe Messages of Rekey Report.
+          x-versionAdded: v1_3_0
+        StartTime:
+          description: This property will describe Start Time of Rekey Report.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property will describe Start Time of Rekey Report.
+          x-versionAdded: v1_3_0
+        Status:
+          $ref: '#/components/schemas/DellDrive_v1_4_1_RekeyStatus'
+          description: This property will describe Status of Rekey Report.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property will describe Status of Rekey Report.
+          x-versionAdded: v1_3_0
+      type: object
+      x-longDescription: This property represents Rekey operataion report.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellDrive_v1_4_1_RekeyStatus:
+      description: This property will describe Status of Rekey operation.
+      enum:
+      - NotInitiated
+      - InProgress
+      - Completed
+      - Failed
+      type: string
+      x-enumDescriptions:
+        Completed: Rekey operation is completed.
+        Failed: Rekey operation is failed.
+        InProgress: Rekey operation is in progress.
+        NotInitiated: Rekey operation is not initiated.
+      x-enumLongDescriptions:
+        Completed: Rekey operation is completed.
+        Failed: Rekey operation is failed.
+        InProgress: Rekey operation is in progress.
+        NotInitiated: Rekey operation is not initiated.
+      x-longDescription: This property will describe Status of Rekey operation.
+title: '#DellDrive.v1_4_1'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,283 @@
+components:
+  schemas:
+    DellNetworkAdapter_v1_4_0_Actions:
+      additionalProperties: false
+      properties:
+        '#NetworkAdapter.ExportTriggerLog':
+          $ref: '#/components/schemas/DellNetworkAdapter_v1_4_0_ExportTriggerLog'
+        '#NetworkAdapter.SetPowerSavingMode':
+          $ref: '#/components/schemas/DellNetworkAdapter_v1_4_0_SetPowerSavingMode'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellNetworkAdapter_v1_4_0_ControllerLinks:
+      additionalProperties: false
+      description: This version was added to add new Oem resources and Links.
+      properties:
+        CPUAffinity:
+          description: A reference to a Processor resource indicating CPU Affinity
+            of the resource.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: A reference to a Processor resource indicating CPU Affinity
+            of the resource.
+        CPUAffinity@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+      type: object
+      x-longDescription: This version was added to add new Oem resources and Links.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellNetworkAdapter_v1_4_0_DMFunctionality:
+      additionalProperties: false
+      properties:
+        DCPowerState:
+          description: This property signal is used for reading the state of the Power
+            feed.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: This property signal is used for reading the state of
+            the Power feed. When the signal is high there is correct power feed applied,
+            when low there is problem with power feed functionality.
+          x-versionAdded: v1_1_0
+        FlashBankCSControl:
+          description: This property is used to control the Flash Bank Chip Select
+            of the SoC.
+          format: int64
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: This property is used for control the Flash Bank Chip
+            Select of the SoC.
+          x-versionAdded: v1_1_0
+        FlashBankMuxControl:
+          description: This property is used to control the mux that selects the active
+            flash bank on the dual bank design.
+          format: int64
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: This property is used to control the mux that selects
+            the active flash bank on the dual bank design.
+          x-versionAdded: v1_1_0
+        NextBootFlashBank:
+          description: This property shows the Next Boot flash bank of the SoC.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shows the Next Boot flash bank of the SoC.
+          x-versionAdded: v1_1_0
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellNetworkAdapter_v1_4_0_DellNetworkAdapter:
+      additionalProperties: false
+      description: This property shall represent the Oem properties for a NetworkAdapter
+        resource.
+      properties:
+        DMFunctionality:
+          $ref: '#/components/schemas/DellNetworkAdapter_v1_4_0_DMFunctionality'
+          description: This property shall contain the read and Write the device management
+            functionality.
+          nullable: true
+          x-longDescription: This property shall contain the read and Write the device
+            management functionality.
+          x-versionAdded: v1_1_0
+        PLDMMonitoringEnabled:
+          description: An indication of whether monitoring and controling for PLDM
+            device is enabled for NetworkAdapter.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether monitoring and controling
+            for pldm device is enabled for NetworkAdapter.
+        PowerSaveMode:
+          $ref: '#/components/schemas/DellNetworkAdapter_v1_4_0_Mode'
+          description: A string that represents the PowerSaveMode status
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall contain the status of PowerSaveMode
+            [On/Off].
+          x-versionAdded: v1_3_0
+        StateSensors:
+          description: An array that represents the State Sensor Status.
+          items:
+            $ref: '#/components/schemas/DellNetworkAdapter_v1_4_0_StateSensors'
+          type: array
+          x-longDescription: This property shall contain the States for the StateSensor
+            resource. The DeviceName contains the Name of the Sensor and State contains
+            the status of the perticular Sensor.
+          x-versionAdded: v1_2_0
+      type: object
+      x-longDescription: This property shall represent the Oem properties for a NetworkAdapter
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellNetworkAdapter_v1_4_0_ExportTriggerLog:
+      additionalProperties: false
+      description: This action exports the trigger log to a specified server
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action exports the trigger log to a specified server
+        using the provided credentials and share information
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_4_0
+    DellNetworkAdapter_v1_4_0_ExportTriggerLogRequestBody:
+      additionalProperties: false
+      description: This action exports the trigger log to a specified server
+      properties:
+        FileName:
+          description: The target output file name.
+          pattern: ^[^:*?|/\<>]+$
+          type: string
+          x-longDescription: The target output file name.
+        IPAddress:
+          description: IP address of the network share such as 192.168.10.12. The
+            parameter is required if the ShareType parameter has value of FTP, NFS,
+            CIFS, HTTP, TFTP or HTTPS.
+          type: string
+          x-longDescription: IP address of the network share such as 192.168.10.12.
+            The parameter is required if the ShareType parameter has value of FTP,
+            NFS, CIFS, HTTP, TFTP or HTTPS.
+        Password:
+          description: Password to access Network Share.
+          type: string
+          x-longDescription: Password to access Network Share.
+        RequestType:
+          $ref: '#/components/schemas/DellNetworkAdapter_v1_4_0_RequestType'
+          description: Type of log collection requested such as CoreDump or CrashDump.
+          x-longDescription: Type of log collection requested such as CoreDump or
+            CrashDump.
+        ShareName:
+          description: Name of the Network Share.
+          type: string
+          x-longDescription: Name of the Network Share.
+        ShareType:
+          $ref: '#/components/schemas/DellNetworkAdapter_v1_4_0_ShareType'
+          description: Type of the network share.
+          x-longDescription: Type of the network share.
+        UserName:
+          description: UserName for Network share authentication.
+          type: string
+          x-longDescription: UserName for Network share authentication.
+      required:
+      - RequestType
+      - ShareType
+      type: object
+      x-longDescription: This action exports the trigger log to a specified server
+        using the provided credentials and share information
+    DellNetworkAdapter_v1_4_0_Mode:
+      enum:
+      - 'On'
+      - 'Off'
+      type: string
+      x-enumDescriptions:
+        'Off': A value indicating that the Power Save Mode on the SoC is disabled.
+          When set to this value, the SoC will not enter the Power Save Mode.
+        'On': A value indicating that the Power Save Mode on the SoC is enabled. When
+          set to this value, the SoC will enter the Power Save Mode and reduce its
+          power consumption.
+      x-enumLongDescriptions:
+        'Off': This value shall be used to disable the Power Save Mode on the SoC.
+          When set to this value, the SoC will not enter the Power Save Mode and will
+          not reduce its power consumption.
+        'On': This value shall be used to enable the Power Save Mode on the SoC. When
+          set to this value, the SoC will enter the Power Save Mode and reduce its
+          power consumption to save energy.
+    DellNetworkAdapter_v1_4_0_RequestType:
+      enum:
+      - CoreDump
+      - CrashDump
+      type: string
+      x-enumDescriptions:
+        CoreDump: CoreDump
+        CrashDump: CrashDump
+    DellNetworkAdapter_v1_4_0_SetPowerSavingMode:
+      additionalProperties: false
+      description: This action is used to set the PowerSavingMode for a NetworkAdapter.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to set the PowerSavingMode for a NetworkAdapter.
+        It enables or disables the power save mode on the NetworkAdapter.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_2_0
+    DellNetworkAdapter_v1_4_0_SetPowerSavingModeRequestBody:
+      additionalProperties: false
+      description: This action is used to set the PowerSavingMode for a NetworkAdapter.
+      properties:
+        Mode:
+          $ref: '#/components/schemas/DellNetworkAdapter_v1_4_0_Mode'
+          description: The type of Power Save Mode.
+          x-longDescription: This parameter shall contain the type of Power Save Mode.
+      required:
+      - Mode
+      type: object
+      x-longDescription: This action is used to set the PowerSavingMode for a NetworkAdapter.
+        It enables or disables the power save mode on the NetworkAdapter.
+    DellNetworkAdapter_v1_4_0_ShareType:
+      enum:
+      - CIFS
+      - HTTP
+      - HTTPS
+      - Local
+      - NFS
+      - FTP
+      - TFTP
+      type: string
+      x-enumDescriptions:
+        CIFS: CIFS
+        FTP: FTP
+        HTTP: HTTP
+        HTTPS: HTTPS
+        Local: Local
+        NFS: NFS
+        TFTP: TFTP
+    DellNetworkAdapter_v1_4_0_StateSensors:
+      additionalProperties: false
+      description: The entry represents the State Sensor Status.
+      properties:
+        DeviceName:
+          description: The name of the state sensor.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the name of the state sensor.
+          x-versionAdded: v1_2_0
+        State:
+          description: The state of the state sensor.
+          readOnly: true
+          type: string
+          x-longDescription: This property shall represent the state of the state
+            sensor.
+          x-versionAdded: v1_2_0
+      type: object
+      x-longDescription: The entry represents the State Sensor Status.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellNetworkAdapter.v1_4_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

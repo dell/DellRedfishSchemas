@@ -1,0 +1,266 @@
+components:
+  schemas:
+    DellUpdateService_v1_6_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellUpdateService.Install':
+          $ref: '#/components/schemas/DellUpdateService_v1_6_0_Install'
+        '#DellUpdateService.InstallStagedPackages':
+          $ref: '#/components/schemas/DellUpdateService_v1_6_0_InstallStagedPackages'
+        '#DellUpdateService.RecoverFirmware':
+          $ref: '#/components/schemas/DellUpdateService_v1_6_0_RecoverFirmware'
+        '#UpdateService.ConfigureCX8WriteProtect':
+          $ref: '#/components/schemas/DellUpdateService_v1_6_0_ConfigureCX8WriteProtect'
+        '#UpdateService.ConfigureHardwareWriteProtect':
+          $ref: '#/components/schemas/DellUpdateService_v1_6_0_ConfigureHardwareWriteProtect'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellUpdateService_v1_6_0_ConfigureCX8WriteProtect:
+      additionalProperties: false
+      deprecated: true
+      description: 'This action supports for PCIe CX-8 in band updates only, and users
+        will need to manually disable #WP before the update and enable #WP after the
+        update is completed.'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-deprecatedReason: This action has been deprecated in favor of ConfigureHardwareWriteProtect
+        action. This action if invoked will WriteProtect all the hardware components
+        and not just CX8.
+      x-longDescription: 'This action supports for PCIe CX-8 in band updates only,
+        and users will need to manually disable #WP before the update and enable #WP
+        after the update is completed.'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_4_0
+      x-versionDeprecated: v1_6_0
+    DellUpdateService_v1_6_0_ConfigureCX8WriteProtectRequestBody:
+      additionalProperties: false
+      description: 'This action supports for PCIe CX-8 in band updates only, and users
+        will need to manually disable #WP before the update and enable #WP after the
+        update is completed.'
+      properties:
+        RequestType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.yaml#/components/schemas/DellUpdateService_RequestType
+          description: This Parameter is used to set the CX8 Write Protect to Disable/Enable.
+          x-longDescription: This Parameter is used to set the CX8 Write Protect to
+            Disable/Enable.
+      required:
+      - RequestType
+      type: object
+      x-longDescription: 'This action supports for PCIe CX-8 in band updates only,
+        and users will need to manually disable #WP before the update and enable #WP
+        after the update is completed.'
+    DellUpdateService_v1_6_0_ConfigureHardwareWriteProtect:
+      additionalProperties: false
+      description: This action configures hardware write protection for supported
+        components. Users will need to manually disable write protection before firmware
+        updates and enable it after updates are completed.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action configures hardware write protection for supported
+        components. Users will need to manually disable write protection before firmware
+        updates and enable it after updates are completed.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_6_0
+    DellUpdateService_v1_6_0_ConfigureHardwareWriteProtectRequestBody:
+      additionalProperties: false
+      description: This action configures hardware write protection for supported
+        components. Users will need to manually disable write protection before firmware
+        updates and enable it after updates are completed.
+      properties:
+        HardwareComponents:
+          description: This parameter specifies the list of hardware components for
+            which write protection should be configured.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.yaml#/components/schemas/DellUpdateService_HardwareComponentType
+          type: array
+          x-longDescription: This parameter specifies the list of hardware components
+            for which write protection should be configured. Currently only Default
+            is supported, which applies write protection to all supported hardware
+            components.
+        RequestType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUpdateService.yaml#/components/schemas/DellUpdateService_RequestType
+          description: This parameter specifies whether to enable or disable hardware
+            write protection.
+          x-longDescription: This parameter specifies whether to enable or disable
+            hardware write protection.
+      required:
+      - HardwareComponents
+      - RequestType
+      type: object
+      x-longDescription: This action configures hardware write protection for supported
+        components. Users will need to manually disable write protection before firmware
+        updates and enable it after updates are completed.
+    DellUpdateService_v1_6_0_DellOemUpdateService:
+      additionalProperties: false
+      description: This version was introduced to add Oem Links in UpdateService resource.
+      properties:
+        DellSoftwareInventoryCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSoftwareInventoryCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSoftwareInventoryCollection resource.
+          x-versionAdded: v1_2_0
+      type: object
+      x-longDescription: This version was introduced to add Oem Links in UpdateService
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellUpdateService_v1_6_0_Install:
+      additionalProperties: false
+      deprecated: true
+      description: This action is used to install firmware inventory instances
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-deprecatedReason: This Action has been deprecated in favor of DMTF SimpleUpdate
+        Action.
+      x-longDescription: This action shall perform install of firmware inventory instances
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionDeprecated: v1_1_0
+    DellUpdateService_v1_6_0_InstallRequestBody:
+      additionalProperties: false
+      description: This action is used to install firmware inventory instances
+      properties:
+        InstallUpon:
+          $ref: '#/components/schemas/DellUpdateService_v1_6_0_InstallUpon'
+          description: The type of Install Upon option, default value is NextReboot
+            if not provided by user
+          x-longDescription: The type of Install Upon option, default value is NextReboot
+            if not provided by user
+        SoftwareIdentityURIs:
+          description: Contains the relative URIs of the firmware inventory components
+            to be installed, only one component installation at a time is allowed.
+          items:
+            type: string
+          type: array
+          x-longDescription: Contains the relative URIs of the firmware inventory
+            components to be installed, only one component installation at a time
+            is allowed.
+      required:
+      - InstallUpon
+      - SoftwareIdentityURIs
+      type: object
+      x-longDescription: This action shall perform install of firmware inventory instances
+    DellUpdateService_v1_6_0_InstallStagedPackages:
+      additionalProperties: false
+      description: This action creates install jobs for all eligible firmware packages
+        in the LocalImageStore collection. Supports @Redfish.OperationApplyTime (Immediate
+        or OnReset).
+      properties:
+        '@Redfish.OperationApplyTimeSupport':
+          $ref: http://redfish.dmtf.org/schemas/v1/Settings.yaml#/components/schemas/Settings_OperationApplyTimeSupport
+          description: An indication of whether a client can request an apply time
+            for a create, delete, or action operation of a resource through the OperationApplyTime
+            term.
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action accepts no package list parameter. Install jobs
+        are created for all packages with PackageValidationStatus = Success in the
+        LocalImageStore collection based on the operation apply time. The action supports
+        @Redfish.OperationApplyTime with values Immediate (install now) or OnReset
+        (install on next reboot).
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_5_0
+    DellUpdateService_v1_6_0_InstallStagedPackagesRequestBody:
+      additionalProperties: false
+      description: This action creates install jobs for all eligible firmware packages
+        in the LocalImageStore collection. Supports @Redfish.OperationApplyTime (Immediate
+        or OnReset).
+      properties:
+        RebootHost:
+          description: Whether to trigger a host reboot after update job creation.
+          type: boolean
+          x-longDescription: When set to true and ApplyTime is Immediate, the host
+            system will be rebooted after all update jobs are created. When ApplyTime
+            is OnReset, this parameter is ignored as the reboot will occur at the
+            next scheduled system reset.
+      type: object
+      x-longDescription: This action accepts no package list parameter. Install jobs
+        are created for all packages with PackageValidationStatus = Success in the
+        LocalImageStore collection based on the operation apply time. The action supports
+        @Redfish.OperationApplyTime with values Immediate (install now) or OnReset
+        (install on next reboot).
+    DellUpdateService_v1_6_0_InstallUpon:
+      enum:
+      - Now
+      - NextReboot
+      - NowAndReboot
+      type: string
+      x-enumDescriptions:
+        NextReboot: To indicate install on next reboot
+        Now: To indicate install now
+        NowAndReboot: To indicate install and reboot
+    DellUpdateService_v1_6_0_RecoverFirmware:
+      additionalProperties: false
+      description: This action shall recover BOSS controller firmware in case of root
+        of trust (RoT) failure.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall recover BOSS controller firmware in case
+        of root of trust (RoT) failure.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_3_0
+    DellUpdateService_v1_6_0_RecoverFirmwareRequestBody:
+      additionalProperties: false
+      description: This action shall recover BOSS controller firmware in case of root
+        of trust (RoT) failure.
+      properties:
+        TargetFQDD:
+          description: This Parameter is the FQDD of the BOSS Controller.
+          type: string
+          x-longDescription: This Parameter is the FQDD of the BOSS Controller.
+      required:
+      - TargetFQDD
+      type: object
+      x-longDescription: This action shall recover BOSS controller firmware in case
+        of root of trust (RoT) failure.
+title: '#DellUpdateService.v1_6_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell
+x-release: '2026.2'

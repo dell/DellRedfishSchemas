@@ -1,0 +1,69 @@
+components:
+  schemas:
+    DellPCIeSSDExtender_v1_0_0_DellPCIeSSDExtender:
+      additionalProperties: false
+      description: An instance of DellPCIeSSDExtender will have data specific to the
+        PCIeSSD extender in the managed system.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceDescription:
+          description: A string containing the friendly Fully Qualified Device Description,a
+            property that describes the device and its location.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string containing the friendly Fully Qualified Device
+            Description,a property that describes the device and its location.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        InstanceID:
+          description: A unique identifier for the instance.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A unique identifier for the instance.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        RollupStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSDExtender.yaml#/components/schemas/DellPCIeSSDExtender_RollupStatus
+          description: RollupStatus provides overall health status of the system by
+            considering their sub-component health statuses, e.g RollupStatus will
+            be degraded if any one of the sub-component is degraded.
+          nullable: true
+          readOnly: true
+          x-longDescription: RollupStatus provides overall health status of the system
+            by considering their sub-component health statuses, e.g RollupStatus will
+            be degraded if any one of the sub-component is degraded.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellPCIeSSDExtender will have data specific
+        to the PCIeSSD extender in the managed system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellPCIeSSDExtender.v1_0_0.DellPCIeSSDExtender'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

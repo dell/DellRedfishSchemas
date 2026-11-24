@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellWitnessServer_DellWitnessServer:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellWitnessServer.v1_1_0.yaml#/components/schemas/DellWitnessServer_v1_1_0_DellWitnessServer
+      description: An Oem extension to represent Witness Server Node related properties
+        in the chassis.
+      x-longDescription: An Oem extension to represent Witness Server Node related
+        properties in the chassis.
+title: '#DellWitnessServer'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

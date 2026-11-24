@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################-->
+<!--# Redfish Schema:  DellManager  v1.7.0                                          -->
+<!--# This schema complements to OEM section of Manager Resource                    -->
+<!--# Copyright 2014-2023 Dell, Inc. or its subsidiaries.All Rights Reserved.       -->
+<!--################################################################################-->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+    <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+    <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellJobCollection_v1.xml">
+    <edmx:Include Namespace="DellJobCollection"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAttributes_v1.xml">
+    <edmx:Include Namespace="DellAttributes"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCard_v1.xml">
+    <edmx:Include Namespace="DelliDRACCard"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/CertificateCollection_v1.xml">
+    <edmx:Include Namespace="CertificateCollection"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellJobService_v1.xml">
+    <edmx:Include Namespace="DellJobService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLCService_v1.xml">
+    <edmx:Include Namespace="DellLCService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicensableDeviceCollection_v1.xml">
+    <edmx:Include Namespace="DellLicensableDeviceCollection"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseCollection_v1.xml">
+    <edmx:Include Namespace="DellLicenseCollection"/>
+  </edmx:Reference>
+   <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicenseManagementService_v1.xml">
+    <edmx:Include Namespace="DellLicenseManagementService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystemQuickSyncCollection_v1.xml">
+  <edmx:Include Namespace="DellSystemQuickSyncCollection"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTimeService_v1.xml">
+  <edmx:Include Namespace="DellTimeService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellUSBDeviceCollection_v1.xml">
+  <edmx:Include Namespace="DellUSBDeviceCollection"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService_v1.xml">
+  <edmx:Include Namespace="DelliDRACCardService"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Manager_v1.xml">
+    <edmx:Include Namespace="Manager"/>
+    <edmx:Include Namespace="Manager.v1_0_0"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager">
+	  <Action Name="ResetToDefaults" IsBound="true">
+		<Parameter Name="DellManager" Type="Manager.v1_0_0.OemActions"/>
+		<Parameter Name="ResetType" Type="DellManager.v1_0_0.ResetType" Nullable="false">
+		  <Annotation Term="OData.Description" String="The type of ResetType option to be performed."/>
+		  <Annotation Term="OData.LongDescription" String="The type of ResetType option to be performed."/>
+		</Parameter>
+        <Annotation Term="OData.Description" String="This action is used to reset the Dell attributes to default."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform reset of the Dell attributes to their default values."/>
+      </Action>
+      <Action Name="ClearPending" IsBound="true">
+        <Parameter Name="DellManager" Type="Manager.v1_0_0.OemActions"/>
+        <Annotation Term="OData.Description" String="This action is used to clear all the pending values."/>
+        <Annotation Term="OData.LongDescription" String="This action shall perform a clear pending values."/>
+     </Action>
+
+      <Action Name="SetCustomDefaults" IsBound="true">
+        <Parameter Name="DellManager" Type="Manager.v1_0_0.OemActions"/>
+        <Parameter Name="CustomDefaults" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="The XML representing the custom defaults."/>
+          <Annotation Term="OData.LongDescription" String="The XML representing the custom defaults."/>
+        </Parameter>
+        <Annotation Term="OData.Description" String="This action is used to set the custom defaults to be used during Reset."/>
+        <Annotation Term="OData.LongDescription" String="This action is used to set the custom defaults to be used during Reset."/>
+        <Annotation Term="Redfish.Revisions">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+              <PropertyValue Property="Version" String="v1_4_0"/>
+            </Record>
+          </Collection>
+        </Annotation>
+      </Action>
+
+      <Action Name="GetIdentityProvenanceChain" IsBound="true">
+        <Parameter Name="DellManager" Type="Manager.v1_0_0.OemActions"/>
+        <Annotation Term="OData.Description" String="This action retrieves the identity provenance certificate chain."/>
+        <Annotation Term="OData.LongDescription" String="This action shall retrieve the identity provenance certificate chain from the easyrestore backend and return it as a PEM chain for motherboard/DC-SCM replacement tracking."/>
+        <Annotation Term="Redfish.Revisions">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+              <PropertyValue Property="Version" String="v1_7_0"/>
+            </Record>
+          </Collection>
+        </Annotation>
+        <ReturnType Type="DellManager.v1_7_0.GetIdentityProvenanceChainResponse" Nullable="false"/>
+      </Action>
+
+     <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+     <ComplexType Name="DellManager" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="Oem data related to DellManager."/>
+        <Annotation Term="OData.LongDescription" String="Oem data related to DellManager."/>
+     </ComplexType>
+     <ComplexType Name="DellManagerLinks" Abstract="true">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="This is the complex property is for the additional OEM Links realted to the DMTF Manager Schema."/>
+        <Annotation Term="OData.LongDescription" String="This is the complex property is for the additional OEM Links realted to the DMTF Manager Schema."/>
+     </ComplexType>
+      <EnumType Name="PortOwner">
+        <Member Name="Host">
+          <Annotation Term="OData.Description" String="The host system owns and manages the front/rear USB ports."/>
+        </Member>
+        <Member Name="BMC">
+          <Annotation Term="OData.Description" String="The Baseboard Management Controller (BMC) owns and manages the front/rear USB ports."/>
+        </Member>
+      </EnumType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_0_0">
+
+      <!--ResetType parameter values for ResetToDefaults Action-->
+      <EnumType Name="ResetType">
+        <Member Name="All">
+          <Annotation Term="OData.Description" String="All configuration is set to default."/>
+        </Member>
+        <Member Name="ResetAllWithRootDefaults">
+          <Annotation Term="OData.Description" String="All configuration including network is set to default exception root user password set to calvin."/>
+        </Member>
+        <Member Name="Default">
+          <Annotation Term="OData.Description" String="All configuration is set to default except users and network settings are preserved."/>
+        </Member>
+        <Member Name="CustomDefaults">
+          <Annotation Term="OData.Description" String="All configuration is set to the custom defaults which would have been set previously using the SetCustomDefaults Action. In case there is no saved custom default settings available, this option will not work"/>
+          <Annotation Term="Redfish.Revisions">
+          <Collection>
+            <Record>
+              <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+              <PropertyValue Property="Version" String="v1_4_0"/>
+            </Record>
+          </Collection>
+        </Annotation>
+        </Member>
+      </EnumType>
+     <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+      </ComplexType>
+
+      <ComplexType Name="ServerConfigurationProfileResults">
+        <Property Name="DisplayValue" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the Display Value of the Configuration opertaion."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain Display Value of the Configuration opertaion."/>
+        </Property>
+        <Property Name="ErrCode" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the Error code of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain Error code of the configuration operation, default value for success is 0."/>
+        </Property>
+        <Property Name="Name" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the Name of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain Name of the configuration operation."/>
+        </Property>
+        <Property Name="NewValue" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the New Value of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain New Value of the configuration operation."/>
+        </Property>
+        <Property Name="OldValue" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the Old Value of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain Old Value of the configuration operation."/>
+        </Property>
+        <Property Name="FQDD" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Description" String="This is the FQDD of the configuration operation."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain FQDD of the configuration operation."/>
+        </Property>
+	 </ComplexType>
+
+    </Schema>
+
+	<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_1_0">
+      <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+      <Annotation Term="OData.Description" String="This version was created to add Status property."/>
+	  <Annotation Term="OData.LongDescription" String="This resource shall be used the status of a configuration operation change."/>
+
+      <EnumType Name="Status">
+        <Member Name="Success">
+          <Annotation Term="OData.Description" String="Status of the configuration operation change when succeeded."/>
+        </Member>
+        <Member Name="Failure">
+          <Annotation Term="OData.Description" String="Status of the configuration operation change when failed."/>
+        </Member>
+	  </EnumType>
+	</Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_2_0">
+        <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+        <Annotation Term="OData.Description" String="This version was created to add DelliDRACCard navigation property and RemoteSystemLogs property."/>
+        <Annotation Term="OData.LongDescription" String="This version was created to add DelliDRACCard navigation property and RemoteSystemLogs property."/>
+        <ComplexType Name="DellManager" BaseType="DellManager.DellManager">
+			      <NavigationProperty Name="DelliDRACCard" Type="DelliDRACCard.DelliDRACCard" ContainsTarget="true" Nullable="false">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="A resource representation of DelliDRACCard."/>
+                <Annotation Term="OData.LongDescription" String="A resource representation of DelliDRACCard."/>
+                <Annotation Term="OData.AutoExpand"/>
+            </NavigationProperty>
+            <Property Name="RemoteSystemLogs" Type="DellManager.v1_2_0.RemoteSystemLogs" Nullable="false">
+                <Annotation Term="OData.Description" String="TLS based remote syslog configurations."/>
+                <Annotation Term="OData.LongDescription" String="This property shall contain the TLS based remote syslog configurations."/>
+            </Property>
+        </ComplexType>
+
+        <ComplexType Name="RemoteSystemLogs">
+            <Property Name="HTTPS" Type="DellManager.v1_2_0.HTTPS" Nullable="false">
+                <Annotation Term="OData.Description" String="TLS based remote syslog configurations and client trust certificate."/>
+                <Annotation Term="OData.LongDescription" String="This property shall contain the TLS based remote syslog configurations and client trust certificate."/>
+            </Property>
+            <Property Name="CA" Type="DellManager.v1_2_0.CA" Nullable="false">
+                <Annotation Term="OData.Description" String="TLS based remote syslog CA certificate."/>
+                <Annotation Term="OData.LongDescription" String="This property shall contain the TLS based remote syslog CA certificate."/>
+            </Property>
+        </ComplexType>
+
+        <ComplexType Name="HTTPS">
+            <NavigationProperty Name="Certificates" Type="CertificateCollection.CertificateCollection" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="The link to a collection of client trust certificates used for TLS support for RemoteSystemLogs."/>
+                <Annotation Term="OData.LongDescription" String="This property shall contain a link to a Resource Collection of type CertificateCollection."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+            <Property Name="SecureSysLogEnable" Type="DellManager.v1_2_0.SecureSysLogEnable" Nullable="false">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                <Annotation Term="OData.Description" String="An indication of whether TLS based remote syslog is enabled."/>
+                <Annotation Term="OData.LongDescription" String="This property shall indicate whether TLS based remote syslog is enabled or not. Enabled indicates TLS based remote syslog is enabled. Disabled indicates TLS based remote syslog is disabled. By default TLS support is disabled."/>
+            </Property>
+            <Property Name="SecurePort" Type="Edm.Int64" Nullable="false">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                <Annotation Term="OData.Description" String="Specifies the secure remote syslog port number."/>
+                <Annotation Term="OData.LongDescription" String="This property shall contain the secure remote syslog port number. The default port value is 6514. The port value should be an integral value from 1 to 65535."/>
+                <Annotation Term="Validation.Minimum" Int="1"/>
+                <Annotation Term="Validation.Maximum" Int="65535"/>
+            </Property>
+             <Property Name="SecureClientAuth" Type="DellManager.v1_2_0.SecureClientAuth" Nullable="false">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                <Annotation Term="OData.Description" String="The identity authentication option used by iDRAC for TLS based remote syslog."/>
+                <Annotation Term="OData.LongDescription" String="This property shall indicate the identity authentication option used by iDRAC for TLS based remote syslog. By default iDRAC will use anonymous idenity which can be overriden by generating a signed trust certificate to prove iDRAC's authenticity."/>
+            </Property>
+            <Property Name="SecureServers" Type="Collection(Edm.String)" Nullable="false">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                <Annotation Term="OData.Description" String="Name of the TLS supported remote syslog servers."/>
+                <Annotation Term="OData.LongDescription" String="This property shall contain the list of all TLS supported remote syslog servers."/>
+            </Property>
+        </ComplexType>
+
+        <ComplexType Name="CA">
+            <NavigationProperty Name="Certificates" Type="CertificateCollection.CertificateCollection" ContainsTarget="true">
+                <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                <Annotation Term="OData.Description" String="The link to a collection of CA certificates used for TLS support for RemoteSystemLogs."/>
+                <Annotation Term="OData.LongDescription" String="This property shall contain a link to a Resource Collection of type CertificateCollection."/>
+                <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+        </ComplexType>
+
+        <EnumType Name="SecureSysLogEnable">
+            <Member Name="Enabled">
+                <Annotation Term="OData.Description" String="TLS based remote syslog is enabled."/>
+            </Member>
+            <Member Name="Disabled">
+                <Annotation Term="OData.Description" String="TLS based remote syslog is disabled."/>
+            </Member>
+        </EnumType>
+
+        <EnumType Name="SecureClientAuth">
+            <Member Name="Anonymous">
+                <Annotation Term="OData.Description" String="TLS based remote syslog with anonymous client authentication."/>
+            </Member>
+            <Member Name="Certificate">
+                <Annotation Term="OData.Description" String="TLS based remote syslog with certificate based client trust authentication"/>
+            </Member>
+        </EnumType>
+      </Schema>
+      <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_3_0">
+        <Annotation Term="Redfish.OwningEntity" String="Dell"/>
+        <Annotation Term="OData.Description" String="This version was created to add DellJobCollection navigation property."/>
+        <Annotation Term="OData.LongDescription" String="This version was created to add DellJobCollection navigation property."/>
+        <ComplexType Name="DellManager" BaseType="DellManager.v1_2_0.DellManager">
+            <NavigationProperty Name="Jobs" Type="DellJobCollection.DellJobCollection" ContainsTarget="true" Nullable="true">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="A reference to the collection of Job associated with this system."/>
+              <Annotation Term="OData.LongDescription" String="The value of this property shall be a link to a collection of type Job."/>
+              <Annotation Term="OData.AutoExpandReferences"/>
+            </NavigationProperty>
+        </ComplexType>
+      </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_4_0">
+      <Annotation Term="OData.Description" String="This version was created to add a new property CustomDefaultsDownloadURI to the complextype DellManager and to add support for a new Action SetCustomDefaults.  It was also created to add a new enum for "/>
+      <Annotation Term="OData.LongDescription" String="This version was created to add DelliDRACCard navigation property and RemoteSystemLogs property."/>
+      <ComplexType Name="DellManager" BaseType="DellManager.v1_3_0.DellManager">
+        <Property Name="CustomDefaultsDownloadURI" Type="Edm.String" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The URI at which to download saved custom defaults. This URI shall return an HTTP 404, if the custom defaults have not been set already by using the SetCustomDefaults Oem Action."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the URI at which to download the saved custom defaults, using the Redfish protocol and authentication methods.  The service provides this URI for the download of the OEM-specific XML file of the saved custom defaults.  An HTTP GET from this URI shall return a response payload of MIME time `application/octet-stream`. This URI shall return an HTTP 404, if the custom defaults have not been set already by using the SetCustomDefaults Oem Action."/>
+          <Annotation Term="OData.IsURL"/>
+        </Property>
+      </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_5_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <Annotation Term="OData.Description" String="This version was created to add a new navigation properties to the complextype DellManagerLinks."/>
+      <Annotation Term="OData.LongDescription" String="This version was created to add a new navigation properties to the complextype DellManagerLinks."/>
+      <ComplexType Name="DellManager" BaseType="DellManager.v1_4_0.DellManager">
+        <Property Name="FrontUSBPortOwner" Type="DellManager.PortOwner">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="Indicates the entity that currently owns the front USB ports."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate the entity that currently controls the front USB ports of the system."/>
+          <Annotation Term="Redfish.Revisions">
+            <Collection>
+              <Record>
+                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Deprecated"/>
+                <PropertyValue Property="Version" String="v1_5_1"/>
+                <PropertyValue Property="Description" String="This property is deprecated in favour of DMTF standard USBPorts resource."/>
+              </Record>
+            </Collection>
+          </Annotation>
+        </Property>
+        <Property Name="RearUSBPortOwner" Type="DellManager.PortOwner">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="Indicates the entity that currently owns the rear USB ports."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate the entity that currently controls the rear USB ports of the system."/>
+          <Annotation Term="Redfish.Revisions">
+            <Collection>
+              <Record>
+                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Deprecated"/>
+                <PropertyValue Property="Version" String="v1_5_1"/>
+                <PropertyValue Property="Description" String="This property is deprecated in favour of DMTF standard USBPorts resource."/>
+              </Record>
+            </Collection>
+          </Annotation>
+        </Property>
+      </ComplexType>
+      <ComplexType Name="DellManagerLinks" BaseType="DellManager.DellManagerLinks">
+        <NavigationProperty Name="DellAttributes" Type="Collection(DellAttributes.DellAttributes)" ContainsTarget="true">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellAttributes resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a DellAttributes resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DellJobService" Type="DellJobService.DellJobService" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellJobService resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a Processor resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DellLCService" Type="DellLCService.DellLCService" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellLCService resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a Processor resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DellLicensableDeviceCollection" Type="DellLicensableDeviceCollection.DellLicensableDeviceCollection" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellLicensableDeviceCollection resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a DellLicensableDeviceCollection resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DellLicenseCollection" Type="DellLicenseCollection.DellLicenseCollection" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellLicenseCollection resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a DellLicenseCollection resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DellLicenseManagementService" Type="DellLicenseManagementService.DellLicenseManagementService" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellLicenseManagementService resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a DellLicenseManagementService resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DellSystemQuickSyncCollection" Type="DellSystemQuickSyncCollection.DellSystemQuickSyncCollection" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellSystemQuickSyncCollection resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a DellSystemQuickSyncCollection resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DellTimeService" Type="DellTimeService.DellTimeService" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellTimeService resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a DellTimeService resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DellUSBDeviceCollection" Type="DellUSBDeviceCollection.DellUSBDeviceCollection" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DellUSBDeviceCollection resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a DellUSBDeviceCollection resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DelliDRACCardService" Type="DelliDRACCardService.DelliDRACCardService" ContainsTarget="true" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A reference to a DelliDRACCardService resource."/>
+          <Annotation Term="OData.LongDescription" String="A reference to a DelliDRACCardService resource."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+      </ComplexType>
+  </Schema>
+  <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_5_1">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <Annotation Term="OData.Description" String="This version was created to deprecate the FrontUSBPortOwner and RearUSBPortOwner from DellManager ComplexType."/>
+      <Annotation Term="OData.LongDescription" String="This version was created to deprecate the FrontUSBPortOwner and RearUSBPortOwner from DellManager ComplexType."/>
+      <ComplexType Name="DellManager" BaseType="DellManager.v1_5_0.DellManager"/>
+      <ComplexType Name="DellManagerLinks" BaseType="DellManager.v1_5_0.DellManagerLinks"/>
+  </Schema>
+  <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_6_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <Annotation Term="OData.Description" String="This version was created to add the FSDStatus property."/>
+      <Annotation Term="OData.LongDescription" String="This version was created to add the FSDStatus property."/>
+      <ComplexType Name="DellManager" BaseType="DellManager.v1_5_1.DellManager">
+        <Property Name="FSDStatus" Type="DellManager.v1_6_0.FSDStatus">
+          <Annotation Term="OData.Description" String="This is the complex property for the additional FSD related properties."/>
+          <Annotation Term="OData.LongDescription" String="This is the complex property for the additional FSD related properties."/>
+        </Property>
+      </ComplexType>
+      <ComplexType Name="FSDStatus">
+        <Annotation Term="OData.Description" String="This is the complex property for the additional FSD related properties."/>
+        <Annotation Term="OData.LongDescription" String="This is the complex property for the additional FSD related properties."/>
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Property Name="Enabled" Type="Edm.Boolean">
+          <Annotation Term="OData.Description" String="This property shall indicate whether Field Service Debug is enabled or disabled."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate whether Field Service Debug is enabled or disabled."/>
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+        </Property>
+      </ComplexType>
+      <ComplexType Name="DellManagerLinks" BaseType="DellManager.v1_5_1.DellManagerLinks"/>
+  </Schema>
+  <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellManager.v1_7_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <Annotation Term="OData.Description" String="This version was created to add the GetIdentityProvenanceChain action."/>
+      <Annotation Term="OData.LongDescription" String="This version was created to add the GetIdentityProvenanceChain action for retrieving the identity provenance certificate chain."/>
+      <ComplexType Name="DellManager" BaseType="DellManager.v1_6_0.DellManager"/>
+      <ComplexType Name="DellManagerLinks" BaseType="DellManager.v1_6_0.DellManagerLinks"/>
+      <ComplexType Name="GetIdentityProvenanceChainResponse">
+          <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+          <Annotation Term="OData.Description" String="The response body for the GetIdentityProvenanceChain action."/>
+          <Annotation Term="OData.LongDescription" String="This type shall contain the properties found in the response body for the GetIdentityProvenanceChain action."/>
+          <Property Name="IdentityProvenanceChain" Type="Collection(DellManager.v1_7_0.IdentityProvenanceCertEntry)" Nullable="false">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="Array of certificate entry objects representing the identity provenance chain."/>
+              <Annotation Term="OData.LongDescription" String="This property shall contain an array of certificate entry objects. Each entry contains an Id and CertificateString. Entries are ordered by pair index from CertChainRestore.json. For each pair, the SCV entry (if present) comes before the IDEVID entry."/>
+              <Annotation Term="Redfish.Required"/>
+          </Property>
+      </ComplexType>
+      <ComplexType Name="IdentityProvenanceCertEntry">
+          <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+          <Annotation Term="OData.Description" String="A single certificate entry in the identity provenance chain."/>
+          <Annotation Term="OData.LongDescription" String="This type shall contain a single certificate entry with its identifier and PEM-encoded certificate string."/>
+          <Property Name="Id" Type="Edm.String" Nullable="false">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="Certificate identifier in format SCV_&lt;index&gt; or IDEVID_&lt;index&gt;."/>
+              <Annotation Term="OData.LongDescription" String="This property shall contain the certificate identifier in format SCV_&lt;index&gt; or IDEVID_&lt;index&gt; where index comes from the pair's index field in CertChainRestore.json."/>
+              <Annotation Term="Redfish.Required"/>
+          </Property>
+          <Property Name="CertificateString" Type="Edm.String" Nullable="false">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="PEM-encoded certificate string."/>
+              <Annotation Term="OData.LongDescription" String="This property shall contain the PEM-encoded certificate string."/>
+              <Annotation Term="Redfish.Required"/>
+          </Property>
+      </ComplexType>
+  </Schema>
+ </edmx:DataServices>
+</edmx:Edmx>

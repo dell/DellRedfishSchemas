@@ -1,0 +1,55 @@
+components:
+  schemas:
+    DellOemPowerSubsystem_v1_0_0_DellOemPowerSubsystem:
+      additionalProperties: false
+      description: This version was introduced to add Oem Links in PowerSubsytem resource.
+      properties:
+        DellControllerBatteryCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellControllerBatteryCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellControllerBatteryCollection resource.
+        DellPowerSupplyCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPowerSupplyCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPowerSupplyCollection resource.
+        DellPowerSupplyViewCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPowerSupplyViewCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPowerSupplyViewCollection resource.
+        PowerSubsystemColdRedundancy:
+          $ref: '#/components/schemas/DellOemPowerSubsystem_v1_0_0_PowerSubsystemColdRedundancy'
+          description: Platform Capabilities and information for Redundancy
+          x-longDescription: Platform Capabilities and information about Power Subsystem
+            Redundancy
+      type: object
+      x-longDescription: This version was introduced to add Oem Links in PowerSubsystem
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemPowerSubsystem_v1_0_0_PowerSubsystemColdRedundancy:
+      additionalProperties: false
+      properties:
+        ColdRedunancyCapable:
+          description: MCRPS capablility of the PowerSubsystem
+          readOnly: true
+          type: boolean
+          x-longDescription: MCRPS capablility of the PowerSubsystem
+        ColdRedunancyEnable:
+          description: This property represents if the Power Subsystem has cold redundancy
+            enabled
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: This property represents if the Power Subsystem has cold
+            redundancy enabled
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellOemPowerSubsystem.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

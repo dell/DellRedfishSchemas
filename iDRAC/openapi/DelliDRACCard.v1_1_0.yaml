@@ -1,0 +1,73 @@
+components:
+  schemas:
+    DelliDRACCard_v1_1_0_DelliDRACCard:
+      additionalProperties: false
+      description: An instance of DelliDRACCard will have data specific to the Integrated
+        Dell Remote Access Controller (iDRAC) in the managed system.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        IPMIVersion:
+          description: A string containing the IPMI Version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string containing the IPMI Version.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LastSystemInventoryTime:
+          description: This property provides the last time System Inventory Collection
+            On Reboot(CSIOR) was performed or the object was last updated on iDRAC.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the last time System Inventory
+            Collection On Reboot(CSIOR) was performed or the object was last updated
+            on iDRAC. The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        LastUpdateTime:
+          description: This property provides the last time the data was updaed. The
+            value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the last time the data was updaed.
+            The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        URLString:
+          description: A string containing the URL for the iDRAC Web GUI.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: A string containing the URL for the iDRAC Web GUI.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DelliDRACCard will have data specific to the
+        Integrated Dell Remote Access Controller (iDRAC) in the managed system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DelliDRACCard.v1_1_0.DelliDRACCard'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,842 @@
+components:
+  schemas:
+    DellOem_v1_3_0_DellOemLinks:
+      additionalProperties: false
+      description: TBD
+      properties:
+        BootOrder:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellBootSources resource.
+          readOnly: true
+          x-longDescription: A reference to a DellBootSources resource.
+        CPUAffinity:
+          description: A reference to a Processor resource indicating CPU Affinity
+            of the resource.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: A reference to a Processor resource indicating CPU Affinity
+            of the resource.
+          x-versionAdded: v1_2_0
+        CPUAffinity@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+        Certificates:
+          description: A reference to a Certificate resource.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: A reference to a Certificate resource.
+          x-versionAdded: v1_3_0
+        Certificates@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+        DellAcceleratorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellAcceleratorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellAcceleratorCollection resource.
+        DellAssemblyCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellAssemblyCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellAssemblyCollection resource.
+        DellAttributes:
+          description: A reference to a DellAttributes resource.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: A reference to a DellAttributes resource.
+        DellAttributes@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+        DellBIOSService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellBIOSService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellBIOSService resource.
+        DellBootSources:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellBootSources resource.
+          readOnly: true
+          x-longDescription: A reference to a DellBootSources resource.
+        DellCertificateCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellCertificateCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellCertificateCollection resource.
+        DellCertificateStoreCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellCertificateStoreCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellCertificateStoreCollection resource.
+        DellChassisCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellChassisCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellChassisCollection resource.
+        DellControllerBatteryCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellControllerBatteryCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellControllerBatteryCollection resource.
+        DellControllerCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellControllerCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellControllerCollection resource.
+        DellEnclosureCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellEnclosureCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellEnclosureCollection resource.
+        DellEnclosureEMMCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellEnclosureEMMCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellEnclosureEMMCollection resource.
+        DellEnclosureFanSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellEnclosureFanSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellEnclosureFanSensorCollection resource.
+        DellEnclosurePowerSupplyCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellEnclosurePowerSupplyCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellEnclosurePowerSupplyCollection resource.
+        DellEnclosureTemperatureSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellEnclosureTemperatureSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellEnclosureTemperatureSensorCollection
+            resource.
+        DellFCCapabilitiesCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellFCCapabilitiesCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellFCCapabilitiesCollection resource.
+        DellFCCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellFCCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellFCCollection resource.
+        DellFCPortMetricsCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellFCPortMetricsCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellFCPortMetricsCollection resource.
+        DellFCStatisticsCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellFCStatisticsCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellFCStatisticsCollection resource.
+        DellGPUSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellGPUSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellGPUSensorCollection resource.
+        DellInfiniBandCapabilitiesCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellInfiniBandCapabilitiesCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellInfiniBandCapabilitiesCollection
+            resource.
+        DellInfiniBandCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellInfiniBandCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellInfiniBandCollection resource.
+        DellInfiniBandPortMetricsCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellInfiniBandPortMetricsCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellInfiniBandPortMetricsCollection
+            resource.
+        DellJobService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellJobService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellJobService resource.
+        DellLCService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellLCService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellLCService resource.
+        DellLicensableDeviceCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellLicensableDeviceCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellLicensableDeviceCollection resource.
+        DellLicenseCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellLicenseCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellLicenseCollection resource.
+        DellLicenseManagementService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellLicenseManagementService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellLicenseManagementService resource.
+        DellMemoryCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellMemoryCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellMemoryCollection resource.
+        DellMetricService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellMetricService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellMetricService resource.
+        DellNICCapabilitiesCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellNICCapabilitiesCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellNICCapabilitiesCollection resource.
+        DellNICCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellNICCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellNICCollection resource.
+        DellNICPortMetricsCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellNICPortMetricsCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellNICPortMetricsCollection resource.
+        DellNICStatisticsCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellNICStatisticsCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellNICStatisticsCollection resource.
+        DellNetworkAttributes:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNetworkAttributes.
+          nullable: true
+          readOnly: true
+          x-longDescription: A resource representation of DellNetworkAttributes.
+        DellNetworkTransceiverCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellNetworkTransceiverCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellNetworkTransceiverCollection resource.
+        DellNetworkTransceiverPortMetricsCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellNetworkTransceiverPortMetricsCollection
+            resource.
+          readOnly: true
+          x-longDescription: A reference to a DellNetworkTransceiverPortMetricsCollection
+            resource.
+        DellNumericSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellNumericSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellNumericSensorCollection resource.
+        DellOSDeploymentService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellOSDeploymentService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellOSDeploymentService resource.
+        DellOpaqueManagementDataCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellOpaqueManagementDataCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellOpaqueManagementDataCollection resource.
+        DellPCIeFunctionCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPCIeFunctionCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPCIeFunctionCollection resource.
+        DellPCIeSSDBackPlaneCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPCIeSSDBackPlaneCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPCIeSSDBackPlaneCollection resource.
+        DellPCIeSSDCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPCIeSSDCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPCIeSSDCollection resource.
+        DellPCIeSSDExtenderCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPCIeSSDExtenderCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPCIeSSDExtenderCollection resource.
+        DellPSNumericSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPSNumericSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPSNumericSensorCollection resource.
+        DellPersistentStorageService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPersistentStorageService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPersistentStorageService resource.
+        DellPhysicalDiskCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPhysicalDiskCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPhysicalDiskCollection resource.
+        DellPowerSupplyCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPowerSupplyCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPowerSupplyCollection resource.
+        DellPowerSupplyViewCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPowerSupplyViewCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPowerSupplyViewCollection resource.
+        DellPresenceAndStatusSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellPresenceAndStatusSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellPresenceAndStatusSensorCollection
+            resource.
+        DellProcessorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellProcessorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellProcessorCollection resource.
+        DellRaidService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellRaidService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellRaidService resource.
+        DellRollupStatusCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellRollupStatusCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellRollupStatusCollection resource.
+        DellSensorCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSensorCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSensorCollection resource.
+        DellSlotCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSlotCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSlotCollection resource.
+        DellSoftwareInstallationService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSoftwareInstallationService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSoftwareInstallationService resource.
+        DellSoftwareInventoryCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSoftwareInventoryCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSoftwareInventoryCollection resource.
+        DellSwitchConnectionCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSwitchConnectionCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSwitchConnectionCollection resource.
+        DellSwitchConnectionService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSwitchConnectionService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSwitchConnectionService resource.
+        DellSystemCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSystemCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSystemCollection resource.
+        DellSystemManagementService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSystemManagementService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSystemManagementService resource.
+        DellSystemQuickSyncCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellSystemQuickSyncCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellSystemQuickSyncCollection resource.
+        DellTelemetryService:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTelemetryService.yaml#/components/schemas/DellTelemetryService_DellTelemetryService
+          description: A reference to a DellTelemetryService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellTelemetryService resource.
+        DellTimeService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellTimeService resource.
+          readOnly: true
+          x-longDescription: A reference to a DellTimeService resource.
+        DellUSBDeviceCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellUSBDeviceCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellUSBDeviceCollection resource.
+        DellVideoCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellVideoCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellVideoCollection resource.
+        DellVideoNetworkCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellVideoNetworkCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellVideoNetworkCollection resource.
+        DellVirtualDiskCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellVirtualDiskCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellVirtualDiskCollection resource.
+        DelliDRACCardCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DelliDRACCardCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DelliDRACCardCollection resource.
+        DelliDRACCardService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DelliDRACCardService resource.
+          readOnly: true
+          x-longDescription: A reference to a DelliDRACCardService resource.
+        DellvFlashCollection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellvFlashCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellvFlashCollection resource.
+        HWCertificates:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A link to a resource of type DellCertificate.
+          nullable: true
+          readOnly: true
+          x-longDescription: A link to a resource of type DellCertificate.
+        Jobs:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to a DellJobCollection resource.
+          readOnly: true
+          x-longDescription: A reference to a DellJobCollection resource.
+      type: object
+      x-longDescription: TBD
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOem_v1_3_0_DellOemResources:
+      additionalProperties: false
+      description: TBD
+      properties:
+        DellAccelerators:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellAccelerator.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellAccelerator.
+        DellAssembly:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellAssembly.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellAssembly.
+        DellAttributeRegistry:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellAttributeRegistry.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellAttributeRegistry.
+        DellAttributes:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellAttributes.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellAttributes.
+        DellBootSourcesRegistry:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellBootSourcesRegistry.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellBootSourcesRegistry.
+        DellCertificate:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellCertificate.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellCertificate.
+        DellChassis:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellChassis.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellChassis.
+        DellComputerSystem:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellComputerSystem.yaml#/components/schemas/DellComputerSystem_DellComputerSystem
+          description: A resource representation of DellComputerSystem.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellComputerSystem.
+        DellController:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellController.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellController.
+        DellControllerBattery:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellControllerBattery.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellControllerBattery.
+        DellDriveSMARTAttributes:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellDriveSMARTAttributes.
+          nullable: true
+          readOnly: true
+          x-longDescription: A resource representation of DellDriveSMARTAttributes.
+          x-versionAdded: v1_1_0
+        DellEnclosure:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellEnclosure.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellEnclosure.
+        DellEnclosureEMM:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellEnclosureEMM.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellEnclosureEMM.
+        DellEnclosureFanSensor:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellEnclosureFanSensor.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellEnclosureFanSensor.
+        DellEnclosurePowerSupply:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellEnclosurePowerSupply.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellEnclosurePowerSupply.
+        DellEnclosureTemperatureSensor:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellEnclosureTemperatureSensor.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellEnclosureTemperatureSensor.
+        DellFC:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellFC.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellFC.
+        DellFCCapabilities:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellFCCapabilities.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellFCCapabilities.
+        DellFCPortMetrics:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellFCPortMetrics.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellFCPortMetrics.
+        DellFCStatistics:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellFCStatistics.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellFCStatistics.
+        DellGPUSensor:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellGPUSensor.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellGPUSensor.
+        DellInfiniBand:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellInfiniBand.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellInfiniBand.
+        DellInfiniBandCapabilities:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellInfiniBandCapabilities.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellInfiniBandCapabilities.
+        DellInfiniBandPortMetrics:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellInfiniBandPortMetrics.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellInfiniBandPortMetrics.
+        DellJob:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellJob.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellJob.
+        DellLicensableDevice:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellLicensableDevice.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellLicensableDevice.
+        DellLicense:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellLicense.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellLicense.
+        DellLogEntry:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLogEntry.yaml#/components/schemas/DellLogEntry_DellLogEntry
+          description: A resource representation of DellLogEntry.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellLogEntry.
+        DellMemory:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellMemory.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellMemory.
+        DellMetricReport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricReport.yaml#/components/schemas/DellMetricReport_DellMetricReport
+          description: A resource representation of DellMetricReport.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellMetricReport.
+        DellMetricReportDefinition:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricReportDefinition.yaml#/components/schemas/DellMetricReportDefinition_DellMetricReportDefinition
+          description: A resource representation of DellMetricReportDefinition.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellMetricReportDefinition.
+        DellNIC:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNIC.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellNIC.
+        DellNICCapabilities:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNICCapabilities.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellNICCapabilities.
+        DellNICPortMetrics:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNICPortMetrics.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellNICPortMetrics.
+        DellNICStatistics:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNICStatistics.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellNICStatistics.
+        DellNVMeSMARTAttributes:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNVMeSMARTAttributes.
+          nullable: true
+          readOnly: true
+          x-longDescription: A resource representation of DellNVMeSMARTAttributes.
+          x-versionAdded: v1_1_0
+        DellNetworkTransceiver:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNetworkTransceiver.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellNetworkTransceiver.
+        DellNetworkTransceiverPortMetrics:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNetworkTransceiverPortMetrics.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellNetworkTransceiverPortMetrics.
+        DellNumericSensor:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellNumericSensor.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellNumericSensor.
+        DellOpaqueManagementData:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellOpaqueManagementData.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellOpaqueManagementData.
+        DellPCIeFunction:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPCIeFunction.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPCIeFunction.
+        DellPCIeSSD:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPCIeSSD.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPCIeSSD.
+        DellPCIeSSDBackPlane:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPCIeSSDBackPlane.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPCIeSSDBackPlane.
+        DellPCIeSSDExtender:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPCIeSSDExtender.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPCIeSSDExtender.
+        DellPSNumericSensor:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPSNumericSensor.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPSNumericSensor.
+        DellPhysicalDisk:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPhysicalDisk.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPhysicalDisk.
+        DellPowerSupply:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPowerSupply.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPowerSupply.
+        DellPowerSupplyView:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPowerSupplyView.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPowerSupplyView.
+        DellPresenceAndStatusSensor:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellPresenceAndStatusSensor.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellPresenceAndStatusSensor.
+        DellProcessor:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellProcessor.
+          nullable: true
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellProcessor.
+        DellRollupStatus:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellRollupStatus.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellRollupStatus.
+        DellSecureBoot:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSecureBoot.yaml#/components/schemas/DellSecureBoot_DellSecureBoot
+          description: A resource representation of DellSecureBoot.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellSecureBoot.
+        DellSensor:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellSensor.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellSensor.
+        DellServiceRoot:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellServiceRoot.yaml#/components/schemas/DellServiceRoot_DellServiceRoot
+          description: A resource representation of DellServiceRoot.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellServiceRoot.
+        DellSlot:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellSlot.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellSlot.
+        DellSoftwareInventory:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellSoftwareInventory.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellSoftwareInventory.
+        DellSwitchConnection:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellSwitchConnection.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellSwitchConnection.
+        DellSystem:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellSystem.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellSystem.
+        DellSystemQuickSync:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellSystemQuickSync.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellSystemQuickSync.
+        DellUSBDevice:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellUSBDevice.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellUSBDevice.
+        DellVideo:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellVideo.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellVideo.
+        DellVideoNetwork:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellVideoNetwork.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellVideoNetwork.
+        DellVirtualDisk:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellVirtualDisk.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellVirtualDisk.
+        DelliDRACCard:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DelliDRACCard.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DelliDRACCard.
+        DellvFlash:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of DellvFlash.
+          readOnly: true
+          x-autoExpand: true
+          x-longDescription: A resource representation of DellvFlash.
+        PowerMetrics:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of PowerMetrics.
+          nullable: true
+          readOnly: true
+          x-longDescription: A resource representation of PowerMetrics.
+        ThermalMetrics:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A resource representation of ThermalMetrics.
+          nullable: true
+          readOnly: true
+          x-longDescription: A resource representation of ThermalMetrics.
+      type: object
+      x-longDescription: TBD
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellOem.v1_3_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

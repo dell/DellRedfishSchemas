@@ -1,0 +1,482 @@
+components:
+  schemas:
+    DelliDRACiSMService_v1_2_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DelliDRACiSMService.CreateObject':
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_CreateObject'
+        '#DelliDRACiSMService.InitiateSupportAssistCollectionWithCheckSum':
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_InitiateSupportAssistCollectionWithCheckSum'
+        '#DelliDRACiSMService.InsertDiskSMARTInfo':
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_InsertDiskSMARTInfo'
+        '#DelliDRACiSMService.KeepAlive':
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_KeepAlive'
+        '#DelliDRACiSMService.RemoveObject':
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_RemoveObject'
+        '#DelliDRACiSMService.SetEjectNVMeDeviceStatus':
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_SetEjectNVMeDeviceStatus'
+        '#DelliDRACiSMService.SetGenericLogCollectionStatus':
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_SetGenericLogCollectionStatus'
+        '#DelliDRACiSMService.SetOSLogCollectionStatus':
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_SetOSLogCollectionStatus'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_Attributes:
+      additionalProperties: false
+      description: The list of attributes and values.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain the list of attributes and values
+        that iSM will listen for any modifications.
+      x-patternProperties:
+        '[A-Za-z0-9]+': {}
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_CreateObject:
+      additionalProperties: false
+      description: This action is used to create object.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action is used to create object.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_CreateObjectRequestBody:
+      additionalProperties: false
+      description: This action is used to create object.
+      properties:
+        ObjectDetails:
+          description: The details of the object.
+          type: string
+          x-longDescription: This parameter shall contain the details of the object
+            to be created in JSON format.
+      required:
+      - ObjectDetails
+      type: object
+      x-longDescription: This action is used to create object.
+    DelliDRACiSMService_v1_2_0_DelliDRACiSMService:
+      additionalProperties: true
+      description: The DelliDRACiSMService resource provides some actions and properties
+        to support communication between iDRAC and iSM.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: This property shall contain the available actions for
+            this resource.
+        Attributes:
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_Attributes'
+          description: List of attributes iSM needs to be notified on any modifications.
+          x-longDescription: This property shall contain list of attributes iSM needs
+            to be notified on any modifications.
+        DelliDRACiSMServiceStatus:
+          description: The Status of DelliDRACiSMService
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the Status of DelliDRACiSMService.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        MultipartSAGenericLogUploadUri:
+          description: The URI used to perform Multipart upload of generic logs collected
+            by iSM.
+          format: uri-reference
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a URI used to perform Multipart
+            upload of generic logs collected by iSM. The value of this property should
+            not contain a URI of a Redfish resource.
+        MultipartSAOSLogUploadUri:
+          description: The URI used to perform Multipart upload of OS logs collected
+            by iSM.
+          format: uri-reference
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a URI used to perform Multipart
+            upload of OS logs collected by iSM. The value of this property should
+            not contain a URI of a Redfish resource.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Requests:
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_Requests'
+          description: The details on the requests from iDRAC to iSM.
+          x-longDescription: This property shall contain the details on the requests
+            from iDRAC to iSM.
+        ServiceModuleFeatureCapability:
+          description: The service module feature capabilities.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property shall contain the list of service module
+            feature capabilities.
+          x-versionAdded: v1_2_0
+        ServiceModuleInstallDate:
+          description: The service module installation date.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the last service module installation
+            date.
+          x-versionAdded: v1_2_0
+        ServiceModuleState:
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_ServiceModuleState'
+          description: The state of the service module on the system.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property shall contain the state of the service
+            module on the system.
+          x-versionAdded: v1_1_0
+        ServiceModuleVersion:
+          description: The installed version of the iSM.
+          readOnly: false
+          type: string
+          x-longDescription: This property shall contain the installed version of
+            the iSM.
+        SoftwareRAIDSupported:
+          $ref: '#/components/schemas/DelliDRACiSMService_v1_2_0_SoftwareRAIDSupported'
+          description: Enables or disables SWRAID feature on the host.
+          nullable: true
+          readOnly: false
+          x-longDescription: This property enables or disables SWRAID feature on the
+            host.
+          x-versionAdded: v1_1_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: The DelliDRACiSMService resource provides some actions and
+        properties to support communication between iDRAC and iSM.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_InitiateSupportAssistCollectionWithCheckSum:
+      additionalProperties: false
+      description: This action is used by iSM to collect supportassist logs with checksum.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action is used by iSM to collect supportassist logs
+        with checksum.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_InitiateSupportAssistCollectionWithCheckSumRequestBody:
+      additionalProperties: false
+      description: This action is used by iSM to collect supportassist logs with checksum.
+      properties:
+        Interface:
+          description: Name of the interface which performs the action.
+          type: string
+          x-longDescription: Name of the interface which performs the action
+        Keys:
+          description: The keys.
+          format: int64
+          type: integer
+          x-longDescription: This keys.
+        KeysRv:
+          description: The keysRv.
+          format: int64
+          type: integer
+          x-longDescription: This keysRv.
+        RequestSize:
+          description: The request size.
+          format: int64
+          type: integer
+          x-longDescription: The request size.
+        Version:
+          description: The version.
+          format: int64
+          type: integer
+          x-longDescription: This version.
+      required:
+      - Interface
+      - Keys
+      - KeysRv
+      - RequestSize
+      - Version
+      type: object
+      x-longDescription: This action is used by iSM to collect supportassist logs
+        with checksum.
+    DelliDRACiSMService_v1_2_0_InsertDiskSMARTInfo:
+      additionalProperties: false
+      description: This action is used to insert disk information from iSM.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action is used to insert dsik information from iSM.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_InsertDiskSMARTInfoRequestBody:
+      additionalProperties: false
+      description: This action is used to insert disk information from iSM.
+      properties:
+        DiskInfoBuffer:
+          description: Buffer containing the disk details.
+          type: string
+          x-longDescription: This parameter shall contain the details related to the
+            disk in JSON format.
+      required:
+      - DiskInfoBuffer
+      type: object
+      x-longDescription: This action is used to insert dsik information from iSM.
+    DelliDRACiSMService_v1_2_0_KeepAlive:
+      additionalProperties: false
+      description: This action is used to notify iDRAC that iSM is running on Host.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action is used to notify iDRAC that iSM is running on
+        Host.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_KeepAliveRequestBody:
+      additionalProperties: false
+      description: This action is used to notify iDRAC that iSM is running on Host.
+      properties: {}
+      type: object
+      x-longDescription: This action is used to notify iDRAC that iSM is running on
+        Host.
+    DelliDRACiSMService_v1_2_0_RemoveObject:
+      additionalProperties: false
+      description: This action is used to remove object.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action is used to remove object.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_RemoveObjectRequestBody:
+      additionalProperties: false
+      description: This action is used to remove object.
+      properties:
+        ObjectDetails:
+          description: The details of the object.
+          type: string
+          x-longDescription: This parameter shall contain the details of the object
+            to be removed in JSON format.
+      required:
+      - ObjectDetails
+      type: object
+      x-longDescription: This action is used to remove object.
+    DelliDRACiSMService_v1_2_0_Requests:
+      additionalProperties: false
+      description: The details on the requests from iDRAC to iSM.
+      properties:
+        FileTransferRequest:
+          description: The file upload request from iDRAC to iSM.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the details associated to
+            the file upload request from iDRAC to be notified to iSM.
+        GenericLogCollectionRequest:
+          description: The request for generic log collection from iDRAC to iSM.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the details associated to
+            the request for generic log collection from iDRAC to be notified to iSM.
+        NvmePrepareForRemovalRequest:
+          description: The request for prepare for removal of NVMe drive from iDRAC
+            to iSM.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the details associated to
+            the request for prepare for removal of NVMe drive from iDRAC to be notified
+            to iSM.
+        OSLogCollectionRequest:
+          description: The request for os log collection from iDRAC to iSM.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the details associated to
+            the request for os log collection from iDRAC to be notified to iSM.
+      type: object
+      x-longDescription: This property shall contain the details on the requests from
+        iDRAC to iSM.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_ServiceModuleState:
+      enum:
+      - NotRunning
+      - Running
+      - NotRunningTLSError
+      - RunningLimitedFunctionality
+      type: string
+      x-enumDescriptions:
+        NotRunning: Service module not running on the system.
+        NotRunningTLSError: Service module not running on the system due to TLS error.
+        Running: Service module running on the system.
+        RunningLimitedFunctionality: Service module running on the system with limited
+          functionality.
+    DelliDRACiSMService_v1_2_0_SetEjectNVMeDeviceStatus:
+      additionalProperties: false
+      description: This action is used to set the response by iSM for the request
+        on NVMe device removal from iDRAC.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action is used to set the response by iSM for the request
+        on NVMe device removal from iDRAC.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_SetEjectNVMeDeviceStatusRequestBody:
+      additionalProperties: false
+      description: This action is used to set the response by iSM for the request
+        on NVMe device removal from iDRAC.
+      properties:
+        Position:
+          description: The position of the NVMe drive.
+          type: string
+          x-longDescription: This parameter shall contain the position of the NVMe
+            drive.
+        ResponseCode:
+          description: The response code from iSM for NVMe device removal.
+          type: string
+          x-longDescription: This parameter shall contain the response code from iSM
+            for NVMe device removal.
+        Slot:
+          description: The slot number of the NVMe device.
+          type: string
+          x-longDescription: This parameter shall contain the slot number of the NVMe
+            device.
+        SubSystemErrorCode:
+          description: The error code from iSM for NVMe device removal.
+          type: string
+          x-longDescription: This parameter shall contain the error code from iSM
+            for NVMe device removal.
+      required:
+      - Position
+      - ResponseCode
+      - Slot
+      - SubSystemErrorCode
+      type: object
+      x-longDescription: This action is used to set the response by iSM for the request
+        on NVMe device removal from iDRAC.
+    DelliDRACiSMService_v1_2_0_SetGenericLogCollectionStatus:
+      additionalProperties: false
+      description: This action is used by iSM to set the status of Generic log collection.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action is used by iSM to set the status of Generic log
+        collection.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_SetGenericLogCollectionStatusRequestBody:
+      additionalProperties: false
+      description: This action is used by iSM to set the status of Generic log collection.
+      properties:
+        Status:
+          description: Log collection status.
+          format: int64
+          type: integer
+          x-longDescription: This parameter shall contain the status of log collection.
+      required:
+      - Status
+      type: object
+      x-longDescription: This action is used by iSM to set the status of Generic log
+        collection.
+    DelliDRACiSMService_v1_2_0_SetOSLogCollectionStatus:
+      additionalProperties: false
+      description: This action is used by iSM to set the status of OS log collection.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This action is used by iSM to set the status of OS log collection.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DelliDRACiSMService_v1_2_0_SetOSLogCollectionStatusRequestBody:
+      additionalProperties: false
+      description: This action is used by iSM to set the status of OS log collection.
+      properties:
+        Status:
+          description: Log collection status.
+          format: int64
+          type: integer
+          x-longDescription: This parameter shall contain the status of log collection.
+      required:
+      - Status
+      type: object
+      x-longDescription: This action is used by iSM to set the status of OS log collection.
+    DelliDRACiSMService_v1_2_0_SoftwareRAIDSupported:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Disables SWRAID feature on the host.
+        Enabled: Enables SWRAID feature on the host.
+    DelliDRACiSMService_v1_2_0_SubmitLCLEvent:
+      additionalProperties: false
+      description: This action is used to log LifeCylce Log(LCL) event.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action is used to log LifeCylce Log event.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DelliDRACiSMService.v1_2_0.DelliDRACiSMService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

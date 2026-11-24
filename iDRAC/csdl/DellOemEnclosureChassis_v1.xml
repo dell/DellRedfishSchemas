@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################ -->
+<!--# Redfish Schema: DellOemEnclosureChassis v1_3_0-->
+<!--# -->
+<!--# Copyright 2021-2022 Dell, Inc. or its subsidiaries. All Rights Reserved.-->
+<!--################################################################################ -->
+<!---->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellEnclosure_v1.xml">
+        <edmx:Include Namespace="DellEnclosure"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellChassis_v1.xml">
+        <edmx:Include Namespace="DellChassis"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSDBackPlane_v1.xml">
+        <edmx:Include Namespace="DellPCIeSSDBackPlane"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="DellOemEnclosureChassis" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellOemEnclosureChassis" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="Oem data related to the Storage Enclosure Chassis."/>
+                <Annotation Term="OData.LongDescription" String="Oem data related to the Storage Enclosure Chassis."/>
+            </ComplexType>
+            <EnumType Name="RAIDMultipath">
+              <Member Name="Off">
+                <Annotation Term="OData.Description" String="Off state."/>
+                <Annotation Term="OData.LongDescription" String="Off state."/>
+              </Member>
+              <Member Name="On">
+                <Annotation Term="OData.Description" String="On state."/>
+                <Annotation Term="OData.LongDescription" String="On state."/>
+              </Member>
+            </EnumType>
+            <EnumType Name="BackplaneType">
+              <Member Name="Shared">
+                <Annotation Term="OData.Description" String="Universal mode."/>
+                <Annotation Term="OData.LongDescription" String="Universal mode."/>
+              </Member>
+              <Member Name="NotShared">
+                <Annotation Term="OData.Description" String="Non shared mode."/>
+                <Annotation Term="OData.LongDescription" String="Non shared mode."/>
+              </Member>
+            </EnumType>
+            <EnumType Name="EnclosureMode">
+              <Member Name="SharedPrimary">
+                <Annotation Term="OData.Description" String="Universal Primary mode."/>
+              </Member>
+              <Member Name="SharedSecondary">
+                <Annotation Term="OData.Description" String="Universal Secondary mode."/>
+              </Member>
+              <Member Name="NotShared">
+                <Annotation Term="OData.Description" String="Non shared mode."/>
+              </Member>
+            </EnumType>
+            <EnumType Name="RAIDEnclosureConfigMode">
+              <Member Name="UnifiedMode">
+                <Annotation Term="OData.Description" String="Unified Mode."/>
+                <Annotation Term="OData.LongDescription" String="Unified Mode."/>
+              </Member>
+              <Member Name="SplitMode">
+                <Annotation Term="OData.Description" String="Split Mode."/>
+                <Annotation Term="OData.LongDescription" String="Split Mode."/>
+              </Member>
+              <Member Name="SplitMode-4:20">
+                <Annotation Term="OData.Description" String="Split Mode 4:20."/>
+                <Annotation Term="OData.LongDescription" String="Split Mode 4:20."/>
+              </Member>
+              <Member Name="SplitMode-8:16">
+                <Annotation Term="OData.Description" String="Split Mode 8:16."/>
+                <Annotation Term="OData.LongDescription" String="Split Mode 8:16."/>
+              </Member>
+              <Member Name="SplitMode-16:8">
+                <Annotation Term="OData.Description" String="Split Mode 16:8."/>
+                <Annotation Term="OData.LongDescription" String="Split Mode 16:8."/>
+              </Member>
+              <Member Name="SplitMode-20:4">
+                <Annotation Term="OData.Description" String="Split Mode 20:4."/>
+                <Annotation Term="OData.LongDescription" String="Split Mode 20:4."/>
+              </Member>
+              <Member Name="SplitMode-6:6:6:6">
+                <Annotation Term="OData.Description" String="Split Mode 6:6:6:6."/>
+                <Annotation Term="OData.LongDescription" String="Split Mode 6:6:6:6."/>
+              </Member>
+              <Member Name="None">
+                <Annotation Term="OData.Description" String="None"/>
+				        <Annotation Term="OData.LongDescription" String="None"/>
+				      </Member>
+			      </EnumType>
+            <EnumType Name="EnclosureCfgMode">
+                <Annotation Term="OData.Description" String="The configuration mode of the enclosure."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the configuration mode of the enclosure."/>
+                <Member Name="Joint">
+                    <Annotation Term="OData.Description" String="The enclosure is in joint mode."/>
+                </Member>
+                <Member Name="Split12_12">
+                    <Annotation Term="OData.Description" String="The enclosure is in split mode with a 12:12 configuration."/>
+                </Member>
+                <Member Name="Split4_20">
+                    <Annotation Term="OData.Description" String="The enclosure is in split mode with a 4:20 configuration."/>
+                </Member>
+                <Member Name="Split8_16">
+                    <Annotation Term="OData.Description" String="The enclosure is in split mode with an 8:16 configuration."/>
+                </Member>
+                <Member Name="Split16_8">
+                    <Annotation Term="OData.Description" String="The enclosure is in split mode with a 16:8 configuration."/>
+                </Member>
+                <Member Name="Split20_4">
+                    <Annotation Term="OData.Description" String="The enclosure is in split mode with a 20:4 configuration."/>
+                </Member>
+                <Member Name="Split6_6_6_6">
+                    <Annotation Term="OData.Description" String="The enclosure is in split mode with a 6:6:6:6 configuration."/>
+                </Member>
+            </EnumType>
+            <EnumType Name="FormFactor">
+                <Annotation Term="OData.Description" String="The form factor of the enclosure."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the form factor of the enclosure."/>
+                <Member Name="Unknown">
+                    <Annotation Term="OData.Description" String="The form factor is unknown."/>
+                </Member>
+                <Member Name="1.8Inch">
+                    <Annotation Term="OData.Description" String="The enclosure uses 1.8-inch form factor."/>
+                </Member>
+                <Member Name="2.5Inch">
+                    <Annotation Term="OData.Description" String="The enclosure uses 2.5-inch form factor."/>
+                </Member>
+                <Member Name="3.5Inch">
+                    <Annotation Term="OData.Description" String="The enclosure uses 3.5-inch form factor."/>
+                </Member>
+                <Member Name="AddInCard">
+                    <Annotation Term="OData.Description" String="The enclosure uses an add-in card form factor."/>
+                </Member>
+                <Member Name="M.2">
+                    <Annotation Term="OData.Description" String="The enclosure uses M.2 form factor."/>
+                </Member>
+                <Member Name="EDSFF1L">
+                    <Annotation Term="OData.Description" String="The enclosure uses EDSFF 1L form factor."/>
+                </Member>
+                <Member Name="EDSFFE3">
+                    <Annotation Term="OData.Description" String="The enclosure uses EDSFF E3 form factor."/>
+                </Member>
+                <Member Name="EDSFFE3.2T">
+                    <Annotation Term="OData.Description" String="The enclosure uses EDSFF E3 2T form factor."/>
+                </Member>
+                <Member Name="EDSFFE3L">
+                    <Annotation Term="OData.Description" String="The enclosure uses EDSFF E3L form factor."/>
+                </Member>
+                <Member Name="EDSFFE3L.2T">
+                    <Annotation Term="OData.Description" String="The enclosure uses EDSFF E3L 2T form factor."/>
+                </Member>
+                <Member Name="EDSFFE1.S">
+                    <Annotation Term="OData.Description" String="The enclosure uses EDSFF E1.S form factor."/>
+                </Member>
+            </EnumType>
+            <EnumType Name="SupportedProtocol">
+                <Annotation Term="OData.Description" String="The protocols supported by the enclosure."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the protocols supported by the enclosure."/>
+                <Member Name="Unknown">
+                    <Annotation Term="OData.Description" String="The protocol is unknown."/>
+                </Member>
+                <Member Name="SCSI">
+                    <Annotation Term="OData.Description" String="The enclosure supports SCSI protocol."/>
+                </Member>
+                <Member Name="PATA">
+                    <Annotation Term="OData.Description" String="The enclosure supports PATA protocol."/>
+                </Member>
+                <Member Name="FibreChannel">
+                    <Annotation Term="OData.Description" String="The enclosure supports Fibre Channel protocol."/>
+                </Member>
+                <Member Name="USB">
+                    <Annotation Term="OData.Description" String="The enclosure supports USB protocol."/>
+                </Member>
+                <Member Name="SATA">
+                    <Annotation Term="OData.Description" String="The enclosure supports SATA protocol."/>
+                </Member>
+                <Member Name="SAS">
+                    <Annotation Term="OData.Description" String="The enclosure supports SAS protocol."/>
+                </Member>
+                <Member Name="PCIe">
+                    <Annotation Term="OData.Description" String="The enclosure supports PCIe protocol."/>
+                </Member>
+                <Member Name="NVMe">
+                    <Annotation Term="OData.Description" String="The enclosure supports NVMe protocol."/>
+                </Member>
+                <Member Name="NVMeHWRAID">
+                    <Annotation Term="OData.Description" String="The enclosure supports NVMe hardware RAID protocol."/>
+                </Member>
+            </EnumType>
+            <EnumType Name="PendingChange">
+                <Annotation Term="OData.Description" String="The pending change types for the enclosure."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the pending change types for the enclosure configuration."/>
+                <Member Name="ServiceTag">
+                    <Annotation Term="OData.Description" String="A service tag change is pending."/>
+                </Member>
+                <Member Name="AssetTag">
+                    <Annotation Term="OData.Description" String="An asset tag change is pending."/>
+                </Member>
+                <Member Name="EnclosureCfgMode">
+                    <Annotation Term="OData.Description" String="A configuration mode change is pending."/>
+                </Member>
+                <Member Name="AssetName">
+                    <Annotation Term="OData.Description" String="An asset name change is pending."/>
+                </Member>
+            </EnumType>
+            <EnumType Name="ObjAttribute">
+                <Annotation Term="OData.Description" String="The object attributes for the enclosure."/>
+                <Annotation Term="OData.LongDescription" String="This type shall contain the object attributes defining enclosure capabilities."/>
+                <Member Name="Managed">
+                    <Annotation Term="OData.Description" String="The enclosure is managed."/>
+                </Member>
+                <Member Name="Configurable">
+                    <Annotation Term="OData.Description" String="The enclosure is configurable."/>
+                </Member>
+            </EnumType>
+        </Schema>
+
+        <Schema Namespace="DellOemEnclosureChassis.v1_0_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="DellOemEnclosureChassis" BaseType="DellOemEnclosureChassis.DellOemEnclosureChassis">
+                <Property Name="DellChassisEnclosure" Type="DellOemEnclosureChassis.v1_0_0.DellChassisEnclosureInfo">
+                    <Annotation Term="OData.Description" String="Oem data related to the DellChassisEnclosure."/>
+                    <Annotation Term="OData.LongDescription" String="Oem data related to the DellChassisEnclosure."/>
+                </Property>
+                <NavigationProperty Name="DellEnclosure" Type="DellEnclosure.DellEnclosure" ContainsTarget="true" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A resource representation of DellEnclosure."/>
+                    <Annotation Term="OData.LongDescription" String="A resource representation of DellEnclosure."/>
+                    <Annotation Term="OData.AutoExpand"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellPCIeSSDBackPlane" Type="DellPCIeSSDBackPlane.DellPCIeSSDBackPlane" ContainsTarget="true" Nullable="true">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A resource representation of DellPCIeSSDBackPlane."/>
+                    <Annotation Term="OData.LongDescription" String="A resource representation of DellPCIeSSDBackPlane."/>
+                    <Annotation Term="OData.AutoExpand"/>
+                </NavigationProperty>
+            </ComplexType>
+            <ComplexType Name="DellChassisEnclosureInfo">
+                <Property Name="Connector" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The property shall represent the enclosure port connection."/>
+                    <Annotation Term="OData.LongDescription" String="The property shall represent the enclosure port connection."/>
+                </Property>
+                <Property Name="ServiceTag" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="The property shall represent the service tag of the enclosure. Updated with ReadWrite permissions."/>
+                    <Annotation Term="OData.LongDescription" String="The property shall represent the service tag of the enclosure."/>
+                </Property>
+                <Property Name="SlotCount" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The property shall represent the number of drive slots in the enclosure."/>
+                    <Annotation Term="OData.LongDescription" String="The property shall represent the number of drive slots in the enclosure."/>
+                </Property>
+                <Property Name="Version" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The property shall represent the EMM or Backplane version."/>
+                    <Annotation Term="OData.LongDescription" String="The property shall represent the EMM or Backplane version."/>
+                </Property>
+                <Property Name="WiredOrder" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="For JBOD this property shall represent the enclosure position or connection sequence in a daisy chain of enclosures in the relation to the controller port. For internal backplane, the wiredorder is same as BayID."/>
+                    <Annotation Term="OData.LongDescription" String="For JBOD this property shall represent the enclosure position or connection sequence in a daisy chain of enclosures in the relation to the controller port. For internal backplane, the wiredorder is same as BayID."/>
+                </Property>
+                <Property Name="Links" Type="DellEnclosure.Links" Nullable="false">
+                    <Annotation String="Contains references to other resources that are related to this resource." Term="OData.Description"/>
+                    <Annotation String="The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource." Term="OData.LongDescription"/>
+                </Property>
+                <Property Name="AssetName" Type="Edm.String">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="This property contains up to 32 ASCII alpha-numeric characters. Updated with ReadWrite permissions."/>
+                    <Annotation Term="OData.LongDescription" String="This property contains up to 32 ASCII alpha-numeric characters."/>
+                </Property>
+                <Property Name="LastSystemInventoryTime" Type="Edm.DateTimeOffset">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property provides the time when System Inventory Collection On Reboot (CSIOR) was last performed or the object was last updated on iDRAC. The value is represented as yyyymmddHHMMSS."/>
+                    <Annotation Term="OData.LongDescription" String="This property provides the time when System Inventory Collection On Reboot (CSIOR) was last performed or the object was last updated on iDRAC. The value is represented as yyyymmddHHMMSS."/>
+                </Property>
+                <Property Name="LastUpdateTime" Type="Edm.DateTimeOffset">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property provides the time when the data was last updated. The value is represented as yyyymmddHHMMSS."/>
+                    <Annotation Term="OData.LongDescription" String="This property provides the time when the data was last updated. The value is represented as yyyymmddHHMMSS."/>
+                </Property>
+                <Property Name="TempProbeCount" Type="Edm.Int64">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="This property represents the number of temperature probes present."/>
+                    <Annotation Term="OData.LongDescription" String="This property represents the number of temperature probes present."/>
+                </Property>
+                <Property Name="RAIDMultipath" Type="DellOemEnclosureChassis.RAIDMultipath" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The property shall represent whether the adapter has multiple paths to reach the enclosure."/>
+                    <Annotation Term="OData.LongDescription" String="The property shall represent whether the adapter has multiple paths to reach the enclosure."/>
+                </Property>
+                <Property Name="BackplaneType" Type="DellOemEnclosureChassis.BackplaneType" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The property shall represent universal mode or non shared mode of backplane."/>
+                    <Annotation Term="OData.LongDescription" String="The property shall represent universal mode or non shared mode of backplane."/>
+                    <Annotation Term="Redfish.Revisions">
+                      <Collection>
+                        <Record>
+                          <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Deprecated"/>
+                          <PropertyValue Property="Version" String="v1_3_0"/>
+                          <PropertyValue Property="Description" String="This property has been deprecated in favor of the EnclosureMode property."/>
+                        </Record>
+                      </Collection>
+                    </Annotation>
+                </Property>
+                <Property Name="RAIDEnclosureConfigMode" Type="DellOemEnclosureChassis.RAIDEnclosureConfigMode">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+                    <Annotation Term="OData.Description" String="The property shall represent the configuration mode for the enclosure."/>
+                    <Annotation Term="OData.LongDescription" String="The property shall represent the configuration mode for the enclosure."/>
+                </Property>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemEnclosureChassis.v1_1_0">
+          <ComplexType Name="DellOemEnclosureChassis" BaseType="DellOemEnclosureChassis.v1_0_0.DellOemEnclosureChassis">
+            <NavigationProperty Name="DellChassis" Type="DellChassis.DellChassis" ContainsTarget="true" Nullable="false">
+              <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+              <Annotation Term="OData.Description" String="A resource representation of DellChassis."/>
+              <Annotation Term="OData.LongDescription" String="A resource representation of DellChassis."/>
+              <Annotation Term="OData.AutoExpand"/>
+            </NavigationProperty>
+          </ComplexType>
+        </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm"
+      Namespace="DellOemEnclosureChassis.v1_2_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity" />
+      <ComplexType Name="ChassisManagerConfigType">
+        <Property Name="FTREnabled" Type="Edm.Boolean">
+          <Annotation Term="OData.Description"
+            String="This property enables or disables the FaultTolerantRedundancy setting." />
+          <Annotation Term="OData.LongDescription"
+            String="This property enables or disables the FaultTolerantRedundancy setting.  It takes effect immediately when set, without requiring a Chassis Manager (CM) reset." />
+        </Property>
+        <Property Name="ChassisID" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+          <Annotation Term="OData.Description"
+            String="The property used to identify different chassis configurations within a system." />
+          <Annotation Term="OData.LongDescription"
+            String="The property used to identify different chassis configurations within a system,
+       ensuring proper configuration and management" />
+        </Property>
+        <Property Name="SledConfiguration"
+          Type="DellOemEnclosureChassis.v1_2_0.SledConfigurationType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+          <Annotation Term="OData.Description"
+            String="The property SledConfig used to identify the physical configuration of sleds in a chassis." />
+          <Annotation Term="OData.LongDescription"
+            String="These configurations help in managing and identifying sleds within a chassis, ensuring proper thermal and physical management" />
+        </Property>
+        <Property Name="SledID" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+          <Annotation Term="OData.Description"
+            String="The property The SledID value used to identify different sled configurations within a chassis." />
+          <Annotation Term="OData.LongDescription"
+            String="The property The SledID value used to identify different sled configurations within a chassis.
+      These IDs help in managing and identifying sleds within a chassis, ensuring proper configuration and management" />
+        </Property>
+        <Property Name="LEDSupportStatus" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+          <Annotation Term="OData.Description"
+            String="The LED Support on Chassis Indicates the support status of LEDs on the chassis." />
+          <Annotation Term="OData.LongDescription"
+            String="The LED Support on Chassis property indicates whether certain LEDs are supported and controlled by the System Controller (SC)" />
+        </Property>
+        <Property Name="RackID" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
+          <Annotation Term="OData.Description"
+            String="The property used to identify different racks within a system." />
+          <Annotation Term="OData.LongDescription"
+            String="The property help in managing and identifying racks within a system, ensuring proper configuration and management." />
+        </Property>
+        <Property Name="ServiceTag" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description"
+            String="The property shall represent the service tag of the chassis." />
+          <Annotation Term="OData.LongDescription"
+            String="The property shall represent the service tag of the chassis." />
+        </Property>
+        <Property Name="FaultLEDStatus" Type="DellOemEnclosureChassis.v1_2_0.LedStatus">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description"
+            String="The property shall represent the Chassis Fault LED ." />
+          <Annotation Term="OData.LongDescription"
+            String="The property shall represent the Chassis Fault LED." />
+        </Property>
+        <Property Name="IdentificationLEDStatus" Type="DellOemEnclosureChassis.v1_2_0.LedStatus">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description"
+            String="The property shall represent the Chassis Identification LED." />
+          <Annotation Term="OData.LongDescription"
+            String="The property shall represent the Chassis Identification LED." />
+        </Property>
+      </ComplexType>
+      <ComplexType Name="DellOemEnclosureChassis"
+        BaseType="DellOemEnclosureChassis.v1_1_0.DellOemEnclosureChassis">
+        <Property Name="ChassisManagerConfig" Type="DellOemEnclosureChassis.v1_2_0.ChassisManagerConfigType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description"
+            String="This Property helps in managing and identifying sleds within a chassis, ensuring proper power and physical management." />
+          <Annotation Term="OData.LongDescription"
+            String="This Property helps in managing and identifying sleds within a chassis, ensuring proper power and physical management." />
+        </Property>
+      </ComplexType>
+      <EnumType Name="LedStatus">
+        <Member Name="Off">
+          <Annotation Term="OData.Description"
+            String="This value shall represent the Indicator LED is in a solid off state." />
+        </Member>
+        <Member Name="Lit">
+          <Annotation Term="OData.Description"
+            String="This value shall represent the Indicator LED is in a solid on state." />
+        </Member>
+        <Member Name="Blinking">
+          <Annotation Term="OData.Description"
+            String="This value shall represent the Indicator LED is in a blinking state where the LED is being turned on and off in repetition" />
+        </Member>
+      </EnumType>
+      <EnumType Name="SledConfigurationType">
+        <Member Name="FullWidth">
+          <Annotation Term="OData.Description"
+            String="This value shall represents a sled that spans the entire width of the chassis (5GU for G5)." />
+        </Member>
+        <Member Name="HalfWidth">
+          <Annotation Term="OData.Description"
+            String="This value shall represents a sled that occupies half the width of the chassis (5GU for G5)." />
+        </Member>
+        <Member Name="ThirdWidth">
+          <Annotation Term="OData.Description"
+            String="This value shall represents a sled that occupies one-third of the width of the chassis (6GU for G5)." />
+        </Member>
+      </EnumType>
+    </Schema>
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DellOemEnclosureChassis.v1_3_0">
+      <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+      <Annotation Term="OData.Description" String="This version was created to add EnclosureMode, enclosure generation, position, SAS addressing, split-mode capability, mode state, protocol, pending change bitmap, slot access, form factor, and object attributes. The ServiceTag and AssetName have been changed to ReadWrite"/>
+      <Annotation Term="OData.LongDescription" String="This version was created to add EnclosureMode, enclosure generation, position, SAS addressing, split-mode capability, mode state, protocol, pending change bitmap, slot access, form factor, and object attributes. The ServiceTag and AssetName have been changed to ReadWrite"/>
+      <ComplexType Name="DellOemEnclosureChassis" BaseType="DellOemEnclosureChassis.v1_2_0.DellOemEnclosureChassis">
+      </ComplexType>
+      <ComplexType Name="DellChassisEnclosureInfo" BaseType="DellOemEnclosureChassis.v1_0_0.DellChassisEnclosureInfo">
+        <Property Name="EnclosureMode" Type="DellOemEnclosureChassis.EnclosureMode">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The property shall represent universal mode or non shared mode of enclosure."/>
+          <Annotation Term="OData.LongDescription" String="The property shall represent universal mode or non shared mode of enclosure."/>
+        </Property>
+        <Property Name="EnclosureGeneration" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="Hardware generation of the enclosure."/>
+          <Annotation Term="OData.LongDescription" String="Represents the hardware generation of the enclosure (for example Gen11, Gen12). Displayed in advanced properties."/>
+        </Property>
+        <Property Name="EnclosurePosition" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The position of the enclosure in a chain or rack."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate the enclosure position or connection sequence relative to the controller port."/>
+        </Property>
+        <Property Name="SASAddress" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="SAS address of the enclosure."/>
+          <Annotation Term="OData.LongDescription" String="The SAS address string associated with the enclosure; shown in advanced properties."/>
+        </Property>
+        <Property Name="SplitModeCapable" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="Indicates whether the enclosure supports split mode."/>
+          <Annotation Term="OData.LongDescription" String="True if the enclosure hardware supports operating in split mode; surfaced in advanced properties."/>
+        </Property>
+        <Property Name="EnclosureState" Type="DellOemEnclosureChassis.v1_3_0.EnclosureState">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="Current mode state of the enclosure."/>
+          <Annotation Term="OData.LongDescription" String="Represents the current enclosure mode state (Ready, Online, ResetPowerCycle, Offline, or NvmFail)."/>
+        </Property>
+        <Property Name="EnclosureCfgMode" Type="DellOemEnclosureChassis.EnclosureCfgMode">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The current operating mode of the enclosure."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate the current enclosure operating mode, such as Unified or Split."/>
+        </Property>
+        <Property Name="FormFactor" Type="DellOemEnclosureChassis.FormFactor">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The form factor of the enclosure."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate the form factor of the enclosure."/>
+        </Property>
+        <Property Name="SupportedProtocols" Type="Collection(DellOemEnclosureChassis.SupportedProtocol)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The protocols supported by the enclosure."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the protocols supported by the enclosure."/>
+        </Property>
+        <Property Name="PendingChanges" Type="Collection(DellOemEnclosureChassis.PendingChange)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The pending changes for the enclosure configuration."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the pending changes that have been configured for the enclosure but have not yet been applied."/>
+        </Property>
+        <Property Name="SlotAccessInfo" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The slot access information for the enclosure."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the slot access information for the enclosure, useful for backplanes in split mode."/>
+        </Property>
+        <Property Name="ObjAttributes" Type="Collection(DellOemEnclosureChassis.ObjAttribute)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The object attributes for the enclosure."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the object attributes defining enclosure capabilities."/>
+        </Property>
+      </ComplexType>
+      <EnumType Name="EnclosureState">
+        <Member Name="Unknown">
+          <Annotation Term="OData.Description" String="Enclosure state is unknown."/>
+        </Member>
+        <Member Name="Ready">
+          <Annotation Term="OData.Description" String="Enclosure is ready."/>
+        </Member>
+        <Member Name="Online">
+          <Annotation Term="OData.Description" String="Enclosure is online."/>
+        </Member>
+        <Member Name="Foreign">
+          <Annotation Term="OData.Description" String="Enclosure is in foreign state."/>
+        </Member>
+        <Member Name="Offline">
+          <Annotation Term="OData.Description" String="Enclosure is offline."/>
+        </Member>
+        <Member Name="Blocked">
+          <Annotation Term="OData.Description" String="Enclosure is blocked."/>
+        </Member>
+        <Member Name="Failed">
+          <Annotation Term="OData.Description" String="Enclosure has failed."/>
+        </Member>
+        <Member Name="Missing">
+          <Annotation Term="OData.Description" String="Enclosure is missing."/>
+        </Member>
+        <Member Name="Degraded">
+          <Annotation Term="OData.Description" String="Enclosure is degraded."/>
+        </Member>
+      </EnumType>
+    </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

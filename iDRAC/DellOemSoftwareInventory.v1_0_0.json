@@ -1,0 +1,391 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemSoftwareInventory.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#SoftwareInventory.Restart": {
+                    "$ref": "#/definitions/Restart"
+                },
+                "#SoftwareInventory.Uninstall": {
+                    "$ref": "#/definitions/Uninstall"
+                }
+            },
+            "type": "object"
+        },
+        "DellOemSoftwareInventory": {
+            "additionalProperties": false,
+            "description": "This property shall represent the OEM properties for a SoftwareInventory resource.",
+            "longDescription": "This complex type provides OEM extensions for the DMTF SoftwareInventory resource, including plugin inventory properties and Dell-specific extensions.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "AppliesToPCIeIDs": {
+                    "description": "Array of PCIe IDs for all physical devices consolidated into this FirmwareInventory URI. Format: VendorID:DeviceID:SubVendorID:SubDeviceID in hex.",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Array of PCIe IDs for all physical devices that map to this consolidated FirmwareInventory URI. Each element is formatted as VendorID:DeviceID:SubVendorID:SubDeviceID in hexadecimal (zero-padded to 4 digits, uppercase, no 0x prefix). Absent for non-PCIe devices such as BIOS, iDRAC, TPM, and PSU.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "ComponentID": {
+                    "description": "The component identifier.",
+                    "longDescription": "The component identifier from lc_validator_output.xml Files.FileDetails.Device@ComponentID.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ComponentName": {
+                    "description": "The component display name.",
+                    "longDescription": "The component display name from lc_validator_output.xml Files.FileDetails.Device.Component@name.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ComponentNames": {
+                    "description": "Array of all component names for multi-component DUPs.",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Array of all component display names from lc_validator_output.xml Files.FileDetails.Device.Component@name elements. For multi-component DUPs, contains all components. For single-component DUPs, contains one element matching ComponentName.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "ComponentVersions": {
+                    "description": "Array of all component versions for multi-component DUPs.",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "longDescription": "Array of all component versions from lc_validator_output.xml Files.FileDetails.Device.Component@version elements. Parallel array to ComponentNames - each version corresponds to the component at the same index.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "Criticality": {
+                    "description": "The criticality level: Recommended, Critical, or Optional.",
+                    "longDescription": "The criticality level from lc_validator_output.xml Files.FileDetails@Criticality (server-side enum conversion: 1=Recommended, 2=Critical, 3=Optional).",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "CurrentVersion": {
+                    "description": "The currently installed firmware version.",
+                    "longDescription": "The currently installed firmware version from lc_validator_output.xml Files.FileDetails.Device.Component@version.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "FileName": {
+                    "description": "The DUP package file name.",
+                    "longDescription": "The DUP package file name as extracted from lc_validator_output.xml Files.FileDetails@name.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "HostResetRequiredOnUpdate": {
+                    "description": "Indicates whether a host reset is required after the update.",
+                    "longDescription": "This property shall indicate whether a host reset is required after the firmware update is applied.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "PackageValidationStatus": {
+                    "description": "The LC validator status: Starting, Success, or Failure.",
+                    "longDescription": "The LC validator status from the redownloader state machine. Starting = upload/validation in progress. Success = validated and ready for installation. Failure = validation failed.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PackageVersion": {
+                    "description": "The DUP package version.",
+                    "longDescription": "The DUP package version (also serves as available version for GUI display) from lc_validator_output.xml Files.FileDetails@packageVersion.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PluginEnabled": {
+                    "description": "The state of the plugin true when enabled, false when disabled.",
+                    "longDescription": "The state of the plugin true when enabled, false when disabled.",
+                    "readonly": false,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "PluginResourceCPUTime": {
+                    "description": "The cumulative CPU utilization of the process.",
+                    "longDescription": "The cumulative CPU utilization of the process.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PluginResourceElapsedRuntime": {
+                    "description": "The amount of wall clock time the process has been running.",
+                    "longDescription": "The amount of wall clock time the process has been running.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PluginResourceRSS": {
+                    "description": "The plugin process memory utilization.",
+                    "longDescription": "The plugin process memory utilization.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "PluginSizeKB": {
+                    "description": "Plugin File System size reported in terms of KB.",
+                    "longDescription": "This property shall contain File System size reported in terms of KB.",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "PluginStatus": {
+                    "description": "The current status of the plugin.",
+                    "longDescription": "The current status of the plugin.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "PrerequisiteMessages": {
+                    "description": "Array of prerequisite message details.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/PrerequisiteMessage"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "longDescription": "Array of prerequisite message details from lc_validator_output.xml PrerequisiteInfo.Messages.*.",
+                    "readonly": true,
+                    "type": "array"
+                },
+                "RebootType": {
+                    "description": "The reboot type required: NONE, IDRAC, HOST, or CHASSIS.",
+                    "longDescription": "The reboot type required from lc_validator_output.xml Files.FileDetails@RebootType.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "TargetFQDD": {
+                    "description": "The target device FQDD.",
+                    "longDescription": "The target device FQDD from lc_validator_output.xml Files.FileDetails.Device@target.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "UnmetHardRequisites": {
+                    "description": "Count of unmet hard prerequisites.",
+                    "longDescription": "Count of unmet hard prerequisites from lc_validator_output.xml PrerequisiteInfo@iUnmetHardRequisites.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "UnmetSoftRequisites": {
+                    "description": "Count of unmet soft prerequisites.",
+                    "longDescription": "Count of unmet soft prerequisites from lc_validator_output.xml PrerequisiteInfo@iUnmetSoftRequisites.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "ValidationMessage": {
+                    "description": "Error message when validation fails. Only present when PackageValidationStatus = Failure.",
+                    "longDescription": "Error message when validation fails (e.g., RED034, RED098, RED106, SYS017 text). Not present when PackageValidationStatus = Success.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "PrerequisiteMessage": {
+            "additionalProperties": false,
+            "description": "A prerequisite message with details about unmet requirements.",
+            "longDescription": "A prerequisite message with details about unmet requirements including message ID, text, unmet type, and severity.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "Message": {
+                    "description": "The message text.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "MessageId": {
+                    "description": "The message identifier.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "Severity": {
+                    "description": "The severity level.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "UnmetType": {
+                    "description": "The unmet type: Hard or Soft.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "Restart": {
+            "additionalProperties": false,
+            "description": "The Restart operation shall restart plugin instance present in SoftwareInventory.",
+            "longDescription": "The Restart operation shall restart plugin instance present in SoftwareInventory.",
+            "parameters": {},
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_0_0"
+        },
+        "Uninstall": {
+            "additionalProperties": false,
+            "description": "The Uninstall operation shall remove plugin instance present in SoftwareInventory.",
+            "longDescription": "The Uninstall operation shall remove plugin instance present in SoftwareInventory.",
+            "parameters": {},
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "versionAdded": "v1_0_0"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellOemSoftwareInventory.v1_0_0"
+}

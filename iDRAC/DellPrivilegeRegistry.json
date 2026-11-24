@@ -1,0 +1,18 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPrivilegeRegistry.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellOperationPrivilege": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPrivilegeRegistry.v1_0_0.json#/definitions/DellOperationPrivilege"
+                }
+            ],
+            "description": "Dell OEM extension for OperationPrivilege providing payload-based privilege matching.",
+            "longDescription": "This complex type provides Dell OEM extension for the DMTF OperationPrivilege type, enabling payload-based privilege matching for action requests."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellPrivilegeRegistry"
+}

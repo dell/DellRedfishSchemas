@@ -1,0 +1,279 @@
+components:
+  schemas:
+    DellOemSoftwareInventory_v1_0_0_Actions:
+      additionalProperties: false
+      properties:
+        '#SoftwareInventory.Restart':
+          $ref: '#/components/schemas/DellOemSoftwareInventory_v1_0_0_Restart'
+        '#SoftwareInventory.Uninstall':
+          $ref: '#/components/schemas/DellOemSoftwareInventory_v1_0_0_Uninstall'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemSoftwareInventory_v1_0_0_DellOemSoftwareInventory:
+      additionalProperties: false
+      description: This property shall represent the OEM properties for a SoftwareInventory
+        resource.
+      properties:
+        AppliesToPCIeIDs:
+          description: 'Array of PCIe IDs for all physical devices consolidated into
+            this FirmwareInventory URI. Format: VendorID:DeviceID:SubVendorID:SubDeviceID
+            in hex.'
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: Array of PCIe IDs for all physical devices that map to
+            this consolidated FirmwareInventory URI. Each element is formatted as
+            VendorID:DeviceID:SubVendorID:SubDeviceID in hexadecimal (zero-padded
+            to 4 digits, uppercase, no 0x prefix). Absent for non-PCIe devices such
+            as BIOS, iDRAC, TPM, and PSU.
+        ComponentID:
+          description: The component identifier.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The component identifier from lc_validator_output.xml
+            Files.FileDetails.Device@ComponentID.
+        ComponentName:
+          description: The component display name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The component display name from lc_validator_output.xml
+            Files.FileDetails.Device.Component@name.
+        ComponentNames:
+          description: Array of all component names for multi-component DUPs.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: Array of all component display names from lc_validator_output.xml
+            Files.FileDetails.Device.Component@name elements. For multi-component
+            DUPs, contains all components. For single-component DUPs, contains one
+            element matching ComponentName.
+        ComponentVersions:
+          description: Array of all component versions for multi-component DUPs.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: Array of all component versions from lc_validator_output.xml
+            Files.FileDetails.Device.Component@version elements. Parallel array to
+            ComponentNames - each version corresponds to the component at the same
+            index.
+        Criticality:
+          description: 'The criticality level: Recommended, Critical, or Optional.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: 'The criticality level from lc_validator_output.xml Files.FileDetails@Criticality
+            (server-side enum conversion: 1=Recommended, 2=Critical, 3=Optional).'
+        CurrentVersion:
+          description: The currently installed firmware version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The currently installed firmware version from lc_validator_output.xml
+            Files.FileDetails.Device.Component@version.
+        FileName:
+          description: The DUP package file name.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The DUP package file name as extracted from lc_validator_output.xml
+            Files.FileDetails@name.
+        HostResetRequiredOnUpdate:
+          description: Indicates whether a host reset is required after the update.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate whether a host reset is
+            required after the firmware update is applied.
+        PackageValidationStatus:
+          description: 'The LC validator status: Starting, Success, or Failure.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The LC validator status from the redownloader state machine.
+            Starting = upload/validation in progress. Success = validated and ready
+            for installation. Failure = validation failed.
+        PackageVersion:
+          description: The DUP package version.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The DUP package version (also serves as available version
+            for GUI display) from lc_validator_output.xml Files.FileDetails@packageVersion.
+        PluginEnabled:
+          description: The state of the plugin true when enabled, false when disabled.
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: The state of the plugin true when enabled, false when
+            disabled.
+        PluginResourceCPUTime:
+          description: The cumulative CPU utilization of the process.
+          nullable: true
+          type: string
+          x-longDescription: The cumulative CPU utilization of the process.
+        PluginResourceElapsedRuntime:
+          description: The amount of wall clock time the process has been running.
+          nullable: true
+          type: string
+          x-longDescription: The amount of wall clock time the process has been running.
+        PluginResourceRSS:
+          description: The plugin process memory utilization.
+          nullable: true
+          type: number
+          x-longDescription: The plugin process memory utilization.
+        PluginSizeKB:
+          description: Plugin File System size reported in terms of KB.
+          nullable: true
+          type: number
+          x-longDescription: This property shall contain File System size reported
+            in terms of KB.
+        PluginStatus:
+          description: The current status of the plugin.
+          nullable: true
+          type: string
+          x-longDescription: The current status of the plugin.
+        PrerequisiteMessages:
+          description: Array of prerequisite message details.
+          items:
+            $ref: '#/components/schemas/DellOemSoftwareInventory_v1_0_0_PrerequisiteMessage'
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: Array of prerequisite message details from lc_validator_output.xml
+            PrerequisiteInfo.Messages.*.
+        RebootType:
+          description: 'The reboot type required: NONE, IDRAC, HOST, or CHASSIS.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The reboot type required from lc_validator_output.xml
+            Files.FileDetails@RebootType.
+        TargetFQDD:
+          description: The target device FQDD.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The target device FQDD from lc_validator_output.xml Files.FileDetails.Device@target.
+        UnmetHardRequisites:
+          description: Count of unmet hard prerequisites.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Count of unmet hard prerequisites from lc_validator_output.xml
+            PrerequisiteInfo@iUnmetHardRequisites.
+        UnmetSoftRequisites:
+          description: Count of unmet soft prerequisites.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: Count of unmet soft prerequisites from lc_validator_output.xml
+            PrerequisiteInfo@iUnmetSoftRequisites.
+        ValidationMessage:
+          description: Error message when validation fails. Only present when PackageValidationStatus
+            = Failure.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: Error message when validation fails (e.g., RED034, RED098,
+            RED106, SYS017 text). Not present when PackageValidationStatus = Success.
+      type: object
+      x-longDescription: This complex type provides OEM extensions for the DMTF SoftwareInventory
+        resource, including plugin inventory properties and Dell-specific extensions.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemSoftwareInventory_v1_0_0_PrerequisiteMessage:
+      additionalProperties: false
+      description: A prerequisite message with details about unmet requirements.
+      properties:
+        Message:
+          description: The message text.
+          nullable: true
+          type: string
+        MessageId:
+          description: The message identifier.
+          nullable: true
+          type: string
+        Severity:
+          description: The severity level.
+          nullable: true
+          type: string
+        UnmetType:
+          description: 'The unmet type: Hard or Soft.'
+          nullable: true
+          type: string
+      type: object
+      x-longDescription: A prerequisite message with details about unmet requirements
+        including message ID, text, unmet type, and severity.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOemSoftwareInventory_v1_0_0_Restart:
+      additionalProperties: false
+      description: The Restart operation shall restart plugin instance present in
+        SoftwareInventory.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The Restart operation shall restart plugin instance present
+        in SoftwareInventory.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_0_0
+    DellOemSoftwareInventory_v1_0_0_RestartRequestBody:
+      additionalProperties: false
+      description: The Restart operation shall restart plugin instance present in
+        SoftwareInventory.
+      properties: {}
+      type: object
+      x-longDescription: The Restart operation shall restart plugin instance present
+        in SoftwareInventory.
+    DellOemSoftwareInventory_v1_0_0_Uninstall:
+      additionalProperties: false
+      description: The Uninstall operation shall remove plugin instance present in
+        SoftwareInventory.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: The Uninstall operation shall remove plugin instance present
+        in SoftwareInventory.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_0_0
+    DellOemSoftwareInventory_v1_0_0_UninstallRequestBody:
+      additionalProperties: false
+      description: The Uninstall operation shall remove plugin instance present in
+        SoftwareInventory.
+      properties: {}
+      type: object
+      x-longDescription: The Uninstall operation shall remove plugin instance present
+        in SoftwareInventory.
+title: '#DellOemSoftwareInventory.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

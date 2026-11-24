@@ -1,0 +1,976 @@
+components:
+  schemas:
+    DellOSDeploymentService_v1_2_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DellOSDeploymentService.BootToBootstrapImage':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_BootToBootstrapImage'
+        '#DellOSDeploymentService.BootToHD':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_BootToHD'
+        '#DellOSDeploymentService.BootToNetworkISO':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_BootToNetworkISO'
+        '#DellOSDeploymentService.ConfigurableBootToNetworkISO':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_ConfigurableBootToNetworkISO'
+        '#DellOSDeploymentService.ConnectNetworkISOImage':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_ConnectNetworkISOImage'
+        '#DellOSDeploymentService.DetachBootstrapImage':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_DetachBootstrapImage'
+        '#DellOSDeploymentService.DetachDrivers':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_DetachDrivers'
+        '#DellOSDeploymentService.DetachISOImage':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_DetachISOImage'
+        '#DellOSDeploymentService.DisconnectNetworkISOImage':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_DisconnectNetworkISOImage'
+        '#DellOSDeploymentService.GetAttachStatus':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_GetAttachStatus'
+        '#DellOSDeploymentService.GetDriverPackInfo':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_GetDriverPackInfo'
+        '#DellOSDeploymentService.GetNetworkISOImageConnectionInfo':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_GetNetworkISOImageConnectionInfo'
+        '#DellOSDeploymentService.SkipISOImageBoot':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_SkipISOImageBoot'
+        '#DellOSDeploymentService.UnpackAndAttach':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_UnpackAndAttach'
+        '#DellOSDeploymentService.UnpackAndShare':
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_UnpackAndShare'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_BootToBootstrapImage:
+      additionalProperties: false
+      description: The BootToBootstrapImage() method is used to boot to the bootstrap
+        image to collect GPU diagnostic information.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The BootToBootstrapImage() method is used to boot to the
+        bootstrap image to collect GPU diagnostic information.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_BootToBootstrapImageRequestBody:
+      additionalProperties: false
+      description: The BootToBootstrapImage() method is used to boot to the bootstrap
+        image to collect GPU diagnostic information.
+      properties:
+        ImageName:
+          description: The name of the bootstrap image to boot to.
+          type: string
+          x-longDescription: The name of the bootstrap image to boot to.
+      type: object
+      x-longDescription: The BootToBootstrapImage() method is used to boot to the
+        bootstrap image to collect GPU diagnostic information.
+    DellOSDeploymentService_v1_2_0_BootToHD:
+      additionalProperties: false
+      description: The BootToHD() method is used for one time boot to the host server's
+        hard disk.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The BootToHD() method is used for one time boot to the host
+        server's hard disk.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_BootToHDRequestBody:
+      additionalProperties: false
+      description: The BootToHD() method is used for one time boot to the host server's
+        hard disk.
+      properties: {}
+      type: object
+      x-longDescription: The BootToHD() method is used for one time boot to the host
+        server's hard disk.
+    DellOSDeploymentService_v1_2_0_BootToISOFromVFlash:
+      additionalProperties: false
+      description: 'The BootToISOFromVFlash() method boots to the pre-operating system
+        image downloaded on the vFlash SD card. The following table lists the return
+        values for BootToISOFromVFlash() method, where the method-execution behavior
+        matches the return-code description. Note: This method will not be supported
+        in Poweredge systems with model YX5X and iDRAC firmware version 4.00.00.00
+        or later.'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: 'The BootToISOFromVFlash() method boots to the pre-operating
+        system image downloaded on the vFlash SD card. The following table lists the
+        return values for BootToISOFromVFlash() method, where the method-execution
+        behavior matches the return-code description. Note: This method will not be
+        supported in Poweredge systems with model YX5X and iDRAC firmware version
+        4.00.00.00 or later.'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_BootToNetworkISO:
+      additionalProperties: false
+      description: The BootToNetworkISO() method is used to boot to the iDRAC pre-operating
+        system image that was already downloaded.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The BootToNetworkISO() method is used to boot to the iDRAC
+        pre-operating system image that was already downloaded.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_BootToNetworkISORequestBody:
+      additionalProperties: false
+      description: The BootToNetworkISO() method is used to boot to the iDRAC pre-operating
+        system image that was already downloaded.
+      properties:
+        ExposeDuration:
+          description: 'Identifies the amount of time (up to 18 hours) for the ISO
+            Image to be exposed as a local CD-ROM device to the host. The format for
+            intervals is: YYYY-MM-DDThh:mm:ss[.SSS](Z|(+|-)hh:mm)'
+          format: date-time
+          type: string
+          x-longDescription: 'Identifies the amount of time (up to 18 hours) for the
+            ISO Image to be exposed as a local CD-ROM device to the host. The format
+            for intervals is: YYYY-MM-DDThh:mm:ss[.SSS](Z|(+|-)hh:mm)'
+        FolderName:
+          description: Folder Name containing the ISO.
+          type: string
+          x-longDescription: Folder Name containing the ISO.
+        HashType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_HashType
+          description: Type of hash algorithm used to compute checksum.
+          x-longDescription: Type of hash algorithm used to compute checksum.
+        HashValue:
+          description: Checksum value in string format computed using 'HashType' algorithm.
+          type: string
+          x-longDescription: Checksum value in string format computed using 'HashType'
+            algorithm.
+        IPAddress:
+          description: NFS or CIFS share IPv4 address. For example, 192.168.10.100.
+          type: string
+          x-longDescription: NFS or CIFS share IPv4 address. For example, 192.168.10.100.
+        ImageName:
+          description: Name of the image file.
+          type: string
+          x-longDescription: Name of the image file.
+        Password:
+          description: Password, if applicable.
+          type: string
+          x-longDescription: Password, if applicable.
+        ShareName:
+          description: Name of the CIFS share or full path to the NFS share. Optional
+            for HTTP/HTTPS share (if supported), this may be treated as the path of
+            the directory containing the file.
+          type: string
+          x-longDescription: Name of the CIFS share or full path to the NFS share.
+            Optional for HTTP/HTTPS share (if supported), this may be treated as the
+            path of the directory containing the file.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_ShareType
+          description: Type of the Network Share.
+          x-longDescription: Type of the Network Share.
+        UserName:
+          description: UserName, if applicable. If the value contains domain name
+            e.g. domain name/UserName, the "domain name" will be considered as Work
+            group. Work group parameter will take precedence if value is separately
+            passed for it along with UserName. Supports only '' and '/' for seperator.
+          type: string
+          x-longDescription: UserName, if applicable. If the value contains domain
+            name e.g. domain name/UserName, the "domain name" will be considered as
+            Work group. Work group parameter will take precedence if value is separately
+            passed for it along with UserName. Supports only '' and '/' for seperator.
+        Workgroup:
+          description: Workgroup for the CIFS share, optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share, optional.
+      required:
+      - IPAddress
+      - ImageName
+      - ShareName
+      - ShareType
+      type: object
+      x-longDescription: The BootToNetworkISO() method is used to boot to the iDRAC
+        pre-operating system image that was already downloaded.
+    DellOSDeploymentService_v1_2_0_ConfigurableBootToNetworkISO:
+      additionalProperties: false
+      description: The ConfigurableBootToNetworkISO() method exposes an ISO Image
+        present on a network share as a CDROM device to the host server for a specified
+        exposure duration interval or by default for 18 hrs. Upon the successful execution,
+        based on the ResetType parameter, the host system shall either immediately
+        cold boot or warm boot. Upon this reset, the system shall then boot to the
+        ISO Image. If ResetType specifies no immediate reboot, then upon the next
+        host system reset, the system shall boot to the ISO Image. Furthermore, if
+        immediate reset is not specified, then the system should be rebooted before
+        the exposure duration interval expires, otherwise the system shall fail to
+        boot to the ISO Image.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The ConfigurableBootToNetworkISO() method exposes an ISO
+        Image present on a network share as a CDROM device to the host server for
+        a specified exposure duration interval or by default for 18 hrs. Upon the
+        successful execution, based on the ResetType parameter, the host system shall
+        either immediately cold boot or warm boot. Upon this reset, the system shall
+        then boot to the ISO Image. If ResetType specifies no immediate reboot, then
+        upon the next host system reset, the system shall boot to the ISO Image. Furthermore,
+        if immediate reset is not specified, then the system should be rebooted before
+        the exposure duration interval expires, otherwise the system shall fail to
+        boot to the ISO Image.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_ConfigurableBootToNetworkISORequestBody:
+      additionalProperties: false
+      description: The ConfigurableBootToNetworkISO() method exposes an ISO Image
+        present on a network share as a CDROM device to the host server for a specified
+        exposure duration interval or by default for 18 hrs. Upon the successful execution,
+        based on the ResetType parameter, the host system shall either immediately
+        cold boot or warm boot. Upon this reset, the system shall then boot to the
+        ISO Image. If ResetType specifies no immediate reboot, then upon the next
+        host system reset, the system shall boot to the ISO Image. Furthermore, if
+        immediate reset is not specified, then the system should be rebooted before
+        the exposure duration interval expires, otherwise the system shall fail to
+        boot to the ISO Image.
+      properties:
+        ExposeDuration:
+          description: 'Identifies the amount of time (up to 18 hours) for the ISO
+            Image to be exposed as a local CD-ROM device to the host server after
+            which it will be automatically detached. The default value shall be 18
+            hrs, if the parameter is not specified. The format for intervals is: YYYY-MM-DDThh:mm:ss[.SSS](Z|(+|-)hh:mm)'
+          format: date-time
+          type: string
+          x-longDescription: 'Identifies the amount of time (up to 18 hours) for the
+            ISO Image to be exposed as a local CD-ROM device to the host server after
+            which it will be automatically detached. The default value shall be 18
+            hrs, if the parameter is not specified. The format for intervals is: YYYY-MM-DDThh:mm:ss[.SSS](Z|(+|-)hh:mm)'
+        HashType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_HashType
+          description: Type of hash algorithm used to compute checksum.
+          x-longDescription: Type of hash algorithm used to compute checksum.
+        HashValue:
+          description: Checksum value in string format computed using 'HashType' algorithm.
+          type: string
+          x-longDescription: Checksum value in string format computed using 'HashType'
+            algorithm.
+        IPAddress:
+          description: NFS or CIFS share IPv4 address. For example, 192.168.10.100.
+          type: string
+          x-longDescription: NFS or CIFS share IPv4 address. For example, 192.168.10.100.
+        ImageName:
+          description: Name of the image file.
+          type: string
+          x-longDescription: Name of the image file.
+        Password:
+          description: Password, if applicable.
+          type: string
+          x-longDescription: Password, if applicable.
+        ResetType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_ResetType
+          description: Specifies if the host system needs to be immediately forced
+            to cold/warm reset in order to boot to the ISO Image.
+          x-longDescription: Specifies if the host system needs to be immediately
+            forced to cold/warm reset in order to boot to the ISO Image.
+        ShareName:
+          description: Name of the CIFS share or full path to the NFS share. Optional
+            for HTTP/HTTPS share (if supported), this may be treated as the path of
+            the directory containing the file.
+          type: string
+          x-longDescription: Name of the CIFS share or full path to the NFS share.
+            Optional for HTTP/HTTPS share (if supported), this may be treated as the
+            path of the directory containing the file.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_ShareType
+          description: Type of the Network Share.
+          x-longDescription: Type of the Network Share.
+        UserName:
+          description: UserName, if applicable.
+          type: string
+          x-longDescription: UserName, if applicable.
+        Workgroup:
+          description: Workgroup for the CIFS share, optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share, optional.
+      required:
+      - IPAddress
+      - ImageName
+      - ResetType
+      - ShareName
+      - ShareType
+      type: object
+      x-longDescription: The ConfigurableBootToNetworkISO() method exposes an ISO
+        Image present on a network share as a CDROM device to the host server for
+        a specified exposure duration interval or by default for 18 hrs. Upon the
+        successful execution, based on the ResetType parameter, the host system shall
+        either immediately cold boot or warm boot. Upon this reset, the system shall
+        then boot to the ISO Image. If ResetType specifies no immediate reboot, then
+        upon the next host system reset, the system shall boot to the ISO Image. Furthermore,
+        if immediate reset is not specified, then the system should be rebooted before
+        the exposure duration interval expires, otherwise the system shall fail to
+        boot to the ISO Image.
+    DellOSDeploymentService_v1_2_0_ConnectNetworkISOImage:
+      additionalProperties: false
+      description: 'The ConnectNetworkISOImage() method is used to connect to the
+        ISO present on the network share and expose the ISO as a local USB CD-ROM
+        device to the host system. This method will connect to the ISO located on
+        an NFS/CIFS share and expose it as a virtual CDROM device to the host server.
+        Even though the successful method execution shall not change the boot order
+        of that device, the host shall always boot to the virtual CDROM. Also note
+        that after the ISO is exposed to the host server, Lifecycle Controller shall
+        be locked and no other jobs like configuration/update etc shall be performed
+        until the ISO is detached using the DisconnectNetworkISOImage() method. The
+        successful exection of the DisconnectNetworkISOImage() shall revert the host
+        system to the regular boot list. NOTE: The recommended methodology for connecting
+        to an ISO image is by using the ConnectRFSISOImage()  method that utilizes
+        the remote file system (RFS).'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: 'The ConnectNetworkISOImage() method is used to connect to
+        the ISO present on the network share and expose the ISO as a local USB CD-ROM
+        device to the host system. This method will connect to the ISO located on
+        an NFS/CIFS share and expose it as a virtual CDROM device to the host server.
+        Even though the successful method execution shall not change the boot order
+        of that device, the host shall always boot to the virtual CDROM. Also note
+        that after the ISO is exposed to the host server, Lifecycle Controller shall
+        be locked and no other jobs like configuration/update etc shall be performed
+        until the ISO is detached using the DisconnectNetworkISOImage() method. The
+        successful exection of the DisconnectNetworkISOImage() shall revert the host
+        system to the regular boot list. NOTE: The recommended methodology for connecting
+        to an ISO image is by using the ConnectRFSISOImage()  method that utilizes
+        the remote file system (RFS).'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_ConnectNetworkISOImageRequestBody:
+      additionalProperties: false
+      description: 'The ConnectNetworkISOImage() method is used to connect to the
+        ISO present on the network share and expose the ISO as a local USB CD-ROM
+        device to the host system. This method will connect to the ISO located on
+        an NFS/CIFS share and expose it as a virtual CDROM device to the host server.
+        Even though the successful method execution shall not change the boot order
+        of that device, the host shall always boot to the virtual CDROM. Also note
+        that after the ISO is exposed to the host server, Lifecycle Controller shall
+        be locked and no other jobs like configuration/update etc shall be performed
+        until the ISO is detached using the DisconnectNetworkISOImage() method. The
+        successful exection of the DisconnectNetworkISOImage() shall revert the host
+        system to the regular boot list. NOTE: The recommended methodology for connecting
+        to an ISO image is by using the ConnectRFSISOImage()  method that utilizes
+        the remote file system (RFS).'
+      properties:
+        HashType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_HashType
+          description: Type of hash algorithm used to compute checksum.
+          x-longDescription: Type of hash algorithm used to compute checksum.
+        HashValue:
+          description: Checksum value in string format computed using HashType algorithm.
+          type: string
+          x-longDescription: Checksum value in string format computed using HashType
+            algorithm.
+        IPAddress:
+          description: CIFS or NFS share IPv4 address. For example, 192.168.10.100.
+          type: string
+          x-longDescription: CIFS or NFS share IPv4 address. For example, 192.168.10.100.
+        ImageName:
+          description: Name of the image file.
+          type: string
+          x-longDescription: Name of the image file.
+        Password:
+          description: Password of the account to access the share.
+          type: string
+          x-longDescription: Password of the account to access the share.
+        ShareName:
+          description: Name of the CIFS share or full path to the NFS share. Optional
+            for HTTP/HTTPS share (if supported), this may be treated as the path of
+            the directory containing the file.
+          type: string
+          x-longDescription: Name of the CIFS share or full path to the NFS share.
+            Optional for HTTP/HTTPS share (if supported), this may be treated as the
+            path of the directory containing the file.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_ShareType
+          description: Type of the Network Share.
+          x-longDescription: Type of the Network Share.
+        UserName:
+          description: UserName of the account to access the share.
+          type: string
+          x-longDescription: UserName of the account to access the share.
+        Workgroup:
+          description: Workgroup for the CIFS share, optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share, optional.
+      required:
+      - IPAddress
+      - ImageName
+      - ShareName
+      - ShareType
+      type: object
+      x-longDescription: 'The ConnectNetworkISOImage() method is used to connect to
+        the ISO present on the network share and expose the ISO as a local USB CD-ROM
+        device to the host system. This method will connect to the ISO located on
+        an NFS/CIFS share and expose it as a virtual CDROM device to the host server.
+        Even though the successful method execution shall not change the boot order
+        of that device, the host shall always boot to the virtual CDROM. Also note
+        that after the ISO is exposed to the host server, Lifecycle Controller shall
+        be locked and no other jobs like configuration/update etc shall be performed
+        until the ISO is detached using the DisconnectNetworkISOImage() method. The
+        successful exection of the DisconnectNetworkISOImage() shall revert the host
+        system to the regular boot list. NOTE: The recommended methodology for connecting
+        to an ISO image is by using the ConnectRFSISOImage()  method that utilizes
+        the remote file system (RFS).'
+    DellOSDeploymentService_v1_2_0_DeleteISOFromVFlash:
+      additionalProperties: false
+      description: 'The DeleteISOFromVFlash() method deletes the ISO Image from vFlash
+        SD card. The following table lists the return values for the DeleteISOFromVFlash()
+        method, where the method-execution behavior matches the return-code description.
+        Note: This method will not be supported in Poweredge systems with model YX5X
+        and iDRAC firmware version 4.00.00.00 or later.'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: 'The DeleteISOFromVFlash() method deletes the ISO Image from
+        vFlash SD card. The following table lists the return values for the DeleteISOFromVFlash()
+        method, where the method-execution behavior matches the return-code description.
+        Note: This method will not be supported in Poweredge systems with model YX5X
+        and iDRAC firmware version 4.00.00.00 or later.'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_DellOSDeploymentService:
+      additionalProperties: false
+      description: The DellOSDeploymentService resource provides some actions to support
+        OS deployment configurations.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DellOSDeploymentService_v1_2_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: The DellOSDeploymentService resource provides some actions
+        to support OS deployment configurations.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_DetachBootstrapImage:
+      additionalProperties: false
+      description: The DetachBootstrapImage() method is used to detach the bootstrap
+        image.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The DetachBootstrapImage() method is used to detach the bootstrap
+        image.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_DetachBootstrapImageRequestBody:
+      additionalProperties: false
+      description: The DetachBootstrapImage() method is used to detach the bootstrap
+        image.
+      properties:
+        ImageName:
+          description: The name of the bootstrap image to detach.
+          type: string
+          x-longDescription: The name of the bootstrap image to detach.
+      type: object
+      x-longDescription: The DetachBootstrapImage() method is used to detach the bootstrap
+        image.
+    DellOSDeploymentService_v1_2_0_DetachDrivers:
+      additionalProperties: false
+      description: This OSDeploymentService.DetachDrivers() method is used to detach
+        the USB device containing the drivers from the host server.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: This OSDeploymentService.DetachDrivers() method is used to
+        detach the USB device containing the drivers from the host server.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_DetachDriversRequestBody:
+      additionalProperties: false
+      description: This OSDeploymentService.DetachDrivers() method is used to detach
+        the USB device containing the drivers from the host server.
+      properties: {}
+      type: object
+      x-longDescription: This OSDeploymentService.DetachDrivers() method is used to
+        detach the USB device containing the drivers from the host server.
+    DellOSDeploymentService_v1_2_0_DetachISOFromVFlash:
+      additionalProperties: false
+      description: 'The DetachISOFromVFlash() method is used to detach the ISO Image
+        on a vFlash SD card from the host system. Note: This method will not be supported
+        in Poweredge systems with model YX5X and iDRAC firmware version 4.00.00.00
+        or later.'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: 'The DetachISOFromVFlash() method is used to detach the ISO
+        Image on a vFlash SD card from the host system. Note: This method will not
+        be supported in Poweredge systems with model YX5X and iDRAC firmware version
+        4.00.00.00 or later.'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_DetachISOImage:
+      additionalProperties: false
+      description: The DetachISOImage() method is used to detach the ISO Image from
+        the host server.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The DetachISOImage() method is used to detach the ISO Image
+        from the host server.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_DetachISOImageRequestBody:
+      additionalProperties: false
+      description: The DetachISOImage() method is used to detach the ISO Image from
+        the host server.
+      properties: {}
+      type: object
+      x-longDescription: The DetachISOImage() method is used to detach the ISO Image
+        from the host server.
+    DellOSDeploymentService_v1_2_0_DisconnectNetworkISOImage:
+      additionalProperties: false
+      description: The DisconnectNetworkISOImage() method is used to disconnect and
+        detach the ISO Image from the host system.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The DisconnectNetworkISOImage() method is used to disconnect
+        and detach the ISO Image from the host system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_DisconnectNetworkISOImageRequestBody:
+      additionalProperties: false
+      description: The DisconnectNetworkISOImage() method is used to disconnect and
+        detach the ISO Image from the host system.
+      properties: {}
+      type: object
+      x-longDescription: The DisconnectNetworkISOImage() method is used to disconnect
+        and detach the ISO Image from the host system.
+    DellOSDeploymentService_v1_2_0_DownloadISOToVFlash:
+      additionalProperties: false
+      description: 'The DownloadISOToVFlash() method downloads the pre-operating system
+        ISO Image to the vFlash SD card. The following table lists the return values
+        for DownloadISOToVFlash() method, where the method-execution behavior matches
+        the return-code description.Note: This method will not be supported in Poweredge
+        systems with model YX5X and iDRAC firmware version 4.00.00.00 or later.'
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: 'The DownloadISOToVFlash() method downloads the pre-operating
+        system ISO Image to the vFlash SD card. The following table lists the return
+        values for DownloadISOToVFlash() method, where the method-execution behavior
+        matches the return-code description.Note: This method will not be supported
+        in Poweredge systems with model YX5X and iDRAC firmware version 4.00.00.00
+        or later.'
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_GetAttachStatus:
+      additionalProperties: false
+      description: The GetAttachStatus() method will give the status of the Drivers
+        and ISO Image that has been exposed to host.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The GetAttachStatus() method will give the status of the
+        Drivers and ISO Image that has been exposed to host.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_GetAttachStatusRequestBody:
+      additionalProperties: false
+      description: The GetAttachStatus() method will give the status of the Drivers
+        and ISO Image that has been exposed to host.
+      properties: {}
+      type: object
+      x-longDescription: The GetAttachStatus() method will give the status of the
+        Drivers and ISO Image that has been exposed to host.
+    DellOSDeploymentService_v1_2_0_GetAttachStatusResponse:
+      additionalProperties: false
+      description: The response body for the GetAttachStatus action.
+      properties:
+        DriversAttachStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_GetAttachStatusResponseDriversAttachStatus
+          description: Driver attach status.
+          readOnly: true
+          x-longDescription: Driver attach status.
+        ISOAttachStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_GetAttachStatusResponseISOAttachStatus
+          description: ISO attached state.
+          readOnly: true
+          x-longDescription: ISO attached state.
+      required:
+      - DriversAttachStatus
+      - ISOAttachStatus
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetAttachStatus action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_GetDriverPackInfo:
+      additionalProperties: false
+      description: The GetDriverPackInfo() method is used get the list of operating
+        systems that can be installed on the host system using the embedded device
+        drivers present in the Lifecycle Controller.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The GetDriverPackInfo() method is used get the list of operating
+        systems that can be installed on the host system using the embedded device
+        drivers present in the Lifecycle Controller.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_GetDriverPackInfoRequestBody:
+      additionalProperties: false
+      description: The GetDriverPackInfo() method is used get the list of operating
+        systems that can be installed on the host system using the embedded device
+        drivers present in the Lifecycle Controller.
+      properties: {}
+      type: object
+      x-longDescription: The GetDriverPackInfo() method is used get the list of operating
+        systems that can be installed on the host system using the embedded device
+        drivers present in the Lifecycle Controller.
+    DellOSDeploymentService_v1_2_0_GetDriverPackInfoResponse:
+      additionalProperties: false
+      description: The response body for the GetDriverPackInfo action.
+      properties:
+        OSList:
+          description: NULL or the list of operating systems supported by this server.
+          items:
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: NULL or the list of operating systems supported by this
+            server.
+        Version:
+          description: NULL or version of the driver pack.
+          readOnly: true
+          type: string
+          x-longDescription: NULL or version of the driver pack.
+      required:
+      - OSList
+      - Version
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetDriverPackInfo action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_GetNetworkISOImageConnectionInfo:
+      additionalProperties: false
+      description: The GetNetworkISOImageConnectionInfo() method is used to give the
+        status of the ISO Image that has been exposed to the host system.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The GetNetworkISOImageConnectionInfo() method is used to
+        give the status of the ISO Image that has been exposed to the host system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_GetNetworkISOImageConnectionInfoRequestBody:
+      additionalProperties: false
+      description: The GetNetworkISOImageConnectionInfo() method is used to give the
+        status of the ISO Image that has been exposed to the host system.
+      properties: {}
+      type: object
+      x-longDescription: The GetNetworkISOImageConnectionInfo() method is used to
+        give the status of the ISO Image that has been exposed to the host system.
+    DellOSDeploymentService_v1_2_0_GetNetworkISOImageConnectionInfoResponse:
+      additionalProperties: false
+      description: The response body for the GetNetworkISOImageConnectionInfo action.
+      properties:
+        HostAttachedStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_GetNetworkISOImageConnectionInfoResponseHostAttachedStatus
+          description: Indicates whether the ISO is attached to the host server.
+          readOnly: true
+          x-longDescription: Indicates whether the ISO is attached to the host server.
+        HostBootedFromISO:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_GetNetworkISOImageConnectionInfoResponseHostBootedFromISO
+          description: Indicates whether the host has booted to the ISO image at least
+            once.
+          readOnly: true
+          x-longDescription: Indicates whether the host has booted to the ISO image
+            at least once.
+        IPAddr:
+          description: IPv4 address of the CIFS or NFS share. Example 192.168.10.100.
+          readOnly: true
+          type: string
+          x-longDescription: IPv4 address of the CIFS or NFS share. Example 192.168.10.100.
+        ISOConnectionStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_GetNetworkISOImageConnectionInfoResponseISOConnectionStatus
+          description: Indicates whether the ISO is still accessible.
+          readOnly: true
+          x-longDescription: Indicates whether the ISO is still accessible.
+        ImageName:
+          description: ISO Image Name as specified in the ConnectNetworkISOImage method.
+          readOnly: true
+          type: string
+          x-longDescription: ISO Image Name as specified in the ConnectNetworkISOImage
+            method.
+        ShareName:
+          description: Share Name as specified in the ConnectNetworkISOImage method.
+          readOnly: true
+          type: string
+          x-longDescription: Share Name as specified in the ConnectNetworkISOImage
+            method.
+        UserName:
+          description: Username as specified in the ConnectNetworkISOImage method.
+          readOnly: true
+          type: string
+          x-longDescription: Username as specified in the ConnectNetworkISOImage method.
+        Workgroup:
+          description: Workgroup as specified in the ConnectNetworkISOImage method.
+          readOnly: true
+          type: string
+          x-longDescription: Workgroup as specified in the ConnectNetworkISOImage
+            method.
+      required:
+      - HostAttachedStatus
+      - HostBootedFromISO
+      - IPAddr
+      - ISOConnectionStatus
+      - ImageName
+      - ShareName
+      - UserName
+      - Workgroup
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the GetNetworkISOImageConnectionInfo action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_SkipISOImageBoot:
+      additionalProperties: false
+      description: The SkipISOImageBoot() method allows the BIOS to skip booting to
+        the ISO image once and boot normally to the first device in the boot list.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The SkipISOImageBoot() method allows the BIOS to skip booting
+        to the ISO image once and boot normally to the first device in the boot list.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellOSDeploymentService_v1_2_0_SkipISOImageBootRequestBody:
+      additionalProperties: false
+      description: The SkipISOImageBoot() method allows the BIOS to skip booting to
+        the ISO image once and boot normally to the first device in the boot list.
+      properties: {}
+      type: object
+      x-longDescription: The SkipISOImageBoot() method allows the BIOS to skip booting
+        to the ISO image once and boot normally to the first device in the boot list.
+    DellOSDeploymentService_v1_2_0_UnpackAndAttach:
+      additionalProperties: false
+      description: The UnpackAndAttach() method is used to extract the drivers for
+        the selected operating system to a USB device that is attached locally to
+        the server for the specified time interval. The following talbe specifies
+        the return values for UnpackAndAttach() method, where the method-execution
+        behavior matches the return- code description.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The UnpackAndAttach() method is used to extract the drivers
+        for the selected operating system to a USB device that is attached locally
+        to the server for the specified time interval. The following talbe specifies
+        the return values for UnpackAndAttach() method, where the method-execution
+        behavior matches the return- code description.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_UnpackAndAttachRequestBody:
+      additionalProperties: false
+      description: The UnpackAndAttach() method is used to extract the drivers for
+        the selected operating system to a USB device that is attached locally to
+        the server for the specified time interval. The following talbe specifies
+        the return values for UnpackAndAttach() method, where the method-execution
+        behavior matches the return- code description.
+      properties:
+        ExposeDuration:
+          description: 'Identifies the amount of time up to 18 hours for the drivers
+            to be exposed as an USB device to the host. The default value shall be
+            18 hrs, if the parameter is not specified. The format for intervals is:
+            YYYY-MM-DDThh:mm:ss[.SSS](Z|(+|-)hh:mm)'
+          format: date-time
+          type: string
+          x-longDescription: 'Identifies the amount of time up to 18 hours for the
+            drivers to be exposed as an USB device to the host. The default value
+            shall be 18 hrs, if the parameter is not specified. The format for intervals
+            is: YYYY-MM-DDThh:mm:ss[.SSS](Z|(+|-)hh:mm)'
+        OSName:
+          description: Name of the OS to unpack drivers for, this value shall match
+            one of the strings in OSList returned for GetDriverPackInfo.
+          type: string
+          x-longDescription: Name of the OS to unpack drivers for, this value shall
+            match one of the strings in OSList returned for GetDriverPackInfo.
+      required:
+      - OSName
+      type: object
+      x-longDescription: The UnpackAndAttach() method is used to extract the drivers
+        for the selected operating system to a USB device that is attached locally
+        to the server for the specified time interval. The following talbe specifies
+        the return values for UnpackAndAttach() method, where the method-execution
+        behavior matches the return- code description.
+    DellOSDeploymentService_v1_2_0_UnpackAndShare:
+      additionalProperties: false
+      description: The UnpackAndShare() method is used to extract the drivers for
+        the selected operating system, and copy them to the specified network share.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The UnpackAndShare() method is used to extract the drivers
+        for the selected operating system, and copy them to the specified network
+        share.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellOSDeploymentService_v1_2_0_UnpackAndShareRequestBody:
+      additionalProperties: false
+      description: The UnpackAndShare() method is used to extract the drivers for
+        the selected operating system, and copy them to the specified network share.
+      properties:
+        FolderName:
+          description: Folder Name.
+          type: string
+          x-longDescription: Folder Name.
+        IPAddress:
+          description: CIFS or NFS share IPv4 address.For example, 192.168.10.100.
+          type: string
+          x-longDescription: CIFS or NFS share IPv4 address.For example, 192.168.10.100.
+        OSName:
+          description: Operating System name.
+          type: string
+          x-longDescription: Operating System name.
+        Password:
+          description: Password, if applicable.
+          type: string
+          x-longDescription: Password, if applicable.
+        ShareName:
+          description: Name of the CIFS share or full path to the NFS share. Optional
+            for HTTP/HTTPS share (if supported), this may be treated as the path of
+            the directory containing the file.
+          type: string
+          x-longDescription: Name of the CIFS share or full path to the NFS share.
+            Optional for HTTP/HTTPS share (if supported), this may be treated as the
+            path of the directory containing the file.
+        ShareType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService.yaml#/components/schemas/DellOSDeploymentService_ShareType
+          description: Type of the Network Share.
+          x-longDescription: Type of the Network Share.
+        UserName:
+          description: UserName, if applicable.
+          type: string
+          x-longDescription: UserName, if applicable.
+        Workgroup:
+          description: Workgroup for the CIFS share, optional.
+          type: string
+          x-longDescription: Workgroup for the CIFS share, optional.
+      required:
+      - IPAddress
+      - OSName
+      - ShareName
+      - ShareType
+      type: object
+      x-longDescription: The UnpackAndShare() method is used to extract the drivers
+        for the selected operating system, and copy them to the specified network
+        share.
+title: '#DellOSDeploymentService.v1_2_0.DellOSDeploymentService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

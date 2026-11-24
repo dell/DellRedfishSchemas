@@ -1,0 +1,31 @@
+components:
+  schemas:
+    DellManagerNetworkProtocol_BinaryEnum:
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Associated functionality is disabled.
+        Enabled: Associated functionality is enabled.
+    DellManagerNetworkProtocol_ClientCertificateTypes:
+      enum:
+      - CustomLDEVID
+      - DefaultIDEVID
+      - SigningLDEVID
+      type: string
+      x-enumDescriptions:
+        CustomLDEVID: The Certificate(s) located under the Certificate Collection
+          at ClientCertificates shall be used for Port-based Network Access Control.
+        DefaultIDEVID: The Certificate located at InitialDeviceIDCertificate shall
+          be used for Port-based Network Access Control.
+        SigningLDEVID: The Certificate(s) located under the Certificate Collection
+          at ClientCertificates shall be used for Port-based Network Access Control.
+    DellManagerNetworkProtocol_DellManagerNetworkProtocol:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManagerNetworkProtocol.v1_0_1.yaml#/components/schemas/DellManagerNetworkProtocol_v1_0_1_DellManagerNetworkProtocol
+      description: Oem data related to the ManagerNetworkProtocol Instance.
+      x-longDescription: Oem data related to the ManagerNetworkProtocol Instance.
+title: '#DellManagerNetworkProtocol'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

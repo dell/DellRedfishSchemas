@@ -1,0 +1,82 @@
+components:
+  schemas:
+    DellLicense_DellLicense:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellLicense.v1_2_0.yaml#/components/schemas/DellLicense_v1_2_0_DellLicense
+      description: An instance of DellLicense represents a feature license installed
+        on a system.
+      x-longDescription: An instance of DellLicense represents a feature license installed
+        on a system.
+    DellLicense_LicenseAttributes:
+      enum:
+      - Bound
+      - Bound_ValidSubcomponent
+      - Unbound
+      - Upgraded
+      - Upgraded_ValidSubcomponent
+      - ValidSubcomponent
+      type: string
+      x-enumDescriptions:
+        Bound: Bound
+        Bound_ValidSubcomponent: Bound_Valid Subcomponent
+        Unbound: Unbound
+        Upgraded: Upgraded
+        Upgraded_ValidSubcomponent: Upgraded_Valid Subcomponent
+        ValidSubcomponent: Valid Subcomponent
+      x-enumLongDescriptions:
+        Bound: Bound
+        Bound_ValidSubcomponent: Bound_Valid Subcomponent
+        Unbound: Unbound
+        Upgraded: Upgraded
+        Upgraded_ValidSubcomponent: Upgraded_Valid Subcomponent
+        ValidSubcomponent: Valid Subcomponent
+      x-enumVersionAdded:
+        Bound: v1_1_0
+        Bound_ValidSubcomponent: v1_1_0
+        Unbound: v1_1_0
+        Upgraded: v1_1_0
+        Upgraded_ValidSubcomponent: v1_1_0
+        ValidSubcomponent: v1_1_0
+    DellLicense_LicensePrimaryStatus:
+      enum:
+      - Critical
+      - OK
+      - Unknown
+      - Warning
+      type: string
+      x-enumDescriptions:
+        Critical: Critical
+        OK: OK
+        Unknown: Unknown
+        Warning: Warning
+      x-enumLongDescriptions:
+        Critical: Critical
+        OK: OK
+        Unknown: Unknown
+        Warning: Warning
+    DellLicense_LicenseType:
+      enum:
+      - Evaluation
+      - Leased
+      - None
+      - Perpetual
+      - Site
+      type: string
+      x-enumDescriptions:
+        Evaluation: Evaluation
+        Leased: Leased
+        None: None
+        Perpetual: Perpetual
+        Site: Site
+      x-enumLongDescriptions:
+        Evaluation: Evaluation
+        Leased: Leased
+        None: None
+        Perpetual: Perpetual
+        Site: Site
+      x-enumVersionAdded:
+        None: v1_2_0
+title: '#DellLicense.DellLicense'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

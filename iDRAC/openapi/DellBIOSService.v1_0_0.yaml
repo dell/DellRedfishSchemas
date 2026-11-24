@@ -1,0 +1,92 @@
+components:
+  schemas:
+    DellBIOSService_v1_0_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        '#DellBIOSService.DeviceRecovery':
+          $ref: '#/components/schemas/DellBIOSService_v1_0_0_DeviceRecovery'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellBIOSService_v1_0_0_DellBIOSService:
+      additionalProperties: false
+      description: The DellBIOSService resource provides some actions to support BIOS
+        functionality.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Actions:
+          $ref: '#/components/schemas/DellBIOSService_v1_0_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: The DellBIOSService resource provides some actions to support
+        BIOS functionality.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellBIOSService_v1_0_0_DeviceRecovery:
+      additionalProperties: false
+      description: The DeviceRecovery() method is used to perform recovery of the
+        component provided in the Device parameter. If the Device is BIOS, a successful
+        invocation of this command will result in shutdown of the host and initiation
+        of the BIOS recovery sequence.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+      type: object
+      x-longDescription: The DeviceRecovery() method is used to perform recovery of
+        the component provided in the Device parameter. If the Device is BIOS, a successful
+        invocation of this command will result in shutdown of the host and initiation
+        of the BIOS recovery sequence.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellBIOSService_v1_0_0_DeviceRecoveryRequestBody:
+      additionalProperties: false
+      description: The DeviceRecovery() method is used to perform recovery of the
+        component provided in the Device parameter. If the Device is BIOS, a successful
+        invocation of this command will result in shutdown of the host and initiation
+        of the BIOS recovery sequence.
+      properties:
+        Device:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellBIOSService.yaml#/components/schemas/DellBIOSService_Device
+          description: Type of the device to be recovered
+          x-longDescription: Type of the device to be recovered
+      required:
+      - Device
+      type: object
+      x-longDescription: The DeviceRecovery() method is used to perform recovery of
+        the component provided in the Device parameter. If the Device is BIOS, a successful
+        invocation of this command will result in shutdown of the host and initiation
+        of the BIOS recovery sequence.
+title: '#DellBIOSService.v1_0_0.DellBIOSService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -2,7 +2,7 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.json",
     "$ref": "#/definitions/DellNIC",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DataBusWidth": {
             "enum": [
@@ -77,7 +77,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.v1_9_0.json#/definitions/DellNIC"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNIC.v1_10_1.json#/definitions/DellNIC"
                 }
             ],
             "deletable": false,
@@ -181,6 +181,29 @@
                 "Disabled": "Disabled",
                 "Enabled": "Enabled",
                 "Unknown": "Unknown"
+            },
+            "type": "string"
+        },
+        "RXFlowControl": {
+            "enum": [
+                "Disabled",
+                "Enabled",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "Disabled": "v1_10_0",
+                "Enabled": "v1_10_0",
+                "Unknown": "v1_10_0"
             },
             "type": "string"
         },
@@ -300,6 +323,7 @@
                 "PCIExpressGen5x4",
                 "PCIExpressGen5x8",
                 "PCIExpressGen5x16",
+                "PCIExpressGen6andBeyond",
                 "PCIExpressGen5SFF-8639",
                 "PCIExpressX1",
                 "PCIExpressX16",
@@ -363,6 +387,7 @@
                 "PCIExpressGen5x16": "PCI Express Gen 5 x16",
                 "PCIExpressGen5x4": "PCI Express Gen 5 x4",
                 "PCIExpressGen5x8": "PCI Express Gen 5 x8",
+                "PCIExpressGen6andBeyond": "PCI Express Gen 6 and Beyond",
                 "PCIExpressX1": "PCI Express x1",
                 "PCIExpressX16": "PCI Express x16",
                 "PCIExpressX2": "PCI Express x2",
@@ -425,6 +450,7 @@
                 "PCIExpressGen5x16": "PCI Express Gen 5 x16",
                 "PCIExpressGen5x4": "PCI Express Gen 5 x4",
                 "PCIExpressGen5x8": "PCI Express Gen 5 x8",
+                "PCIExpressGen6andBeyond": "PCI Express Gen 6 and Beyond",
                 "PCIExpressX1": "PCI Express x1",
                 "PCIExpressX16": "PCI Express x16",
                 "PCIExpressX2": "PCI Express x2",
@@ -487,6 +513,7 @@
                 "PCIExpressGen5x16": "v1_7_0",
                 "PCIExpressGen5x4": "v1_7_0",
                 "PCIExpressGen5x8": "v1_7_0",
+                "PCIExpressGen6andBeyond": "v1_10_1",
                 "PCIExpressX1": "v1_1_0",
                 "PCIExpressX16": "v1_1_0",
                 "PCIExpressX2": "v1_1_0",
@@ -497,6 +524,113 @@
                 "ProprietaryMemoryCardSlot": "v1_1_0",
                 "Unknown": "v1_1_0",
                 "VL-VESA": "v1_1_0"
+            },
+            "type": "string"
+        },
+        "TXBandwidthControlMaximum": {
+            "enum": [
+                "Disabled",
+                "Enabled",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "Disabled": "v1_10_0",
+                "Enabled": "v1_10_0",
+                "Unknown": "v1_10_0"
+            },
+            "type": "string"
+        },
+        "TXBandwidthControlMinimum": {
+            "enum": [
+                "Disabled",
+                "Enabled",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "Disabled": "v1_10_0",
+                "Enabled": "v1_10_0",
+                "Unknown": "v1_10_0"
+            },
+            "type": "string"
+        },
+        "TXFlowControl": {
+            "enum": [
+                "Disabled",
+                "Enabled",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "Disabled": "v1_10_0",
+                "Enabled": "v1_10_0",
+                "Unknown": "v1_10_0"
+            },
+            "type": "string"
+        },
+        "UpdateLockdownState": {
+            "enum": [
+                "Disabled",
+                "Enabled"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled"
+            },
+            "type": "string"
+        },
+        "VFSRIOVSupport": {
+            "enum": [
+                "Disabled",
+                "Enabled",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "Disabled": "v1_10_0",
+                "Enabled": "v1_10_0",
+                "Unknown": "v1_10_0"
             },
             "type": "string"
         },
@@ -516,6 +650,29 @@
             "enumVersionAdded": {
                 "Available": "v1_3_0",
                 "NotAvailable": "v1_3_0"
+            },
+            "type": "string"
+        },
+        "WOLSupport": {
+            "enum": [
+                "Disabled",
+                "Enabled",
+                "Unknown"
+            ],
+            "enumDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumLongDescriptions": {
+                "Disabled": "Disabled",
+                "Enabled": "Enabled",
+                "Unknown": "Unknown"
+            },
+            "enumVersionAdded": {
+                "Disabled": "v1_10_0",
+                "Enabled": "v1_10_0",
+                "Unknown": "v1_10_0"
             },
             "type": "string"
         },

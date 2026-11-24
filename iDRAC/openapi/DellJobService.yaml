@@ -1,0 +1,27 @@
+components:
+  schemas:
+    DellJobService_DellJobService:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellJobService.v1_2_2.yaml#/components/schemas/DellJobService_v1_2_2_DellJobService
+      description: The DellJobService resource provides some actions to support Job
+        management functionality.
+      x-longDescription: The DellJobService resource provides some actions to support
+        Job management functionality.
+    DellJobService_RebootJobType:
+      enum:
+      - GracefulRebootWithForcedShutdown
+      - GracefulRebootWithoutForcedShutdown
+      - PowerCycle
+      type: string
+      x-enumDescriptions:
+        GracefulRebootWithForcedShutdown: Graceful Reboot with forced shutdown
+        GracefulRebootWithoutForcedShutdown: Graceful Reboot without forced shutdown
+        PowerCycle: PowerCycle
+      x-enumVersionAdded:
+        GracefulRebootWithForcedShutdown: v1_2_0
+        GracefulRebootWithoutForcedShutdown: v1_2_0
+        PowerCycle: v1_2_0
+title: '#DellJobService.DellJobService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

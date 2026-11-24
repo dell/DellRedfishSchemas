@@ -1,0 +1,27 @@
+components:
+  schemas:
+    DellBios_RunBIOSLiveScanning:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellBios.v1_0_1.yaml#/components/schemas/DellBios_v1_0_1_RunBIOSLiveScanning
+      description: Real time BIOS scanning verifies the integrity and authenticity
+        of the BIOS image in the Primary ROM when the host is powered ON, but not
+        in the POST. This feature is available only with iDRAC Datacenter license
+        and user need to have the Debug privilege to perform this operation
+      x-longDescription: Real time BIOS scanning verifies the integrity and authenticity
+        of the BIOS image in the Primary ROM when the host is powered ON, but not
+        in the POST. This feature is available only with iDRAC Datacenter license
+        and user need to have the Debug privilege to perform this operation
+    DellBios_SetBiosTime:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellBios.v1_0_1.yaml#/components/schemas/DellBios_v1_0_1_SetBiosTime
+      description: Sets the BIOS time to a specified value. This action allows the
+        user to configure the system clock and ensure that the BIOS is synchronized
+        with the current time. If @Redfish.OperationApplyTime is not passed, by default
+        it will be set to OnReset
+      x-longDescription: Sets the BIOS time to a specified value. This action allows
+        the user to configure the system clock and ensure that the BIOS is synchronized
+        with the current time. If @Redfish.OperationApplyTime is not passed, by default
+        it will be set to OnReset
+title: '#DellBios'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

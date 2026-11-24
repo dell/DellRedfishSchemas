@@ -1,0 +1,99 @@
+components:
+  schemas:
+    DellFCCapabilities_v1_0_0_DellFCCapabilities:
+      additionalProperties: false
+      description: This resource shall represents Fibre Channel HBA capabilities in
+        the managed system.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        FCMaxNumberExchanges:
+          description: This property represents the maximum number of exchanges.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the maximum number of exchanges.
+        FCMaxNumberOutStandingCommands:
+          description: This property represents the maximum number of outstanding
+            commands across all connections.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the maximum number of outstanding
+            commands across all connections.
+        FeatureLicensingSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFCCapabilities.yaml#/components/schemas/DellFCCapabilities_FeatureLicensingSupport
+          description: The property provides details of the FC's feature licensing
+            support.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides details of the FC's feature licensing
+            support.
+        FlexAddressingSupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFCCapabilities.yaml#/components/schemas/DellFCCapabilities_FlexAddressingSupport
+          description: The property provides detail of the FC's port's flex addressing
+            support.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides detail of the FC's port's flex
+            addressing support.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        OnChipThermalSensor:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFCCapabilities.yaml#/components/schemas/DellFCCapabilities_OnChipThermalSensor
+          description: The property provides details of the FC's on-chip thermal sensor
+            support.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides details of the FC's on-chip thermal
+            sensor support.
+        PersistencePolicySupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFCCapabilities.yaml#/components/schemas/DellFCCapabilities_PersistencePolicySupport
+          description: This property specifies if the card supports persistence policy.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property specifies if the card supports persistence
+            policy.
+        uEFISupport:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellFCCapabilities.yaml#/components/schemas/DellFCCapabilities_uEFISupport
+          description: The property provides details of the FC's port's UEFI support.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides details of the FC's port's UEFI
+            support.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: This resource shall represents Fibre Channel HBA capabilities
+        in the managed system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellFCCapabilities.v1_0_0.DellFCCapabilities'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

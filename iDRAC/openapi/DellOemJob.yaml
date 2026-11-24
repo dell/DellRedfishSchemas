@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellOemJob_DellOemJob:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemJob.v1_1_0.yaml#/components/schemas/DellOemJob_v1_1_0_DellOemJob
+      description: This is the complex property is for the additional OEM extension
+        realted to the DMTF Job.
+      x-longDescription: This is the complex property is for the additional OEM extension
+        realted to the DMTF Job.
+title: '#DellOemJob'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

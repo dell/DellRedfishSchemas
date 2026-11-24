@@ -1,0 +1,97 @@
+components:
+  schemas:
+    DellPowerSupplyView_DellPowerSupplyView:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPowerSupplyView.v1_4_0.yaml#/components/schemas/DellPowerSupplyView_v1_4_0_DellPowerSupplyView
+      description: An instance of DellPowerSupplyView will have data specific to the
+        Power Supply devices in the managed system.
+      urisDeprecated:
+      - /redfish/v1/Chassis/{ComputerSystemId}/Power/Oem/Dell/DellPowerSupplyInventory/{PowerSupplyViewId}
+      x-longDescription: An instance of DellPowerSupplyView will have data specific
+        to the Power Supply devices in the managed system.
+    DellPowerSupplyView_PMBusMonitoring:
+      enum:
+      - Capable
+      - NotCapable
+      type: string
+      x-enumDescriptions:
+        Capable: Capable
+        NotCapable: Not Capable
+      x-enumLongDescriptions:
+        Capable: Capable
+        NotCapable: Not Capable
+      x-enumVersionAdded:
+        Capable: v1_1_0
+        NotCapable: v1_1_0
+    DellPowerSupplyView_RedTypeOfSet:
+      enum:
+      - InputPowerRedundancy
+      - LimitedSparing
+      - LoadBalanced
+      - N+1
+      - Other
+      - Sparing
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        InputPowerRedundancy: Input Power Redundancy
+        LimitedSparing: Limited Sparing
+        LoadBalanced: Load Balanced
+        N+1: N+1
+        Other: Other
+        Sparing: Sparing
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        InputPowerRedundancy: Input Power Redundancy
+        LimitedSparing: Limited Sparing
+        LoadBalanced: Load Balanced
+        N+1: N+1
+        Other: Other
+        Sparing: Sparing
+        Unknown: Unknown
+      x-enumVersionAdded:
+        InputPowerRedundancy: v1_3_0
+        LimitedSparing: v1_3_0
+        LoadBalanced: v1_3_0
+        N+1: v1_3_0
+        Other: v1_3_0
+        Sparing: v1_3_0
+        Unknown: v1_3_0
+    DellPowerSupplyView_RedundancyStatus:
+      enum:
+      - DegradedRedundancy
+      - FullyRedundant
+      - OverallFailure
+      - RedundancyLost
+      - Unknown
+      - NA
+      - NotRedundant
+      type: string
+      x-enumDescriptions:
+        DegradedRedundancy: Degraded Redundancy
+        FullyRedundant: Fully Redundant
+        NA: Unknown
+        NotRedundant: Not Redundant
+        OverallFailure: Overall Failure
+        RedundancyLost: Redundancy Lost
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        DegradedRedundancy: Degraded Redundancy
+        FullyRedundant: Fully Redundant
+        NA: Unknown
+        NotRedundant: Not Redundant
+        OverallFailure: Overall Failure
+        RedundancyLost: Redundancy Lost
+        Unknown: Unknown
+      x-enumVersionAdded:
+        DegradedRedundancy: v1_3_0
+        FullyRedundant: v1_3_0
+        NA: v1_3_1
+        NotRedundant: v1_4_0
+        OverallFailure: v1_3_0
+        RedundancyLost: v1_3_0
+        Unknown: v1_3_0
+title: '#DellPowerSupplyView.DellPowerSupplyView'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

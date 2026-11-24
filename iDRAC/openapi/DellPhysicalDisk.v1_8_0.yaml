@@ -1,0 +1,337 @@
+components:
+  schemas:
+    DellPhysicalDisk_v1_8_0_DellPhysicalDisk:
+      additionalProperties: false
+      description: An instance of DellPhysicalDisk will have Physical Disk specific
+        data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        AvailableSparePercent:
+          description: This property represents the percentage of the remaining spare
+            capacity available.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the percentage of the remaining
+            spare capacity available.
+          x-units: Percent
+          x-versionAdded: v1_5_0
+        Certified:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_Certified
+          description: The property provides information about the drives behind the
+            RAID controller is certified or not.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides information about the drives behind
+            the RAID controller is certified or not.
+          x-versionAdded: v1_2_0
+        Connector:
+          description: The property shall represent the controller port that the physical
+            disk is connected to.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the controller port that
+            the physical disk is connected to.
+        CryptographicEraseCapable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_CryptographicEraseCapable
+          description: This property represents the storage component cryptographic
+            erase capability.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the storage component cryptographic
+            erase capability.
+          x-versionAdded: v1_4_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceProtocol:
+          description: This property indicates the device protocol. For example, NVMe
+            1.1, NVMe 1.2 and so on.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property indicates the device protocol. For example,
+            NVMe 1.1, NVMe 1.2 and so on.
+          x-versionAdded: v1_2_0
+        DeviceSidebandProtocol:
+          description: This property indicates the device sideband protocol.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property indicates the device sideband protocol.
+          x-versionAdded: v1_5_0
+        DriveFormFactor:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_DriveFormFactor
+          description: This property shall represent the physical disk form factor.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall represent the physical disk form
+            factor.
+        EncryptionProtocol:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_EncryptionProtocol
+          description: The property provides information about the encryption protocol
+            used to encrypt the data stored on the PD.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides information about the encryption
+            protocol used to encrypt the data stored on the PD.
+          x-versionAdded: v1_2_0
+        ErrorDescription:
+          description: This property represents the Error Description of the NVMe
+            init error
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the Error Description of the
+            NVMe init error
+          x-versionAdded: v1_5_0
+        ErrorRecoverable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_ErrorRecoverable
+          description: This property represents NVMe init Error is Recoverable or
+            not.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents NVMe init Error is Recoverable
+            or not.
+          x-versionAdded: v1_5_0
+        ForeignKeyIdentifier:
+          description: This property indicates foreign key identifier of a secured
+            drive. If the drive is not locked or secured by a foreign key, this property
+            is an empty string.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property indicates foreign key identifier of a secured
+            drive. If the drive is not locked or secured by a foreign key, this property
+            is an empty string.
+          x-versionAdded: v1_1_0
+        FreeSizeInBytes:
+          description: The property shall represent the free space available for a
+            virtual disk.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the free space available
+            for a virtual disk.
+          x-units: Bytes
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LastSystemInventoryTime:
+          description: This property provides the time when System Inventory Collection
+            On Reboot (CSIOR) was last performed or the object was last updated on
+            iDRAC. The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the time when System Inventory
+            Collection On Reboot (CSIOR) was last performed or the object was last
+            updated on iDRAC. The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        LastUpdateTime:
+          description: This property represents the time when the data was last updated.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the time when the data was last
+            updated. The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        ManufacturingDay:
+          description: The property shall represent the physical disks manufacturing
+            day.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the physical disks manufacturing
+            day.
+        ManufacturingWeek:
+          description: The property shall represent the physical disks manufacturing
+            week.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the physical disks manufacturing
+            week.
+        ManufacturingYear:
+          description: The property shall represent the physical disks manufacturing
+            year.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the physical disks manufacturing
+            year.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        NonRAIDDiskCachePolicy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_NonRAIDDiskCachePolicy
+          description: The property provides information about the Non RAID Disks
+            (PERC 9 System PDs and not related to EPD-PTs) Cache policy.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property provides information about the Non RAID
+            Disks (PERC 9 System PDs and not related to EPD-PTs) Cache policy.
+          x-versionAdded: v1_2_0
+        OperationName:
+          description: This property represents the background operation that is running
+            on a virtual disk. If no operation is running, the value is "None".
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the background operation that
+            is running on a virtual disk. If no operation is running, the value is
+            "None".
+          x-versionAdded: v1_1_0
+        OperationPercentCompletePercent:
+          description: This property represents the percentage completion of the operation
+            that is represented by the OperationName property.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the percentage completion of
+            the operation that is represented by the OperationName property.
+          x-units: Percent
+          x-versionAdded: v1_1_0
+        PCIeCapableLinkWidth:
+          description: The property indicates the Capable Link width of the NVMe drive
+            and has value x4.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property indicates the Capable Link width of the
+            NVMe drive and has value x4.
+          x-versionAdded: v1_2_0
+        PCIeNegotiatedLinkWidth:
+          description: The property indicates the Negotiated Link Width of the NVMe
+            drive and is one of the following values x1, x2, x4.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property indicates the Negotiated Link Width of the
+            NVMe drive and is one of the following values x1, x2, x4.
+          x-versionAdded: v1_2_0
+        PPID:
+          description: The property shall represent the Part Piece Identification
+            (PPID) value for the physical disk.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the Part Piece Identification
+            (PPID) value for the physical disk.
+        PowerStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_PowerStatus
+          description: This property provides information about drive power mode.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property provides information about drive power
+            mode.
+          x-versionAdded: v1_2_0
+        PredictiveFailureState:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_PredictiveFailureState
+          description: The property shall represent the smart alert presence.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the smart alert presence.
+        ProductID:
+          description: This property represents the DeviceID of the drive.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the DeviceID of the drive.
+          x-versionAdded: v1_2_0
+        RAIDType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_RAIDType
+          description: This property represents the type of RAID configuration.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the type of RAID configuration.
+          x-versionAdded: v1_1_0
+        RaidStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_RaidStatus
+          description: The property shall represent the RAID specific status.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the RAID specific status.
+        SASAddress:
+          description: The property shall represent the SAS address of the drive.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property shall represent the SAS address of the drive.
+        Slot:
+          description: This property represents the slot where drive is located. For
+            PCIe SSDs and Add-in cards, refer Name property to get the slot information
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the slot where drive is located.
+            For PCIe SSDs and Add-in cards, refer Name property to get the slot information
+        SystemEraseCapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_SystemEraseCapability
+          description: This property represents the storage component system-erase
+            capability.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents the storage component system-erase
+            capability.
+          x-versionAdded: v1_1_0
+        T10PICapability:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDisk.yaml#/components/schemas/DellPhysicalDisk_T10PICapability
+          description: This property represents if this physical disk supports T10
+            Protection Information.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property represents if this physical disk supports
+            T10 Protection Information.
+          x-versionAdded: v1_1_0
+        UsedSizeInBytes:
+          description: The property shall represent the space already consumed by
+            virtual disks.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall represent the space already consumed
+            by virtual disks.
+          x-units: Bytes
+        WWN:
+          description: This property represents the WWN of the drive.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the WWN of the drive.
+          x-versionAdded: v1_2_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellPhysicalDisk will have Physical Disk specific
+        data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellPhysicalDisk.v1_8_0.DellPhysicalDisk'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

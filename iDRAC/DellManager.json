@@ -1,12 +1,12 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "ClearPending": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_6_0.json#/definitions/ClearPending"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_7_0.json#/definitions/ClearPending"
                 }
             ],
             "description": "This action is used to clear all the pending values.",
@@ -15,7 +15,7 @@
         "DellManager": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_6_0.json#/definitions/DellManager"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_7_0.json#/definitions/DellManager"
                 }
             ],
             "description": "Oem data related to DellManager.",
@@ -24,11 +24,20 @@
         "DellManagerLinks": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_6_0.json#/definitions/DellManagerLinks"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_7_0.json#/definitions/DellManagerLinks"
                 }
             ],
             "description": "This is the complex property is for the additional OEM Links realted to the DMTF Manager Schema.",
             "longDescription": "This is the complex property is for the additional OEM Links realted to the DMTF Manager Schema."
+        },
+        "GetIdentityProvenanceChain": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_7_0.json#/definitions/GetIdentityProvenanceChain"
+                }
+            ],
+            "description": "This action retrieves the identity provenance certificate chain.",
+            "longDescription": "This action shall retrieve the identity provenance certificate chain from the easyrestore backend and return it as a PEM chain for motherboard/DC-SCM replacement tracking."
         },
         "PortOwner": {
             "enum": [
@@ -44,7 +53,7 @@
         "ResetToDefaults": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_6_0.json#/definitions/ResetToDefaults"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_7_0.json#/definitions/ResetToDefaults"
                 }
             ],
             "description": "This action is used to reset the Dell attributes to default.",
@@ -53,7 +62,7 @@
         "SetCustomDefaults": {
             "anyOf": [
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_6_0.json#/definitions/SetCustomDefaults"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellManager.v1_7_0.json#/definitions/SetCustomDefaults"
                 }
             ],
             "description": "This action is used to set the custom defaults to be used during Reset.",

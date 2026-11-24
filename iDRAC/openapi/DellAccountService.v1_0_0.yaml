@@ -1,0 +1,308 @@
+components:
+  schemas:
+    DellAccountService_v1_0_0_Actions:
+      additionalProperties: false
+      properties:
+        '#DellAccountService.GetFinalPrivilegeMap':
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_GetFinalPrivilegeMap'
+        '#DellAccountService.TestDirectory':
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_TestDirectory'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellAccountService_v1_0_0_DNSLookupResultType:
+      description: The result of a DNS lookup test.
+      enum:
+      - Passed
+      - Failed
+      - NotApplicable
+      type: string
+      x-enumDescriptions:
+        Failed: The DNS lookup failed.
+        NotApplicable: The DNS lookup is not applicable to the current configuration.
+        Passed: The DNS lookup succeeded.
+    DellAccountService_v1_0_0_DellAccountService:
+      additionalProperties: false
+      description: OEM extension for AccountService with privilege management.
+      properties:
+        PrivilegeRegistryOverlay:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: The privilege registry overlay that customizes the base registry.
+          readOnly: false
+          x-longDescription: This property shall contain a link to the PrivilegeRegistryOverlay
+            resource that applies customizations on top of the base PrivilegeRegistry
+            via PUT operation. The effective registry is computed by merging the overlay
+            on top of the base registry.
+        Privileges:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: A collection of custom OEM privileges.
+          readOnly: true
+          x-longDescription: This property shall contain a link to a collection of
+            DellPrivileges resources that can be managed at runtime. The collection
+            supports up to 33 total privileges (11 predefined + 22 custom).
+      type: object
+      x-longDescription: This version provides OEM extension for AccountService with
+        custom privilege management and privilege registry overlay.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellAccountService_v1_0_0_ExtendedTestResultType:
+      description: The result of a directory service diagnostic test with additional
+        states for DC/GC connections.
+      enum:
+      - Passed
+      - Failed
+      - NotRun
+      - NotConfigured
+      - NotApplicable
+      type: string
+      x-enumDescriptions:
+        Failed: The test failed.
+        NotApplicable: The test is not applicable to the current configuration.
+        NotConfigured: The server is not configured.
+        NotRun: The test was not run.
+        Passed: The test passed successfully.
+    DellAccountService_v1_0_0_GetFinalPrivilegeMap:
+      additionalProperties: false
+      description: Retrieves the effective privilege registry after applying the overlay.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall compute and return the effective PrivilegeRegistry
+        by merging the PrivilegeRegistryOverlay on top of the base PrivilegeRegistry.
+        This action requires Login privilege and is allowed in lockdown mode.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellAccountService_v1_0_0_GetFinalPrivilegeMapRequestBody:
+      additionalProperties: false
+      description: Retrieves the effective privilege registry after applying the overlay.
+      properties: {}
+      type: object
+      x-longDescription: This action shall compute and return the effective PrivilegeRegistry
+        by merging the PrivilegeRegistryOverlay on top of the base PrivilegeRegistry.
+        This action requires Login privilege and is allowed in lockdown mode.
+    DellAccountService_v1_0_0_TestDirectory:
+      additionalProperties: false
+      description: This action tests the connectivity and authentication to the configured
+        Active Directory or LDAP directory service.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall perform a comprehensive diagnostic test
+        of the configured directory service (Active Directory or Generic LDAP).
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellAccountService_v1_0_0_TestDirectoryRequestBody:
+      additionalProperties: false
+      description: This action tests the connectivity and authentication to the configured
+        Active Directory or LDAP directory service.
+      properties:
+        Password:
+          description: The password to use for the directory service test connection.
+          type: string
+          x-longDescription: This parameter shall contain the password to authenticate
+            against the configured Active Directory or LDAP service for diagnostic
+            purposes.
+        UserName:
+          description: The username to use for the directory service test connection.
+          type: string
+          x-longDescription: This parameter shall contain the username to authenticate
+            against the configured Active Directory or LDAP service for diagnostic
+            purposes.
+      required:
+      - Password
+      - UserName
+      type: object
+      x-longDescription: This action shall perform a comprehensive diagnostic test
+        of the configured directory service (Active Directory or Generic LDAP).
+    DellAccountService_v1_0_0_TestDirectoryResponse:
+      additionalProperties: false
+      description: The response body for the TestDirectory action.
+      properties:
+        ADCertValidation:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_TestResultType'
+          description: Indicates whether certificate validation succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of validating
+            the directory server certificate. Applicable to both Active Directory
+            and Generic LDAP when certificate validation is enabled.
+        ADDC1Connection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_ExtendedTestResultType'
+          description: Indicates whether connection to domain controller 1 succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of connecting
+            to the first Active Directory domain controller. Applicable to Active
+            Directory only.
+        ADDC2Connection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_ExtendedTestResultType'
+          description: Indicates whether connection to domain controller 2 succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of connecting
+            to the second Active Directory domain controller. Applicable to Active
+            Directory only.
+        ADDC3Connection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_ExtendedTestResultType'
+          description: Indicates whether connection to domain controller 3 succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of connecting
+            to the third Active Directory domain controller. Applicable to Active
+            Directory only.
+        ADDC4Connection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_ExtendedTestResultType'
+          description: Indicates whether connection to domain controller 4 succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of connecting
+            to the fourth Active Directory domain controller. Applicable to Active
+            Directory only.
+        ADDNSLookupDC:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_DNSLookupResultType'
+          description: Indicates whether DNS SRV record lookup for domain controllers
+            succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of performing
+            DNS SRV record lookup for Active Directory domain controllers. Applicable
+            to Active Directory only.
+        ADDNSLookupGC:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_DNSLookupResultType'
+          description: Indicates whether DNS SRV record lookup for global catalog
+            servers succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of performing
+            DNS SRV record lookup for Active Directory global catalog servers. Applicable
+            to Active Directory only.
+        ADGC1Connection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_ExtendedTestResultType'
+          description: Indicates whether connection to global catalog server 1 succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of connecting
+            to the first Active Directory global catalog server. Applicable to Active
+            Directory only.
+        ADGC2Connection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_ExtendedTestResultType'
+          description: Indicates whether connection to global catalog server 2 succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of connecting
+            to the second Active Directory global catalog server. Applicable to Active
+            Directory only.
+        ADGC3Connection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_ExtendedTestResultType'
+          description: Indicates whether connection to global catalog server 3 succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of connecting
+            to the third Active Directory global catalog server. Applicable to Active
+            Directory only.
+        ADGC4Connection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_ExtendedTestResultType'
+          description: Indicates whether connection to global catalog server 4 succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of connecting
+            to the fourth Active Directory global catalog server. Applicable to Active
+            Directory only.
+        ADSSOKeytabExists:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_TestResultType'
+          description: Indicates whether the Kerberos keytab file exists.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of checking for
+            the existence of the Kerberos keytab file.
+        ADSSOKeytabValid:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_TestResultType'
+          description: Indicates whether the Kerberos keytab file is valid.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of validating
+            the Kerberos keytab file.
+        ADServerDNS:
+          description: Indicates whether the directory server DNS name was resolved.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate the result of resolving
+            the directory server DNS name.
+        ADTestLog:
+          description: The detailed test log containing step-by-step diagnostic information.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a formatted text log with
+            detailed diagnostic information for each step of the directory service
+            test, including timestamps, server addresses, and result messages.
+        ADUserAuthentication:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_TestResultType'
+          description: Indicates whether user authentication succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of authenticating
+            the user against the directory service. Applicable to both Active Directory
+            and Generic LDAP.
+        ADUserAuthorization:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_TestResultType'
+          description: Indicates whether user authorization succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of authorizing
+            the user (role assignment check) against the directory service. Applicable
+            to both Active Directory and Generic LDAP.
+        LDAPGC1SSLConnection:
+          $ref: '#/components/schemas/DellAccountService_v1_0_0_TestResultType'
+          description: Indicates whether SSL/TLS connection to the LDAP directory
+            server succeeded.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property shall indicate the result of establishing
+            an SSL/TLS connection to the Generic LDAP directory server. Applicable
+            to Generic LDAP only.
+        LDAPUserDNExists:
+          description: Indicates whether the user DN exists in the directory.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property shall indicate the result of checking whether
+            the user distinguished name (DN) exists in the directory. Applicable to
+            Generic LDAP only.
+      type: object
+      x-longDescription: This type shall contain the properties found in the response
+        body for the TestDirectory action.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellAccountService_v1_0_0_TestResultType:
+      description: The result of a directory service diagnostic test with NotRun state.
+      enum:
+      - Passed
+      - Failed
+      - NotRun
+      type: string
+      x-enumDescriptions:
+        Failed: The test failed.
+        NotRun: The test was not run.
+        Passed: The test passed successfully.
+title: '#DellAccountService.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

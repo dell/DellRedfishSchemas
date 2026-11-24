@@ -1,0 +1,506 @@
+components:
+  schemas:
+    DellInfiniBandCapabilities_BPESupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_CongestionNotification:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_DCBExchangeProtocol:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_DellInfiniBandCapabilities:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellInfiniBandCapabilities.v1_1_0.yaml#/components/schemas/DellInfiniBandCapabilities_v1_1_0_DellInfiniBandCapabilities
+      description: An instance of DellInfiniBandCapabilities will have data specific
+        to InfiniBand and its port and partitions capabilities.
+      urisDeprecated:
+      - /redfish/v1/Systems/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/Oem/Dell/DellInfiniBandCapabilities/{InfiniBandCapabilitiesId}
+      - /redfish/v1/Chassis/{ComputerSystemId}/NetworkAdapters/{NetworkId}/NetworkDeviceFunctions/{NetworkDeviceId}/Oem/Dell/DellInfiniBandCapabilities/{InfiniBandCapabilitiesId}
+      x-longDescription: An instance of DellInfiniBandCapabilities will have data
+        specific to InfiniBand and its port and partitions capabilities.
+    DellInfiniBandCapabilities_ETS:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_EVBModesSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_EnergyEfficientEthernet:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_FeatureLicensingSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_FlexAddressingSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_IPSecOffloadSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_MACSecSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_NWManagementPassThrough:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_NicPartitioningSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_OSBMCManagementPassThrough:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_OnChipThermalSensor:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_OpenFlowSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_PXEBootSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_PartitionWOLSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_PersistencePolicySupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_PriorityFlowControl:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_RDMASupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_RXFlowControl:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_RemotePHY:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_TCPChimneySupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_TXBandwidthControlMaximum:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_TXBandwidthControlMinimum:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_TXFlowControl:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_VEB:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_VEBVEPAMultiChannel:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_VEBVEPASingleChannel:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_VFSRIOVSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_VirtualLinkControl:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_WOLSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_iSCSIBootSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_iSCSIOffloadSupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+    DellInfiniBandCapabilities_uEFISupport:
+      enum:
+      - NotSupported
+      - Supported
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        NotSupported: Not Supported
+        Supported: Supported
+        Unknown: Unknown
+title: '#DellInfiniBandCapabilities.DellInfiniBandCapabilities'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,36 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAccountService.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellAccountService": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAccountService.v1_0_0.json#/definitions/DellAccountService"
+                }
+            ],
+            "description": "OEM extension for AccountService resource providing custom privilege management.",
+            "longDescription": "This complex type provides OEM extension for the DMTF AccountService resource, enabling custom privilege management and privilege registry overlay functionality."
+        },
+        "GetFinalPrivilegeMap": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAccountService.v1_0_0.json#/definitions/GetFinalPrivilegeMap"
+                }
+            ],
+            "description": "Retrieves the effective privilege registry after applying the overlay.",
+            "longDescription": "This action shall compute and return the effective PrivilegeRegistry by merging the PrivilegeRegistryOverlay on top of the base PrivilegeRegistry. This action requires Login privilege and is allowed in lockdown mode."
+        },
+        "TestDirectory": {
+            "anyOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAccountService.v1_0_0.json#/definitions/TestDirectory"
+                }
+            ],
+            "description": "This action tests the connectivity and authentication to the configured Active Directory or LDAP directory service.",
+            "longDescription": "This action shall perform a comprehensive diagnostic test of the configured directory service (Active Directory or Generic LDAP)."
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellAccountService"
+}

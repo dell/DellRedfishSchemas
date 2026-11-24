@@ -1,0 +1,12 @@
+components:
+  schemas:
+    DellSecureBoot_DellSecureBoot:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSecureBoot.v1_1_0.yaml#/components/schemas/DellSecureBoot_v1_1_0_DellSecureBoot
+      description: This resource contains the Dell specific Redfish implementation
+        for SecureBoot.
+      x-longDescription: This resource contains the Dell specific Redfish implementation
+        for SecureBoot.
+title: '#DellSecureBoot'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,452 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAccountService.v1_0_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "Actions": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "#DellAccountService.GetFinalPrivilegeMap": {
+                    "$ref": "#/definitions/GetFinalPrivilegeMap"
+                },
+                "#DellAccountService.TestDirectory": {
+                    "$ref": "#/definitions/TestDirectory"
+                }
+            },
+            "type": "object"
+        },
+        "DNSLookupResultType": {
+            "description": "The result of a DNS lookup test.",
+            "enum": [
+                "Passed",
+                "Failed",
+                "NotApplicable"
+            ],
+            "enumDescriptions": {
+                "Failed": "The DNS lookup failed.",
+                "NotApplicable": "The DNS lookup is not applicable to the current configuration.",
+                "Passed": "The DNS lookup succeeded."
+            },
+            "type": "string"
+        },
+        "DellAccountService": {
+            "additionalProperties": false,
+            "description": "OEM extension for AccountService with privilege management.",
+            "longDescription": "This version provides OEM extension for AccountService with custom privilege management and privilege registry overlay.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "PrivilegeRegistryOverlay": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/PrivilegeRegistry.json#/definitions/PrivilegeRegistry",
+                    "description": "The privilege registry overlay that customizes the base registry.",
+                    "longDescription": "This property shall contain a link to the PrivilegeRegistryOverlay resource that applies customizations on top of the base PrivilegeRegistry via PUT operation. The effective registry is computed by merging the overlay on top of the base registry.",
+                    "readonly": false
+                },
+                "Privileges": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPrivilegesCollection.json#/definitions/DellPrivilegesCollection",
+                    "description": "A collection of custom OEM privileges.",
+                    "longDescription": "This property shall contain a link to a collection of DellPrivileges resources that can be managed at runtime. The collection supports up to 33 total privileges (11 predefined + 22 custom).",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "ExtendedTestResultType": {
+            "description": "The result of a directory service diagnostic test with additional states for DC/GC connections.",
+            "enum": [
+                "Passed",
+                "Failed",
+                "NotRun",
+                "NotConfigured",
+                "NotApplicable"
+            ],
+            "enumDescriptions": {
+                "Failed": "The test failed.",
+                "NotApplicable": "The test is not applicable to the current configuration.",
+                "NotConfigured": "The server is not configured.",
+                "NotRun": "The test was not run.",
+                "Passed": "The test passed successfully."
+            },
+            "type": "string"
+        },
+        "GetFinalPrivilegeMap": {
+            "additionalProperties": false,
+            "description": "Retrieves the effective privilege registry after applying the overlay.",
+            "longDescription": "This action shall compute and return the effective PrivilegeRegistry by merging the PrivilegeRegistryOverlay on top of the base PrivilegeRegistry. This action requires Login privilege and is allowed in lockdown mode.",
+            "parameters": {},
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "TestDirectory": {
+            "actionResponse": {
+                "$ref": "#/definitions/TestDirectoryResponse"
+            },
+            "additionalProperties": false,
+            "description": "This action tests the connectivity and authentication to the configured Active Directory or LDAP directory service.",
+            "longDescription": "This action shall perform a comprehensive diagnostic test of the configured directory service (Active Directory or Generic LDAP).",
+            "parameters": {
+                "Password": {
+                    "description": "The password to use for the directory service test connection.",
+                    "longDescription": "This parameter shall contain the password to authenticate against the configured Active Directory or LDAP service for diagnostic purposes.",
+                    "requiredParameter": true,
+                    "type": "string"
+                },
+                "UserName": {
+                    "description": "The username to use for the directory service test connection.",
+                    "longDescription": "This parameter shall contain the username to authenticate against the configured Active Directory or LDAP service for diagnostic purposes.",
+                    "requiredParameter": true,
+                    "type": "string"
+                }
+            },
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "target": {
+                    "description": "Link to invoke action",
+                    "format": "uri-reference",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "Friendly action name",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "TestDirectoryResponse": {
+            "additionalProperties": false,
+            "description": "The response body for the TestDirectory action.",
+            "longDescription": "This type shall contain the properties found in the response body for the TestDirectory action.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ADCertValidation": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether certificate validation succeeded.",
+                    "longDescription": "This property shall indicate the result of validating the directory server certificate. Applicable to both Active Directory and Generic LDAP when certificate validation is enabled.",
+                    "readonly": true
+                },
+                "ADDC1Connection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ExtendedTestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether connection to domain controller 1 succeeded.",
+                    "longDescription": "This property shall indicate the result of connecting to the first Active Directory domain controller. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADDC2Connection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ExtendedTestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether connection to domain controller 2 succeeded.",
+                    "longDescription": "This property shall indicate the result of connecting to the second Active Directory domain controller. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADDC3Connection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ExtendedTestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether connection to domain controller 3 succeeded.",
+                    "longDescription": "This property shall indicate the result of connecting to the third Active Directory domain controller. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADDC4Connection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ExtendedTestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether connection to domain controller 4 succeeded.",
+                    "longDescription": "This property shall indicate the result of connecting to the fourth Active Directory domain controller. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADDNSLookupDC": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/DNSLookupResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether DNS SRV record lookup for domain controllers succeeded.",
+                    "longDescription": "This property shall indicate the result of performing DNS SRV record lookup for Active Directory domain controllers. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADDNSLookupGC": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/DNSLookupResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether DNS SRV record lookup for global catalog servers succeeded.",
+                    "longDescription": "This property shall indicate the result of performing DNS SRV record lookup for Active Directory global catalog servers. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADGC1Connection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ExtendedTestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether connection to global catalog server 1 succeeded.",
+                    "longDescription": "This property shall indicate the result of connecting to the first Active Directory global catalog server. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADGC2Connection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ExtendedTestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether connection to global catalog server 2 succeeded.",
+                    "longDescription": "This property shall indicate the result of connecting to the second Active Directory global catalog server. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADGC3Connection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ExtendedTestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether connection to global catalog server 3 succeeded.",
+                    "longDescription": "This property shall indicate the result of connecting to the third Active Directory global catalog server. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADGC4Connection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/ExtendedTestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether connection to global catalog server 4 succeeded.",
+                    "longDescription": "This property shall indicate the result of connecting to the fourth Active Directory global catalog server. Applicable to Active Directory only.",
+                    "readonly": true
+                },
+                "ADSSOKeytabExists": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether the Kerberos keytab file exists.",
+                    "longDescription": "This property shall indicate the result of checking for the existence of the Kerberos keytab file.",
+                    "readonly": true
+                },
+                "ADSSOKeytabValid": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether the Kerberos keytab file is valid.",
+                    "longDescription": "This property shall indicate the result of validating the Kerberos keytab file.",
+                    "readonly": true
+                },
+                "ADServerDNS": {
+                    "description": "Indicates whether the directory server DNS name was resolved.",
+                    "longDescription": "This property shall indicate the result of resolving the directory server DNS name.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "ADTestLog": {
+                    "description": "The detailed test log containing step-by-step diagnostic information.",
+                    "longDescription": "This property shall contain a formatted text log with detailed diagnostic information for each step of the directory service test, including timestamps, server addresses, and result messages.",
+                    "readonly": true,
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ADUserAuthentication": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether user authentication succeeded.",
+                    "longDescription": "This property shall indicate the result of authenticating the user against the directory service. Applicable to both Active Directory and Generic LDAP.",
+                    "readonly": true
+                },
+                "ADUserAuthorization": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether user authorization succeeded.",
+                    "longDescription": "This property shall indicate the result of authorizing the user (role assignment check) against the directory service. Applicable to both Active Directory and Generic LDAP.",
+                    "readonly": true
+                },
+                "LDAPGC1SSLConnection": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TestResultType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Indicates whether SSL/TLS connection to the LDAP directory server succeeded.",
+                    "longDescription": "This property shall indicate the result of establishing an SSL/TLS connection to the Generic LDAP directory server. Applicable to Generic LDAP only.",
+                    "readonly": true
+                },
+                "LDAPUserDNExists": {
+                    "description": "Indicates whether the user DN exists in the directory.",
+                    "longDescription": "This property shall indicate the result of checking whether the user distinguished name (DN) exists in the directory. Applicable to Generic LDAP only.",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "TestResultType": {
+            "description": "The result of a directory service diagnostic test with NotRun state.",
+            "enum": [
+                "Passed",
+                "Failed",
+                "NotRun"
+            ],
+            "enumDescriptions": {
+                "Failed": "The test failed.",
+                "NotRun": "The test was not run.",
+                "Passed": "The test passed successfully."
+            },
+            "type": "string"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellAccountService.v1_0_0"
+}

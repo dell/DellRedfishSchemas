@@ -1,0 +1,202 @@
+{
+    "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellChassis.v1_1_0.json",
+    "$ref": "#/definitions/DellChassis",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "definitions": {
+        "DellChassis": {
+            "additionalProperties": true,
+            "description": "This resource shall provide information about the enclosure or chassis the system is in.",
+            "longDescription": "This resource shall provide information about the enclosure or chassis the system is in.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
+                "CanBeFRUed": {
+                    "description": "Boolean that indicates whether this PhysicalElement can be FRUed (TRUE) or not (FALSE).",
+                    "longDescription": "Boolean that indicates whether this PhysicalElement can be FRUed (TRUE) or not (FALSE).",
+                    "readonly": true,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Links": {
+                    "$ref": "#/definitions/Links",
+                    "description": "Contains references to other resources that are related to this resource.",
+                    "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "SystemID": {
+                    "description": "This property value is the unique Dell System ID for the platform.",
+                    "longDescription": "This property value is the unique Dell System ID for the platform.",
+                    "readonly": true,
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "TimingConfiguration": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/TimingConfigurationType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Timing hardware configuration properties.",
+                    "longDescription": "This property shall contain timing hardware configuration properties, including SMA output source selection and timing module write enable state.",
+                    "readonly": false,
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
+            "type": "object"
+        },
+        "Links": {
+            "additionalProperties": true,
+            "description": "Contains references to other resources that are related to this resource.",
+            "longDescription": "This type, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "ComputerSystem": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/ComputerSystem.json#/definitions/ComputerSystem"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Contains references to other resources that are related to this resource.",
+                    "longDescription": "Contains references to other resources that are related to this resource.",
+                    "readonly": true
+                }
+            },
+            "type": "object"
+        },
+        "SmaOutSourceType": {
+            "enum": [
+                "ePPS",
+                "1PPS"
+            ],
+            "enumDescriptions": {
+                "1PPS": "The SMA output is sourced from the external 1PPS signal.",
+                "ePPS": "The SMA output is sourced from the embedded PPS signal."
+            },
+            "enumLongDescriptions": {
+                "1PPS": "This value shall indicate the SMA output mux selects the external 1 pulse-per-second (1PPS) signal.",
+                "ePPS": "This value shall indicate the SMA output mux selects the embedded PPS (ePPS) signal."
+            },
+            "type": "string"
+        },
+        "TimingConfigurationType": {
+            "additionalProperties": false,
+            "description": "Timing hardware configuration.",
+            "longDescription": "This type shall contain the timing hardware configuration properties.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "SmaOutSource": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/SmaOutSourceType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The SMA output signal source selection (ePPS or 1PPS).",
+                    "longDescription": "This property shall indicate the SMA output mux selection. A value of ePPS selects the embedded PPS signal. A value of 1PPS selects the external 1PPS signal.",
+                    "readonly": false,
+                    "versionAdded": "v1_1_0"
+                },
+                "WriteEnable": {
+                    "description": "Indicates whether writes to the timing module are enabled.",
+                    "longDescription": "This property shall indicate whether the timing module write enable bit is set. A value of true enables writes; false disables writes. This state does not persist across power cycles.",
+                    "readonly": false,
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "versionAdded": "v1_1_0"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "owningEntity": "Dell",
+    "title": "#DellChassis.v1_1_0.DellChassis"
+}

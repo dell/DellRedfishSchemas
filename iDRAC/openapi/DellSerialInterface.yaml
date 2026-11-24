@@ -1,0 +1,15 @@
+components:
+  schemas:
+    DellSerialInterface_SerialDataClear:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSerialInterface.v1_0_0.yaml#/components/schemas/DellSerialInterface_v1_0_0_SerialDataClear
+      description: This action is used to clear Serial Interface data.
+      x-longDescription: This action shall perform a clear of Serial Interface data.
+    DellSerialInterface_SerialDataExport:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSerialInterface.v1_0_0.yaml#/components/schemas/DellSerialInterface_v1_0_0_SerialDataExport
+      description: This action is used to export Serial Interface data.
+      x-longDescription: This action shall perform an export of Serial Interface data.
+title: '#DellSerialInterface'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

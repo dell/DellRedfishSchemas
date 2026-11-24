@@ -1,0 +1,15 @@
+components:
+  schemas:
+    DellOem_DellOemLinks:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOem.v1_3_0.yaml#/components/schemas/DellOem_v1_3_0_DellOemLinks
+      description: TBD
+      x-longDescription: TBD
+    DellOem_DellOemResources:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOem.v1_3_0.yaml#/components/schemas/DellOem_v1_3_0_DellOemResources
+      description: TBD
+      x-longDescription: TBD
+title: '#DellOem'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

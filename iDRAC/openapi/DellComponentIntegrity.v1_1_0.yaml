@@ -1,0 +1,151 @@
+components:
+  schemas:
+    DellComponentIntegrity_v1_1_0_Actions:
+      additionalProperties: false
+      properties:
+        '#ComponentIntegrity.TPMGetSignedTCGEventLog':
+          $ref: '#/components/schemas/DellComponentIntegrity_v1_1_0_TPMGetSignedTCGEventLog'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellComponentIntegrity_v1_1_0_SPDM:
+      additionalProperties: false
+      description: An Oem extension to represent SPDM related properties.
+      properties:
+        SPDM:
+          $ref: '#/components/schemas/DellComponentIntegrity_v1_1_0_SPDMObject'
+          description: Oem properties for representing SPDM properties.
+          nullable: true
+          x-longDescription: Oem properties for representing SPDM properties.
+      type: object
+      x-longDescription: An Oem extension to represent SPDM related properties.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellComponentIntegrity_v1_1_0_SPDMObject:
+      additionalProperties: false
+      description: An Oem extension to represent SPDM related properties.
+      properties:
+        ChallengeAuthResponseSupport:
+          $ref: '#/components/schemas/DellComponentIntegrity_v1_1_0_Support'
+          description: The property shall represent support for challenge auth response.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent support for challenge auth
+            response.
+        DeviceChallengeStatus:
+          $ref: '#/components/schemas/DellComponentIntegrity_v1_1_0_Status'
+          description: The property shall represent the device challenge status.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the device challenge status.
+        DigestAndCertificateSupport:
+          $ref: '#/components/schemas/DellComponentIntegrity_v1_1_0_Support'
+          description: The property shall represent the support for digest.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the support for digest.
+        EncryptionSupport:
+          $ref: '#/components/schemas/DellComponentIntegrity_v1_1_0_Support'
+          description: The property shall represent the support for encryption.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the support for encryption.
+        MeasurementsSupport:
+          $ref: '#/components/schemas/DellComponentIntegrity_v1_1_0_Support'
+          description: The property shall represent the support for measurement.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property shall represent the support for measurement.
+      type: object
+      x-longDescription: An Oem extension to represent SPDM related properties.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellComponentIntegrity_v1_1_0_SPDMProperties:
+      additionalProperties: false
+      description: An Oem extension to represent SPDM related properties.
+      properties:
+        SPDM:
+          $ref: '#/components/schemas/DellComponentIntegrity_v1_1_0_SPDMObject'
+          description: Oem properties for representing SPDM properties.
+          nullable: true
+          x-longDescription: Oem properties for representing SPDM properties.
+      type: object
+      x-longDescription: An Oem extension to represent SPDM related properties.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellComponentIntegrity_v1_1_0_Status:
+      enum:
+      - Failed
+      - Success
+      type: string
+      x-enumDescriptions:
+        Failed: Failed
+        Success: Success
+      x-enumLongDescriptions:
+        Failed: Failed
+        Success: Success
+    DellComponentIntegrity_v1_1_0_Support:
+      enum:
+      - Disabled
+      - Enabled
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+      x-enumLongDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+    DellComponentIntegrity_v1_1_0_TPMGetSignedTCGEventLog:
+      additionalProperties: false
+      description: This action retrieves a signed TCG event log from the TPM for the
+        specified reboot index.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall retrieve a signed TCG event log from the
+        TPM for the specified reboot index. On success, a TaskMonitor URI is returned
+        to track the progress of the operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+      x-versionAdded: v1_1_0
+    DellComponentIntegrity_v1_1_0_TPMGetSignedTCGEventLogRequestBody:
+      additionalProperties: false
+      description: This action retrieves a signed TCG event log from the TPM for the
+        specified reboot index.
+      properties:
+        Nonce:
+          description: A hex-encoded nonce string used to sign the TCG event log request.
+          type: string
+          x-longDescription: This parameter shall contain a hex-encoded nonce string
+            used to sign the TCG event log request. The value should be unique.
+        RebootIndex:
+          description: The reboot index for which to retrieve the TCG event log. Valid
+            range is 0 to 3.
+          format: int64
+          maximum: 3
+          minimum: 0
+          type: integer
+          x-longDescription: This parameter shall contain the reboot index for which
+            to retrieve the TCG event log. The value must be within the range 0 to
+            3 inclusive.
+      required:
+      - Nonce
+      - RebootIndex
+      type: object
+      x-longDescription: This action shall retrieve a signed TCG event log from the
+        TPM for the specified reboot index. On success, a TaskMonitor URI is returned
+        to track the progress of the operation.
+title: '#DellComponentIntegrity.v1_1_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

@@ -1,0 +1,10 @@
+components:
+  schemas:
+    DellVolume_DellVolume:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVolume.v1_0_0.yaml#/components/schemas/DellVolume_v1_0_0_DellVolume
+      description: Oem data related to the Volume Instance.
+      x-longDescription: Oem data related to the Volume Instance.
+title: '#DellVolume'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

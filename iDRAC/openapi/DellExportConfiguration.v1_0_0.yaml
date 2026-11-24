@@ -1,0 +1,205 @@
+components:
+  schemas:
+    DellExportConfiguration_v1_0_0_AlertChannelStatus:
+      description: The status of an alert channel (Enabled or Disabled).
+      enum:
+      - Enabled
+      - Disabled
+      type: string
+      x-enumDescriptions:
+        Disabled: The alert channel is disabled.
+        Enabled: The alert channel is enabled.
+    DellExportConfiguration_v1_0_0_AlertChannelsConfig:
+      additionalProperties: false
+      description: Alert channel configuration with enabled/disabled status for each
+        channel.
+      properties:
+        Email:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_AlertChannelStatus'
+          description: Email alert channel status.
+          nullable: true
+          readOnly: false
+        IPMI:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_AlertChannelStatus'
+          description: IPMI PET alert channel status.
+          nullable: true
+          readOnly: false
+        OSLog:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_AlertChannelStatus'
+          description: Operating system log alert channel status.
+          nullable: true
+          readOnly: false
+        RedfishEventing:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_AlertChannelStatus'
+          description: Redfish eventing alert channel status.
+          nullable: true
+          readOnly: false
+        SNMP:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_AlertChannelStatus'
+          description: SNMP trap alert channel status.
+          nullable: true
+          readOnly: false
+        SysLog:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_AlertChannelStatus'
+          description: Syslog alert channel status.
+          nullable: true
+          readOnly: false
+        WSEventing:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_AlertChannelStatus'
+          description: Windows Event Forwarding alert channel status.
+          nullable: true
+          readOnly: false
+      type: object
+      x-longDescription: This complex type contains individual alert channel properties.
+        Each property represents a channel with its status (Enabled or Disabled).
+        Only permitted channels are included in the configuration.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellExportConfiguration_v1_0_0_CategoryConfig:
+      additionalProperties: false
+      description: Configuration for a single event category containing severity levels.
+      properties:
+        Critical:
+          description: Array of message ID configurations at Critical severity.
+          items:
+            $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_MessageIdConfig'
+          readOnly: true
+          type: array
+        Informational:
+          description: Array of message ID configurations at Informational severity.
+          items:
+            $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_MessageIdConfig'
+          readOnly: true
+          type: array
+        Warning:
+          description: Array of message ID configurations at Warning severity.
+          items:
+            $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_MessageIdConfig'
+          readOnly: true
+          type: array
+      type: object
+      x-longDescription: This complex type contains event filter configurations for
+        a single category, organized by severity level (Critical, Warning, Informational).
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellExportConfiguration_v1_0_0_DellExportConfiguration:
+      additionalProperties: false
+      description: The DellExportConfiguration resource provides exported configuration
+        data for Dell OEM components.
+      properties:
+        EventFilters:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_EventFilters'
+          description: The EventFilters configuration object containing all event
+            filter settings organized by category and severity.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property contains the complete EventFilter configuration
+            when OEMComponents includes 'EventFilters'. The structure organizes filters
+            by Category (SystemHealth, Storage, Updates, Audit, Configuration, WorkNotes)
+            and Severity (Critical, Warning, Informational).
+      type: object
+      x-longDescription: The DellExportConfiguration resource provides exported configuration
+        data for Dell OEM components.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellExportConfiguration_v1_0_0_EventFilters:
+      additionalProperties: false
+      description: The EventFilters configuration containing all categories.
+      properties:
+        Audit:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_CategoryConfig'
+          description: Audit and security related events.
+          nullable: true
+          readOnly: true
+        Configuration:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_CategoryConfig'
+          description: Configuration related events.
+          nullable: true
+          readOnly: true
+        Storage:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_CategoryConfig'
+          description: Storage related events.
+          nullable: true
+          readOnly: true
+        SystemHealth:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_CategoryConfig'
+          description: System health related events.
+          nullable: true
+          readOnly: true
+        Updates:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_CategoryConfig'
+          description: Update related events.
+          nullable: true
+          readOnly: true
+        WorkNotes:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_CategoryConfig'
+          description: Work notes and annotations.
+          nullable: true
+          readOnly: true
+      type: object
+      x-longDescription: This complex type contains event filter configurations organized
+        by category. Each category contains severity levels with arrays of message
+        ID configurations.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellExportConfiguration_v1_0_0_MessageIdConfig:
+      additionalProperties: false
+      description: Configuration for a single message ID within a category/severity.
+      properties:
+        AlertChannels:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_AlertChannelsConfig'
+          description: Complex object containing alert channel configurations with
+            enabled/disabled status.
+          readOnly: false
+          x-longDescription: This complex type contains alert channel configurations
+            where each property represents a channel with its enabled/disabled status.
+            Only permitted channels are included.
+        Description:
+          description: A descriptive name for this message ID.
+          readOnly: true
+          type: string
+        Name:
+          description: The message identifier (e.g., 'CPU', 'MEM', 'PDISK').
+          readOnly: true
+          type: string
+        PermittedPowerActions:
+          description: Array of permitted power actions for this message ID/severity
+            combination.
+          items:
+            $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_PowerAction'
+          readOnly: true
+          type: array
+          x-longDescription: The power actions that are permitted for this message
+            ID/severity combination. This is read-only and derived from the backend.
+        PowerAction:
+          $ref: '#/components/schemas/DellExportConfiguration_v1_0_0_PowerAction'
+          description: The current power action configured for this message ID.
+          readOnly: false
+      required:
+      - Name
+      type: object
+      x-longDescription: This complex type contains the alert channel and power action
+        configuration for a specific message ID.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellExportConfiguration_v1_0_0_PowerAction:
+      description: The available power action types.
+      enum:
+      - NoAction
+      - PowerOff
+      - PowerCycle
+      - Reset
+      type: string
+      x-enumDescriptions:
+        NoAction: No power action is taken.
+        PowerCycle: Power cycle the system.
+        PowerOff: Power off the system.
+        Reset: Reset the system.
+title: '#DellExportConfiguration.v1_0_0'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

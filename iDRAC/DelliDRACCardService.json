@@ -2,20 +2,23 @@
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.json",
     "$ref": "#/definitions/DelliDRACCardService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "Algorithm": {
             "enum": [
+                "ML-DSA-87",
                 "AES128CBC",
                 "AES_256_GCM"
             ],
             "enumDescriptions": {
                 "AES128CBC": "AES128CBC",
-                "AES_256_GCM": "AES_256_GCM"
+                "AES_256_GCM": "AES_256_GCM",
+                "ML-DSA-87": "ML-DSA-87"
             },
             "enumVersionAdded": {
                 "AES128CBC": "v1_2_0",
-                "AES_256_GCM": "v1_11_0"
+                "AES_256_GCM": "v1_11_0",
+                "ML-DSA-87": "v1_18_0"
             },
             "type": "string"
         },
@@ -117,7 +120,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.v1_16_0.json#/definitions/DelliDRACCardService"
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DelliDRACCardService.v1_18_0.json#/definitions/DelliDRACCardService"
                 }
             ],
             "deletable": false,

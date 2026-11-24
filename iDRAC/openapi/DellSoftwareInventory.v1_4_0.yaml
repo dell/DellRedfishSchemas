@@ -1,0 +1,296 @@
+components:
+  schemas:
+    DellSoftwareInventory_v1_4_0_DellSoftwareInventory:
+      additionalProperties: true
+      description: The DellSoftwareInventory resource is a representation of an available
+        device firmware in the managed system.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        BuildNumber:
+          description: This property represents the build number of the software.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the build number of the software.
+          x-versionAdded: v1_1_0
+        Classifications:
+          description: An array of enumerated integers that classify this software.
+          items:
+            $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInventory.yaml#/components/schemas/DellSoftwareInventory_Classifications
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: An array of enumerated integers that classify this software.
+          x-versionAdded: v1_1_0
+        ComponentID:
+          description: The property value, together with the ComponentType property
+            value, uniquely identifies the system component the software is for.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property value, together with the ComponentType property
+            value, uniquely identifies the system component the software is for.
+        ComponentType:
+          description: 'This property has one of the following values: FRMW, BIOS,
+            APAC.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: 'This property has one of the following values: FRMW,
+            BIOS, APAC.'
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        DeviceID:
+          description: This property represents an address or other identifying information
+            to uniquely name the LogicalDevice.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents an address or other identifying
+            information to uniquely name the LogicalDevice.
+        ElementName:
+          description: ElementName is the user-friendly name for the instance.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: ElementName is the user-friendly name for the instance.
+        HashValue:
+          description: The property represents the SHA256 hash value of the component
+            firmware.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property represents the SHA256 hash value of the
+            component firmware.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        IdentityInfoType:
+          description: This property has the value OrgID:ComponentType:ComponentID
+            for non-PCI device software and OrgID:ComponentType:VendorID:DeviceID:SubVendorID:SubDeviceID
+            for PCI device software.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property has the value OrgID:ComponentType:ComponentID
+            for non-PCI device software and OrgID:ComponentType:VendorID:DeviceID:SubVendorID:SubDeviceID
+            for PCI device software.
+          x-versionAdded: v1_1_0
+        IdentityInfoValue:
+          description: This property represents an indexed array of fixed-form strings
+            that provide the software descriptor in the form identified in the corresponding
+            index of the IdentityInfoValue array.
+          items:
+            nullable: true
+            type: string
+          readOnly: true
+          type: array
+          x-longDescription: This property represents an indexed array of fixed-form
+            strings that provide the software descriptor in the form identified in
+            the corresponding index of the IdentityInfoValue array.
+          x-versionAdded: v1_1_0
+        InstallationDate:
+          description: 'This property represents the installation date, in string
+            format. Note: For CPLD firmware on modular servers, the property is always
+            set to Jan 1, 2000 regardless of the actual update date.'
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: 'This property represents the installation date, in string
+            format. Note: For CPLD firmware on modular servers, the property is always
+            set to Jan 1, 2000 regardless of the actual update date.'
+        IsEntity:
+          description: The IsEntity property is used for indicating whether the SoftwareIdentity
+            corresponds to a discrete copy of the software component or is being used
+            to convey descriptive and identifying information about software that
+            is not present in the management domain.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: The IsEntity property is used for indicating whether
+            the SoftwareIdentity corresponds to a discrete copy of the software component
+            or is being used to convey descriptive and identifying information about
+            software that is not present in the management domain.
+        Links:
+          $ref: '#/components/schemas/DellSoftwareInventory_v1_4_0_Links'
+          description: Contains references to other resources that are related to
+            this resource.
+          readOnly: true
+          x-longDescription: This property shall contain references to other resources
+            that are related to this resource.
+          x-versionAdded: v1_4_0
+        MajorVersion:
+          description: This property represents the Major number component of the
+            software version.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Major number component of
+            the software version.
+          x-versionAdded: v1_1_0
+        MinorVersion:
+          description: This property represents the Minor number component of the
+            software version.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the Minor number component of
+            the software version.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        PLDMCapabilitiesDuringUpdate:
+          description: This property represents the PLDM capabilities during update
+            in HEX string format
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the PLDM capabilities during
+            update in HEX string format
+          x-versionAdded: v1_2_0
+        PLDMFDPCapabilitiesDuringUpdate:
+          description: This property represents the PLDM FDP capabilities during update
+            in HEX string format
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the PLDM FDP capabilities during
+            update in HEX string format
+          x-versionAdded: v1_2_0
+        RevisionNumber:
+          description: This property represents the revision number component of the
+            software version.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the revision number component
+            of the software version.
+        RevisionString:
+          description: This property represents the revision number, in string format.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property represents the revision number, in string
+            format.
+          x-versionAdded: v1_1_0
+        SidebandUpdateCapable:
+          description: This property identifies if the device supports sideband direct
+            update or not
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property identifies if the device supports sideband
+            direct update or not
+          x-versionAdded: v1_2_0
+        Status:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInventory.yaml#/components/schemas/DellSoftwareInventory_Status
+          description: This property indicates whether the software is installed or
+            is available for installation.
+          nullable: true
+          readOnly: true
+          x-longDescription: This property indicates whether the software is installed
+            or is available for installation.
+        SubDeviceID:
+          description: This property is populated for the PCI Device software. This
+            property represents the SubDeviceID from the PCI device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property is populated for the PCI Device software.
+            This property represents the SubDeviceID from the PCI device.
+        SubVendorID:
+          description: This property is populated for the PCI Device software. The
+            property represents the SubVendorID from the PCI device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property is populated for the PCI Device software.
+            The property represents the SubVendorID from the PCI device.
+        VendorID:
+          description: This property is populated for the PCI Device software. This
+            property represents the VendorID from the PCI device.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property is populated for the PCI Device software.
+            This property represents the VendorID from the PCI device.
+        Version:
+          description: The version of this software.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain the version of this software.
+          x-versionAdded: v1_3_0
+        impactsTPMmeasurements:
+          description: This property represents if the software impacts the Trusted
+            Platform Module (TPM) measurement and causes a lock-up if not performed
+            with the TPM's knowledge.
+          nullable: true
+          readOnly: true
+          type: boolean
+          x-longDescription: This property represents if the software impacts the
+            Trusted Platform Module (TPM) measurement and causes a lock-up if not
+            performed with the TPM's knowledge.
+          x-versionAdded: v1_1_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: The DellSoftwareInventory resource is a representation of
+        an available device firmware in the managed system.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellSoftwareInventory_v1_4_0_Links:
+      additionalProperties: true
+      description: Contains references to other resources that are related to this
+        resource.
+      properties:
+        FirmwareInventory:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: Contains references to other resources that are related to
+            this resource.
+          readOnly: true
+          x-longDescription: Contains references to other resources that are related
+            to this resource.
+          x-versionAdded: v1_4_0
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties contained in this object shall conform to the Redfish
+            Specification-described requirements.
+      type: object
+      x-longDescription: This type, as described by the Redfish Specification, shall
+        contain references to resources that are related to, but not contained by
+        (subordinate to), this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellSoftwareInventory.v1_4_0.DellSoftwareInventory'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

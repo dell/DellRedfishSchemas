@@ -1,0 +1,11 @@
+components:
+  schemas:
+    DellChassisPCIeFunction_DellPCIeFunction:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellChassisPCIeFunction.v1_1_0.yaml#/components/schemas/DellChassisPCIeFunction_v1_1_0_DellPCIeFunction
+      description: An instance of DellPCIeFunction will have PCI device specific data.
+      x-longDescription: An instance of DellPCIeFunction will have PCI device specific
+        data.
+title: '#DellChassisPCIeFunction'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

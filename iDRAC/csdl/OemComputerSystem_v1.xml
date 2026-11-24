@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!--################################################################################       -->
+<!--# Redfish Schema:  OemComputerSystem  v1.0.0                                           -->
+<!--# This is OEM Schema for ComputerSystem                                                -->
+<!--# Copyright 2023-2024 Dell, Inc. or its subsidiaries.All Rights Reserved.              -->
+<!--################################################################################       -->
+<!---->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+        <edmx:Include Namespace="Resource"/>
+        <edmx:Include Namespace="Resource.v1_0_0"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+        <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+        <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellChassisCollection_v1.xml">
+        <edmx:Include Namespace="DellChassisCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellBIOSService_v1.xml">
+        <edmx:Include Namespace="DellBIOSService"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellBootSources_v1.xml">
+        <edmx:Include Namespace="DellBootSources"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellGPUSensorCollection_v1.xml">
+        <edmx:Include Namespace="DellGPUSensorCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMetricService_v1.xml">
+        <edmx:Include Namespace="DellMetricService"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellNumericSensorCollection_v1.xml">
+        <edmx:Include Namespace="DellNumericSensorCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOSDeploymentService_v1.xml">
+        <edmx:Include Namespace="DellOSDeploymentService"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPresenceAndStatusSensorCollection_v1.xml">
+        <edmx:Include Namespace="DellPresenceAndStatusSensorCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPSNumericSensorCollection_v1.xml">
+        <edmx:Include Namespace="DellPSNumericSensorCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellRaidService_v1.xml">
+        <edmx:Include Namespace="DellRaidService"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellRollupStatusCollection_v1.xml">
+        <edmx:Include Namespace="DellRollupStatusCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSensorCollection_v1.xml">
+        <edmx:Include Namespace="DellSensorCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSlotCollection_v1.xml">
+        <edmx:Include Namespace="DellSlotCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSoftwareInstallationService_v1.xml">
+        <edmx:Include Namespace="DellSoftwareInstallationService"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystem_v1.xml">
+        <edmx:Include Namespace="DellSystem"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVideoCollection_v1.xml">
+        <edmx:Include Namespace="DellVideoCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVideoNetworkCollection_v1.xml">
+        <edmx:Include Namespace="DellVideoNetworkCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPhysicalDiskCollection_v1.xml">
+        <edmx:Include Namespace="DellPhysicalDiskCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellControllerCollection_v1.xml">
+        <edmx:Include Namespace="DellControllerCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellAcceleratorCollection_v1.xml">
+        <edmx:Include Namespace="DellAcceleratorCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMemoryCollection_v1.xml">
+        <edmx:Include Namespace="DellMemoryCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSDCollection_v1.xml">
+        <edmx:Include Namespace="DellPCIeSSDCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPCIeSSDExtenderCollection_v1.xml">
+        <edmx:Include Namespace="DellPCIeSSDExtenderCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessorCollection_v1.xml">
+        <edmx:Include Namespace="DellProcessorCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitchConnectionCollection_v1.xml">
+        <edmx:Include Namespace="DellSwitchConnectionCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellVirtualDiskCollection_v1.xml">
+        <edmx:Include Namespace="DellVirtualDiskCollection"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSwitchConnectionService_v1.xml">
+        <edmx:Include Namespace="DellSwitchConnectionService"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellSystemManagementService_v1.xml">
+        <edmx:Include Namespace="DellSystemManagementService"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
+        <edmx:Include Namespace="ComputerSystem"/>
+        <edmx:Include Namespace="ComputerSystem.v1_0_0" />
+    </edmx:Reference>
+    <edmx:DataServices>
+
+        <Schema Namespace="OemComputerSystem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Action Name="SetWatchdog" IsBound="true">
+                <Annotation Term="OData.Description" String="This action is used to set the watchdog timeout interval."/>
+                <Annotation Term="OData.LongDescription" String="This action shall set the watchdog timeout interval. The watchdog state will reset to its factory default setting of disabled upon reset to defaults."/>
+                <Parameter Name="OemComputerSystem" Type="ComputerSystem.v1_0_0.OemActions"/>
+                <Parameter Name="TimeoutInterval" Type="Edm.Int64" Nullable="false">
+                    <Annotation Term="OData.Description" String="The watchdog timeout interval to be set."/>
+                    <Annotation Term="OData.LongDescription" String="The watchdog timeout interval to be set in minutes with a supported range of 0 to 5. If the value is non-zero, the watchdog will be enabled with the specified timeout interval, if zero, it will be disabled."/>
+                    <Annotation Term="Validation.Minimum" Int="0"/>
+                    <Annotation Term="Validation.Maximum" Int="5"/>
+                </Parameter>
+                <Annotation Term="Redfish.Revisions">
+                <Collection>
+                        <Record>
+                            <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+                            <PropertyValue Property="Version" String="v1_1_0"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Action>
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="ComputerSystem" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="TBD"/>
+                <Annotation Term="OData.LongDescription" String="TBD"/>
+            </ComplexType>
+            <ComplexType Name="Links" Abstract="true">
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Annotation Term="OData.Description" String="TBD"/>
+                <Annotation Term="OData.LongDescription" String="TBD"/>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OemComputerSystem.v1_0_0">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="ComputerSystem" BaseType="OemComputerSystem.ComputerSystem">
+                <Annotation Term="OData.Description" String="This version was introduced to add Oem properties in ComputerSystems resource."/>
+                <Annotation Term="OData.LongDescription" String="This version was introduced to add Oem properties in ComputerSystems resource."/>
+                <NavigationProperty Name="DellSystem" Type="DellSystem.DellSystem" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A resource representation of DellSystem."/>
+                    <Annotation Term="OData.LongDescription" String="A resource representation of DellSystem."/>
+                    <Annotation Term="OData.AutoExpand"/>
+                </NavigationProperty>
+            </ComplexType>
+            <ComplexType Name="Links" BaseType="OemComputerSystem.Links">
+                <Annotation Term="OData.Description" String="This version was introduced to add Oem Links in ComputerSystems resource."/>
+                <Annotation Term="OData.LongDescription" String="This version was introduced to add Oem Links in ComputerSystems resource."/>
+                <NavigationProperty Name="DellBootSources" Type="DellBootSources.DellBootSources" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellBootSources resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellBootSources resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellSoftwareInstallationService" Type="DellSoftwareInstallationService.DellSoftwareInstallationService" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellSoftwareInstallationService resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellSoftwareInstallationService resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellVideoCollection" Type="DellVideoCollection.DellVideoCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellVideoCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellVideoCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellVideoNetworkCollection" Type="DellVideoNetworkCollection.DellVideoNetworkCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellVideoNetworkCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellVideoNetworkCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellChassisCollection" Type="DellChassisCollection.DellChassisCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellChassisCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellChassisCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellBIOSService" Type="DellBIOSService.DellBIOSService" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellBIOSService resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellBIOSService resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellGPUSensorCollection" Type="DellGPUSensorCollection.DellGPUSensorCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellGPUSensorCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellGPUSensorCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellMetricService" Type="DellMetricService.DellMetricService" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellMetricService resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellMetricService resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellNumericSensorCollection" Type="DellNumericSensorCollection.DellNumericSensorCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellNumericSensorCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellNumericSensorCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellOSDeploymentService" Type="DellOSDeploymentService.DellOSDeploymentService" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellOSDeploymentService resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellOSDeploymentService resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellPSNumericSensorCollection" Type="DellPSNumericSensorCollection.DellPSNumericSensorCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellPSNumericSensorCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellPSNumericSensorCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellPresenceAndStatusSensorCollection" Type="DellPresenceAndStatusSensorCollection.DellPresenceAndStatusSensorCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellPresenceAndStatusSensorCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellPresenceAndStatusSensorCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellRaidService" Type="DellRaidService.DellRaidService" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellRaidService resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellRaidService resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellRollupStatusCollection" Type="DellRollupStatusCollection.DellRollupStatusCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellRollupStatusCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellRollupStatusCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellSensorCollection" Type="DellSensorCollection.DellSensorCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellSensorCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellSensorCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellSlotCollection" Type="DellSlotCollection.DellSlotCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellSlotCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellSlotCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellPhysicalDiskCollection" Type="DellPhysicalDiskCollection.DellPhysicalDiskCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellPhysicalDiskCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellPhysicalDiskCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellControllerCollection" Type="DellControllerCollection.DellControllerCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellControllerCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellControllerCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellAcceleratorCollection" Type="DellAcceleratorCollection.DellAcceleratorCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellAcceleratorCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellAcceleratorCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellMemoryCollection" Type="DellMemoryCollection.DellMemoryCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellMemoryCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellMemoryCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellPCIeSSDCollection" Type="DellPCIeSSDCollection.DellPCIeSSDCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellPCIeSSDCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellPCIeSSDCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellPCIeSSDExtenderCollection" Type="DellPCIeSSDExtenderCollection.DellPCIeSSDExtenderCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellPCIeSSDExtenderCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellPCIeSSDExtenderCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellProcessorCollection" Type="DellProcessorCollection.DellProcessorCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellProcessorCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellProcessorCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellSwitchConnectionCollection" Type="DellSwitchConnectionCollection.DellSwitchConnectionCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellSwitchConnectionCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellSwitchConnectionCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellVirtualDiskCollection" Type="DellVirtualDiskCollection.DellVirtualDiskCollection" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellVirtualDiskCollection resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellVirtualDiskCollection resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellSwitchConnectionService" Type="DellSwitchConnectionService.DellSwitchConnectionService" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellSwitchConnectionService resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellSwitchConnectionService resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+                <NavigationProperty Name="DellSystemManagementService" Type="DellSystemManagementService.DellSystemManagementService" ContainsTarget="true" Nullable="false">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="A reference to a DellSystemManagementService resource."/>
+                    <Annotation Term="OData.LongDescription" String="A reference to a DellSystemManagementService resource."/>
+                    <Annotation Term="OData.AutoExpandReferences"/>
+                </NavigationProperty>
+            </ComplexType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OemComputerSystem.v1_1_0">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="Links" BaseType="OemComputerSystem.v1_0_0.Links"/>
+            <ComplexType Name="ComputerSystem" BaseType="OemComputerSystem.v1_0_0.ComputerSystem">
+                <Annotation Term="OData.Description" String="This version was introduced to add SetWatchdog action and WatchdogState property."/>
+                <Annotation Term="OData.LongDescription" String="This version was introduced to add SetWatchdog action and WatchdogState property."/>
+                <Property Name="WatchdogState" Type="OemComputerSystem.v1_1_0.WatchdogState">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="The watchdog state."/>
+                    <Annotation Term="OData.LongDescription" String="The current state of the watchdog."/>
+                </Property>
+            </ComplexType>
+            <EnumType Name="WatchdogState">
+                <Member Name="Running">
+                    <Annotation Term="OData.Description" String="Watchdog is running."/>
+                </Member>
+                <Member Name="NotRunning">
+                    <Annotation Term="OData.Description" String="Watchdog is not running."/>
+                </Member>
+            </EnumType>
+        </Schema>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="OemComputerSystem.v1_2_0">
+            <Annotation String="Dell" Term="Redfish.OwningEntity"/>
+            <ComplexType Name="Links" BaseType="OemComputerSystem.v1_1_0.Links"/>
+            <ComplexType Name="ComputerSystem" BaseType="OemComputerSystem.v1_1_0.ComputerSystem">
+                <Annotation Term="OData.Description" String="This version was introduced to add IPMIHostWatchdogTimer property."/>
+                <Annotation Term="OData.LongDescription" String="This version was introduced to add IPMIHostWatchdogTimer property."/>
+                <Property Name="IPMIHostWatchdogTimer" Type="OemComputerSystem.v1_2_0.IPMIHostWatchdogTimer">
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                    <Annotation Term="OData.Description" String="IPMI watchdog timer status and countdown values."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the IPMI watchdog timer status including timeout action and countdown values."/>
+                </Property>
+            </ComplexType>
+            <ComplexType Name="IPMIHostWatchdogTimer">
+                <Annotation Term="OData.Description" String="IPMI watchdog timer status and countdown values."/>
+                <Annotation Term="OData.LongDescription" String="This complex type shall contain the IPMI watchdog timer status including timeout action and countdown values."/>
+                <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+                <Property Name="TimeoutAction" Type="OemComputerSystem.v1_2_0.WatchdogTimeoutActions">
+                    <Annotation Term="OData.Description" String="Timeout action when IPMI watchdog expires."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the timeout action that occurs when the IPMI watchdog timer expires."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="TimeoutSeconds" Type="Edm.Int64">
+                    <Annotation Term="OData.Description" String="Timeout value in seconds."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the timeout value in seconds that was programmed when the IPMI watchdog was last started."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+                <Property Name="CurrentCountdown" Type="Edm.Int64">
+                    <Annotation Term="OData.Description" String="Present (remaining) countdown value in seconds."/>
+                    <Annotation Term="OData.LongDescription" String="This property shall contain the present (remaining) countdown value in seconds. This value counts down from TimeoutSeconds."/>
+                    <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+                </Property>
+            </ComplexType>
+            <EnumType Name="WatchdogTimeoutActions">
+                <Member Name="None">
+                    <Annotation Term="OData.Description" String="No action taken."/>
+                </Member>
+                <Member Name="ResetSystem">
+                    <Annotation Term="OData.Description" String="Reset the system."/>
+                </Member>
+                <Member Name="PowerCycle">
+                    <Annotation Term="OData.Description" String="Power cycle the system."/>
+                </Member>
+                <Member Name="PowerDown">
+                    <Annotation Term="OData.Description" String="Power down the system."/>
+                </Member>
+                <Member Name="OEM">
+                    <Annotation Term="OData.Description" String="Perform an OEM-defined action."/>
+                </Member>
+            </EnumType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,17 @@
+components:
+  schemas:
+    DellComputerSystem_DellComputerSystem:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellComputerSystem.v1_2_0.yaml#/components/schemas/DellComputerSystem_v1_2_0_DellComputerSystem
+      description: This resource contains the Dell specific Redfish implementation
+        for ComputerSystem.
+      x-longDescription: This resource contains the Dell specific Redfish implementation
+        for ComputerSystem.
+    DellComputerSystem_SecureWipeDPU:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellComputerSystem.v1_2_0.yaml#/components/schemas/DellComputerSystem_v1_2_0_SecureWipeDPU
+      description: This action is used to erase the DPU.
+      x-longDescription: This action shall perform a secure wipe on DPU.It will not
+        turn off the system.
+title: '#DellComputerSystem'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.

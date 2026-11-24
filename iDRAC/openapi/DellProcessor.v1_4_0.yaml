@@ -1,0 +1,474 @@
+components:
+  schemas:
+    DellProcessor_v1_4_0_CPUFamily:
+      enum:
+      - Intel Core
+      - Intel Core Ultra
+      - Intel(R)Core(TM)Ultra7
+      type: string
+      x-enumDescriptions:
+        Intel Core: Intel Core
+        Intel Core Ultra: Intel Core Ultra
+        Intel(R)Core(TM)Ultra7: Intel(R) Core(TM) Ultra 7
+      x-enumLongDescriptions:
+        Intel Core: Intel Core
+        Intel Core Ultra: Intel Core Ultra
+        Intel(R)Core(TM)Ultra7: Intel(R) Core(TM) Ultra 7
+      x-enumVersionAdded:
+        Intel Core: v1_4_0
+        Intel Core Ultra: v1_4_0
+        Intel(R)Core(TM)Ultra7: v1_4_0
+    DellProcessor_v1_4_0_DellProcessor:
+      additionalProperties: false
+      description: An instance of DellProcessor will have CPU specific data.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        CPUFamily:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_CPUFamily
+          description: The property represents the processor family-type in hexadecimals.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property represents the processor family-type in
+            hexadecimals.
+          x-versionAdded: v1_1_0
+        CPUStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_CPUStatus
+          description: Indicates the current status of the processor.
+          nullable: true
+          readOnly: true
+          x-longDescription: Indicates the current status of the processor.
+          x-versionAdded: v1_1_0
+        Cache1Associativity:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache1Associativity
+          description: An integer enumeration that defines the system cache associativity.
+          nullable: true
+          readOnly: true
+          x-longDescription: An integer enumeration that defines the system cache
+            associativity.
+          x-versionAdded: v1_1_0
+        Cache1ErrorMethodology:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache1ErrorMethodology
+          description: Cache ErrorMethodology - Contains the enumerated value that
+            describes the error detection/correction mechanism of the cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache ErrorMethodology - Contains the enumerated value
+            that describes the error detection/correction mechanism of the cache.
+          x-versionAdded: v1_1_0
+        Cache1InstalledSizeKB:
+          description: This property represents the installed memory size of the cache
+            in KBytes.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the installed memory size of
+            the cache in KBytes.
+          x-units: KB
+          x-versionAdded: v1_1_0
+        Cache1Level:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache1Level
+          description: The cache level for Cache1 labeled cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: The cache level for Cache1 labeled cache.
+          x-versionAdded: v1_1_0
+        Cache1Location:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache1Location
+          description: Specifies the location of the cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: Specifies the location of the cache.
+          x-versionAdded: v1_1_0
+        Cache1PrimaryStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache1PrimaryStatus
+          description: Cache1PrimaryStatus provides a high-level status value, intended
+            to align with Red-Yellow-Green type representation of status.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache1PrimaryStatus provides a high-level status value,
+            intended to align with Red-Yellow-Green type representation of status.
+          x-versionAdded: v1_1_0
+        Cache1SRAMType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache1SRAMType
+          description: Cache SRAM Type.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache SRAM Type.
+          x-versionAdded: v1_1_0
+        Cache1SizeKB:
+          description: This property represents the total memory size of the cache
+            in KBytes.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the total memory size of the
+            cache in KBytes.
+          x-units: KB
+          x-versionAdded: v1_1_0
+        Cache1Type:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache1Type
+          description: Defines whether this is for instruction caching (value=3),
+            data caching (value=4), or both (value=5, "Unified"). "Other" (1) and
+            "Unknown" (2) can also be defined.
+          nullable: true
+          readOnly: true
+          x-longDescription: Defines whether this is for instruction caching (value=3),
+            data caching (value=4), or both (value=5, "Unified"). "Other" (1) and
+            "Unknown" (2) can also be defined.
+          x-versionAdded: v1_1_0
+        Cache1WritePolicy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache1WritePolicy
+          description: Defines whether this is write-back (value=1) or write-through
+            (value=0) cache, or whether this information "Varies with Address" (2)
+            or "Unknown" (3) can be specified.
+          nullable: true
+          readOnly: true
+          x-longDescription: Defines whether this is write-back (value=1) or write-through
+            (value=0) cache, or whether this information "Varies with Address" (2)
+            or "Unknown" (3) can be specified.
+          x-versionAdded: v1_1_0
+        Cache2Associativity:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache2Associativity
+          description: An integer enumeration that defines the system cache associativity.
+          nullable: true
+          readOnly: true
+          x-longDescription: An integer enumeration that defines the system cache
+            associativity.
+          x-versionAdded: v1_1_0
+        Cache2ErrorMethodology:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache2ErrorMethodology
+          description: Cache ErrorMethodology - Contains the enumerated value that
+            describes the error detection/correction mechanism of the cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache ErrorMethodology - Contains the enumerated value
+            that describes the error detection/correction mechanism of the cache.
+          x-versionAdded: v1_1_0
+        Cache2InstalledSizeKB:
+          description: This property represents the installed memory size of the cache
+            in KBytes.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the installed memory size of
+            the cache in KBytes.
+          x-units: KB
+          x-versionAdded: v1_1_0
+        Cache2Level:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache2Level
+          description: The cache level for Cache2 labeled cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: The cache level for Cache2 labeled cache.
+          x-versionAdded: v1_1_0
+        Cache2Location:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache2Location
+          description: Specifies the location of the cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: Specifies the location of the cache.
+          x-versionAdded: v1_1_0
+        Cache2PrimaryStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache2PrimaryStatus
+          description: Cache2PrimaryStatus provides a high-level status value, intended
+            to align with Red-Yellow-Green type representation of status.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache2PrimaryStatus provides a high-level status value,
+            intended to align with Red-Yellow-Green type representation of status.
+          x-versionAdded: v1_1_0
+        Cache2SRAMType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache2SRAMType
+          description: Cache SRAM Type.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache SRAM Type.
+          x-versionAdded: v1_1_0
+        Cache2SizeKB:
+          description: This property represents the total memory size of the cache
+            in KBytes.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the total memory size of the
+            cache in KBytes.
+          x-units: KB
+          x-versionAdded: v1_1_0
+        Cache2Type:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache2Type
+          description: Defines whether this is for instruction caching (value=3),
+            data caching (value=4), or both (value=5, "Unified"). "Other" (1) and
+            "Unknown" (2) can also be defined.
+          nullable: true
+          readOnly: true
+          x-longDescription: Defines whether this is for instruction caching (value=3),
+            data caching (value=4), or both (value=5, "Unified"). "Other" (1) and
+            "Unknown" (2) can also be defined.
+          x-versionAdded: v1_1_0
+        Cache2WritePolicy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache2WritePolicy
+          description: Defines whether this is write-back (value=1) or write-through
+            (value=0) Cache, or whether this information "Varies with Address" (2)
+            or "Unknown" (3) can be specified.
+          nullable: true
+          readOnly: true
+          x-longDescription: Defines whether this is write-back (value=1) or write-through
+            (value=0) Cache, or whether this information "Varies with Address" (2)
+            or "Unknown" (3) can be specified.
+          x-versionAdded: v1_1_0
+        Cache3Associativity:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache3Associativity
+          description: An integer enumeration that defines the system cache associativity.
+            For example, 6 indicates a fully associative cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: An integer enumeration that defines the system cache
+            associativity. For example, 6 indicates a fully associative cache.
+          x-versionAdded: v1_1_0
+        Cache3ErrorMethodology:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache3ErrorMethodology
+          description: Cache ErrorMethodology - Contains the enumerated value that
+            describes the error detection/correction mechanism of the cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache ErrorMethodology - Contains the enumerated value
+            that describes the error detection/correction mechanism of the cache.
+          x-versionAdded: v1_1_0
+        Cache3InstalledSizeKB:
+          description: This property represents the installed memory size of the cache
+            in KBytes.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the installed memory size of
+            the cache in KBytes.
+          x-units: KB
+          x-versionAdded: v1_1_0
+        Cache3Level:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache3Level
+          description: The cache level for Cache3 labeled cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: The cache level for Cache3 labeled cache.
+          x-versionAdded: v1_1_0
+        Cache3Location:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache3Location
+          description: Specifies the location of the cache.
+          nullable: true
+          readOnly: true
+          x-longDescription: Specifies the location of the cache.
+          x-versionAdded: v1_1_0
+        Cache3PrimaryStatus:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache3PrimaryStatus
+          description: Cache3PrimaryStatus provides a high-level status value, intended
+            to align with Red-Yellow-Green type representation of status.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache3PrimaryStatus provides a high-level status value,
+            intended to align with Red-Yellow-Green type representation of status.
+          x-versionAdded: v1_1_0
+        Cache3SRAMType:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache3SRAMType
+          description: Cache SRAM Type.
+          nullable: true
+          readOnly: true
+          x-longDescription: Cache SRAM Type.
+          x-versionAdded: v1_1_0
+        Cache3SizeKB:
+          description: This property represents the total memory size of the cache
+            in KBytes.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property represents the total memory size of the
+            cache in KBytes.
+          x-units: KB
+          x-versionAdded: v1_1_0
+        Cache3Type:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache3Type
+          description: Defines whether this is for instruction caching (value=3),
+            data caching (value=4), or both (value=5, "Unified"). "Other" (1) and
+            "Unknown" (2) can also be defined.
+          nullable: true
+          readOnly: true
+          x-longDescription: Defines whether this is for instruction caching (value=3),
+            data caching (value=4), or both (value=5, "Unified"). "Other" (1) and
+            "Unknown" (2) can also be defined.
+          x-versionAdded: v1_1_0
+        Cache3WritePolicy:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_Cache3WritePolicy
+          description: Defines whether this is write-back (value=1) or write-through
+            (value=0) Cache, or whether this information "Varies with Address" (2)
+            or "Unknown" (3) can be specified.
+          nullable: true
+          readOnly: true
+          x-longDescription: Defines whether this is write-back (value=1) or write-through
+            (value=0) Cache, or whether this information "Varies with Address" (2)
+            or "Unknown" (3) can be specified.
+          x-versionAdded: v1_1_0
+        CurrentClockSpeedMhz:
+          description: The current speed (in MHz) of this Processor.
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The current speed (in MHz) of this Processor.
+          x-units: Mhz
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        ExecuteDisabledCapable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_ExecuteDisabledCapable
+          description: Variable that specifies if ExecuteDisabledCapable is supported.
+          nullable: true
+          readOnly: true
+          x-longDescription: Variable that specifies if ExecuteDisabledCapable is
+            supported.
+          x-versionAdded: v1_2_0
+        ExecuteDisabledEnabled:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_ExecuteDisabledEnabled
+          description: Variable that specifies if ExecuteDisabledEnabled is supported.
+          nullable: true
+          readOnly: true
+          x-longDescription: Variable that specifies if ExecuteDisabledEnabled is
+            supported.
+          x-versionAdded: v1_2_0
+        ExternalBusClockSpeedMhz:
+          description: The speed (in MHz) of the external bus interface (also known
+            as the front side bus).
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The speed (in MHz) of the external bus interface (also
+            known as the front side bus).
+          x-units: Mhz
+          x-versionAdded: v1_1_0
+        HyperThreadingCapable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_HyperThreadingCapable
+          description: Variable that specifies if HyperThreading is Capable.
+          nullable: true
+          readOnly: true
+          x-longDescription: Variable that specifies if HyperThreading is Capable.
+        HyperThreadingEnabled:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_HyperThreadingEnabled
+          description: Variable that specifies if HyperThreading is Enabled.
+          nullable: true
+          readOnly: true
+          x-longDescription: Variable that specifies if HyperThreading is Enabled.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        LastSystemInventoryTime:
+          description: This property provides the last time System Inventory Collection
+            On Reboot (CSIOR) was performed or the object was last updated on iDRAC.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the last time System Inventory
+            Collection On Reboot (CSIOR) was performed or the object was last updated
+            on iDRAC. The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        LastUpdateTime:
+          description: This property provides the last time the data was updated.
+            The value is represented as yyyymmddHHMMSS.
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: This property provides the last time the data was updated.
+            The value is represented as yyyymmddHHMMSS.
+          x-versionAdded: v1_1_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        PackageMemoryErrorCorrection:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_PackageMemoryErrorCorrection
+          description: The property represents Package Memory Error Correction.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property represents Package Memory Error Correction.
+          x-versionAdded: v1_2_0
+        PackageMemoryLocation:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_PackageMemoryLocation
+          description: The property represents Package Memory Location.
+          nullable: true
+          readOnly: true
+          x-longDescription: The property represents Package Memory Location.
+          x-versionAdded: v1_2_0
+        PackageMemoryMaximumSizeGiB:
+          description: The property represents the Package Memory maximum size in
+            GibiBytes(GiB).
+          format: int64
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property represents the Package Memory maximum size
+            in GibiBytes(GiB).
+          x-units: GiB
+          x-versionAdded: v1_2_0
+        TurboModeCapable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_TurboModeCapable
+          description: Variable that specifies if TurboMode is Capable.
+          nullable: true
+          readOnly: true
+          x-longDescription: Variable that specifies if TurboMode is Capable.
+        TurboModeEnabled:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_TurboModeEnabled
+          description: Variable that specifies if TurboMode is enabled.
+          nullable: true
+          readOnly: true
+          x-longDescription: Variable that specifies if TurboMode is enabled.
+        VirtualizationTechnologyCapable:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_VirtualizationTechnologyCapable
+          description: Variable that specifies if VirtualizationTechnology is Capable.
+          nullable: true
+          readOnly: true
+          x-longDescription: Variable that specifies if VirtualizationTechnology is
+            Capable.
+        VirtualizationTechnologyEnabled:
+          $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellProcessor.yaml#/components/schemas/DellProcessor_VirtualizationTechnologyEnabled
+          description: Variable that specifies if VirtualizationTechnology is enabled.
+          nullable: true
+          readOnly: true
+          x-longDescription: Variable that specifies if VirtualizationTechnology is
+            enabled.
+        Volts:
+          description: The property represents the voltage(s) of the processor in
+            Volts.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The property represents the voltage(s) of the processor
+            in Volts.
+          x-units: Volts
+          x-versionAdded: v1_1_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: An instance of DellProcessor will have CPU specific data.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DellProcessor.v1_4_0.DellProcessor'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

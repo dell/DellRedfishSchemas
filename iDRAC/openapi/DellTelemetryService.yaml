@@ -1,0 +1,20 @@
+components:
+  schemas:
+    DellTelemetryService_DellTelemetryService:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTelemetryService.v1_2_0.yaml#/components/schemas/DellTelemetryService_v1_2_0_DellTelemetryService
+      description: This is telemetryservice oem property schemas.
+      x-longDescription: This is telemetryservice oem property schemas
+    DellTelemetryService_MetricValue:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTelemetryService.v1_2_0.yaml#/components/schemas/DellTelemetryService_v1_2_0_MetricValue
+      description: This is Metric Value.
+      x-longDescription: This is Metric Value
+    DellTelemetryService_SubmitMetricValue:
+      anyOf:
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellTelemetryService.v1_2_0.yaml#/components/schemas/DellTelemetryService_v1_2_0_SubmitMetricValue
+      description: This is telemetryservice Action oem property schemas
+      x-longDescription: This is telemetryservice Action oem property schemas
+title: '#DellTelemetryService'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell

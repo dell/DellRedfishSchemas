@@ -1,7 +1,7 @@
 {
     "$id": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellOemMemory.v1_0_0.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2014-2025 Dell, Inc. or its subsidiaries. All Rights Reserved.",
+    "copyright": "Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.",
     "definitions": {
         "DellMemory": {
             "additionalProperties": false,
@@ -62,6 +62,35 @@
                 },
                 "CPUAffinity@odata.count": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
+                }
+            },
+            "type": "object"
+        },
+        "DellMemoryProperties": {
+            "additionalProperties": false,
+            "description": "This is the complex property is for the additional OEM properties related to the Memory.",
+            "longDescription": "This is the complex property is for the additional OEM properties related to the Memory.",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "DellMemory": {
+                    "$ref": "https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellMemory.json#/definitions/DellMemory",
+                    "autoExpand": true,
+                    "description": "A resource representation of DellMemory.",
+                    "longDescription": "A resource representation of DellMemory.",
+                    "readonly": true
                 }
             },
             "type": "object"

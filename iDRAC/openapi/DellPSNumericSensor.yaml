@@ -1,0 +1,670 @@
+components:
+  schemas:
+    DellPSNumericSensor_BaseUnits:
+      enum:
+      - Amps
+      - Becquerels
+      - Bits
+      - Bytes
+      - CFM
+      - Candelas
+      - ColorTemperatureDegreesK
+      - Coulombs
+      - CubicCentimeters
+      - CubicFeet
+      - CubicInches
+      - CubicMeters
+      - Cycles
+      - Days
+      - DbA
+      - DbC
+      - Decibels
+      - DegreesC
+      - DegreesF
+      - DegreesK
+      - DoubleWords
+      - Farads
+      - Feet
+      - FluidOunces
+      - Foot-Pounds
+      - Gauss
+      - Gilberts
+      - Gravities
+      - Grays
+      - Henries
+      - Hertz
+      - Hours
+      - Inches
+      - Joules
+      - Liters
+      - Lumens
+      - Lux
+      - Meters
+      - Mils
+      - Minutes
+      - Moles
+      - Newtons
+      - Nits
+      - Ohms
+      - Other
+      - Ounce-Inches
+      - Ounces
+      - PPM(Parts/Million)
+      - PSI
+      - Pascals
+      - Percentage
+      - Pounds
+      - QuadWords
+      - RPM
+      - Radians
+      - Revolutions
+      - Seconds
+      - Siemens
+      - Sieverts
+      - Steradians
+      - Unknown
+      - VA
+      - Volts
+      - Watts
+      - Weeks
+      - Words
+      - kPa
+      type: string
+      x-enumDescriptions:
+        Amps: Amps
+        Becquerels: Becquerels
+        Bits: Bits
+        Bytes: Bytes
+        CFM: CFM
+        Candelas: Candelas
+        ColorTemperatureDegreesK: Color Temperature Degrees K
+        Coulombs: Coulombs
+        CubicCentimeters: Cubic Centimeters
+        CubicFeet: Cubic Feet
+        CubicInches: Cubic Inches
+        CubicMeters: Cubic Meters
+        Cycles: Cycles
+        Days: Days
+        DbA: DbA
+        DbC: DbC
+        Decibels: Decibels
+        DegreesC: Degrees C
+        DegreesF: Degrees F
+        DegreesK: Degrees K
+        DoubleWords: DoubleWords
+        Farads: Farads
+        Feet: Feet
+        FluidOunces: Fluid Ounces
+        Foot-Pounds: Foot-Pounds
+        Gauss: Gauss
+        Gilberts: Gilberts
+        Gravities: Gravities
+        Grays: Grays
+        Henries: Henries
+        Hertz: Hertz
+        Hours: Hours
+        Inches: Inches
+        Joules: Joules
+        Liters: Liters
+        Lumens: Lumens
+        Lux: Lux
+        Meters: Meters
+        Mils: Mils
+        Minutes: Minutes
+        Moles: Moles
+        Newtons: Newtons
+        Nits: Nits
+        Ohms: Ohms
+        Other: Other
+        Ounce-Inches: Ounce-Inches
+        Ounces: Ounces
+        PPM(Parts/Million): PPM (parts/million)
+        PSI: PSI
+        Pascals: Pascals
+        Percentage: Percentage
+        Pounds: Pounds
+        QuadWords: QuadWords
+        RPM: RPM
+        Radians: Radians
+        Revolutions: Revolutions
+        Seconds: Seconds
+        Siemens: Siemens
+        Sieverts: Sieverts
+        Steradians: Steradians
+        Unknown: Unknown
+        VA: VA
+        Volts: Volts
+        Watts: Watts
+        Weeks: Weeks
+        Words: Words (data)
+        kPa: kPa
+      x-enumLongDescriptions:
+        Amps: Amps
+        Becquerels: Becquerels
+        Bits: Bits
+        Bytes: Bytes
+        CFM: CFM
+        Candelas: Candelas
+        ColorTemperatureDegreesK: Color Temperature Degrees K
+        Coulombs: Coulombs
+        CubicCentimeters: Cubic Centimeters
+        CubicFeet: Cubic Feet
+        CubicInches: Cubic Inches
+        CubicMeters: Cubic Meters
+        Cycles: Cycles
+        Days: Days
+        DbA: DbA
+        DbC: DbC
+        Decibels: Decibels
+        DegreesC: Degrees C
+        DegreesF: Degrees F
+        DegreesK: Degrees K
+        DoubleWords: DoubleWords
+        Farads: Farads
+        Feet: Feet
+        FluidOunces: Fluid Ounces
+        Foot-Pounds: Foot-Pounds
+        Gauss: Gauss
+        Gilberts: Gilberts
+        Gravities: Gravities
+        Grays: Grays
+        Henries: Henries
+        Hertz: Hertz
+        Hours: Hours
+        Inches: Inches
+        Joules: Joules
+        Liters: Liters
+        Lumens: Lumens
+        Lux: Lux
+        Meters: Meters
+        Mils: Mils
+        Minutes: Minutes
+        Moles: Moles
+        Newtons: Newtons
+        Nits: Nits
+        Ohms: Ohms
+        Other: Other
+        Ounce-Inches: Ounce-Inches
+        Ounces: Ounces
+        PPM(Parts/Million): PPM (parts/million)
+        PSI: PSI
+        Pascals: Pascals
+        Percentage: Percentage
+        Pounds: Pounds
+        QuadWords: QuadWords
+        RPM: RPM
+        Radians: Radians
+        Revolutions: Revolutions
+        Seconds: Seconds
+        Siemens: Siemens
+        Sieverts: Sieverts
+        Steradians: Steradians
+        Unknown: Unknown
+        VA: VA
+        Volts: Volts
+        Watts: Watts
+        Weeks: Weeks
+        Words: Words (data)
+        kPa: kPa
+    DellPSNumericSensor_DellPSNumericSensor:
+      anyOf:
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+      - $ref: https://raw.githubusercontent.com/dell/DellRedfishSchemas/refs/heads/main/iDRAC/DellPSNumericSensor.v1_1_0.yaml#/components/schemas/DellPSNumericSensor_v1_1_0_DellPSNumericSensor
+      description: An instance of DellPSNumericSensor will have data specific to a
+        power sensor device that returns only numeric readings and optionally supports
+        of thresholds settings.
+      x-longDescription: An instance of DellPSNumericSensor will have data specific
+        to a power sensor device that returns only numeric readings and optionally
+        supports of thresholds settings.
+    DellPSNumericSensor_EnabledDefault:
+      enum:
+      - Disabled
+      - Enabled
+      - EnabledButOffline
+      - NoDefault
+      - NotApplicable
+      - Quiesce
+      type: string
+      x-enumDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+        EnabledButOffline: Enabled but Offline
+        NoDefault: No Default
+        NotApplicable: Not Applicable
+        Quiesce: Quiesce
+      x-enumLongDescriptions:
+        Disabled: Disabled
+        Enabled: Enabled
+        EnabledButOffline: Enabled but Offline
+        NoDefault: No Default
+        NotApplicable: Not Applicable
+        Quiesce: Quiesce
+      x-enumVersionAdded:
+        Disabled: v1_1_0
+        Enabled: v1_1_0
+        EnabledButOffline: v1_1_0
+        NoDefault: v1_1_0
+        NotApplicable: v1_1_0
+        Quiesce: v1_1_0
+    DellPSNumericSensor_EnabledState:
+      enum:
+      - Deferred
+      - Disabled
+      - Enabled
+      - EnabledButOffline
+      - InTest
+      - NotApplicable
+      - Other
+      - Quiesce
+      - ShuttingDown
+      - Starting
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Deferred: Deferred
+        Disabled: Disabled
+        Enabled: Enabled
+        EnabledButOffline: Enabled but Offline
+        InTest: In Test
+        NotApplicable: Not Applicable
+        Other: Other
+        Quiesce: Quiesce
+        ShuttingDown: Shutting Down
+        Starting: Starting
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Deferred: Deferred
+        Disabled: Disabled
+        Enabled: Enabled
+        EnabledButOffline: Enabled but Offline
+        InTest: In Test
+        NotApplicable: Not Applicable
+        Other: Other
+        Quiesce: Quiesce
+        ShuttingDown: Shutting Down
+        Starting: Starting
+        Unknown: Unknown
+    DellPSNumericSensor_HealthState:
+      enum:
+      - CriticalFailure
+      - Degraded/Warning
+      - MajorFailure
+      - MinorFailure
+      - NonRecoverableError
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        CriticalFailure: Critical failure
+        Degraded/Warning: Degraded/Warning
+        MajorFailure: Major failure
+        MinorFailure: Minor failure
+        NonRecoverableError: Non-recoverable Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        CriticalFailure: Critical failure
+        Degraded/Warning: Degraded/Warning
+        MajorFailure: Major failure
+        MinorFailure: Minor failure
+        NonRecoverableError: Non-recoverable Error
+        OK: OK
+        Unknown: Unknown
+    DellPSNumericSensor_Links:
+      additionalProperties: true
+      description: Contains references to other resources that are related to this
+        resource.
+      properties:
+        ComputerSystem:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          description: Contains references to other resources that are related to
+            this resource.
+          nullable: true
+          readOnly: true
+          x-longDescription: Contains references to other resources that are related
+            to this resource.
+        DellPowerSupplyCollection:
+          description: Contains references to other resources that are related to
+            this resource.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: Contains references to other resources that are related
+            to this resource.
+        DellPowerSupplyCollection@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties contained in this object shall conform to the Redfish
+            Specification-described requirements.
+      type: object
+      x-longDescription: This type, as described by the Redfish Specification, shall
+        contain references to resources that are related to, but not contained by
+        (subordinate to), this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DellPSNumericSensor_OperationalStatus:
+      enum:
+      - Aborted
+      - Completed
+      - Degraded
+      - Dormant
+      - Error
+      - InService
+      - LostCommunication
+      - NoContact
+      - NonRecoverableError
+      - OK
+      - Other
+      - PowerMode
+      - PredictiveFailure
+      - Relocating
+      - Starting
+      - Stopped
+      - Stopping
+      - Stressed
+      - SupportingEntityInError
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Aborted: Aborted
+        Completed: Completed
+        Degraded: Degraded
+        Dormant: Dormant
+        Error: Error
+        InService: In Service
+        LostCommunication: Lost Communication
+        NoContact: No Contact
+        NonRecoverableError: Non-Recoverable Error
+        OK: OK
+        Other: Other
+        PowerMode: Power Mode
+        PredictiveFailure: Predictive Failure
+        Relocating: Relocating
+        Starting: Starting
+        Stopped: Stopped
+        Stopping: Stopping
+        Stressed: Stressed
+        SupportingEntityInError: Supporting Entity in Error
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Aborted: Aborted
+        Completed: Completed
+        Degraded: Degraded
+        Dormant: Dormant
+        Error: Error
+        InService: In Service
+        LostCommunication: Lost Communication
+        NoContact: No Contact
+        NonRecoverableError: Non-Recoverable Error
+        OK: OK
+        Other: Other
+        PowerMode: Power Mode
+        PredictiveFailure: Predictive Failure
+        Relocating: Relocating
+        Starting: Starting
+        Stopped: Stopped
+        Stopping: Stopping
+        Stressed: Stressed
+        SupportingEntityInError: Supporting Entity in Error
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Aborted: v1_1_0
+        Completed: v1_1_0
+        Degraded: v1_1_0
+        Dormant: v1_1_0
+        Error: v1_1_0
+        InService: v1_1_0
+        LostCommunication: v1_1_0
+        NoContact: v1_1_0
+        NonRecoverableError: v1_1_0
+        OK: v1_1_0
+        Other: v1_1_0
+        PowerMode: v1_1_0
+        PredictiveFailure: v1_1_0
+        Relocating: v1_1_0
+        Starting: v1_1_0
+        Stopped: v1_1_0
+        Stopping: v1_1_0
+        Stressed: v1_1_0
+        SupportingEntityInError: v1_1_0
+        Unknown: v1_1_0
+    DellPSNumericSensor_PrimaryStatus:
+      enum:
+      - Degraded
+      - Error
+      - OK
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Degraded: Degraded
+        Error: Error
+        OK: OK
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Degraded: v1_1_0
+        Error: v1_1_0
+        OK: v1_1_0
+        Unknown: v1_1_0
+    DellPSNumericSensor_RateUnits:
+      enum:
+      - None
+      - PerDay
+      - PerHour
+      - PerMicroSecond
+      - PerMilliSecond
+      - PerMinute
+      - PerMonth
+      - PerSecond
+      - PerWeek
+      - PerYear
+      type: string
+      x-enumDescriptions:
+        None: None
+        PerDay: Per Day
+        PerHour: Per Hour
+        PerMicroSecond: Per MicroSecond
+        PerMilliSecond: Per MilliSecond
+        PerMinute: Per Minute
+        PerMonth: Per Month
+        PerSecond: Per Second
+        PerWeek: Per Week
+        PerYear: Per Year
+      x-enumLongDescriptions:
+        None: None
+        PerDay: Per Day
+        PerHour: Per Hour
+        PerMicroSecond: Per MicroSecond
+        PerMilliSecond: Per MilliSecond
+        PerMinute: Per Minute
+        PerMonth: Per Month
+        PerSecond: Per Second
+        PerWeek: Per Week
+        PerYear: Per Year
+      x-enumVersionAdded:
+        None: v1_1_0
+        PerDay: v1_1_0
+        PerHour: v1_1_0
+        PerMicroSecond: v1_1_0
+        PerMilliSecond: v1_1_0
+        PerMinute: v1_1_0
+        PerMonth: v1_1_0
+        PerSecond: v1_1_0
+        PerWeek: v1_1_0
+        PerYear: v1_1_0
+    DellPSNumericSensor_RequestedState:
+      enum:
+      - Deferred
+      - Disabled
+      - Enabled
+      - NoChange
+      - NotApplicable
+      - Offline
+      - Quiesce
+      - Reboot
+      - Reset
+      - ShutDown
+      - Test
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Deferred: Deferred
+        Disabled: Disabled
+        Enabled: Enabled
+        NoChange: No Change
+        NotApplicable: Not Applicable
+        Offline: Offline
+        Quiesce: Quiesce
+        Reboot: Reboot
+        Reset: Reset
+        ShutDown: Shut Down
+        Test: Test
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Deferred: Deferred
+        Disabled: Disabled
+        Enabled: Enabled
+        NoChange: No Change
+        NotApplicable: Not Applicable
+        Offline: Offline
+        Quiesce: Quiesce
+        Reboot: Reboot
+        Reset: Reset
+        ShutDown: Shut Down
+        Test: Test
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Deferred: v1_1_0
+        Disabled: v1_1_0
+        Enabled: v1_1_0
+        NoChange: v1_1_0
+        NotApplicable: v1_1_0
+        Offline: v1_1_0
+        Quiesce: v1_1_0
+        Reboot: v1_1_0
+        Reset: v1_1_0
+        ShutDown: v1_1_0
+        Test: v1_1_0
+        Unknown: v1_1_0
+    DellPSNumericSensor_SensorType:
+      enum:
+      - AirFlow
+      - Counter
+      - Current
+      - Humidity
+      - Intrusion
+      - Lock
+      - Other
+      - PowerConsumption
+      - PowerProduction
+      - Presence
+      - Pressure
+      - SmokeDetection
+      - Switch
+      - Tachometer
+      - Temperature
+      - Unknown
+      - Voltage
+      type: string
+      x-enumDescriptions:
+        AirFlow: Air Flow
+        Counter: Counter
+        Current: Current
+        Humidity: Humidity
+        Intrusion: Intrusion
+        Lock: Lock
+        Other: Other
+        PowerConsumption: Power Consumption
+        PowerProduction: Power Production
+        Presence: Presence
+        Pressure: Pressure
+        SmokeDetection: Smoke Detection
+        Switch: Switch
+        Tachometer: Tachometer
+        Temperature: Temperature
+        Unknown: Unknown
+        Voltage: Voltage
+      x-enumLongDescriptions:
+        AirFlow: Air Flow
+        Counter: Counter
+        Current: Current
+        Humidity: Humidity
+        Intrusion: Intrusion
+        Lock: Lock
+        Other: Other
+        PowerConsumption: Power Consumption
+        PowerProduction: Power Production
+        Presence: Presence
+        Pressure: Pressure
+        SmokeDetection: Smoke Detection
+        Switch: Switch
+        Tachometer: Tachometer
+        Temperature: Temperature
+        Unknown: Unknown
+        Voltage: Voltage
+    DellPSNumericSensor_TransitioningToState:
+      enum:
+      - Defer
+      - Disabled
+      - Enabled
+      - NoChange
+      - NotApplicable
+      - Offline
+      - Quiesce
+      - Reboot
+      - Reset
+      - ShutDown
+      - Test
+      - Unknown
+      type: string
+      x-enumDescriptions:
+        Defer: Defer
+        Disabled: Disabled
+        Enabled: Enabled
+        NoChange: No Change
+        NotApplicable: Not Applicable
+        Offline: Offline
+        Quiesce: Quiesce
+        Reboot: Reboot
+        Reset: Reset
+        ShutDown: Shut Down
+        Test: Test
+        Unknown: Unknown
+      x-enumLongDescriptions:
+        Defer: Defer
+        Disabled: Disabled
+        Enabled: Enabled
+        NoChange: No Change
+        NotApplicable: Not Applicable
+        Offline: Offline
+        Quiesce: Quiesce
+        Reboot: Reboot
+        Reset: Reset
+        ShutDown: Shut Down
+        Test: Test
+        Unknown: Unknown
+      x-enumVersionAdded:
+        Defer: v1_1_0
+        Disabled: v1_1_0
+        Enabled: v1_1_0
+        NoChange: v1_1_0
+        NotApplicable: v1_1_0
+        Offline: v1_1_0
+        Quiesce: v1_1_0
+        Reboot: v1_1_0
+        Reset: v1_1_0
+        ShutDown: v1_1_0
+        Test: v1_1_0
+        Unknown: v1_1_0
+title: '#DellPSNumericSensor.DellPSNumericSensor'
+x-copyright: Copyright 2014-2026 Dell, Inc. or its subsidiaries. All Rights Reserved.
+x-owningEntity: Dell
